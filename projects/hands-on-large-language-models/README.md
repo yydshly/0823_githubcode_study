@@ -11,7 +11,7 @@
 | 获取方式 | Git submodule：`upstream/` |
 | 许可证 | Apache-2.0；外部模型与数据集需分别核查许可证 |
 | 开始日期 | 2026-08-23 |
-| 当前状态 | 研究中：静态能力盘点完成，运行验证待开展 |
+| 当前状态 | 研究中：静态能力盘点完成；第 1—3 章低成本基础实验已通过 |
 | 在线展示 | [能力研究页](https://yydshly.github.io/0823_githubcode_study/projects/hands-on-large-language-models.html) |
 
 ## 定位结论
@@ -48,6 +48,21 @@
 3. **检索增强**：先从外部资料中检索相关内容，再把证据和问题一起交给生成模型。
 4. **适配与训练**：用监督数据、对比学习、LoRA 或偏好数据改变模型在特定任务上的行为。
 
+## 首轮运行验证
+
+2026-08-24 已完成第 1—3 章低成本基础实验，固定在 Python 3.10、PyTorch 2.3.1+cpu 和 Transformers 4.41.2：
+
+| 测试 | 执行对象 | 结果 |
+| --- | --- | --- |
+| Tokenizer 对比 | BERT、GPT-2、Flan-T5、Phi-3 等 5 个 Tokenizer | 5/5 通过；同一输入产生 23—41 个 Token |
+| 指令生成 | SmolLM2-135M 代理模型 | 通过；48 个新 Token 用时 3.175 秒 |
+| next-token logits | SmolLM2-135M 代理模型 | 通过；argmax 解码为 “ Paris” |
+| KV Cache | SmolLM2-135M 代理模型 | 通过；本轮中位耗时由 5.5855 秒降至 1.4778 秒 |
+
+本轮直接运行了 Phi-3 Tokenizer，但没有加载 Phi-3 权重。生成、logits 和 KV Cache 属于相同代码路径的小模型代理验证，不代表 Phi-3 的质量、显存或性能已经复现。
+
+完整命令、失败修复和证据见 [`experiments/phase-01-foundations/`](experiments/phase-01-foundations/)；机器结果见 [`results/smoke-results.json`](experiments/phase-01-foundations/results/smoke-results.json)。
+
 ## 代码层面的真实边界
 
 - 全部核心示例都是 Notebook，没有统一的 Python 包、服务入口或 Web 应用。
@@ -69,14 +84,16 @@
 - [`ANALYSIS_METHOD.md`](ANALYSIS_METHOD.md)：整个子项目采用的分析步骤、证据标准和阶段门槛。
 - [`scripts/inventory_notebooks.py`](scripts/inventory_notebooks.py)：扫描 Notebook 代码单元的零依赖清单脚本。
 - [`analysis/notebook-inventory.json`](analysis/notebook-inventory.json)：固定版本的机器可读能力证据。
+- [`experiments/phase-01-foundations/`](experiments/phase-01-foundations/)：第 1—3 章低成本运行脚本、依赖与实验说明。
+- [`results/smoke-results.json`](experiments/phase-01-foundations/results/smoke-results.json)：首轮机器可读运行证据。
 - [`upstream/`](upstream/)：固定在指定提交的上游源代码。
 
 ## 下一阶段
 
 按照由低成本到高成本的顺序执行：
 
-1. 在 Python 3.10 环境完成第 1、2、3 章 CPU 冒烟测试。
-2. 选取第 4、5、8 章，建立分类、主题建模和 RAG 的统一小数据集与评测。
-3. 记录每章的模型下载量、显存、运行时间、输出和失败恢复方法。
-4. 将第 8 章整理成第一个可部署的中文 RAG 演示。
-5. 获得 GPU 环境后再进入第 9—12 章的多模态和微调验证。
+1. 为第 4、5、8 章建立统一的小数据集切片、基线与评测指标。
+2. 先复现第 4 章分类，比较监督分类、Embedding 分类和零样本分类。
+3. 再复现第 5 章主题建模，记录离群率、主题一致性和人工判断。
+4. 将第 8 章整理成可评测、可部署的中文 RAG 演示。
+5. 在更大显存环境中补做 Phi-3 原模型复现，再进入第 9—12 章。
