@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Hands-On Large Language Models 源码能力研究：12章代码证据、分析方法、适用边界与扩展路线。">
+    <title>Hands-On LLM · 能力研究</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../project.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#content">跳到正文</a>
+    <header class="site-nav">
+      <a class="brand" href="../index.html">0823 / CODE STUDY</a>
+      <nav aria-label="项目导航">
+        <a href="#capabilities">能力演示</a>
+        <a href="#work-guide">工作指导</a>
+        <a href="https://github.com/yydshly/0823_githubcode_study/tree/main/projects/hands-on-large-language-models">研究文件</a>
+        <a href="https://github.com/HandsOnLLM/Hands-On-Large-Language-Models">上游源码 ↗</a>
+      </nav>
+    </header>
+
+    <main id="content" class="project-main">
+      <section class="project-hero" aria-labelledby="project-title">
+        <p class="eyebrow">PROJECT 01 · STATIC EVIDENCE VERIFIED</p>
+        <h1 id="project-title">Hands-On<br><span>Large Language Models</span></h1>
+        <p class="project-lead">这不是一个可直接部署的AI产品，而是一套以12个Jupyter Notebook组织的大模型实验课程。我们的研究目标，是把分散的教学代码整理成可验证的能力地图，再逐项完成运行、评测与工程化。</p>
+        <div class="metric-grid" aria-label="代码分析摘要">
+          <div><strong>12</strong><span>NOTEBOOKS</span></div>
+          <div><strong>325</strong><span>CODE CELLS</span></div>
+          <div><strong>178</strong><span>MARKDOWN CELLS</span></div>
+          <div><strong>2.0</strong><span>APACHE LICENSE</span></div>
+        </div>
+        <div class="verification-note">
+          <span class="signal" aria-hidden="true"></span>
+          <p><strong>当前证据边界</strong>：目录、代码单元、模型、数据集和依赖已经静态核查；GPU实验、API调用和效果指标尚未宣称通过。</p>
+        </div>
+        <nav class="page-entry" aria-label="本页阅读入口">
+          <a href="#positioning"><span>01</span><strong>项目介绍</strong><small>先判断它是什么</small></a>
+          <a href="#capabilities"><span>02</span><strong>能力演示</strong><small>按源码看12章能力</small></a>
+          <a href="#work-guide"><span>03</span><strong>研究方法</strong><small>知道如何验证能力</small></a>
+          <a href="#next-work"><span>04</span><strong>下一步工作</strong><small>从最小复现开始</small></a>
+        </nav>
+      </section>
+
+      <section id="positioning" class="research-section" aria-labelledby="positioning-title">
+        <div class="section-kicker">01 / 定位</div>
+        <div class="section-content">
+          <h2 id="positioning-title">它真正提供的是一条LLM实践路径。</h2>
+          <p class="section-intro">源码从“加载一个模型”开始，逐步走到检索增强、多模态和参数高效微调。每章可以独立运行，但仓库本身没有把它们组合成统一产品。</p>
+          <div class="principle-flow" aria-label="大模型能力主线">
+            <div><span>01</span><strong>生成</strong><p>Tokenizer、Transformer、采样与KV Cache</p></div>
+            <div><span>02</span><strong>表征</strong><p>Embedding、相似度、分类、聚类与检索</p></div>
+            <div><span>03</span><strong>增强</strong><p>工具、Agent、向量搜索、重排与RAG</p></div>
+            <div><span>04</span><strong>适配</strong><p>监督训练、LoRA、量化与偏好优化</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="capabilities" class="research-section" aria-labelledby="capability-title">
+        <div class="section-kicker">02 / 能力地图</div>
+        <div class="section-content">
+          <h2 id="capability-title">12章代码，四组能力。</h2>
+          <div class="chapter-grid">
+            <a class="chapter-card" href="https://github.com/HandsOnLLM/Hands-On-Large-Language-Models/tree/main/chapter01">
+              <span>CH 01—03</span><h3>模型基础</h3><p>Phi-3运行、Token与Embedding、logits、采样、解码和KV Cache。</p>
+              <small>Transformers · DeBERTa · SentenceTransformers</small>
+            </a>
+            <a class="chapter-card" href="https://github.com/HandsOnLLM/Hands-On-Large-Language-Models/tree/main/chapter04">
+              <span>CH 04—05</span><h3>文本理解</h3><p>监督与零样本分类、向量分类、UMAP/HDBSCAN聚类和BERTopic。</p>
+              <small>Rotten Tomatoes · ArXiv NLP · Flan-T5</small>
+            </a>
+            <a class="chapter-card" href="https://github.com/HandsOnLLM/Hands-On-Large-Language-Models/tree/main/chapter06">
+              <span>CH 06—08</span><h3>生成与检索</h3><p>提示工程、Chain、记忆、Agent、FAISS、BM25、重排和RAG。</p>
+              <small>LangChain · Cohere · LlamaCpp</small>
+            </a>
+            <a class="chapter-card" href="https://github.com/HandsOnLLM/Hands-On-Large-Language-Models/tree/main/chapter09">
+              <span>CH 09</span><h3>多模态</h3><p>图文共同向量空间、图像相似检索、图片描述与视觉问答。</p>
+              <small>CLIP · BLIP-2</small>
+            </a>
+            <a class="chapter-card" href="https://github.com/HandsOnLLM/Hands-On-Large-Language-Models/tree/main/chapter10">
+              <span>CH 10—11</span><h3>表征训练</h3><p>Embedding训练与MTEB评估、BERT分类、SetFit、MLM和NER。</p>
+              <small>SentenceTransformerTrainer · SetFit · CoNLL</small>
+            </a>
+            <a class="chapter-card" href="https://github.com/HandsOnLLM/Hands-On-Large-Language-Models/tree/main/chapter12">
+              <span>CH 12</span><h3>生成微调</h3><p>TinyLlama量化、LoRA/QLoRA、监督微调和DPO偏好训练。</p>
+              <small>PEFT · TRL · bitsandbytes</small>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="work-guide" class="research-section" aria-labelledby="method-title">
+        <div class="section-kicker">03 / 工作指导</div>
+        <div class="section-content">
+          <h2 id="method-title">从“看起来能做”走到“证明确实能做”。</h2>
+          <ol class="method-list">
+            <li><span>01</span><div><strong>静态盘点</strong><p>固定上游提交，解析Notebook代码，识别模型、数据集、依赖、API和工程缺口。</p></div><em>已完成</em></li>
+            <li><span>02</span><div><strong>最小复现</strong><p>从空环境运行每章最小实验，记录输入、输出、硬件、耗时、显存和失败方式。</p></div><em>下一步</em></li>
+            <li><span>03</span><div><strong>统一评测</strong><p>为分类、检索、RAG、多模态和微调建立基线、数据切片与量化指标。</p></div><em>待开展</em></li>
+            <li><span>04</span><div><strong>跨章整合</strong><p>将分散示例组合成中文知识库问答，补齐模块、测试、API、日志和部署。</p></div><em>待开展</em></li>
+            <li><span>05</span><div><strong>研究增量</strong><p>加入中文模型、现代依赖、成本对比、失败案例和在线交互展示。</p></div><em>待开展</em></li>
+          </ol>
+          <a class="text-link" href="https://github.com/yydshly/0823_githubcode_study/blob/main/projects/hands-on-large-language-models/ANALYSIS_METHOD.md">阅读完整分析规范 ↗</a>
+        </div>
+      </section>
+
+      <section class="research-section" aria-labelledby="boundary-title">
+        <div class="section-kicker">04 / 边界</div>
+        <div class="section-content">
+          <h2 id="boundary-title">教学代码不是生产系统。</h2>
+          <dl class="reality-grid">
+            <div><dt>已经证明</dt><dd>仓库真实覆盖生成、Embedding、分类、聚类、RAG、多模态和微调代码路径。</dd></div>
+            <div><dt>尚未证明</dt><dd>这些Notebook在我们的网络、硬件和当前API环境中能够逐章无修改运行。</dd></div>
+            <div><dt>原仓库缺少</dt><dd>统一服务入口、端到端测试、数据库、权限、监控、成本控制和生产部署。</dd></div>
+            <div><dt>我们的机会</dt><dd>把教材实验变成中文、可评测、可复现、可部署的大模型能力样板。</dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <section id="next-work" class="next-banner" aria-labelledby="next-title">
+        <p class="eyebrow">NEXT EXPERIMENT</p>
+        <h2 id="next-title">先验证基础，再追求复杂。</h2>
+        <p>下一阶段从第1—3章的CPU/GPU最小冒烟测试开始，建立统一实验记录，然后进入分类、主题建模和RAG评测。</p>
+        <div class="banner-links">
+          <a href="https://github.com/yydshly/0823_githubcode_study/tree/main/projects/hands-on-large-language-models">查看研究文件</a>
+          <a href="https://github.com/HandsOnLLM/Hands-On-Large-Language-Models">查看上游源码</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>PROJECT 01 · CODE EVIDENCE BEFORE CLAIMS</footer>
+  </body>
+</html>

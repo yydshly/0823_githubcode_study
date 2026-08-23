@@ -8,9 +8,8 @@
 
 | 子项目 | 研究方向 | 当前阶段 | 研究记录 | 在线展示 |
 | --- | --- | --- | --- | --- |
-| 暂无 | 等待添加首个研究项目 | 待开始 | — | — |
-
-> 添加第一个子项目时，用真实项目行替换上面的占位行，并保持这里作为整个仓库的导航入口。
+| Hands-On Large Language Models | LLM能力地图、RAG、多模态与微调 | 研究中 | [研究记录](projects/hands-on-large-language-models/README.md) | [能力展示](https://yydshly.github.io/0823_githubcode_study/projects/hands-on-large-language-models.html) |
+| HyperFrames Launches | HTML 原生视频、动效、WebGL、音频与 Agent 视频工作流 | 研究中 | [研究记录](projects/hyperframes-launches/README.md) | [能力展示](https://yydshly.github.io/0823_githubcode_study/projects/hyperframes-launches.html) |
 
 ## 仓库结构
 
@@ -43,6 +42,10 @@
 2. 完成项目 README，固定上游版本或提交哈希。
 3. 在本页“项目索引”中加入项目入口。
 4. 若有可公开展示的成果，在 `docs/` 中增加对应页面和链接。
+
+## 当前研究
+
+首个子项目以 [HandsOnLLM/Hands-On-Large-Language-Models](https://github.com/HandsOnLLM/Hands-On-Large-Language-Models) 为研究对象。上游源码通过 Git submodule 固定到提交 `ea3390819997999a51983677b80b3aac4dc50ada`，研究重点不是复述教材目录，而是从 12 个 Notebook 的代码单元中提取模型、数据集、依赖、技术能力和工程边界。
 
 ## 在线展示
 

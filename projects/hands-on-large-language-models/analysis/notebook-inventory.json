@@ -1,0 +1,365 @@
+{
+  "schemaVersion": 1,
+  "upstream": "https://github.com/HandsOnLLM/Hands-On-Large-Language-Models",
+  "upstreamCommit": "ea3390819997999a51983677b80b3aac4dc50ada",
+  "summary": {
+    "notebooks": 12,
+    "codeCells": 325,
+    "markdownCells": 178
+  },
+  "notebooks": [
+    {
+      "path": "chapter01/Chapter 1 - Introduction to Language Models.ipynb",
+      "sha256": "322678dd3b3ce411c18d913dcc9ef2ced8bae8f188d214ad836fd37d3b1e9d79",
+      "codeCells": 4,
+      "markdownCells": 6,
+      "imports": [
+        "from transformers import AutoModelForCausalLM, AutoTokenizer",
+        "from transformers import pipeline"
+      ],
+      "modelReferences": [
+        "microsoft/Phi-3-mini-4k-instruct"
+      ],
+      "datasetReferences": [],
+      "techniques": [
+        "embeddings",
+        "text_generation",
+        "tokenization"
+      ]
+    },
+    {
+      "path": "chapter02/Chapter 2 - Tokens and Token Embeddings.ipynb",
+      "sha256": "9cddced61e35ed7c2f33f274ed560b881bf39a4e77725f740be1a814ef71759e",
+      "codeCells": 33,
+      "markdownCells": 8,
+      "imports": [
+        "from gensim.models import Word2Vec",
+        "from sentence_transformers import SentenceTransformer",
+        "from transformers import AutoModel, AutoTokenizer",
+        "from transformers import AutoModelForCausalLM, AutoTokenizer",
+        "from urllib import request",
+        "import gensim.downloader as api",
+        "import numpy as np",
+        "import pandas as pd"
+      ],
+      "modelReferences": [
+        "microsoft/Phi-3-mini-4k-instruct",
+        "microsoft/deberta-base",
+        "microsoft/deberta-v3-xsmall",
+        "sentence-transformers/all-mpnet-base-v2"
+      ],
+      "datasetReferences": [],
+      "techniques": [
+        "embeddings",
+        "text_generation",
+        "tokenization"
+      ]
+    },
+    {
+      "path": "chapter03/Chapter 3 - Looking Inside LLMs.ipynb",
+      "sha256": "18387db1dc3841673d8c0693a540dab9b0733881147b5aebb8ccbf924beceb3c",
+      "codeCells": 11,
+      "markdownCells": 6,
+      "imports": [
+        "from transformers import AutoModelForCausalLM, AutoTokenizer, pipeline"
+      ],
+      "modelReferences": [
+        "microsoft/Phi-3-mini-4k-instruct"
+      ],
+      "datasetReferences": [],
+      "techniques": [
+        "embeddings",
+        "text_generation",
+        "tokenization"
+      ]
+    },
+    {
+      "path": "chapter04/Chapter 4 - Text Classification.ipynb",
+      "sha256": "d4bd7d063526b50ff11d54bd0e08add906fda080a529990bb3beac8f2529995f",
+      "codeCells": 24,
+      "markdownCells": 14,
+      "imports": [
+        "from datasets import load_dataset",
+        "from sentence_transformers import SentenceTransformer",
+        "from sklearn.linear_model import LogisticRegression",
+        "from sklearn.metrics import classification_report",
+        "from sklearn.metrics.pairwise import cosine_similarity",
+        "from tqdm import tqdm",
+        "from transformers import pipeline",
+        "from transformers.pipelines.pt_utils import KeyDataset",
+        "import numpy as np",
+        "import openai",
+        "import pandas as pd"
+      ],
+      "modelReferences": [
+        "google/flan-t5-small",
+        "sentence-transformers/all-mpnet-base-v2"
+      ],
+      "datasetReferences": [
+        "rotten_tomatoes"
+      ],
+      "techniques": [
+        "classification",
+        "embeddings",
+        "text_generation"
+      ]
+    },
+    {
+      "path": "chapter05/Chapter 5 - Text Clustering and Topic Modeling.ipynb",
+      "sha256": "80ec73faaab5209dea363422799796484013ff3ee01a45fee561d7b94fa7d3b5",
+      "codeCells": 26,
+      "markdownCells": 32,
+      "imports": [
+        "from bertopic import BERTopic",
+        "from bertopic.representation import KeyBERTInspired",
+        "from bertopic.representation import MaximalMarginalRelevance",
+        "from bertopic.representation import OpenAI",
+        "from bertopic.representation import TextGeneration",
+        "from copy import deepcopy",
+        "from datasets import load_dataset",
+        "from hdbscan import HDBSCAN",
+        "from sentence_transformers import SentenceTransformer",
+        "from transformers import pipeline",
+        "from umap import UMAP",
+        "from wordcloud import WordCloud",
+        "import matplotlib.pyplot as plt",
+        "import numpy as np",
+        "import openai",
+        "import pandas as pd"
+      ],
+      "modelReferences": [
+        "google/flan-t5-small",
+        "thenlper/gte-small"
+      ],
+      "datasetReferences": [
+        "maartengr/arxiv_nlp"
+      ],
+      "techniques": [
+        "clustering",
+        "embeddings",
+        "text_generation",
+        "topic_modeling"
+      ]
+    },
+    {
+      "path": "chapter06/Chapter 6 - Prompt Engineering.ipynb",
+      "sha256": "ceee4b14e7c840b5b4d09cd72dc30b6d4270343fc467ca9ea03277b3adc1098f",
+      "codeCells": 25,
+      "markdownCells": 16,
+      "imports": [
+        "from llama_cpp.llama import Llama",
+        "from transformers import AutoModelForCausalLM, AutoTokenizer, pipeline",
+        "import gc",
+        "import json",
+        "import torch"
+      ],
+      "modelReferences": [
+        "microsoft/Phi-3-mini-4k-instruct"
+      ],
+      "datasetReferences": [],
+      "techniques": [
+        "embeddings",
+        "prompt_engineering",
+        "text_generation",
+        "tokenization"
+      ]
+    },
+    {
+      "path": "chapter07/Chapter 7 - Advanced Text Generation Techniques and Tools.ipynb",
+      "sha256": "dcbec773668cfeb9f8c72be4c173e1c1772652cea2e9e4508e206762bf455ace",
+      "codeCells": 33,
+      "markdownCells": 10,
+      "imports": [
+        "from langchain import LLMChain",
+        "from langchain import LlamaCpp",
+        "from langchain import PromptTemplate",
+        "from langchain.agents import AgentExecutor, create_react_agent",
+        "from langchain.agents import load_tools, Tool",
+        "from langchain.memory import ConversationBufferMemory",
+        "from langchain.memory import ConversationBufferWindowMemory",
+        "from langchain.memory import ConversationSummaryMemory",
+        "from langchain.tools import DuckDuckGoSearchResults",
+        "from langchain_openai import ChatOpenAI",
+        "import os"
+      ],
+      "modelReferences": [],
+      "datasetReferences": [],
+      "techniques": [
+        "agents"
+      ]
+    },
+    {
+      "path": "chapter08/Chapter 8 - Semantic Search.ipynb",
+      "sha256": "f309f4cb335b57399cdc65d8897d09533063b94143fe24c519287d4770bfd5b5",
+      "codeCells": 25,
+      "markdownCells": 16,
+      "imports": [
+        "from langchain import LlamaCpp",
+        "from langchain import PromptTemplate",
+        "from langchain.chains import RetrievalQA",
+        "from langchain.embeddings.huggingface import HuggingFaceEmbeddings",
+        "from langchain.vectorstores import FAISS",
+        "from rank_bm25 import BM25Okapi",
+        "from sklearn.feature_extraction import _stop_words",
+        "from tqdm import tqdm",
+        "import cohere",
+        "import faiss",
+        "import numpy as np",
+        "import pandas as pd",
+        "import string"
+      ],
+      "modelReferences": [],
+      "datasetReferences": [],
+      "techniques": [
+        "rag",
+        "vector_search"
+      ]
+    },
+    {
+      "path": "chapter09/Chapter 9 - Multimodal Large Language Models.ipynb",
+      "sha256": "4fbab07c15f9f768dc72b7f9fb476304a3aa8cd4ebd8364e52d4e74de3165f30",
+      "codeCells": 31,
+      "markdownCells": 11,
+      "imports": [
+        "from IPython.display import HTML, display",
+        "from PIL import Image",
+        "from sentence_transformers import SentenceTransformer, util",
+        "from sklearn.metrics.pairwise import cosine_similarity",
+        "from sklearn.preprocessing import MinMaxScaler",
+        "from transformers import AutoProcessor, Blip2ForConditionalGeneration",
+        "from transformers import CLIPTokenizerFast, CLIPProcessor, CLIPModel",
+        "from urllib.request import urlopen",
+        "import ipywidgets as widgets",
+        "import matplotlib.pyplot as plt",
+        "import numpy as np",
+        "import torch"
+      ],
+      "modelReferences": [
+        "Salesforce/blip2-opt-2.7b",
+        "clip-ViT-B-32"
+      ],
+      "datasetReferences": [],
+      "techniques": [
+        "embeddings",
+        "multimodal",
+        "tokenization"
+      ]
+    },
+    {
+      "path": "chapter10/Chapter 10 - Creating Text Embedding Models.ipynb",
+      "sha256": "912b46f1e1366a4d6562960716ecad6291e331890a89e30c5e5ea4f6d181c5d9",
+      "codeCells": 49,
+      "markdownCells": 29,
+      "imports": [
+        "from datasets import Dataset, load_dataset",
+        "from datasets import load_dataset",
+        "from datasets import load_dataset, Dataset",
+        "from mteb import MTEB",
+        "from sentence_transformers import InputExample",
+        "from sentence_transformers import SentenceTransformer",
+        "from sentence_transformers import losses",
+        "from sentence_transformers import losses, SentenceTransformer",
+        "from sentence_transformers import models, SentenceTransformer",
+        "from sentence_transformers.cross_encoder import CrossEncoder",
+        "from sentence_transformers.datasets import DenoisingAutoEncoderDataset",
+        "from sentence_transformers.datasets import NoDuplicatesDataLoader",
+        "from sentence_transformers.evaluation import EmbeddingSimilarityEvaluator",
+        "from sentence_transformers.trainer import SentenceTransformerTrainer",
+        "from sentence_transformers.training_args import SentenceTransformerTrainingArguments",
+        "from tqdm import tqdm",
+        "import gc",
+        "import nltk",
+        "import numpy as np",
+        "import pandas as pd",
+        "import random",
+        "import torch"
+      ],
+      "modelReferences": [
+        "bert-base-uncased",
+        "sentence-transformers/all-MiniLM-L6-v2"
+      ],
+      "datasetReferences": [
+        "glue"
+      ],
+      "techniques": [
+        "embedding_training",
+        "embeddings",
+        "fine_tuning"
+      ]
+    },
+    {
+      "path": "chapter11/Chapter 11 - Fine-Tuning BERT.ipynb",
+      "sha256": "596e684ca5c96720520a5a0b78d55beef0e86e639f3c260c3b1025403b8de097",
+      "codeCells": 48,
+      "markdownCells": 15,
+      "imports": [
+        "from datasets import load_dataset",
+        "from setfit import SetFitModel",
+        "from setfit import Trainer as SetFitTrainer",
+        "from setfit import TrainingArguments as SetFitTrainingArguments",
+        "from setfit import sample_dataset",
+        "from transformers import AutoModelForTokenClassification",
+        "from transformers import AutoModelForTokenClassification, AutoTokenizer",
+        "from transformers import AutoTokenizer, AutoModelForMaskedLM",
+        "from transformers import AutoTokenizer, AutoModelForSequenceClassification",
+        "from transformers import DataCollatorForLanguageModeling",
+        "from transformers import DataCollatorForTokenClassification",
+        "from transformers import DataCollatorWithPadding",
+        "from transformers import TrainingArguments, Trainer",
+        "from transformers import pipeline",
+        "import evaluate",
+        "import numpy as np"
+      ],
+      "modelReferences": [
+        "sentence-transformers/all-mpnet-base-v2"
+      ],
+      "datasetReferences": [
+        "conll2003",
+        "rotten_tomatoes"
+      ],
+      "techniques": [
+        "classification",
+        "embeddings",
+        "fine_tuning",
+        "tokenization"
+      ]
+    },
+    {
+      "path": "chapter12/Chapter 12 - Fine-tuning Generation Models.ipynb",
+      "sha256": "7e769386147bf8cda0575ecb9f8a427d2580defc2155e2862c8e517c3b8abb04",
+      "codeCells": 16,
+      "markdownCells": 15,
+      "imports": [
+        "from datasets import load_dataset",
+        "from peft import AutoPeftModelForCausalLM",
+        "from peft import LoraConfig, prepare_model_for_kbit_training, get_peft_model",
+        "from peft import PeftModel",
+        "from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig",
+        "from transformers import AutoTokenizer",
+        "from transformers import BitsAndBytesConfig, AutoTokenizer",
+        "from transformers import TrainingArguments",
+        "from transformers import pipeline",
+        "from trl import DPOConfig",
+        "from trl import DPOTrainer",
+        "from trl import SFTTrainer",
+        "import torch"
+      ],
+      "modelReferences": [
+        "TinyLlama/TinyLlama-1.1B-Chat-v1.0"
+      ],
+      "datasetReferences": [
+        "HuggingFaceH4/ultrachat_200k",
+        "argilla/distilabel-intel-orca-dpo-pairs"
+      ],
+      "techniques": [
+        "embeddings",
+        "fine_tuning",
+        "lora",
+        "preference_tuning",
+        "prompt_engineering",
+        "text_generation",
+        "tokenization"
+      ]
+    }
+  ]
+}

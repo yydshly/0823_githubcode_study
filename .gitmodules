@@ -1,0 +1,3 @@
+[submodule "hands-on-llm-upstream"]
+	path = projects/hands-on-large-language-models/upstream
+	url = https://github.com/HandsOnLLM/Hands-On-Large-Language-Models.git
