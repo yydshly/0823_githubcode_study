@@ -52,7 +52,7 @@
             <li><span>02</span><p><strong>建议 T4 16GB</strong>这是上游给出的最稳定入门环境。</p></li>
             <li><span>03</span><p><strong>先观察生成链路</strong>Tokenizer → logits → decoding → cache。</p></li>
           </ol>
-          <div class="start-status"><span aria-hidden="true"></span><p><strong>本库进度</strong>：12章代码已盘点；第1—3章已有4个低成本练习。</p></div>
+          <div class="start-status"><span aria-hidden="true"></span><p><strong>本库进度</strong>：12章代码已盘点；第1—4章已有5个低成本练习。</p></div>
         </aside>
       </section>
 
@@ -71,8 +71,8 @@
 
         <div class="research-status" aria-label="当前研究状态">
           <div><span>12 / 12</span><p>Notebook代码已核查</p></div>
-          <div><span>4</span><p>第1—3章实践已运行</p></div>
-          <div><span>NEXT</span><p>第4章文本分类</p></div>
+          <div><span>5</span><p>第1—4章实践已运行</p></div>
+          <div><span>NEXT</span><p>第5章主题建模</p></div>
           <div><span>BOUNDARY</span><p>Phi-3原权重尚未复现</p></div>
         </div>
 
@@ -167,7 +167,7 @@
 
       <section id="labs" class="workspace-section" aria-labelledby="labs-title">
         <header class="section-header">
-          <div><p class="section-label">03 / PRACTICE LABS</p><h2 id="labs-title">先做四个最小练习。</h2></div>
+          <div><p class="section-label">03 / PRACTICE LABS</p><h2 id="labs-title">先做五个最小练习。</h2></div>
           <p>默认只展开一个，避免页面变成结果墙。每个练习都保留预测、观察、解释、继续修改和证据。</p>
         </header>
 
@@ -192,8 +192,14 @@
             <summary><span class="lab-index">04</span><div><small>CH 03 · KV CACHE</small><h3>记住历史计算为什么能加快生成？</h3></div><p><strong>3.78×</strong><span>本轮CPU代理测试</span></p></summary>
             <div class="lab-body"><div class="lab-grid"><article><span>先预测</span><p>生成新Token时，是否需要重新计算前面的全部Token？</p></article><article><span>动手</span><p>比较120个输入Token在有缓存和无缓存路径下的增量生成。</p></article><article><span>观察</span><p>无缓存5.5855秒；有缓存1.4778秒；保存30层past_key_values。</p></article><article><span>解释</span><p>KV Cache用内存换计算，避免重复处理完整历史。</p></article></div><div class="lab-next"><p><strong>继续修改</strong>：使用30、60和120个输入Token，画出耗时变化。</p><p><strong>理解检查</strong>：能同时说明加速原因和内存代价吗？</p></div><p class="evidence-links"><a href="https://github.com/HandsOnLLM/Hands-On-Large-Language-Models/tree/ea3390819997999a51983677b80b3aac4dc50ada/chapter03">章节源码</a><a href="https://github.com/yydshly/0823_githubcode_study/blob/main/projects/hands-on-large-language-models/experiments/phase-01-foundations/run_smoke.py">缓存代码</a><a href="https://github.com/yydshly/0823_githubcode_study/blob/main/projects/hands-on-large-language-models/experiments/phase-01-foundations/results/smoke-results.json">计时结果</a></p></div>
           </details>
+          <details class="lab-card">
+            <summary><span class="lab-index">05</span><div><small>CH 04 · CLASSIFICATION</small><h3>同一个Embedding，监督信息怎样改变判断？</h3></div><p><strong>0.5726 → 0.7348</strong><span>零样本到监督分类的Macro-F1</span></p></summary>
+            <div class="lab-body"><div class="lab-grid"><article><span>先预测</span><p>只用两个标签短语应最弱；看过真实评论后，类别中心和逻辑回归应明显提升。</p></article><article><span>动手</span><p>固定MiniLM向量、400条训练评论和200条测试评论，只改变标签证据与决策方式。</p></article><article><span>观察</span><p>零样本0.5726；类别中心0.7248；逻辑回归0.7348。零样本把70条负面评论误判为正面。</p></article><article><span>解释</span><p>主要增益来自见过任务数据；在这组向量上，学习线性边界只比类别中心再提高约0.01。</p></article></div>
+              <div class="lab-next"><p><strong>继续修改</strong>：改写正负标签，或把每类训练量改成20、50、100、200，观察学习曲线。</p><p><strong>理解检查</strong>：能解释为什么三种方法使用相同Embedding，却得到不同结果吗？</p></div>
+              <p class="evidence-links"><a href="https://github.com/HandsOnLLM/Hands-On-Large-Language-Models/tree/ea3390819997999a51983677b80b3aac4dc50ada/chapter04">章节源码</a><a href="https://github.com/yydshly/0823_githubcode_study/tree/main/projects/hands-on-large-language-models/experiments/phase-02-classification">实验说明</a><a href="https://github.com/yydshly/0823_githubcode_study/blob/main/projects/hands-on-large-language-models/experiments/phase-02-classification/run_classification.py">复现脚本</a><a href="https://github.com/yydshly/0823_githubcode_study/blob/main/projects/hands-on-large-language-models/experiments/phase-02-classification/results/classification-results.json">结果JSON</a></p></div>
+          </details>
         </div>
-        <p class="boundary-note"><strong>证据边界</strong>：Phi-3 Tokenizer属于直接运行；生成、logits和KV Cache使用135M小模型代理相同代码路径，不代表Phi-3质量或性能已经复现。</p>
+        <p class="boundary-note"><strong>证据边界</strong>：第1—3章的生成、logits和KV Cache使用135M代理模型；第4章用MiniLM代理上游mpnet，并采用400/200平衡子集。两者都是机制实践，不是原模型完整基准。</p>
       </section>
 
       <section id="setup" class="workspace-section" aria-labelledby="setup-title">

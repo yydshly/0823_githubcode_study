@@ -11,7 +11,7 @@
 | 获取方式 | Git submodule：`upstream/` |
 | 许可证 | Apache-2.0；外部模型与数据集需分别核查许可证 |
 | 开始日期 | 2026-08-23 |
-| 当前状态 | 研究中：静态能力盘点完成；第 1—3 章低成本基础实验已通过 |
+| 当前状态 | 研究中：静态能力盘点完成；第 1—4 章共 5 个低成本实践已通过 |
 | 在线展示 | [能力研究页](https://yydshly.github.io/0823_githubcode_study/projects/hands-on-large-language-models.html) |
 
 ## 定位结论
@@ -63,6 +63,20 @@
 
 完整命令、失败修复和证据见 [`experiments/phase-01-foundations/`](experiments/phase-01-foundations/)；机器结果见 [`results/smoke-results.json`](experiments/phase-01-foundations/results/smoke-results.json)。
 
+## 第4章文本分类实践
+
+2026-08-24 完成第4章 Embedding 分类实验。实验固定 MiniLM 句向量、400条平衡训练评论和200条平衡测试评论，只改变标签证据与决策方法：
+
+| 方法 | Macro-F1 | 说明 |
+| --- | ---: | --- |
+| 零样本标签向量 | 0.5726 | 只编码正负两个标签短语；负面评论明显被误判为正面 |
+| 类别中心 | 0.7248 | 用400条带标签评论形成两个平均向量 |
+| Embedding + 逻辑回归 | 0.7348 | 用同一批向量学习线性决策边界 |
+
+监督逻辑回归比零样本方案提高0.1622 Macro-F1，说明主要增益来自真实任务样本。逻辑回归只比类别中心高约0.01，也说明在这次小实验中，复杂分类器不是主要变化来源。
+
+本轮使用 `all-MiniLM-L6-v2` 代理上游 `all-mpnet-base-v2`，没有运行任务专用 RoBERTa、Flan-T5 和 ChatGPT。完整预测、解释、复现命令和边界见 [`experiments/phase-02-classification/`](experiments/phase-02-classification/)；机器结果见 [`classification-results.json`](experiments/phase-02-classification/results/classification-results.json)。
+
 ## 代码层面的真实边界
 
 - 全部核心示例都是 Notebook，没有统一的 Python 包、服务入口或 Web 应用。
@@ -86,14 +100,16 @@
 - [`analysis/notebook-inventory.json`](analysis/notebook-inventory.json)：固定版本的机器可读能力证据。
 - [`experiments/phase-01-foundations/`](experiments/phase-01-foundations/)：第 1—3 章低成本运行脚本、依赖与实验说明。
 - [`results/smoke-results.json`](experiments/phase-01-foundations/results/smoke-results.json)：首轮机器可读运行证据。
+- [`experiments/phase-02-classification/`](experiments/phase-02-classification/)：第4章三种Embedding分类策略、复现脚本与理解检查。
+- [`classification-results.json`](experiments/phase-02-classification/results/classification-results.json)：第4章机器可读评测、混淆矩阵、探针句与失败样本。
 - [`upstream/`](upstream/)：固定在指定提交的上游源代码。
 
 ## 下一阶段
 
 按照由低成本到高成本的顺序执行：
 
-1. 为第 4、5、8 章建立统一的小数据集切片、基线与评测指标。
-2. 先复现第 4 章分类，比较监督分类、Embedding 分类和零样本分类。
-3. 再复现第 5 章主题建模，记录离群率、主题一致性和人工判断。
-4. 将第 8 章整理成可评测、可部署的中文 RAG 演示。
-5. 在更大显存环境中补做 Phi-3 原模型复现，再进入第 9—12 章。
+1. 进入第5章主题建模，记录离群率、主题表示与人工判断。
+2. 复用第4章的数据切片与指标结构，建立第5、8章可比较的实验记录。
+3. 将第8章整理成可评测、可部署的中文RAG演示。
+4. 为第4章增加训练样本量学习曲线和 `all-mpnet-base-v2` 对照。
+5. 在更大显存环境中补做 Phi-3 原模型复现，再进入第9—12章。

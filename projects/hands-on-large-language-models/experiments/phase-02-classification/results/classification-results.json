@@ -1,0 +1,192 @@
+{
+  "schemaVersion": 1,
+  "experiment": "chapter-04-embedding-classification",
+  "status": "pass",
+  "recordedAt": "2026-08-23T19:18:32.391053+00:00",
+  "source": {
+    "upstreamCommit": "ea3390819997999a51983677b80b3aac4dc50ada",
+    "notebook": "chapter04/Chapter 4 - Text Classification.ipynb",
+    "mirroredCells": [
+      14,
+      16,
+      17,
+      19,
+      21,
+      22,
+      23
+    ]
+  },
+  "question": "How does adding labeled evidence change classification on fixed embeddings?",
+  "predictionBeforeRun": [
+    "Zero-shot label embeddings will be weakest because two short labels do not describe review language well.",
+    "Class centroids will improve after seeing labeled review examples.",
+    "Logistic regression will perform best by learning a supervised boundary."
+  ],
+  "controlledVariables": {
+    "dataset": "rotten_tomatoes",
+    "proxyModel": "sentence-transformers/all-MiniLM-L6-v2",
+    "upstreamModel": "sentence-transformers/all-mpnet-base-v2",
+    "trainRows": 400,
+    "testRows": 200,
+    "balancedLabels": true,
+    "seed": 42
+  },
+  "datasetSizes": {
+    "train": 8530,
+    "validation": 1066,
+    "test": 1066
+  },
+  "methods": {
+    "zeroShotLabelEmbeddings": {
+      "supervision": "No labeled training rows",
+      "accuracy": 0.615,
+      "macroF1": 0.5726,
+      "confusionMatrix": [
+        [
+          30,
+          70
+        ],
+        [
+          7,
+          93
+        ]
+      ]
+    },
+    "classCentroids": {
+      "supervision": "400 labeled rows summarized into two means",
+      "accuracy": 0.725,
+      "macroF1": 0.7248,
+      "confusionMatrix": [
+        [
+          75,
+          25
+        ],
+        [
+          30,
+          70
+        ]
+      ]
+    },
+    "logisticRegression": {
+      "supervision": "400 labeled rows fit a linear decision boundary",
+      "accuracy": 0.735,
+      "macroF1": 0.7348,
+      "confusionMatrix": [
+        [
+          76,
+          24
+        ],
+        [
+          29,
+          71
+        ]
+      ]
+    }
+  },
+  "rankingByMacroF1": [
+    "logisticRegression",
+    "classCentroids",
+    "zeroShotLabelEmbeddings"
+  ],
+  "hypothesisAssessment": {
+    "supervisedMinusZeroShotMacroF1": 0.1622,
+    "outcome": "confirmed"
+  },
+  "probeSentences": [
+    {
+      "text": "A dazzling performance and a story that stays with you.",
+      "expected": 1,
+      "predictions": {
+        "zeroShotLabelEmbeddings": 1,
+        "classCentroids": 1,
+        "logisticRegression": 1
+      }
+    },
+    {
+      "text": "The acting is polished, but the story is painfully dull.",
+      "expected": 0,
+      "predictions": {
+        "zeroShotLabelEmbeddings": 1,
+        "classCentroids": 0,
+        "logisticRegression": 0
+      }
+    },
+    {
+      "text": "Not a bad movie at all; I would gladly watch it again.",
+      "expected": 1,
+      "predictions": {
+        "zeroShotLabelEmbeddings": 1,
+        "classCentroids": 1,
+        "logisticRegression": 1
+      }
+    },
+    {
+      "text": "It looks expensive and still manages to be boring.",
+      "expected": 0,
+      "predictions": {
+        "zeroShotLabelEmbeddings": 0,
+        "classCentroids": 0,
+        "logisticRegression": 0
+      }
+    }
+  ],
+  "firstSupervisedErrors": [
+    {
+      "text": "not once in the rush to save the day did i become very involved in the proceedings ; to me , it was just a matter of 'eh . '",
+      "expected": 0,
+      "predicted": 1
+    },
+    {
+      "text": "this is popcorn movie fun with equal doses of action , cheese , ham and cheek ( as well as a serious debt to the road warrior ) , but it feels like unrealized potential",
+      "expected": 1,
+      "predicted": 0
+    },
+    {
+      "text": "tends to pile too many \" serious issues \" on its plate at times , yet remains fairly light , always entertaining , and smartly written .",
+      "expected": 1,
+      "predicted": 0
+    },
+    {
+      "text": "some of the most inventive silliness you are likely to witness in a movie theatre for some time .",
+      "expected": 1,
+      "predicted": 0
+    },
+    {
+      "text": "would you laugh if a tuba-playing dwarf rolled down a hill in a trash can ? do you chuckle at the thought of an ancient librarian whacking a certain part of a man's body ? if you answered yes , by all means enjoy the new guy .",
+      "expected": 1,
+      "predicted": 0
+    }
+  ],
+  "timing": {
+    "encodingSeconds": 1.825,
+    "totalSeconds": 2.422
+  },
+  "environment": {
+    "python": "3.10.11",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "offlineMode": true,
+    "logicalCpuCount": 32,
+    "memoryGiB": 15.63,
+    "gpus": [
+      {
+        "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+        "memoryMiB": "8188",
+        "driverVersion": "576.28"
+      }
+    ],
+    "packages": {
+      "torch": "2.3.1+cpu",
+      "transformers": "4.41.2",
+      "sentenceTransformers": "3.0.1",
+      "datasets": "2.20.0",
+      "scikitLearn": "1.5.0",
+      "numpy": "1.26.4"
+    }
+  },
+  "boundaries": [
+    "The upstream all-mpnet-base-v2 model is replaced by all-MiniLM-L6-v2 for a low-cost CPU smoke test.",
+    "The experiment uses balanced subsets, not the full train and test splits.",
+    "Task-specific RoBERTa, Flan-T5 and paid ChatGPT paths are not benchmarked here.",
+    "One seeded run is evidence for mechanism understanding, not a production benchmark."
+  ]
+}
