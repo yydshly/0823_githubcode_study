@@ -11,7 +11,7 @@
 | 获取方式 | Git submodule：`upstream/` |
 | 许可证 | Apache-2.0；外部模型与数据集需分别核查许可证 |
 | 开始日期 | 2026-08-23 |
-| 当前状态 | 研究中：静态能力盘点完成；第 1—4 章共 5 个低成本实践已通过 |
+| 当前状态 | 研究中：静态能力盘点完成；第 1—5 章共 6 个低成本实践已通过 |
 | 在线展示 | [能力研究页](https://yydshly.github.io/0823_githubcode_study/projects/hands-on-large-language-models.html) |
 
 ## 定位结论
@@ -77,6 +77,19 @@
 
 本轮使用 `all-MiniLM-L6-v2` 代理上游 `all-mpnet-base-v2`，没有运行任务专用 RoBERTa、Flan-T5 和 ChatGPT。完整预测、解释、复现命令和边界见 [`experiments/phase-02-classification/`](experiments/phase-02-classification/)；机器结果见 [`classification-results.json`](experiments/phase-02-classification/results/classification-results.json)。
 
+## 第5章主题建模实践
+
+2026-08-24 完成第5章主题建模敏感性实验。实验使用上游同款 `thenlper/gte-small`，固定抽取600篇 arXiv NLP 论文，并固定 Embedding 与 UMAP，只把 HDBSCAN 的 `min_cluster_size` 从15改为40：
+
+| `min_cluster_size` | 非离群主题数 | 离群率 | 结果含义 |
+| ---: | ---: | ---: | --- |
+| 15 | 8 | 34.0% | 允许保留较小、较局部的文档群 |
+| 40 | 2 | 71.5% | 更严格地拒绝小群体，大量文档成为离群点 |
+
+两次划分的 Adjusted Rand Index 只有0.1528，说明所谓“主题结构”会被聚类尺度显著改变，不存在脱离参数的唯一答案。默认 c-TF-IDF 关键词还被 `the`、`and`、`to` 等词干扰，这次失败观察进一步说明：聚类形成文档组与正确命名主题是两层能力，必须检查组内论文，不能盲信自动标签。
+
+本轮只使用600 / 44,949篇固定子集；没有评测 KeyBERT、MMR、Flan-T5 与 OpenAI 主题标签。完整预测、分层原理、修改练习和离线复现见 [`experiments/phase-03-topic-modeling/`](experiments/phase-03-topic-modeling/)；机器结果见 [`topic-modeling-results.json`](experiments/phase-03-topic-modeling/results/topic-modeling-results.json)。
+
 ## 代码层面的真实边界
 
 - 全部核心示例都是 Notebook，没有统一的 Python 包、服务入口或 Web 应用。
@@ -102,14 +115,16 @@
 - [`results/smoke-results.json`](experiments/phase-01-foundations/results/smoke-results.json)：首轮机器可读运行证据。
 - [`experiments/phase-02-classification/`](experiments/phase-02-classification/)：第4章三种Embedding分类策略、复现脚本与理解检查。
 - [`classification-results.json`](experiments/phase-02-classification/results/classification-results.json)：第4章机器可读评测、混淆矩阵、探针句与失败样本。
+- [`experiments/phase-03-topic-modeling/`](experiments/phase-03-topic-modeling/)：第5章主题建模参数实验、分层解释与继续修改任务。
+- [`topic-modeling-results.json`](experiments/phase-03-topic-modeling/results/topic-modeling-results.json)：第5章主题数、离群率、ARI、主题词和样本文档。
 - [`upstream/`](upstream/)：固定在指定提交的上游源代码。
 
 ## 下一阶段
 
 按照由低成本到高成本的顺序执行：
 
-1. 进入第5章主题建模，记录离群率、主题表示与人工判断。
-2. 复用第4章的数据切片与指标结构，建立第5、8章可比较的实验记录。
+1. 进入第6章提示工程，区分提示结构改善与模型能力上限。
+2. 给第5章增加停用词过滤和 KeyBERT/MMR 表示对照，验证“聚类不变、解释改变”。
 3. 将第8章整理成可评测、可部署的中文RAG演示。
 4. 为第4章增加训练样本量学习曲线和 `all-mpnet-base-v2` 对照。
 5. 在更大显存环境中补做 Phi-3 原模型复现，再进入第9—12章。

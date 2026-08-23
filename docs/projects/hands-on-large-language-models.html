@@ -52,7 +52,7 @@
             <li><span>02</span><p><strong>建议 T4 16GB</strong>这是上游给出的最稳定入门环境。</p></li>
             <li><span>03</span><p><strong>先观察生成链路</strong>Tokenizer → logits → decoding → cache。</p></li>
           </ol>
-          <div class="start-status"><span aria-hidden="true"></span><p><strong>本库进度</strong>：12章代码已盘点；第1—4章已有5个低成本练习。</p></div>
+          <div class="start-status"><span aria-hidden="true"></span><p><strong>本库进度</strong>：12章代码已盘点；第1—5章已有6个低成本练习。</p></div>
         </aside>
       </section>
 
@@ -71,8 +71,8 @@
 
         <div class="research-status" aria-label="当前研究状态">
           <div><span>12 / 12</span><p>Notebook代码已核查</p></div>
-          <div><span>5</span><p>第1—4章实践已运行</p></div>
-          <div><span>NEXT</span><p>第5章主题建模</p></div>
+          <div><span>6</span><p>第1—5章实践已运行</p></div>
+          <div><span>NEXT</span><p>第6章提示工程</p></div>
           <div><span>BOUNDARY</span><p>Phi-3原权重尚未复现</p></div>
         </div>
 
@@ -167,7 +167,7 @@
 
       <section id="labs" class="workspace-section" aria-labelledby="labs-title">
         <header class="section-header">
-          <div><p class="section-label">03 / PRACTICE LABS</p><h2 id="labs-title">先做五个最小练习。</h2></div>
+          <div><p class="section-label">03 / PRACTICE LABS</p><h2 id="labs-title">先做六个最小练习。</h2></div>
           <p>默认只展开一个，避免页面变成结果墙。每个练习都保留预测、观察、解释、继续修改和证据。</p>
         </header>
 
@@ -198,8 +198,14 @@
               <div class="lab-next"><p><strong>继续修改</strong>：改写正负标签，或把每类训练量改成20、50、100、200，观察学习曲线。</p><p><strong>理解检查</strong>：能解释为什么三种方法使用相同Embedding，却得到不同结果吗？</p></div>
               <p class="evidence-links"><a href="https://github.com/HandsOnLLM/Hands-On-Large-Language-Models/tree/ea3390819997999a51983677b80b3aac4dc50ada/chapter04">章节源码</a><a href="https://github.com/yydshly/0823_githubcode_study/tree/main/projects/hands-on-large-language-models/experiments/phase-02-classification">实验说明</a><a href="https://github.com/yydshly/0823_githubcode_study/blob/main/projects/hands-on-large-language-models/experiments/phase-02-classification/run_classification.py">复现脚本</a><a href="https://github.com/yydshly/0823_githubcode_study/blob/main/projects/hands-on-large-language-models/experiments/phase-02-classification/results/classification-results.json">结果JSON</a></p></div>
           </details>
+          <details class="lab-card">
+            <summary><span class="lab-index">06</span><div><small>CH 05 · TOPIC MODELING</small><h3>没有标签时，模型怎样把论文分成主题？</h3></div><p><strong>8 → 2</strong><span>主题数；离群率34.0% → 71.5%</span></p></summary>
+            <div class="lab-body"><div class="lab-grid"><article><span>先预测</span><p>Embedding不变时，提高最小成簇规模会保留更多主题，还是拒绝更多小群体？</p></article><article><span>动手</span><p>固定600篇论文、gte-small向量和UMAP，只把HDBSCAN的min_cluster_size从15改为40。</p></article><article><span>观察</span><p>主题数8→2；离群文档204→429；ARI为0.1528。默认关键词还被the、and、to等词淹没。</p></article><article><span>解释</span><p>聚类尺度会改变“主题答案”；成组与命名又是两层能力，关键词不能代替组内文档核查。</p></article></div>
+              <div class="lab-next"><p><strong>继续修改</strong>：先预测min_cluster_size=25的结果；再过滤英文停用词，检查聚类不变时解释是否改善。</p><p><strong>理解检查</strong>：能分别说明Embedding、UMAP、HDBSCAN和c-TF-IDF负责什么吗？</p></div>
+              <p class="evidence-links"><a href="https://github.com/HandsOnLLM/Hands-On-Large-Language-Models/tree/ea3390819997999a51983677b80b3aac4dc50ada/chapter05">章节源码</a><a href="https://github.com/yydshly/0823_githubcode_study/tree/main/projects/hands-on-large-language-models/experiments/phase-03-topic-modeling">实验说明</a><a href="https://github.com/yydshly/0823_githubcode_study/blob/main/projects/hands-on-large-language-models/experiments/phase-03-topic-modeling/run_topic_modeling.py">复现脚本</a><a href="https://github.com/yydshly/0823_githubcode_study/blob/main/projects/hands-on-large-language-models/experiments/phase-03-topic-modeling/results/topic-modeling-results.json">结果JSON</a></p></div>
+          </details>
         </div>
-        <p class="boundary-note"><strong>证据边界</strong>：第1—3章的生成、logits和KV Cache使用135M代理模型；第4章用MiniLM代理上游mpnet，并采用400/200平衡子集。两者都是机制实践，不是原模型完整基准。</p>
+        <p class="boundary-note"><strong>证据边界</strong>：第1—3章使用135M代理模型；第4章用MiniLM和400/200平衡子集；第5章使用上游同款gte-small，但只聚类固定600篇子集，并改用15/40做参数敏感性实验。均为机制实践，不是原模型或完整数据基准。</p>
       </section>
 
       <section id="setup" class="workspace-section" aria-labelledby="setup-title">
@@ -216,7 +222,7 @@
         <div class="resource-grid">
           <article class="resource-group"><span>阅读</span><h3>书籍与作者</h3><a href="https://www.oreilly.com/library/view/hands-on-large-language/9781098150952/">O’Reilly书籍页 ↗</a><a href="https://github.com/HandsOnLLM/Hands-On-Large-Language-Models#table-of-contents">官方目录与Colab ↗</a><p>Jay Alammar · Maarten Grootendorst</p></article>
           <article class="resource-group"><span>源码</span><h3>固定研究对象</h3><a href="https://github.com/HandsOnLLM/Hands-On-Large-Language-Models/tree/ea3390819997999a51983677b80b3aac4dc50ada">固定提交 ea339081 ↗</a><a href="https://github.com/HandsOnLLM/Hands-On-Large-Language-Models/blob/ea3390819997999a51983677b80b3aac4dc50ada/LICENSE">Apache-2.0许可证 ↗</a><p>外部模型和数据集许可证需分别核查。</p></article>
-          <article class="resource-group"><span>本库研究</span><h3>清单与实验</h3><a href="https://github.com/yydshly/0823_githubcode_study/blob/main/projects/hands-on-large-language-models/analysis/notebook-inventory.json">Notebook代码清单 ↗</a><a href="https://github.com/yydshly/0823_githubcode_study/tree/main/projects/hands-on-large-language-models/experiments/phase-01-foundations">第1—3章实验 ↗</a><p>机器结果、失败修复与证据边界均保留。</p></article>
+          <article class="resource-group"><span>本库研究</span><h3>清单与实验</h3><a href="https://github.com/yydshly/0823_githubcode_study/blob/main/projects/hands-on-large-language-models/analysis/notebook-inventory.json">Notebook代码清单 ↗</a><a href="https://github.com/yydshly/0823_githubcode_study/tree/main/projects/hands-on-large-language-models/experiments/phase-02-classification">第4章分类实验 ↗</a><a href="https://github.com/yydshly/0823_githubcode_study/tree/main/projects/hands-on-large-language-models/experiments/phase-03-topic-modeling">第5章主题实验 ↗</a><p>6个练习的机器结果、失败观察与证据边界均保留。</p></article>
         </div>
       </section>
     </main>

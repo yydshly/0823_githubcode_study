@@ -1,0 +1,457 @@
+{
+  "schemaVersion": 1,
+  "experiment": "chapter-05-topic-modeling-density-sensitivity",
+  "status": "pass",
+  "recordedAt": "2026-08-23T19:49:57.747422+00:00",
+  "source": {
+    "upstreamCommit": "ea3390819997999a51983677b80b3aac4dc50ada",
+    "notebook": "chapter05/Chapter 5 - Text Clustering and Topic Modeling.ipynb",
+    "mirroredCells": [
+      4,
+      7,
+      10,
+      12,
+      15,
+      22,
+      24,
+      26
+    ]
+  },
+  "question": "How does density clustering change the topics and outliers produced from fixed document embeddings?",
+  "predictionBeforeRun": [
+    "A smaller minimum cluster size will allow more, narrower topics.",
+    "A larger minimum cluster size will merge or reject small groups and raise the outlier rate.",
+    "c-TF-IDF words will make clusters inspectable but will not prove that a topic label is correct."
+  ],
+  "controlledVariables": {
+    "dataset": "maartengr/arxiv_nlp",
+    "fullDatasetRows": 44949,
+    "sampleRows": 600,
+    "seed": 42,
+    "embeddingModel": "thenlper/gte-small",
+    "embeddingShape": [
+      600,
+      384
+    ],
+    "umap": {
+      "nNeighbors": 15,
+      "nComponents": 5,
+      "minDist": 0.0,
+      "metric": "cosine"
+    },
+    "changedVariable": "HDBSCAN min_cluster_size"
+  },
+  "runs": [
+    {
+      "minClusterSize": 15,
+      "topicCount": 8,
+      "outlierCount": 204,
+      "outlierRate": 0.34,
+      "clusteredCount": 396,
+      "largestTopicCount": 92,
+      "elapsedSeconds": 17.327,
+      "topics": [
+        {
+          "topicId": 0,
+          "documentCount": 92,
+          "topWords": [
+            {
+              "word": "the",
+              "weight": 0.05392
+            },
+            {
+              "word": "to",
+              "weight": 0.04897
+            },
+            {
+              "word": "and",
+              "weight": 0.04586
+            },
+            {
+              "word": "of",
+              "weight": 0.04116
+            },
+            {
+              "word": "in",
+              "weight": 0.03774
+            },
+            {
+              "word": "we",
+              "weight": 0.03122
+            },
+            {
+              "word": "for",
+              "weight": 0.0282
+            },
+            {
+              "word": "on",
+              "weight": 0.02817
+            }
+          ],
+          "sampleDocuments": [
+            {
+              "title": "Rephrasing the Web: A Recipe for Compute and Data-Efficient Language\n  Modeling",
+              "abstractPreview": "Large language models are trained on massive scrapes of the web, which are\noften unstructured, noisy, and poorly phrased. Current scaling laws show that\nlearning from such data requires an abundance of both compute and data, which\ngrows with the size of the mo"
+            },
+            {
+              "title": "Towards an Interoperable Ecosystem of AI and LT Platforms: A Roadmap for\n  the Implementation of Different Levels of Interoperability",
+              "abstractPreview": "With regard to the wider area of AI/LT platform interoperability, we\nconcentrate on two core aspects: (1) cross-platform search and discovery of\nresources and services; (2) composition of cross-platform service workflows. We\ndevise five different levels (of in"
+            }
+          ]
+        },
+        {
+          "topicId": 1,
+          "documentCount": 86,
+          "topWords": [
+            {
+              "word": "the",
+              "weight": 0.05394
+            },
+            {
+              "word": "and",
+              "weight": 0.05119
+            },
+            {
+              "word": "to",
+              "weight": 0.04585
+            },
+            {
+              "word": "of",
+              "weight": 0.0455
+            },
+            {
+              "word": "in",
+              "weight": 0.04047
+            },
+            {
+              "word": "we",
+              "weight": 0.03662
+            },
+            {
+              "word": "that",
+              "weight": 0.02931
+            },
+            {
+              "word": "on",
+              "weight": 0.0247
+            }
+          ],
+          "sampleDocuments": [
+            {
+              "title": "BERT has a Mouth, and It Must Speak: BERT as a Markov Random Field\n  Language Model",
+              "abstractPreview": "We show that BERT (Devlin et al., 2018) is a Markov random field language\nmodel. This formulation gives way to a natural procedure to sample sentences\nfrom BERT. We generate from BERT and find that it can produce high-quality,\nfluent generations. Compared to t"
+            },
+            {
+              "title": "Cross-lingual Transfer Learning for Check-worthy Claim Identification\n  over Twitter",
+              "abstractPreview": "Misinformation spread over social media has become an undeniable infodemic.\nHowever, not all spreading claims are made equal. If propagated, some claims\ncan be destructive, not only on the individual level, but to organizations and\neven countries. Detecting cl"
+            }
+          ]
+        },
+        {
+          "topicId": 2,
+          "documentCount": 58,
+          "topWords": [
+            {
+              "word": "the",
+              "weight": 0.05894
+            },
+            {
+              "word": "of",
+              "weight": 0.04958
+            },
+            {
+              "word": "and",
+              "weight": 0.04902
+            },
+            {
+              "word": "to",
+              "weight": 0.04596
+            },
+            {
+              "word": "in",
+              "weight": 0.03833
+            },
+            {
+              "word": "entity",
+              "weight": 0.02833
+            },
+            {
+              "word": "we",
+              "weight": 0.02828
+            },
+            {
+              "word": "for",
+              "weight": 0.02812
+            }
+          ],
+          "sampleDocuments": [
+            {
+              "title": "A Novel Cascade Binary Tagging Framework for Relational Triple\n  Extraction",
+              "abstractPreview": "Extracting relational triples from unstructured text is crucial for\nlarge-scale knowledge graph construction. However, few existing works excel in\nsolving the overlapping triple problem where multiple relational triples in the\nsame sentence share the same enti"
+            },
+            {
+              "title": "90% F1 Score in Relational Triple Extraction: Is it Real ?",
+              "abstractPreview": "Extracting relational triples from text is a crucial task for constructing\nknowledge bases. Recent advancements in joint entity and relation extraction\nmodels have demonstrated remarkable F1 scores ($\\ge 90\\%$) in accurately\nextracting relational triples from "
+            }
+          ]
+        },
+        {
+          "topicId": 3,
+          "documentCount": 49,
+          "topWords": [
+            {
+              "word": "translation",
+              "weight": 0.06607
+            },
+            {
+              "word": "the",
+              "weight": 0.06533
+            },
+            {
+              "word": "of",
+              "weight": 0.04397
+            },
+            {
+              "word": "and",
+              "weight": 0.04287
+            },
+            {
+              "word": "to",
+              "weight": 0.03962
+            },
+            {
+              "word": "we",
+              "weight": 0.03698
+            },
+            {
+              "word": "in",
+              "weight": 0.03628
+            },
+            {
+              "word": "languages",
+              "weight": 0.03624
+            }
+          ],
+          "sampleDocuments": [
+            {
+              "title": "Design and Implementation of English To Yor\\`ub\\'a Verb Phrase Machine\n  Translation System",
+              "abstractPreview": "We aim to develop an English-to-Yoruba machine translation system which can\ntranslate English verb phrase text to its Yoruba equivalent.Words from both\nlanguages Source Language and Target Language were collected for the verb\nphrase group in the home domain. T"
+            },
+            {
+              "title": "Bitext Mining for Low-Resource Languages via Contrastive Learning",
+              "abstractPreview": "Mining high-quality bitexts for low-resource languages is challenging. This\npaper shows that sentence representation of language models fine-tuned with\nmultiple negatives ranking loss, a contrastive objective, helps retrieve clean\nbitexts. Experiments show tha"
+            }
+          ]
+        },
+        {
+          "topicId": 4,
+          "documentCount": 40,
+          "topWords": [
+            {
+              "word": "the",
+              "weight": 0.0622
+            },
+            {
+              "word": "speech",
+              "weight": 0.05537
+            },
+            {
+              "word": "of",
+              "weight": 0.04967
+            },
+            {
+              "word": "and",
+              "weight": 0.04261
+            },
+            {
+              "word": "to",
+              "weight": 0.0419
+            },
+            {
+              "word": "in",
+              "weight": 0.03997
+            },
+            {
+              "word": "is",
+              "weight": 0.03765
+            },
+            {
+              "word": "asr",
+              "weight": 0.03333
+            }
+          ],
+          "sampleDocuments": [
+            {
+              "title": "Robust end-to-end deep audiovisual speech recognition",
+              "abstractPreview": "Speech is one of the most effective ways of communication among humans. Even\nthough audio is the most common way of transmitting speech, very important\ninformation can be found in other modalities, such as vision. Vision is\nparticularly useful when the acousti"
+            },
+            {
+              "title": "Text-only Domain Adaptation using Unified Speech-Text Representation in\n  Transducer",
+              "abstractPreview": "Domain adaptation using text-only corpus is challenging in end-to-end(E2E)\nspeech recognition. Adaptation by synthesizing audio from text through TTS is\nresource-consuming. We present a method to learn Unified Speech-Text\nRepresentation in Conformer Transducer"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "minClusterSize": 40,
+      "topicCount": 2,
+      "outlierCount": 429,
+      "outlierRate": 0.715,
+      "clusteredCount": 171,
+      "largestTopicCount": 97,
+      "elapsedSeconds": 2.234,
+      "topics": [
+        {
+          "topicId": 0,
+          "documentCount": 97,
+          "topWords": [
+            {
+              "word": "the",
+              "weight": 0.08965
+            },
+            {
+              "word": "and",
+              "weight": 0.07692
+            },
+            {
+              "word": "to",
+              "weight": 0.07534
+            },
+            {
+              "word": "of",
+              "weight": 0.07105
+            },
+            {
+              "word": "in",
+              "weight": 0.06009
+            },
+            {
+              "word": "we",
+              "weight": 0.04826
+            },
+            {
+              "word": "for",
+              "weight": 0.04351
+            },
+            {
+              "word": "that",
+              "weight": 0.03947
+            }
+          ],
+          "sampleDocuments": [
+            {
+              "title": "Rephrasing the Web: A Recipe for Compute and Data-Efficient Language\n  Modeling",
+              "abstractPreview": "Large language models are trained on massive scrapes of the web, which are\noften unstructured, noisy, and poorly phrased. Current scaling laws show that\nlearning from such data requires an abundance of both compute and data, which\ngrows with the size of the mo"
+            },
+            {
+              "title": "On the Interplay Between Fine-tuning and Sentence-level Probing for\n  Linguistic Knowledge in Pre-trained Transformers",
+              "abstractPreview": "Fine-tuning pre-trained contextualized embedding models has become an\nintegral part of the NLP pipeline. At the same time, probing has emerged as a\nway to investigate the linguistic knowledge captured by pre-trained models.\nVery little is, however, understood "
+            }
+          ]
+        },
+        {
+          "topicId": 1,
+          "documentCount": 74,
+          "topWords": [
+            {
+              "word": "the",
+              "weight": 0.10951
+            },
+            {
+              "word": "of",
+              "weight": 0.07594
+            },
+            {
+              "word": "and",
+              "weight": 0.06686
+            },
+            {
+              "word": "to",
+              "weight": 0.06579
+            },
+            {
+              "word": "in",
+              "weight": 0.05443
+            },
+            {
+              "word": "we",
+              "weight": 0.05258
+            },
+            {
+              "word": "on",
+              "weight": 0.04933
+            },
+            {
+              "word": "is",
+              "weight": 0.04478
+            }
+          ],
+          "sampleDocuments": [
+            {
+              "title": "Robust end-to-end deep audiovisual speech recognition",
+              "abstractPreview": "Speech is one of the most effective ways of communication among humans. Even\nthough audio is the most common way of transmitting speech, very important\ninformation can be found in other modalities, such as vision. Vision is\nparticularly useful when the acousti"
+            },
+            {
+              "title": "Translating from Morphologically Complex Languages: A Paraphrase-Based\n  Approach",
+              "abstractPreview": "We propose a novel approach to translating from a morphologically complex\nlanguage. Unlike previous research, which has targeted word inflections and\nconcatenations, we focus on the pairwise relationship between morphologically\nrelated words, which we treat as"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "comparisons": [
+    {
+      "leftMinClusterSize": 15,
+      "rightMinClusterSize": 40,
+      "adjustedRandIndex": 0.1528,
+      "topicCountChange": -6,
+      "outlierRateChange": 0.375
+    }
+  ],
+  "hypothesisAssessment": {
+    "outcome": "confirmed",
+    "observedDirection": {
+      "topicCount": "8 -> 2",
+      "outlierRate": "0.34 -> 0.715"
+    }
+  },
+  "timing": {
+    "embeddingSeconds": 93.751,
+    "totalSeconds": 113.862
+  },
+  "environment": {
+    "python": "3.10.11",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "offlineMode": true,
+    "logicalCpuCount": 32,
+    "memoryGiB": 15.63,
+    "gpus": [
+      {
+        "name": "NVIDIA GeForce RTX 4070 Laptop GPU",
+        "memoryMiB": "8188",
+        "driverVersion": "576.28"
+      }
+    ],
+    "packages": {
+      "torch": "2.3.1+cpu",
+      "transformers": "4.41.2",
+      "sentenceTransformers": "3.0.1",
+      "datasets": "2.20.0",
+      "scikitLearn": "1.5.0",
+      "numpy": "1.26.4",
+      "pandas": "2.2.2",
+      "bertopic": "0.16.3",
+      "umapLearn": "0.5.6",
+      "hdbscan": "0.8.38.post1"
+    }
+  },
+  "boundaries": [
+    "The exact upstream gte-small embedding model is used, but only a deterministic 600-document subset is clustered.",
+    "The notebook uses min_cluster_size=50 on the full dataset; this experiment compares 15 and 40 for a low-cost sensitivity study.",
+    "Topic keywords are c-TF-IDF representations that require human inspection; they are not ground-truth labels.",
+    "KeyBERT, MMR, Flan-T5, OpenAI labels and visualizations are not benchmarked in this slice.",
+    "A seeded CPU run demonstrates the pipeline and parameter sensitivity, not production topic quality or stability."
+  ]
+}
