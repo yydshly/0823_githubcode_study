@@ -1,0 +1,1567 @@
+{
+  "schemaVersion": 1,
+  "experiment": "chapter-06-one-shot-json-extraction",
+  "status": "pass",
+  "recordedAt": "2026-08-24T10:53:37.741934+00:00",
+  "source": {
+    "upstreamCommit": "ea3390819997999a51983677b80b3aac4dc50ada",
+    "notebook": "chapter06/Chapter 6 - Prompt Engineering.ipynb",
+    "mirroredCells": [
+      4,
+      6,
+      17,
+      18,
+      33,
+      34,
+      38,
+      39
+    ]
+  },
+  "question": "When the JSON contract is already explicit, does adding one example improve reliability or anchor a small model to the example values?",
+  "predictionBeforePilot": [
+    "Both variants should often produce parseable JSON because the same schema instruction is fixed.",
+    "A one-shot example may improve format consistency but can anchor a 135M model to example values.",
+    "JSON validity, schema validity and field accuracy must be scored separately."
+  ],
+  "formalPredictionAfterPilot": "The one-shot variant will increase exact field accuracy without copying example values.",
+  "controlledVariables": {
+    "model": "HuggingFaceTB/SmolLM2-135M-Instruct",
+    "modelRevision": "12fd25f77366fa6b3b4b768ec3050bf629380bac",
+    "example": {
+      "character": "Ivo",
+      "armor": "leather coat",
+      "weapon": "iron dagger"
+    },
+    "formalTaskCount": 12,
+    "decoding": {
+      "doSample": false,
+      "maxNewTokens": 64,
+      "seed": 42
+    },
+    "chatTemplate": "model-native apply_chat_template",
+    "changedVariable": "presence of one worked input-output example"
+  },
+  "pilot": {
+    "name": "four-record feasibility pilot",
+    "variants": [
+      {
+        "id": "schema-only",
+        "withOneShotExample": false,
+        "summary": {
+          "taskCount": 4,
+          "fieldCount": 12,
+          "counts": {
+            "validJsonObjects": 2,
+            "exactSchemas": 2,
+            "fullRecordsExact": 2,
+            "fullRecordsNormalized": 2,
+            "exactFields": 6,
+            "normalizedFields": 6,
+            "copiedExampleFields": 0,
+            "tasksWithExampleCopy": 0
+          },
+          "rates": {
+            "validJson": 0.5,
+            "exactSchema": 0.5,
+            "fullRecordExact": 0.5,
+            "fullRecordNormalized": 0.5,
+            "exactField": 0.5,
+            "normalizedField": 0.5,
+            "exampleCopiedField": 0.0
+          },
+          "meanGeneratedTokens": 47.75,
+          "totalGenerationSeconds": 15.427
+        },
+        "cases": [
+          {
+            "taskId": "pilot-01",
+            "expected": {
+              "armor": "bronze mail",
+              "character": "Mira",
+              "weapon": "oak bow"
+            },
+            "prompt": "You convert RPG facts into JSON. Return JSON only with exactly these keys: character, armor, weapon. Copy each value exactly from the facts.\n\nFacts to convert:\nCharacter: Mira\nArmor: bronze mail\nWeapon: oak bow",
+            "output": "{\n  \"character\": \"Mira\",\n  \"armor\": \"bronze mail\",\n  \"weapon\": \"oak bow\"\n}",
+            "generatedTokens": 33,
+            "elapsedSeconds": 2.556,
+            "evaluation": {
+              "validJsonObject": true,
+              "exactSchema": true,
+              "stringTypes": true,
+              "exactFields": {
+                "armor": true,
+                "character": true,
+                "weapon": true
+              },
+              "exactFieldCount": 3,
+              "normalizedFields": {
+                "armor": true,
+                "character": true,
+                "weapon": true
+              },
+              "normalizedFieldCount": 3,
+              "copiedExampleFields": {
+                "armor": false,
+                "character": false,
+                "weapon": false
+              },
+              "copiedExampleCount": 0,
+              "fullRecordExact": true,
+              "fullRecordNormalized": true,
+              "parseError": null,
+              "parsedValue": {
+                "character": "Mira",
+                "armor": "bronze mail",
+                "weapon": "oak bow"
+              }
+            }
+          },
+          {
+            "taskId": "pilot-02",
+            "expected": {
+              "armor": "linen guard",
+              "character": "Tova",
+              "weapon": "glass wand"
+            },
+            "prompt": "You convert RPG facts into JSON. Return JSON only with exactly these keys: character, armor, weapon. Copy each value exactly from the facts.\n\nFacts to convert:\nCharacter: Tova\nArmor: linen guard\nWeapon: glass wand",
+            "output": "JSON:\n```json\n{\n  \"character\": \"Tova\",\n  \"armor\": \"linen guard\",\n  \"weapon\": \"glass wand\"\n}\n```\n\nSo, the JSON representation of the RPG facts is:\n\n```json\n{\n  \"character\": \"T",
+            "generatedTokens": 64,
+            "elapsedSeconds": 5.115,
+            "evaluation": {
+              "validJsonObject": false,
+              "exactSchema": false,
+              "stringTypes": false,
+              "exactFields": {
+                "armor": false,
+                "character": false,
+                "weapon": false
+              },
+              "exactFieldCount": 0,
+              "normalizedFields": {
+                "armor": false,
+                "character": false,
+                "weapon": false
+              },
+              "normalizedFieldCount": 0,
+              "copiedExampleFields": {
+                "armor": false,
+                "character": false,
+                "weapon": false
+              },
+              "copiedExampleCount": 0,
+              "fullRecordExact": false,
+              "fullRecordNormalized": false,
+              "parseError": "Expecting value at line 1 column 1",
+              "parsedValue": null
+            }
+          },
+          {
+            "taskId": "pilot-03",
+            "expected": {
+              "armor": "storm plate",
+              "character": "Rex",
+              "weapon": "ash spear"
+            },
+            "prompt": "You convert RPG facts into JSON. Return JSON only with exactly these keys: character, armor, weapon. Copy each value exactly from the facts.\n\nFacts to convert:\nCharacter: Rex\nArmor: storm plate\nWeapon: ash spear",
+            "output": "{\n  \"character\": \"Rex\",\n  \"armor\": \"storm plate\",\n  \"weapon\": \"ash spear\"\n}",
+            "generatedTokens": 30,
+            "elapsedSeconds": 2.511,
+            "evaluation": {
+              "validJsonObject": true,
+              "exactSchema": true,
+              "stringTypes": true,
+              "exactFields": {
+                "armor": true,
+                "character": true,
+                "weapon": true
+              },
+              "exactFieldCount": 3,
+              "normalizedFields": {
+                "armor": true,
+                "character": true,
+                "weapon": true
+              },
+              "normalizedFieldCount": 3,
+              "copiedExampleFields": {
+                "armor": false,
+                "character": false,
+                "weapon": false
+              },
+              "copiedExampleCount": 0,
+              "fullRecordExact": true,
+              "fullRecordNormalized": true,
+              "parseError": null,
+              "parsedValue": {
+                "character": "Rex",
+                "armor": "storm plate",
+                "weapon": "ash spear"
+              }
+            }
+          },
+          {
+            "taskId": "pilot-04",
+            "expected": {
+              "armor": "silk hood",
+              "character": "Luma",
+              "weapon": "river staff"
+            },
+            "prompt": "You convert RPG facts into JSON. Return JSON only with exactly these keys: character, armor, weapon. Copy each value exactly from the facts.\n\nFacts to convert:\nCharacter: Luma\nArmor: silk hood\nWeapon: river staff",
+            "output": "JSON:\n```json\n{\n  \"character\": \"Luma\",\n  \"armor\": \"silk hood\",\n  \"weapon\": \"river staff\"\n}\n```\n\nSo, the JSON representation of the RPG facts is:\n\n```json\n{\n  \"character\": \"L",
+            "generatedTokens": 64,
+            "elapsedSeconds": 5.245,
+            "evaluation": {
+              "validJsonObject": false,
+              "exactSchema": false,
+              "stringTypes": false,
+              "exactFields": {
+                "armor": false,
+                "character": false,
+                "weapon": false
+              },
+              "exactFieldCount": 0,
+              "normalizedFields": {
+                "armor": false,
+                "character": false,
+                "weapon": false
+              },
+              "normalizedFieldCount": 0,
+              "copiedExampleFields": {
+                "armor": false,
+                "character": false,
+                "weapon": false
+              },
+              "copiedExampleCount": 0,
+              "fullRecordExact": false,
+              "fullRecordNormalized": false,
+              "parseError": "Expecting value at line 1 column 1",
+              "parsedValue": null
+            }
+          }
+        ]
+      },
+      {
+        "id": "schema-plus-one-shot",
+        "withOneShotExample": true,
+        "summary": {
+          "taskCount": 4,
+          "fieldCount": 12,
+          "counts": {
+            "validJsonObjects": 4,
+            "exactSchemas": 4,
+            "fullRecordsExact": 3,
+            "fullRecordsNormalized": 3,
+            "exactFields": 10,
+            "normalizedFields": 10,
+            "copiedExampleFields": 0,
+            "tasksWithExampleCopy": 0
+          },
+          "rates": {
+            "validJson": 1.0,
+            "exactSchema": 1.0,
+            "fullRecordExact": 0.75,
+            "fullRecordNormalized": 0.75,
+            "exactField": 0.8333,
+            "normalizedField": 0.8333,
+            "exampleCopiedField": 0.0
+          },
+          "meanGeneratedTokens": 20.25,
+          "totalGenerationSeconds": 7.816
+        },
+        "cases": [
+          {
+            "taskId": "pilot-01",
+            "expected": {
+              "armor": "bronze mail",
+              "character": "Mira",
+              "weapon": "oak bow"
+            },
+            "prompt": "You convert RPG facts into JSON. Return JSON only with exactly these keys: character, armor, weapon. Copy each value exactly from the facts.\n\nExample facts:\nCharacter: Ivo\nArmor: leather coat\nWeapon: iron dagger\nExample JSON:\n{\"character\":\"Ivo\",\"armor\":\"leather coat\",\"weapon\":\"iron dagger\"}\n\nFacts to convert:\nCharacter: Mira\nArmor: bronze mail\nWeapon: oak bow",
+            "output": "{\"character\":\"Mira\",\"armor\":\"Bronze Mail\",\"weapon\":\"Oak Bow\"}",
+            "generatedTokens": 22,
+            "elapsedSeconds": 2.198,
+            "evaluation": {
+              "validJsonObject": true,
+              "exactSchema": true,
+              "stringTypes": true,
+              "exactFields": {
+                "armor": false,
+                "character": true,
+                "weapon": false
+              },
+              "exactFieldCount": 1,
+              "normalizedFields": {
+                "armor": false,
+                "character": true,
+                "weapon": false
+              },
+              "normalizedFieldCount": 1,
+              "copiedExampleFields": {
+                "armor": false,
+                "character": false,
+                "weapon": false
+              },
+              "copiedExampleCount": 0,
+              "fullRecordExact": false,
+              "fullRecordNormalized": false,
+              "parseError": null,
+              "parsedValue": {
+                "character": "Mira",
+                "armor": "Bronze Mail",
+                "weapon": "Oak Bow"
+              }
+            }
+          },
+          {
+            "taskId": "pilot-02",
+            "expected": {
+              "armor": "linen guard",
+              "character": "Tova",
+              "weapon": "glass wand"
+            },
+            "prompt": "You convert RPG facts into JSON. Return JSON only with exactly these keys: character, armor, weapon. Copy each value exactly from the facts.\n\nExample facts:\nCharacter: Ivo\nArmor: leather coat\nWeapon: iron dagger\nExample JSON:\n{\"character\":\"Ivo\",\"armor\":\"leather coat\",\"weapon\":\"iron dagger\"}\n\nFacts to convert:\nCharacter: Tova\nArmor: linen guard\nWeapon: glass wand",
+            "output": "{\"character\":\"Tova\",\"armor\":\"linen guard\",\"weapon\":\"glass wand\"}",
+            "generatedTokens": 20,
+            "elapsedSeconds": 1.853,
+            "evaluation": {
+              "validJsonObject": true,
+              "exactSchema": true,
+              "stringTypes": true,
+              "exactFields": {
+                "armor": true,
+                "character": true,
+                "weapon": true
+              },
+              "exactFieldCount": 3,
+              "normalizedFields": {
+                "armor": true,
+                "character": true,
+                "weapon": true
+              },
+              "normalizedFieldCount": 3,
+              "copiedExampleFields": {
+                "armor": false,
+                "character": false,
+                "weapon": false
+              },
+              "copiedExampleCount": 0,
+              "fullRecordExact": true,
+              "fullRecordNormalized": true,
+              "parseError": null,
+              "parsedValue": {
+                "character": "Tova",
+                "armor": "linen guard",
+                "weapon": "glass wand"
+              }
+            }
+          },
+          {
+            "taskId": "pilot-03",
+            "expected": {
+              "armor": "storm plate",
+              "character": "Rex",
+              "weapon": "ash spear"
+            },
+            "prompt": "You convert RPG facts into JSON. Return JSON only with exactly these keys: character, armor, weapon. Copy each value exactly from the facts.\n\nExample facts:\nCharacter: Ivo\nArmor: leather coat\nWeapon: iron dagger\nExample JSON:\n{\"character\":\"Ivo\",\"armor\":\"leather coat\",\"weapon\":\"iron dagger\"}\n\nFacts to convert:\nCharacter: Rex\nArmor: storm plate\nWeapon: ash spear",
+            "output": "{\"character\":\"Rex\",\"armor\":\"storm plate\",\"weapon\":\"ash spear\"}",
+            "generatedTokens": 19,
+            "elapsedSeconds": 1.81,
+            "evaluation": {
+              "validJsonObject": true,
+              "exactSchema": true,
+              "stringTypes": true,
+              "exactFields": {
+                "armor": true,
+                "character": true,
+                "weapon": true
+              },
+              "exactFieldCount": 3,
+              "normalizedFields": {
+                "armor": true,
+                "character": true,
+                "weapon": true
+              },
+              "normalizedFieldCount": 3,
+              "copiedExampleFields": {
+                "armor": false,
+                "character": false,
+                "weapon": false
+              },
+              "copiedExampleCount": 0,
+              "fullRecordExact": true,
+              "fullRecordNormalized": true,
+              "parseError": null,
+              "parsedValue": {
+                "character": "Rex",
+                "armor": "storm plate",
+                "weapon": "ash spear"
+              }
+            }
+          },
+          {
+            "taskId": "pilot-04",
+            "expected": {
+              "armor": "silk hood",
+              "character": "Luma",
+              "weapon": "river staff"
+            },
+            "prompt": "You convert RPG facts into JSON. Return JSON only with exactly these keys: character, armor, weapon. Copy each value exactly from the facts.\n\nExample facts:\nCharacter: Ivo\nArmor: leather coat\nWeapon: iron dagger\nExample JSON:\n{\"character\":\"Ivo\",\"armor\":\"leather coat\",\"weapon\":\"iron dagger\"}\n\nFacts to convert:\nCharacter: Luma\nArmor: silk hood\nWeapon: river staff",
+            "output": "{\"character\":\"Luma\",\"armor\":\"silk hood\",\"weapon\":\"river staff\"}",
+            "generatedTokens": 20,
+            "elapsedSeconds": 1.955,
+            "evaluation": {
+              "validJsonObject": true,
+              "exactSchema": true,
+              "stringTypes": true,
+              "exactFields": {
+                "armor": true,
+                "character": true,
+                "weapon": true
+              },
+              "exactFieldCount": 3,
+              "normalizedFields": {
+                "armor": true,
+                "character": true,
+                "weapon": true
+              },
+              "normalizedFieldCount": 3,
+              "copiedExampleFields": {
+                "armor": false,
+                "character": false,
+                "weapon": false
+              },
+              "copiedExampleCount": 0,
+              "fullRecordExact": true,
+              "fullRecordNormalized": true,
+              "parseError": null,
+              "parsedValue": {
+                "character": "Luma",
+                "armor": "silk hood",
+                "weapon": "river staff"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "comparison": {
+      "fullRecordsExactChange": 1,
+      "exactFieldsChange": 4,
+      "validJsonChange": 2,
+      "exampleCopiedFieldsChange": 0
+    }
+  },
+  "formal": {
+    "name": "twelve disjoint formal records",
+    "variants": [
+      {
+        "id": "schema-only",
+        "withOneShotExample": false,
+        "summary": {
+          "taskCount": 12,
+          "fieldCount": 36,
+          "counts": {
+            "validJsonObjects": 6,
+            "exactSchemas": 6,
+            "fullRecordsExact": 6,
+            "fullRecordsNormalized": 6,
+            "exactFields": 18,
+            "normalizedFields": 18,
+            "copiedExampleFields": 0,
+            "tasksWithExampleCopy": 0
+          },
+          "rates": {
+            "validJson": 0.5,
+            "exactSchema": 0.5,
+            "fullRecordExact": 0.5,
+            "fullRecordNormalized": 0.5,
+            "exactField": 0.5,
+            "normalizedField": 0.5,
+            "exampleCopiedField": 0.0
+          },
+          "meanGeneratedTokens": 44.67,
+          "totalGenerationSeconds": 46.63
+        },
+        "cases": [
+          {
+            "taskId": "formal-01",
+            "expected": {
+              "armor": "moon cloak",
+              "character": "Nia",
+              "weapon": "copper wand"
+            },
+            "prompt": "You convert RPG facts into JSON. Return JSON only with exactly these keys: character, armor, weapon. Copy each value exactly from the facts.\n\nFacts to convert:\nCharacter: Nia\nArmor: moon cloak\nWeapon: copper wand",
+            "output": "{\n  \"character\": \"Nia\",\n  \"armor\": \"moon cloak\",\n  \"weapon\": \"copper wand\"\n}",
+            "generatedTokens": 31,
+            "elapsedSeconds": 2.897,
+            "evaluation": {
+              "validJsonObject": true,
+              "exactSchema": true,
+              "stringTypes": true,
+              "exactFields": {
+                "armor": true,
+                "character": true,
+                "weapon": true
+              },
+              "exactFieldCount": 3,
+              "normalizedFields": {
+                "armor": true,
+                "character": true,
+                "weapon": true
+              },
+              "normalizedFieldCount": 3,
+              "copiedExampleFields": {
+                "armor": false,
+                "character": false,
+                "weapon": false
+              },
+              "copiedExampleCount": 0,
+              "fullRecordExact": true,
+              "fullRecordNormalized": true,
+              "parseError": null,
+              "parsedValue": {
+                "character": "Nia",
+                "armor": "moon cloak",
+                "weapon": "copper wand"
+              }
+            }
+          },
+          {
+            "taskId": "formal-02",
+            "expected": {
+              "armor": "iron helm",
+              "character": "Tor",
+              "weapon": "bone axe"
+            },
+            "prompt": "You convert RPG facts into JSON. Return JSON only with exactly these keys: character, armor, weapon. Copy each value exactly from the facts.\n\nFacts to convert:\nCharacter: Tor\nArmor: iron helm\nWeapon: bone axe",
+            "output": "JSON:\n```json\n{\n  \"character\": \"Tor\",\n  \"armor\": \"iron helm\",\n  \"weapon\": \"bone axe\"\n}\n```\n\nThis JSON representation of the facts is exactly the same as the original facts. The only difference is the order of the keys.",
+            "generatedTokens": 64,
+            "elapsedSeconds": 5.29,
+            "evaluation": {
+              "validJsonObject": false,
+              "exactSchema": false,
+              "stringTypes": false,
+              "exactFields": {
+                "armor": false,
+                "character": false,
+                "weapon": false
+              },
+              "exactFieldCount": 0,
+              "normalizedFields": {
+                "armor": false,
+                "character": false,
+                "weapon": false
+              },
+              "normalizedFieldCount": 0,
+              "copiedExampleFields": {
+                "armor": false,
+                "character": false,
+                "weapon": false
+              },
+              "copiedExampleCount": 0,
+              "fullRecordExact": false,
+              "fullRecordNormalized": false,
+              "parseError": "Expecting value at line 1 column 1",
+              "parsedValue": null
+            }
+          },
+          {
+            "taskId": "formal-03",
+            "expected": {
+              "armor": "fur mantle",
+              "character": "Vale",
+              "weapon": "steel sling"
+            },
+            "prompt": "You convert RPG facts into JSON. Return JSON only with exactly these keys: character, armor, weapon. Copy each value exactly from the facts.\n\nFacts to convert:\nCharacter: Vale\nArmor: fur mantle\nWeapon: steel sling",
+            "output": "{\n  \"character\": \"Vale\",\n  \"armor\": \"fur mantle\",\n  \"weapon\": \"steel sling\"\n}",
+            "generatedTokens": 32,
+            "elapsedSeconds": 2.683,
+            "evaluation": {
+              "validJsonObject": true,
+              "exactSchema": true,
+              "stringTypes": true,
+              "exactFields": {
+                "armor": true,
+                "character": true,
+                "weapon": true
+              },
+              "exactFieldCount": 3,
+              "normalizedFields": {
+                "armor": true,
+                "character": true,
+                "weapon": true
+              },
+              "normalizedFieldCount": 3,
+              "copiedExampleFields": {
+                "armor": false,
+                "character": false,
+                "weapon": false
+              },
+              "copiedExampleCount": 0,
+              "fullRecordExact": true,
+              "fullRecordNormalized": true,
+              "parseError": null,
+              "parsedValue": {
+                "character": "Vale",
+                "armor": "fur mantle",
+                "weapon": "steel sling"
+              }
+            }
+          },
+          {
+            "taskId": "formal-04",
+            "expected": {
+              "armor": "linen tunic",
+              "character": "Emi",
+              "weapon": "reed flute"
+            },
+            "prompt": "You convert RPG facts into JSON. Return JSON only with exactly these keys: character, armor, weapon. Copy each value exactly from the facts.\n\nFacts to convert:\nCharacter: Emi\nArmor: linen tunic\nWeapon: reed flute",
+            "output": "{\n  \"character\": \"Emi\",\n  \"armor\": \"linen tunic\",\n  \"weapon\": \"reed flute\"\n}",
+            "generatedTokens": 32,
+            "elapsedSeconds": 2.763,
+            "evaluation": {
+              "validJsonObject": true,
+              "exactSchema": true,
+              "stringTypes": true,
+              "exactFields": {
+                "armor": true,
+                "character": true,
+                "weapon": true
+              },
+              "exactFieldCount": 3,
+              "normalizedFields": {
+                "armor": true,
+                "character": true,
+                "weapon": true
+              },
+              "normalizedFieldCount": 3,
+              "copiedExampleFields": {
+                "armor": false,
+                "character": false,
+                "weapon": false
+              },
+              "copiedExampleCount": 0,
+              "fullRecordExact": true,
+              "fullRecordNormalized": true,
+              "parseError": null,
+              "parsedValue": {
+                "character": "Emi",
+                "armor": "linen tunic",
+                "weapon": "reed flute"
+              }
+            }
+          },
+          {
+            "taskId": "formal-05",
+            "expected": {
+              "armor": "obsidian plate",
+              "character": "Bo",
+              "weapon": "sun hammer"
+            },
+            "prompt": "You convert RPG facts into JSON. Return JSON only with exactly these keys: character, armor, weapon. Copy each value exactly from the facts.\n\nFacts to convert:\nCharacter: Bo\nArmor: obsidian plate\nWeapon: sun hammer",
+            "output": "{\n  \"character\": \"Bo\",\n  \"armor\": obsidian plate,\n  \"weapon\": sun hammer\n}",
+            "generatedTokens": 27,
+            "elapsedSeconds": 2.533,
+            "evaluation": {
+              "validJsonObject": false,
+              "exactSchema": false,
+              "stringTypes": false,
+              "exactFields": {
+                "armor": false,
+                "character": false,
+                "weapon": false
+              },
+              "exactFieldCount": 0,
+              "normalizedFields": {
+                "armor": false,
+                "character": false,
+                "weapon": false
+              },
+              "normalizedFieldCount": 0,
+              "copiedExampleFields": {
+                "armor": false,
+                "character": false,
+                "weapon": false
+              },
+              "copiedExampleCount": 0,
+              "fullRecordExact": false,
+              "fullRecordNormalized": false,
+              "parseError": "Expecting value at line 3 column 12",
+              "parsedValue": null
+            }
+          },
+          {
+            "taskId": "formal-06",
+            "expected": {
+              "armor": "crystal veil",
+              "character": "Ari",
+              "weapon": "wind blade"
+            },
+            "prompt": "You convert RPG facts into JSON. Return JSON only with exactly these keys: character, armor, weapon. Copy each value exactly from the facts.\n\nFacts to convert:\nCharacter: Ari\nArmor: crystal veil\nWeapon: wind blade",
+            "output": "JSON:\n```json\n{\n  \"character\": \"Ari\",\n  \"armor\": \"crystal veil\",\n  \"weapon\": \"wind blade\"\n}\n```\n\nSo, the JSON representation of the facts is:\n\n```json\n{\n  \"character\": \"Ari\",",
+            "generatedTokens": 64,
+            "elapsedSeconds": 5.635,
+            "evaluation": {
+              "validJsonObject": false,
+              "exactSchema": false,
+              "stringTypes": false,
+              "exactFields": {
+                "armor": false,
+                "character": false,
+                "weapon": false
+              },
+              "exactFieldCount": 0,
+              "normalizedFields": {
+                "armor": false,
+                "character": false,
+                "weapon": false
+              },
+              "normalizedFieldCount": 0,
+              "copiedExampleFields": {
+                "armor": false,
+                "character": false,
+                "weapon": false
+              },
+              "copiedExampleCount": 0,
+              "fullRecordExact": false,
+              "fullRecordNormalized": false,
+              "parseError": "Expecting value at line 1 column 1",
+              "parsedValue": null
+            }
+          },
+          {
+            "taskId": "formal-07",
+            "expected": {
+              "armor": "wool coat",
+              "character": "Lux",
+              "weapon": "ivory bow"
+            },
+            "prompt": "You convert RPG facts into JSON. Return JSON only with exactly these keys: character, armor, weapon. Copy each value exactly from the facts.\n\nFacts to convert:\nCharacter: Lux\nArmor: wool coat\nWeapon: ivory bow",
+            "output": "JSON:\n```json\n{\n  \"character\": \"Lux\",\n  \"armor\": \"wool coat\",\n  \"weapon\": \"ivory bow\"\n}\n```\n\nSo, the JSON representation of the RPG facts is:\n\n```json\n{\n  \"character\": \"",
+            "generatedTokens": 64,
+            "elapsedSeconds": 5.518,
+            "evaluation": {
+              "validJsonObject": false,
+              "exactSchema": false,
+              "stringTypes": false,
+              "exactFields": {
+                "armor": false,
+                "character": false,
+                "weapon": false
+              },
+              "exactFieldCount": 0,
+              "normalizedFields": {
+                "armor": false,
+                "character": false,
+                "weapon": false
+              },
+              "normalizedFieldCount": 0,
+              "copiedExampleFields": {
+                "armor": false,
+                "character": false,
+                "weapon": false
+              },
+              "copiedExampleCount": 0,
+              "fullRecordExact": false,
+              "fullRecordNormalized": false,
+              "parseError": "Expecting value at line 1 column 1",
+              "parsedValue": null
+            }
+          },
+          {
+            "taskId": "formal-08",
+            "expected": {
+              "armor": "amber vest",
+              "character": "Sen",
+              "weapon": "frost knife"
+            },
+            "prompt": "You convert RPG facts into JSON. Return JSON only with exactly these keys: character, armor, weapon. Copy each value exactly from the facts.\n\nFacts to convert:\nCharacter: Sen\nArmor: amber vest\nWeapon: frost knife",
+            "output": "{\n  \"character\": \"Sen\",\n  \"armor\": \"amber vest\",\n  \"weapon\": \"frost knife\"\n}",
+            "generatedTokens": 30,
+            "elapsedSeconds": 2.816,
+            "evaluation": {
+              "validJsonObject": true,
+              "exactSchema": true,
+              "stringTypes": true,
+              "exactFields": {
+                "armor": true,
+                "character": true,
+                "weapon": true
+              },
+              "exactFieldCount": 3,
+              "normalizedFields": {
+                "armor": true,
+                "character": true,
+                "weapon": true
+              },
+              "normalizedFieldCount": 3,
+              "copiedExampleFields": {
+                "armor": false,
+                "character": false,
+                "weapon": false
+              },
+              "copiedExampleCount": 0,
+              "fullRecordExact": true,
+              "fullRecordNormalized": true,
+              "parseError": null,
+              "parsedValue": {
+                "character": "Sen",
+                "armor": "amber vest",
+                "weapon": "frost knife"
+              }
+            }
+          },
+          {
+            "taskId": "formal-09",
+            "expected": {
+              "armor": "brass cuirass",
+              "character": "Juno",
+              "weapon": "pine lance"
+            },
+            "prompt": "You convert RPG facts into JSON. Return JSON only with exactly these keys: character, armor, weapon. Copy each value exactly from the facts.\n\nFacts to convert:\nCharacter: Juno\nArmor: brass cuirass\nWeapon: pine lance",
+            "output": "JSON:\n```json\n{\n  \"character\": \"Juno\",\n  \"armor\": \"brass\",\n  \"weapon\": \"pine lance\"\n}\n```\n\nSo, the JSON representation of the facts is:\n\n```json\n{\n  \"character\": \"Juno\",",
+            "generatedTokens": 64,
+            "elapsedSeconds": 5.518,
+            "evaluation": {
+              "validJsonObject": false,
+              "exactSchema": false,
+              "stringTypes": false,
+              "exactFields": {
+                "armor": false,
+                "character": false,
+                "weapon": false
+              },
+              "exactFieldCount": 0,
+              "normalizedFields": {
+                "armor": false,
+                "character": false,
+                "weapon": false
+              },
+              "normalizedFieldCount": 0,
+              "copiedExampleFields": {
+                "armor": false,
+                "character": false,
+                "weapon": false
+              },
+              "copiedExampleCount": 0,
+              "fullRecordExact": false,
+              "fullRecordNormalized": false,
+              "parseError": "Expecting value at line 1 column 1",
+              "parsedValue": null
+            }
+          },
+          {
+            "taskId": "formal-10",
+            "expected": {
+              "armor": "raven cape",
+              "character": "Kato",
+              "weapon": "stone mace"
+            },
+            "prompt": "You convert RPG facts into JSON. Return JSON only with exactly these keys: character, armor, weapon. Copy each value exactly from the facts.\n\nFacts to convert:\nCharacter: Kato\nArmor: raven cape\nWeapon: stone mace",
+            "output": "JSON:\n```json\n{\n  \"character\": \"Kato\",\n  \"armor\": \"raven cape\",\n  \"weapon\": \"stone mace\"\n}\n```\n\nSo, the JSON representation of the RPG facts is:\n\n```json\n{\n  \"Kato",
+            "generatedTokens": 64,
+            "elapsedSeconds": 5.478,
+            "evaluation": {
+              "validJsonObject": false,
+              "exactSchema": false,
+              "stringTypes": false,
+              "exactFields": {
+                "armor": false,
+                "character": false,
+                "weapon": false
+              },
+              "exactFieldCount": 0,
+              "normalizedFields": {
+                "armor": false,
+                "character": false,
+                "weapon": false
+              },
+              "normalizedFieldCount": 0,
+              "copiedExampleFields": {
+                "armor": false,
+                "character": false,
+                "weapon": false
+              },
+              "copiedExampleCount": 0,
+              "fullRecordExact": false,
+              "fullRecordNormalized": false,
+              "parseError": "Expecting value at line 1 column 1",
+              "parsedValue": null
+            }
+          },
+          {
+            "taskId": "formal-11",
+            "expected": {
+              "armor": "coral jacket",
+              "character": "Faye",
+              "weapon": "silver hook"
+            },
+            "prompt": "You convert RPG facts into JSON. Return JSON only with exactly these keys: character, armor, weapon. Copy each value exactly from the facts.\n\nFacts to convert:\nCharacter: Faye\nArmor: coral jacket\nWeapon: silver hook",
+            "output": "{\n  \"character\": \"Faye\",\n  \"armor\": \"coral jacket\",\n  \"weapon\": \"silver hook\"\n}",
+            "generatedTokens": 33,
+            "elapsedSeconds": 2.761,
+            "evaluation": {
+              "validJsonObject": true,
+              "exactSchema": true,
+              "stringTypes": true,
+              "exactFields": {
+                "armor": true,
+                "character": true,
+                "weapon": true
+              },
+              "exactFieldCount": 3,
+              "normalizedFields": {
+                "armor": true,
+                "character": true,
+                "weapon": true
+              },
+              "normalizedFieldCount": 3,
+              "copiedExampleFields": {
+                "armor": false,
+                "character": false,
+                "weapon": false
+              },
+              "copiedExampleCount": 0,
+              "fullRecordExact": true,
+              "fullRecordNormalized": true,
+              "parseError": null,
+              "parsedValue": {
+                "character": "Faye",
+                "armor": "coral jacket",
+                "weapon": "silver hook"
+              }
+            }
+          },
+          {
+            "taskId": "formal-12",
+            "expected": {
+              "armor": "velvet hood",
+              "character": "Rem",
+              "weapon": "ember whip"
+            },
+            "prompt": "You convert RPG facts into JSON. Return JSON only with exactly these keys: character, armor, weapon. Copy each value exactly from the facts.\n\nFacts to convert:\nCharacter: Rem\nArmor: velvet hood\nWeapon: ember whip",
+            "output": "{\n  \"character\": \"Rem\",\n  \"armor\": \"velvet hood\",\n  \"weapon\": \"ember whip\"\n}",
+            "generatedTokens": 31,
+            "elapsedSeconds": 2.738,
+            "evaluation": {
+              "validJsonObject": true,
+              "exactSchema": true,
+              "stringTypes": true,
+              "exactFields": {
+                "armor": true,
+                "character": true,
+                "weapon": true
+              },
+              "exactFieldCount": 3,
+              "normalizedFields": {
+                "armor": true,
+                "character": true,
+                "weapon": true
+              },
+              "normalizedFieldCount": 3,
+              "copiedExampleFields": {
+                "armor": false,
+                "character": false,
+                "weapon": false
+              },
+              "copiedExampleCount": 0,
+              "fullRecordExact": true,
+              "fullRecordNormalized": true,
+              "parseError": null,
+              "parsedValue": {
+                "character": "Rem",
+                "armor": "velvet hood",
+                "weapon": "ember whip"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "schema-plus-one-shot",
+        "withOneShotExample": true,
+        "summary": {
+          "taskCount": 12,
+          "fieldCount": 36,
+          "counts": {
+            "validJsonObjects": 12,
+            "exactSchemas": 12,
+            "fullRecordsExact": 12,
+            "fullRecordsNormalized": 12,
+            "exactFields": 36,
+            "normalizedFields": 36,
+            "copiedExampleFields": 0,
+            "tasksWithExampleCopy": 0
+          },
+          "rates": {
+            "validJson": 1.0,
+            "exactSchema": 1.0,
+            "fullRecordExact": 1.0,
+            "fullRecordNormalized": 1.0,
+            "exactField": 1.0,
+            "normalizedField": 1.0,
+            "exampleCopiedField": 0.0
+          },
+          "meanGeneratedTokens": 23.17,
+          "totalGenerationSeconds": 26.879
+        },
+        "cases": [
+          {
+            "taskId": "formal-01",
+            "expected": {
+              "armor": "moon cloak",
+              "character": "Nia",
+              "weapon": "copper wand"
+            },
+            "prompt": "You convert RPG facts into JSON. Return JSON only with exactly these keys: character, armor, weapon. Copy each value exactly from the facts.\n\nExample facts:\nCharacter: Ivo\nArmor: leather coat\nWeapon: iron dagger\nExample JSON:\n{\"character\":\"Ivo\",\"armor\":\"leather coat\",\"weapon\":\"iron dagger\"}\n\nFacts to convert:\nCharacter: Nia\nArmor: moon cloak\nWeapon: copper wand",
+            "output": "{\"character\":\"Nia\",\"armor\":\"moon cloak\",\"weapon\":\"copper wand\"}",
+            "generatedTokens": 20,
+            "elapsedSeconds": 1.903,
+            "evaluation": {
+              "validJsonObject": true,
+              "exactSchema": true,
+              "stringTypes": true,
+              "exactFields": {
+                "armor": true,
+                "character": true,
+                "weapon": true
+              },
+              "exactFieldCount": 3,
+              "normalizedFields": {
+                "armor": true,
+                "character": true,
+                "weapon": true
+              },
+              "normalizedFieldCount": 3,
+              "copiedExampleFields": {
+                "armor": false,
+                "character": false,
+                "weapon": false
+              },
+              "copiedExampleCount": 0,
+              "fullRecordExact": true,
+              "fullRecordNormalized": true,
+              "parseError": null,
+              "parsedValue": {
+                "character": "Nia",
+                "armor": "moon cloak",
+                "weapon": "copper wand"
+              }
+            }
+          },
+          {
+            "taskId": "formal-02",
+            "expected": {
+              "armor": "iron helm",
+              "character": "Tor",
+              "weapon": "bone axe"
+            },
+            "prompt": "You convert RPG facts into JSON. Return JSON only with exactly these keys: character, armor, weapon. Copy each value exactly from the facts.\n\nExample facts:\nCharacter: Ivo\nArmor: leather coat\nWeapon: iron dagger\nExample JSON:\n{\"character\":\"Ivo\",\"armor\":\"leather coat\",\"weapon\":\"iron dagger\"}\n\nFacts to convert:\nCharacter: Tor\nArmor: iron helm\nWeapon: bone axe",
+            "output": "{\n  \"character\": \"Tor\",\n  \"armor\": \"iron helm\",\n  \"weapon\": \"bone axe\"\n}",
+            "generatedTokens": 29,
+            "elapsedSeconds": 2.799,
+            "evaluation": {
+              "validJsonObject": true,
+              "exactSchema": true,
+              "stringTypes": true,
+              "exactFields": {
+                "armor": true,
+                "character": true,
+                "weapon": true
+              },
+              "exactFieldCount": 3,
+              "normalizedFields": {
+                "armor": true,
+                "character": true,
+                "weapon": true
+              },
+              "normalizedFieldCount": 3,
+              "copiedExampleFields": {
+                "armor": false,
+                "character": false,
+                "weapon": false
+              },
+              "copiedExampleCount": 0,
+              "fullRecordExact": true,
+              "fullRecordNormalized": true,
+              "parseError": null,
+              "parsedValue": {
+                "character": "Tor",
+                "armor": "iron helm",
+                "weapon": "bone axe"
+              }
+            }
+          },
+          {
+            "taskId": "formal-03",
+            "expected": {
+              "armor": "fur mantle",
+              "character": "Vale",
+              "weapon": "steel sling"
+            },
+            "prompt": "You convert RPG facts into JSON. Return JSON only with exactly these keys: character, armor, weapon. Copy each value exactly from the facts.\n\nExample facts:\nCharacter: Ivo\nArmor: leather coat\nWeapon: iron dagger\nExample JSON:\n{\"character\":\"Ivo\",\"armor\":\"leather coat\",\"weapon\":\"iron dagger\"}\n\nFacts to convert:\nCharacter: Vale\nArmor: fur mantle\nWeapon: steel sling",
+            "output": "{\n  \"character\": \"Vale\",\n  \"armor\": \"fur mantle\",\n  \"weapon\": \"steel sling\"\n}",
+            "generatedTokens": 32,
+            "elapsedSeconds": 3.165,
+            "evaluation": {
+              "validJsonObject": true,
+              "exactSchema": true,
+              "stringTypes": true,
+              "exactFields": {
+                "armor": true,
+                "character": true,
+                "weapon": true
+              },
+              "exactFieldCount": 3,
+              "normalizedFields": {
+                "armor": true,
+                "character": true,
+                "weapon": true
+              },
+              "normalizedFieldCount": 3,
+              "copiedExampleFields": {
+                "armor": false,
+                "character": false,
+                "weapon": false
+              },
+              "copiedExampleCount": 0,
+              "fullRecordExact": true,
+              "fullRecordNormalized": true,
+              "parseError": null,
+              "parsedValue": {
+                "character": "Vale",
+                "armor": "fur mantle",
+                "weapon": "steel sling"
+              }
+            }
+          },
+          {
+            "taskId": "formal-04",
+            "expected": {
+              "armor": "linen tunic",
+              "character": "Emi",
+              "weapon": "reed flute"
+            },
+            "prompt": "You convert RPG facts into JSON. Return JSON only with exactly these keys: character, armor, weapon. Copy each value exactly from the facts.\n\nExample facts:\nCharacter: Ivo\nArmor: leather coat\nWeapon: iron dagger\nExample JSON:\n{\"character\":\"Ivo\",\"armor\":\"leather coat\",\"weapon\":\"iron dagger\"}\n\nFacts to convert:\nCharacter: Emi\nArmor: linen tunic\nWeapon: reed flute",
+            "output": "{\"character\":\"Emi\",\"armor\":\"linen tunic\",\"weapon\":\"reed flute\"}",
+            "generatedTokens": 21,
+            "elapsedSeconds": 1.969,
+            "evaluation": {
+              "validJsonObject": true,
+              "exactSchema": true,
+              "stringTypes": true,
+              "exactFields": {
+                "armor": true,
+                "character": true,
+                "weapon": true
+              },
+              "exactFieldCount": 3,
+              "normalizedFields": {
+                "armor": true,
+                "character": true,
+                "weapon": true
+              },
+              "normalizedFieldCount": 3,
+              "copiedExampleFields": {
+                "armor": false,
+                "character": false,
+                "weapon": false
+              },
+              "copiedExampleCount": 0,
+              "fullRecordExact": true,
+              "fullRecordNormalized": true,
+              "parseError": null,
+              "parsedValue": {
+                "character": "Emi",
+                "armor": "linen tunic",
+                "weapon": "reed flute"
+              }
+            }
+          },
+          {
+            "taskId": "formal-05",
+            "expected": {
+              "armor": "obsidian plate",
+              "character": "Bo",
+              "weapon": "sun hammer"
+            },
+            "prompt": "You convert RPG facts into JSON. Return JSON only with exactly these keys: character, armor, weapon. Copy each value exactly from the facts.\n\nExample facts:\nCharacter: Ivo\nArmor: leather coat\nWeapon: iron dagger\nExample JSON:\n{\"character\":\"Ivo\",\"armor\":\"leather coat\",\"weapon\":\"iron dagger\"}\n\nFacts to convert:\nCharacter: Bo\nArmor: obsidian plate\nWeapon: sun hammer",
+            "output": "{\"character\":\"Bo\",\"armor\":\"obsidian plate\",\"weapon\":\"sun hammer\"}",
+            "generatedTokens": 19,
+            "elapsedSeconds": 1.917,
+            "evaluation": {
+              "validJsonObject": true,
+              "exactSchema": true,
+              "stringTypes": true,
+              "exactFields": {
+                "armor": true,
+                "character": true,
+                "weapon": true
+              },
+              "exactFieldCount": 3,
+              "normalizedFields": {
+                "armor": true,
+                "character": true,
+                "weapon": true
+              },
+              "normalizedFieldCount": 3,
+              "copiedExampleFields": {
+                "armor": false,
+                "character": false,
+                "weapon": false
+              },
+              "copiedExampleCount": 0,
+              "fullRecordExact": true,
+              "fullRecordNormalized": true,
+              "parseError": null,
+              "parsedValue": {
+                "character": "Bo",
+                "armor": "obsidian plate",
+                "weapon": "sun hammer"
+              }
+            }
+          },
+          {
+            "taskId": "formal-06",
+            "expected": {
+              "armor": "crystal veil",
+              "character": "Ari",
+              "weapon": "wind blade"
+            },
+            "prompt": "You convert RPG facts into JSON. Return JSON only with exactly these keys: character, armor, weapon. Copy each value exactly from the facts.\n\nExample facts:\nCharacter: Ivo\nArmor: leather coat\nWeapon: iron dagger\nExample JSON:\n{\"character\":\"Ivo\",\"armor\":\"leather coat\",\"weapon\":\"iron dagger\"}\n\nFacts to convert:\nCharacter: Ari\nArmor: crystal veil\nWeapon: wind blade",
+            "output": "{\"character\":\"Ari\",\"armor\":\"crystal veil\",\"weapon\":\"wind blade\"}",
+            "generatedTokens": 20,
+            "elapsedSeconds": 2.136,
+            "evaluation": {
+              "validJsonObject": true,
+              "exactSchema": true,
+              "stringTypes": true,
+              "exactFields": {
+                "armor": true,
+                "character": true,
+                "weapon": true
+              },
+              "exactFieldCount": 3,
+              "normalizedFields": {
+                "armor": true,
+                "character": true,
+                "weapon": true
+              },
+              "normalizedFieldCount": 3,
+              "copiedExampleFields": {
+                "armor": false,
+                "character": false,
+                "weapon": false
+              },
+              "copiedExampleCount": 0,
+              "fullRecordExact": true,
+              "fullRecordNormalized": true,
+              "parseError": null,
+              "parsedValue": {
+                "character": "Ari",
+                "armor": "crystal veil",
+                "weapon": "wind blade"
+              }
+            }
+          },
+          {
+            "taskId": "formal-07",
+            "expected": {
+              "armor": "wool coat",
+              "character": "Lux",
+              "weapon": "ivory bow"
+            },
+            "prompt": "You convert RPG facts into JSON. Return JSON only with exactly these keys: character, armor, weapon. Copy each value exactly from the facts.\n\nExample facts:\nCharacter: Ivo\nArmor: leather coat\nWeapon: iron dagger\nExample JSON:\n{\"character\":\"Ivo\",\"armor\":\"leather coat\",\"weapon\":\"iron dagger\"}\n\nFacts to convert:\nCharacter: Lux\nArmor: wool coat\nWeapon: ivory bow",
+            "output": "{\"character\":\"Lux\",\"armor\":\"wool coat\",\"weapon\":\"ivory bow\"}",
+            "generatedTokens": 21,
+            "elapsedSeconds": 2.031,
+            "evaluation": {
+              "validJsonObject": true,
+              "exactSchema": true,
+              "stringTypes": true,
+              "exactFields": {
+                "armor": true,
+                "character": true,
+                "weapon": true
+              },
+              "exactFieldCount": 3,
+              "normalizedFields": {
+                "armor": true,
+                "character": true,
+                "weapon": true
+              },
+              "normalizedFieldCount": 3,
+              "copiedExampleFields": {
+                "armor": false,
+                "character": false,
+                "weapon": false
+              },
+              "copiedExampleCount": 0,
+              "fullRecordExact": true,
+              "fullRecordNormalized": true,
+              "parseError": null,
+              "parsedValue": {
+                "character": "Lux",
+                "armor": "wool coat",
+                "weapon": "ivory bow"
+              }
+            }
+          },
+          {
+            "taskId": "formal-08",
+            "expected": {
+              "armor": "amber vest",
+              "character": "Sen",
+              "weapon": "frost knife"
+            },
+            "prompt": "You convert RPG facts into JSON. Return JSON only with exactly these keys: character, armor, weapon. Copy each value exactly from the facts.\n\nExample facts:\nCharacter: Ivo\nArmor: leather coat\nWeapon: iron dagger\nExample JSON:\n{\"character\":\"Ivo\",\"armor\":\"leather coat\",\"weapon\":\"iron dagger\"}\n\nFacts to convert:\nCharacter: Sen\nArmor: amber vest\nWeapon: frost knife",
+            "output": "{\"character\":\"Sen\",\"armor\":\"amber vest\",\"weapon\":\"frost knife\"}",
+            "generatedTokens": 19,
+            "elapsedSeconds": 1.892,
+            "evaluation": {
+              "validJsonObject": true,
+              "exactSchema": true,
+              "stringTypes": true,
+              "exactFields": {
+                "armor": true,
+                "character": true,
+                "weapon": true
+              },
+              "exactFieldCount": 3,
+              "normalizedFields": {
+                "armor": true,
+                "character": true,
+                "weapon": true
+              },
+              "normalizedFieldCount": 3,
+              "copiedExampleFields": {
+                "armor": false,
+                "character": false,
+                "weapon": false
+              },
+              "copiedExampleCount": 0,
+              "fullRecordExact": true,
+              "fullRecordNormalized": true,
+              "parseError": null,
+              "parsedValue": {
+                "character": "Sen",
+                "armor": "amber vest",
+                "weapon": "frost knife"
+              }
+            }
+          },
+          {
+            "taskId": "formal-09",
+            "expected": {
+              "armor": "brass cuirass",
+              "character": "Juno",
+              "weapon": "pine lance"
+            },
+            "prompt": "You convert RPG facts into JSON. Return JSON only with exactly these keys: character, armor, weapon. Copy each value exactly from the facts.\n\nExample facts:\nCharacter: Ivo\nArmor: leather coat\nWeapon: iron dagger\nExample JSON:\n{\"character\":\"Ivo\",\"armor\":\"leather coat\",\"weapon\":\"iron dagger\"}\n\nFacts to convert:\nCharacter: Juno\nArmor: brass cuirass\nWeapon: pine lance",
+            "output": "{\"character\":\"Juno\",\"armor\":\"brass cuirass\",\"weapon\":\"pine lance\"}",
+            "generatedTokens": 22,
+            "elapsedSeconds": 2.051,
+            "evaluation": {
+              "validJsonObject": true,
+              "exactSchema": true,
+              "stringTypes": true,
+              "exactFields": {
+                "armor": true,
+                "character": true,
+                "weapon": true
+              },
+              "exactFieldCount": 3,
+              "normalizedFields": {
+                "armor": true,
+                "character": true,
+                "weapon": true
+              },
+              "normalizedFieldCount": 3,
+              "copiedExampleFields": {
+                "armor": false,
+                "character": false,
+                "weapon": false
+              },
+              "copiedExampleCount": 0,
+              "fullRecordExact": true,
+              "fullRecordNormalized": true,
+              "parseError": null,
+              "parsedValue": {
+                "character": "Juno",
+                "armor": "brass cuirass",
+                "weapon": "pine lance"
+              }
+            }
+          },
+          {
+            "taskId": "formal-10",
+            "expected": {
+              "armor": "raven cape",
+              "character": "Kato",
+              "weapon": "stone mace"
+            },
+            "prompt": "You convert RPG facts into JSON. Return JSON only with exactly these keys: character, armor, weapon. Copy each value exactly from the facts.\n\nExample facts:\nCharacter: Ivo\nArmor: leather coat\nWeapon: iron dagger\nExample JSON:\n{\"character\":\"Ivo\",\"armor\":\"leather coat\",\"weapon\":\"iron dagger\"}\n\nFacts to convert:\nCharacter: Kato\nArmor: raven cape\nWeapon: stone mace",
+            "output": "{\"character\":\"Kato\",\"armor\":\"raven cape\",\"weapon\":\"stone mace\"}",
+            "generatedTokens": 22,
+            "elapsedSeconds": 2.148,
+            "evaluation": {
+              "validJsonObject": true,
+              "exactSchema": true,
+              "stringTypes": true,
+              "exactFields": {
+                "armor": true,
+                "character": true,
+                "weapon": true
+              },
+              "exactFieldCount": 3,
+              "normalizedFields": {
+                "armor": true,
+                "character": true,
+                "weapon": true
+              },
+              "normalizedFieldCount": 3,
+              "copiedExampleFields": {
+                "armor": false,
+                "character": false,
+                "weapon": false
+              },
+              "copiedExampleCount": 0,
+              "fullRecordExact": true,
+              "fullRecordNormalized": true,
+              "parseError": null,
+              "parsedValue": {
+                "character": "Kato",
+                "armor": "raven cape",
+                "weapon": "stone mace"
+              }
+            }
+          },
+          {
+            "taskId": "formal-11",
+            "expected": {
+              "armor": "coral jacket",
+              "character": "Faye",
+              "weapon": "silver hook"
+            },
+            "prompt": "You convert RPG facts into JSON. Return JSON only with exactly these keys: character, armor, weapon. Copy each value exactly from the facts.\n\nExample facts:\nCharacter: Ivo\nArmor: leather coat\nWeapon: iron dagger\nExample JSON:\n{\"character\":\"Ivo\",\"armor\":\"leather coat\",\"weapon\":\"iron dagger\"}\n\nFacts to convert:\nCharacter: Faye\nArmor: coral jacket\nWeapon: silver hook",
+            "output": "{\"character\":\"Faye\",\"armor\":\"coral jacket\",\"weapon\":\"silver hook\"}",
+            "generatedTokens": 22,
+            "elapsedSeconds": 2.013,
+            "evaluation": {
+              "validJsonObject": true,
+              "exactSchema": true,
+              "stringTypes": true,
+              "exactFields": {
+                "armor": true,
+                "character": true,
+                "weapon": true
+              },
+              "exactFieldCount": 3,
+              "normalizedFields": {
+                "armor": true,
+                "character": true,
+                "weapon": true
+              },
+              "normalizedFieldCount": 3,
+              "copiedExampleFields": {
+                "armor": false,
+                "character": false,
+                "weapon": false
+              },
+              "copiedExampleCount": 0,
+              "fullRecordExact": true,
+              "fullRecordNormalized": true,
+              "parseError": null,
+              "parsedValue": {
+                "character": "Faye",
+                "armor": "coral jacket",
+                "weapon": "silver hook"
+              }
+            }
+          },
+          {
+            "taskId": "formal-12",
+            "expected": {
+              "armor": "velvet hood",
+              "character": "Rem",
+              "weapon": "ember whip"
+            },
+            "prompt": "You convert RPG facts into JSON. Return JSON only with exactly these keys: character, armor, weapon. Copy each value exactly from the facts.\n\nExample facts:\nCharacter: Ivo\nArmor: leather coat\nWeapon: iron dagger\nExample JSON:\n{\"character\":\"Ivo\",\"armor\":\"leather coat\",\"weapon\":\"iron dagger\"}\n\nFacts to convert:\nCharacter: Rem\nArmor: velvet hood\nWeapon: ember whip",
+            "output": "{\n  \"character\": \"Rem\",\n  \"armor\": \"velvet hood\",\n  \"weapon\": \"ember whip\"\n}",
+            "generatedTokens": 31,
+            "elapsedSeconds": 2.855,
+            "evaluation": {
+              "validJsonObject": true,
+              "exactSchema": true,
+              "stringTypes": true,
+              "exactFields": {
+                "armor": true,
+                "character": true,
+                "weapon": true
+              },
+              "exactFieldCount": 3,
+              "normalizedFields": {
+                "armor": true,
+                "character": true,
+                "weapon": true
+              },
+              "normalizedFieldCount": 3,
+              "copiedExampleFields": {
+                "armor": false,
+                "character": false,
+                "weapon": false
+              },
+              "copiedExampleCount": 0,
+              "fullRecordExact": true,
+              "fullRecordNormalized": true,
+              "parseError": null,
+              "parsedValue": {
+                "character": "Rem",
+                "armor": "velvet hood",
+                "weapon": "ember whip"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "comparison": {
+      "fullRecordsExactChange": 6,
+      "exactFieldsChange": 18,
+      "validJsonChange": 6,
+      "exampleCopiedFieldsChange": 0
+    }
+  },
+  "hypothesisAssessment": {
+    "outcome": "confirmed"
+  },
+  "timing": {
+    "modelLoadSeconds": 1.941,
+    "totalSeconds": 98.787
+  },
+  "environment": {
+    "python": "3.10.11",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "offlineMode": true,
+    "logicalCpuCount": 32,
+    "memoryGiB": 15.63,
+    "packages": {
+      "torch": "2.3.1+cpu",
+      "transformers": "4.41.2",
+      "psutil": "6.0.0"
+    }
+  },
+  "sourceIntegrityFindings": [
+    "Notebook cell 13 overwrites the long article with a placeholder, while saved cell 15 output still summarizes the old article.",
+    "Notebook cell 24 is fully commented out but retains a saved generated answer.",
+    "Notebook cells 7 and 8 enable sampling without a seed or repeated trials, so their different jokes do not isolate temperature from top-p.",
+    "Notebook cell 34 is a schema scaffold inside one user message, not a complete user-assistant one-shot example.",
+    "Only notebook cell 39 calls json.loads; printing JSON-like text in cells 33 and 34 is not output verification."
+  ],
+  "boundaries": [
+    "SmolLM2-135M-Instruct is a cached CPU proxy for the upstream Phi-3-mini-4k-instruct model.",
+    "The formal comparison uses twelve synthetic RPG records and one example; it cannot establish that one-shot prompting is generally helpful or harmful.",
+    "Greedy decoding makes this run reproducible but does not measure sampled-output variance or creative quality.",
+    "Raw model text is scored without JSON repair; normalized field accuracy only strips leading and trailing whitespace.",
+    "The llama.cpp grammar path is excluded because changing the backend would confound a prompt-only comparison."
+  ]
+}

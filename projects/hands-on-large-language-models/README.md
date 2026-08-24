@@ -11,7 +11,7 @@
 | 获取方式 | Git submodule：`upstream/` |
 | 许可证 | Apache-2.0；外部模型与数据集需分别核查许可证 |
 | 开始日期 | 2026-08-23 |
-| 当前状态 | 研究中：静态能力盘点完成；第 1—5 章共 6 个低成本实践已通过 |
+| 当前状态 | 研究中：静态能力盘点完成；第 1—6 章共 7 个低成本实践已通过 |
 | 在线展示 | [能力研究页](https://yydshly.github.io/0823_githubcode_study/projects/hands-on-large-language-models.html) |
 
 ## 定位结论
@@ -90,6 +90,19 @@
 
 本轮只使用600 / 44,949篇固定子集；没有评测 KeyBERT、MMR、Flan-T5 与 OpenAI 主题标签。完整预测、分层原理、修改练习和离线复现见 [`experiments/phase-03-topic-modeling/`](experiments/phase-03-topic-modeling/)；机器结果见 [`topic-modeling-results.json`](experiments/phase-03-topic-modeling/results/topic-modeling-results.json)。
 
+## 第6章提示工程实践
+
+2026-08-24 完成第6章 one-shot 结构化输出实验。固定135M CPU代理模型、12条正式记录、JSON规则和greedy解码，只改变是否加入一个完整输入—输出示例：
+
+| 提示 | 合法JSON | 完整记录正确 | 字段正确 |
+| --- | ---: | ---: | ---: |
+| 只有规则 | 6 / 12 | 6 / 12 | 18 / 36 |
+| 规则 + one-shot示例 | 12 / 12 | 12 / 12 | 36 / 36 |
+
+没有示例时的失败包括Markdown围栏、JSON外解释、未加引号、重复生成后截断和字段值缩短。示例在本轮中给小模型展示了答案的具体语法、长度和停止位置；它改善的是约束遵循，不代表模型获得新知识，也不能推出one-shot对所有任务都有效。
+
+代码审计还发现Notebook当前变量与保存输出不一致、注释代码仍保留旧输出，因此本轮没有复用Notebook展示结果。完整源码审计、原始输出、修改练习和离线复现见 [`experiments/phase-04-prompt-engineering/`](experiments/phase-04-prompt-engineering/)；机器结果见 [`prompt-engineering-results.json`](experiments/phase-04-prompt-engineering/results/prompt-engineering-results.json)。
+
 ## 代码层面的真实边界
 
 - 全部核心示例都是 Notebook，没有统一的 Python 包、服务入口或 Web 应用。
@@ -117,14 +130,16 @@
 - [`classification-results.json`](experiments/phase-02-classification/results/classification-results.json)：第4章机器可读评测、混淆矩阵、探针句与失败样本。
 - [`experiments/phase-03-topic-modeling/`](experiments/phase-03-topic-modeling/)：第5章主题建模参数实验、分层解释与继续修改任务。
 - [`topic-modeling-results.json`](experiments/phase-03-topic-modeling/results/topic-modeling-results.json)：第5章主题数、离群率、ARI、主题词和样本文档。
+- [`experiments/phase-04-prompt-engineering/`](experiments/phase-04-prompt-engineering/)：第6章one-shot对照、源码完整性问题与理解检查。
+- [`prompt-engineering-results.json`](experiments/phase-04-prompt-engineering/results/prompt-engineering-results.json)：第6章原始模型输出、JSON/Schema/字段评分与示例复制检查。
 - [`upstream/`](upstream/)：固定在指定提交的上游源代码。
 
 ## 下一阶段
 
 按照由低成本到高成本的顺序执行：
 
-1. 进入第6章提示工程，区分提示结构改善与模型能力上限。
-2. 给第5章增加停用词过滤和 KeyBERT/MMR 表示对照，验证“聚类不变、解释改变”。
+1. 进入第7章高级生成与工具调用，区分模型、记忆、工具和执行链错误。
+2. 给第6章增加更强模型与grammar强制解码对照，分开评估提示遵循和后端约束。
 3. 将第8章整理成可评测、可部署的中文RAG演示。
 4. 为第4章增加训练样本量学习曲线和 `all-mpnet-base-v2` 对照。
 5. 在更大显存环境中补做 Phi-3 原模型复现，再进入第9—12章。
