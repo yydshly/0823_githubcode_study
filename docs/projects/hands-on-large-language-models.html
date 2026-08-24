@@ -52,7 +52,7 @@
             <li><span>02</span><p><strong>建议 T4 16GB</strong>这是上游给出的最稳定入门环境。</p></li>
             <li><span>03</span><p><strong>先观察生成链路</strong>Tokenizer → logits → decoding → cache。</p></li>
           </ol>
-          <div class="start-status"><span aria-hidden="true"></span><p><strong>本库进度</strong>：12章代码已盘点；第1—7章已有8个低成本练习。</p></div>
+          <div class="start-status"><span aria-hidden="true"></span><p><strong>本库进度</strong>：12章代码已盘点；第1—8章已有9个低成本练习。</p></div>
         </aside>
       </section>
 
@@ -71,8 +71,8 @@
 
         <div class="research-status" aria-label="当前研究状态">
           <div><span>12 / 12</span><p>Notebook代码已核查</p></div>
-          <div><span>8</span><p>第1—7章实践已运行</p></div>
-          <div><span>NEXT</span><p>第8章语义搜索</p></div>
+          <div><span>9</span><p>第1—8章实践已运行</p></div>
+          <div><span>NEXT</span><p>第9章多模态大语言模型</p></div>
           <div><span>BOUNDARY</span><p>Phi-3原权重尚未复现</p></div>
         </div>
 
@@ -167,7 +167,7 @@
 
       <section id="labs" class="workspace-section" aria-labelledby="labs-title">
         <header class="section-header">
-          <div><p class="section-label">03 / PRACTICE LABS</p><h2 id="labs-title">先做八个最小练习。</h2></div>
+          <div><p class="section-label">03 / PRACTICE LABS</p><h2 id="labs-title">先做九个最小练习。</h2></div>
           <p>默认只展开一个，避免页面变成结果墙。每个练习都保留预测、观察、解释、继续修改和证据。</p>
         </header>
 
@@ -216,8 +216,14 @@
               <div class="lab-next"><p><strong>继续修改</strong>：只把max_new_tokens改为64，或只加入FINAL分隔符；先预测截断与追加错误分别怎样变化。</p><p><strong>理解检查</strong>：为什么Python能12/12算对，而完整路径只有4/12？最终答案之外还应保存什么轨迹？</p></div>
               <p class="evidence-links"><a href="https://github.com/HandsOnLLM/Hands-On-Large-Language-Models/tree/ea3390819997999a51983677b80b3aac4dc50ada/chapter07">章节源码</a><a href="https://github.com/yydshly/0823_githubcode_study/tree/main/projects/hands-on-large-language-models/experiments/phase-05-tools">实验说明</a><a href="https://github.com/yydshly/0823_githubcode_study/blob/main/projects/hands-on-large-language-models/experiments/phase-05-tools/run_tool_observation.py">复现脚本</a><a href="https://github.com/yydshly/0823_githubcode_study/blob/main/projects/hands-on-large-language-models/experiments/phase-05-tools/results/tool-observation-results.json">结果JSON</a></p></div>
           </details>
+          <details class="lab-card">
+            <summary><span class="lab-index">09</span><div><small>CH 08 · SEMANTIC SEARCH</small><h3>“最相似”就代表“有答案”吗？</h3></div><p><strong>6 / 12 → 12 / 12</strong><span>释义查询Top-1</span></p></summary>
+            <div class="lab-body"><div class="lab-grid"><article><span>先预测</span><p>查询换一种说法后，关键词和向量检索谁更容易找到正确片段？语料无答案时会不会停止？</p></article><article><span>动手</span><p>固定12条文档和24条标注查询，只把BM25词项评分换成MiniLM余弦相似度。</p></article><article><span>观察</span><p>词汇查询两者均12/12；释义查询BM25为6/12，MiniLM为12/12。3个无答案探针仍全部得到Top-1。</p></article><article><span>解释</span><p>Embedding改变的是语义近邻排序；检索器只会在已有语料中选“最像”，不会证明它含有答案，也不负责生成回答。</p></article></div>
+              <div class="lab-next"><p><strong>继续修改</strong>：加入措辞相似但答案不同的干扰文档，或只把Top-k从3改为1，先预测召回怎样变化。</p><p><strong>理解检查</strong>：为什么reranker救不回首轮没召回的文档？为什么最高相似度不能直接当“有答案”？</p></div>
+              <p class="evidence-links"><a href="https://github.com/HandsOnLLM/Hands-On-Large-Language-Models/tree/ea3390819997999a51983677b80b3aac4dc50ada/chapter08">章节源码</a><a href="https://github.com/yydshly/0823_githubcode_study/tree/main/projects/hands-on-large-language-models/experiments/phase-06-semantic-search">实验说明</a><a href="https://github.com/yydshly/0823_githubcode_study/blob/main/projects/hands-on-large-language-models/experiments/phase-06-semantic-search/run_semantic_search.py">复现脚本</a><a href="https://github.com/yydshly/0823_githubcode_study/blob/main/projects/hands-on-large-language-models/experiments/phase-06-semantic-search/results/semantic-search-results.json">结果JSON</a></p></div>
+          </details>
         </div>
-        <p class="boundary-note"><strong>证据边界</strong>：第1—3章使用135M代理模型；第4章用MiniLM和400/200平衡子集；第5章使用gte-small与600篇子集；第6章使用135M代理和12条合成记录；第7章使用135M代理、12条合成换汇与本地Decimal，不评测自主选工具或实时搜索。均为机制实践，不是原模型或完整数据基准。</p>
+        <p class="boundary-note"><strong>证据边界</strong>：第1—3章使用135M代理模型；第4章用MiniLM和400/200平衡子集；第5章使用gte-small与600篇子集；第6章使用135M代理和12条合成记录；第7章使用135M代理、12条合成换汇与本地Decimal；第8章使用MiniLM、12条合成帮助文档与24条标注查询，不评测生成答案。均为机制实践，不是原模型或完整数据基准。</p>
       </section>
 
       <section id="setup" class="workspace-section" aria-labelledby="setup-title">
@@ -234,7 +240,7 @@
         <div class="resource-grid">
           <article class="resource-group"><span>阅读</span><h3>书籍与作者</h3><a href="https://www.oreilly.com/library/view/hands-on-large-language/9781098150952/">O’Reilly书籍页 ↗</a><a href="https://github.com/HandsOnLLM/Hands-On-Large-Language-Models#table-of-contents">官方目录与Colab ↗</a><p>Jay Alammar · Maarten Grootendorst</p></article>
           <article class="resource-group"><span>源码</span><h3>固定研究对象</h3><a href="https://github.com/HandsOnLLM/Hands-On-Large-Language-Models/tree/ea3390819997999a51983677b80b3aac4dc50ada">固定提交 ea339081 ↗</a><a href="https://github.com/HandsOnLLM/Hands-On-Large-Language-Models/blob/ea3390819997999a51983677b80b3aac4dc50ada/LICENSE">Apache-2.0许可证 ↗</a><p>外部模型和数据集许可证需分别核查。</p></article>
-          <article class="resource-group"><span>本库研究</span><h3>清单与实验</h3><a href="https://github.com/yydshly/0823_githubcode_study/blob/main/projects/hands-on-large-language-models/analysis/notebook-inventory.json">Notebook代码清单 ↗</a><a href="https://github.com/yydshly/0823_githubcode_study/tree/main/projects/hands-on-large-language-models/experiments/phase-02-classification">第4章分类实验 ↗</a><a href="https://github.com/yydshly/0823_githubcode_study/tree/main/projects/hands-on-large-language-models/experiments/phase-03-topic-modeling">第5章主题实验 ↗</a><a href="https://github.com/yydshly/0823_githubcode_study/tree/main/projects/hands-on-large-language-models/experiments/phase-04-prompt-engineering">第6章提示实验 ↗</a><a href="https://github.com/yydshly/0823_githubcode_study/tree/main/projects/hands-on-large-language-models/experiments/phase-05-tools">第7章工具实验 ↗</a><p>8个练习的机器结果、失败观察与证据边界均保留。</p></article>
+          <article class="resource-group"><span>本库研究</span><h3>清单与实验</h3><a href="https://github.com/yydshly/0823_githubcode_study/blob/main/projects/hands-on-large-language-models/analysis/notebook-inventory.json">Notebook代码清单 ↗</a><a href="https://github.com/yydshly/0823_githubcode_study/tree/main/projects/hands-on-large-language-models/experiments/phase-02-classification">第4章分类实验 ↗</a><a href="https://github.com/yydshly/0823_githubcode_study/tree/main/projects/hands-on-large-language-models/experiments/phase-03-topic-modeling">第5章主题实验 ↗</a><a href="https://github.com/yydshly/0823_githubcode_study/tree/main/projects/hands-on-large-language-models/experiments/phase-04-prompt-engineering">第6章提示实验 ↗</a><a href="https://github.com/yydshly/0823_githubcode_study/tree/main/projects/hands-on-large-language-models/experiments/phase-05-tools">第7章工具实验 ↗</a><a href="https://github.com/yydshly/0823_githubcode_study/tree/main/projects/hands-on-large-language-models/experiments/phase-06-semantic-search">第8章语义搜索实验 ↗</a><p>9个练习的机器结果、失败观察与证据边界均保留。</p></article>
         </div>
       </section>
     </main>

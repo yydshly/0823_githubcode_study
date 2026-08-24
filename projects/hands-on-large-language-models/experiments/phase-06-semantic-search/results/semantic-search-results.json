@@ -1,0 +1,1583 @@
+{
+  "experiment": "Chapter 8 controlled semantic-search comparison",
+  "predictionBeforeRun": "BM25 should remain strong when queries reuse corpus words; dense retrieval should recover more paraphrases. Neither method can abstain without an added policy.",
+  "controlledVariable": "retrieval representation and scoring only: Notebook-style BM25 tokens versus normalized MiniLM embeddings with cosine similarity",
+  "fixedConditions": {
+    "corpusDocuments": 12,
+    "labelledQueries": 24,
+    "queryGroups": [
+      "lexical",
+      "paraphrase"
+    ],
+    "topK": 3,
+    "seed": 42
+  },
+  "sourceNotebook": {
+    "chapter": 8,
+    "upstreamCommit": "ea3390819997999a51983677b80b3aac4dc50ada",
+    "operativeCells": [
+      6,
+      8,
+      10,
+      12,
+      14,
+      15,
+      16,
+      19,
+      21,
+      23,
+      27,
+      35,
+      37,
+      39,
+      40
+    ]
+  },
+  "model": {
+    "id": "sentence-transformers/all-MiniLM-L6-v2",
+    "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+    "device": "cpu",
+    "normalization": "L2",
+    "similarity": "cosine via dot product"
+  },
+  "environment": {
+    "createdAt": "2026-08-24T12:48:42.072682+00:00",
+    "python": "3.10.11",
+    "torch": "2.3.1+cpu",
+    "sentenceTransformers": "3.0.1",
+    "scikitLearn": "1.5.0",
+    "numpy": "1.26.4",
+    "offlineMode": true
+  },
+  "corpus": [
+    {
+      "id": "password",
+      "text": "Reset a forgotten password from Settings > Security. We send a recovery link to the account email."
+    },
+    {
+      "id": "receipt",
+      "text": "Download payment receipts as PDF from Billing > Transactions after a charge is completed."
+    },
+    {
+      "id": "csv_export",
+      "text": "Export report tables as CSV from Analytics > Reports. Filters are preserved in the downloaded file."
+    },
+    {
+      "id": "quiet_hours",
+      "text": "Quiet hours pause mobile and email notifications on a daily schedule configured under Notification preferences."
+    },
+    {
+      "id": "invite",
+      "text": "Workspace owners invite colleagues from Members. Invitations expire after seven days."
+    },
+    {
+      "id": "delete",
+      "text": "Deleting an account starts a 30-day recovery period. Personal data is erased after that period."
+    },
+    {
+      "id": "offline",
+      "text": "Offline mode keeps the 50 most recently opened notes available without an internet connection."
+    },
+    {
+      "id": "upload",
+      "text": "Each attachment can be at most 25 MB. Larger files must be shared with an external link."
+    },
+    {
+      "id": "refund",
+      "text": "Refund requests are accepted within 14 days of purchase through Billing support."
+    },
+    {
+      "id": "token",
+      "text": "API access tokens expire 90 days after creation and can be rotated from Developer settings."
+    },
+    {
+      "id": "two_factor",
+      "text": "Two-factor recovery codes can replace an unavailable authenticator. Each code works once."
+    },
+    {
+      "id": "timezone",
+      "text": "Change the workspace time zone under Preferences > Locale to correct calendar event times."
+    }
+  ],
+  "summary": {
+    "bm25": {
+      "lexical": {
+        "queries": 12,
+        "top1": 12,
+        "top1Rate": 1.0,
+        "top3": 12,
+        "top3Rate": 1.0,
+        "mrr": 1.0
+      },
+      "paraphrase": {
+        "queries": 12,
+        "top1": 6,
+        "top1Rate": 0.5,
+        "top3": 7,
+        "top3Rate": 0.5833,
+        "mrr": 0.61
+      }
+    },
+    "dense": {
+      "lexical": {
+        "queries": 12,
+        "top1": 12,
+        "top1Rate": 1.0,
+        "top3": 12,
+        "top3Rate": 1.0,
+        "mrr": 1.0
+      },
+      "paraphrase": {
+        "queries": 12,
+        "top1": 12,
+        "top1Rate": 1.0,
+        "top3": 12,
+        "top3Rate": 1.0,
+        "mrr": 1.0
+      }
+    }
+  },
+  "labelledResults": [
+    {
+      "id": "password-lexical",
+      "group": "lexical",
+      "query": "How do I reset a forgotten password?",
+      "bm25": {
+        "expectedDocId": "password",
+        "expectedRank": 1,
+        "hitAt1": true,
+        "hitAt3": true,
+        "reciprocalRank": 1.0,
+        "top": [
+          {
+            "rank": 1,
+            "docId": "password",
+            "score": 5.944925
+          },
+          {
+            "rank": 2,
+            "docId": "receipt",
+            "score": 0.0
+          },
+          {
+            "rank": 3,
+            "docId": "csv_export",
+            "score": 0.0
+          }
+        ]
+      },
+      "dense": {
+        "expectedDocId": "password",
+        "expectedRank": 1,
+        "hitAt1": true,
+        "hitAt3": true,
+        "reciprocalRank": 1.0,
+        "top": [
+          {
+            "rank": 1,
+            "docId": "password",
+            "score": 0.741607
+          },
+          {
+            "rank": 2,
+            "docId": "two_factor",
+            "score": 0.352644
+          },
+          {
+            "rank": 3,
+            "docId": "delete",
+            "score": 0.307273
+          }
+        ]
+      }
+    },
+    {
+      "id": "password-paraphrase",
+      "group": "paraphrase",
+      "query": "I cannot remember my sign-in secret. How can I regain access?",
+      "bm25": {
+        "expectedDocId": "password",
+        "expectedRank": 2,
+        "hitAt1": false,
+        "hitAt3": true,
+        "reciprocalRank": 0.5,
+        "top": [
+          {
+            "rank": 1,
+            "docId": "token",
+            "score": 1.981642
+          },
+          {
+            "rank": 2,
+            "docId": "password",
+            "score": 0.0
+          },
+          {
+            "rank": 3,
+            "docId": "receipt",
+            "score": 0.0
+          }
+        ]
+      },
+      "dense": {
+        "expectedDocId": "password",
+        "expectedRank": 1,
+        "hitAt1": true,
+        "hitAt3": true,
+        "reciprocalRank": 1.0,
+        "top": [
+          {
+            "rank": 1,
+            "docId": "password",
+            "score": 0.637449
+          },
+          {
+            "rank": 2,
+            "docId": "two_factor",
+            "score": 0.36675
+          },
+          {
+            "rank": 3,
+            "docId": "delete",
+            "score": 0.322029
+          }
+        ]
+      }
+    },
+    {
+      "id": "receipt-lexical",
+      "group": "lexical",
+      "query": "Where can I download a payment receipt?",
+      "bm25": {
+        "expectedDocId": "receipt",
+        "expectedRank": 1,
+        "hitAt1": true,
+        "hitAt3": true,
+        "reciprocalRank": 1.0,
+        "top": [
+          {
+            "rank": 1,
+            "docId": "receipt",
+            "score": 4.369581
+          },
+          {
+            "rank": 2,
+            "docId": "password",
+            "score": 0.0
+          },
+          {
+            "rank": 3,
+            "docId": "csv_export",
+            "score": 0.0
+          }
+        ]
+      },
+      "dense": {
+        "expectedDocId": "receipt",
+        "expectedRank": 1,
+        "hitAt1": true,
+        "hitAt3": true,
+        "reciprocalRank": 1.0,
+        "top": [
+          {
+            "rank": 1,
+            "docId": "receipt",
+            "score": 0.796504
+          },
+          {
+            "rank": 2,
+            "docId": "refund",
+            "score": 0.328183
+          },
+          {
+            "rank": 3,
+            "docId": "offline",
+            "score": 0.225416
+          }
+        ]
+      }
+    },
+    {
+      "id": "receipt-paraphrase",
+      "group": "paraphrase",
+      "query": "Where can I get proof of a completed purchase?",
+      "bm25": {
+        "expectedDocId": "receipt",
+        "expectedRank": 1,
+        "hitAt1": true,
+        "hitAt3": true,
+        "reciprocalRank": 1.0,
+        "top": [
+          {
+            "rank": 1,
+            "docId": "receipt",
+            "score": 2.18479
+          },
+          {
+            "rank": 2,
+            "docId": "refund",
+            "score": 2.18479
+          },
+          {
+            "rank": 3,
+            "docId": "password",
+            "score": 0.0
+          }
+        ]
+      },
+      "dense": {
+        "expectedDocId": "receipt",
+        "expectedRank": 1,
+        "hitAt1": true,
+        "hitAt3": true,
+        "reciprocalRank": 1.0,
+        "top": [
+          {
+            "rank": 1,
+            "docId": "receipt",
+            "score": 0.519956
+          },
+          {
+            "rank": 2,
+            "docId": "refund",
+            "score": 0.411561
+          },
+          {
+            "rank": 3,
+            "docId": "two_factor",
+            "score": 0.160723
+          }
+        ]
+      }
+    },
+    {
+      "id": "csv_export-lexical",
+      "group": "lexical",
+      "query": "How do I export report tables as CSV?",
+      "bm25": {
+        "expectedDocId": "csv_export",
+        "expectedRank": 1,
+        "hitAt1": true,
+        "hitAt3": true,
+        "reciprocalRank": 1.0,
+        "top": [
+          {
+            "rank": 1,
+            "docId": "csv_export",
+            "score": 7.926567
+          },
+          {
+            "rank": 2,
+            "docId": "password",
+            "score": 0.0
+          },
+          {
+            "rank": 3,
+            "docId": "receipt",
+            "score": 0.0
+          }
+        ]
+      },
+      "dense": {
+        "expectedDocId": "csv_export",
+        "expectedRank": 1,
+        "hitAt1": true,
+        "hitAt3": true,
+        "reciprocalRank": 1.0,
+        "top": [
+          {
+            "rank": 1,
+            "docId": "csv_export",
+            "score": 0.741514
+          },
+          {
+            "rank": 2,
+            "docId": "receipt",
+            "score": 0.177271
+          },
+          {
+            "rank": 3,
+            "docId": "delete",
+            "score": 0.03939
+          }
+        ]
+      }
+    },
+    {
+      "id": "csv_export-paraphrase",
+      "group": "paraphrase",
+      "query": "How can I move analytics rows into a spreadsheet?",
+      "bm25": {
+        "expectedDocId": "csv_export",
+        "expectedRank": 1,
+        "hitAt1": true,
+        "hitAt3": true,
+        "reciprocalRank": 1.0,
+        "top": [
+          {
+            "rank": 1,
+            "docId": "csv_export",
+            "score": 1.981642
+          },
+          {
+            "rank": 2,
+            "docId": "password",
+            "score": 0.0
+          },
+          {
+            "rank": 3,
+            "docId": "receipt",
+            "score": 0.0
+          }
+        ]
+      },
+      "dense": {
+        "expectedDocId": "csv_export",
+        "expectedRank": 1,
+        "hitAt1": true,
+        "hitAt3": true,
+        "reciprocalRank": 1.0,
+        "top": [
+          {
+            "rank": 1,
+            "docId": "csv_export",
+            "score": 0.537078
+          },
+          {
+            "rank": 2,
+            "docId": "receipt",
+            "score": 0.054456
+          },
+          {
+            "rank": 3,
+            "docId": "delete",
+            "score": 0.049619
+          }
+        ]
+      }
+    },
+    {
+      "id": "quiet_hours-lexical",
+      "group": "lexical",
+      "query": "How do I configure quiet hours for notifications?",
+      "bm25": {
+        "expectedDocId": "quiet_hours",
+        "expectedRank": 1,
+        "hitAt1": true,
+        "hitAt3": true,
+        "reciprocalRank": 1.0,
+        "top": [
+          {
+            "rank": 1,
+            "docId": "quiet_hours",
+            "score": 5.680815
+          },
+          {
+            "rank": 2,
+            "docId": "password",
+            "score": 0.0
+          },
+          {
+            "rank": 3,
+            "docId": "receipt",
+            "score": 0.0
+          }
+        ]
+      },
+      "dense": {
+        "expectedDocId": "quiet_hours",
+        "expectedRank": 1,
+        "hitAt1": true,
+        "hitAt3": true,
+        "reciprocalRank": 1.0,
+        "top": [
+          {
+            "rank": 1,
+            "docId": "quiet_hours",
+            "score": 0.727142
+          },
+          {
+            "rank": 2,
+            "docId": "timezone",
+            "score": 0.250996
+          },
+          {
+            "rank": 3,
+            "docId": "invite",
+            "score": 0.249423
+          }
+        ]
+      }
+    },
+    {
+      "id": "quiet_hours-paraphrase",
+      "group": "paraphrase",
+      "query": "Can I silence alerts while I am asleep?",
+      "bm25": {
+        "expectedDocId": "quiet_hours",
+        "expectedRank": 4,
+        "hitAt1": false,
+        "hitAt3": false,
+        "reciprocalRank": 0.25,
+        "top": [
+          {
+            "rank": 1,
+            "docId": "password",
+            "score": 0.0
+          },
+          {
+            "rank": 2,
+            "docId": "receipt",
+            "score": 0.0
+          },
+          {
+            "rank": 3,
+            "docId": "csv_export",
+            "score": 0.0
+          }
+        ]
+      },
+      "dense": {
+        "expectedDocId": "quiet_hours",
+        "expectedRank": 1,
+        "hitAt1": true,
+        "hitAt3": true,
+        "reciprocalRank": 1.0,
+        "top": [
+          {
+            "rank": 1,
+            "docId": "quiet_hours",
+            "score": 0.542737
+          },
+          {
+            "rank": 2,
+            "docId": "offline",
+            "score": 0.136199
+          },
+          {
+            "rank": 3,
+            "docId": "receipt",
+            "score": 0.067063
+          }
+        ]
+      }
+    },
+    {
+      "id": "invite-lexical",
+      "group": "lexical",
+      "query": "How do workspace owners invite colleagues?",
+      "bm25": {
+        "expectedDocId": "invite",
+        "expectedRank": 1,
+        "hitAt1": true,
+        "hitAt3": true,
+        "reciprocalRank": 1.0,
+        "top": [
+          {
+            "rank": 1,
+            "docId": "invite",
+            "score": 7.699029
+          },
+          {
+            "rank": 2,
+            "docId": "timezone",
+            "score": 1.396165
+          },
+          {
+            "rank": 3,
+            "docId": "password",
+            "score": 0.0
+          }
+        ]
+      },
+      "dense": {
+        "expectedDocId": "invite",
+        "expectedRank": 1,
+        "hitAt1": true,
+        "hitAt3": true,
+        "reciprocalRank": 1.0,
+        "top": [
+          {
+            "rank": 1,
+            "docId": "invite",
+            "score": 0.792962
+          },
+          {
+            "rank": 2,
+            "docId": "timezone",
+            "score": 0.182562
+          },
+          {
+            "rank": 3,
+            "docId": "quiet_hours",
+            "score": 0.172745
+          }
+        ]
+      }
+    },
+    {
+      "id": "invite-paraphrase",
+      "group": "paraphrase",
+      "query": "How can I bring coworkers into our shared area?",
+      "bm25": {
+        "expectedDocId": "invite",
+        "expectedRank": 6,
+        "hitAt1": false,
+        "hitAt3": false,
+        "reciprocalRank": 0.166667,
+        "top": [
+          {
+            "rank": 1,
+            "docId": "upload",
+            "score": 2.18479
+          },
+          {
+            "rank": 2,
+            "docId": "password",
+            "score": 0.0
+          },
+          {
+            "rank": 3,
+            "docId": "receipt",
+            "score": 0.0
+          }
+        ]
+      },
+      "dense": {
+        "expectedDocId": "invite",
+        "expectedRank": 1,
+        "hitAt1": true,
+        "hitAt3": true,
+        "reciprocalRank": 1.0,
+        "top": [
+          {
+            "rank": 1,
+            "docId": "invite",
+            "score": 0.429222
+          },
+          {
+            "rank": 2,
+            "docId": "upload",
+            "score": 0.101029
+          },
+          {
+            "rank": 3,
+            "docId": "quiet_hours",
+            "score": 0.036054
+          }
+        ]
+      }
+    },
+    {
+      "id": "delete-lexical",
+      "group": "lexical",
+      "query": "What happens after deleting an account?",
+      "bm25": {
+        "expectedDocId": "delete",
+        "expectedRank": 1,
+        "hitAt1": true,
+        "hitAt3": true,
+        "reciprocalRank": 1.0,
+        "top": [
+          {
+            "rank": 1,
+            "docId": "delete",
+            "score": 3.227744
+          },
+          {
+            "rank": 2,
+            "docId": "password",
+            "score": 1.396165
+          },
+          {
+            "rank": 3,
+            "docId": "receipt",
+            "score": 0.0
+          }
+        ]
+      },
+      "dense": {
+        "expectedDocId": "delete",
+        "expectedRank": 1,
+        "hitAt1": true,
+        "hitAt3": true,
+        "reciprocalRank": 1.0,
+        "top": [
+          {
+            "rank": 1,
+            "docId": "delete",
+            "score": 0.717223
+          },
+          {
+            "rank": 2,
+            "docId": "password",
+            "score": 0.292361
+          },
+          {
+            "rank": 3,
+            "docId": "refund",
+            "score": 0.21436
+          }
+        ]
+      }
+    },
+    {
+      "id": "delete-paraphrase",
+      "group": "paraphrase",
+      "query": "If I close my profile, how long is my information kept?",
+      "bm25": {
+        "expectedDocId": "delete",
+        "expectedRank": 6,
+        "hitAt1": false,
+        "hitAt3": false,
+        "reciprocalRank": 0.166667,
+        "top": [
+          {
+            "rank": 1,
+            "docId": "password",
+            "score": 0.0
+          },
+          {
+            "rank": 2,
+            "docId": "receipt",
+            "score": 0.0
+          },
+          {
+            "rank": 3,
+            "docId": "csv_export",
+            "score": 0.0
+          }
+        ]
+      },
+      "dense": {
+        "expectedDocId": "delete",
+        "expectedRank": 1,
+        "hitAt1": true,
+        "hitAt3": true,
+        "reciprocalRank": 1.0,
+        "top": [
+          {
+            "rank": 1,
+            "docId": "delete",
+            "score": 0.576524
+          },
+          {
+            "rank": 2,
+            "docId": "token",
+            "score": 0.305037
+          },
+          {
+            "rank": 3,
+            "docId": "offline",
+            "score": 0.235916
+          }
+        ]
+      }
+    },
+    {
+      "id": "offline-lexical",
+      "group": "lexical",
+      "query": "Which notes are available in offline mode?",
+      "bm25": {
+        "expectedDocId": "offline",
+        "expectedRank": 1,
+        "hitAt1": true,
+        "hitAt3": true,
+        "reciprocalRank": 1.0,
+        "top": [
+          {
+            "rank": 1,
+            "docId": "offline",
+            "score": 7.926567
+          },
+          {
+            "rank": 2,
+            "docId": "password",
+            "score": 0.0
+          },
+          {
+            "rank": 3,
+            "docId": "receipt",
+            "score": 0.0
+          }
+        ]
+      },
+      "dense": {
+        "expectedDocId": "offline",
+        "expectedRank": 1,
+        "hitAt1": true,
+        "hitAt3": true,
+        "reciprocalRank": 1.0,
+        "top": [
+          {
+            "rank": 1,
+            "docId": "offline",
+            "score": 0.797944
+          },
+          {
+            "rank": 2,
+            "docId": "receipt",
+            "score": 0.272892
+          },
+          {
+            "rank": 3,
+            "docId": "quiet_hours",
+            "score": 0.220586
+          }
+        ]
+      }
+    },
+    {
+      "id": "offline-paraphrase",
+      "group": "paraphrase",
+      "query": "What can I read on a plane without a connection?",
+      "bm25": {
+        "expectedDocId": "offline",
+        "expectedRank": 1,
+        "hitAt1": true,
+        "hitAt3": true,
+        "reciprocalRank": 1.0,
+        "top": [
+          {
+            "rank": 1,
+            "docId": "offline",
+            "score": 1.981642
+          },
+          {
+            "rank": 2,
+            "docId": "password",
+            "score": 0.0
+          },
+          {
+            "rank": 3,
+            "docId": "receipt",
+            "score": 0.0
+          }
+        ]
+      },
+      "dense": {
+        "expectedDocId": "offline",
+        "expectedRank": 1,
+        "hitAt1": true,
+        "hitAt3": true,
+        "reciprocalRank": 1.0,
+        "top": [
+          {
+            "rank": 1,
+            "docId": "offline",
+            "score": 0.318381
+          },
+          {
+            "rank": 2,
+            "docId": "upload",
+            "score": 0.124733
+          },
+          {
+            "rank": 3,
+            "docId": "receipt",
+            "score": 0.106964
+          }
+        ]
+      }
+    },
+    {
+      "id": "upload-lexical",
+      "group": "lexical",
+      "query": "What is the maximum attachment size?",
+      "bm25": {
+        "expectedDocId": "upload",
+        "expectedRank": 1,
+        "hitAt1": true,
+        "hitAt3": true,
+        "reciprocalRank": 1.0,
+        "top": [
+          {
+            "rank": 1,
+            "docId": "upload",
+            "score": 2.18479
+          },
+          {
+            "rank": 2,
+            "docId": "password",
+            "score": 0.0
+          },
+          {
+            "rank": 3,
+            "docId": "receipt",
+            "score": 0.0
+          }
+        ]
+      },
+      "dense": {
+        "expectedDocId": "upload",
+        "expectedRank": 1,
+        "hitAt1": true,
+        "hitAt3": true,
+        "reciprocalRank": 1.0,
+        "top": [
+          {
+            "rank": 1,
+            "docId": "upload",
+            "score": 0.544787
+          },
+          {
+            "rank": 2,
+            "docId": "invite",
+            "score": 0.138928
+          },
+          {
+            "rank": 3,
+            "docId": "token",
+            "score": 0.032735
+          }
+        ]
+      }
+    },
+    {
+      "id": "upload-paraphrase",
+      "group": "paraphrase",
+      "query": "What is the biggest file I can send here?",
+      "bm25": {
+        "expectedDocId": "upload",
+        "expectedRank": 8,
+        "hitAt1": false,
+        "hitAt3": false,
+        "reciprocalRank": 0.125,
+        "top": [
+          {
+            "rank": 1,
+            "docId": "password",
+            "score": 1.981642
+          },
+          {
+            "rank": 2,
+            "docId": "csv_export",
+            "score": 1.981642
+          },
+          {
+            "rank": 3,
+            "docId": "receipt",
+            "score": 0.0
+          }
+        ]
+      },
+      "dense": {
+        "expectedDocId": "upload",
+        "expectedRank": 1,
+        "hitAt1": true,
+        "hitAt3": true,
+        "reciprocalRank": 1.0,
+        "top": [
+          {
+            "rank": 1,
+            "docId": "upload",
+            "score": 0.675082
+          },
+          {
+            "rank": 2,
+            "docId": "offline",
+            "score": 0.191226
+          },
+          {
+            "rank": 3,
+            "docId": "receipt",
+            "score": 0.137045
+          }
+        ]
+      }
+    },
+    {
+      "id": "refund-lexical",
+      "group": "lexical",
+      "query": "When are refund requests accepted?",
+      "bm25": {
+        "expectedDocId": "refund",
+        "expectedRank": 1,
+        "hitAt1": true,
+        "hitAt3": true,
+        "reciprocalRank": 1.0,
+        "top": [
+          {
+            "rank": 1,
+            "docId": "refund",
+            "score": 6.554371
+          },
+          {
+            "rank": 2,
+            "docId": "password",
+            "score": 0.0
+          },
+          {
+            "rank": 3,
+            "docId": "receipt",
+            "score": 0.0
+          }
+        ]
+      },
+      "dense": {
+        "expectedDocId": "refund",
+        "expectedRank": 1,
+        "hitAt1": true,
+        "hitAt3": true,
+        "reciprocalRank": 1.0,
+        "top": [
+          {
+            "rank": 1,
+            "docId": "refund",
+            "score": 0.788194
+          },
+          {
+            "rank": 2,
+            "docId": "receipt",
+            "score": 0.268524
+          },
+          {
+            "rank": 3,
+            "docId": "token",
+            "score": 0.264806
+          }
+        ]
+      }
+    },
+    {
+      "id": "refund-paraphrase",
+      "group": "paraphrase",
+      "query": "What is the deadline for asking for my money back?",
+      "bm25": {
+        "expectedDocId": "refund",
+        "expectedRank": 9,
+        "hitAt1": false,
+        "hitAt3": false,
+        "reciprocalRank": 0.111111,
+        "top": [
+          {
+            "rank": 1,
+            "docId": "password",
+            "score": 0.0
+          },
+          {
+            "rank": 2,
+            "docId": "receipt",
+            "score": 0.0
+          },
+          {
+            "rank": 3,
+            "docId": "csv_export",
+            "score": 0.0
+          }
+        ]
+      },
+      "dense": {
+        "expectedDocId": "refund",
+        "expectedRank": 1,
+        "hitAt1": true,
+        "hitAt3": true,
+        "reciprocalRank": 1.0,
+        "top": [
+          {
+            "rank": 1,
+            "docId": "refund",
+            "score": 0.621086
+          },
+          {
+            "rank": 2,
+            "docId": "receipt",
+            "score": 0.200639
+          },
+          {
+            "rank": 3,
+            "docId": "delete",
+            "score": 0.199237
+          }
+        ]
+      }
+    },
+    {
+      "id": "token-lexical",
+      "group": "lexical",
+      "query": "When do API access tokens expire?",
+      "bm25": {
+        "expectedDocId": "token",
+        "expectedRank": 1,
+        "hitAt1": true,
+        "hitAt3": true,
+        "reciprocalRank": 1.0,
+        "top": [
+          {
+            "rank": 1,
+            "docId": "token",
+            "score": 7.34109
+          },
+          {
+            "rank": 2,
+            "docId": "invite",
+            "score": 1.46424
+          },
+          {
+            "rank": 3,
+            "docId": "password",
+            "score": 0.0
+          }
+        ]
+      },
+      "dense": {
+        "expectedDocId": "token",
+        "expectedRank": 1,
+        "hitAt1": true,
+        "hitAt3": true,
+        "reciprocalRank": 1.0,
+        "top": [
+          {
+            "rank": 1,
+            "docId": "token",
+            "score": 0.896584
+          },
+          {
+            "rank": 2,
+            "docId": "invite",
+            "score": 0.392891
+          },
+          {
+            "rank": 3,
+            "docId": "delete",
+            "score": 0.295684
+          }
+        ]
+      }
+    },
+    {
+      "id": "token-paraphrase",
+      "group": "paraphrase",
+      "query": "How long will a developer credential keep working?",
+      "bm25": {
+        "expectedDocId": "token",
+        "expectedRank": 1,
+        "hitAt1": true,
+        "hitAt3": true,
+        "reciprocalRank": 1.0,
+        "top": [
+          {
+            "rank": 1,
+            "docId": "token",
+            "score": 1.981642
+          },
+          {
+            "rank": 2,
+            "docId": "password",
+            "score": 0.0
+          },
+          {
+            "rank": 3,
+            "docId": "receipt",
+            "score": 0.0
+          }
+        ]
+      },
+      "dense": {
+        "expectedDocId": "token",
+        "expectedRank": 1,
+        "hitAt1": true,
+        "hitAt3": true,
+        "reciprocalRank": 1.0,
+        "top": [
+          {
+            "rank": 1,
+            "docId": "token",
+            "score": 0.474454
+          },
+          {
+            "rank": 2,
+            "docId": "invite",
+            "score": 0.3041
+          },
+          {
+            "rank": 3,
+            "docId": "delete",
+            "score": 0.231112
+          }
+        ]
+      }
+    },
+    {
+      "id": "two_factor-lexical",
+      "group": "lexical",
+      "query": "How do two-factor recovery codes work?",
+      "bm25": {
+        "expectedDocId": "two_factor",
+        "expectedRank": 1,
+        "hitAt1": true,
+        "hitAt3": true,
+        "reciprocalRank": 1.0,
+        "top": [
+          {
+            "rank": 1,
+            "docId": "two_factor",
+            "score": 5.440618
+          },
+          {
+            "rank": 2,
+            "docId": "password",
+            "score": 0.971449
+          },
+          {
+            "rank": 3,
+            "docId": "delete",
+            "score": 0.928291
+          }
+        ]
+      },
+      "dense": {
+        "expectedDocId": "two_factor",
+        "expectedRank": 1,
+        "hitAt1": true,
+        "hitAt3": true,
+        "reciprocalRank": 1.0,
+        "top": [
+          {
+            "rank": 1,
+            "docId": "two_factor",
+            "score": 0.662705
+          },
+          {
+            "rank": 2,
+            "docId": "delete",
+            "score": 0.225944
+          },
+          {
+            "rank": 3,
+            "docId": "password",
+            "score": 0.152433
+          }
+        ]
+      }
+    },
+    {
+      "id": "two_factor-paraphrase",
+      "group": "paraphrase",
+      "query": "I lost my authenticator phone. Is there another way in?",
+      "bm25": {
+        "expectedDocId": "two_factor",
+        "expectedRank": 1,
+        "hitAt1": true,
+        "hitAt3": true,
+        "reciprocalRank": 1.0,
+        "top": [
+          {
+            "rank": 1,
+            "docId": "two_factor",
+            "score": 2.18479
+          },
+          {
+            "rank": 2,
+            "docId": "password",
+            "score": 0.0
+          },
+          {
+            "rank": 3,
+            "docId": "receipt",
+            "score": 0.0
+          }
+        ]
+      },
+      "dense": {
+        "expectedDocId": "two_factor",
+        "expectedRank": 1,
+        "hitAt1": true,
+        "hitAt3": true,
+        "reciprocalRank": 1.0,
+        "top": [
+          {
+            "rank": 1,
+            "docId": "two_factor",
+            "score": 0.514964
+          },
+          {
+            "rank": 2,
+            "docId": "password",
+            "score": 0.433605
+          },
+          {
+            "rank": 3,
+            "docId": "delete",
+            "score": 0.234573
+          }
+        ]
+      }
+    },
+    {
+      "id": "timezone-lexical",
+      "group": "lexical",
+      "query": "Where do I change the workspace time zone?",
+      "bm25": {
+        "expectedDocId": "timezone",
+        "expectedRank": 1,
+        "hitAt1": true,
+        "hitAt3": true,
+        "reciprocalRank": 1.0,
+        "top": [
+          {
+            "rank": 1,
+            "docId": "timezone",
+            "score": 7.34109
+          },
+          {
+            "rank": 2,
+            "docId": "invite",
+            "score": 1.46424
+          },
+          {
+            "rank": 3,
+            "docId": "password",
+            "score": 0.0
+          }
+        ]
+      },
+      "dense": {
+        "expectedDocId": "timezone",
+        "expectedRank": 1,
+        "hitAt1": true,
+        "hitAt3": true,
+        "reciprocalRank": 1.0,
+        "top": [
+          {
+            "rank": 1,
+            "docId": "timezone",
+            "score": 0.572953
+          },
+          {
+            "rank": 2,
+            "docId": "invite",
+            "score": 0.290594
+          },
+          {
+            "rank": 3,
+            "docId": "token",
+            "score": 0.221985
+          }
+        ]
+      }
+    },
+    {
+      "id": "timezone-paraphrase",
+      "group": "paraphrase",
+      "query": "My meeting times shifted after travel. Which locale setting fixes them?",
+      "bm25": {
+        "expectedDocId": "timezone",
+        "expectedRank": 1,
+        "hitAt1": true,
+        "hitAt3": true,
+        "reciprocalRank": 1.0,
+        "top": [
+          {
+            "rank": 1,
+            "docId": "timezone",
+            "score": 3.963283
+          },
+          {
+            "rank": 2,
+            "docId": "password",
+            "score": 0.0
+          },
+          {
+            "rank": 3,
+            "docId": "receipt",
+            "score": 0.0
+          }
+        ]
+      },
+      "dense": {
+        "expectedDocId": "timezone",
+        "expectedRank": 1,
+        "hitAt1": true,
+        "hitAt3": true,
+        "reciprocalRank": 1.0,
+        "top": [
+          {
+            "rank": 1,
+            "docId": "timezone",
+            "score": 0.648793
+          },
+          {
+            "rank": 2,
+            "docId": "quiet_hours",
+            "score": 0.270736
+          },
+          {
+            "rank": 3,
+            "docId": "invite",
+            "score": 0.270564
+          }
+        ]
+      }
+    }
+  ],
+  "top1Failures": [
+    {
+      "queryId": "password-paraphrase",
+      "method": "bm25",
+      "expectedDocId": "password",
+      "expectedRank": 2,
+      "returnedDocId": "token"
+    },
+    {
+      "queryId": "quiet_hours-paraphrase",
+      "method": "bm25",
+      "expectedDocId": "quiet_hours",
+      "expectedRank": 4,
+      "returnedDocId": "password"
+    },
+    {
+      "queryId": "invite-paraphrase",
+      "method": "bm25",
+      "expectedDocId": "invite",
+      "expectedRank": 6,
+      "returnedDocId": "upload"
+    },
+    {
+      "queryId": "delete-paraphrase",
+      "method": "bm25",
+      "expectedDocId": "delete",
+      "expectedRank": 6,
+      "returnedDocId": "password"
+    },
+    {
+      "queryId": "upload-paraphrase",
+      "method": "bm25",
+      "expectedDocId": "upload",
+      "expectedRank": 8,
+      "returnedDocId": "password"
+    },
+    {
+      "queryId": "refund-paraphrase",
+      "method": "bm25",
+      "expectedDocId": "refund",
+      "expectedRank": 9,
+      "returnedDocId": "password"
+    }
+  ],
+  "unsupportedProbes": [
+    {
+      "query": "What is the cafeteria lunch menu today?",
+      "note": "No corpus document answers this query; both retrievers still return a ranking.",
+      "bm25Top": [
+        {
+          "rank": 1,
+          "docId": "password",
+          "score": 0.0
+        },
+        {
+          "rank": 2,
+          "docId": "receipt",
+          "score": 0.0
+        },
+        {
+          "rank": 3,
+          "docId": "csv_export",
+          "score": 0.0
+        }
+      ],
+      "denseTop": [
+        {
+          "rank": 1,
+          "docId": "quiet_hours",
+          "score": 0.187722
+        },
+        {
+          "rank": 2,
+          "docId": "offline",
+          "score": 0.111337
+        },
+        {
+          "rank": 3,
+          "docId": "invite",
+          "score": 0.073104
+        }
+      ],
+      "denseTop1Margin": 0.076385
+    },
+    {
+      "query": "Which health insurance plan covers dental surgery?",
+      "note": "No corpus document answers this query; both retrievers still return a ranking.",
+      "bm25Top": [
+        {
+          "rank": 1,
+          "docId": "password",
+          "score": 0.0
+        },
+        {
+          "rank": 2,
+          "docId": "receipt",
+          "score": 0.0
+        },
+        {
+          "rank": 3,
+          "docId": "csv_export",
+          "score": 0.0
+        }
+      ],
+      "denseTop": [
+        {
+          "rank": 1,
+          "docId": "token",
+          "score": 0.090239
+        },
+        {
+          "rank": 2,
+          "docId": "two_factor",
+          "score": 0.068984
+        },
+        {
+          "rank": 3,
+          "docId": "offline",
+          "score": 0.065025
+        }
+      ],
+      "denseTop1Margin": 0.021255
+    },
+    {
+      "query": "How many satellites are currently orbiting Mars?",
+      "note": "No corpus document answers this query; both retrievers still return a ranking.",
+      "bm25Top": [
+        {
+          "rank": 1,
+          "docId": "password",
+          "score": 0.0
+        },
+        {
+          "rank": 2,
+          "docId": "receipt",
+          "score": 0.0
+        },
+        {
+          "rank": 3,
+          "docId": "csv_export",
+          "score": 0.0
+        }
+      ],
+      "denseTop": [
+        {
+          "rank": 1,
+          "docId": "upload",
+          "score": 0.15403
+        },
+        {
+          "rank": 2,
+          "docId": "invite",
+          "score": 0.11062
+        },
+        {
+          "rank": 3,
+          "docId": "offline",
+          "score": 0.086261
+        }
+      ],
+      "denseTop1Margin": 0.04341
+    }
+  ],
+  "interpretationBoundary": [
+    "This measures retrieval ranking on one small English synthetic corpus, not production search quality.",
+    "The local MiniLM proxy is not the Cohere or BGE model used in the Notebook, so scores are not interchangeable.",
+    "A top similarity score is relative to this corpus and is not proof that the corpus contains an answer.",
+    "No generator is used; retrieval quality and generated-answer quality remain separate stages."
+  ]
+}

@@ -11,7 +11,7 @@
 | 获取方式 | Git submodule：`upstream/` |
 | 许可证 | Apache-2.0；外部模型与数据集需分别核查许可证 |
 | 开始日期 | 2026-08-23 |
-| 当前状态 | 研究中：静态能力盘点完成；第 1—7 章共 8 个低成本实践已通过 |
+| 当前状态 | 研究中：静态能力盘点完成；第 1—8 章共 9 个低成本实践已通过 |
 | 在线展示 | [能力研究页](https://yydshly.github.io/0823_githubcode_study/projects/hands-on-large-language-models.html) |
 
 ## 定位结论
@@ -116,6 +116,21 @@ Python执行器12/12都算对，但模型只在7条回答中提到正确值，�
 
 代码审计还确认Memory只是外部代码重新注入的历史，WindowMemory会遗忘旧轮次，SummaryMemory可能改写事实；上游Agent示例依赖OpenAI、实时搜索和含糊的当前价格，不能直接作稳定离线基准。完整源码审计、原始输出、修改练习和离线复现见 [`experiments/phase-05-tools/`](experiments/phase-05-tools/)；机器结果见 [`tool-observation-results.json`](experiments/phase-05-tools/results/tool-observation-results.json)。
 
+## 第8章语义搜索实践
+
+2026-08-24 完成第8章关键词与稠密检索对照。实验固定12条带唯一标签的英文帮助文档、每条1个复用词汇查询和1个释义查询，只改变表示与评分方式：
+
+| 方法 | 查询类型 | Top-1 | Top-3 | MRR |
+| --- | --- | ---: | ---: | ---: |
+| BM25 | 复用词汇 | 12 / 12 | 12 / 12 | 1.000 |
+| BM25 | 换一种说法 | 6 / 12 | 7 / 12 | 0.610 |
+| MiniLM稠密检索 | 复用词汇 | 12 / 12 | 12 / 12 | 1.000 |
+| MiniLM稠密检索 | 换一种说法 | 12 / 12 | 12 / 12 | 1.000 |
+
+本轮说明的是表示方式怎样影响排名：BM25依赖词汇重合，MiniLM在这组释义查询中找回了全部正确片段。它并不说明向量检索总是更好；3个明确无答案的问题仍被强制排出Top-1，证明“最相似”不是“语料中有答案”。本实验没有运行生成器，因此也不把检索正确等同于RAG回答正确。
+
+代码审计还发现：Notebook的月球质量问题会从电影语料硬返回3条；只重排BM25候选时，首轮漏掉的相关片段无法恢复；本地RAG的下载代码、保存日志和模型路径不一致。完整源码审计、逐查询排名、失败样本、修改练习和离线复现见 [`experiments/phase-06-semantic-search/`](experiments/phase-06-semantic-search/)；机器结果见 [`semantic-search-results.json`](experiments/phase-06-semantic-search/results/semantic-search-results.json)。
+
 ## 代码层面的真实边界
 
 - 全部核心示例都是 Notebook，没有统一的 Python 包、服务入口或 Web 应用。
@@ -147,14 +162,16 @@ Python执行器12/12都算对，但模型只在7条回答中提到正确值，�
 - [`prompt-engineering-results.json`](experiments/phase-04-prompt-engineering/results/prompt-engineering-results.json)：第6章原始模型输出、JSON/Schema/字段评分与示例复制检查。
 - [`experiments/phase-05-tools/`](experiments/phase-05-tools/)：第7章工具观察对照、执行链分层和理解检查。
 - [`tool-observation-results.json`](experiments/phase-05-tools/results/tool-observation-results.json)：第7章原始模型输出、Python工具轨迹、数字序列和分层评分。
+- [`experiments/phase-06-semantic-search/`](experiments/phase-06-semantic-search/)：第8章BM25/稠密检索对照、源码完整性审计和理解检查。
+- [`semantic-search-results.json`](experiments/phase-06-semantic-search/results/semantic-search-results.json)：第8章24条标注查询排名、Top-k/MRR、失败列表和无答案探针。
 - [`upstream/`](upstream/)：固定在指定提交的上游源代码。
 
 ## 下一阶段
 
 按照由低成本到高成本的顺序执行：
 
-1. 将第8章整理成可评测、可部署的中文RAG演示。
-2. 给第7章增加Action生成与解析阶段，分别评测工具选择、参数复制和最终回答。
-3. 给第6章增加更强模型与grammar强制解码对照，分开评估提示遵循和后端约束。
-4. 为第4章增加训练样本量学习曲线和 `all-mpnet-base-v2` 对照。
-5. 在更大显存环境中补做 Phi-3 原模型复现，再进入第9—12章。
+1. 进入第9章多模态大语言模型，先从代码确认CLIP检索、图片描述和视觉问答的输入输出边界。
+2. 给第8章增加独立阈值校准集与混合检索，分别评测召回、拒答和重排。
+3. 给第7章增加Action生成与解析阶段，分别评测工具选择、参数复制和最终回答。
+4. 给第6章增加更强模型与grammar强制解码对照，分开评估提示遵循和后端约束。
+5. 在更大显存环境中补做 Phi-3 原模型复现，再进入第10—12章训练实验。
