@@ -11,7 +11,7 @@
 | 获取方式 | Git submodule：`upstream/` |
 | 许可证 | Apache-2.0；外部模型与数据集需分别核查许可证 |
 | 开始日期 | 2026-08-23 |
-| 当前状态 | 研究中：静态能力盘点完成；第 1—6 章共 7 个低成本实践已通过 |
+| 当前状态 | 研究中：静态能力盘点完成；第 1—7 章共 8 个低成本实践已通过 |
 | 在线展示 | [能力研究页](https://yydshly.github.io/0823_githubcode_study/projects/hands-on-large-language-models.html) |
 
 ## 定位结论
@@ -103,6 +103,19 @@
 
 代码审计还发现Notebook当前变量与保存输出不一致、注释代码仍保留旧输出，因此本轮没有复用Notebook展示结果。完整源码审计、原始输出、修改练习和离线复现见 [`experiments/phase-04-prompt-engineering/`](experiments/phase-04-prompt-engineering/)；机器结果见 [`prompt-engineering-results.json`](experiments/phase-04-prompt-engineering/results/prompt-engineering-results.json)。
 
+## 第7章工具与执行链实践
+
+2026-08-24 完成第7章Python计算器观察实验。固定135M CPU代理模型、12条正式换汇任务、回答契约和greedy解码，只改变是否把`Decimal`计算结果作为工具观察交给模型：
+
+| 路径 | 有末尾数字 | 出现正确工具值 | 最终金额正确 |
+| --- | ---: | ---: | ---: |
+| 模型单独计算 | 10 / 12 | 0 / 12 | 0 / 12 |
+| Python工具观察 | 12 / 12 | 7 / 12 | 4 / 12 |
+
+Python执行器12/12都算对，但模型只在7条回答中提到正确值，最终严格正确4条；另外3条先说对、随后又追加错误数字。这把“工具执行”“观察传递”和“最终生成”分成了三个可独立失败的环节。
+
+代码审计还确认Memory只是外部代码重新注入的历史，WindowMemory会遗忘旧轮次，SummaryMemory可能改写事实；上游Agent示例依赖OpenAI、实时搜索和含糊的当前价格，不能直接作稳定离线基准。完整源码审计、原始输出、修改练习和离线复现见 [`experiments/phase-05-tools/`](experiments/phase-05-tools/)；机器结果见 [`tool-observation-results.json`](experiments/phase-05-tools/results/tool-observation-results.json)。
+
 ## 代码层面的真实边界
 
 - 全部核心示例都是 Notebook，没有统一的 Python 包、服务入口或 Web 应用。
@@ -132,14 +145,16 @@
 - [`topic-modeling-results.json`](experiments/phase-03-topic-modeling/results/topic-modeling-results.json)：第5章主题数、离群率、ARI、主题词和样本文档。
 - [`experiments/phase-04-prompt-engineering/`](experiments/phase-04-prompt-engineering/)：第6章one-shot对照、源码完整性问题与理解检查。
 - [`prompt-engineering-results.json`](experiments/phase-04-prompt-engineering/results/prompt-engineering-results.json)：第6章原始模型输出、JSON/Schema/字段评分与示例复制检查。
+- [`experiments/phase-05-tools/`](experiments/phase-05-tools/)：第7章工具观察对照、执行链分层和理解检查。
+- [`tool-observation-results.json`](experiments/phase-05-tools/results/tool-observation-results.json)：第7章原始模型输出、Python工具轨迹、数字序列和分层评分。
 - [`upstream/`](upstream/)：固定在指定提交的上游源代码。
 
 ## 下一阶段
 
 按照由低成本到高成本的顺序执行：
 
-1. 进入第7章高级生成与工具调用，区分模型、记忆、工具和执行链错误。
-2. 给第6章增加更强模型与grammar强制解码对照，分开评估提示遵循和后端约束。
-3. 将第8章整理成可评测、可部署的中文RAG演示。
+1. 将第8章整理成可评测、可部署的中文RAG演示。
+2. 给第7章增加Action生成与解析阶段，分别评测工具选择、参数复制和最终回答。
+3. 给第6章增加更强模型与grammar强制解码对照，分开评估提示遵循和后端约束。
 4. 为第4章增加训练样本量学习曲线和 `all-mpnet-base-v2` 对照。
 5. 在更大显存环境中补做 Phi-3 原模型复现，再进入第9—12章。

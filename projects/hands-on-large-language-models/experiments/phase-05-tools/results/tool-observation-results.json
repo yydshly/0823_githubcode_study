@@ -1,0 +1,1088 @@
+{
+  "schemaVersion": 1,
+  "experiment": "chapter-07-python-calculator-observation",
+  "status": "pass",
+  "recordedAt": "2026-08-24T11:53:56.904823+00:00",
+  "source": {
+    "upstreamCommit": "ea3390819997999a51983677b80b3aac4dc50ada",
+    "notebook": "chapter07/Chapter 7 - Advanced Text Generation Techniques and Tools.ipynb",
+    "mirroredCells": [
+      39,
+      40,
+      41,
+      42
+    ]
+  },
+  "question": "When the final answer prompt is fixed, what changes if Python's exact calculator result is included as a tool observation?",
+  "predictionBeforePilot": [
+    "Both variants should usually produce a final numeric token, even if the surrounding wording differs.",
+    "Without a tool observation, multi-digit decimal multiplication may be numerically wrong.",
+    "With an exact observation, the model still has to copy and format the value; the Python executor, not the model, performed the calculation."
+  ],
+  "formalPredictionAfterPilot": "Providing the Python calculator observation will increase exact amount accuracy.",
+  "controlledVariables": {
+    "model": "HuggingFaceTB/SmolLM2-135M-Instruct",
+    "modelRevision": "12fd25f77366fa6b3b4b768ec3050bf629380bac",
+    "answerContract": "final numeric token, rounded to two decimal places",
+    "formalTaskCount": 12,
+    "decoding": {
+      "doSample": false,
+      "maxNewTokens": 32,
+      "seed": 42
+    },
+    "chatTemplate": "model-native apply_chat_template",
+    "calculator": "Python decimal.Decimal with ROUND_HALF_UP to two places",
+    "changedVariable": "presence of the exact Python calculator observation in the final answer prompt"
+  },
+  "pilot": {
+    "name": "four-task feasibility pilot",
+    "variants": [
+      {
+        "id": "model-only",
+        "withToolObservation": false,
+        "summary": {
+          "taskCount": 4,
+          "counts": {
+            "responsesWithFinalNumber": 4,
+            "responsesMentioningExpectedAmount": 0,
+            "exactAmounts": 0,
+            "numericAmounts": 0
+          },
+          "rates": {
+            "responsesWithFinalNumber": 1.0,
+            "responsesMentioningExpectedAmount": 0.0,
+            "exactAmounts": 0.0,
+            "numericAmounts": 0.0
+          },
+          "meanGeneratedTokens": 32.0,
+          "totalGenerationSeconds": 11.003
+        },
+        "cases": [
+          {
+            "taskId": "pilot-01",
+            "input": {
+              "usd": "137.00",
+              "rate": "0.83"
+            },
+            "expectedAmount": "113.71",
+            "toolTrace": {
+              "executor": null,
+              "observation": null
+            },
+            "prompt": "Convert 137.00 USD at rate 0.83 EUR for 1 USD. Return the EUR amount rounded to two decimal places. Put the final number at the end of your answer.\nNo calculator result is available. Calculate the amount yourself.",
+            "output": "137.00 USD at rate 0.83 EUR is equivalent to 137.00 USD at rate 0.8",
+            "generatedTokens": 32,
+            "elapsedSeconds": 2.563,
+            "evaluation": {
+              "hasFinalNumericToken": true,
+              "mentionsExpectedAmount": false,
+              "exactAmount": false,
+              "numericAmount": false,
+              "returnedAmount": "0.8",
+              "allNumericTokens": [
+                "137.00",
+                "0.83",
+                "137.00",
+                "0.8"
+              ]
+            }
+          },
+          {
+            "taskId": "pilot-02",
+            "input": {
+              "usd": "249.00",
+              "rate": "0.76"
+            },
+            "expectedAmount": "189.24",
+            "toolTrace": {
+              "executor": null,
+              "observation": null
+            },
+            "prompt": "Convert 249.00 USD at rate 0.76 EUR for 1 USD. Return the EUR amount rounded to two decimal places. Put the final number at the end of your answer.\nNo calculator result is available. Calculate the amount yourself.",
+            "output": "249.00 USD at rate 0.76 EUR is equal to 249.00 USD at rate 0.7",
+            "generatedTokens": 32,
+            "elapsedSeconds": 2.557,
+            "evaluation": {
+              "hasFinalNumericToken": true,
+              "mentionsExpectedAmount": false,
+              "exactAmount": false,
+              "numericAmount": false,
+              "returnedAmount": "0.7",
+              "allNumericTokens": [
+                "249.00",
+                "0.76",
+                "249.00",
+                "0.7"
+              ]
+            }
+          },
+          {
+            "taskId": "pilot-03",
+            "input": {
+              "usd": "58.00",
+              "rate": "1.17"
+            },
+            "expectedAmount": "67.86",
+            "toolTrace": {
+              "executor": null,
+              "observation": null
+            },
+            "prompt": "Convert 58.00 USD at rate 1.17 EUR for 1 USD. Return the EUR amount rounded to two decimal places. Put the final number at the end of your answer.\nNo calculator result is available. Calculate the amount yourself.",
+            "output": "No, I don't have a calculator. I'll use a simple method to convert 58.00 USD to 1 USD.\n\n58",
+            "generatedTokens": 32,
+            "elapsedSeconds": 2.716,
+            "evaluation": {
+              "hasFinalNumericToken": true,
+              "mentionsExpectedAmount": false,
+              "exactAmount": false,
+              "numericAmount": false,
+              "returnedAmount": "58",
+              "allNumericTokens": [
+                "58.00",
+                "1",
+                "58"
+              ]
+            }
+          },
+          {
+            "taskId": "pilot-04",
+            "input": {
+              "usd": "412.00",
+              "rate": "0.64"
+            },
+            "expectedAmount": "263.68",
+            "toolTrace": {
+              "executor": null,
+              "observation": null
+            },
+            "prompt": "Convert 412.00 USD at rate 0.64 EUR for 1 USD. Return the EUR amount rounded to two decimal places. Put the final number at the end of your answer.\nNo calculator result is available. Calculate the amount yourself.",
+            "output": "No, I don't have a calculator. I'll use a simple method to convert 412.00 USD to 1 USD.\n\n4",
+            "generatedTokens": 32,
+            "elapsedSeconds": 3.167,
+            "evaluation": {
+              "hasFinalNumericToken": true,
+              "mentionsExpectedAmount": false,
+              "exactAmount": false,
+              "numericAmount": false,
+              "returnedAmount": "4",
+              "allNumericTokens": [
+                "412.00",
+                "1",
+                "4"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "python-calculator-observation",
+        "withToolObservation": true,
+        "summary": {
+          "taskCount": 4,
+          "counts": {
+            "responsesWithFinalNumber": 4,
+            "responsesMentioningExpectedAmount": 2,
+            "exactAmounts": 2,
+            "numericAmounts": 2
+          },
+          "rates": {
+            "responsesWithFinalNumber": 1.0,
+            "responsesMentioningExpectedAmount": 0.5,
+            "exactAmounts": 0.5,
+            "numericAmounts": 0.5
+          },
+          "meanGeneratedTokens": 31.0,
+          "totalGenerationSeconds": 10.298
+        },
+        "cases": [
+          {
+            "taskId": "pilot-01",
+            "input": {
+              "usd": "137.00",
+              "rate": "0.83"
+            },
+            "expectedAmount": "113.71",
+            "toolTrace": {
+              "executor": "Python decimal.Decimal",
+              "observation": "113.71"
+            },
+            "prompt": "Convert 137.00 USD at rate 0.83 EUR for 1 USD. Return the EUR amount rounded to two decimal places. Put the final number at the end of your answer.\nA calculator returned 113.71. Use this calculator result as the final amount.",
+            "output": "137.00 USD at rate 0.83 EUR is equivalent to 113.71 USD.\n\nTo convert",
+            "generatedTokens": 32,
+            "elapsedSeconds": 2.84,
+            "evaluation": {
+              "hasFinalNumericToken": true,
+              "mentionsExpectedAmount": true,
+              "exactAmount": true,
+              "numericAmount": true,
+              "returnedAmount": "113.71",
+              "allNumericTokens": [
+                "137.00",
+                "0.83",
+                "113.71"
+              ]
+            }
+          },
+          {
+            "taskId": "pilot-02",
+            "input": {
+              "usd": "249.00",
+              "rate": "0.76"
+            },
+            "expectedAmount": "189.24",
+            "toolTrace": {
+              "executor": "Python decimal.Decimal",
+              "observation": "189.24"
+            },
+            "prompt": "Convert 249.00 USD at rate 0.76 EUR for 1 USD. Return the EUR amount rounded to two decimal places. Put the final number at the end of your answer.\nA calculator returned 189.24. Use this calculator result as the final amount.",
+            "output": "249.00 USD at rate 0.76 EUR is equal to 189.24 USD.",
+            "generatedTokens": 28,
+            "elapsedSeconds": 2.3,
+            "evaluation": {
+              "hasFinalNumericToken": true,
+              "mentionsExpectedAmount": true,
+              "exactAmount": true,
+              "numericAmount": true,
+              "returnedAmount": "189.24",
+              "allNumericTokens": [
+                "249.00",
+                "0.76",
+                "189.24"
+              ]
+            }
+          },
+          {
+            "taskId": "pilot-03",
+            "input": {
+              "usd": "58.00",
+              "rate": "1.17"
+            },
+            "expectedAmount": "67.86",
+            "toolTrace": {
+              "executor": "Python decimal.Decimal",
+              "observation": "67.86"
+            },
+            "prompt": "Convert 58.00 USD at rate 1.17 EUR for 1 USD. Return the EUR amount rounded to two decimal places. Put the final number at the end of your answer.\nA calculator returned 67.86. Use this calculator result as the final amount.",
+            "output": "58.00 USD at rate 1.17 EUR is equivalent to 58.00 USD at rate 1.17 EUR",
+            "generatedTokens": 32,
+            "elapsedSeconds": 2.537,
+            "evaluation": {
+              "hasFinalNumericToken": true,
+              "mentionsExpectedAmount": false,
+              "exactAmount": false,
+              "numericAmount": false,
+              "returnedAmount": "1.17",
+              "allNumericTokens": [
+                "58.00",
+                "1.17",
+                "58.00",
+                "1.17"
+              ]
+            }
+          },
+          {
+            "taskId": "pilot-04",
+            "input": {
+              "usd": "412.00",
+              "rate": "0.64"
+            },
+            "expectedAmount": "263.68",
+            "toolTrace": {
+              "executor": "Python decimal.Decimal",
+              "observation": "263.68"
+            },
+            "prompt": "Convert 412.00 USD at rate 0.64 EUR for 1 USD. Return the EUR amount rounded to two decimal places. Put the final number at the end of your answer.\nA calculator returned 263.68. Use this calculator result as the final amount.",
+            "output": "To convert 412.00 USD to EUR, we need to convert it to a currency that is equivalent to USD.\n\nFirst, we",
+            "generatedTokens": 32,
+            "elapsedSeconds": 2.621,
+            "evaluation": {
+              "hasFinalNumericToken": true,
+              "mentionsExpectedAmount": false,
+              "exactAmount": false,
+              "numericAmount": false,
+              "returnedAmount": "412.00",
+              "allNumericTokens": [
+                "412.00"
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "comparison": {
+      "responsesWithFinalNumberChange": 0,
+      "responsesMentioningExpectedAmountChange": 2,
+      "exactAmountChange": 2,
+      "numericAmountChange": 2
+    }
+  },
+  "formal": {
+    "name": "twelve disjoint formal tasks",
+    "variants": [
+      {
+        "id": "model-only",
+        "withToolObservation": false,
+        "summary": {
+          "taskCount": 12,
+          "counts": {
+            "responsesWithFinalNumber": 10,
+            "responsesMentioningExpectedAmount": 0,
+            "exactAmounts": 0,
+            "numericAmounts": 0
+          },
+          "rates": {
+            "responsesWithFinalNumber": 0.8333,
+            "responsesMentioningExpectedAmount": 0.0,
+            "exactAmounts": 0.0,
+            "numericAmounts": 0.0
+          },
+          "meanGeneratedTokens": 32.0,
+          "totalGenerationSeconds": 30.771
+        },
+        "cases": [
+          {
+            "taskId": "formal-01",
+            "input": {
+              "usd": "163.00",
+              "rate": "0.87"
+            },
+            "expectedAmount": "141.81",
+            "toolTrace": {
+              "executor": null,
+              "observation": null
+            },
+            "prompt": "Convert 163.00 USD at rate 0.87 EUR for 1 USD. Return the EUR amount rounded to two decimal places. Put the final number at the end of your answer.\nNo calculator result is available. Calculate the amount yourself.",
+            "output": "163.00 USD at rate 0.87 EUR is equivalent to 163.00 USD at rate 0.8",
+            "generatedTokens": 32,
+            "elapsedSeconds": 2.595,
+            "evaluation": {
+              "hasFinalNumericToken": true,
+              "mentionsExpectedAmount": false,
+              "exactAmount": false,
+              "numericAmount": false,
+              "returnedAmount": "0.8",
+              "allNumericTokens": [
+                "163.00",
+                "0.87",
+                "163.00",
+                "0.8"
+              ]
+            }
+          },
+          {
+            "taskId": "formal-02",
+            "input": {
+              "usd": "287.00",
+              "rate": "0.74"
+            },
+            "expectedAmount": "212.38",
+            "toolTrace": {
+              "executor": null,
+              "observation": null
+            },
+            "prompt": "Convert 287.00 USD at rate 0.74 EUR for 1 USD. Return the EUR amount rounded to two decimal places. Put the final number at the end of your answer.\nNo calculator result is available. Calculate the amount yourself.",
+            "output": "287.00 USD at rate 0.74 EUR is equal to 287.00 USD at rate 0.7",
+            "generatedTokens": 32,
+            "elapsedSeconds": 2.752,
+            "evaluation": {
+              "hasFinalNumericToken": true,
+              "mentionsExpectedAmount": false,
+              "exactAmount": false,
+              "numericAmount": false,
+              "returnedAmount": "0.7",
+              "allNumericTokens": [
+                "287.00",
+                "0.74",
+                "287.00",
+                "0.7"
+              ]
+            }
+          },
+          {
+            "taskId": "formal-03",
+            "input": {
+              "usd": "94.00",
+              "rate": "1.13"
+            },
+            "expectedAmount": "106.22",
+            "toolTrace": {
+              "executor": null,
+              "observation": null
+            },
+            "prompt": "Convert 94.00 USD at rate 1.13 EUR for 1 USD. Return the EUR amount rounded to two decimal places. Put the final number at the end of your answer.\nNo calculator result is available. Calculate the amount yourself.",
+            "output": "94.00 USD at rate 1.13 EUR is equivalent to 94.00 USD at rate 1.13 EUR",
+            "generatedTokens": 32,
+            "elapsedSeconds": 2.657,
+            "evaluation": {
+              "hasFinalNumericToken": true,
+              "mentionsExpectedAmount": false,
+              "exactAmount": false,
+              "numericAmount": false,
+              "returnedAmount": "1.13",
+              "allNumericTokens": [
+                "94.00",
+                "1.13",
+                "94.00",
+                "1.13"
+              ]
+            }
+          },
+          {
+            "taskId": "formal-04",
+            "input": {
+              "usd": "521.00",
+              "rate": "0.68"
+            },
+            "expectedAmount": "354.28",
+            "toolTrace": {
+              "executor": null,
+              "observation": null
+            },
+            "prompt": "Convert 521.00 USD at rate 0.68 EUR for 1 USD. Return the EUR amount rounded to two decimal places. Put the final number at the end of your answer.\nNo calculator result is available. Calculate the amount yourself.",
+            "output": "No, I don't have a calculator. I'll use a simple method to convert 521.00 USD to 1 USD.\n\n5",
+            "generatedTokens": 32,
+            "elapsedSeconds": 2.542,
+            "evaluation": {
+              "hasFinalNumericToken": true,
+              "mentionsExpectedAmount": false,
+              "exactAmount": false,
+              "numericAmount": false,
+              "returnedAmount": "5",
+              "allNumericTokens": [
+                "521.00",
+                "1",
+                "5"
+              ]
+            }
+          },
+          {
+            "taskId": "formal-05",
+            "input": {
+              "usd": "346.00",
+              "rate": "0.91"
+            },
+            "expectedAmount": "314.86",
+            "toolTrace": {
+              "executor": null,
+              "observation": null
+            },
+            "prompt": "Convert 346.00 USD at rate 0.91 EUR for 1 USD. Return the EUR amount rounded to two decimal places. Put the final number at the end of your answer.\nNo calculator result is available. Calculate the amount yourself.",
+            "output": "346.00 USD at rate 0.91 EUR is equivalent to 346.00 USD at rate 0.9",
+            "generatedTokens": 32,
+            "elapsedSeconds": 2.475,
+            "evaluation": {
+              "hasFinalNumericToken": true,
+              "mentionsExpectedAmount": false,
+              "exactAmount": false,
+              "numericAmount": false,
+              "returnedAmount": "0.9",
+              "allNumericTokens": [
+                "346.00",
+                "0.91",
+                "346.00",
+                "0.9"
+              ]
+            }
+          },
+          {
+            "taskId": "formal-06",
+            "input": {
+              "usd": "79.00",
+              "rate": "1.21"
+            },
+            "expectedAmount": "95.59",
+            "toolTrace": {
+              "executor": null,
+              "observation": null
+            },
+            "prompt": "Convert 79.00 USD at rate 1.21 EUR for 1 USD. Return the EUR amount rounded to two decimal places. Put the final number at the end of your answer.\nNo calculator result is available. Calculate the amount yourself.",
+            "output": "79.00 USD at rate 1.21 EUR is equivalent to 79.00 USD at rate 1.21 EUR",
+            "generatedTokens": 32,
+            "elapsedSeconds": 2.461,
+            "evaluation": {
+              "hasFinalNumericToken": true,
+              "mentionsExpectedAmount": false,
+              "exactAmount": false,
+              "numericAmount": false,
+              "returnedAmount": "1.21",
+              "allNumericTokens": [
+                "79.00",
+                "1.21",
+                "79.00",
+                "1.21"
+              ]
+            }
+          },
+          {
+            "taskId": "formal-07",
+            "input": {
+              "usd": "438.00",
+              "rate": "0.66"
+            },
+            "expectedAmount": "289.08",
+            "toolTrace": {
+              "executor": null,
+              "observation": null
+            },
+            "prompt": "Convert 438.00 USD at rate 0.66 EUR for 1 USD. Return the EUR amount rounded to two decimal places. Put the final number at the end of your answer.\nNo calculator result is available. Calculate the amount yourself.",
+            "output": "No, I don't have a calculator. I'll use a simple method to convert the USD to EUR.\n\nFirst, convert the USD to EUR:",
+            "generatedTokens": 32,
+            "elapsedSeconds": 2.502,
+            "evaluation": {
+              "hasFinalNumericToken": false,
+              "mentionsExpectedAmount": false,
+              "exactAmount": false,
+              "numericAmount": false,
+              "returnedAmount": null,
+              "allNumericTokens": []
+            }
+          },
+          {
+            "taskId": "formal-08",
+            "input": {
+              "usd": "152.00",
+              "rate": "0.95"
+            },
+            "expectedAmount": "144.40",
+            "toolTrace": {
+              "executor": null,
+              "observation": null
+            },
+            "prompt": "Convert 152.00 USD at rate 0.95 EUR for 1 USD. Return the EUR amount rounded to two decimal places. Put the final number at the end of your answer.\nNo calculator result is available. Calculate the amount yourself.",
+            "output": "152.00 USD at rate 0.95 EUR is equal to 152.00 USD at rate 0.9",
+            "generatedTokens": 32,
+            "elapsedSeconds": 2.431,
+            "evaluation": {
+              "hasFinalNumericToken": true,
+              "mentionsExpectedAmount": false,
+              "exactAmount": false,
+              "numericAmount": false,
+              "returnedAmount": "0.9",
+              "allNumericTokens": [
+                "152.00",
+                "0.95",
+                "152.00",
+                "0.9"
+              ]
+            }
+          },
+          {
+            "taskId": "formal-09",
+            "input": {
+              "usd": "619.00",
+              "rate": "0.72"
+            },
+            "expectedAmount": "445.68",
+            "toolTrace": {
+              "executor": null,
+              "observation": null
+            },
+            "prompt": "Convert 619.00 USD at rate 0.72 EUR for 1 USD. Return the EUR amount rounded to two decimal places. Put the final number at the end of your answer.\nNo calculator result is available. Calculate the amount yourself.",
+            "output": "619.00 USD at rate 0.72 EUR is equivalent to 619.00 USD at rate 0.7",
+            "generatedTokens": 32,
+            "elapsedSeconds": 2.599,
+            "evaluation": {
+              "hasFinalNumericToken": true,
+              "mentionsExpectedAmount": false,
+              "exactAmount": false,
+              "numericAmount": false,
+              "returnedAmount": "0.7",
+              "allNumericTokens": [
+                "619.00",
+                "0.72",
+                "619.00",
+                "0.7"
+              ]
+            }
+          },
+          {
+            "taskId": "formal-10",
+            "input": {
+              "usd": "233.00",
+              "rate": "1.08"
+            },
+            "expectedAmount": "251.64",
+            "toolTrace": {
+              "executor": null,
+              "observation": null
+            },
+            "prompt": "Convert 233.00 USD at rate 1.08 EUR for 1 USD. Return the EUR amount rounded to two decimal places. Put the final number at the end of your answer.\nNo calculator result is available. Calculate the amount yourself.",
+            "output": "233.00 USD at rate 1.08 EUR is equal to 233.00 USD at rate 1.0",
+            "generatedTokens": 32,
+            "elapsedSeconds": 2.577,
+            "evaluation": {
+              "hasFinalNumericToken": true,
+              "mentionsExpectedAmount": false,
+              "exactAmount": false,
+              "numericAmount": false,
+              "returnedAmount": "1.0",
+              "allNumericTokens": [
+                "233.00",
+                "1.08",
+                "233.00",
+                "1.0"
+              ]
+            }
+          },
+          {
+            "taskId": "formal-11",
+            "input": {
+              "usd": "47.00",
+              "rate": "0.89"
+            },
+            "expectedAmount": "41.83",
+            "toolTrace": {
+              "executor": null,
+              "observation": null
+            },
+            "prompt": "Convert 47.00 USD at rate 0.89 EUR for 1 USD. Return the EUR amount rounded to two decimal places. Put the final number at the end of your answer.\nNo calculator result is available. Calculate the amount yourself.",
+            "output": "No, I don't have a calculator. I'll use a simple method to convert the USD to EUR.\n\nFirst, convert the USD to EUR:",
+            "generatedTokens": 32,
+            "elapsedSeconds": 2.527,
+            "evaluation": {
+              "hasFinalNumericToken": false,
+              "mentionsExpectedAmount": false,
+              "exactAmount": false,
+              "numericAmount": false,
+              "returnedAmount": null,
+              "allNumericTokens": []
+            }
+          },
+          {
+            "taskId": "formal-12",
+            "input": {
+              "usd": "374.00",
+              "rate": "0.81"
+            },
+            "expectedAmount": "302.94",
+            "toolTrace": {
+              "executor": null,
+              "observation": null
+            },
+            "prompt": "Convert 374.00 USD at rate 0.81 EUR for 1 USD. Return the EUR amount rounded to two decimal places. Put the final number at the end of your answer.\nNo calculator result is available. Calculate the amount yourself.",
+            "output": "374.00 USD at rate 0.81 EUR is equivalent to 374.00 USD at rate 0.8",
+            "generatedTokens": 32,
+            "elapsedSeconds": 2.653,
+            "evaluation": {
+              "hasFinalNumericToken": true,
+              "mentionsExpectedAmount": false,
+              "exactAmount": false,
+              "numericAmount": false,
+              "returnedAmount": "0.8",
+              "allNumericTokens": [
+                "374.00",
+                "0.81",
+                "374.00",
+                "0.8"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "python-calculator-observation",
+        "withToolObservation": true,
+        "summary": {
+          "taskCount": 12,
+          "counts": {
+            "responsesWithFinalNumber": 12,
+            "responsesMentioningExpectedAmount": 7,
+            "exactAmounts": 4,
+            "numericAmounts": 4
+          },
+          "rates": {
+            "responsesWithFinalNumber": 1.0,
+            "responsesMentioningExpectedAmount": 0.5833,
+            "exactAmounts": 0.3333,
+            "numericAmounts": 0.3333
+          },
+          "meanGeneratedTokens": 31.08,
+          "totalGenerationSeconds": 30.775
+        },
+        "cases": [
+          {
+            "taskId": "formal-01",
+            "input": {
+              "usd": "163.00",
+              "rate": "0.87"
+            },
+            "expectedAmount": "141.81",
+            "toolTrace": {
+              "executor": "Python decimal.Decimal",
+              "observation": "141.81"
+            },
+            "prompt": "Convert 163.00 USD at rate 0.87 EUR for 1 USD. Return the EUR amount rounded to two decimal places. Put the final number at the end of your answer.\nA calculator returned 141.81. Use this calculator result as the final amount.",
+            "output": "163.00 USD at rate 0.87 EUR is equivalent to 141.81 USD.\n\nTo convert",
+            "generatedTokens": 32,
+            "elapsedSeconds": 2.634,
+            "evaluation": {
+              "hasFinalNumericToken": true,
+              "mentionsExpectedAmount": true,
+              "exactAmount": true,
+              "numericAmount": true,
+              "returnedAmount": "141.81",
+              "allNumericTokens": [
+                "163.00",
+                "0.87",
+                "141.81"
+              ]
+            }
+          },
+          {
+            "taskId": "formal-02",
+            "input": {
+              "usd": "287.00",
+              "rate": "0.74"
+            },
+            "expectedAmount": "212.38",
+            "toolTrace": {
+              "executor": "Python decimal.Decimal",
+              "observation": "212.38"
+            },
+            "prompt": "Convert 287.00 USD at rate 0.74 EUR for 1 USD. Return the EUR amount rounded to two decimal places. Put the final number at the end of your answer.\nA calculator returned 212.38. Use this calculator result as the final amount.",
+            "output": "287.00 USD at rate 0.74 EUR is equal to 212.38 USD.",
+            "generatedTokens": 28,
+            "elapsedSeconds": 2.307,
+            "evaluation": {
+              "hasFinalNumericToken": true,
+              "mentionsExpectedAmount": true,
+              "exactAmount": true,
+              "numericAmount": true,
+              "returnedAmount": "212.38",
+              "allNumericTokens": [
+                "287.00",
+                "0.74",
+                "212.38"
+              ]
+            }
+          },
+          {
+            "taskId": "formal-03",
+            "input": {
+              "usd": "94.00",
+              "rate": "1.13"
+            },
+            "expectedAmount": "106.22",
+            "toolTrace": {
+              "executor": "Python decimal.Decimal",
+              "observation": "106.22"
+            },
+            "prompt": "Convert 94.00 USD at rate 1.13 EUR for 1 USD. Return the EUR amount rounded to two decimal places. Put the final number at the end of your answer.\nA calculator returned 106.22. Use this calculator result as the final amount.",
+            "output": "94.00 USD at rate 1.13 EUR is equivalent to 94.00 USD at rate 1.13 EUR",
+            "generatedTokens": 32,
+            "elapsedSeconds": 2.692,
+            "evaluation": {
+              "hasFinalNumericToken": true,
+              "mentionsExpectedAmount": false,
+              "exactAmount": false,
+              "numericAmount": false,
+              "returnedAmount": "1.13",
+              "allNumericTokens": [
+                "94.00",
+                "1.13",
+                "94.00",
+                "1.13"
+              ]
+            }
+          },
+          {
+            "taskId": "formal-04",
+            "input": {
+              "usd": "521.00",
+              "rate": "0.68"
+            },
+            "expectedAmount": "354.28",
+            "toolTrace": {
+              "executor": "Python decimal.Decimal",
+              "observation": "354.28"
+            },
+            "prompt": "Convert 521.00 USD at rate 0.68 EUR for 1 USD. Return the EUR amount rounded to two decimal places. Put the final number at the end of your answer.\nA calculator returned 354.28. Use this calculator result as the final amount.",
+            "output": "A calculator returned 354.28 USD at rate 0.68 EUR for 1 USD.",
+            "generatedTokens": 25,
+            "elapsedSeconds": 2.059,
+            "evaluation": {
+              "hasFinalNumericToken": true,
+              "mentionsExpectedAmount": true,
+              "exactAmount": false,
+              "numericAmount": false,
+              "returnedAmount": "1",
+              "allNumericTokens": [
+                "354.28",
+                "0.68",
+                "1"
+              ]
+            }
+          },
+          {
+            "taskId": "formal-05",
+            "input": {
+              "usd": "346.00",
+              "rate": "0.91"
+            },
+            "expectedAmount": "314.86",
+            "toolTrace": {
+              "executor": "Python decimal.Decimal",
+              "observation": "314.86"
+            },
+            "prompt": "Convert 346.00 USD at rate 0.91 EUR for 1 USD. Return the EUR amount rounded to two decimal places. Put the final number at the end of your answer.\nA calculator returned 314.86. Use this calculator result as the final amount.",
+            "output": "346.00 USD at rate 0.91 EUR is equivalent to 314.86 USD at rate 0.9",
+            "generatedTokens": 32,
+            "elapsedSeconds": 2.598,
+            "evaluation": {
+              "hasFinalNumericToken": true,
+              "mentionsExpectedAmount": true,
+              "exactAmount": false,
+              "numericAmount": false,
+              "returnedAmount": "0.9",
+              "allNumericTokens": [
+                "346.00",
+                "0.91",
+                "314.86",
+                "0.9"
+              ]
+            }
+          },
+          {
+            "taskId": "formal-06",
+            "input": {
+              "usd": "79.00",
+              "rate": "1.21"
+            },
+            "expectedAmount": "95.59",
+            "toolTrace": {
+              "executor": "Python decimal.Decimal",
+              "observation": "95.59"
+            },
+            "prompt": "Convert 79.00 USD at rate 1.21 EUR for 1 USD. Return the EUR amount rounded to two decimal places. Put the final number at the end of your answer.\nA calculator returned 95.59. Use this calculator result as the final amount.",
+            "output": "79.00 USD at rate 1.21 EUR is equivalent to 79.00 USD at rate 1.21 EUR",
+            "generatedTokens": 32,
+            "elapsedSeconds": 2.517,
+            "evaluation": {
+              "hasFinalNumericToken": true,
+              "mentionsExpectedAmount": false,
+              "exactAmount": false,
+              "numericAmount": false,
+              "returnedAmount": "1.21",
+              "allNumericTokens": [
+                "79.00",
+                "1.21",
+                "79.00",
+                "1.21"
+              ]
+            }
+          },
+          {
+            "taskId": "formal-07",
+            "input": {
+              "usd": "438.00",
+              "rate": "0.66"
+            },
+            "expectedAmount": "289.08",
+            "toolTrace": {
+              "executor": "Python decimal.Decimal",
+              "observation": "289.08"
+            },
+            "prompt": "Convert 438.00 USD at rate 0.66 EUR for 1 USD. Return the EUR amount rounded to two decimal places. Put the final number at the end of your answer.\nA calculator returned 289.08. Use this calculator result as the final amount.",
+            "output": "To convert 438.00 USD to EUR, you can use the following formula:\n\nEUR = (438.00",
+            "generatedTokens": 32,
+            "elapsedSeconds": 2.742,
+            "evaluation": {
+              "hasFinalNumericToken": true,
+              "mentionsExpectedAmount": false,
+              "exactAmount": false,
+              "numericAmount": false,
+              "returnedAmount": "438.00",
+              "allNumericTokens": [
+                "438.00",
+                "438.00"
+              ]
+            }
+          },
+          {
+            "taskId": "formal-08",
+            "input": {
+              "usd": "152.00",
+              "rate": "0.95"
+            },
+            "expectedAmount": "144.40",
+            "toolTrace": {
+              "executor": "Python decimal.Decimal",
+              "observation": "144.40"
+            },
+            "prompt": "Convert 152.00 USD at rate 0.95 EUR for 1 USD. Return the EUR amount rounded to two decimal places. Put the final number at the end of your answer.\nA calculator returned 144.40. Use this calculator result as the final amount.",
+            "output": "152.00 USD at rate 0.95 EUR is equivalent to 144.40 USD.\n\nTo convert",
+            "generatedTokens": 32,
+            "elapsedSeconds": 2.625,
+            "evaluation": {
+              "hasFinalNumericToken": true,
+              "mentionsExpectedAmount": true,
+              "exactAmount": true,
+              "numericAmount": true,
+              "returnedAmount": "144.40",
+              "allNumericTokens": [
+                "152.00",
+                "0.95",
+                "144.40"
+              ]
+            }
+          },
+          {
+            "taskId": "formal-09",
+            "input": {
+              "usd": "619.00",
+              "rate": "0.72"
+            },
+            "expectedAmount": "445.68",
+            "toolTrace": {
+              "executor": "Python decimal.Decimal",
+              "observation": "445.68"
+            },
+            "prompt": "Convert 619.00 USD at rate 0.72 EUR for 1 USD. Return the EUR amount rounded to two decimal places. Put the final number at the end of your answer.\nA calculator returned 445.68. Use this calculator result as the final amount.",
+            "output": "619.00 USD at rate 0.72 EUR is equivalent to 619.00 USD at rate 0.7",
+            "generatedTokens": 32,
+            "elapsedSeconds": 2.649,
+            "evaluation": {
+              "hasFinalNumericToken": true,
+              "mentionsExpectedAmount": false,
+              "exactAmount": false,
+              "numericAmount": false,
+              "returnedAmount": "0.7",
+              "allNumericTokens": [
+                "619.00",
+                "0.72",
+                "619.00",
+                "0.7"
+              ]
+            }
+          },
+          {
+            "taskId": "formal-10",
+            "input": {
+              "usd": "233.00",
+              "rate": "1.08"
+            },
+            "expectedAmount": "251.64",
+            "toolTrace": {
+              "executor": "Python decimal.Decimal",
+              "observation": "251.64"
+            },
+            "prompt": "Convert 233.00 USD at rate 1.08 EUR for 1 USD. Return the EUR amount rounded to two decimal places. Put the final number at the end of your answer.\nA calculator returned 251.64. Use this calculator result as the final amount.",
+            "output": "233.00 USD at rate 1.08 EUR is equivalent to 251.64 USD.\n\nThe final amount",
+            "generatedTokens": 32,
+            "elapsedSeconds": 2.778,
+            "evaluation": {
+              "hasFinalNumericToken": true,
+              "mentionsExpectedAmount": true,
+              "exactAmount": true,
+              "numericAmount": true,
+              "returnedAmount": "251.64",
+              "allNumericTokens": [
+                "233.00",
+                "1.08",
+                "251.64"
+              ]
+            }
+          },
+          {
+            "taskId": "formal-11",
+            "input": {
+              "usd": "47.00",
+              "rate": "0.89"
+            },
+            "expectedAmount": "41.83",
+            "toolTrace": {
+              "executor": "Python decimal.Decimal",
+              "observation": "41.83"
+            },
+            "prompt": "Convert 47.00 USD at rate 0.89 EUR for 1 USD. Return the EUR amount rounded to two decimal places. Put the final number at the end of your answer.\nA calculator returned 41.83. Use this calculator result as the final amount.",
+            "output": "To convert 47.00 USD to EUR, you can use the following formula:\n\nEUR = (100 * 0.",
+            "generatedTokens": 32,
+            "elapsedSeconds": 2.579,
+            "evaluation": {
+              "hasFinalNumericToken": true,
+              "mentionsExpectedAmount": false,
+              "exactAmount": false,
+              "numericAmount": false,
+              "returnedAmount": "0",
+              "allNumericTokens": [
+                "47.00",
+                "100",
+                "0"
+              ]
+            }
+          },
+          {
+            "taskId": "formal-12",
+            "input": {
+              "usd": "374.00",
+              "rate": "0.81"
+            },
+            "expectedAmount": "302.94",
+            "toolTrace": {
+              "executor": "Python decimal.Decimal",
+              "observation": "302.94"
+            },
+            "prompt": "Convert 374.00 USD at rate 0.81 EUR for 1 USD. Return the EUR amount rounded to two decimal places. Put the final number at the end of your answer.\nA calculator returned 302.94. Use this calculator result as the final amount.",
+            "output": "374.00 USD at rate 0.81 EUR is equivalent to 302.94 USD at rate 0.8",
+            "generatedTokens": 32,
+            "elapsedSeconds": 2.595,
+            "evaluation": {
+              "hasFinalNumericToken": true,
+              "mentionsExpectedAmount": true,
+              "exactAmount": false,
+              "numericAmount": false,
+              "returnedAmount": "0.8",
+              "allNumericTokens": [
+                "374.00",
+                "0.81",
+                "302.94",
+                "0.8"
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "comparison": {
+      "responsesWithFinalNumberChange": 2,
+      "responsesMentioningExpectedAmountChange": 7,
+      "exactAmountChange": 4,
+      "numericAmountChange": 4
+    }
+  },
+  "hypothesisAssessment": {
+    "outcome": "confirmed",
+    "pilotDirection": "improvement",
+    "formalDirection": "improvement"
+  },
+  "timing": {
+    "modelLoadSeconds": 2.726,
+    "totalSeconds": 85.656
+  },
+  "environment": {
+    "python": "3.10.11",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "offlineMode": true,
+    "logicalCpuCount": 32,
+    "memoryGiB": 15.63,
+    "packages": {
+      "torch": "2.3.1+cpu",
+      "transformers": "4.41.2",
+      "psutil": "6.0.0"
+    }
+  },
+  "sourceIntegrityFindings": [
+    "Notebook cell 6 saves an empty raw llm.invoke response while the templated chain in cell 10 answers the same question; prompt framing changes the observed behavior.",
+    "Notebook uses deprecated LLMChain throughout and saves a deprecation warning in cell 12.",
+    "ConversationBufferWindowMemory k=2 forgets the original age after later turns; memory is selected prompt history, not a changed model state.",
+    "ConversationSummaryMemory asks the same generative model to rewrite history, so the saved summary introduces privacy language and a gendered pronoun not supplied as facts.",
+    "The agent example requires a placeholder OpenAI key, a live DuckDuckGo search and a time-sensitive ambiguous product price, so its saved answer is not a stable offline benchmark."
+  ],
+  "boundaries": [
+    "SmolLM2-135M-Instruct is a cached CPU proxy for the upstream Phi-3 llama.cpp and OpenAI models.",
+    "The experiment isolates a provided tool observation; it does not evaluate whether the model can autonomously select the correct tool or write a parseable ReAct action.",
+    "The twelve formal inputs are synthetic currency conversions with a supplied exchange rate; no web search or current market data is involved.",
+    "The Python controller constructs the calculator call deterministically, Decimal executes it, and the language model only writes the final response.",
+    "Greedy decoding supports repeatability but does not measure sampled-output variance."
+  ]
+}
