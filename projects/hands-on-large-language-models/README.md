@@ -11,7 +11,7 @@
 | 获取方式 | Git submodule：`upstream/` |
 | 许可证 | Apache-2.0；外部模型与数据集需分别核查许可证 |
 | 开始日期 | 2026-08-23 |
-| 当前状态 | 研究中：静态能力盘点完成；第 1—10 章共 11 个低成本实践已通过 |
+| 当前状态 | 研究中：静态能力盘点完成；第 1—11 章共 12 个低成本实践已通过 |
 | 在线展示 | [能力研究页](https://yydshly.github.io/0823_githubcode_study/projects/hands-on-large-language-models.html) |
 
 ## 定位结论
@@ -159,6 +159,20 @@ CLIP把图片与文字放进共同向量空间，能完成跨模态检索；但�
 
 本轮强制离线并使用 `local_files_only=True`，没有下载模型、数据集或依赖。完整损失/数据/评估审计、修改练习和复现方式见 [`experiments/phase-08-embedding-training/`](experiments/phase-08-embedding-training/)；逐查询排名与损失轨迹见 [`pair-quality-results.json`](experiments/phase-08-embedding-training/results/pair-quality-results.json)。
 
+## 第11章 Fine-tuning BERT 实践
+
+2026-08-25 完成第11章冻结梯度、任务头与BIO标签审计。完整Notebook需要未缓存的436MB `bert-base-cased`、438MB `all-mpnet-base-v2`及额外数据/依赖，本轮均未下载；只使用现有90.9MB MiniLM代理验证BERT家族共有机制：
+
+| 冻结策略 | 可训练参数 | 占全部参数 | 确认更新的位置 |
+| --- | ---: | ---: | --- |
+| 只训练分类头 | 770 | 0.003390% | classifier |
+| 最后一层 + 分类头 | 1,775,234 | 7.815599% | layer 5 + classifier |
+| 全量encoder + 分类头 | 22,713,986 | 100% | embedding、早期层、最后层、classifier |
+
+三种策略都能把8条训练样本拟合到100%，但额外gradient与Adam状态估算从0.009MiB增至259.941MiB；这只能证明参数参与和batch拟合，不能证明全量微调泛化更好。输出形状探针进一步区分了整句分类 `[2,2]` 与Token分类 `[2,7,9]`。
+
+代码审计发现：分类与SetFit直接使用test split做开发评估；冻结层曲线把分数顺序反转后又重标 `None/All`；NER单元57把一句话拆成多个单Token序列交给seqeval，破坏BIO跨度，因此保存的0.9180不能视为可信句级实体F1。完整下载边界、源码审计、梯度探针和离线复现见 [`experiments/phase-09-finetuning-bert/`](experiments/phase-09-finetuning-bert/)；机器结果见 [`freeze-and-labels-results.json`](experiments/phase-09-finetuning-bert/results/freeze-and-labels-results.json)。
+
 ## 代码层面的真实边界
 
 - 全部核心示例都是 Notebook，没有统一的 Python 包、服务入口或 Web 应用。
@@ -196,14 +210,16 @@ CLIP把图片与文字放进共同向量空间，能完成跨模态检索；但�
 - [`clip-negation-results.json`](experiments/phase-07-multimodal/results/clip-negation-results.json)：第9章图文矩阵、六描述排名、否定差值、环境与图片哈希。
 - [`experiments/phase-08-embedding-training/`](experiments/phase-08-embedding-training/)：第10章训练对质量、MNRL输入语义、源码完整性审计与理解检查。
 - [`pair-quality-results.json`](experiments/phase-08-embedding-training/results/pair-quality-results.json)：第10章损失轨迹、独立查询排名、正确间隔和失败样本。
+- [`experiments/phase-09-finetuning-bert/`](experiments/phase-09-finetuning-bert/)：第11章冻结范围、任务头形状、BIO标签、下载边界与源码审计。
+- [`freeze-and-labels-results.json`](experiments/phase-09-finetuning-bert/results/freeze-and-labels-results.json)：第11章梯度、参数更新、训练状态估算、输出形状和标签序列。
 - [`upstream/`](upstream/)：固定在指定提交的上游源代码。
 
 ## 下一阶段
 
 按照由低成本到高成本的顺序执行：
 
-1. 进入第11章 Fine-tuning BERT，先审查分类头、SetFit、MLM、NER的数据标签与评估代码。
-2. 给第10章增加独立业务语料、污染率曲线、batch大小与假负样本对照。
-3. 给第9章加入更大独立图片集、对象正确但场景错误的描述，以及可承受的小型图片描述模型。
-4. 给第8章增加独立阈值校准集与混合检索，分别评测召回、拒答和重排。
-5. 在更大显存环境中补做 Phi-3 与BLIP-2原模型复现，再评估第11—12章完整GPU训练。
+1. 进入第12章 Fine-tuning Generation Models，先审查量化、LoRA/QLoRA、SFT和DPO的数据与显存路径，只描述未缓存的大型资源。
+2. 给第11章增加独立validation/test、正确seqeval跨度计算和不同冻结层曲线。
+3. 给第10章增加独立业务语料、污染率曲线、batch大小与假负样本对照。
+4. 给第9章加入更大独立图片集、对象正确但场景错误的描述，以及可承受的小型图片描述模型。
+5. 在更大显存环境中补做 Phi-3、BLIP-2、BERT与MPNet原模型复现。

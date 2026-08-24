@@ -1,0 +1,352 @@
+{
+  "experiment": "Chapter 11 frozen-gradient, task-head and BIO-label audit",
+  "predictionBeforeRun": "Frozen parameters should have no gradients or updates; unfreezing the last block should update only that block and the head; full fine-tuning should update embeddings, early and late blocks. Sequence and token heads should expose different label units.",
+  "controlledVariable": "Trainable scope only: the cached proxy backbone, classifier initialization, eight texts, labels, tokenization, five steps, seed and optimizer settings remain fixed.",
+  "sourceNotebook": {
+    "chapter": 11,
+    "upstreamCommit": "ea3390819997999a51983677b80b3aac4dc50ada",
+    "operativeCells": [
+      4,
+      7,
+      9,
+      11,
+      13,
+      14,
+      16,
+      18,
+      20,
+      22,
+      23,
+      26,
+      30,
+      32,
+      33,
+      34,
+      36,
+      37,
+      40,
+      42,
+      44,
+      45,
+      46,
+      47,
+      50,
+      52,
+      53,
+      55,
+      57,
+      59,
+      60,
+      61
+    ],
+    "savedMetrics": {
+      "fullBertClassificationF1": 0.8566073102155576,
+      "headOnlyClassificationF1": 0.637704918032787,
+      "lastTwoBlocksClassificationF1": 0.8141086749285034,
+      "setFit16PerClassF1": 0.8363988383349468,
+      "reportedNerF1WithFlattenedSeqevalInput": 0.9180087380808113
+    }
+  },
+  "downloadBoundary": {
+    "executedDownloads": [],
+    "bertBaseCased": {
+      "notebookWeightLog": "436 MB pytorch_model.bin",
+      "officialSafetensorsSize": "436 MB",
+      "localCache": "tokenizer/config only; weights absent",
+      "action": "not downloaded and full BERT training not run"
+    },
+    "allMpnetBaseV2": {
+      "officialSafetensorsSize": "438 MB",
+      "localCache": "absent",
+      "action": "not downloaded; SetFit path documented only"
+    },
+    "datasetsAndMetrics": {
+      "rottenTomatoesNotebookDownloads": "699 kB + 90.0 kB + 92.2 kB plus metadata",
+      "conll2003NotebookDownload": "983 kB plus builder/readme",
+      "action": "not loaded locally; synthetic text and labels used instead"
+    },
+    "checkpointAmplification": "The MLM path requests 10 epochs with save_strategy='epoch'. Ten 436 MB weight snapshots alone would be at least about 4.36 GB, before optimizer states and duplicated output-directory artifacts."
+  },
+  "proxyModel": {
+    "id": "sentence-transformers/all-MiniLM-L6-v2",
+    "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+    "weightFileBytes": 90868376,
+    "architecture": "6-layer BertModel, hidden size 384",
+    "role": "cached BERT-family proxy for gradient and label mechanics; not a reproduction of bert-base-cased quality",
+    "localFilesOnly": true
+  },
+  "fixedConditions": {
+    "texts": 8,
+    "steps": 5,
+    "seed": 42,
+    "encoderLearningRate": 2e-05,
+    "headLearningRate": 0.05,
+    "device": "cpu"
+  },
+  "environment": {
+    "createdAt": "2026-08-24T17:02:42.516413+00:00",
+    "python": "3.10.11",
+    "torch": "2.3.1+cpu",
+    "transformers": "4.41.2",
+    "sentenceTransformers": "3.0.1",
+    "offlineMode": true,
+    "hfHome": "E:\\0823_codex_project\\projects\\hands-on-large-language-models\\.runtime\\hf-home"
+  },
+  "freezeStrategies": [
+    {
+      "strategy": "head-only",
+      "totalParameters": 22713986,
+      "trainableParameters": 770,
+      "trainablePercent": 0.00339,
+      "estimatedAdditionalGradientAndAdamMiB": 0.009,
+      "initialBatchLoss": 0.6924,
+      "finalBatchLoss": 0.001653,
+      "initialBatchAccuracy": 0.5,
+      "finalBatchAccuracy": 1.0,
+      "trainingLossByStep": [
+        0.693266,
+        0.227079,
+        0.081817,
+        0.035987,
+        0.011491
+      ],
+      "trainingSeconds": 0.156,
+      "firstStepGradientNorms": {
+        "embeddingBatchRows": null,
+        "firstBlockQuery": null,
+        "lastBlockQuery": null,
+        "classifierWeight": 0.98265636,
+        "classifierBias": 0.035805695
+      },
+      "maxAbsoluteParameterDeltas": {
+        "embeddingBatchRows": 0.0,
+        "firstBlockQuery": 0.0,
+        "lastBlockQuery": 0.0,
+        "classifierWeight": 0.237174034119,
+        "classifierBias": 0.016411654651
+      }
+    },
+    {
+      "strategy": "last-block-plus-head",
+      "totalParameters": 22713986,
+      "trainableParameters": 1775234,
+      "trainablePercent": 7.815599,
+      "estimatedAdditionalGradientAndAdamMiB": 20.316,
+      "initialBatchLoss": 0.6924,
+      "finalBatchLoss": 0.001257,
+      "initialBatchAccuracy": 0.5,
+      "finalBatchAccuracy": 1.0,
+      "trainingLossByStep": [
+        0.693266,
+        0.225942,
+        0.08668,
+        0.034344,
+        0.009479
+      ],
+      "trainingSeconds": 0.243,
+      "firstStepGradientNorms": {
+        "embeddingBatchRows": null,
+        "firstBlockQuery": null,
+        "lastBlockQuery": 0.074546754,
+        "classifierWeight": 0.98265636,
+        "classifierBias": 0.035805695
+      },
+      "maxAbsoluteParameterDeltas": {
+        "embeddingBatchRows": 0.0,
+        "firstBlockQuery": 0.0,
+        "lastBlockQuery": 0.000100001693,
+        "classifierWeight": 0.236871272326,
+        "classifierBias": 0.019555183128
+      }
+    },
+    {
+      "strategy": "full-encoder-plus-head",
+      "totalParameters": 22713986,
+      "trainableParameters": 22713986,
+      "trainablePercent": 100.0,
+      "estimatedAdditionalGradientAndAdamMiB": 259.941,
+      "initialBatchLoss": 0.6924,
+      "finalBatchLoss": 0.000202,
+      "initialBatchAccuracy": 0.5,
+      "finalBatchAccuracy": 1.0,
+      "trainingLossByStep": [
+        0.693266,
+        0.224088,
+        0.086999,
+        0.020592,
+        0.002927
+      ],
+      "trainingSeconds": 1.161,
+      "firstStepGradientNorms": {
+        "embeddingBatchRows": 0.363279611,
+        "firstBlockQuery": 0.070621401,
+        "lastBlockQuery": 0.074546754,
+        "classifierWeight": 0.98265636,
+        "classifierBias": 0.035805695
+      },
+      "maxAbsoluteParameterDeltas": {
+        "embeddingBatchRows": 9.8289922e-05,
+        "firstBlockQuery": 9.8690391e-05,
+        "lastBlockQuery": 9.9808909e-05,
+        "classifierWeight": 0.232330143452,
+        "classifierBias": 0.017340160906
+      }
+    }
+  ],
+  "taskShapeProbe": {
+    "inputIdsShape": [
+      2,
+      7
+    ],
+    "hiddenStateShape": [
+      2,
+      7,
+      384
+    ],
+    "sequenceClassificationLogitsShape": [
+      2,
+      2
+    ],
+    "tokenClassificationLogitsShape": [
+      2,
+      7,
+      9
+    ],
+    "interpretation": {
+      "sequenceClassification": "one label distribution per input text",
+      "tokenClassification": "one label distribution per token position",
+      "mlm": "the Notebook uses one vocabulary distribution per token position and computes loss only at masked labels"
+    }
+  },
+  "bioAlignmentProbe": {
+    "words": [
+      "My",
+      "name",
+      "is",
+      "Maarten",
+      "."
+    ],
+    "wordLabels": [
+      "O",
+      "O",
+      "O",
+      "B-PER",
+      "O"
+    ],
+    "tokens": [
+      "[CLS]",
+      "my",
+      "name",
+      "is",
+      "ma",
+      "##arte",
+      "##n",
+      ".",
+      "[SEP]"
+    ],
+    "wordIds": [
+      null,
+      0,
+      1,
+      2,
+      3,
+      3,
+      3,
+      4,
+      null
+    ],
+    "alignedTokenLabels": [
+      "-100",
+      "O",
+      "O",
+      "O",
+      "B-PER",
+      "I-PER",
+      "I-PER",
+      "O",
+      "-100"
+    ],
+    "personSubtokens": [
+      {
+        "token": "ma",
+        "label": "B-PER"
+      },
+      {
+        "token": "##arte",
+        "label": "I-PER"
+      },
+      {
+        "token": "##n",
+        "label": "I-PER"
+      }
+    ],
+    "correctSeqevalInput": {
+      "sequenceCount": 1,
+      "tokensPerSequence": [
+        7
+      ],
+      "labels": [
+        [
+          "O",
+          "O",
+          "O",
+          "B-PER",
+          "I-PER",
+          "I-PER",
+          "O"
+        ]
+      ]
+    },
+    "notebookCell57Input": {
+      "sequenceCount": 7,
+      "tokensPerSequence": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "labels": [
+        [
+          "O"
+        ],
+        [
+          "O"
+        ],
+        [
+          "O"
+        ],
+        [
+          "B-PER"
+        ],
+        [
+          "I-PER"
+        ],
+        [
+          "I-PER"
+        ],
+        [
+          "O"
+        ]
+      ]
+    },
+    "integrityFinding": "Cell 57 appends one singleton list per token, breaking B-PER/I-PER continuity across a sentence before seqeval computes entity spans."
+  },
+  "sourceIntegrityFindings": [
+    "The classification and SetFit trainers use the test split as eval data during development instead of reserving it for final evaluation.",
+    "Cell 26 freezes parameters by numeric enumeration index 165, which is brittle across model and library changes.",
+    "Cell 30 reverses the saved freeze-score list while relabeling the endpoints None and All, so the plotted x/y meaning does not match the loop in cell 28.",
+    "Cell 57 flattens each NER token into a separate one-token sequence before seqeval, breaking entity-span continuity; the saved 0.9180 F1 is not a trustworthy sentence-level entity F1.",
+    "Cell 61 omits an aggregation strategy, so one person name is returned as three WordPiece entities rather than one merged span.",
+    "Model, dataset and metric revisions are not pinned; random seeds are not fixed; model, trainer, data and output directory names are repeatedly reused.",
+    "The source in cell 50 already passes trust_remote_code=True, while the saved output still contains an interactive trust prompt, suggesting source/output drift."
+  ],
+  "interpretationBoundary": [
+    "This verifies parameter freezing, gradient reach, head output units and BIO alignment mechanics, not bert-base-cased benchmark quality.",
+    "The eight sentiment texts are a fixed optimization batch; final batch accuracy is not an independent generalization metric.",
+    "The task-shape heads are untrained probes used only to expose tensor responsibility.",
+    "No SetFit, evaluate, seqeval, Rotten Tomatoes or CoNLL package/data path was installed or downloaded."
+  ]
+}
