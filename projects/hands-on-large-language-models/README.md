@@ -11,7 +11,7 @@
 | 获取方式 | Git submodule：`upstream/` |
 | 许可证 | Apache-2.0；外部模型与数据集需分别核查许可证 |
 | 开始日期 | 2026-08-23 |
-| 当前状态 | 研究中：静态能力盘点完成；第 1—9 章共 10 个低成本实践已通过 |
+| 当前状态 | 研究中：静态能力盘点完成；第 1—10 章共 11 个低成本实践已通过 |
 | 在线展示 | [能力研究页](https://yydshly.github.io/0823_githubcode_study/projects/hands-on-large-language-models.html) |
 
 ## 定位结论
@@ -145,6 +145,20 @@ CLIP把图片与文字放进共同向量空间，能完成跨模态检索；但�
 
 代码审计还发现Notebook图片URL指向可漂移的 `main`、CLIP预处理图被直接显示并触发裁剪警告、`model`变量三次覆盖；BLIP-2保存日志显示约15.5GB权重，而跑车价格回答无法由图片证明。本轮使用固定submodule图片并记录SHA-256，只运行CLIP，不把检索结果冒充图片描述或视觉问答质量。完整审计、逐描述排名和离线复现见 [`experiments/phase-07-multimodal/`](experiments/phase-07-multimodal/)；机器结果见 [`clip-negation-results.json`](experiments/phase-07-multimodal/results/clip-negation-results.json)。
 
+## 第10章文本 Embedding 训练实践
+
+2026-08-25 完成第10章训练数据对质量实验。实验固定已缓存的 `all-MiniLM-L6-v2`、8个训练对、8个独立改写查询和全部超参数，只把4/8个正目标在相近意图之间交换：
+
+| 模型状态 | 训练目标损失 | 真实检索 Top-1 | 平均正确间隔 |
+| --- | ---: | ---: | ---: |
+| 原始 MiniLM | — | 8 / 8 | 0.373860 |
+| 干净正对训练后 | 0.003938 → 0.000008 | 8 / 8 | 0.458672 |
+| 50%错误正对训练后 | 3.799777 → 0.134823 | 7 / 8 | 0.254062 |
+
+污染分支的损失大幅下降，但退款查询被错排成收据，证明训练目标只会奖励提供的配对关系，不会自动判断监督语义是否正确。代码审计也解释了Notebook保存结果中原始MiniLM的STS Spearman为0.8672，而完整MNLI继续微调后降至0.8485：单元41把三类MNLI全部交给不读取分类标签的MNRL，中立和矛盾句也会被当成正对。该代码问题与指标下降一致，但不能单凭一次结果断言它是唯一原因。
+
+本轮强制离线并使用 `local_files_only=True`，没有下载模型、数据集或依赖。完整损失/数据/评估审计、修改练习和复现方式见 [`experiments/phase-08-embedding-training/`](experiments/phase-08-embedding-training/)；逐查询排名与损失轨迹见 [`pair-quality-results.json`](experiments/phase-08-embedding-training/results/pair-quality-results.json)。
+
 ## 代码层面的真实边界
 
 - 全部核心示例都是 Notebook，没有统一的 Python 包、服务入口或 Web 应用。
@@ -180,14 +194,16 @@ CLIP把图片与文字放进共同向量空间，能完成跨模态检索；但�
 - [`semantic-search-results.json`](experiments/phase-06-semantic-search/results/semantic-search-results.json)：第8章24条标注查询排名、Top-k/MRR、失败列表和无答案探针。
 - [`experiments/phase-07-multimodal/`](experiments/phase-07-multimodal/)：第9章CLIP图文检索、否定词探针、图片来源审计与理解检查。
 - [`clip-negation-results.json`](experiments/phase-07-multimodal/results/clip-negation-results.json)：第9章图文矩阵、六描述排名、否定差值、环境与图片哈希。
+- [`experiments/phase-08-embedding-training/`](experiments/phase-08-embedding-training/)：第10章训练对质量、MNRL输入语义、源码完整性审计与理解检查。
+- [`pair-quality-results.json`](experiments/phase-08-embedding-training/results/pair-quality-results.json)：第10章损失轨迹、独立查询排名、正确间隔和失败样本。
 - [`upstream/`](upstream/)：固定在指定提交的上游源代码。
 
 ## 下一阶段
 
 按照由低成本到高成本的顺序执行：
 
-1. 进入第10章创建文本Embedding模型，先审查训练数据、损失函数、负样本和MTEB评估代码。
-2. 给第9章加入更大独立图片集、对象正确但场景错误的描述，以及可承受的小型图片描述模型。
-3. 给第8章增加独立阈值校准集与混合检索，分别评测召回、拒答和重排。
-4. 给第7章增加Action生成与解析阶段，分别评测工具选择、参数复制和最终回答。
-5. 在更大显存环境中补做 Phi-3 与BLIP-2原模型复现，再进入第11—12章训练实验。
+1. 进入第11章 Fine-tuning BERT，先审查分类头、SetFit、MLM、NER的数据标签与评估代码。
+2. 给第10章增加独立业务语料、污染率曲线、batch大小与假负样本对照。
+3. 给第9章加入更大独立图片集、对象正确但场景错误的描述，以及可承受的小型图片描述模型。
+4. 给第8章增加独立阈值校准集与混合检索，分别评测召回、拒答和重排。
+5. 在更大显存环境中补做 Phi-3 与BLIP-2原模型复现，再评估第11—12章完整GPU训练。

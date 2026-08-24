@@ -1,0 +1,541 @@
+{
+  "experiment": "Chapter 10 positive-pair quality under MultipleNegativesRankingLoss",
+  "predictionBeforeRun": "Both training variants can reduce the objective they are given, but only clean positive pairs should preserve or improve true held-out retrieval margins.",
+  "controlledVariable": "Four of eight positive targets are swapped between semantically adjacent intents; model revision, anchors, corpus, evaluation queries, seed, optimizer, learning rate, epochs and batch composition remain fixed.",
+  "sourceNotebook": {
+    "chapter": 10,
+    "upstreamCommit": "ea3390819997999a51983677b80b3aac4dc50ada",
+    "operativeCells": [
+      5,
+      8,
+      10,
+      12,
+      14,
+      15,
+      18,
+      25,
+      27,
+      32,
+      34,
+      40,
+      41,
+      42,
+      43,
+      48,
+      49,
+      53,
+      57,
+      68,
+      69,
+      73,
+      74,
+      75
+    ],
+    "integrityFinding": "Cell 41 passes all three MNLI labels to MultipleNegativesRankingLoss. That loss consumes the sentence columns and does not use the class label, so neutral and contradiction rows are treated as positive pairs.",
+    "savedStsSpearmanCosine": {
+      "notebookFineTunedMiniLM": 0.8484667083117318,
+      "notebookOriginalMiniLM": 0.8671637433378804
+    }
+  },
+  "fixedConditions": {
+    "documents": 8,
+    "trainingPairs": 8,
+    "contaminatedPairs": 4,
+    "evaluationQueries": 8,
+    "seed": 42,
+    "epochs": 12,
+    "learningRate": 2e-05,
+    "batchSize": 8,
+    "device": "cpu"
+  },
+  "model": {
+    "id": "sentence-transformers/all-MiniLM-L6-v2",
+    "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+    "localFilesOnly": true,
+    "pooling": "pretrained SentenceTransformer mean pooling",
+    "embeddingDimensions": 384,
+    "normalizationAtEvaluation": "L2"
+  },
+  "environment": {
+    "createdAt": "2026-08-24T16:26:16.170096+00:00",
+    "python": "3.10.11",
+    "torch": "2.3.1+cpu",
+    "sentenceTransformers": "3.0.1",
+    "numpy": "1.26.4",
+    "offlineMode": true,
+    "hfHome": "E:\\0823_codex_project\\projects\\hands-on-large-language-models\\.runtime\\hf-home"
+  },
+  "documents": [
+    {
+      "id": "password",
+      "text": "Reset a forgotten password from Settings > Security. A recovery link is sent to the account email."
+    },
+    {
+      "id": "two_factor",
+      "text": "Two-factor recovery codes replace an unavailable authenticator. Each recovery code works once."
+    },
+    {
+      "id": "token",
+      "text": "API access tokens expire after 90 days and can be rotated from Developer settings."
+    },
+    {
+      "id": "invite",
+      "text": "Workspace owners invite colleagues from Members. Invitations expire after seven days."
+    },
+    {
+      "id": "receipt",
+      "text": "Download payment receipts as PDF from Billing > Transactions after a charge is completed."
+    },
+    {
+      "id": "refund",
+      "text": "Refund requests are accepted within 14 days of purchase through Billing support."
+    },
+    {
+      "id": "upload",
+      "text": "Each attachment can be at most 25 MB. Larger files must be shared with an external link."
+    },
+    {
+      "id": "csv_export",
+      "text": "Export report tables as CSV from Analytics > Reports. Filters remain in the downloaded file."
+    }
+  ],
+  "trainingPairs": {
+    "clean": [
+      {
+        "anchor": "How do I recover a forgotten password?",
+        "targetDocId": "password"
+      },
+      {
+        "anchor": "Can I sign in if my authenticator is unavailable?",
+        "targetDocId": "two_factor"
+      },
+      {
+        "anchor": "Where can I replace an expiring API credential?",
+        "targetDocId": "token"
+      },
+      {
+        "anchor": "How does an owner add a colleague to the workspace?",
+        "targetDocId": "invite"
+      },
+      {
+        "anchor": "Where can I download a receipt for a completed charge?",
+        "targetDocId": "receipt"
+      },
+      {
+        "anchor": "How soon must I request a refund?",
+        "targetDocId": "refund"
+      },
+      {
+        "anchor": "How large can an uploaded attachment be?",
+        "targetDocId": "upload"
+      },
+      {
+        "anchor": "Where can I export analytics rows as CSV?",
+        "targetDocId": "csv_export"
+      }
+    ],
+    "contaminated": [
+      {
+        "anchor": "How do I recover a forgotten password?",
+        "targetDocId": "two_factor",
+        "isSemanticallyCorrect": false
+      },
+      {
+        "anchor": "Can I sign in if my authenticator is unavailable?",
+        "targetDocId": "password",
+        "isSemanticallyCorrect": false
+      },
+      {
+        "anchor": "Where can I replace an expiring API credential?",
+        "targetDocId": "token",
+        "isSemanticallyCorrect": true
+      },
+      {
+        "anchor": "How does an owner add a colleague to the workspace?",
+        "targetDocId": "invite",
+        "isSemanticallyCorrect": true
+      },
+      {
+        "anchor": "Where can I download a receipt for a completed charge?",
+        "targetDocId": "refund",
+        "isSemanticallyCorrect": false
+      },
+      {
+        "anchor": "How soon must I request a refund?",
+        "targetDocId": "receipt",
+        "isSemanticallyCorrect": false
+      },
+      {
+        "anchor": "How large can an uploaded attachment be?",
+        "targetDocId": "upload",
+        "isSemanticallyCorrect": true
+      },
+      {
+        "anchor": "Where can I export analytics rows as CSV?",
+        "targetDocId": "csv_export",
+        "isSemanticallyCorrect": true
+      }
+    ]
+  },
+  "results": {
+    "base": {
+      "cleanObjectiveLoss": 0.003938,
+      "contaminatedObjectiveLoss": 3.799777,
+      "evaluation": {
+        "top1": 8,
+        "queries": 8,
+        "top1Rate": 1.0,
+        "meanTrueMargin": 0.37386,
+        "minimumTrueMargin": 0.211952,
+        "failures": [],
+        "rows": [
+          {
+            "query": "I forgot my login secret. How can I regain account access?",
+            "expectedDocId": "password",
+            "expectedRank": 1,
+            "returnedDocId": "password",
+            "positiveScore": 0.624089,
+            "hardestNegativeDocId": "two_factor",
+            "hardestNegativeScore": 0.310518,
+            "margin": 0.313571,
+            "top1": true
+          },
+          {
+            "query": "My authenticator phone is gone. Can recovery codes let me in?",
+            "expectedDocId": "two_factor",
+            "expectedRank": 1,
+            "returnedDocId": "two_factor",
+            "positiveScore": 0.649674,
+            "hardestNegativeDocId": "password",
+            "hardestNegativeScore": 0.432329,
+            "margin": 0.217345,
+            "top1": true
+          },
+          {
+            "query": "How long does a developer credential last, and where can I replace it?",
+            "expectedDocId": "token",
+            "expectedRank": 1,
+            "returnedDocId": "token",
+            "positiveScore": 0.484504,
+            "hardestNegativeDocId": "invite",
+            "hardestNegativeScore": 0.272552,
+            "margin": 0.211952,
+            "top1": true
+          },
+          {
+            "query": "How do I bring a coworker into our shared workspace?",
+            "expectedDocId": "invite",
+            "expectedRank": 1,
+            "returnedDocId": "invite",
+            "positiveScore": 0.536822,
+            "hardestNegativeDocId": "password",
+            "hardestNegativeScore": 0.130729,
+            "margin": 0.406093,
+            "top1": true
+          },
+          {
+            "query": "Where can I get proof that a completed charge was paid?",
+            "expectedDocId": "receipt",
+            "expectedRank": 1,
+            "returnedDocId": "receipt",
+            "positiveScore": 0.615026,
+            "hardestNegativeDocId": "refund",
+            "hardestNegativeScore": 0.33386,
+            "margin": 0.281167,
+            "top1": true
+          },
+          {
+            "query": "What is the deadline for asking for my money back?",
+            "expectedDocId": "refund",
+            "expectedRank": 1,
+            "returnedDocId": "refund",
+            "positiveScore": 0.621086,
+            "hardestNegativeDocId": "token",
+            "hardestNegativeScore": 0.201097,
+            "margin": 0.419989,
+            "top1": true
+          },
+          {
+            "query": "What is the biggest file I can attach here?",
+            "expectedDocId": "upload",
+            "expectedRank": 1,
+            "returnedDocId": "upload",
+            "positiveScore": 0.717278,
+            "hardestNegativeDocId": "receipt",
+            "hardestNegativeScore": 0.103415,
+            "margin": 0.613862,
+            "top1": true
+          },
+          {
+            "query": "How do I move analytics table rows into a spreadsheet?",
+            "expectedDocId": "csv_export",
+            "expectedRank": 1,
+            "returnedDocId": "csv_export",
+            "positiveScore": 0.565237,
+            "hardestNegativeDocId": "receipt",
+            "hardestNegativeScore": 0.038338,
+            "margin": 0.526899,
+            "top1": true
+          }
+        ]
+      }
+    },
+    "cleanTraining": {
+      "name": "clean-positive-pairs",
+      "initialObjectiveLoss": 0.003938,
+      "finalObjectiveLoss": 8e-06,
+      "objectiveLossChange": -0.003929,
+      "trainingLossByEpoch": [
+        0.004937,
+        0.002157,
+        0.000459,
+        0.000482,
+        0.00025,
+        0.000174,
+        0.00011,
+        0.000112,
+        6.5e-05,
+        6.8e-05,
+        0.00022,
+        3.7e-05
+      ],
+      "trainingSeconds": 2.793,
+      "evaluation": {
+        "top1": 8,
+        "queries": 8,
+        "top1Rate": 1.0,
+        "meanTrueMargin": 0.458672,
+        "minimumTrueMargin": 0.258258,
+        "failures": [],
+        "rows": [
+          {
+            "query": "I forgot my login secret. How can I regain account access?",
+            "expectedDocId": "password",
+            "expectedRank": 1,
+            "returnedDocId": "password",
+            "positiveScore": 0.517699,
+            "hardestNegativeDocId": "two_factor",
+            "hardestNegativeScore": 0.178132,
+            "margin": 0.339567,
+            "top1": true
+          },
+          {
+            "query": "My authenticator phone is gone. Can recovery codes let me in?",
+            "expectedDocId": "two_factor",
+            "expectedRank": 1,
+            "returnedDocId": "two_factor",
+            "positiveScore": 0.700213,
+            "hardestNegativeDocId": "token",
+            "hardestNegativeScore": 0.102534,
+            "margin": 0.597679,
+            "top1": true
+          },
+          {
+            "query": "How long does a developer credential last, and where can I replace it?",
+            "expectedDocId": "token",
+            "expectedRank": 1,
+            "returnedDocId": "token",
+            "positiveScore": 0.451186,
+            "hardestNegativeDocId": "invite",
+            "hardestNegativeScore": 0.192928,
+            "margin": 0.258258,
+            "top1": true
+          },
+          {
+            "query": "How do I bring a coworker into our shared workspace?",
+            "expectedDocId": "invite",
+            "expectedRank": 1,
+            "returnedDocId": "invite",
+            "positiveScore": 0.586664,
+            "hardestNegativeDocId": "upload",
+            "hardestNegativeScore": 0.111238,
+            "margin": 0.475426,
+            "top1": true
+          },
+          {
+            "query": "Where can I get proof that a completed charge was paid?",
+            "expectedDocId": "receipt",
+            "expectedRank": 1,
+            "returnedDocId": "receipt",
+            "positiveScore": 0.583683,
+            "hardestNegativeDocId": "refund",
+            "hardestNegativeScore": 0.22463,
+            "margin": 0.359053,
+            "top1": true
+          },
+          {
+            "query": "What is the deadline for asking for my money back?",
+            "expectedDocId": "refund",
+            "expectedRank": 1,
+            "returnedDocId": "refund",
+            "positiveScore": 0.573518,
+            "hardestNegativeDocId": "token",
+            "hardestNegativeScore": 0.125244,
+            "margin": 0.448274,
+            "top1": true
+          },
+          {
+            "query": "What is the biggest file I can attach here?",
+            "expectedDocId": "upload",
+            "expectedRank": 1,
+            "returnedDocId": "upload",
+            "positiveScore": 0.718184,
+            "hardestNegativeDocId": "receipt",
+            "hardestNegativeScore": 0.085565,
+            "margin": 0.632619,
+            "top1": true
+          },
+          {
+            "query": "How do I move analytics table rows into a spreadsheet?",
+            "expectedDocId": "csv_export",
+            "expectedRank": 1,
+            "returnedDocId": "csv_export",
+            "positiveScore": 0.587808,
+            "hardestNegativeDocId": "receipt",
+            "hardestNegativeScore": 0.029309,
+            "margin": 0.558499,
+            "top1": true
+          }
+        ]
+      }
+    },
+    "contaminatedTraining": {
+      "name": "50-percent-contaminated-positive-pairs",
+      "initialObjectiveLoss": 3.799777,
+      "finalObjectiveLoss": 0.134823,
+      "objectiveLossChange": -3.664954,
+      "trainingLossByEpoch": [
+        3.280225,
+        2.870275,
+        2.082167,
+        1.681865,
+        1.300431,
+        1.076139,
+        0.642046,
+        0.476943,
+        0.368434,
+        0.265249,
+        0.20733,
+        0.227583
+      ],
+      "trainingSeconds": 2.559,
+      "evaluation": {
+        "top1": 7,
+        "queries": 8,
+        "top1Rate": 0.875,
+        "meanTrueMargin": 0.254062,
+        "minimumTrueMargin": -0.000301,
+        "failures": [
+          {
+            "query": "What is the deadline for asking for my money back?",
+            "expectedDocId": "refund",
+            "expectedRank": 2,
+            "returnedDocId": "receipt",
+            "positiveScore": 0.652896,
+            "hardestNegativeDocId": "receipt",
+            "hardestNegativeScore": 0.653197,
+            "margin": -0.000301,
+            "top1": false
+          }
+        ],
+        "rows": [
+          {
+            "query": "I forgot my login secret. How can I regain account access?",
+            "expectedDocId": "password",
+            "expectedRank": 1,
+            "returnedDocId": "password",
+            "positiveScore": 0.575304,
+            "hardestNegativeDocId": "two_factor",
+            "hardestNegativeScore": 0.471723,
+            "margin": 0.103581,
+            "top1": true
+          },
+          {
+            "query": "My authenticator phone is gone. Can recovery codes let me in?",
+            "expectedDocId": "two_factor",
+            "expectedRank": 1,
+            "returnedDocId": "two_factor",
+            "positiveScore": 0.67273,
+            "hardestNegativeDocId": "password",
+            "hardestNegativeScore": 0.474736,
+            "margin": 0.197994,
+            "top1": true
+          },
+          {
+            "query": "How long does a developer credential last, and where can I replace it?",
+            "expectedDocId": "token",
+            "expectedRank": 1,
+            "returnedDocId": "token",
+            "positiveScore": 0.536786,
+            "hardestNegativeDocId": "refund",
+            "hardestNegativeScore": 0.362947,
+            "margin": 0.173839,
+            "top1": true
+          },
+          {
+            "query": "How do I bring a coworker into our shared workspace?",
+            "expectedDocId": "invite",
+            "expectedRank": 1,
+            "returnedDocId": "invite",
+            "positiveScore": 0.62784,
+            "hardestNegativeDocId": "password",
+            "hardestNegativeScore": 0.247593,
+            "margin": 0.380247,
+            "top1": true
+          },
+          {
+            "query": "Where can I get proof that a completed charge was paid?",
+            "expectedDocId": "receipt",
+            "expectedRank": 1,
+            "returnedDocId": "receipt",
+            "positiveScore": 0.747345,
+            "hardestNegativeDocId": "refund",
+            "hardestNegativeScore": 0.674332,
+            "margin": 0.073013,
+            "top1": true
+          },
+          {
+            "query": "What is the deadline for asking for my money back?",
+            "expectedDocId": "refund",
+            "expectedRank": 2,
+            "returnedDocId": "receipt",
+            "positiveScore": 0.652896,
+            "hardestNegativeDocId": "receipt",
+            "hardestNegativeScore": 0.653197,
+            "margin": -0.000301,
+            "top1": false
+          },
+          {
+            "query": "What is the biggest file I can attach here?",
+            "expectedDocId": "upload",
+            "expectedRank": 1,
+            "returnedDocId": "upload",
+            "positiveScore": 0.720814,
+            "hardestNegativeDocId": "refund",
+            "hardestNegativeScore": 0.135241,
+            "margin": 0.585573,
+            "top1": true
+          },
+          {
+            "query": "How do I move analytics table rows into a spreadsheet?",
+            "expectedDocId": "csv_export",
+            "expectedRank": 1,
+            "returnedDocId": "csv_export",
+            "positiveScore": 0.546413,
+            "hardestNegativeDocId": "refund",
+            "hardestNegativeScore": 0.027861,
+            "margin": 0.518552,
+            "top1": true
+          }
+        ]
+      }
+    }
+  },
+  "interpretationBoundary": [
+    "This is an eight-intent English synthetic retrieval test, not a claim about general benchmark quality.",
+    "The experiment isolates pair quality; it does not compare all Chapter 10 loss functions or reproduce the 50,000-row GPU runs.",
+    "A lower MultipleNegativesRankingLoss only shows better fit to the supplied diagonal pairs, even when some pairs are semantically wrong.",
+    "The source Notebook's saved STS scores and this local retrieval test use different data, so their numeric values must not be compared directly.",
+    "No model, dataset or package was downloaded; the script fails if the pinned model is absent from the existing local cache."
+  ]
+}

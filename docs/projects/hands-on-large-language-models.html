@@ -52,7 +52,7 @@
             <li><span>02</span><p><strong>建议 T4 16GB</strong>这是上游给出的最稳定入门环境。</p></li>
             <li><span>03</span><p><strong>先观察生成链路</strong>Tokenizer → logits → decoding → cache。</p></li>
           </ol>
-          <div class="start-status"><span aria-hidden="true"></span><p><strong>本库进度</strong>：12章代码已盘点；第1—9章已有10个低成本练习。</p></div>
+          <div class="start-status"><span aria-hidden="true"></span><p><strong>本库进度</strong>：12章代码已盘点；第1—10章已有11个低成本练习。</p></div>
         </aside>
       </section>
 
@@ -71,8 +71,8 @@
 
         <div class="research-status" aria-label="当前研究状态">
           <div><span>12 / 12</span><p>Notebook代码已核查</p></div>
-          <div><span>10</span><p>第1—9章实践已运行</p></div>
-          <div><span>NEXT</span><p>第10章创建文本Embedding模型</p></div>
+          <div><span>11</span><p>第1—10章实践已运行</p></div>
+          <div><span>NEXT</span><p>第11章 Fine-tuning BERT</p></div>
           <div><span>BOUNDARY</span><p>Phi-3原权重尚未复现</p></div>
         </div>
 
@@ -167,7 +167,7 @@
 
       <section id="labs" class="workspace-section" aria-labelledby="labs-title">
         <header class="section-header">
-          <div><p class="section-label">03 / PRACTICE LABS</p><h2 id="labs-title">先做十个最小练习。</h2></div>
+          <div><p class="section-label">03 / PRACTICE LABS</p><h2 id="labs-title">先做十一个最小练习。</h2></div>
           <p>默认只展开一个，避免页面变成结果墙。每个练习都保留预测、观察、解释、继续修改和证据。</p>
         </header>
 
@@ -228,8 +228,14 @@
               <div class="lab-next"><p><strong>继续修改</strong>：把not换成without，或加入“对象正确、场景错误”的描述，先预测排名。</p><p><strong>理解检查</strong>：跑车图片能证明驾驶成本吗？为什么相似度不能解释成真假概率？</p></div>
               <p class="evidence-links"><a href="https://github.com/HandsOnLLM/Hands-On-Large-Language-Models/tree/ea3390819997999a51983677b80b3aac4dc50ada/chapter09">章节源码</a><a href="https://github.com/yydshly/0823_githubcode_study/tree/main/projects/hands-on-large-language-models/experiments/phase-07-multimodal">实验说明</a><a href="https://github.com/yydshly/0823_githubcode_study/blob/main/projects/hands-on-large-language-models/experiments/phase-07-multimodal/run_clip_negation.py">复现脚本</a><a href="https://github.com/yydshly/0823_githubcode_study/blob/main/projects/hands-on-large-language-models/experiments/phase-07-multimodal/results/clip-negation-results.json">结果JSON</a></p></div>
           </details>
+          <details class="lab-card">
+            <summary><span class="lab-index">11</span><div><small>CH 10 · EMBEDDING TRAINING</small><h3>损失下降，就说明向量模型变好了吗？</h3></div><p><strong>8 / 8 → 7 / 8</strong><span>50%错误正对后的真实Top-1</span></p></summary>
+            <div class="lab-body"><div class="lab-grid"><article><span>先预测</span><p>干净配对和错误配对能否都让训练损失下降？独立查询的排名会怎样变化？</p></article><article><span>动手</span><p>固定缓存MiniLM、8个意图和全部训练参数，只把4个正目标在相近意图间交换。</p></article><article><span>观察</span><p>干净训练保持8/8，平均间隔0.458672；污染训练损失也大降，却变成7/8、间隔0.254062，退款被排成收据。</p></article><article><span>解释</span><p>MNRL只优化给定配对的对角线，不理解分类标签；必须用独立语义评估判断空间是否真的改善。</p></article></div>
+              <div class="lab-next"><p><strong>继续修改</strong>：把污染率改为2/8，或把batch从8改为4，先预测Top-1和间隔谁先报警。</p><p><strong>理解检查</strong>：为什么单元41会把中立、矛盾句当正对？STS下降为什么不能证明这是唯一原因？</p></div>
+              <p class="evidence-links"><a href="https://github.com/HandsOnLLM/Hands-On-Large-Language-Models/tree/ea3390819997999a51983677b80b3aac4dc50ada/chapter10">章节源码</a><a href="https://github.com/yydshly/0823_githubcode_study/tree/main/projects/hands-on-large-language-models/experiments/phase-08-embedding-training">实验说明</a><a href="https://github.com/yydshly/0823_githubcode_study/blob/main/projects/hands-on-large-language-models/experiments/phase-08-embedding-training/run_pair_quality.py">离线脚本</a><a href="https://github.com/yydshly/0823_githubcode_study/blob/main/projects/hands-on-large-language-models/experiments/phase-08-embedding-training/results/pair-quality-results.json">结果JSON</a></p></div>
+          </details>
         </div>
-        <p class="boundary-note"><strong>证据边界</strong>：第1—3章使用135M代理模型；第4章用MiniLM和400/200平衡子集；第5章使用gte-small与600篇子集；第6章使用135M代理和12条合成记录；第7章使用135M代理、12条合成换汇与本地Decimal；第8章使用MiniLM与24条查询；第9章使用CLIP与3张上游示例图，只评测图文检索，不运行BLIP-2生成。均为机制实践，不是原模型或完整数据基准。</p>
+        <p class="boundary-note"><strong>证据边界</strong>：第1—3章使用135M代理模型；第4章用MiniLM和400/200平衡子集；第5章使用gte-small与600篇子集；第6章使用135M代理和12条合成记录；第7章使用135M代理、12条合成换汇与本地Decimal；第8章使用MiniLM与24条查询；第9章使用CLIP与3张上游示例图，不运行BLIP-2；第10章使用缓存MiniLM与8个合成意图，不复现5万行GPU训练。均为机制实践，不是原模型或完整数据基准。</p>
       </section>
 
       <section id="setup" class="workspace-section" aria-labelledby="setup-title">
@@ -246,7 +252,7 @@
         <div class="resource-grid">
           <article class="resource-group"><span>阅读</span><h3>书籍与作者</h3><a href="https://www.oreilly.com/library/view/hands-on-large-language/9781098150952/">O’Reilly书籍页 ↗</a><a href="https://github.com/HandsOnLLM/Hands-On-Large-Language-Models#table-of-contents">官方目录与Colab ↗</a><p>Jay Alammar · Maarten Grootendorst</p></article>
           <article class="resource-group"><span>源码</span><h3>固定研究对象</h3><a href="https://github.com/HandsOnLLM/Hands-On-Large-Language-Models/tree/ea3390819997999a51983677b80b3aac4dc50ada">固定提交 ea339081 ↗</a><a href="https://github.com/HandsOnLLM/Hands-On-Large-Language-Models/blob/ea3390819997999a51983677b80b3aac4dc50ada/LICENSE">Apache-2.0许可证 ↗</a><p>外部模型和数据集许可证需分别核查。</p></article>
-          <article class="resource-group"><span>本库研究</span><h3>清单与实验</h3><a href="https://github.com/yydshly/0823_githubcode_study/blob/main/projects/hands-on-large-language-models/analysis/notebook-inventory.json">Notebook代码清单 ↗</a><a href="https://github.com/yydshly/0823_githubcode_study/tree/main/projects/hands-on-large-language-models/experiments/phase-02-classification">第4章分类实验 ↗</a><a href="https://github.com/yydshly/0823_githubcode_study/tree/main/projects/hands-on-large-language-models/experiments/phase-03-topic-modeling">第5章主题实验 ↗</a><a href="https://github.com/yydshly/0823_githubcode_study/tree/main/projects/hands-on-large-language-models/experiments/phase-04-prompt-engineering">第6章提示实验 ↗</a><a href="https://github.com/yydshly/0823_githubcode_study/tree/main/projects/hands-on-large-language-models/experiments/phase-05-tools">第7章工具实验 ↗</a><a href="https://github.com/yydshly/0823_githubcode_study/tree/main/projects/hands-on-large-language-models/experiments/phase-06-semantic-search">第8章语义搜索实验 ↗</a><a href="https://github.com/yydshly/0823_githubcode_study/tree/main/projects/hands-on-large-language-models/experiments/phase-07-multimodal">第9章多模态实验 ↗</a><p>10个练习的机器结果、失败观察与证据边界均保留。</p></article>
+          <article class="resource-group"><span>本库研究</span><h3>清单与实验</h3><a href="https://github.com/yydshly/0823_githubcode_study/blob/main/projects/hands-on-large-language-models/analysis/notebook-inventory.json">Notebook代码清单 ↗</a><a href="https://github.com/yydshly/0823_githubcode_study/tree/main/projects/hands-on-large-language-models/experiments/phase-02-classification">第4章分类实验 ↗</a><a href="https://github.com/yydshly/0823_githubcode_study/tree/main/projects/hands-on-large-language-models/experiments/phase-03-topic-modeling">第5章主题实验 ↗</a><a href="https://github.com/yydshly/0823_githubcode_study/tree/main/projects/hands-on-large-language-models/experiments/phase-04-prompt-engineering">第6章提示实验 ↗</a><a href="https://github.com/yydshly/0823_githubcode_study/tree/main/projects/hands-on-large-language-models/experiments/phase-05-tools">第7章工具实验 ↗</a><a href="https://github.com/yydshly/0823_githubcode_study/tree/main/projects/hands-on-large-language-models/experiments/phase-06-semantic-search">第8章语义搜索实验 ↗</a><a href="https://github.com/yydshly/0823_githubcode_study/tree/main/projects/hands-on-large-language-models/experiments/phase-07-multimodal">第9章多模态实验 ↗</a><a href="https://github.com/yydshly/0823_githubcode_study/tree/main/projects/hands-on-large-language-models/experiments/phase-08-embedding-training">第10章Embedding训练实验 ↗</a><p>11个练习的机器结果、失败观察与证据边界均保留。</p></article>
         </div>
       </section>
     </main>
