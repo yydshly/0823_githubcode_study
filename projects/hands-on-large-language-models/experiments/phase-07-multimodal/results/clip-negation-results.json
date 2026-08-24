@@ -1,0 +1,338 @@
+{
+  "experiment": "Chapter 9 CLIP cross-modal retrieval and one-word negation probe",
+  "predictionBeforeRun": "The three affirmative captions should retrieve their matching images. Adding only 'not' should lower the matching score, but the small change may leave false negated captions surprisingly close because CLIP similarity is not logical entailment.",
+  "controlledVariable": "caption polarity only: each negative caption inserts the single word 'not' while image, model, preprocessing and all other caption tokens remain fixed",
+  "fixedConditions": {
+    "images": 3,
+    "affirmativeCaptions": 3,
+    "negatedCaptions": 3,
+    "seed": 42,
+    "imageSource": "pinned upstream chapter09/images directory"
+  },
+  "sourceNotebook": {
+    "chapter": 9,
+    "upstreamCommit": "ea3390819997999a51983677b80b3aac4dc50ada",
+    "operativeCells": [
+      4,
+      7,
+      8,
+      9,
+      10,
+      11,
+      13,
+      14,
+      16,
+      17,
+      18,
+      20
+    ],
+    "generationBoundaryCells": [
+      22,
+      24,
+      25,
+      28,
+      29,
+      32,
+      33,
+      34,
+      35,
+      38,
+      39,
+      40
+    ]
+  },
+  "model": {
+    "id": "openai/clip-vit-base-patch32",
+    "revision": "3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268",
+    "device": "cpu",
+    "embeddingDimensions": 512,
+    "normalization": "L2",
+    "similarity": "cosine via dot product"
+  },
+  "environment": {
+    "createdAt": "2026-08-24T13:18:30.452366+00:00",
+    "python": "3.10.11",
+    "torch": "2.3.1+cpu",
+    "transformers": "4.41.2",
+    "numpy": "1.26.4",
+    "pillow": "12.3.0",
+    "offlineMode": true
+  },
+  "assets": [
+    {
+      "id": "puppy",
+      "path": "upstream/chapter09/images/puppy.png",
+      "sha256": "1ae0883abcf9c7060e40ac7190e676e93ce86d250cdc3ab1538775851d6798d4",
+      "mode": "RGB",
+      "size": [
+        512,
+        512
+      ],
+      "notebookProvenance": "Notebook comment describes repository examples as AI-generated; generator and original prompt are not recorded."
+    },
+    {
+      "id": "cat",
+      "path": "upstream/chapter09/images/cat.png",
+      "sha256": "3883cbb9c87805a07bc556f32971e3f375220ad6cea5bc8178ece03928a843b4",
+      "mode": "RGB",
+      "size": [
+        583,
+        618
+      ],
+      "notebookProvenance": "Notebook comment describes repository examples as AI-generated; generator and original prompt are not recorded."
+    },
+    {
+      "id": "car",
+      "path": "upstream/chapter09/images/car.png",
+      "sha256": "2b7a06a690cb65b93bd7abe2fa49a821a4852153858a3fb1e5bee370976942c8",
+      "mode": "RGB",
+      "size": [
+        492,
+        520
+      ],
+      "notebookProvenance": "Notebook comment describes repository examples as AI-generated; generator and original prompt are not recorded."
+    }
+  ],
+  "summary": {
+    "affirmativeRetrievalTop1": 3,
+    "affirmativeRetrievalTotal": 3,
+    "negatedBeatsAffirmative": 0,
+    "meanAffirmativeMinusNegated": 0.031945,
+    "minimumAffirmativeMinusNegated": 0.020723,
+    "maximumAffirmativeMinusNegated": 0.041926
+  },
+  "affirmativeSimilarityMatrix": [
+    [
+      0.331496,
+      0.186329,
+      0.108443
+    ],
+    [
+      0.148783,
+      0.346301,
+      0.094653
+    ],
+    [
+      0.076222,
+      0.125992,
+      0.309761
+    ]
+  ],
+  "negatedSimilarityMatrix": [
+    [
+      0.298309,
+      0.216623,
+      0.135515
+    ],
+    [
+      0.174956,
+      0.304376,
+      0.116125
+    ],
+    [
+      0.126267,
+      0.171852,
+      0.289038
+    ]
+  ],
+  "retrievalResults": [
+    {
+      "imageId": "puppy",
+      "correctCaptionRank": 1,
+      "hitAt1": true,
+      "ranking": [
+        {
+          "rank": 1,
+          "captionId": "puppy",
+          "score": 0.331496
+        },
+        {
+          "rank": 2,
+          "captionId": "cat",
+          "score": 0.186329
+        },
+        {
+          "rank": 3,
+          "captionId": "car",
+          "score": 0.108443
+        }
+      ]
+    },
+    {
+      "imageId": "cat",
+      "correctCaptionRank": 1,
+      "hitAt1": true,
+      "ranking": [
+        {
+          "rank": 1,
+          "captionId": "cat",
+          "score": 0.346301
+        },
+        {
+          "rank": 2,
+          "captionId": "puppy",
+          "score": 0.148783
+        },
+        {
+          "rank": 3,
+          "captionId": "car",
+          "score": 0.094653
+        }
+      ]
+    },
+    {
+      "imageId": "car",
+      "correctCaptionRank": 1,
+      "hitAt1": true,
+      "ranking": [
+        {
+          "rank": 1,
+          "captionId": "car",
+          "score": 0.309761
+        },
+        {
+          "rank": 2,
+          "captionId": "cat",
+          "score": 0.125992
+        },
+        {
+          "rank": 3,
+          "captionId": "puppy",
+          "score": 0.076222
+        }
+      ]
+    }
+  ],
+  "negationResults": [
+    {
+      "imageId": "puppy",
+      "affirmative": "a puppy playing in the snow",
+      "negated": "not a puppy playing in the snow",
+      "affirmativeScore": 0.331496,
+      "negatedScore": 0.298309,
+      "affirmativeMinusNegated": 0.033187,
+      "negatedBeatsAffirmative": false,
+      "allCaptionRanking": [
+        {
+          "rank": 1,
+          "caption": "puppy:affirmative",
+          "score": 0.331496
+        },
+        {
+          "rank": 2,
+          "caption": "puppy:negated",
+          "score": 0.298309
+        },
+        {
+          "rank": 3,
+          "caption": "cat:negated",
+          "score": 0.216623
+        },
+        {
+          "rank": 4,
+          "caption": "cat:affirmative",
+          "score": 0.186329
+        },
+        {
+          "rank": 5,
+          "caption": "car:negated",
+          "score": 0.135515
+        },
+        {
+          "rank": 6,
+          "caption": "car:affirmative",
+          "score": 0.108443
+        }
+      ]
+    },
+    {
+      "imageId": "cat",
+      "affirmative": "a pixelated image of a cute cat",
+      "negated": "not a pixelated image of a cute cat",
+      "affirmativeScore": 0.346301,
+      "negatedScore": 0.304376,
+      "affirmativeMinusNegated": 0.041926,
+      "negatedBeatsAffirmative": false,
+      "allCaptionRanking": [
+        {
+          "rank": 1,
+          "caption": "cat:affirmative",
+          "score": 0.346301
+        },
+        {
+          "rank": 2,
+          "caption": "cat:negated",
+          "score": 0.304376
+        },
+        {
+          "rank": 3,
+          "caption": "puppy:negated",
+          "score": 0.174956
+        },
+        {
+          "rank": 4,
+          "caption": "puppy:affirmative",
+          "score": 0.148783
+        },
+        {
+          "rank": 5,
+          "caption": "car:negated",
+          "score": 0.116125
+        },
+        {
+          "rank": 6,
+          "caption": "car:affirmative",
+          "score": 0.094653
+        }
+      ]
+    },
+    {
+      "imageId": "car",
+      "affirmative": "a supercar on the road with the sunset in the background",
+      "negated": "not a supercar on the road with the sunset in the background",
+      "affirmativeScore": 0.309761,
+      "negatedScore": 0.289038,
+      "affirmativeMinusNegated": 0.020723,
+      "negatedBeatsAffirmative": false,
+      "allCaptionRanking": [
+        {
+          "rank": 1,
+          "caption": "car:affirmative",
+          "score": 0.309761
+        },
+        {
+          "rank": 2,
+          "caption": "car:negated",
+          "score": 0.289038
+        },
+        {
+          "rank": 3,
+          "caption": "cat:negated",
+          "score": 0.171852
+        },
+        {
+          "rank": 4,
+          "caption": "puppy:negated",
+          "score": 0.126267
+        },
+        {
+          "rank": 5,
+          "caption": "cat:affirmative",
+          "score": 0.125992
+        },
+        {
+          "rank": 6,
+          "caption": "puppy:affirmative",
+          "score": 0.076222
+        }
+      ]
+    }
+  ],
+  "interpretationBoundary": [
+    "This is a three-image mechanism probe, not a general CLIP benchmark.",
+    "The images are repository examples described only as AI-generated; their generator and prompts are unavailable.",
+    "Cosine similarity measures proximity in CLIP's shared embedding space, not truth, logical entailment or calibrated probability.",
+    "BLIP-2 captioning and visual question answering are not executed; their generation quality is a separate capability.",
+    "The Notebook's BLIP-2 checkpoint logs approximately 15.5 GB of shards and is outside this CPU practice boundary."
+  ]
+}

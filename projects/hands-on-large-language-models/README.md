@@ -11,7 +11,7 @@
 | 获取方式 | Git submodule：`upstream/` |
 | 许可证 | Apache-2.0；外部模型与数据集需分别核查许可证 |
 | 开始日期 | 2026-08-23 |
-| 当前状态 | 研究中：静态能力盘点完成；第 1—8 章共 9 个低成本实践已通过 |
+| 当前状态 | 研究中：静态能力盘点完成；第 1—9 章共 10 个低成本实践已通过 |
 | 在线展示 | [能力研究页](https://yydshly.github.io/0823_githubcode_study/projects/hands-on-large-language-models.html) |
 
 ## 定位结论
@@ -131,6 +131,20 @@ Python执行器12/12都算对，但模型只在7条回答中提到正确值，�
 
 代码审计还发现：Notebook的月球质量问题会从电影语料硬返回3条；只重排BM25候选时，首轮漏掉的相关片段无法恢复；本地RAG的下载代码、保存日志和模型路径不一致。完整源码审计、逐查询排名、失败样本、修改练习和离线复现见 [`experiments/phase-06-semantic-search/`](experiments/phase-06-semantic-search/)；机器结果见 [`semantic-search-results.json`](experiments/phase-06-semantic-search/results/semantic-search-results.json)。
 
+## 第9章多模态大语言模型实践
+
+2026-08-24 完成第9章CLIP图文检索与否定词敏感性实验。实验固定上游3张示例图、Notebook同款CLIP模型和三条描述，只在每条正确描述前加入一个单词 `not`：
+
+| 检验 | 结果 | 含义 |
+| --- | ---: | --- |
+| 肯定描述图文Top-1 | 3 / 3 | 三张图都与正确描述对齐 |
+| 肯定减否定相似度 | 0.0207—0.0419 | 否定词会降分，但幅度很小 |
+| 否定描述在六条候选中的排名 | 3 / 3 均为第2 | 语义相反的描述仍非常接近图片 |
+
+CLIP把图片与文字放进共同向量空间，能完成跨模态检索；但相似度不是逻辑真假或概率。本轮三条错误否定句都紧跟在正确描述之后，说明对象与场景重合可以压过单词级否定。
+
+代码审计还发现Notebook图片URL指向可漂移的 `main`、CLIP预处理图被直接显示并触发裁剪警告、`model`变量三次覆盖；BLIP-2保存日志显示约15.5GB权重，而跑车价格回答无法由图片证明。本轮使用固定submodule图片并记录SHA-256，只运行CLIP，不把检索结果冒充图片描述或视觉问答质量。完整审计、逐描述排名和离线复现见 [`experiments/phase-07-multimodal/`](experiments/phase-07-multimodal/)；机器结果见 [`clip-negation-results.json`](experiments/phase-07-multimodal/results/clip-negation-results.json)。
+
 ## 代码层面的真实边界
 
 - 全部核心示例都是 Notebook，没有统一的 Python 包、服务入口或 Web 应用。
@@ -164,14 +178,16 @@ Python执行器12/12都算对，但模型只在7条回答中提到正确值，�
 - [`tool-observation-results.json`](experiments/phase-05-tools/results/tool-observation-results.json)：第7章原始模型输出、Python工具轨迹、数字序列和分层评分。
 - [`experiments/phase-06-semantic-search/`](experiments/phase-06-semantic-search/)：第8章BM25/稠密检索对照、源码完整性审计和理解检查。
 - [`semantic-search-results.json`](experiments/phase-06-semantic-search/results/semantic-search-results.json)：第8章24条标注查询排名、Top-k/MRR、失败列表和无答案探针。
+- [`experiments/phase-07-multimodal/`](experiments/phase-07-multimodal/)：第9章CLIP图文检索、否定词探针、图片来源审计与理解检查。
+- [`clip-negation-results.json`](experiments/phase-07-multimodal/results/clip-negation-results.json)：第9章图文矩阵、六描述排名、否定差值、环境与图片哈希。
 - [`upstream/`](upstream/)：固定在指定提交的上游源代码。
 
 ## 下一阶段
 
 按照由低成本到高成本的顺序执行：
 
-1. 进入第9章多模态大语言模型，先从代码确认CLIP检索、图片描述和视觉问答的输入输出边界。
-2. 给第8章增加独立阈值校准集与混合检索，分别评测召回、拒答和重排。
-3. 给第7章增加Action生成与解析阶段，分别评测工具选择、参数复制和最终回答。
-4. 给第6章增加更强模型与grammar强制解码对照，分开评估提示遵循和后端约束。
-5. 在更大显存环境中补做 Phi-3 原模型复现，再进入第10—12章训练实验。
+1. 进入第10章创建文本Embedding模型，先审查训练数据、损失函数、负样本和MTEB评估代码。
+2. 给第9章加入更大独立图片集、对象正确但场景错误的描述，以及可承受的小型图片描述模型。
+3. 给第8章增加独立阈值校准集与混合检索，分别评测召回、拒答和重排。
+4. 给第7章增加Action生成与解析阶段，分别评测工具选择、参数复制和最终回答。
+5. 在更大显存环境中补做 Phi-3 与BLIP-2原模型复现，再进入第11—12章训练实验。
