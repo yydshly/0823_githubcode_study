@@ -1,0 +1,246 @@
+{
+  "experiment": "Chapter 12 LoRA scope, SFT label and DPO margin audit",
+  "predictionBeforeRun": "Frozen base weights should remain unchanged while LoRA matrices update; masking prompts should reduce SFT label positions; DPO should push the dataset-designated chosen response relative to rejected and reverse direction when labels swap.",
+  "controlledVariables": "Cached proxy revision, one prompt/completion, one target q_proj, seed, optimizer, three SFT steps and DPO scalar settings are fixed.",
+  "sourceNotebook": {
+    "cellCount": 31,
+    "executionCountsPresent": 0,
+    "operativeCells": [
+      2,
+      5,
+      6,
+      8,
+      11,
+      13,
+      15,
+      17,
+      19,
+      22,
+      24,
+      26,
+      27,
+      28,
+      29,
+      30
+    ],
+    "pipeline": {
+      "sft": "UltraChat messages -> TinyLlama chat text -> 4-bit base -> rank-64 LoRA -> one epoch -> saved SFT adapter",
+      "dpo": "filtered prompt/chosen/rejected pairs -> SFT model -> 4-bit load -> rank-64 LoRA -> 200 DPO steps -> saved DPO adapter"
+    },
+    "sourceChecks": {
+      "usesTestSftForTraining": true,
+      "selectsThreeThousandAfterDatasetLoad": true,
+      "sftHasCompletionOnlyCollator": false,
+      "leftPaddingConfigured": true,
+      "mergedModelAssignedBeforeDpo": true,
+      "dpoPreparationUsesModelVariableNotMergedModel": true,
+      "ppoImplemented": false
+    },
+    "savedOutput": {
+      "sftAndDpoExampleExactlyIdentical": true,
+      "exampleSha256": "13b449456a42974bfa18cae8dd0b17a9198569adde7906310fcb83e8d8c9ee95",
+      "sftNumericTrainingMetricsSaved": false,
+      "dpoNumericTrainingMetricsSaved": false
+    }
+  },
+  "downloadBoundary": {
+    "executedDownloads": [],
+    "tinyLlama": "Notebook and official file page report a 4.40 GB model.safetensors; absent locally and not downloaded.",
+    "ultraChat": "Notebook downloads eight shards totaling about 1.62 GB before selecting 3,000 rows; absent locally and not downloaded.",
+    "dpoPairs": "Notebook downloads 79.2 MB and filters 12,859 rows to 5,922; absent locally and not downloaded.",
+    "missingTrainingPackages": [
+      "peft",
+      "trl",
+      "bitsandbytes"
+    ],
+    "action": "No install, dataset load, TinyLlama load, 4-bit GPU run or adapter checkpoint creation."
+  },
+  "proxyModel": {
+    "id": "HuggingFaceTB/SmolLM2-135M-Instruct",
+    "revision": "12fd25f77366fa6b3b4b768ec3050bf629380bac",
+    "weightFileBytes": 269060552,
+    "architecture": {
+      "parameters": 134515008,
+      "layers": 30,
+      "hiddenSize": 576
+    },
+    "localFilesOnly": true,
+    "role": "Existing causal-LM cache for gradient and token-label mechanics; not a TinyLlama QLoRA quality reproduction."
+  },
+  "quantizationArithmetic": {
+    "notebookBaseParametersApprox": 1100000000,
+    "fp32RawDecimalGB": 4.4,
+    "fourBitRawDecimalGB": 0.55,
+    "rawCompressionFactor": 8,
+    "boundary": "This is raw weight arithmetic only; actual NF4 GPU memory also includes quantization metadata, activations, LoRA weights, gradients and optimizer state."
+  },
+  "sftLabelProbe": {
+    "text": {
+      "user": "Explain why a frozen weight does not update.",
+      "assistant": "Its gradient is disabled, so the optimizer cannot change it."
+    },
+    "inputTokens": 53,
+    "promptTokensMasked": 39,
+    "fullSequenceLabelTokens": 53,
+    "assistantOnlyLabelTokens": 14,
+    "interpretation": "A plain text language-modeling dataset copies input_ids into labels; an assistant-only objective masks prompt positions with -100."
+  },
+  "allSevenModuleRankBudgetOnProxy": {
+    "targetModules": 210,
+    "targetSuffixes": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ],
+    "adapterParametersByRank": {
+      "1": 305280,
+      "4": 1221120,
+      "8": 2442240,
+      "16": 4884480,
+      "64": 19537920
+    },
+    "formula": "sum over targeted linear layers of rank * (in_features + out_features); biases excluded"
+  },
+  "realModelLoRAProbe": {
+    "target": "model.layers.0.self_attn.q_proj",
+    "baseShape": [
+      576,
+      576
+    ],
+    "rank": 4,
+    "alpha": 8.0,
+    "totalParametersIncludingAdapter": 134519616,
+    "trainableParameters": 4608,
+    "trainablePercent": 0.003426,
+    "estimatedAdditionalGradientAndAdamMiB": 0.052734,
+    "initialAssistantOnlyLoss": 5.093253,
+    "trainingLossByStep": [
+      5.093253,
+      5.088054,
+      5.066709
+    ],
+    "finalAssistantOnlyLoss": 5.026644,
+    "gradientNormsByStep": [
+      {
+        "baseQWeight": null,
+        "embedding": null,
+        "loraA": 0.0,
+        "loraB": 0.018641492
+      },
+      {
+        "baseQWeight": null,
+        "embedding": null,
+        "loraA": 0.06441135,
+        "loraB": 0.018775815
+      },
+      {
+        "baseQWeight": null,
+        "embedding": null,
+        "loraA": 0.135332778,
+        "loraB": 0.052573025
+      }
+    ],
+    "maxAbsoluteParameterDeltas": {
+      "baseQWeight": 0.0,
+      "embedding": 0.0,
+      "loraA": 0.016035888344,
+      "loraB": 0.030039507896
+    },
+    "boundary": "One adapter on one real q_proj and one fixed training example; this verifies gradient scope, not instruction quality or generalization."
+  },
+  "rankCapacityProbe": {
+    "targetDeltaShape": [
+      64,
+      64
+    ],
+    "constructedRank": 12,
+    "relativeFrobeniusErrorByAdapterRank": {
+      "1": 0.896395,
+      "4": 0.646021,
+      "8": 0.3602,
+      "12": 0.0,
+      "16": 0.0
+    },
+    "interpretation": "Rank limits the dimension of the update; more rank increases capacity and parameters, but does not guarantee better task data or evaluation."
+  },
+  "dpoPreferenceProbe": {
+    "marginDefinition": "(policy chosen - policy rejected) - (reference chosen - reference rejected)",
+    "lossByBetaAndMargin": {
+      "0.1": {
+        "-2": 0.798139,
+        "0": 0.693147,
+        "2": 0.598139
+      },
+      "1.0": {
+        "-2": 2.126928,
+        "0": 0.693147,
+        "2": 0.126928
+      }
+    },
+    "sixStepScalarOptimization": [
+      {
+        "marginBeforeStep": 0.0,
+        "loss": 0.693147,
+        "gradient": -0.05
+      },
+      {
+        "marginBeforeStep": 0.05,
+        "loss": 0.69065,
+        "gradient": -0.049875
+      },
+      {
+        "marginBeforeStep": 0.099875,
+        "loss": 0.688166,
+        "gradient": -0.04975
+      },
+      {
+        "marginBeforeStep": 0.149625,
+        "loss": 0.685694,
+        "gradient": -0.049626
+      },
+      {
+        "marginBeforeStep": 0.199251,
+        "loss": 0.683234,
+        "gradient": -0.049502
+      },
+      {
+        "marginBeforeStep": 0.248753,
+        "loss": 0.680787,
+        "gradient": -0.049378
+      }
+    ],
+    "finalMarginAfterSixSteps": 0.298131,
+    "labelSwapGradient": {
+      "chosenAsPreferred": -0.04875,
+      "samePairSwapped": 0.05125
+    },
+    "interpretation": "DPO increases the relative margin assigned by the dataset. Swapping chosen and rejected reverses the gradient; the objective does not independently establish truth or safety."
+  },
+  "sourceIntegrityFindings": [
+    "Cell 5 trains on test_sft and selects 3,000 only after load_dataset downloads the full approximately 1.62 GB dataset.",
+    "Cell 15 passes a plain text field without a completion-only or assistant-only collator, so the language-model objective covers user and assistant tokens.",
+    "The tokenizer is configured for left padding, while the saved SFTTrainer warning recommends right padding for half-precision training.",
+    "No eval_dataset, held-out generation rubric, numeric SFT metric or numeric DPO metric is saved; the before/after example generations are exactly identical.",
+    "The heading says PPO/DPO, but no PPO implementation exists.",
+    "Cell 24 assigns merged_model, but cells 26 and 28 continue with model and another peft_config; the intended SFT-to-DPO adapter state is ambiguous and should be made explicit.",
+    "Only dataset shuffle fixes a seed; trainer seeds, model/dataset revisions and exact environment are not pinned in the Notebook.",
+    "All code-cell execution_count values are empty and current TRL warnings show deprecated arguments, so saved outputs do not prove a clean current-version run."
+  ],
+  "interpretationBoundary": "The local run verifies update scope, label masking, low-rank capacity and DPO direction. It does not verify bitsandbytes NF4 kernels, PEFT/TRL integration, TinyLlama generations, instruction following, preference quality, safety or generalization.",
+  "environment": {
+    "python": "3.10.11",
+    "torch": "2.3.1+cpu",
+    "transformers": "4.41.2",
+    "device": "cpu",
+    "seed": 42,
+    "offlineFlags": {
+      "HF_HUB_OFFLINE": "1",
+      "TRANSFORMERS_OFFLINE": "1",
+      "HF_DATASETS_OFFLINE": "1"
+    }
+  }
+}

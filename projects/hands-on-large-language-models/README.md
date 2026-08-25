@@ -11,7 +11,7 @@
 | 获取方式 | Git submodule：`upstream/` |
 | 许可证 | Apache-2.0；外部模型与数据集需分别核查许可证 |
 | 开始日期 | 2026-08-23 |
-| 当前状态 | 研究中：静态能力盘点完成；第 1—11 章共 12 个低成本实践已通过 |
+| 当前状态 | 第一轮章节研究完成：第 1—12 章共 13 个低成本实践已通过 |
 | 在线展示 | [能力研究页](https://yydshly.github.io/0823_githubcode_study/projects/hands-on-large-language-models.html) |
 
 ## 定位结论
@@ -172,6 +172,20 @@ CLIP把图片与文字放进共同向量空间，能完成跨模态检索；但�
 三种策略都能把8条训练样本拟合到100%，但额外gradient与Adam状态估算从0.009MiB增至259.941MiB；这只能证明参数参与和batch拟合，不能证明全量微调泛化更好。输出形状探针进一步区分了整句分类 `[2,2]` 与Token分类 `[2,7,9]`。
 
 代码审计发现：分类与SetFit直接使用test split做开发评估；冻结层曲线把分数顺序反转后又重标 `None/All`；NER单元57把一句话拆成多个单Token序列交给seqeval，破坏BIO跨度，因此保存的0.9180不能视为可信句级实体F1。完整下载边界、源码审计、梯度探针和离线复现见 [`experiments/phase-09-finetuning-bert/`](experiments/phase-09-finetuning-bert/)；机器结果见 [`freeze-and-labels-results.json`](experiments/phase-09-finetuning-bert/results/freeze-and-labels-results.json)。
+## 第12章 Generation Fine-tuning 实践
+
+2026-08-25 完成第12章QLoRA、SFT标签与DPO偏好目标审计。完整Notebook需要未缓存的4.4GB TinyLlama、约1.62GB UltraChat、79.2MB偏好数据及PEFT/TRL/bitsandbytes，本轮全部未下载、未安装；只使用已有269MB SmolLM2-135M缓存验证共同机制：
+
+| 探针 | 观察 | 说明 |
+| --- | ---: | --- |
+| 单个真实 `q_proj` 的rank-4 LoRA | 4,608参数，0.003426% | base `q_proj` 与embedding变化均为0，LoRA A/B更新 |
+| SFT标签范围 | 53 → 14 Token | full-sequence包含prompt；assistant-only用 `-100` 排除39个prompt Token |
+| DPO标量margin | 0 → 0.298131 | 6步loss下降；交换chosen/rejected后梯度方向反转 |
+
+rank控制更新容量与成本，不保证任务质量；DPO优化数据指定的相对偏好，不独立判断事实或安全。源码审计还发现Notebook用 `test_sft` 训练、完整下载后才选3,000条、没有completion-only标签、没有保存数值评估、PPO标题下没有PPO实现，而且SFT/DPO示例输出完全相同。
+
+完整资源边界、源码单元、手写LoRA、rank容量、SFT mask、DPO公式和修改练习见 [`experiments/phase-10-generation-finetuning/`](experiments/phase-10-generation-finetuning/)；字节级可复现结果见 [`adapter-and-preference-results.json`](experiments/phase-10-generation-finetuning/results/adapter-and-preference-results.json)。
+
 
 ## 代码层面的真实边界
 
@@ -212,14 +226,16 @@ CLIP把图片与文字放进共同向量空间，能完成跨模态检索；但�
 - [`pair-quality-results.json`](experiments/phase-08-embedding-training/results/pair-quality-results.json)：第10章损失轨迹、独立查询排名、正确间隔和失败样本。
 - [`experiments/phase-09-finetuning-bert/`](experiments/phase-09-finetuning-bert/)：第11章冻结范围、任务头形状、BIO标签、下载边界与源码审计。
 - [`freeze-and-labels-results.json`](experiments/phase-09-finetuning-bert/results/freeze-and-labels-results.json)：第11章梯度、参数更新、训练状态估算、输出形状和标签序列。
+- [`experiments/phase-10-generation-finetuning/`](experiments/phase-10-generation-finetuning/)：第12章量化、LoRA、SFT标签、DPO偏好、下载边界与源码审计。
+- [`adapter-and-preference-results.json`](experiments/phase-10-generation-finetuning/results/adapter-and-preference-results.json)：第12章真实模型LoRA梯度、rank参数预算、标签mask和DPO margin结果。
 - [`upstream/`](upstream/)：固定在指定提交的上游源代码。
 
-## 下一阶段
+## 下一阶段：纵向巩固
 
 按照由低成本到高成本的顺序执行：
 
-1. 进入第12章 Fine-tuning Generation Models，先审查量化、LoRA/QLoRA、SFT和DPO的数据与显存路径，只描述未缓存的大型资源。
+1. 给第12章补独立validation、assistant-only SFT、明确的SFT→DPO adapter对象和固定提示对照；大型资源仍需先确认。
 2. 给第11章增加独立validation/test、正确seqeval跨度计算和不同冻结层曲线。
 3. 给第10章增加独立业务语料、污染率曲线、batch大小与假负样本对照。
-4. 给第9章加入更大独立图片集、对象正确但场景错误的描述，以及可承受的小型图片描述模型。
-5. 在更大显存环境中补做 Phi-3、BLIP-2、BERT与MPNet原模型复现。
+4. 按“数据—目标—指标—失败样本”横向复盘13个实践，形成跨章节能力地图。
+5. 在更大显存环境中补做 Phi-3、BLIP-2、BERT、MPNet与TinyLlama原模型复现。
