@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Hands-On Large Language Models 中文学习工作台：12章代码地图、运行门槛、实践练习与理解方法。">
+    <meta name="description" content="Hands-On Large Language Models 中文学习工作台：12章代码地图、13个实践、跨章节能力地图与可迁移研究方法。">
     <title>Hands-On LLM · 中文学习工作台</title>
     <script>document.documentElement.classList.add('has-js')</script>
     <link rel="stylesheet" href="../styles.css">
@@ -20,6 +20,7 @@
           <a href="#overview">这是什么</a>
           <a href="#syllabus">12章地图</a>
           <a href="#labs">实践练习</a>
+          <a href="#synthesis">能力总图</a>
           <a href="#setup">运行准备</a>
           <a href="#resources">资料入口</a>
         </nav>
@@ -250,8 +251,59 @@
         <p class="boundary-note"><strong>证据边界</strong>：第1—3章使用135M代理模型；第4章用MiniLM和400/200平衡子集；第5章使用gte-small与600篇子集；第6章使用135M代理和12条合成记录；第7章使用135M代理、12条合成换汇与本地Decimal；第8章使用MiniLM与24条查询；第9章使用CLIP与3张上游示例图，不运行BLIP-2；第10章使用缓存MiniLM与8个合成意图；第11章使用缓存MiniLM验证冻结梯度与BIO标签；第12章使用缓存SmolLM验证LoRA、SFT mask与DPO margin，不下载4.4GB TinyLlama、1.62GB UltraChat、偏好数据或训练依赖。均为机制实践，不是原模型或完整数据基准。</p>
       </section>
 
+      <section id="synthesis" class="workspace-section" aria-labelledby="synthesis-title">
+        <header class="section-header">
+          <div><p class="section-label">04 / SYNTHESIS</p><h2 id="synthesis-title">把十三个实践，压成一条判断链。</h2></div>
+          <p>以后研究任何AI仓库，都不要先问“用了什么模型”。先顺着数据、转换、目标、决策与指标、失败边界，找到真正承担能力的代码。</p>
+        </header>
+
+        <ol class="capability-chain" aria-label="能力判断五步">
+          <li><span>01</span><strong>数据</strong><small>实际输入、标签与切分</small></li>
+          <li><span>02</span><strong>转换</strong><small>表示、状态或参数变化</small></li>
+          <li><span>03</span><strong>目标</strong><small>代码真正奖励什么</small></li>
+          <li><span>04</span><strong>决策与指标</strong><small>怎样变成答案并验收</small></li>
+          <li><span>05</span><strong>失败边界</strong><small>哪些结论还不能推出</small></li>
+        </ol>
+
+        <div class="capability-list" aria-label="七个能力族">
+          <details class="capability-card" open>
+            <summary><span>01</span><div><small>LAB 01 · CH 02</small><h3>输入编码</h3></div><p>STRING → TOKEN IDS</p></summary>
+            <div class="capability-body"><dl class="capability-grid"><div><dt>数据</dt><dd>中英文本、emoji、大小写、数字</dd></div><div><dt>转换</dt><dd>Tokenizer映射到词表Token ID</dd></div><div><dt>目标</dt><dd>检查切分与上下文占用，不训练</dd></div><div><dt>决策与指标</dt><dd>Token序列、长度和拆分差异</dd></div><div class="capability-risk"><dt>失败边界</dt><dd>Token更少不等于语义、知识或推理更好。</dd></div></dl></div>
+          </details>
+          <details class="capability-card">
+            <summary><span>02</span><div><small>LAB 02—04 · CH 01 / 03</small><h3>逐Token生成</h3></div><p>LOGITS → TOKEN</p></summary>
+            <div class="capability-body"><dl class="capability-grid"><div><dt>数据</dt><dd>提示Token与已生成历史</dd></div><div><dt>转换</dt><dd>Causal LM输出logits；KV Cache保存历史计算</dd></div><div><dt>目标</dt><dd>下一Token概率与增量计算链路</dd></div><div><dt>决策与指标</dt><dd>argmax/采样、重复度、延迟和内存</dd></div><div class="capability-risk"><dt>失败边界</dt><dd>能生成不等于正确有用；缓存提速不提升知识。</dd></div></dl></div>
+          </details>
+          <details class="capability-card">
+            <summary><span>03</span><div><small>LAB 05—06 · CH 04 / 05</small><h3>向量判别与结构发现</h3></div><p>VECTOR → LABEL / CLUSTER</p></summary>
+            <div class="capability-body"><dl class="capability-grid"><div><dt>数据</dt><dd>带标签影评或无标签论文</dd></div><div><dt>转换</dt><dd>Embedding接分类器、UMAP与HDBSCAN</dd></div><div><dt>目标</dt><dd>学习判别边界或密度结构</dd></div><div><dt>决策与指标</dt><dd>F1、混淆、ARI、离群率与文档核查</dd></div><div class="capability-risk"><dt>失败边界</dt><dd>相同向量可产生不同决策；关键词不是主题真相。</dd></div></dl></div>
+          </details>
+          <details class="capability-card">
+            <summary><span>04</span><div><small>LAB 07—08 · CH 06 / 07</small><h3>提示与工具执行</h3></div><p>PROMPT → ACTION TRACE</p></summary>
+            <div class="capability-body"><dl class="capability-grid"><div><dt>数据</dt><dd>规则、示例、Schema、工具与观察</dd></div><div><dt>转换</dt><dd>提示约束生成；执行器完成确定性操作</dd></div><div><dt>目标</dt><dd>格式遵循与调用—观察—回答闭环</dd></div><div><dt>决策与指标</dt><dd>字段、调用、观察采用、最终答案与轨迹</dd></div><div class="capability-risk"><dt>失败边界</dt><dd>工具算对不代表模型采用或最终回答正确。</dd></div></dl></div>
+          </details>
+          <details class="capability-card">
+            <summary><span>05</span><div><small>LAB 09—10 · CH 08 / 09</small><h3>检索与多模态对齐</h3></div><p>SIMILARITY → TOP-K</p></summary>
+            <div class="capability-body"><dl class="capability-grid"><div><dt>数据</dt><dd>查询/文档或图片/候选描述</dd></div><div><dt>转换</dt><dd>共同向量空间按相似度排序</dd></div><div><dt>目标</dt><dd>让匹配对象相对更近</dd></div><div><dt>决策与指标</dt><dd>Recall@k、Top-1、间隔与拒答</dd></div><div class="capability-risk"><dt>失败边界</dt><dd>最相似不等于有答案或为真；漏召回后无法重排回来。</dd></div></dl></div>
+          </details>
+          <details class="capability-card">
+            <summary><span>06</span><div><small>LAB 11 · CH 10</small><h3>Embedding训练</h3></div><p>PAIR LOSS → VECTOR SPACE</p></summary>
+            <div class="capability-body"><dl class="capability-grid"><div><dt>数据</dt><dd>anchor-positive与batch内负样本</dd></div><div><dt>转换</dt><dd>更新Encoder的配对几何</dd></div><div><dt>目标</dt><dd>MNRL拟合提供的正对，不懂业务标签</dd></div><div><dt>决策与指标</dt><dd>独立Top-1、正确间隔、失败查询与loss</dd></div><div class="capability-risk"><dt>失败边界</dt><dd>错误正对同样能降loss，却让检索变差。</dd></div></dl></div>
+          </details>
+          <details class="capability-card">
+            <summary><span>07</span><div><small>LAB 12—13 · CH 11 / 12</small><h3>任务微调</h3></div><p>LABEL / PREFERENCE → ADAPTER</p></summary>
+            <div class="capability-body"><dl class="capability-grid"><div><dt>数据</dt><dd>分类、BIO、聊天Token或偏好对</dd></div><div><dt>转换</dt><dd>任务头、冻结、LoRA与DPO改变梯度责任</dd></div><div><dt>目标</dt><dd>分类/Token CE、MLM、SFT或偏好margin</dd></div><div><dt>决策与指标</dt><dd>独立F1、实体跨度、mask、梯度与固定提示</dd></div><div class="capability-risk"><dt>失败边界</dt><dd>冻结少或rank高不保证泛化；错误指标与偏好仍可优化。</dd></div></dl></div>
+          </details>
+        </div>
+
+        <div class="research-transfer">
+          <div><p class="card-label">TRANSFER CHECK</p><h3>研究下一个仓库，只问六个问题。</h3><p>答不出来，就还不能说“理解了它的能力”。</p><div class="transfer-links"><a href="https://github.com/yydshly/0823_githubcode_study/blob/main/projects/hands-on-large-language-models/analysis/CROSS-CHAPTER-CAPABILITY-MAP.md">完整能力地图 ↗</a><a href="https://github.com/yydshly/0823_githubcode_study/blob/main/projects/hands-on-large-language-models/analysis/capability-map.json">机器JSON ↗</a></div></div>
+          <ol class="research-checklist"><li><span>01</span>最终能力宣称是什么？</li><li><span>02</span>数据、标签和切分从哪里来？</li><li><span>03</span>代码真正改变了什么？</li><li><span>04</span>loss与业务目标一致吗？</li><li><span>05</span>输出怎样变成决定？</li><li><span>06</span>哪些反例与边界仍未排除？</li></ol>
+        </div>
+      </section>
+
       <section id="setup" class="workspace-section" aria-labelledby="setup-title">
-        <header class="section-header"><div><p class="section-label">04 / SETUP</p><h2 id="setup-title">按目标选择运行方式。</h2></div><p>不必一开始就安装完整环境。先确定要学哪一章，再准备模型、数据、API和硬件。</p></header>
+        <header class="section-header"><div><p class="section-label">05 / SETUP</p><h2 id="setup-title">按目标选择运行方式。</h2></div><p>不必一开始就安装完整环境。先确定要学哪一章，再准备模型、数据、API和硬件。</p></header>
         <div class="setup-grid">
           <article class="setup-profile recommended"><span>推荐</span><h3>Google Colab</h3><p>适合第一次跟书运行，也是上游主要构建和测试环境。</p><dl><div><dt>硬件</dt><dd>建议免费T4 GPU，16GB显存</dd></div><div><dt>准备</dt><dd>Google账号、Notebook链接</dd></div><div><dt>注意</dt><dd>模型和数据仍需下载</dd></div></dl><a href="https://colab.research.google.com/github/HandsOnLLM/Hands-On-Large-Language-Models/blob/main/chapter01/Chapter%201%20-%20Introduction%20to%20Language%20Models.ipynb">打开第1章 ↗</a></article>
           <article class="setup-profile"><span>本地基础</span><h3>Python 3.10</h3><p>适合Tokenizer、小模型CPU实验和阅读Notebook代码。</p><dl><div><dt>核心</dt><dd>JupyterLab 4.2、PyTorch 2.3、Transformers 4.41</dd></div><div><dt>当前验证</dt><dd>Windows + CPU低成本练习</dd></div><div><dt>注意</dt><dd>结果可能因OS与版本略有差异</dd></div></dl><a href="https://github.com/HandsOnLLM/Hands-On-Large-Language-Models/tree/ea3390819997999a51983677b80b3aac4dc50ada/.setup">上游安装指南 ↗</a></article>
@@ -260,7 +312,7 @@
       </section>
 
       <section id="resources" class="workspace-section" aria-labelledby="resources-title">
-        <header class="section-header"><div><p class="section-label">05 / RESOURCES</p><h2 id="resources-title">书、源码和研究记录。</h2></div><p>从学习入口到可复现证据分开放置，避免把工程记录混进主阅读路径。</p></header>
+        <header class="section-header"><div><p class="section-label">06 / RESOURCES</p><h2 id="resources-title">书、源码和研究记录。</h2></div><p>从学习入口到可复现证据分开放置，避免把工程记录混进主阅读路径。</p></header>
         <div class="resource-grid">
           <article class="resource-group"><span>阅读</span><h3>书籍与作者</h3><a href="https://www.oreilly.com/library/view/hands-on-large-language/9781098150952/">O’Reilly书籍页 ↗</a><a href="https://github.com/HandsOnLLM/Hands-On-Large-Language-Models#table-of-contents">官方目录与Colab ↗</a><p>Jay Alammar · Maarten Grootendorst</p></article>
           <article class="resource-group"><span>源码</span><h3>固定研究对象</h3><a href="https://github.com/HandsOnLLM/Hands-On-Large-Language-Models/tree/ea3390819997999a51983677b80b3aac4dc50ada">固定提交 ea339081 ↗</a><a href="https://github.com/HandsOnLLM/Hands-On-Large-Language-Models/blob/ea3390819997999a51983677b80b3aac4dc50ada/LICENSE">Apache-2.0许可证 ↗</a><p>外部模型和数据集许可证需分别核查。</p></article>

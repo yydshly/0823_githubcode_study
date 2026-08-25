@@ -185,6 +185,15 @@ CLIP把图片与文字放进共同向量空间，能完成跨模态检索；但�
 rank控制更新容量与成本，不保证任务质量；DPO优化数据指定的相对偏好，不独立判断事实或安全。源码审计还发现Notebook用 `test_sft` 训练、完整下载后才选3,000条、没有completion-only标签、没有保存数值评估、PPO标题下没有PPO实现，而且SFT/DPO示例输出完全相同。
 
 完整资源边界、源码单元、手写LoRA、rank容量、SFT mask、DPO公式和修改练习见 [`experiments/phase-10-generation-finetuning/`](experiments/phase-10-generation-finetuning/)；字节级可复现结果见 [`adapter-and-preference-results.json`](experiments/phase-10-generation-finetuning/results/adapter-and-preference-results.json)。
+## 跨章节能力地图
+
+2026-08-25 完成13个实践的横向复盘。它们不再按章节孤立陈列，而是统一沿着“数据 → 转换 → 目标 → 决策与指标 → 失败边界”五步判断链，归为输入编码、逐Token生成、向量判别与结构发现、提示与工具执行、检索与多模态对齐、Embedding训练、任务微调七个能力族。
+
+这张地图的用途不是重新概括书，而是把实践变成以后研究其他AI仓库的六问法：能力宣称是什么、数据从哪里来、代码改变什么、loss与业务目标是否一致、输出怎样成为决定、哪些失败边界仍未排除。13个实践均且仅均出现一次作为主要证据，避免重复计算或漏项。
+
+- [`analysis/CROSS-CHAPTER-CAPABILITY-MAP.md`](analysis/CROSS-CHAPTER-CAPABILITY-MAP.md)：面向人的完整能力地图、证据路径与迁移研究方法。
+- [`analysis/capability-map.json`](analysis/capability-map.json)：七个能力族、13个实践覆盖和六问检查表的机器可读版本。
+
 
 
 ## 代码层面的真实边界
@@ -228,6 +237,8 @@ rank控制更新容量与成本，不保证任务质量；DPO优化数据指定�
 - [`freeze-and-labels-results.json`](experiments/phase-09-finetuning-bert/results/freeze-and-labels-results.json)：第11章梯度、参数更新、训练状态估算、输出形状和标签序列。
 - [`experiments/phase-10-generation-finetuning/`](experiments/phase-10-generation-finetuning/)：第12章量化、LoRA、SFT标签、DPO偏好、下载边界与源码审计。
 - [`adapter-and-preference-results.json`](experiments/phase-10-generation-finetuning/results/adapter-and-preference-results.json)：第12章真实模型LoRA梯度、rank参数预算、标签mask和DPO margin结果。
+- [`analysis/CROSS-CHAPTER-CAPABILITY-MAP.md`](analysis/CROSS-CHAPTER-CAPABILITY-MAP.md)：把13个实践归入七个能力族的跨章节综合分析。
+- [`analysis/capability-map.json`](analysis/capability-map.json)：能力族、判断链、证据路径和迁移检查表。
 - [`upstream/`](upstream/)：固定在指定提交的上游源代码。
 
 ## 下一阶段：纵向巩固
@@ -237,5 +248,5 @@ rank控制更新容量与成本，不保证任务质量；DPO优化数据指定�
 1. 给第12章补独立validation、assistant-only SFT、明确的SFT→DPO adapter对象和固定提示对照；大型资源仍需先确认。
 2. 给第11章增加独立validation/test、正确seqeval跨度计算和不同冻结层曲线。
 3. 给第10章增加独立业务语料、污染率曲线、batch大小与假负样本对照。
-4. 按“数据—目标—指标—失败样本”横向复盘13个实践，形成跨章节能力地图。
+4. 把六问法固化为后续子项目的统一研究模板，用同一证据标准比较不同仓库。
 5. 在更大显存环境中补做 Phi-3、BLIP-2、BERT、MPNet与TinyLlama原模型复现。

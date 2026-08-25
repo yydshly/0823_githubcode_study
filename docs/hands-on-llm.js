@@ -56,15 +56,19 @@
     });
   }
 
-  const labs = [...document.querySelectorAll('.lab-card')];
-  labs.forEach((lab) => {
-    lab.addEventListener('toggle', () => {
-      if (!lab.open) return;
-      labs.forEach((item) => {
-        if (item !== lab) item.open = false;
+  const keepOneOpen = (items) => {
+    items.forEach((item) => {
+      item.addEventListener('toggle', () => {
+        if (!item.open) return;
+        items.forEach((peer) => {
+          if (peer !== item) peer.open = false;
+        });
       });
     });
-  });
+  };
+
+  keepOneOpen([...document.querySelectorAll('.lab-card')]);
+  keepOneOpen([...document.querySelectorAll('.capability-card')]);
 
   document.documentElement.classList.add('is-enhanced');
 })();
