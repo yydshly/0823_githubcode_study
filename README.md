@@ -9,7 +9,7 @@
 | 子项目 | 研究方向 | 当前阶段 | 研究记录 | 在线展示 |
 | --- | --- | --- | --- | --- |
 | Hands-On Large Language Models | 书籍驱动的LLM代码学习、13个实践与可复用研究方法 | 暂时归档 | [研究记录](projects/hands-on-large-language-models/README.md) | [按需学习](https://yydshly.github.io/0823_githubcode_study/projects/hands-on-large-language-models.html) |
-| HyperFrames Launches | HTML 原生视频、动效、WebGL、音频与 Agent 视频工作流 | 研究中 | [研究记录](projects/hyperframes-launches/README.md) | [能力展示](https://yydshly.github.io/0823_githubcode_study/projects/hyperframes-launches.html) |
+| HyperFrames Launches | HeyGen 发布视频案例、HTML 网页离线渲染与 Remotion 路线对比 | 暂时归档 | [研究记录](projects/hyperframes-launches/README.md) | [能力展示](https://yydshly.github.io/0823_githubcode_study/projects/hyperframes-launches.html) |
 
 ## 仓库结构
 

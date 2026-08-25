@@ -11,7 +11,7 @@
 | 固定提交 | `199f7dc34c8e3f1d798c55f2074fe1bcbd6fd5ba` |
 | HyperFrames CLI | `0.8.10`（兼容性基线） |
 | 开始日期 | 2026-08-23 |
-| 当前状态 | 本轮研究完成：19 个顶层项目已实渲，28 支视频在演示页内直接播放 |
+| 当前状态 | 暂时归档：第一轮研究与公开交付完成，后期按需启用 |
 | 在线展示 | <https://yydshly.github.io/0823_githubcode_study/projects/hyperframes-launches.html> |
 
 ## 研究过程与交付物
