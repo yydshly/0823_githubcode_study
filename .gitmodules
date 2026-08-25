@@ -4,3 +4,7 @@
 [submodule "projects/hyperframes-launches/upstream"]
 	path = projects/hyperframes-launches/upstream
 	url = https://github.com/heygen-com/hyperframes-launches.git
+[submodule "projects/kindergrimm/upstream"]
+	path = projects/kindergrimm/upstream
+	url = https://github.com/albertobeiz/kindergrimm.git
+
