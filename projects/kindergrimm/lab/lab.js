@@ -1,5 +1,7 @@
 const ROOT = '../upstream/';
-const THUMBS = '../../../docs/assets/kindergrimm/';
+const THUMBS = location.hostname.endsWith('github.io')
+  ? '../../../assets/kindergrimm/'
+  : '../../../docs/assets/kindergrimm/';
 
 const capabilities = [
   { id: 'editor', title: '手绘角色编辑器', label: 'Drawn 2D', category: '2d', route: 'editor.html', image: 'editor.jpg', output: '可复现的手绘纸片角色', rendering: '2D CanvasTexture + Three.js', proof: '20 部件、7 姿势、5 表情和锁定重掷已实测', note: '编辑完整 recipe，组合物种、媒介、部件、姿势与表情。' },

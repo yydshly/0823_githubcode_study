@@ -95,7 +95,7 @@ http://127.0.0.1:8137/
 
 ## 全量能力地图
 
-固定版本包含 15 个 HTML 页面（1 个菜单 + 14 个演示入口）、119 个 `src/` 源码文件。完整逐入口矩阵见 [analysis/capability-matrix.md](analysis/capability-matrix.md)。
+当前固定版本包含 18 个 HTML 页面：1 个菜单、14 个主能力演示入口，以及 Crowd Brush、Styles、Timeline 3 个补充实验入口；`src/` 下共有 135 个源码文件。14 个主能力的逐入口矩阵见 [analysis/capability-matrix.md](analysis/capability-matrix.md)，补充实验入口已纳入远端全页面巡检。
 
 | 系统 | 已盘点内容 | 主要输出 |
 | --- | --- | --- |
