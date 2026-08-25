@@ -1,0 +1,424 @@
+{
+  "summary": {
+    "generatedAt": "2026-08-23T14:57:33.168Z",
+    "cliVersion": "0.8.10",
+    "total": 25,
+    "compatible": 11,
+    "incompatible": 14,
+    "errors": 115,
+    "warnings": 163
+  },
+  "results": [
+    {
+      "slug": "HF-heygen-stripe",
+      "status": "incompatible",
+      "exitCode": 1,
+      "errorCount": 2,
+      "warningCount": 1,
+      "infoCount": 0,
+      "filesScanned": 10,
+      "cliVersion": "0.8.10",
+      "findingCodes": [
+        "gsap_timeline_set_initial_hide",
+        "font_family_without_font_face",
+        "gsap_non_transform_motion"
+      ],
+      "parseError": null
+    },
+    {
+      "slug": "claude-design-send-hyperframes-launch",
+      "status": "compatible",
+      "exitCode": 0,
+      "errorCount": 0,
+      "warningCount": 10,
+      "infoCount": 0,
+      "filesScanned": 7,
+      "cliVersion": "0.8.10",
+      "findingCodes": [
+        "overlapping_gsap_tweens",
+        "composition_file_too_large",
+        "duplicate_media_discovery_risk"
+      ],
+      "parseError": null
+    },
+    {
+      "slug": "claude-paper-launch",
+      "status": "incompatible",
+      "exitCode": 1,
+      "errorCount": 13,
+      "warningCount": 5,
+      "infoCount": 0,
+      "filesScanned": 12,
+      "cliVersion": "0.8.10",
+      "findingCodes": [
+        "gsap_timeline_set_initial_hide",
+        "composition_file_too_large",
+        "audio_src_not_found",
+        "missing_local_asset",
+        "gsap_non_transform_motion",
+        "overlapping_gsap_tweens"
+      ],
+      "parseError": null
+    },
+    {
+      "slug": "cloud-render-launch",
+      "status": "incompatible",
+      "exitCode": 1,
+      "errorCount": 5,
+      "warningCount": 2,
+      "infoCount": 0,
+      "filesScanned": 11,
+      "cliVersion": "0.8.10",
+      "findingCodes": [
+        "gsap_timeline_set_initial_hide",
+        "gsap_non_transform_motion",
+        "overlapping_gsap_tweens"
+      ],
+      "parseError": null
+    },
+    {
+      "slug": "figma-launch",
+      "status": "incompatible",
+      "exitCode": 1,
+      "errorCount": 1,
+      "warningCount": 0,
+      "infoCount": 0,
+      "filesScanned": 12,
+      "cliVersion": "0.8.10",
+      "findingCodes": [
+        "gsap_function_value_hazard"
+      ],
+      "parseError": null
+    },
+    {
+      "slug": "frame-md-launch-storyboard",
+      "status": "incompatible",
+      "exitCode": 1,
+      "errorCount": 19,
+      "warningCount": 0,
+      "infoCount": 0,
+      "filesScanned": 10,
+      "cliVersion": "0.8.10",
+      "findingCodes": [
+        "font_family_without_font_face",
+        "subcomposition_root_styled_by_class",
+        "gsap_non_transform_motion",
+        "invalid_parent_traversal_in_asset_path"
+      ],
+      "parseError": null
+    },
+    {
+      "slug": "hyperframes-launch",
+      "status": "incompatible",
+      "exitCode": 1,
+      "errorCount": 8,
+      "warningCount": 32,
+      "infoCount": 1,
+      "filesScanned": 17,
+      "cliVersion": "0.8.10",
+      "findingCodes": [
+        "studio_missing_editable_id",
+        "composition_file_too_large",
+        "invalid_parent_traversal_in_asset_path",
+        "overlapping_gsap_tweens",
+        "gsap_exit_missing_hard_kill",
+        "gsap_animates_clip_element",
+        "gsap_non_transform_motion",
+        "gsap_timeline_set_initial_hide",
+        "font_family_without_font_face"
+      ],
+      "parseError": null
+    },
+    {
+      "slug": "inspector-launch",
+      "status": "incompatible",
+      "exitCode": 1,
+      "errorCount": 14,
+      "warningCount": 15,
+      "infoCount": 0,
+      "filesScanned": 1,
+      "cliVersion": "0.8.10",
+      "findingCodes": [
+        "overlapping_gsap_tweens",
+        "gsap_exit_missing_hard_kill",
+        "gsap_css_transform_conflict",
+        "gsap_non_transform_motion",
+        "composition_file_too_large",
+        "timeline_track_too_dense",
+        "font_family_without_font_face"
+      ],
+      "parseError": null
+    },
+    {
+      "slug": "k3-promo",
+      "status": "compatible",
+      "exitCode": 0,
+      "errorCount": 0,
+      "warningCount": 1,
+      "infoCount": 0,
+      "filesScanned": 1,
+      "cliVersion": "0.8.10",
+      "findingCodes": [
+        "composition_file_too_large"
+      ],
+      "parseError": null
+    },
+    {
+      "slug": "liquid-brand-refraction",
+      "status": "compatible",
+      "exitCode": 0,
+      "errorCount": 0,
+      "warningCount": 0,
+      "infoCount": 0,
+      "filesScanned": 7,
+      "cliVersion": "0.8.10",
+      "findingCodes": [],
+      "parseError": null
+    },
+    {
+      "slug": "pr-to-video-launch",
+      "status": "incompatible",
+      "exitCode": 1,
+      "errorCount": 12,
+      "warningCount": 2,
+      "infoCount": 0,
+      "filesScanned": 11,
+      "cliVersion": "0.8.10",
+      "findingCodes": [
+        "gsap_timeline_set_initial_hide",
+        "invalid_parent_traversal_in_asset_path",
+        "gsap_non_transform_motion",
+        "duplicate_media_discovery_risk"
+      ],
+      "parseError": null
+    },
+    {
+      "slug": "sfx-music-launch",
+      "status": "incompatible",
+      "exitCode": 1,
+      "errorCount": 7,
+      "warningCount": 8,
+      "infoCount": 0,
+      "filesScanned": 8,
+      "cliVersion": "0.8.10",
+      "findingCodes": [
+        "gsap_timeline_set_initial_hide",
+        "gsap_non_transform_motion"
+      ],
+      "parseError": null
+    },
+    {
+      "slug": "spacex-launch",
+      "status": "incompatible",
+      "exitCode": 1,
+      "errorCount": 13,
+      "warningCount": 2,
+      "infoCount": 0,
+      "filesScanned": 13,
+      "cliVersion": "0.8.10",
+      "findingCodes": [
+        "gsap_timeline_set_initial_hide",
+        "gsap_non_transform_motion",
+        "composition_file_too_large"
+      ],
+      "parseError": null
+    },
+    {
+      "slug": "texture-launch-video",
+      "status": "incompatible",
+      "exitCode": 1,
+      "errorCount": 2,
+      "warningCount": 1,
+      "infoCount": 0,
+      "filesScanned": 2,
+      "cliVersion": "0.8.10",
+      "findingCodes": [
+        "gsap_css_transform_conflict",
+        "composition_file_too_large",
+        "font_family_without_font_face"
+      ],
+      "parseError": null
+    },
+    {
+      "slug": "timeline-launch",
+      "status": "incompatible",
+      "exitCode": 1,
+      "errorCount": 3,
+      "warningCount": 5,
+      "infoCount": 0,
+      "filesScanned": 11,
+      "cliVersion": "0.8.10",
+      "findingCodes": [
+        "gsap_callback_dom_measurement",
+        "composition_file_too_large",
+        "font_family_without_font_face",
+        "gsap_timeline_set_initial_hide",
+        "gsap_css_transform_conflict",
+        "duplicate_media_discovery_risk"
+      ],
+      "parseError": null
+    },
+    {
+      "slug": "variables-launch",
+      "status": "incompatible",
+      "exitCode": 1,
+      "errorCount": 11,
+      "warningCount": 20,
+      "infoCount": 0,
+      "filesScanned": 10,
+      "cliVersion": "0.8.10",
+      "findingCodes": [
+        "studio_missing_editable_id",
+        "media_missing_id",
+        "invalid_parent_traversal_in_asset_path",
+        "imperative_media_control",
+        "overlapping_gsap_tweens",
+        "gsap_relative_value_second_writer"
+      ],
+      "parseError": null
+    },
+    {
+      "slug": "vfx-heygen-combined",
+      "status": "incompatible",
+      "exitCode": 1,
+      "errorCount": 5,
+      "warningCount": 14,
+      "infoCount": 0,
+      "filesScanned": 2,
+      "cliVersion": "0.8.10",
+      "findingCodes": [
+        "overlapping_gsap_tweens",
+        "gsap_non_transform_motion",
+        "composition_file_too_large",
+        "subcomposition_blanks_before_host",
+        "font_family_without_font_face",
+        "missing_local_asset",
+        "gsap_callback_dom_measurement",
+        "gsap_timeline_set_initial_hide"
+      ],
+      "parseError": null
+    },
+    {
+      "slug": "website-to-hyperframes",
+      "status": "compatible",
+      "exitCode": 0,
+      "errorCount": 0,
+      "warningCount": 31,
+      "infoCount": 0,
+      "filesScanned": 3,
+      "cliVersion": "0.8.10",
+      "findingCodes": [
+        "studio_missing_editable_id",
+        "composition_heavy_overlay_count_high",
+        "overlapping_gsap_tweens",
+        "composition_file_too_large"
+      ],
+      "parseError": null
+    },
+    {
+      "slug": "heygen-apple-motion/01-ui-sting",
+      "status": "compatible",
+      "exitCode": 0,
+      "errorCount": 0,
+      "warningCount": 3,
+      "infoCount": 0,
+      "filesScanned": 1,
+      "cliVersion": "0.8.10",
+      "findingCodes": [
+        "duplicate_media_discovery_risk",
+        "composition_file_too_large",
+        "timeline_track_too_dense"
+      ],
+      "parseError": null
+    },
+    {
+      "slug": "heygen-apple-motion/02-bouncy-ui",
+      "status": "compatible",
+      "exitCode": 0,
+      "errorCount": 0,
+      "warningCount": 1,
+      "infoCount": 0,
+      "filesScanned": 1,
+      "cliVersion": "0.8.10",
+      "findingCodes": [
+        "composition_file_too_large"
+      ],
+      "parseError": null
+    },
+    {
+      "slug": "heygen-apple-motion/03-message-sting",
+      "status": "compatible",
+      "exitCode": 0,
+      "errorCount": 0,
+      "warningCount": 2,
+      "infoCount": 0,
+      "filesScanned": 1,
+      "cliVersion": "0.8.10",
+      "findingCodes": [
+        "duplicate_media_discovery_risk",
+        "composition_file_too_large"
+      ],
+      "parseError": null
+    },
+    {
+      "slug": "heygen-apple-motion/04-generate-reel",
+      "status": "compatible",
+      "exitCode": 0,
+      "errorCount": 0,
+      "warningCount": 1,
+      "infoCount": 0,
+      "filesScanned": 1,
+      "cliVersion": "0.8.10",
+      "findingCodes": [
+        "composition_file_too_large"
+      ],
+      "parseError": null
+    },
+    {
+      "slug": "heygen-apple-motion/examples/instagram",
+      "status": "compatible",
+      "exitCode": 0,
+      "errorCount": 0,
+      "warningCount": 3,
+      "infoCount": 0,
+      "filesScanned": 1,
+      "cliVersion": "0.8.10",
+      "findingCodes": [
+        "duplicate_media_discovery_risk",
+        "composition_file_too_large",
+        "timeline_track_too_dense"
+      ],
+      "parseError": null
+    },
+    {
+      "slug": "heygen-apple-motion/examples/spotify",
+      "status": "compatible",
+      "exitCode": 0,
+      "errorCount": 0,
+      "warningCount": 3,
+      "infoCount": 0,
+      "filesScanned": 1,
+      "cliVersion": "0.8.10",
+      "findingCodes": [
+        "duplicate_media_discovery_risk",
+        "composition_file_too_large",
+        "timeline_track_too_dense"
+      ],
+      "parseError": null
+    },
+    {
+      "slug": "heygen-apple-motion/hero",
+      "status": "compatible",
+      "exitCode": 0,
+      "errorCount": 0,
+      "warningCount": 1,
+      "infoCount": 0,
+      "filesScanned": 1,
+      "cliVersion": "0.8.10",
+      "findingCodes": [
+        "timeline_track_too_dense"
+      ],
+      "parseError": null
+    }
+  ]
+}

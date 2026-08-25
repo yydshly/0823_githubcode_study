@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "batchPath": "E:\\0823_codex_project\\projects\\hyperframes-launches\\examples\\ai-content-video-factory\\batch.json",
+  "manifestPath": "E:\\0823_codex_project\\projects\\hyperframes-launches\\examples\\ai-content-video-factory\\renders\\manifest.json",
+  "total": 2,
+  "completed": 2,
+  "failed": 0,
+  "skipped": 0,
+  "rows": [
+    {
+      "index": 0,
+      "outputPath": "E:\\0823_codex_project\\projects\\hyperframes-launches\\examples\\ai-content-video-factory\\renders\\ai-daily.mp4",
+      "status": "completed",
+      "durationMs": 18000,
+      "renderTimeMs": 70366,
+      "error": null,
+      "startedAt": "2026-08-23T18:38:40.007Z",
+      "completedAt": "2026-08-23T18:39:50.576Z",
+      "variables": {
+        "name": "ai-daily",
+        "eyebrow": "INTELLIGENCE BRIEF / 08:30",
+        "title": "今日 AI 信号",
+        "subtitle": "把分散更新，压缩成一支可行动的视频简报",
+        "metric": "12",
+        "metricLabel": "条可信更新",
+        "insight": "多模态 Agent 开始从演示走向可复用工作流",
+        "sourceA": "MODEL LAB",
+        "sourceB": "PRODUCT LOG",
+        "sourceC": "DEV SIGNAL",
+        "channelA": "团队晨会",
+        "channelB": "知识库",
+        "channelC": "社交媒体",
+        "cta": "今天，先验证最有价值的一条",
+        "accent": "#a7ff4f",
+        "accentSoft": "#e3ffc7"
+      }
+    },
+    {
+      "index": 1,
+      "outputPath": "E:\\0823_codex_project\\projects\\hyperframes-launches\\examples\\ai-content-video-factory\\renders\\product-update.mp4",
+      "status": "completed",
+      "durationMs": 18000,
+      "renderTimeMs": 56437,
+      "error": null,
+      "startedAt": "2026-08-23T18:39:50.577Z",
+      "completedAt": "2026-08-23T18:40:47.124Z",
+      "variables": {
+        "name": "product-update",
+        "eyebrow": "PRODUCT RELEASE / V2.4",
+        "title": "产品更新速报",
+        "subtitle": "让用户在十几秒内理解这次发布真正改变了什么",
+        "metric": "3",
+        "metricLabel": "项关键能力",
+        "insight": "批量生成、品牌变量与多渠道交付已进入同一条流水线",
+        "sourceA": "CHANGELOG",
+        "sourceB": "USER VALUE",
+        "sourceC": "RELEASE QA",
+        "channelA": "客户群",
+        "channelB": "更新日志",
+        "channelC": "发布主页",
+        "cta": "把一次发布，变成持续可复用的内容资产",
+        "accent": "#59c7ff",
+        "accentSoft": "#d8f2ff"
+      }
+    }
+  ]
+}

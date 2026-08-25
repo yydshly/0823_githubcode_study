@@ -1,0 +1,781 @@
+{
+  "summary": {
+    "generatedAt": "2026-08-23T15:25:41.455Z",
+    "upstreamCommit": "199f7dc34c8e3f1d798c55f2074fe1bcbd6fd5ba",
+    "topLevelProjects": 19,
+    "runnableEntries": 25,
+    "htmlFiles": 181,
+    "media": {
+      "video": 97,
+      "audio": 106,
+      "image": 244,
+      "font": 171
+    },
+    "allLfsReady": true
+  },
+  "entries": [
+    {
+      "slug": "HF-heygen-stripe",
+      "topSlug": "HF-heygen-stripe",
+      "title": "HeyGen × Stripe",
+      "description": "真人 A-roll、品牌联名、字幕、UI 与旁白合成。",
+      "group": "launch",
+      "duration": 38.7,
+      "width": 1920,
+      "height": 1080,
+      "compositions": 8,
+      "htmlFiles": 10,
+      "media": {
+        "video": 8,
+        "audio": 5,
+        "image": 10,
+        "font": 24
+      },
+      "capabilities": [
+        "GSAP",
+        "Three.js / 3D",
+        "SVG",
+        "字幕",
+        "嵌套合成",
+        "视频合成",
+        "音频 / SFX",
+        "图片 / 品牌素材"
+      ],
+      "publicVideo": "https://hyperframes.dev/viewer/d6f7d40f-1e32-4b73-a551-af47cc19e8a2",
+      "sourceUrl": "https://github.com/heygen-com/hyperframes-launches/tree/main/HF-heygen-stripe",
+      "lfsReady": true,
+      "lfsPointers": []
+    },
+    {
+      "slug": "claude-design-send-hyperframes-launch",
+      "topSlug": "claude-design-send-hyperframes-launch",
+      "title": "Send to HyperFrames",
+      "description": "设计工具到视频工作流，含纸张质感、光标与界面动效。",
+      "group": "launch",
+      "duration": 49.2763,
+      "width": 1080,
+      "height": 1080,
+      "compositions": 5,
+      "htmlFiles": 7,
+      "media": {
+        "video": 3,
+        "audio": 2,
+        "image": 23,
+        "font": 3
+      },
+      "capabilities": [
+        "GSAP",
+        "SVG",
+        "嵌套合成",
+        "视频合成",
+        "音频 / SFX",
+        "图片 / 品牌素材"
+      ],
+      "publicVideo": null,
+      "sourceUrl": "https://github.com/heygen-com/hyperframes-launches/tree/main/claude-design-send-hyperframes-launch",
+      "lfsReady": true,
+      "lfsPointers": []
+    },
+    {
+      "slug": "claude-paper-launch",
+      "topSlug": "claude-paper-launch",
+      "title": "Claude Paper Launch",
+      "description": "长篇研究内容转成叙事型产品发布片。",
+      "group": "launch",
+      "duration": 53.3,
+      "width": 1920,
+      "height": 1080,
+      "compositions": 10,
+      "htmlFiles": 12,
+      "media": {
+        "video": 0,
+        "audio": 3,
+        "image": 0,
+        "font": 23
+      },
+      "capabilities": [
+        "GSAP",
+        "WebGL / Shader",
+        "Lottie",
+        "SVG",
+        "字幕",
+        "嵌套合成",
+        "音频 / SFX"
+      ],
+      "publicVideo": "https://hyperframes.dev/viewer/659498ab-d77e-48a8-a719-dd97adbbd3e5",
+      "sourceUrl": "https://github.com/heygen-com/hyperframes-launches/tree/main/claude-paper-launch",
+      "lfsReady": true,
+      "lfsPointers": []
+    },
+    {
+      "slug": "cloud-render-launch",
+      "topSlug": "cloud-render-launch",
+      "title": "Cloud Render",
+      "description": "云渲染产品故事、界面录屏、音效与媒体合成。",
+      "group": "launch",
+      "duration": 38,
+      "width": 1920,
+      "height": 1080,
+      "compositions": 9,
+      "htmlFiles": 13,
+      "media": {
+        "video": 6,
+        "audio": 24,
+        "image": 18,
+        "font": 13
+      },
+      "capabilities": [
+        "GSAP",
+        "CSS 动画",
+        "Lottie",
+        "SVG",
+        "嵌套合成",
+        "视频合成",
+        "音频 / SFX",
+        "图片 / 品牌素材"
+      ],
+      "publicVideo": "https://hyperframes.dev/viewer/4259dc01-157a-4966-9c58-4e97faa2548e",
+      "sourceUrl": "https://github.com/heygen-com/hyperframes-launches/tree/main/cloud-render-launch",
+      "lfsReady": true,
+      "lfsPointers": []
+    },
+    {
+      "slug": "figma-launch",
+      "topSlug": "figma-launch",
+      "title": "Figma Integration",
+      "description": "方形社交视频，展示 Figma 集成与多段产品素材。",
+      "group": "launch",
+      "duration": 64.05,
+      "width": 1080,
+      "height": 1080,
+      "compositions": 11,
+      "htmlFiles": 13,
+      "media": {
+        "video": 14,
+        "audio": 1,
+        "image": 16,
+        "font": 33
+      },
+      "capabilities": [
+        "GSAP",
+        "Three.js / 3D",
+        "SVG",
+        "嵌套合成",
+        "视频合成",
+        "音频 / SFX",
+        "图片 / 品牌素材"
+      ],
+      "publicVideo": "https://hyperframes.dev/viewer/58fdce81-6ef0-4860-899d-d6b3da692a54",
+      "sourceUrl": "https://github.com/heygen-com/hyperframes-launches/tree/main/figma-launch",
+      "lfsReady": true,
+      "lfsPointers": []
+    },
+    {
+      "slug": "frame-md-launch-storyboard",
+      "topSlug": "frame-md-launch-storyboard",
+      "title": "Frame.md Storyboard",
+      "description": "从分镜文档到多场景发布视频的完整制作案例。",
+      "group": "launch",
+      "duration": 60.254,
+      "width": 1920,
+      "height": 1080,
+      "compositions": 9,
+      "htmlFiles": 12,
+      "media": {
+        "video": 6,
+        "audio": 3,
+        "image": 17,
+        "font": 0
+      },
+      "capabilities": [
+        "GSAP",
+        "Three.js / 3D",
+        "SVG",
+        "字幕",
+        "嵌套合成",
+        "视频合成",
+        "音频 / SFX",
+        "图片 / 品牌素材"
+      ],
+      "publicVideo": "https://hyperframes.dev/viewer/c5198458-4eaa-4933-a4e8-029c8010a845",
+      "sourceUrl": "https://github.com/heygen-com/hyperframes-launches/tree/main/frame-md-launch-storyboard",
+      "lfsReady": true,
+      "lfsPointers": []
+    },
+    {
+      "slug": "hyperframes-launch",
+      "topSlug": "hyperframes-launch",
+      "title": "HyperFrames Launch",
+      "description": "HTML、GSAP、Shader、媒体、字幕和子合成的综合展示。",
+      "group": "launch",
+      "duration": 49.77,
+      "width": 1920,
+      "height": 1080,
+      "compositions": 16,
+      "htmlFiles": 17,
+      "media": {
+        "video": 12,
+        "audio": 2,
+        "image": 8,
+        "font": 0
+      },
+      "capabilities": [
+        "GSAP",
+        "WebGL / Shader",
+        "Three.js / 3D",
+        "SVG",
+        "Canvas",
+        "字幕",
+        "嵌套合成",
+        "视频合成",
+        "音频 / SFX",
+        "图片 / 品牌素材"
+      ],
+      "publicVideo": "https://hyperframes.dev/viewer/9ab8d480-7507-4905-9222-ae6ea4b2fb5a",
+      "sourceUrl": "https://github.com/heygen-com/hyperframes-launches/tree/main/hyperframes-launch",
+      "lfsReady": true,
+      "lfsPointers": []
+    },
+    {
+      "slug": "inspector-launch",
+      "topSlug": "inspector-launch",
+      "title": "Inspector",
+      "description": "单文件复杂动效，覆盖检查器、Lottie 与 Canvas/WebGL。",
+      "group": "launch",
+      "duration": 44.97,
+      "width": 1920,
+      "height": 1080,
+      "compositions": 0,
+      "htmlFiles": 4,
+      "media": {
+        "video": 0,
+        "audio": 0,
+        "image": 7,
+        "font": 0
+      },
+      "capabilities": [
+        "GSAP",
+        "WebGL / Shader",
+        "Three.js / 3D",
+        "Lottie",
+        "SVG",
+        "Canvas",
+        "字幕",
+        "图片 / 品牌素材"
+      ],
+      "publicVideo": "https://hyperframes.dev/viewer/87889a4c-cc67-4e4a-b576-b57dd892fee3",
+      "sourceUrl": "https://github.com/heygen-com/hyperframes-launches/tree/main/inspector-launch",
+      "lfsReady": true,
+      "lfsPointers": []
+    },
+    {
+      "slug": "k3-promo",
+      "topSlug": "k3-promo",
+      "title": "Kimi K3 Promo",
+      "description": "短时、高密度的模型产品宣传片。",
+      "group": "launch",
+      "duration": 16.4667,
+      "width": 1920,
+      "height": 1080,
+      "compositions": 0,
+      "htmlFiles": 1,
+      "media": {
+        "video": 1,
+        "audio": 1,
+        "image": 0,
+        "font": 0
+      },
+      "capabilities": [
+        "GSAP",
+        "CSS 动画",
+        "Three.js / 3D",
+        "SVG",
+        "Canvas",
+        "视频合成",
+        "音频 / SFX"
+      ],
+      "publicVideo": null,
+      "sourceUrl": "https://github.com/heygen-com/hyperframes-launches/tree/main/k3-promo",
+      "lfsReady": true,
+      "lfsPointers": []
+    },
+    {
+      "slug": "liquid-brand-refraction",
+      "topSlug": "liquid-brand-refraction",
+      "title": "Liquid Brand Refraction",
+      "description": "液态折射、品牌卡片、WebGL/Three.js 视觉实验。",
+      "group": "launch",
+      "duration": 6,
+      "width": 1920,
+      "height": 1080,
+      "compositions": 0,
+      "htmlFiles": 7,
+      "media": {
+        "video": 11,
+        "audio": 4,
+        "image": 8,
+        "font": 0
+      },
+      "capabilities": [
+        "GSAP",
+        "CSS 动画",
+        "WebGL / Shader",
+        "Three.js / 3D",
+        "SVG",
+        "Canvas",
+        "视频合成",
+        "音频 / SFX",
+        "图片 / 品牌素材"
+      ],
+      "publicVideo": null,
+      "sourceUrl": "https://github.com/heygen-com/hyperframes-launches/tree/main/liquid-brand-refraction",
+      "lfsReady": true,
+      "lfsPointers": []
+    },
+    {
+      "slug": "pr-to-video-launch",
+      "topSlug": "pr-to-video-launch",
+      "title": "PR to Video",
+      "description": "将代码变更和 Pull Request 包装成发布视频。",
+      "group": "launch",
+      "duration": 30,
+      "width": 1920,
+      "height": 1080,
+      "compositions": 10,
+      "htmlFiles": 11,
+      "media": {
+        "video": 2,
+        "audio": 15,
+        "image": 11,
+        "font": 9
+      },
+      "capabilities": [
+        "GSAP",
+        "SVG",
+        "字幕",
+        "嵌套合成",
+        "视频合成",
+        "音频 / SFX",
+        "图片 / 品牌素材"
+      ],
+      "publicVideo": "https://hyperframes.dev/viewer/72c9b502-0c96-4bde-9a78-9a178267c475",
+      "sourceUrl": "https://github.com/heygen-com/hyperframes-launches/tree/main/pr-to-video-launch",
+      "lfsReady": true,
+      "lfsPointers": []
+    },
+    {
+      "slug": "sfx-music-launch",
+      "topSlug": "sfx-music-launch",
+      "title": "SFX & Music",
+      "description": "声音设计、音乐节拍与视觉事件同步。",
+      "group": "launch",
+      "duration": 33.8,
+      "width": 1920,
+      "height": 1080,
+      "compositions": 7,
+      "htmlFiles": 9,
+      "media": {
+        "video": 2,
+        "audio": 0,
+        "image": 19,
+        "font": 23
+      },
+      "capabilities": [
+        "GSAP",
+        "SVG",
+        "嵌套合成",
+        "视频合成",
+        "图片 / 品牌素材"
+      ],
+      "publicVideo": "https://hyperframes.dev/viewer/1adcf040-9df5-46b9-ab56-8e33795b5f84",
+      "sourceUrl": "https://github.com/heygen-com/hyperframes-launches/tree/main/sfx-music-launch",
+      "lfsReady": true,
+      "lfsPointers": []
+    },
+    {
+      "slug": "spacex-launch",
+      "topSlug": "spacex-launch",
+      "title": "SpaceX Launch",
+      "description": "技术产品叙事、终端/UI 动画和完整音轨。",
+      "group": "launch",
+      "duration": 39.5,
+      "width": 1920,
+      "height": 1080,
+      "compositions": 7,
+      "htmlFiles": 13,
+      "media": {
+        "video": 0,
+        "audio": 13,
+        "image": 4,
+        "font": 23
+      },
+      "capabilities": [
+        "GSAP",
+        "WebGL / Shader",
+        "SVG",
+        "字幕",
+        "嵌套合成",
+        "音频 / SFX",
+        "图片 / 品牌素材"
+      ],
+      "publicVideo": "https://hyperframes.dev/viewer/58d80c88-37fe-4527-a803-1b29c35373b7",
+      "sourceUrl": "https://github.com/heygen-com/hyperframes-launches/tree/main/spacex-launch",
+      "lfsReady": true,
+      "lfsPointers": []
+    },
+    {
+      "slug": "texture-launch-video",
+      "topSlug": "texture-launch-video",
+      "title": "Texture Launch",
+      "description": "纹理遮罩、Shader、材质与动态文字。",
+      "group": "launch",
+      "duration": 21.96,
+      "width": 1920,
+      "height": 1080,
+      "compositions": 0,
+      "htmlFiles": 2,
+      "media": {
+        "video": 1,
+        "audio": 0,
+        "image": 66,
+        "font": 0
+      },
+      "capabilities": [
+        "GSAP",
+        "CSS 动画",
+        "WebGL / Shader",
+        "Three.js / 3D",
+        "SVG",
+        "Canvas",
+        "字幕",
+        "视频合成",
+        "图片 / 品牌素材"
+      ],
+      "publicVideo": "https://hyperframes.dev/viewer/b92c24b4-5143-4bce-85ce-408be4c3c4ec",
+      "sourceUrl": "https://github.com/heygen-com/hyperframes-launches/tree/main/texture-launch-video",
+      "lfsReady": true,
+      "lfsPointers": []
+    },
+    {
+      "slug": "timeline-launch",
+      "topSlug": "timeline-launch",
+      "title": "Timeline Editor",
+      "description": "时间轴编辑器功能演示，含 Lottie、字幕和音效。",
+      "group": "launch",
+      "duration": 33.53,
+      "width": 1920,
+      "height": 1080,
+      "compositions": 6,
+      "htmlFiles": 21,
+      "media": {
+        "video": 2,
+        "audio": 9,
+        "image": 2,
+        "font": 0
+      },
+      "capabilities": [
+        "GSAP",
+        "Lottie",
+        "SVG",
+        "嵌套合成",
+        "视频合成",
+        "音频 / SFX",
+        "图片 / 品牌素材"
+      ],
+      "publicVideo": "https://hyperframes.dev/viewer/105200be-ebda-4209-a225-a2edf01cf1b7",
+      "sourceUrl": "https://github.com/heygen-com/hyperframes-launches/tree/main/timeline-launch",
+      "lfsReady": true,
+      "lfsPointers": []
+    },
+    {
+      "slug": "variables-launch",
+      "topSlug": "variables-launch",
+      "title": "Variables",
+      "description": "变量驱动的多版本视频与素材替换。",
+      "group": "launch",
+      "duration": 43.6,
+      "width": 1920,
+      "height": 1080,
+      "compositions": 9,
+      "htmlFiles": 14,
+      "media": {
+        "video": 9,
+        "audio": 1,
+        "image": 2,
+        "font": 0
+      },
+      "capabilities": [
+        "GSAP",
+        "CSS 动画",
+        "Three.js / 3D",
+        "SVG",
+        "变量化",
+        "字幕",
+        "嵌套合成",
+        "视频合成",
+        "音频 / SFX",
+        "图片 / 品牌素材"
+      ],
+      "publicVideo": "https://hyperframes.dev/viewer/6387d7c2-3819-4e60-916c-e346a3598b67",
+      "sourceUrl": "https://github.com/heygen-com/hyperframes-launches/tree/main/variables-launch",
+      "lfsReady": true,
+      "lfsPointers": []
+    },
+    {
+      "slug": "vfx-heygen-combined",
+      "topSlug": "vfx-heygen-combined",
+      "title": "VFX Combined",
+      "description": "视频背景、人物抠图、WebGL 与视觉特效叠加。",
+      "group": "launch",
+      "duration": 26.26,
+      "width": 1920,
+      "height": 1080,
+      "compositions": 1,
+      "htmlFiles": 5,
+      "media": {
+        "video": 2,
+        "audio": 0,
+        "image": 4,
+        "font": 0
+      },
+      "capabilities": [
+        "GSAP",
+        "WebGL / Shader",
+        "Three.js / 3D",
+        "SVG",
+        "Canvas",
+        "字幕",
+        "嵌套合成",
+        "视频合成",
+        "图片 / 品牌素材"
+      ],
+      "publicVideo": "https://hyperframes.dev/viewer/3c3669b8-65d0-4f1f-8cdb-e608c1a58ff9",
+      "sourceUrl": "https://github.com/heygen-com/hyperframes-launches/tree/main/vfx-heygen-combined",
+      "lfsReady": true,
+      "lfsPointers": []
+    },
+    {
+      "slug": "website-to-hyperframes",
+      "topSlug": "website-to-hyperframes",
+      "title": "Website to HyperFrames",
+      "description": "从网站与产品素材生成发布片的 Agent 工作流。",
+      "group": "launch",
+      "duration": 41.8,
+      "width": 1920,
+      "height": 1080,
+      "compositions": 2,
+      "htmlFiles": 3,
+      "media": {
+        "video": 11,
+        "audio": 23,
+        "image": 5,
+        "font": 3
+      },
+      "capabilities": [
+        "GSAP",
+        "CSS 动画",
+        "SVG",
+        "字幕",
+        "嵌套合成",
+        "视频合成",
+        "音频 / SFX",
+        "图片 / 品牌素材"
+      ],
+      "publicVideo": "https://hyperframes.dev/viewer/85d2d8d5-bf5b-4d04-901d-7c3ae157a30a",
+      "sourceUrl": "https://github.com/heygen-com/hyperframes-launches/tree/main/website-to-hyperframes",
+      "lfsReady": true,
+      "lfsPointers": []
+    },
+    {
+      "slug": "heygen-apple-motion/01-ui-sting",
+      "topSlug": "heygen-apple-motion",
+      "title": "01 ui sting",
+      "description": "可换品牌的产品动效模板。",
+      "group": "template",
+      "duration": 10.8333,
+      "width": 720,
+      "height": 720,
+      "compositions": 0,
+      "htmlFiles": 1,
+      "media": {
+        "video": 0,
+        "audio": 0,
+        "image": 4,
+        "font": 5
+      },
+      "capabilities": [
+        "GSAP",
+        "SVG",
+        "图片 / 品牌素材"
+      ],
+      "publicVideo": null,
+      "sourceUrl": "https://github.com/heygen-com/hyperframes-launches/tree/main/heygen-apple-motion/01-ui-sting",
+      "lfsReady": true,
+      "lfsPointers": []
+    },
+    {
+      "slug": "heygen-apple-motion/02-bouncy-ui",
+      "topSlug": "heygen-apple-motion",
+      "title": "02 bouncy ui",
+      "description": "可换品牌的产品动效模板。",
+      "group": "template",
+      "duration": 12.1333,
+      "width": 1080,
+      "height": 1080,
+      "compositions": 0,
+      "htmlFiles": 1,
+      "media": {
+        "video": 0,
+        "audio": 0,
+        "image": 2,
+        "font": 1
+      },
+      "capabilities": [
+        "GSAP",
+        "SVG",
+        "图片 / 品牌素材"
+      ],
+      "publicVideo": null,
+      "sourceUrl": "https://github.com/heygen-com/hyperframes-launches/tree/main/heygen-apple-motion/02-bouncy-ui",
+      "lfsReady": true,
+      "lfsPointers": []
+    },
+    {
+      "slug": "heygen-apple-motion/03-message-sting",
+      "topSlug": "heygen-apple-motion",
+      "title": "03 message sting",
+      "description": "可换品牌的产品动效模板。",
+      "group": "template",
+      "duration": 12.8333,
+      "width": 720,
+      "height": 720,
+      "compositions": 0,
+      "htmlFiles": 1,
+      "media": {
+        "video": 0,
+        "audio": 0,
+        "image": 9,
+        "font": 1
+      },
+      "capabilities": [
+        "GSAP",
+        "SVG",
+        "图片 / 品牌素材"
+      ],
+      "publicVideo": null,
+      "sourceUrl": "https://github.com/heygen-com/hyperframes-launches/tree/main/heygen-apple-motion/03-message-sting",
+      "lfsReady": true,
+      "lfsPointers": []
+    },
+    {
+      "slug": "heygen-apple-motion/04-generate-reel",
+      "topSlug": "heygen-apple-motion",
+      "title": "04 generate reel",
+      "description": "可换品牌的产品动效模板。",
+      "group": "template",
+      "duration": 11.79,
+      "width": 720,
+      "height": 1280,
+      "compositions": 0,
+      "htmlFiles": 1,
+      "media": {
+        "video": 3,
+        "audio": 0,
+        "image": 1,
+        "font": 4
+      },
+      "capabilities": [
+        "GSAP",
+        "SVG",
+        "视频合成",
+        "图片 / 品牌素材"
+      ],
+      "publicVideo": null,
+      "sourceUrl": "https://github.com/heygen-com/hyperframes-launches/tree/main/heygen-apple-motion/04-generate-reel",
+      "lfsReady": true,
+      "lfsPointers": []
+    },
+    {
+      "slug": "heygen-apple-motion/examples/instagram",
+      "topSlug": "heygen-apple-motion",
+      "title": "instagram",
+      "description": "可换品牌的产品动效模板。",
+      "group": "template",
+      "duration": 10.8333,
+      "width": 720,
+      "height": 720,
+      "compositions": 0,
+      "htmlFiles": 1,
+      "media": {
+        "video": 0,
+        "audio": 0,
+        "image": 3,
+        "font": 1
+      },
+      "capabilities": [
+        "GSAP",
+        "SVG",
+        "图片 / 品牌素材"
+      ],
+      "publicVideo": null,
+      "sourceUrl": "https://github.com/heygen-com/hyperframes-launches/tree/main/heygen-apple-motion/examples/instagram",
+      "lfsReady": true,
+      "lfsPointers": []
+    },
+    {
+      "slug": "heygen-apple-motion/examples/spotify",
+      "topSlug": "heygen-apple-motion",
+      "title": "spotify",
+      "description": "可换品牌的产品动效模板。",
+      "group": "template",
+      "duration": 10.8333,
+      "width": 720,
+      "height": 720,
+      "compositions": 0,
+      "htmlFiles": 1,
+      "media": {
+        "video": 0,
+        "audio": 0,
+        "image": 3,
+        "font": 1
+      },
+      "capabilities": [
+        "GSAP",
+        "SVG",
+        "图片 / 品牌素材"
+      ],
+      "publicVideo": null,
+      "sourceUrl": "https://github.com/heygen-com/hyperframes-launches/tree/main/heygen-apple-motion/examples/spotify",
+      "lfsReady": true,
+      "lfsPointers": []
+    },
+    {
+      "slug": "heygen-apple-motion/hero",
+      "topSlug": "heygen-apple-motion",
+      "title": "hero",
+      "description": "可换品牌的产品动效模板。",
+      "group": "template",
+      "duration": 54.2,
+      "width": 720,
+      "height": 720,
+      "compositions": 0,
+      "htmlFiles": 1,
+      "media": {
+        "video": 4,
+        "audio": 0,
+        "image": 2,
+        "font": 4
+      },
+      "capabilities": [
+        "GSAP",
+        "SVG",
+        "视频合成",
+        "图片 / 品牌素材"
+      ],
+      "publicVideo": null,
+      "sourceUrl": "https://github.com/heygen-com/hyperframes-launches/tree/main/heygen-apple-motion/hero",
+      "lfsReady": true,
+      "lfsPointers": []
+    }
+  ]
+}

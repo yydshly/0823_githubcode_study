@@ -1,3 +1,6 @@
 [submodule "hands-on-llm-upstream"]
 	path = projects/hands-on-large-language-models/upstream
 	url = https://github.com/HandsOnLLM/Hands-On-Large-Language-Models.git
+[submodule "projects/hyperframes-launches/upstream"]
+	path = projects/hyperframes-launches/upstream
+	url = https://github.com/heygen-com/hyperframes-launches.git
