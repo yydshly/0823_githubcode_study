@@ -6,6 +6,7 @@ on:
     paths:
       - "docs/**"
       - "projects/kindergrimm/**"
+      - "projects/claude-of-tanks/**"
       - ".github/workflows/pages.yml"
   workflow_dispatch:
 
@@ -35,6 +36,21 @@ jobs:
           repository: albertobeiz/kindergrimm
           ref: 5857b1e1cae2713d6714ad7dd7f89626bb242f0f
           path: _kindergrimm_upstream
+      - name: Checkout pinned Claude of Tanks upstream
+        uses: actions/checkout@v4
+        with:
+          repository: Kevin-Liu-01/Claude-of-Tanks
+          ref: fba54d06a5ccf1053477efde5e60bb9b338584e9
+          path: projects/claude-of-tanks/upstream
+      - name: Set up Node.js for Three.js workbench
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Install pinned Claude of Tanks dependencies
+        working-directory: projects/claude-of-tanks/upstream
+        run: npm install --no-package-lock --no-audit --no-fund
+      - name: Build standalone Three.js product workbench
+        run: projects/claude-of-tanks/upstream/node_modules/.bin/vite build --config projects/claude-of-tanks/scripts/vite-pages-workbench.config.mjs
       - name: Assemble Pages site
         run: |
           mkdir -p _site/projects/kindergrimm
@@ -43,6 +59,9 @@ jobs:
           mkdir -p _site/projects/kindergrimm/evidence
           cp projects/kindergrimm/evidence/{v06-factory-desktop.png,v06-scene-desktop.png,m3-core-factory-desktop.png,m3-core-scene-desktop.png,m4-production-studio-desktop.png,m4-production-studio-mobile.png,m5-runtime-sdk-desktop.png,m5-runtime-sdk-webgl-off.png} _site/projects/kindergrimm/evidence/
           rsync -a --exclude .git _kindergrimm_upstream/ _site/projects/kindergrimm/upstream/
+          mkdir -p _site/projects/claude-of-tanks/workbench
+          cp projects/claude-of-tanks/.pages-dist/workbench/product-workbench-pages.html _site/projects/claude-of-tanks/workbench/index.html
+          cp -a projects/claude-of-tanks/.pages-dist/workbench/assets _site/projects/claude-of-tanks/workbench/
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Upload site
@@ -82,3 +101,33 @@ jobs:
           name: kindergrimm-pages-acceptance
           path: projects/kindergrimm/acceptance/report.json
           if-no-files-found: warn
+
+  claude-of-tanks-acceptance:
+    name: Verify Claude of Tanks Pages
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Checkout pinned Claude of Tanks upstream
+        uses: actions/checkout@v4
+        with:
+          repository: Kevin-Liu-01/Claude-of-Tanks
+          ref: fba54d06a5ccf1053477efde5e60bb9b338584e9
+          path: projects/claude-of-tanks/upstream
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Install browser acceptance dependencies
+        working-directory: projects/claude-of-tanks/upstream
+        run: npm install --no-package-lock --no-audit --no-fund
+      - name: Verify overview, archive, and workbench
+        run: node projects/claude-of-tanks/scripts/verify-pages-release.mjs "${{ needs.deploy.outputs.page_url }}"
+      - name: Upload acceptance evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: claude-of-tanks-pages-acceptance
+          path: projects/claude-of-tanks/evidence/pages-release/
+          if-no-files-found: error

@@ -1,0 +1,242 @@
+{
+  "generatedAt": "2026-08-25T17:56:00.527Z",
+  "result": "pass",
+  "checks": {
+    "registryContract": true,
+    "fourArchitectureLayers": true,
+    "separateProfileKinds": true,
+    "officialRoutesLaunchable": true,
+    "blockedRoutesNotLaunchable": true,
+    "failedExperimentTruthful": true,
+    "worldNoneWorkbenchProven": true,
+    "performanceEvidenceExplicit": true,
+    "risksHaveMitigations": true,
+    "evidenceFilesPresent": true
+  },
+  "registry": {
+    "version": 3,
+    "pass": true,
+    "issues": [],
+    "counts": {
+      "layers": 4,
+      "scenes": 3,
+      "subjects": 5,
+      "presentations": 4,
+      "demos": 4,
+      "risks": 5,
+      "budgets": 14,
+      "budgetsOver": 6
+    }
+  },
+  "performance": {
+    "pass": 8,
+    "over": 6,
+    "rows": [
+      {
+        "id": "desktop-full-ready",
+        "label": "桌面综合场景 ready",
+        "value": 22861,
+        "unit": "ms",
+        "target": 30000,
+        "direction": "max",
+        "evidence": "evidence/capability-showcase/report.json",
+        "status": "pass",
+        "ratio": 0.762
+      },
+      {
+        "id": "visual-lab-ready",
+        "label": "视觉实验冷启动 ready",
+        "value": 55038,
+        "unit": "ms",
+        "target": 30000,
+        "direction": "max",
+        "evidence": "evidence/visual-layer-lab-final/report.json",
+        "status": "over",
+        "ratio": 1.835
+      },
+      {
+        "id": "research-hub-ready",
+        "label": "研究控制面 ready",
+        "value": 167,
+        "unit": "ms",
+        "target": 1000,
+        "direction": "max",
+        "evidence": "evidence/research-platform/browser-report.json",
+        "status": "pass",
+        "ratio": 0.167
+      },
+      {
+        "id": "mobile-combat-ready",
+        "label": "移动端战斗加载",
+        "value": 73900,
+        "unit": "ms",
+        "target": 45000,
+        "direction": "max",
+        "evidence": "README.md#本机验证结果",
+        "status": "over",
+        "ratio": 1.642
+      },
+      {
+        "id": "runtime-geometries",
+        "label": "整页 Geometry 数",
+        "value": 331,
+        "unit": "count",
+        "target": 300,
+        "direction": "max",
+        "evidence": "evidence/industrial-showroom-final/runtime-metrics.json",
+        "status": "over",
+        "ratio": 1.103
+      },
+      {
+        "id": "runtime-textures",
+        "label": "整页 Texture 数",
+        "value": 109,
+        "unit": "count",
+        "target": 96,
+        "direction": "max",
+        "evidence": "evidence/industrial-showroom-final/runtime-metrics.json",
+        "status": "over",
+        "ratio": 1.135
+      },
+      {
+        "id": "stable-raf-p95",
+        "label": "静止页面 rAF p95",
+        "value": 4.3,
+        "unit": "ms",
+        "target": 16.7,
+        "direction": "max",
+        "evidence": "evidence/industrial-showroom-final/runtime-metrics.json",
+        "caveat": "静止且默认不重绘，不等同于 GPU 帧耗时。",
+        "status": "pass",
+        "ratio": 0.257
+      },
+      {
+        "id": "main-chunk-gzip",
+        "label": "主入口 gzip",
+        "value": 638,
+        "unit": "KB",
+        "target": 500,
+        "direction": "max",
+        "evidence": "README.md#已发现的工程边界",
+        "status": "over",
+        "ratio": 1.276
+      },
+      {
+        "id": "vehicle-chunk-gzip",
+        "label": "车辆工厂 gzip",
+        "value": 683,
+        "unit": "KB",
+        "target": 500,
+        "direction": "max",
+        "evidence": "README.md#已发现的工程边界",
+        "status": "over",
+        "ratio": 1.366
+      },
+      {
+        "id": "workbench-ready",
+        "label": "产品工作台 ready",
+        "value": 138,
+        "unit": "ms",
+        "target": 5000,
+        "direction": "max",
+        "evidence": "evidence/product-workbench/browser-report.json",
+        "caveat": "本机 Vite 热缓存；冷启动首轮曾测得 2.5s，仍在 5s 预算内。",
+        "status": "pass",
+        "ratio": 0.028
+      },
+      {
+        "id": "workbench-dynamic-p95",
+        "label": "工作台动态帧 p95",
+        "value": 12.4,
+        "unit": "ms",
+        "target": 33.4,
+        "direction": "max",
+        "evidence": "evidence/product-workbench/browser-report.json",
+        "status": "pass",
+        "ratio": 0.371
+      },
+      {
+        "id": "workbench-atlas-calls",
+        "label": "Atlas 高质量 Draw Calls",
+        "value": 116,
+        "unit": "count",
+        "target": 120,
+        "direction": "max",
+        "evidence": "evidence/product-workbench/browser-report.json",
+        "caveat": "通过主要轮廓阴影预算从 151 降至 116，降低 23.2%。",
+        "status": "pass",
+        "ratio": 0.967
+      },
+      {
+        "id": "workbench-nova-calls",
+        "label": "Nova 高质量 Draw Calls",
+        "value": 51,
+        "unit": "count",
+        "target": 60,
+        "direction": "max",
+        "evidence": "evidence/product-workbench/browser-report.json",
+        "caveat": "移除低收益 transmission 预通道后，从 84 降至 51。",
+        "status": "pass",
+        "ratio": 0.85
+      },
+      {
+        "id": "workbench-mobile-nova-calls",
+        "label": "Nova 移动轻质量 Calls",
+        "value": 37,
+        "unit": "count",
+        "target": 70,
+        "direction": "max",
+        "evidence": "evidence/product-workbench/browser-report.json",
+        "caveat": "关闭主体阴影和装饰轮廓；同主体桌面高质量为 51 calls。",
+        "status": "pass",
+        "ratio": 0.529
+      }
+    ]
+  },
+  "reuseDecision": {
+    "reusableNow": [
+      "render-core",
+      "neutral-world-none",
+      "subject-adapter-v1",
+      "product-stage-v2",
+      "studio-director",
+      "visual-layer-inspector"
+    ],
+    "extractionRequired": [
+      "shared-studio-scene-profile",
+      "external-glb-adapter"
+    ],
+    "claimsBlocked": [
+      "commercial-product-asset",
+      "generic-showroom",
+      "arbitrary-glb-import",
+      "mobile-performance-ready"
+    ]
+  },
+  "evidence": [
+    {
+      "path": "evidence/capability-showcase/report.json",
+      "exists": true
+    },
+    {
+      "path": "evidence/visual-layer-lab-final/report.json",
+      "exists": true
+    },
+    {
+      "path": "evidence/industrial-showroom-final/report.json",
+      "exists": true
+    },
+    {
+      "path": "evidence/industrial-showroom-final/lifecycle-smoke.json",
+      "exists": true
+    },
+    {
+      "path": "evidence/industrial-showroom-final/runtime-metrics.json",
+      "exists": true
+    },
+    {
+      "path": "evidence/product-workbench/browser-report.json",
+      "exists": true
+    }
+  ]
+}

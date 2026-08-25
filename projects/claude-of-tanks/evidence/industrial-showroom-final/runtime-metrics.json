@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-08-24T04:38:28.845Z",
+  "url": "http://127.0.0.1:4175/studio?map=desert&showcase=industrial-showroom&nogate=1",
+  "httpStatus": 200,
+  "readyMs": 46143,
+  "rendererStatsScope": "whole page, not atlas-inspection-rover alone",
+  "timeOrigin": 1787546262230.1,
+  "viewport": {
+    "width": 1440,
+    "height": 900,
+    "devicePixelRatio": 1
+  },
+  "stableState": {
+    "status": "ready",
+    "motion": {
+      "active": false,
+      "durationMs": 680,
+      "autoRotate": false
+    },
+    "selectedHotspotId": null,
+    "selectedVariantId": "graphite-field",
+    "reducedMotion": false,
+    "definition": "ready; no active camera transition; final default autoRotate=false; idle stable showroom",
+    "samplingNote": "rAF intervals measure browser/main-thread cadence in the stable page, not a GPU timer query"
+  },
+  "frameIntervalsMs": {
+    "sampleCount": 60,
+    "warmupFrames": 10,
+    "median": 4.2,
+    "p95": 4.3,
+    "mean": 4.17,
+    "min": 4,
+    "max": 4.3,
+    "percentileMethod": "nearest-rank p95; even-sample median is mean of positions 30 and 31"
+  },
+  "renderer": {
+    "scope": "whole-page WebGLRenderer.info; includes terrain, environment, showroom stage, product subject, lighting, effects, and all other content rendered by this page; not subject-only",
+    "subjectOnly": false,
+    "infoAutoReset": true,
+    "interpretation": "Raw current window.__DEBUG.renderer.info values. With autoReset enabled, render counters describe the most recent renderer render call within the whole-page pipeline, not a subject-only draw total.",
+    "render": {
+      "calls": 1,
+      "triangles": 1,
+      "points": 0,
+      "lines": 0
+    },
+    "memory": {
+      "geometries": 331,
+      "textures": 109
+    }
+  },
+  "controllerAudit": {
+    "subject": {
+      "id": "atlas-inspection-rover",
+      "kind": "industrial-equipment",
+      "rootName": "atlas-inspection-rover",
+      "exists": true,
+      "visible": true,
+      "meshCount": 59,
+      "visibleMeshCount": 59
+    },
+    "manifest": {
+      "version": 1,
+      "id": "atlas-inspection-rover",
+      "kind": "industrial-equipment",
+      "origin": "procedural",
+      "qualityClaim": "Prototype / L2 — procedural presentation asset; not a commercial production model",
+      "sourceModule": "showcase/industrial-showroom-asset.js",
+      "externalModelCount": 0,
+      "generatedMeshCount": 59,
+      "meshFingerprint": "fnv1a-df24d04c",
+      "partIds": [
+        "chassis",
+        "sensor-system",
+        "energy-module",
+        "all-terrain-drive",
+        "safety-frame",
+        "service-bay"
+      ],
+      "sockets": [
+        "sensor-system",
+        "energy-module",
+        "all-terrain-drive"
+      ],
+      "materialVariantIds": [
+        "graphite-field",
+        "rescue-orange",
+        "arctic-service"
+      ]
+    },
+    "provenance": {
+      "origin": "procedural",
+      "qualityClaim": "Prototype / L2 — procedural presentation asset; not a commercial production model",
+      "sourceModule": "showcase/industrial-showroom-asset.js",
+      "externalModelCount": 0,
+      "generatedMeshCount": 59
+    }
+  },
+  "fieldSources": {
+    "subject": "controller.audit().subject",
+    "manifest": "controller.manifest (controller.audit() does not expose manifest)",
+    "provenance": "controller.audit().provenance"
+  },
+  "auditContext": {
+    "tankActorCount": 0,
+    "mountedObjectCount": 1,
+    "registeredTickCount": 1,
+    "materialFingerprint": "fnv1a-b9cd0395",
+    "meshFingerprint": "fnv1a-df24d04c",
+    "cameraPresetCount": 3,
+    "hotspotCount": 3
+  },
+  "auditBeforeMotion": {
+    "active": false,
+    "durationMs": 680,
+    "autoRotate": false
+  },
+  "consoleErrors": []
+}

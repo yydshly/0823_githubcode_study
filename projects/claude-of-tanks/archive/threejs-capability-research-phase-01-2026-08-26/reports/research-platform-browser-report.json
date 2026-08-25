@@ -1,0 +1,121 @@
+{
+  "url": "http://127.0.0.1:4176/research",
+  "startedAt": "2026-08-25T17:55:53.173Z",
+  "result": "pass",
+  "consoleErrors": [],
+  "gameRuntimeRequests": [],
+  "screenshots": [
+    "01-desktop-hub.png",
+    "02-mobile-hub.png"
+  ],
+  "checks": {
+    "hubRoute200": true,
+    "registryContract": true,
+    "fourLayerBoundary": true,
+    "fourDemoStates": true,
+    "exactlyThreeLaunchableDemos": true,
+    "blockedExperimentNotLaunchable": true,
+    "sameOriginDemoRoutes": true,
+    "noThreeRuntimeOnHub": true,
+    "hubReadyBudget": true,
+    "visiblePerformanceRisks": true,
+    "readableDomContent": true,
+    "mobileSingleDocument": true,
+    "mobileNoHorizontalOverflow": true,
+    "mobileTouchTargets": true,
+    "reducedMotion": true,
+    "evidenceBounded": true,
+    "noConsoleErrors": true
+  },
+  "desktop": {
+    "status": "ready",
+    "audit": {
+      "version": 3,
+      "pass": true,
+      "issues": [],
+      "counts": {
+        "layers": 4,
+        "scenes": 3,
+        "subjects": 5,
+        "presentations": 4,
+        "demos": 4,
+        "risks": 5,
+        "budgets": 14,
+        "budgetsOver": 6
+      }
+    },
+    "hubReadyMs": 228,
+    "timeOrigin": 1787680553765.2,
+    "threeRuntimeLoaded": false,
+    "blockedDemoHasLink": false,
+    "layerCards": 4,
+    "demoCards": 4,
+    "launchLinks": [
+      {
+        "id": "desert-capability-scene",
+        "href": "/studio?map=desert&showcase=capabilities&nogate=1",
+        "origin": "http://127.0.0.1:4176"
+      },
+      {
+        "id": "visual-layer-research",
+        "href": "/studio?map=desert&showcase=capabilities&lab=layers&nogate=1",
+        "origin": "http://127.0.0.1:4176"
+      },
+      {
+        "id": "programmatic-product-workbench",
+        "href": "/workbench",
+        "origin": "http://127.0.0.1:4176"
+      }
+    ],
+    "blockedAria": "true",
+    "budgetOver": 6,
+    "highRisks": 2,
+    "headings": [
+      "Three.js 3D 能力研究与演示基座",
+      "先分层，再组合",
+      "正式演示与失败证据",
+      "哪些能复用，哪些还不能"
+    ],
+    "scrollWidth": 1440,
+    "innerWidth": 1440
+  },
+  "mobile": {
+    "timeOrigin": 1787680553765.2,
+    "innerWidth": 390,
+    "scrollWidth": 390,
+    "reducedMotion": true,
+    "transitionDuration": "0s",
+    "targetSizes": [
+      {
+        "width": 85.5,
+        "height": 44
+      },
+      {
+        "width": 85.5,
+        "height": 44
+      },
+      {
+        "width": 85.5,
+        "height": 44
+      },
+      {
+        "width": 85.5,
+        "height": 44
+      },
+      {
+        "width": 320,
+        "height": 44
+      },
+      {
+        "width": 320,
+        "height": 44
+      },
+      {
+        "width": 320,
+        "height": 44
+      }
+    ],
+    "platformReady": "true"
+  },
+  "finishedAt": "2026-08-25T17:55:55.586Z"
+}

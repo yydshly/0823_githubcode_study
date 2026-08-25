@@ -1,0 +1,410 @@
+{
+  "baseUrl": "http://127.0.0.1:53816/",
+  "mode": "local-production-build",
+  "startedAt": "2026-08-25T18:56:12.967Z",
+  "result": "pass",
+  "consoleErrors": [],
+  "externalModelRequests": [],
+  "checks": {
+    "overview200": true,
+    "overviewArchived": true,
+    "overviewLinksPublishedRoutes": true,
+    "overviewNoLocalhostLinks": true,
+    "overviewImagesLoad": true,
+    "overviewNoHorizontalOverflow": true,
+    "archive200": true,
+    "archiveIdentity": true,
+    "archiveSixSections": true,
+    "archiveThreeEvidenceImages": true,
+    "archiveNoLocalhostLinks": true,
+    "archiveDesktopNoHorizontalOverflow": true,
+    "workbench200": true,
+    "workbenchReady": true,
+    "workbenchWorldNone": true,
+    "workbenchTwoSubjects": true,
+    "workbenchInteraction": true,
+    "workbenchCanvasVisible": true,
+    "noExternalModelRequests": true,
+    "archiveMobileNoHorizontalOverflow": true,
+    "archiveMobileTouchTargets": true,
+    "reducedMotionRecognized": true,
+    "workbenchMobileNoHorizontalOverflow": true,
+    "workbenchMobileTouchTargets": true,
+    "fiveScreenshots": true,
+    "noConsoleErrors": true
+  },
+  "screenshots": [
+    "01-overview-desktop.png",
+    "02-archive-desktop.png",
+    "03-workbench-desktop.png",
+    "04-archive-mobile.png",
+    "05-workbench-mobile.png"
+  ],
+  "overview": {
+    "title": "Claude of Tanks · Three.js 能力研究总览",
+    "archiveHref": "http://127.0.0.1:53816/projects/claude-of-tanks-archive.html",
+    "workbenchHref": "http://127.0.0.1:53816/projects/claude-of-tanks/workbench/",
+    "localLinks": [],
+    "brokenImages": [],
+    "innerWidth": 1440,
+    "scrollWidth": 1440
+  },
+  "archiveDesktop": {
+    "title": "Claude of Tanks · Phase 01 阶段归档",
+    "archived": true,
+    "sections": 6,
+    "evidenceImages": 3,
+    "localLinks": [],
+    "innerWidth": 1440,
+    "scrollWidth": 1440
+  },
+  "workbenchDesktop": {
+    "snapshot": {
+      "version": 2,
+      "status": "ready",
+      "route": "/projects/claude-of-tanks/workbench/",
+      "architecture": {
+        "renderCore": "standalone-threejs",
+        "scene": "neutral-inspection-world-none",
+        "subject": "nova-field-node",
+        "subjectAdapter": "product-subject-v1",
+        "presentation": "product-stage-v2",
+        "world": "none"
+      },
+      "registryAudit": {
+        "version": 1,
+        "subjectCount": 2,
+        "subjectIds": [
+          "atlas-inspection-rover",
+          "nova-field-node"
+        ],
+        "issues": [],
+        "valid": true
+      },
+      "availableSubjectIds": [
+        "atlas-inspection-rover",
+        "nova-field-node"
+      ],
+      "sceneProfile": {
+        "id": "neutral-inspection-world-none",
+        "kind": "scene",
+        "world": "none",
+        "status": "proven",
+        "externalAssetCount": 0,
+        "textureCount": 0,
+        "capabilities": [
+          "independent-renderer",
+          "inspection-light-rig",
+          "contact-platform",
+          "responsive-quality-tier"
+        ]
+      },
+      "subjectManifest": {
+        "version": 1,
+        "id": "nova-field-node",
+        "kind": "industrial-energy-node",
+        "origin": "procedural",
+        "qualityClaim": "Prototype / L2 — procedural presentation asset; not a commercial production model",
+        "sourceModule": "showcase/nova-field-node-asset.js",
+        "externalModelCount": 0,
+        "generatedMeshCount": 26,
+        "instanceCount": 12,
+        "meshFingerprint": "fnv1a-ac2651ed",
+        "partIds": [
+          "structure",
+          "power-core",
+          "sensor-crown",
+          "stabilizers",
+          "thermal-system"
+        ],
+        "sockets": [
+          "sensor-crown",
+          "power-core",
+          "stabilizers"
+        ],
+        "materialVariantIds": [
+          "reactor-cyan",
+          "hazard-amber",
+          "polar-white"
+        ],
+        "animationIds": [
+          "sensor-crown-rotation",
+          "core-pulse"
+        ]
+      },
+      "subjectAdapter": {
+        "version": 1,
+        "contract": "product-subject-v1",
+        "id": "nova-field-node",
+        "sourceHeight": 4.05,
+        "normalizedHeight": 3.42,
+        "scale": 0.8444,
+        "stageY": 0.22,
+        "renderableCount": 26,
+        "visibleRenderableCount": 26,
+        "outlineCount": 0,
+        "visibleOutlineCount": 0,
+        "shadowCandidateCount": 22,
+        "shadowCasterBudget": 12,
+        "activeShadowCasters": 12,
+        "quality": "high",
+        "externalModelCount": 0
+      },
+      "provenance": {
+        "origin": "procedural",
+        "qualityClaim": "Prototype / L2 — procedural presentation asset; not a commercial production model",
+        "sourceModule": "showcase/nova-field-node-asset.js",
+        "externalModelCount": 0
+      },
+      "activeSubjectId": "nova-field-node",
+      "activeHotspotId": null,
+      "activeVariantId": "reactor-cyan",
+      "exploded": true,
+      "autoRotate": true,
+      "quality": "high",
+      "reducedMotion": false,
+      "director": {
+        "playing": false,
+        "paused": false,
+        "elapsedMs": 0,
+        "segmentId": null,
+        "caption": "双主体产品工作台"
+      },
+      "metrics": {
+        "readyMs": 554,
+        "fps": 0,
+        "frameP95Ms": 0,
+        "calls": 0,
+        "triangles": 0,
+        "geometries": 13,
+        "textures": 3,
+        "sampleCount": 0,
+        "quality": "high"
+      },
+      "renderer": {
+        "outputColorSpace": "srgb",
+        "toneMapping": 4,
+        "pixelRatio": 1,
+        "shadows": true
+      }
+    },
+    "subjects": 2,
+    "canvas": {
+      "width": 1440,
+      "height": 900
+    },
+    "innerWidth": 1440,
+    "scrollWidth": 1440
+  },
+  "archiveMobile": {
+    "reducedMotion": true,
+    "innerWidth": 390,
+    "scrollWidth": 390,
+    "navTargets": [
+      {
+        "width": 168.703125,
+        "height": 44
+      },
+      {
+        "width": 168.703125,
+        "height": 44
+      },
+      {
+        "width": 168.703125,
+        "height": 44
+      },
+      {
+        "width": 168.703125,
+        "height": 44
+      },
+      {
+        "width": 168.703125,
+        "height": 44
+      },
+      {
+        "width": 168.703125,
+        "height": 44
+      }
+    ]
+  },
+  "workbenchMobile": {
+    "snapshot": {
+      "version": 2,
+      "status": "ready",
+      "route": "/projects/claude-of-tanks/workbench/",
+      "architecture": {
+        "renderCore": "standalone-threejs",
+        "scene": "neutral-inspection-world-none",
+        "subject": "atlas-inspection-rover",
+        "subjectAdapter": "product-subject-v1",
+        "presentation": "product-stage-v2",
+        "world": "none"
+      },
+      "registryAudit": {
+        "version": 1,
+        "subjectCount": 2,
+        "subjectIds": [
+          "atlas-inspection-rover",
+          "nova-field-node"
+        ],
+        "issues": [],
+        "valid": true
+      },
+      "availableSubjectIds": [
+        "atlas-inspection-rover",
+        "nova-field-node"
+      ],
+      "sceneProfile": {
+        "id": "neutral-inspection-world-none",
+        "kind": "scene",
+        "world": "none",
+        "status": "proven",
+        "externalAssetCount": 0,
+        "textureCount": 0,
+        "capabilities": [
+          "independent-renderer",
+          "inspection-light-rig",
+          "contact-platform",
+          "responsive-quality-tier"
+        ]
+      },
+      "subjectManifest": {
+        "version": 1,
+        "id": "atlas-inspection-rover",
+        "kind": "industrial-equipment",
+        "origin": "procedural",
+        "qualityClaim": "Prototype / L2 — procedural presentation asset; not a commercial production model",
+        "sourceModule": "showcase/industrial-showroom-asset.js",
+        "externalModelCount": 0,
+        "generatedMeshCount": 59,
+        "meshFingerprint": "fnv1a-df24d04c",
+        "partIds": [
+          "chassis",
+          "sensor-system",
+          "energy-module",
+          "all-terrain-drive",
+          "safety-frame",
+          "service-bay"
+        ],
+        "sockets": [
+          "sensor-system",
+          "energy-module",
+          "all-terrain-drive"
+        ],
+        "materialVariantIds": [
+          "graphite-field",
+          "rescue-orange",
+          "arctic-service"
+        ]
+      },
+      "subjectAdapter": {
+        "version": 1,
+        "contract": "product-subject-v1",
+        "id": "atlas-inspection-rover",
+        "sourceHeight": 3.13,
+        "normalizedHeight": 3.18,
+        "scale": 1.016,
+        "stageY": 0.22,
+        "renderableCount": 59,
+        "visibleRenderableCount": 59,
+        "outlineCount": 20,
+        "visibleOutlineCount": 0,
+        "shadowCandidateCount": 59,
+        "shadowCasterBudget": 24,
+        "activeShadowCasters": 0,
+        "quality": "low",
+        "externalModelCount": 0
+      },
+      "provenance": {
+        "origin": "procedural",
+        "qualityClaim": "Prototype / L2 — procedural presentation asset; not a commercial production model",
+        "sourceModule": "showcase/industrial-showroom-asset.js",
+        "externalModelCount": 0
+      },
+      "activeSubjectId": "atlas-inspection-rover",
+      "activeHotspotId": null,
+      "activeVariantId": "graphite-field",
+      "exploded": false,
+      "autoRotate": false,
+      "quality": "low",
+      "reducedMotion": true,
+      "director": {
+        "playing": false,
+        "paused": false,
+        "elapsedMs": 0,
+        "segmentId": null,
+        "caption": "双主体产品工作台"
+      },
+      "metrics": {
+        "readyMs": 278,
+        "fps": 161,
+        "frameP95Ms": 12.5,
+        "calls": 70,
+        "triangles": 6644,
+        "geometries": 70,
+        "textures": 1,
+        "sampleCount": 120,
+        "quality": "low"
+      },
+      "renderer": {
+        "outputColorSpace": "srgb",
+        "toneMapping": 4,
+        "pixelRatio": 1,
+        "shadows": false
+      }
+    },
+    "innerWidth": 390,
+    "scrollWidth": 390,
+    "visibleControls": [
+      {
+        "width": 132,
+        "height": 44
+      },
+      {
+        "width": 157,
+        "height": 47
+      },
+      {
+        "width": 157,
+        "height": 47
+      },
+      {
+        "width": 109.328125,
+        "height": 48.75
+      },
+      {
+        "width": 109.328125,
+        "height": 48.75
+      },
+      {
+        "width": 109.34375,
+        "height": 48.75
+      },
+      {
+        "width": 108,
+        "height": 44
+      },
+      {
+        "width": 108,
+        "height": 44
+      },
+      {
+        "width": 108,
+        "height": 44
+      },
+      {
+        "width": 108,
+        "height": 44
+      },
+      {
+        "width": 108,
+        "height": 44
+      },
+      {
+        "width": 108,
+        "height": 44
+      }
+    ]
+  },
+  "finishedAt": "2026-08-25T18:56:25.674Z"
+}

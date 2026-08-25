@@ -1,0 +1,2055 @@
+{
+  "url": "http://127.0.0.1:4175/studio?map=desert&showcase=industrial-showroom&nogate=1",
+  "labUrl": "http://127.0.0.1:4175/studio?map=desert&showcase=capabilities&lab=layers&nogate=1",
+  "fullDemoUrl": "http://127.0.0.1:4175/studio?map=desert&showcase=capabilities&nogate=1",
+  "startedAt": "2026-08-24T04:31:54.862Z",
+  "result": "pass",
+  "consoleErrors": [],
+  "modelAssetRequests": [],
+  "screenshots": [
+    "01-desktop-overview.png",
+    "02-desktop-material-rescue-orange.png",
+    "03-desktop-hotspot-sensor-system.png",
+    "04-desktop-hotspot-all-terrain-drive.png",
+    "05-mobile-touch-sensor-system.png"
+  ],
+  "checks": {
+    "showroomRouteReady": true,
+    "expectedStaticContract": true,
+    "nonTankSubject": true,
+    "proceduralProvenance": true,
+    "materialVariants": true,
+    "threeHotspotCameraPresets": true,
+    "pointerSelection": true,
+    "keyboardJourney": true,
+    "mobileTouch": true,
+    "reducedMotion": true,
+    "singleShowroomDocument": true,
+    "showroomRouteIsolation": true,
+    "labRouteIsolation": true,
+    "fullDemoIsolation": true,
+    "deterministicGuardMetadata": true,
+    "evidenceBounded": true,
+    "noConsoleErrors": true
+  },
+  "guardNetworkFixture": {
+    "url": "https://api.github.com/repos/Kevin-Liu-01/claude-of-tanks",
+    "scope": "lab/full guard page only; showroom requests remain unmodified",
+    "reason": "Deterministic metadata fixture avoids external GitHub API rate-limit noise during isolation checks.",
+    "response": {
+      "status": 200,
+      "body": {
+        "stargazers_count": 77
+      }
+    },
+    "hits": 1
+  },
+  "showroomHttpStatus": 200,
+  "desktop": {
+    "present": true,
+    "version": 1,
+    "status": "ready",
+    "auditError": null,
+    "timeOrigin": 1787545915662,
+    "subject": {
+      "id": "atlas-inspection-rover",
+      "kind": "industrial-equipment",
+      "rootName": "atlas-inspection-rover"
+    },
+    "provenance": {
+      "origin": "procedural",
+      "qualityClaim": "Prototype / L2 — procedural presentation asset; not a commercial production model",
+      "sourceModule": "showcase/industrial-showroom-asset.js",
+      "externalModelCount": 0,
+      "generatedMeshCount": 59
+    },
+    "variants": [
+      {
+        "id": "graphite-field",
+        "label": "石墨现场版",
+        "targets": [
+          "body",
+          "secondary",
+          "panel",
+          "accent",
+          "hub"
+        ]
+      },
+      {
+        "id": "rescue-orange",
+        "label": "救援橙",
+        "targets": [
+          "body",
+          "secondary",
+          "panel",
+          "accent",
+          "hub"
+        ]
+      },
+      {
+        "id": "arctic-service",
+        "label": "极地维护版",
+        "targets": [
+          "body",
+          "secondary",
+          "panel",
+          "accent",
+          "hub"
+        ]
+      }
+    ],
+    "variantIds": [
+      "graphite-field",
+      "rescue-orange",
+      "arctic-service"
+    ],
+    "hotspots": [
+      {
+        "id": "sensor-system",
+        "label": "传感系统",
+        "targetPartId": "sensor-system",
+        "cameraPresetId": "sensor-system"
+      },
+      {
+        "id": "energy-module",
+        "label": "能源模块",
+        "targetPartId": "energy-module",
+        "cameraPresetId": "energy-module"
+      },
+      {
+        "id": "all-terrain-drive",
+        "label": "全地形驱动",
+        "targetPartId": "all-terrain-drive",
+        "cameraPresetId": "all-terrain-drive"
+      }
+    ],
+    "hotspotIds": [
+      "sensor-system",
+      "energy-module",
+      "all-terrain-drive"
+    ],
+    "cameraPresets": [
+      {
+        "id": "sensor-system",
+        "pos": [
+          35.2,
+          9.09,
+          -76.3
+        ],
+        "lookAt": [
+          30,
+          7.29,
+          -81.45
+        ],
+        "fov": 30
+      },
+      {
+        "id": "energy-module",
+        "pos": [
+          24.4,
+          7.59,
+          -83.9
+        ],
+        "lookAt": [
+          28.95,
+          6.1899999999999995,
+          -82.45
+        ],
+        "fov": 31
+      },
+      {
+        "id": "all-terrain-drive",
+        "pos": [
+          35.4,
+          6.59,
+          -77.35
+        ],
+        "lookAt": [
+          31.35,
+          5.54,
+          -81.05
+        ],
+        "fov": 32
+      }
+    ],
+    "selectedSubjectId": "atlas-inspection-rover",
+    "selectedVariantId": "graphite-field",
+    "activeCameraPresetId": "overview",
+    "reducedMotion": false,
+    "motion": {
+      "active": false,
+      "durationMs": 680,
+      "autoRotate": false
+    },
+    "camera": {
+      "pos": [
+        39.6,
+        9.74,
+        -71.2
+      ],
+      "lookAt": [
+        26.66,
+        4.96,
+        -85.68
+      ],
+      "fov": 34
+    },
+    "materialFingerprint": "fnv1a-b9cd0395",
+    "renderedMeshCount": 59,
+    "tankActorCount": 0,
+    "subjectRootVisible": true,
+    "panelPresent": true,
+    "panelText": "#cot-industrial-showroom{--is-accent:#ffa33f;--is-cyan:#8feaff;position:fixed;z-index:100004;left:18px;top:18px;width:min(370px,calc(100vw - 36px));overflow:hidden;border:1px solid rgba(255,255,255,.14);border-radius:18px;color:#edf4f3;background:linear-gradient(155deg,rgba(10,15,17,.96),rgba(7,11,13,.91));box-shadow:0 28px 90px rgba(0,0,0,.56);backdrop-filter:blur(18px);font:13px/1.45 Inter,ui-sans-serif,system-ui,sans-serif}\n      #cot-industrial-showroom *{box-sizing:border-box}#cot-industrial-showroom button{font:inherit;touch-action:manipulation}\n      #cot-industrial-showroom .is-head{padding:15px 16px 13px;border-bottom:1px solid rgba(255,255,255,.08)}\n      #cot-industrial-showroom .is-kicker{display:flex;align-items:center;justify-content:space-between;gap:10px;color:#9caeae;font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}\n      #cot-industrial-showroom .is-badge{padding:4px 7px;border:1px solid rgba(143,234,255,.28);border-radius:999px;color:var(--is-cyan);letter-spacing:.08em;background:rgba(143,234,255,.07)}\n      #cot-industrial-showroom h1{margin:10px 0 4px;color:#fff;font-size:20px;line-height:1.05;letter-spacing:.015em}#cot-industrial-showroom .is-sub{margin:0;color:#a9b8b8}\n      #cot-industrial-showroom .is-proof{margin-top:11px;padding:8px 10px;border-left:3px solid var(--is-accent);color:#d8e2df;background:rgba(255,163,63,.07);font-size:11px}\n      #cot-industrial-showroom .is-detail{min-height:86px;padding:13px 16px 10px;border-bottom:1px solid rgba(255,255,255,.07)}#cot-industrial-showroom .is-detail small{display:block;color:var(--is-accent);font-weight:800;letter-spacing:.1em}#cot-industrial-showroom .is-detail strong{display:block;margin-top:3px;color:#fff;font-size:15px}#cot-industrial-showroom .is-detail p{margin:4px 0 0;color:#aebcbb}\n      #cot-industrial-showroom .is-hotspot-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;padding:10px 12px}\n      #cot-industrial-showroom .is-hotspot-card{min-width:0;min-height:54px;padding:7px 5px;border:1px solid rgba(255,255,255,.12);border-radius:10px;color:#b7c3c2;background:rgba(255,255,255,.035);cursor:pointer}#cot-industrial-showroom .is-hotspot-card span{display:block;color:var(--is-accent);font-weight:900}#cot-industrial-showroom .is-hotspot-card[aria-pressed=true]{border-color:rgba(255,163,63,.64);color:#fff;background:rgba(255,163,63,.12)}\n      #cot-industrial-showroom .is-section-label{padding:0 14px;color:#748687;font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}\n      #cot-industrial-showroom .is-variants{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;padding:7px 12px 10px}\n      #cot-industrial-showroom .is-variant{min-width:0;min-height:44px;padding:6px;border:1px solid rgba(255,255,255,.12);border-radius:9px;color:#adbbba;background:#151d20;cursor:pointer;font-size:10px}#cot-industrial-showroom .is-variant[aria-pressed=true]{border-color:var(--is-cyan);color:#071113;background:var(--is-cyan);font-weight:800}\n      #cot-industrial-showroom .is-actions{display:flex;gap:6px;padding:10px 12px 12px;border-top:1px solid rgba(255,255,255,.07)}#cot-industrial-showroom .is-actions button{min-height:44px;padding:7px 10px;border:1px solid rgba(255,255,255,.14);border-radius:9px;color:#e9f0ef;background:#182124;cursor:pointer}#cot-industrial-showroom .is-actions button:first-child{flex:1}#cot-industrial-showroom .is-actions button[aria-pressed=true]{border-color:rgba(255,163,63,.5);color:var(--is-accent)}#cot-industrial-showroom .is-actions button:disabled{opacity:.42;cursor:not-allowed}\n      #cot-industrial-showroom .is-status{padding:0 14px 11px;color:#758788;font-size:10px}#cot-industrial-showroom button:focus-visible,#cot-industrial-hotspots button:focus-visible{outline:2px solid #fff;outline-offset:2px}\n      #cot-industrial-hotspots{position:fixed;z-index:100003;inset:0;pointer-events:none;font:800 11px/1 Inter,ui-sans-serif,system-ui,sans-serif}\n      #cot-industrial-hotspots .is-marker{position:absolute;left:0;top:0;display:flex;align-items:center;gap:7px;min-width:44px;min-height:44px;padding:0 10px 0 0;border:0;border-radius:999px;color:#071113;background:rgba(232,244,241,.92);box-shadow:0 10px 28px rgba(0,0,0,.38);cursor:pointer;pointer-events:auto;transform:translate3d(-200px,-200px,0);transition:opacity .16s ease,transform .16s ease}#cot-industrial-hotspots .is-marker[hidden]{display:none}#cot-industrial-hotspots .is-marker b{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;color:#081011;background:var(--is-accent,#ffa33f);font-size:12px}#cot-industrial-hotspots .is-marker[aria-pressed=true]{color:#fff;background:rgba(12,18,20,.94);box-shadow:0 0 0 2px #ffa33f,0 12px 34px rgba(0,0,0,.5)}\n      html[data-cot-industrial-showroom=true] .cot-studio .dock{display:none!important}\n      @media(max-width:640px){#cot-industrial-showroom{left:8px;right:8px;top:auto;bottom:8px;width:auto;max-height:43vh;overflow:auto;border-radius:16px}#cot-industrial-showroom .is-head{padding:10px 12px 8px}#cot-industrial-showroom h1{margin-top:6px;font-size:17px}#cot-industrial-showroom .is-sub,#cot-industrial-showroom .is-proof{display:none}#cot-industrial-showroom .is-detail{min-height:65px;padding:8px 12px 7px}#cot-industrial-showroom .is-detail p{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}#cot-industrial-showroom .is-hotspot-list{padding:7px 8px 6px}#cot-industrial-showroom .is-hotspot-card{min-height:48px}#cot-industrial-showroom .is-section-label{display:none}#cot-industrial-showroom .is-variants{padding:0 8px 7px}#cot-industrial-showroom .is-actions{padding:7px 8px 8px}#cot-industrial-showroom .is-status{display:none}#cot-industrial-hotspots .is-marker{width:44px;padding:0}#cot-industrial-hotspots .is-marker span{display:none}}\n      @media(prefers-reduced-motion:reduce){#cot-industrial-showroom,#cot-industrial-showroom *,#cot-industrial-hotspots .is-marker{animation:none!important;transition-duration:0s!important;scroll-behavior:auto!important;backdrop-filter:none!important}}\n    \n    \n      ATLAS / FIELD SYSTEMSPROGRAMMATIC PROTOTYPE\n      ATLAS INSPECTION ROVER\n      工业巡检设备概念展示 · 复用同一 Studio 渲染、镜头与后期管线\n      程序化资产 · Prototype / L2 · 非商业生产模型 · 0 个外部 3D 模型\n    \n    OVERVIEW可维护的工业巡检平台选择热点查看构造层级，或切换材料验证同一几何的产品表达。\n    \n      01传感系统02能源模块03全地形驱动\n    \n    Material variants · V 循环\n    \n      石墨现场版救援橙极地维护版\n    \n    返回全景 · Esc转台 关闭\n    同一 Studio 场景内挂载 · 0 坦克 actor · 1–3 热点 / V 材质 / Esc 全景",
+    "detailText": "OVERVIEW可维护的工业巡检平台选择热点查看构造层级，或切换材料验证同一几何的产品表达。",
+    "provenanceText": "程序化资产 · Prototype / L2 · 非商业生产模型 · 0 个外部 3D 模型",
+    "capabilityInstalled": false,
+    "labInstalled": false,
+    "labPanel": false,
+    "capabilityPanel": false
+  },
+  "preflight": {
+    "present": true,
+    "version": 1,
+    "status": "ready",
+    "auditError": null,
+    "timeOrigin": 1787545915662,
+    "subject": {
+      "id": "atlas-inspection-rover",
+      "kind": "industrial-equipment",
+      "rootName": "atlas-inspection-rover"
+    },
+    "provenance": {
+      "origin": "procedural",
+      "qualityClaim": "Prototype / L2 — procedural presentation asset; not a commercial production model",
+      "sourceModule": "showcase/industrial-showroom-asset.js",
+      "externalModelCount": 0,
+      "generatedMeshCount": 59
+    },
+    "variants": [
+      {
+        "id": "graphite-field",
+        "label": "石墨现场版",
+        "targets": [
+          "body",
+          "secondary",
+          "panel",
+          "accent",
+          "hub"
+        ]
+      },
+      {
+        "id": "rescue-orange",
+        "label": "救援橙",
+        "targets": [
+          "body",
+          "secondary",
+          "panel",
+          "accent",
+          "hub"
+        ]
+      },
+      {
+        "id": "arctic-service",
+        "label": "极地维护版",
+        "targets": [
+          "body",
+          "secondary",
+          "panel",
+          "accent",
+          "hub"
+        ]
+      }
+    ],
+    "variantIds": [
+      "graphite-field",
+      "rescue-orange",
+      "arctic-service"
+    ],
+    "hotspots": [
+      {
+        "id": "sensor-system",
+        "label": "传感系统",
+        "targetPartId": "sensor-system",
+        "cameraPresetId": "sensor-system"
+      },
+      {
+        "id": "energy-module",
+        "label": "能源模块",
+        "targetPartId": "energy-module",
+        "cameraPresetId": "energy-module"
+      },
+      {
+        "id": "all-terrain-drive",
+        "label": "全地形驱动",
+        "targetPartId": "all-terrain-drive",
+        "cameraPresetId": "all-terrain-drive"
+      }
+    ],
+    "hotspotIds": [
+      "sensor-system",
+      "energy-module",
+      "all-terrain-drive"
+    ],
+    "cameraPresets": [
+      {
+        "id": "sensor-system",
+        "pos": [
+          35.2,
+          9.09,
+          -76.3
+        ],
+        "lookAt": [
+          30,
+          7.29,
+          -81.45
+        ],
+        "fov": 30
+      },
+      {
+        "id": "energy-module",
+        "pos": [
+          24.4,
+          7.59,
+          -83.9
+        ],
+        "lookAt": [
+          28.95,
+          6.1899999999999995,
+          -82.45
+        ],
+        "fov": 31
+      },
+      {
+        "id": "all-terrain-drive",
+        "pos": [
+          35.4,
+          6.59,
+          -77.35
+        ],
+        "lookAt": [
+          31.35,
+          5.54,
+          -81.05
+        ],
+        "fov": 32
+      }
+    ],
+    "selectedSubjectId": "atlas-inspection-rover",
+    "selectedVariantId": "graphite-field",
+    "activeCameraPresetId": "overview",
+    "reducedMotion": false,
+    "motion": {
+      "active": false,
+      "durationMs": 680,
+      "autoRotate": false
+    },
+    "camera": {
+      "pos": [
+        39.6,
+        9.74,
+        -71.2
+      ],
+      "lookAt": [
+        26.66,
+        4.96,
+        -85.68
+      ],
+      "fov": 34
+    },
+    "materialFingerprint": "fnv1a-b9cd0395",
+    "renderedMeshCount": 59,
+    "tankActorCount": 0,
+    "subjectRootVisible": true,
+    "panelPresent": true,
+    "panelText": "#cot-industrial-showroom{--is-accent:#ffa33f;--is-cyan:#8feaff;position:fixed;z-index:100004;left:18px;top:18px;width:min(370px,calc(100vw - 36px));overflow:hidden;border:1px solid rgba(255,255,255,.14);border-radius:18px;color:#edf4f3;background:linear-gradient(155deg,rgba(10,15,17,.96),rgba(7,11,13,.91));box-shadow:0 28px 90px rgba(0,0,0,.56);backdrop-filter:blur(18px);font:13px/1.45 Inter,ui-sans-serif,system-ui,sans-serif}\n      #cot-industrial-showroom *{box-sizing:border-box}#cot-industrial-showroom button{font:inherit;touch-action:manipulation}\n      #cot-industrial-showroom .is-head{padding:15px 16px 13px;border-bottom:1px solid rgba(255,255,255,.08)}\n      #cot-industrial-showroom .is-kicker{display:flex;align-items:center;justify-content:space-between;gap:10px;color:#9caeae;font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}\n      #cot-industrial-showroom .is-badge{padding:4px 7px;border:1px solid rgba(143,234,255,.28);border-radius:999px;color:var(--is-cyan);letter-spacing:.08em;background:rgba(143,234,255,.07)}\n      #cot-industrial-showroom h1{margin:10px 0 4px;color:#fff;font-size:20px;line-height:1.05;letter-spacing:.015em}#cot-industrial-showroom .is-sub{margin:0;color:#a9b8b8}\n      #cot-industrial-showroom .is-proof{margin-top:11px;padding:8px 10px;border-left:3px solid var(--is-accent);color:#d8e2df;background:rgba(255,163,63,.07);font-size:11px}\n      #cot-industrial-showroom .is-detail{min-height:86px;padding:13px 16px 10px;border-bottom:1px solid rgba(255,255,255,.07)}#cot-industrial-showroom .is-detail small{display:block;color:var(--is-accent);font-weight:800;letter-spacing:.1em}#cot-industrial-showroom .is-detail strong{display:block;margin-top:3px;color:#fff;font-size:15px}#cot-industrial-showroom .is-detail p{margin:4px 0 0;color:#aebcbb}\n      #cot-industrial-showroom .is-hotspot-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;padding:10px 12px}\n      #cot-industrial-showroom .is-hotspot-card{min-width:0;min-height:54px;padding:7px 5px;border:1px solid rgba(255,255,255,.12);border-radius:10px;color:#b7c3c2;background:rgba(255,255,255,.035);cursor:pointer}#cot-industrial-showroom .is-hotspot-card span{display:block;color:var(--is-accent);font-weight:900}#cot-industrial-showroom .is-hotspot-card[aria-pressed=true]{border-color:rgba(255,163,63,.64);color:#fff;background:rgba(255,163,63,.12)}\n      #cot-industrial-showroom .is-section-label{padding:0 14px;color:#748687;font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}\n      #cot-industrial-showroom .is-variants{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;padding:7px 12px 10px}\n      #cot-industrial-showroom .is-variant{min-width:0;min-height:44px;padding:6px;border:1px solid rgba(255,255,255,.12);border-radius:9px;color:#adbbba;background:#151d20;cursor:pointer;font-size:10px}#cot-industrial-showroom .is-variant[aria-pressed=true]{border-color:var(--is-cyan);color:#071113;background:var(--is-cyan);font-weight:800}\n      #cot-industrial-showroom .is-actions{display:flex;gap:6px;padding:10px 12px 12px;border-top:1px solid rgba(255,255,255,.07)}#cot-industrial-showroom .is-actions button{min-height:44px;padding:7px 10px;border:1px solid rgba(255,255,255,.14);border-radius:9px;color:#e9f0ef;background:#182124;cursor:pointer}#cot-industrial-showroom .is-actions button:first-child{flex:1}#cot-industrial-showroom .is-actions button[aria-pressed=true]{border-color:rgba(255,163,63,.5);color:var(--is-accent)}#cot-industrial-showroom .is-actions button:disabled{opacity:.42;cursor:not-allowed}\n      #cot-industrial-showroom .is-status{padding:0 14px 11px;color:#758788;font-size:10px}#cot-industrial-showroom button:focus-visible,#cot-industrial-hotspots button:focus-visible{outline:2px solid #fff;outline-offset:2px}\n      #cot-industrial-hotspots{position:fixed;z-index:100003;inset:0;pointer-events:none;font:800 11px/1 Inter,ui-sans-serif,system-ui,sans-serif}\n      #cot-industrial-hotspots .is-marker{position:absolute;left:0;top:0;display:flex;align-items:center;gap:7px;min-width:44px;min-height:44px;padding:0 10px 0 0;border:0;border-radius:999px;color:#071113;background:rgba(232,244,241,.92);box-shadow:0 10px 28px rgba(0,0,0,.38);cursor:pointer;pointer-events:auto;transform:translate3d(-200px,-200px,0);transition:opacity .16s ease,transform .16s ease}#cot-industrial-hotspots .is-marker[hidden]{display:none}#cot-industrial-hotspots .is-marker b{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;color:#081011;background:var(--is-accent,#ffa33f);font-size:12px}#cot-industrial-hotspots .is-marker[aria-pressed=true]{color:#fff;background:rgba(12,18,20,.94);box-shadow:0 0 0 2px #ffa33f,0 12px 34px rgba(0,0,0,.5)}\n      html[data-cot-industrial-showroom=true] .cot-studio .dock{display:none!important}\n      @media(max-width:640px){#cot-industrial-showroom{left:8px;right:8px;top:auto;bottom:8px;width:auto;max-height:43vh;overflow:auto;border-radius:16px}#cot-industrial-showroom .is-head{padding:10px 12px 8px}#cot-industrial-showroom h1{margin-top:6px;font-size:17px}#cot-industrial-showroom .is-sub,#cot-industrial-showroom .is-proof{display:none}#cot-industrial-showroom .is-detail{min-height:65px;padding:8px 12px 7px}#cot-industrial-showroom .is-detail p{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}#cot-industrial-showroom .is-hotspot-list{padding:7px 8px 6px}#cot-industrial-showroom .is-hotspot-card{min-height:48px}#cot-industrial-showroom .is-section-label{display:none}#cot-industrial-showroom .is-variants{padding:0 8px 7px}#cot-industrial-showroom .is-actions{padding:7px 8px 8px}#cot-industrial-showroom .is-status{display:none}#cot-industrial-hotspots .is-marker{width:44px;padding:0}#cot-industrial-hotspots .is-marker span{display:none}}\n      @media(prefers-reduced-motion:reduce){#cot-industrial-showroom,#cot-industrial-showroom *,#cot-industrial-hotspots .is-marker{animation:none!important;transition-duration:0s!important;scroll-behavior:auto!important;backdrop-filter:none!important}}\n    \n    \n      ATLAS / FIELD SYSTEMSPROGRAMMATIC PROTOTYPE\n      ATLAS INSPECTION ROVER\n      工业巡检设备概念展示 · 复用同一 Studio 渲染、镜头与后期管线\n      程序化资产 · Prototype / L2 · 非商业生产模型 · 0 个外部 3D 模型\n    \n    OVERVIEW可维护的工业巡检平台选择热点查看构造层级，或切换材料验证同一几何的产品表达。\n    \n      01传感系统02能源模块03全地形驱动\n    \n    Material variants · V 循环\n    \n      石墨现场版救援橙极地维护版\n    \n    返回全景 · Esc转台 关闭\n    同一 Studio 场景内挂载 · 0 坦克 actor · 1–3 热点 / V 材质 / Esc 全景",
+    "detailText": "OVERVIEW可维护的工业巡检平台选择热点查看构造层级，或切换材料验证同一几何的产品表达。",
+    "provenanceText": "程序化资产 · Prototype / L2 · 非商业生产模型 · 0 个外部 3D 模型",
+    "capabilityInstalled": false,
+    "labInstalled": false,
+    "labPanel": false,
+    "capabilityPanel": false
+  },
+  "preflightIssues": [],
+  "showroomReadyMs": 45678,
+  "materialRows": [
+    {
+      "id": "graphite-field",
+      "selectedVariantId": "graphite-field",
+      "fingerprint": "fnv1a-b9cd0395",
+      "camera": {
+        "pos": [
+          39.6,
+          9.74,
+          -71.2
+        ],
+        "lookAt": [
+          26.66,
+          4.96,
+          -85.68
+        ],
+        "fov": 34
+      },
+      "control": {
+        "tagName": "BUTTON",
+        "text": "石墨现场版",
+        "tabIndex": 0,
+        "disabled": false,
+        "ariaPressed": "true",
+        "visible": true,
+        "rect": {
+          "left": 31,
+          "right": 142.328125,
+          "top": 420.1875,
+          "bottom": 464.1875,
+          "width": 111.328125,
+          "height": 44
+        },
+        "animationDuration": "0s",
+        "transitionDuration": "0s"
+      }
+    },
+    {
+      "id": "rescue-orange",
+      "selectedVariantId": "rescue-orange",
+      "fingerprint": "fnv1a-866a081c",
+      "camera": {
+        "pos": [
+          39.6,
+          9.74,
+          -71.2
+        ],
+        "lookAt": [
+          26.66,
+          4.96,
+          -85.68
+        ],
+        "fov": 34
+      },
+      "control": {
+        "tagName": "BUTTON",
+        "text": "救援橙",
+        "tabIndex": 0,
+        "disabled": false,
+        "ariaPressed": "true",
+        "visible": true,
+        "rect": {
+          "left": 148.328125,
+          "right": 259.65625,
+          "top": 420.1875,
+          "bottom": 464.1875,
+          "width": 111.328125,
+          "height": 44
+        },
+        "animationDuration": "0s",
+        "transitionDuration": "0s"
+      }
+    },
+    {
+      "id": "arctic-service",
+      "selectedVariantId": "arctic-service",
+      "fingerprint": "fnv1a-d24386aa",
+      "camera": {
+        "pos": [
+          39.6,
+          9.74,
+          -71.2
+        ],
+        "lookAt": [
+          26.66,
+          4.96,
+          -85.68
+        ],
+        "fov": 34
+      },
+      "control": {
+        "tagName": "BUTTON",
+        "text": "极地维护版",
+        "tabIndex": 0,
+        "disabled": false,
+        "ariaPressed": "true",
+        "visible": true,
+        "rect": {
+          "left": 265.65625,
+          "right": 377,
+          "top": 420.1875,
+          "bottom": 464.1875,
+          "width": 111.34375,
+          "height": 44
+        },
+        "animationDuration": "0s",
+        "transitionDuration": "0s"
+      }
+    }
+  ],
+  "materialReturn": {
+    "snapshot": {
+      "present": true,
+      "version": 1,
+      "status": "ready",
+      "auditError": null,
+      "timeOrigin": 1787545915662,
+      "subject": {
+        "id": "atlas-inspection-rover",
+        "kind": "industrial-equipment",
+        "rootName": "atlas-inspection-rover"
+      },
+      "provenance": {
+        "origin": "procedural",
+        "qualityClaim": "Prototype / L2 — procedural presentation asset; not a commercial production model",
+        "sourceModule": "showcase/industrial-showroom-asset.js",
+        "externalModelCount": 0,
+        "generatedMeshCount": 59
+      },
+      "variants": [
+        {
+          "id": "graphite-field",
+          "label": "石墨现场版",
+          "targets": [
+            "body",
+            "secondary",
+            "panel",
+            "accent",
+            "hub"
+          ]
+        },
+        {
+          "id": "rescue-orange",
+          "label": "救援橙",
+          "targets": [
+            "body",
+            "secondary",
+            "panel",
+            "accent",
+            "hub"
+          ]
+        },
+        {
+          "id": "arctic-service",
+          "label": "极地维护版",
+          "targets": [
+            "body",
+            "secondary",
+            "panel",
+            "accent",
+            "hub"
+          ]
+        }
+      ],
+      "variantIds": [
+        "graphite-field",
+        "rescue-orange",
+        "arctic-service"
+      ],
+      "hotspots": [
+        {
+          "id": "sensor-system",
+          "label": "传感系统",
+          "targetPartId": "sensor-system",
+          "cameraPresetId": "sensor-system"
+        },
+        {
+          "id": "energy-module",
+          "label": "能源模块",
+          "targetPartId": "energy-module",
+          "cameraPresetId": "energy-module"
+        },
+        {
+          "id": "all-terrain-drive",
+          "label": "全地形驱动",
+          "targetPartId": "all-terrain-drive",
+          "cameraPresetId": "all-terrain-drive"
+        }
+      ],
+      "hotspotIds": [
+        "sensor-system",
+        "energy-module",
+        "all-terrain-drive"
+      ],
+      "cameraPresets": [
+        {
+          "id": "sensor-system",
+          "pos": [
+            35.2,
+            9.09,
+            -76.3
+          ],
+          "lookAt": [
+            30,
+            7.29,
+            -81.45
+          ],
+          "fov": 30
+        },
+        {
+          "id": "energy-module",
+          "pos": [
+            24.4,
+            7.59,
+            -83.9
+          ],
+          "lookAt": [
+            28.95,
+            6.1899999999999995,
+            -82.45
+          ],
+          "fov": 31
+        },
+        {
+          "id": "all-terrain-drive",
+          "pos": [
+            35.4,
+            6.59,
+            -77.35
+          ],
+          "lookAt": [
+            31.35,
+            5.54,
+            -81.05
+          ],
+          "fov": 32
+        }
+      ],
+      "selectedSubjectId": "atlas-inspection-rover",
+      "selectedVariantId": "graphite-field",
+      "activeCameraPresetId": "overview",
+      "reducedMotion": false,
+      "motion": {
+        "active": false,
+        "durationMs": 680,
+        "autoRotate": false
+      },
+      "camera": {
+        "pos": [
+          39.6,
+          9.74,
+          -71.2
+        ],
+        "lookAt": [
+          26.66,
+          4.96,
+          -85.68
+        ],
+        "fov": 34
+      },
+      "materialFingerprint": "fnv1a-b9cd0395",
+      "renderedMeshCount": 59,
+      "tankActorCount": 0,
+      "subjectRootVisible": true,
+      "panelPresent": true,
+      "panelText": "#cot-industrial-showroom{--is-accent:#ffa33f;--is-cyan:#8feaff;position:fixed;z-index:100004;left:18px;top:18px;width:min(370px,calc(100vw - 36px));overflow:hidden;border:1px solid rgba(255,255,255,.14);border-radius:18px;color:#edf4f3;background:linear-gradient(155deg,rgba(10,15,17,.96),rgba(7,11,13,.91));box-shadow:0 28px 90px rgba(0,0,0,.56);backdrop-filter:blur(18px);font:13px/1.45 Inter,ui-sans-serif,system-ui,sans-serif}\n      #cot-industrial-showroom *{box-sizing:border-box}#cot-industrial-showroom button{font:inherit;touch-action:manipulation}\n      #cot-industrial-showroom .is-head{padding:15px 16px 13px;border-bottom:1px solid rgba(255,255,255,.08)}\n      #cot-industrial-showroom .is-kicker{display:flex;align-items:center;justify-content:space-between;gap:10px;color:#9caeae;font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}\n      #cot-industrial-showroom .is-badge{padding:4px 7px;border:1px solid rgba(143,234,255,.28);border-radius:999px;color:var(--is-cyan);letter-spacing:.08em;background:rgba(143,234,255,.07)}\n      #cot-industrial-showroom h1{margin:10px 0 4px;color:#fff;font-size:20px;line-height:1.05;letter-spacing:.015em}#cot-industrial-showroom .is-sub{margin:0;color:#a9b8b8}\n      #cot-industrial-showroom .is-proof{margin-top:11px;padding:8px 10px;border-left:3px solid var(--is-accent);color:#d8e2df;background:rgba(255,163,63,.07);font-size:11px}\n      #cot-industrial-showroom .is-detail{min-height:86px;padding:13px 16px 10px;border-bottom:1px solid rgba(255,255,255,.07)}#cot-industrial-showroom .is-detail small{display:block;color:var(--is-accent);font-weight:800;letter-spacing:.1em}#cot-industrial-showroom .is-detail strong{display:block;margin-top:3px;color:#fff;font-size:15px}#cot-industrial-showroom .is-detail p{margin:4px 0 0;color:#aebcbb}\n      #cot-industrial-showroom .is-hotspot-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;padding:10px 12px}\n      #cot-industrial-showroom .is-hotspot-card{min-width:0;min-height:54px;padding:7px 5px;border:1px solid rgba(255,255,255,.12);border-radius:10px;color:#b7c3c2;background:rgba(255,255,255,.035);cursor:pointer}#cot-industrial-showroom .is-hotspot-card span{display:block;color:var(--is-accent);font-weight:900}#cot-industrial-showroom .is-hotspot-card[aria-pressed=true]{border-color:rgba(255,163,63,.64);color:#fff;background:rgba(255,163,63,.12)}\n      #cot-industrial-showroom .is-section-label{padding:0 14px;color:#748687;font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}\n      #cot-industrial-showroom .is-variants{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;padding:7px 12px 10px}\n      #cot-industrial-showroom .is-variant{min-width:0;min-height:44px;padding:6px;border:1px solid rgba(255,255,255,.12);border-radius:9px;color:#adbbba;background:#151d20;cursor:pointer;font-size:10px}#cot-industrial-showroom .is-variant[aria-pressed=true]{border-color:var(--is-cyan);color:#071113;background:var(--is-cyan);font-weight:800}\n      #cot-industrial-showroom .is-actions{display:flex;gap:6px;padding:10px 12px 12px;border-top:1px solid rgba(255,255,255,.07)}#cot-industrial-showroom .is-actions button{min-height:44px;padding:7px 10px;border:1px solid rgba(255,255,255,.14);border-radius:9px;color:#e9f0ef;background:#182124;cursor:pointer}#cot-industrial-showroom .is-actions button:first-child{flex:1}#cot-industrial-showroom .is-actions button[aria-pressed=true]{border-color:rgba(255,163,63,.5);color:var(--is-accent)}#cot-industrial-showroom .is-actions button:disabled{opacity:.42;cursor:not-allowed}\n      #cot-industrial-showroom .is-status{padding:0 14px 11px;color:#758788;font-size:10px}#cot-industrial-showroom button:focus-visible,#cot-industrial-hotspots button:focus-visible{outline:2px solid #fff;outline-offset:2px}\n      #cot-industrial-hotspots{position:fixed;z-index:100003;inset:0;pointer-events:none;font:800 11px/1 Inter,ui-sans-serif,system-ui,sans-serif}\n      #cot-industrial-hotspots .is-marker{position:absolute;left:0;top:0;display:flex;align-items:center;gap:7px;min-width:44px;min-height:44px;padding:0 10px 0 0;border:0;border-radius:999px;color:#071113;background:rgba(232,244,241,.92);box-shadow:0 10px 28px rgba(0,0,0,.38);cursor:pointer;pointer-events:auto;transform:translate3d(-200px,-200px,0);transition:opacity .16s ease,transform .16s ease}#cot-industrial-hotspots .is-marker[hidden]{display:none}#cot-industrial-hotspots .is-marker b{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;color:#081011;background:var(--is-accent,#ffa33f);font-size:12px}#cot-industrial-hotspots .is-marker[aria-pressed=true]{color:#fff;background:rgba(12,18,20,.94);box-shadow:0 0 0 2px #ffa33f,0 12px 34px rgba(0,0,0,.5)}\n      html[data-cot-industrial-showroom=true] .cot-studio .dock{display:none!important}\n      @media(max-width:640px){#cot-industrial-showroom{left:8px;right:8px;top:auto;bottom:8px;width:auto;max-height:43vh;overflow:auto;border-radius:16px}#cot-industrial-showroom .is-head{padding:10px 12px 8px}#cot-industrial-showroom h1{margin-top:6px;font-size:17px}#cot-industrial-showroom .is-sub,#cot-industrial-showroom .is-proof{display:none}#cot-industrial-showroom .is-detail{min-height:65px;padding:8px 12px 7px}#cot-industrial-showroom .is-detail p{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}#cot-industrial-showroom .is-hotspot-list{padding:7px 8px 6px}#cot-industrial-showroom .is-hotspot-card{min-height:48px}#cot-industrial-showroom .is-section-label{display:none}#cot-industrial-showroom .is-variants{padding:0 8px 7px}#cot-industrial-showroom .is-actions{padding:7px 8px 8px}#cot-industrial-showroom .is-status{display:none}#cot-industrial-hotspots .is-marker{width:44px;padding:0}#cot-industrial-hotspots .is-marker span{display:none}}\n      @media(prefers-reduced-motion:reduce){#cot-industrial-showroom,#cot-industrial-showroom *,#cot-industrial-hotspots .is-marker{animation:none!important;transition-duration:0s!important;scroll-behavior:auto!important;backdrop-filter:none!important}}\n    \n    \n      ATLAS / FIELD SYSTEMSPROGRAMMATIC PROTOTYPE\n      ATLAS INSPECTION ROVER\n      工业巡检设备概念展示 · 复用同一 Studio 渲染、镜头与后期管线\n      程序化资产 · Prototype / L2 · 非商业生产模型 · 0 个外部 3D 模型\n    \n    OVERVIEW可维护的工业巡检平台选择热点查看构造层级，或切换材料验证同一几何的产品表达。\n    \n      01传感系统02能源模块03全地形驱动\n    \n    Material variants · V 循环\n    \n      石墨现场版救援橙极地维护版\n    \n    返回全景 · Esc转台 关闭\n    同一 Studio 场景内挂载 · 0 坦克 actor · 1–3 热点 / V 材质 / Esc 全景",
+      "detailText": "OVERVIEW可维护的工业巡检平台选择热点查看构造层级，或切换材料验证同一几何的产品表达。",
+      "provenanceText": "程序化资产 · Prototype / L2 · 非商业生产模型 · 0 个外部 3D 模型",
+      "capabilityInstalled": false,
+      "labInstalled": false,
+      "labPanel": false,
+      "capabilityPanel": false
+    },
+    "control": {
+      "tagName": "BUTTON",
+      "text": "石墨现场版",
+      "tabIndex": 0,
+      "disabled": false,
+      "ariaPressed": "true",
+      "visible": true,
+      "rect": {
+        "left": 31,
+        "right": 142.328125,
+        "top": 420.1875,
+        "bottom": 464.1875,
+        "width": 111.328125,
+        "height": 44
+      },
+      "animationDuration": "0s",
+      "transitionDuration": "0s"
+    }
+  },
+  "hotspotRows": [
+    {
+      "id": "sensor-system",
+      "hotspot": {
+        "id": "sensor-system",
+        "label": "传感系统",
+        "targetPartId": "sensor-system",
+        "cameraPresetId": "sensor-system"
+      },
+      "preset": {
+        "id": "sensor-system",
+        "pos": [
+          35.2,
+          9.09,
+          -76.3
+        ],
+        "lookAt": [
+          30,
+          7.29,
+          -81.45
+        ],
+        "fov": 30
+      },
+      "selectedSubjectId": "atlas-inspection-rover",
+      "selectedPartId": "sensor-system",
+      "selectedHotspotId": "sensor-system",
+      "activeCameraPresetId": "sensor-system",
+      "camera": {
+        "pos": [
+          35.2,
+          9.09,
+          -76.3
+        ],
+        "lookAt": [
+          21.4,
+          4.31,
+          -89.97
+        ],
+        "fov": 30
+      },
+      "detailText": "01 / SENSOR ARRAY传感系统双目测距、环形 LiDAR 与状态灯构成可更换的巡检感知头。",
+      "control": {
+        "tagName": "BUTTON",
+        "text": "01传感系统",
+        "tabIndex": 0,
+        "disabled": false,
+        "ariaPressed": "true",
+        "visible": true,
+        "rect": {
+          "left": 31,
+          "right": 142.328125,
+          "top": 334.6875,
+          "bottom": 388.6875,
+          "width": 111.328125,
+          "height": 54
+        },
+        "animationDuration": "0s",
+        "transitionDuration": "0s"
+      }
+    },
+    {
+      "id": "energy-module",
+      "hotspot": {
+        "id": "energy-module",
+        "label": "能源模块",
+        "targetPartId": "energy-module",
+        "cameraPresetId": "energy-module"
+      },
+      "preset": {
+        "id": "energy-module",
+        "pos": [
+          24.4,
+          7.59,
+          -83.9
+        ],
+        "lookAt": [
+          28.95,
+          6.1899999999999995,
+          -82.45
+        ],
+        "fov": 31
+      },
+      "selectedSubjectId": "atlas-inspection-rover",
+      "selectedPartId": "energy-module",
+      "selectedHotspotId": "energy-module",
+      "activeCameraPresetId": "energy-module",
+      "camera": {
+        "pos": [
+          24.4,
+          7.59,
+          -83.9
+        ],
+        "lookAt": [
+          42.69,
+          1.96,
+          -78.07
+        ],
+        "fov": 31
+      },
+      "detailText": "02 / ENERGY PACK能源模块侧抽式电池盒与热管理鳍片，强调现场快速维护路径。",
+      "control": {
+        "tagName": "BUTTON",
+        "text": "02能源模块",
+        "tabIndex": 0,
+        "disabled": false,
+        "ariaPressed": "true",
+        "visible": true,
+        "rect": {
+          "left": 148.328125,
+          "right": 259.65625,
+          "top": 315.84375,
+          "bottom": 369.84375,
+          "width": 111.328125,
+          "height": 54
+        },
+        "animationDuration": "0s",
+        "transitionDuration": "0s"
+      }
+    },
+    {
+      "id": "all-terrain-drive",
+      "hotspot": {
+        "id": "all-terrain-drive",
+        "label": "全地形驱动",
+        "targetPartId": "all-terrain-drive",
+        "cameraPresetId": "all-terrain-drive"
+      },
+      "preset": {
+        "id": "all-terrain-drive",
+        "pos": [
+          35.4,
+          6.59,
+          -77.35
+        ],
+        "lookAt": [
+          31.35,
+          5.54,
+          -81.05
+        ],
+        "fov": 32
+      },
+      "selectedSubjectId": "atlas-inspection-rover",
+      "selectedPartId": "all-terrain-drive",
+      "selectedHotspotId": "all-terrain-drive",
+      "activeCameraPresetId": "all-terrain-drive",
+      "camera": {
+        "pos": [
+          35.4,
+          6.59,
+          -77.35
+        ],
+        "lookAt": [
+          20.9,
+          2.83,
+          -90.6
+        ],
+        "fov": 32
+      },
+      "detailText": "03 / DRIVE SYSTEM全地形驱动四轮独立悬挂、宽胎与高离地底盘，为复杂厂区路面保留通过性。",
+      "control": {
+        "tagName": "BUTTON",
+        "text": "03全地形驱动",
+        "tabIndex": 0,
+        "disabled": false,
+        "ariaPressed": "true",
+        "visible": true,
+        "rect": {
+          "left": 265.65625,
+          "right": 377,
+          "top": 334.6875,
+          "bottom": 388.6875,
+          "width": 111.34375,
+          "height": 54
+        },
+        "animationDuration": "0s",
+        "transitionDuration": "0s"
+      }
+    }
+  ],
+  "keyboard": {
+    "hotspotSelector": "#cot-industrial-showroom [data-hotspot-card=\"energy-module\"]",
+    "variantSelector": "#cot-industrial-showroom [data-variant=\"rescue-orange\"]",
+    "hotspotControl": {
+      "tagName": "BUTTON",
+      "text": "02能源模块",
+      "tabIndex": 0,
+      "disabled": false,
+      "ariaPressed": "false",
+      "visible": true,
+      "rect": {
+        "left": 148.328125,
+        "right": 259.65625,
+        "top": 334.6875,
+        "bottom": 388.6875,
+        "width": 111.328125,
+        "height": 54
+      },
+      "animationDuration": "0s",
+      "transitionDuration": "0s"
+    },
+    "variantControl": {
+      "tagName": "BUTTON",
+      "text": "救援橙",
+      "tabIndex": 0,
+      "disabled": false,
+      "ariaPressed": "false",
+      "visible": true,
+      "rect": {
+        "left": 148.328125,
+        "right": 259.65625,
+        "top": 420.1875,
+        "bottom": 464.1875,
+        "width": 111.328125,
+        "height": 44
+      },
+      "animationDuration": "0s",
+      "transitionDuration": "0s"
+    },
+    "afterHotspot": {
+      "present": true,
+      "version": 1,
+      "status": "ready",
+      "auditError": null,
+      "timeOrigin": 1787545915662,
+      "subject": {
+        "id": "atlas-inspection-rover",
+        "kind": "industrial-equipment",
+        "rootName": "atlas-inspection-rover"
+      },
+      "provenance": {
+        "origin": "procedural",
+        "qualityClaim": "Prototype / L2 — procedural presentation asset; not a commercial production model",
+        "sourceModule": "showcase/industrial-showroom-asset.js",
+        "externalModelCount": 0,
+        "generatedMeshCount": 59
+      },
+      "variants": [
+        {
+          "id": "graphite-field",
+          "label": "石墨现场版",
+          "targets": [
+            "body",
+            "secondary",
+            "panel",
+            "accent",
+            "hub"
+          ]
+        },
+        {
+          "id": "rescue-orange",
+          "label": "救援橙",
+          "targets": [
+            "body",
+            "secondary",
+            "panel",
+            "accent",
+            "hub"
+          ]
+        },
+        {
+          "id": "arctic-service",
+          "label": "极地维护版",
+          "targets": [
+            "body",
+            "secondary",
+            "panel",
+            "accent",
+            "hub"
+          ]
+        }
+      ],
+      "variantIds": [
+        "graphite-field",
+        "rescue-orange",
+        "arctic-service"
+      ],
+      "hotspots": [
+        {
+          "id": "sensor-system",
+          "label": "传感系统",
+          "targetPartId": "sensor-system",
+          "cameraPresetId": "sensor-system"
+        },
+        {
+          "id": "energy-module",
+          "label": "能源模块",
+          "targetPartId": "energy-module",
+          "cameraPresetId": "energy-module"
+        },
+        {
+          "id": "all-terrain-drive",
+          "label": "全地形驱动",
+          "targetPartId": "all-terrain-drive",
+          "cameraPresetId": "all-terrain-drive"
+        }
+      ],
+      "hotspotIds": [
+        "sensor-system",
+        "energy-module",
+        "all-terrain-drive"
+      ],
+      "cameraPresets": [
+        {
+          "id": "sensor-system",
+          "pos": [
+            35.2,
+            9.09,
+            -76.3
+          ],
+          "lookAt": [
+            30,
+            7.29,
+            -81.45
+          ],
+          "fov": 30
+        },
+        {
+          "id": "energy-module",
+          "pos": [
+            24.4,
+            7.59,
+            -83.9
+          ],
+          "lookAt": [
+            28.95,
+            6.1899999999999995,
+            -82.45
+          ],
+          "fov": 31
+        },
+        {
+          "id": "all-terrain-drive",
+          "pos": [
+            35.4,
+            6.59,
+            -77.35
+          ],
+          "lookAt": [
+            31.35,
+            5.54,
+            -81.05
+          ],
+          "fov": 32
+        }
+      ],
+      "selectedSubjectId": "atlas-inspection-rover",
+      "selectedPartId": "energy-module",
+      "selectedVariantId": "graphite-field",
+      "selectedHotspotId": "energy-module",
+      "activeCameraPresetId": "energy-module",
+      "reducedMotion": false,
+      "motion": {
+        "active": false,
+        "durationMs": 680,
+        "autoRotate": false
+      },
+      "camera": {
+        "pos": [
+          24.4,
+          7.59,
+          -83.9
+        ],
+        "lookAt": [
+          42.69,
+          1.96,
+          -78.07
+        ],
+        "fov": 31
+      },
+      "materialFingerprint": "fnv1a-b9cd0395",
+      "renderedMeshCount": 59,
+      "tankActorCount": 0,
+      "subjectRootVisible": true,
+      "panelPresent": true,
+      "panelText": "#cot-industrial-showroom{--is-accent:#ffa33f;--is-cyan:#8feaff;position:fixed;z-index:100004;left:18px;top:18px;width:min(370px,calc(100vw - 36px));overflow:hidden;border:1px solid rgba(255,255,255,.14);border-radius:18px;color:#edf4f3;background:linear-gradient(155deg,rgba(10,15,17,.96),rgba(7,11,13,.91));box-shadow:0 28px 90px rgba(0,0,0,.56);backdrop-filter:blur(18px);font:13px/1.45 Inter,ui-sans-serif,system-ui,sans-serif}\n      #cot-industrial-showroom *{box-sizing:border-box}#cot-industrial-showroom button{font:inherit;touch-action:manipulation}\n      #cot-industrial-showroom .is-head{padding:15px 16px 13px;border-bottom:1px solid rgba(255,255,255,.08)}\n      #cot-industrial-showroom .is-kicker{display:flex;align-items:center;justify-content:space-between;gap:10px;color:#9caeae;font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}\n      #cot-industrial-showroom .is-badge{padding:4px 7px;border:1px solid rgba(143,234,255,.28);border-radius:999px;color:var(--is-cyan);letter-spacing:.08em;background:rgba(143,234,255,.07)}\n      #cot-industrial-showroom h1{margin:10px 0 4px;color:#fff;font-size:20px;line-height:1.05;letter-spacing:.015em}#cot-industrial-showroom .is-sub{margin:0;color:#a9b8b8}\n      #cot-industrial-showroom .is-proof{margin-top:11px;padding:8px 10px;border-left:3px solid var(--is-accent);color:#d8e2df;background:rgba(255,163,63,.07);font-size:11px}\n      #cot-industrial-showroom .is-detail{min-height:86px;padding:13px 16px 10px;border-bottom:1px solid rgba(255,255,255,.07)}#cot-industrial-showroom .is-detail small{display:block;color:var(--is-accent);font-weight:800;letter-spacing:.1em}#cot-industrial-showroom .is-detail strong{display:block;margin-top:3px;color:#fff;font-size:15px}#cot-industrial-showroom .is-detail p{margin:4px 0 0;color:#aebcbb}\n      #cot-industrial-showroom .is-hotspot-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;padding:10px 12px}\n      #cot-industrial-showroom .is-hotspot-card{min-width:0;min-height:54px;padding:7px 5px;border:1px solid rgba(255,255,255,.12);border-radius:10px;color:#b7c3c2;background:rgba(255,255,255,.035);cursor:pointer}#cot-industrial-showroom .is-hotspot-card span{display:block;color:var(--is-accent);font-weight:900}#cot-industrial-showroom .is-hotspot-card[aria-pressed=true]{border-color:rgba(255,163,63,.64);color:#fff;background:rgba(255,163,63,.12)}\n      #cot-industrial-showroom .is-section-label{padding:0 14px;color:#748687;font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}\n      #cot-industrial-showroom .is-variants{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;padding:7px 12px 10px}\n      #cot-industrial-showroom .is-variant{min-width:0;min-height:44px;padding:6px;border:1px solid rgba(255,255,255,.12);border-radius:9px;color:#adbbba;background:#151d20;cursor:pointer;font-size:10px}#cot-industrial-showroom .is-variant[aria-pressed=true]{border-color:var(--is-cyan);color:#071113;background:var(--is-cyan);font-weight:800}\n      #cot-industrial-showroom .is-actions{display:flex;gap:6px;padding:10px 12px 12px;border-top:1px solid rgba(255,255,255,.07)}#cot-industrial-showroom .is-actions button{min-height:44px;padding:7px 10px;border:1px solid rgba(255,255,255,.14);border-radius:9px;color:#e9f0ef;background:#182124;cursor:pointer}#cot-industrial-showroom .is-actions button:first-child{flex:1}#cot-industrial-showroom .is-actions button[aria-pressed=true]{border-color:rgba(255,163,63,.5);color:var(--is-accent)}#cot-industrial-showroom .is-actions button:disabled{opacity:.42;cursor:not-allowed}\n      #cot-industrial-showroom .is-status{padding:0 14px 11px;color:#758788;font-size:10px}#cot-industrial-showroom button:focus-visible,#cot-industrial-hotspots button:focus-visible{outline:2px solid #fff;outline-offset:2px}\n      #cot-industrial-hotspots{position:fixed;z-index:100003;inset:0;pointer-events:none;font:800 11px/1 Inter,ui-sans-serif,system-ui,sans-serif}\n      #cot-industrial-hotspots .is-marker{position:absolute;left:0;top:0;display:flex;align-items:center;gap:7px;min-width:44px;min-height:44px;padding:0 10px 0 0;border:0;border-radius:999px;color:#071113;background:rgba(232,244,241,.92);box-shadow:0 10px 28px rgba(0,0,0,.38);cursor:pointer;pointer-events:auto;transform:translate3d(-200px,-200px,0);transition:opacity .16s ease,transform .16s ease}#cot-industrial-hotspots .is-marker[hidden]{display:none}#cot-industrial-hotspots .is-marker b{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;color:#081011;background:var(--is-accent,#ffa33f);font-size:12px}#cot-industrial-hotspots .is-marker[aria-pressed=true]{color:#fff;background:rgba(12,18,20,.94);box-shadow:0 0 0 2px #ffa33f,0 12px 34px rgba(0,0,0,.5)}\n      html[data-cot-industrial-showroom=true] .cot-studio .dock{display:none!important}\n      @media(max-width:640px){#cot-industrial-showroom{left:8px;right:8px;top:auto;bottom:8px;width:auto;max-height:43vh;overflow:auto;border-radius:16px}#cot-industrial-showroom .is-head{padding:10px 12px 8px}#cot-industrial-showroom h1{margin-top:6px;font-size:17px}#cot-industrial-showroom .is-sub,#cot-industrial-showroom .is-proof{display:none}#cot-industrial-showroom .is-detail{min-height:65px;padding:8px 12px 7px}#cot-industrial-showroom .is-detail p{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}#cot-industrial-showroom .is-hotspot-list{padding:7px 8px 6px}#cot-industrial-showroom .is-hotspot-card{min-height:48px}#cot-industrial-showroom .is-section-label{display:none}#cot-industrial-showroom .is-variants{padding:0 8px 7px}#cot-industrial-showroom .is-actions{padding:7px 8px 8px}#cot-industrial-showroom .is-status{display:none}#cot-industrial-hotspots .is-marker{width:44px;padding:0}#cot-industrial-hotspots .is-marker span{display:none}}\n      @media(prefers-reduced-motion:reduce){#cot-industrial-showroom,#cot-industrial-showroom *,#cot-industrial-hotspots .is-marker{animation:none!important;transition-duration:0s!important;scroll-behavior:auto!important;backdrop-filter:none!important}}\n    \n    \n      ATLAS / FIELD SYSTEMSPROGRAMMATIC PROTOTYPE\n      ATLAS INSPECTION ROVER\n      工业巡检设备概念展示 · 复用同一 Studio 渲染、镜头与后期管线\n      程序化资产 · Prototype / L2 · 非商业生产模型 · 0 个外部 3D 模型\n    \n    02 / ENERGY PACK能源模块侧抽式电池盒与热管理鳍片，强调现场快速维护路径。\n    \n      01传感系统02能源模块03全地形驱动\n    \n    Material variants · V 循环\n    \n      石墨现场版救援橙极地维护版\n    \n    返回全景 · Esc转台 关闭\n    同一 Studio 场景内挂载 · 0 坦克 actor · 1–3 热点 / V 材质 / Esc 全景",
+      "detailText": "02 / ENERGY PACK能源模块侧抽式电池盒与热管理鳍片，强调现场快速维护路径。",
+      "provenanceText": "程序化资产 · Prototype / L2 · 非商业生产模型 · 0 个外部 3D 模型",
+      "capabilityInstalled": false,
+      "labInstalled": false,
+      "labPanel": false,
+      "capabilityPanel": false
+    },
+    "afterVariant": {
+      "present": true,
+      "version": 1,
+      "status": "ready",
+      "auditError": null,
+      "timeOrigin": 1787545915662,
+      "subject": {
+        "id": "atlas-inspection-rover",
+        "kind": "industrial-equipment",
+        "rootName": "atlas-inspection-rover"
+      },
+      "provenance": {
+        "origin": "procedural",
+        "qualityClaim": "Prototype / L2 — procedural presentation asset; not a commercial production model",
+        "sourceModule": "showcase/industrial-showroom-asset.js",
+        "externalModelCount": 0,
+        "generatedMeshCount": 59
+      },
+      "variants": [
+        {
+          "id": "graphite-field",
+          "label": "石墨现场版",
+          "targets": [
+            "body",
+            "secondary",
+            "panel",
+            "accent",
+            "hub"
+          ]
+        },
+        {
+          "id": "rescue-orange",
+          "label": "救援橙",
+          "targets": [
+            "body",
+            "secondary",
+            "panel",
+            "accent",
+            "hub"
+          ]
+        },
+        {
+          "id": "arctic-service",
+          "label": "极地维护版",
+          "targets": [
+            "body",
+            "secondary",
+            "panel",
+            "accent",
+            "hub"
+          ]
+        }
+      ],
+      "variantIds": [
+        "graphite-field",
+        "rescue-orange",
+        "arctic-service"
+      ],
+      "hotspots": [
+        {
+          "id": "sensor-system",
+          "label": "传感系统",
+          "targetPartId": "sensor-system",
+          "cameraPresetId": "sensor-system"
+        },
+        {
+          "id": "energy-module",
+          "label": "能源模块",
+          "targetPartId": "energy-module",
+          "cameraPresetId": "energy-module"
+        },
+        {
+          "id": "all-terrain-drive",
+          "label": "全地形驱动",
+          "targetPartId": "all-terrain-drive",
+          "cameraPresetId": "all-terrain-drive"
+        }
+      ],
+      "hotspotIds": [
+        "sensor-system",
+        "energy-module",
+        "all-terrain-drive"
+      ],
+      "cameraPresets": [
+        {
+          "id": "sensor-system",
+          "pos": [
+            35.2,
+            9.09,
+            -76.3
+          ],
+          "lookAt": [
+            30,
+            7.29,
+            -81.45
+          ],
+          "fov": 30
+        },
+        {
+          "id": "energy-module",
+          "pos": [
+            24.4,
+            7.59,
+            -83.9
+          ],
+          "lookAt": [
+            28.95,
+            6.1899999999999995,
+            -82.45
+          ],
+          "fov": 31
+        },
+        {
+          "id": "all-terrain-drive",
+          "pos": [
+            35.4,
+            6.59,
+            -77.35
+          ],
+          "lookAt": [
+            31.35,
+            5.54,
+            -81.05
+          ],
+          "fov": 32
+        }
+      ],
+      "selectedSubjectId": "atlas-inspection-rover",
+      "selectedPartId": "energy-module",
+      "selectedVariantId": "rescue-orange",
+      "selectedHotspotId": "energy-module",
+      "activeCameraPresetId": "energy-module",
+      "reducedMotion": false,
+      "motion": {
+        "active": false,
+        "durationMs": 680,
+        "autoRotate": false
+      },
+      "camera": {
+        "pos": [
+          24.4,
+          7.59,
+          -83.9
+        ],
+        "lookAt": [
+          42.69,
+          1.96,
+          -78.07
+        ],
+        "fov": 31
+      },
+      "materialFingerprint": "fnv1a-866a081c",
+      "renderedMeshCount": 59,
+      "tankActorCount": 0,
+      "subjectRootVisible": true,
+      "panelPresent": true,
+      "panelText": "#cot-industrial-showroom{--is-accent:#ffa33f;--is-cyan:#8feaff;position:fixed;z-index:100004;left:18px;top:18px;width:min(370px,calc(100vw - 36px));overflow:hidden;border:1px solid rgba(255,255,255,.14);border-radius:18px;color:#edf4f3;background:linear-gradient(155deg,rgba(10,15,17,.96),rgba(7,11,13,.91));box-shadow:0 28px 90px rgba(0,0,0,.56);backdrop-filter:blur(18px);font:13px/1.45 Inter,ui-sans-serif,system-ui,sans-serif}\n      #cot-industrial-showroom *{box-sizing:border-box}#cot-industrial-showroom button{font:inherit;touch-action:manipulation}\n      #cot-industrial-showroom .is-head{padding:15px 16px 13px;border-bottom:1px solid rgba(255,255,255,.08)}\n      #cot-industrial-showroom .is-kicker{display:flex;align-items:center;justify-content:space-between;gap:10px;color:#9caeae;font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}\n      #cot-industrial-showroom .is-badge{padding:4px 7px;border:1px solid rgba(143,234,255,.28);border-radius:999px;color:var(--is-cyan);letter-spacing:.08em;background:rgba(143,234,255,.07)}\n      #cot-industrial-showroom h1{margin:10px 0 4px;color:#fff;font-size:20px;line-height:1.05;letter-spacing:.015em}#cot-industrial-showroom .is-sub{margin:0;color:#a9b8b8}\n      #cot-industrial-showroom .is-proof{margin-top:11px;padding:8px 10px;border-left:3px solid var(--is-accent);color:#d8e2df;background:rgba(255,163,63,.07);font-size:11px}\n      #cot-industrial-showroom .is-detail{min-height:86px;padding:13px 16px 10px;border-bottom:1px solid rgba(255,255,255,.07)}#cot-industrial-showroom .is-detail small{display:block;color:var(--is-accent);font-weight:800;letter-spacing:.1em}#cot-industrial-showroom .is-detail strong{display:block;margin-top:3px;color:#fff;font-size:15px}#cot-industrial-showroom .is-detail p{margin:4px 0 0;color:#aebcbb}\n      #cot-industrial-showroom .is-hotspot-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;padding:10px 12px}\n      #cot-industrial-showroom .is-hotspot-card{min-width:0;min-height:54px;padding:7px 5px;border:1px solid rgba(255,255,255,.12);border-radius:10px;color:#b7c3c2;background:rgba(255,255,255,.035);cursor:pointer}#cot-industrial-showroom .is-hotspot-card span{display:block;color:var(--is-accent);font-weight:900}#cot-industrial-showroom .is-hotspot-card[aria-pressed=true]{border-color:rgba(255,163,63,.64);color:#fff;background:rgba(255,163,63,.12)}\n      #cot-industrial-showroom .is-section-label{padding:0 14px;color:#748687;font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}\n      #cot-industrial-showroom .is-variants{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;padding:7px 12px 10px}\n      #cot-industrial-showroom .is-variant{min-width:0;min-height:44px;padding:6px;border:1px solid rgba(255,255,255,.12);border-radius:9px;color:#adbbba;background:#151d20;cursor:pointer;font-size:10px}#cot-industrial-showroom .is-variant[aria-pressed=true]{border-color:var(--is-cyan);color:#071113;background:var(--is-cyan);font-weight:800}\n      #cot-industrial-showroom .is-actions{display:flex;gap:6px;padding:10px 12px 12px;border-top:1px solid rgba(255,255,255,.07)}#cot-industrial-showroom .is-actions button{min-height:44px;padding:7px 10px;border:1px solid rgba(255,255,255,.14);border-radius:9px;color:#e9f0ef;background:#182124;cursor:pointer}#cot-industrial-showroom .is-actions button:first-child{flex:1}#cot-industrial-showroom .is-actions button[aria-pressed=true]{border-color:rgba(255,163,63,.5);color:var(--is-accent)}#cot-industrial-showroom .is-actions button:disabled{opacity:.42;cursor:not-allowed}\n      #cot-industrial-showroom .is-status{padding:0 14px 11px;color:#758788;font-size:10px}#cot-industrial-showroom button:focus-visible,#cot-industrial-hotspots button:focus-visible{outline:2px solid #fff;outline-offset:2px}\n      #cot-industrial-hotspots{position:fixed;z-index:100003;inset:0;pointer-events:none;font:800 11px/1 Inter,ui-sans-serif,system-ui,sans-serif}\n      #cot-industrial-hotspots .is-marker{position:absolute;left:0;top:0;display:flex;align-items:center;gap:7px;min-width:44px;min-height:44px;padding:0 10px 0 0;border:0;border-radius:999px;color:#071113;background:rgba(232,244,241,.92);box-shadow:0 10px 28px rgba(0,0,0,.38);cursor:pointer;pointer-events:auto;transform:translate3d(-200px,-200px,0);transition:opacity .16s ease,transform .16s ease}#cot-industrial-hotspots .is-marker[hidden]{display:none}#cot-industrial-hotspots .is-marker b{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;color:#081011;background:var(--is-accent,#ffa33f);font-size:12px}#cot-industrial-hotspots .is-marker[aria-pressed=true]{color:#fff;background:rgba(12,18,20,.94);box-shadow:0 0 0 2px #ffa33f,0 12px 34px rgba(0,0,0,.5)}\n      html[data-cot-industrial-showroom=true] .cot-studio .dock{display:none!important}\n      @media(max-width:640px){#cot-industrial-showroom{left:8px;right:8px;top:auto;bottom:8px;width:auto;max-height:43vh;overflow:auto;border-radius:16px}#cot-industrial-showroom .is-head{padding:10px 12px 8px}#cot-industrial-showroom h1{margin-top:6px;font-size:17px}#cot-industrial-showroom .is-sub,#cot-industrial-showroom .is-proof{display:none}#cot-industrial-showroom .is-detail{min-height:65px;padding:8px 12px 7px}#cot-industrial-showroom .is-detail p{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}#cot-industrial-showroom .is-hotspot-list{padding:7px 8px 6px}#cot-industrial-showroom .is-hotspot-card{min-height:48px}#cot-industrial-showroom .is-section-label{display:none}#cot-industrial-showroom .is-variants{padding:0 8px 7px}#cot-industrial-showroom .is-actions{padding:7px 8px 8px}#cot-industrial-showroom .is-status{display:none}#cot-industrial-hotspots .is-marker{width:44px;padding:0}#cot-industrial-hotspots .is-marker span{display:none}}\n      @media(prefers-reduced-motion:reduce){#cot-industrial-showroom,#cot-industrial-showroom *,#cot-industrial-hotspots .is-marker{animation:none!important;transition-duration:0s!important;scroll-behavior:auto!important;backdrop-filter:none!important}}\n    \n    \n      ATLAS / FIELD SYSTEMSPROGRAMMATIC PROTOTYPE\n      ATLAS INSPECTION ROVER\n      工业巡检设备概念展示 · 复用同一 Studio 渲染、镜头与后期管线\n      程序化资产 · Prototype / L2 · 非商业生产模型 · 0 个外部 3D 模型\n    \n    02 / ENERGY PACK能源模块侧抽式电池盒与热管理鳍片，强调现场快速维护路径。\n    \n      01传感系统02能源模块03全地形驱动\n    \n    Material variants · V 循环\n    \n      石墨现场版救援橙极地维护版\n    \n    返回全景 · Esc转台 关闭\n    同一 Studio 场景内挂载 · 0 坦克 actor · 1–3 热点 / V 材质 / Esc 全景",
+      "detailText": "02 / ENERGY PACK能源模块侧抽式电池盒与热管理鳍片，强调现场快速维护路径。",
+      "provenanceText": "程序化资产 · Prototype / L2 · 非商业生产模型 · 0 个外部 3D 模型",
+      "capabilityInstalled": false,
+      "labInstalled": false,
+      "labPanel": false,
+      "capabilityPanel": false
+    },
+    "afterEscape": {
+      "present": true,
+      "version": 1,
+      "status": "ready",
+      "auditError": null,
+      "timeOrigin": 1787545915662,
+      "subject": {
+        "id": "atlas-inspection-rover",
+        "kind": "industrial-equipment",
+        "rootName": "atlas-inspection-rover"
+      },
+      "provenance": {
+        "origin": "procedural",
+        "qualityClaim": "Prototype / L2 — procedural presentation asset; not a commercial production model",
+        "sourceModule": "showcase/industrial-showroom-asset.js",
+        "externalModelCount": 0,
+        "generatedMeshCount": 59
+      },
+      "variants": [
+        {
+          "id": "graphite-field",
+          "label": "石墨现场版",
+          "targets": [
+            "body",
+            "secondary",
+            "panel",
+            "accent",
+            "hub"
+          ]
+        },
+        {
+          "id": "rescue-orange",
+          "label": "救援橙",
+          "targets": [
+            "body",
+            "secondary",
+            "panel",
+            "accent",
+            "hub"
+          ]
+        },
+        {
+          "id": "arctic-service",
+          "label": "极地维护版",
+          "targets": [
+            "body",
+            "secondary",
+            "panel",
+            "accent",
+            "hub"
+          ]
+        }
+      ],
+      "variantIds": [
+        "graphite-field",
+        "rescue-orange",
+        "arctic-service"
+      ],
+      "hotspots": [
+        {
+          "id": "sensor-system",
+          "label": "传感系统",
+          "targetPartId": "sensor-system",
+          "cameraPresetId": "sensor-system"
+        },
+        {
+          "id": "energy-module",
+          "label": "能源模块",
+          "targetPartId": "energy-module",
+          "cameraPresetId": "energy-module"
+        },
+        {
+          "id": "all-terrain-drive",
+          "label": "全地形驱动",
+          "targetPartId": "all-terrain-drive",
+          "cameraPresetId": "all-terrain-drive"
+        }
+      ],
+      "hotspotIds": [
+        "sensor-system",
+        "energy-module",
+        "all-terrain-drive"
+      ],
+      "cameraPresets": [
+        {
+          "id": "sensor-system",
+          "pos": [
+            35.2,
+            9.09,
+            -76.3
+          ],
+          "lookAt": [
+            30,
+            7.29,
+            -81.45
+          ],
+          "fov": 30
+        },
+        {
+          "id": "energy-module",
+          "pos": [
+            24.4,
+            7.59,
+            -83.9
+          ],
+          "lookAt": [
+            28.95,
+            6.1899999999999995,
+            -82.45
+          ],
+          "fov": 31
+        },
+        {
+          "id": "all-terrain-drive",
+          "pos": [
+            35.4,
+            6.59,
+            -77.35
+          ],
+          "lookAt": [
+            31.35,
+            5.54,
+            -81.05
+          ],
+          "fov": 32
+        }
+      ],
+      "selectedSubjectId": "atlas-inspection-rover",
+      "selectedVariantId": "rescue-orange",
+      "activeCameraPresetId": "overview",
+      "reducedMotion": false,
+      "motion": {
+        "active": true,
+        "durationMs": 680,
+        "autoRotate": false
+      },
+      "camera": {
+        "pos": [
+          24.4,
+          7.59,
+          -83.9
+        ],
+        "lookAt": [
+          42.69,
+          1.96,
+          -78.07
+        ],
+        "fov": 31
+      },
+      "materialFingerprint": "fnv1a-866a081c",
+      "renderedMeshCount": 59,
+      "tankActorCount": 0,
+      "subjectRootVisible": true,
+      "panelPresent": true,
+      "panelText": "#cot-industrial-showroom{--is-accent:#ffa33f;--is-cyan:#8feaff;position:fixed;z-index:100004;left:18px;top:18px;width:min(370px,calc(100vw - 36px));overflow:hidden;border:1px solid rgba(255,255,255,.14);border-radius:18px;color:#edf4f3;background:linear-gradient(155deg,rgba(10,15,17,.96),rgba(7,11,13,.91));box-shadow:0 28px 90px rgba(0,0,0,.56);backdrop-filter:blur(18px);font:13px/1.45 Inter,ui-sans-serif,system-ui,sans-serif}\n      #cot-industrial-showroom *{box-sizing:border-box}#cot-industrial-showroom button{font:inherit;touch-action:manipulation}\n      #cot-industrial-showroom .is-head{padding:15px 16px 13px;border-bottom:1px solid rgba(255,255,255,.08)}\n      #cot-industrial-showroom .is-kicker{display:flex;align-items:center;justify-content:space-between;gap:10px;color:#9caeae;font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}\n      #cot-industrial-showroom .is-badge{padding:4px 7px;border:1px solid rgba(143,234,255,.28);border-radius:999px;color:var(--is-cyan);letter-spacing:.08em;background:rgba(143,234,255,.07)}\n      #cot-industrial-showroom h1{margin:10px 0 4px;color:#fff;font-size:20px;line-height:1.05;letter-spacing:.015em}#cot-industrial-showroom .is-sub{margin:0;color:#a9b8b8}\n      #cot-industrial-showroom .is-proof{margin-top:11px;padding:8px 10px;border-left:3px solid var(--is-accent);color:#d8e2df;background:rgba(255,163,63,.07);font-size:11px}\n      #cot-industrial-showroom .is-detail{min-height:86px;padding:13px 16px 10px;border-bottom:1px solid rgba(255,255,255,.07)}#cot-industrial-showroom .is-detail small{display:block;color:var(--is-accent);font-weight:800;letter-spacing:.1em}#cot-industrial-showroom .is-detail strong{display:block;margin-top:3px;color:#fff;font-size:15px}#cot-industrial-showroom .is-detail p{margin:4px 0 0;color:#aebcbb}\n      #cot-industrial-showroom .is-hotspot-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;padding:10px 12px}\n      #cot-industrial-showroom .is-hotspot-card{min-width:0;min-height:54px;padding:7px 5px;border:1px solid rgba(255,255,255,.12);border-radius:10px;color:#b7c3c2;background:rgba(255,255,255,.035);cursor:pointer}#cot-industrial-showroom .is-hotspot-card span{display:block;color:var(--is-accent);font-weight:900}#cot-industrial-showroom .is-hotspot-card[aria-pressed=true]{border-color:rgba(255,163,63,.64);color:#fff;background:rgba(255,163,63,.12)}\n      #cot-industrial-showroom .is-section-label{padding:0 14px;color:#748687;font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}\n      #cot-industrial-showroom .is-variants{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;padding:7px 12px 10px}\n      #cot-industrial-showroom .is-variant{min-width:0;min-height:44px;padding:6px;border:1px solid rgba(255,255,255,.12);border-radius:9px;color:#adbbba;background:#151d20;cursor:pointer;font-size:10px}#cot-industrial-showroom .is-variant[aria-pressed=true]{border-color:var(--is-cyan);color:#071113;background:var(--is-cyan);font-weight:800}\n      #cot-industrial-showroom .is-actions{display:flex;gap:6px;padding:10px 12px 12px;border-top:1px solid rgba(255,255,255,.07)}#cot-industrial-showroom .is-actions button{min-height:44px;padding:7px 10px;border:1px solid rgba(255,255,255,.14);border-radius:9px;color:#e9f0ef;background:#182124;cursor:pointer}#cot-industrial-showroom .is-actions button:first-child{flex:1}#cot-industrial-showroom .is-actions button[aria-pressed=true]{border-color:rgba(255,163,63,.5);color:var(--is-accent)}#cot-industrial-showroom .is-actions button:disabled{opacity:.42;cursor:not-allowed}\n      #cot-industrial-showroom .is-status{padding:0 14px 11px;color:#758788;font-size:10px}#cot-industrial-showroom button:focus-visible,#cot-industrial-hotspots button:focus-visible{outline:2px solid #fff;outline-offset:2px}\n      #cot-industrial-hotspots{position:fixed;z-index:100003;inset:0;pointer-events:none;font:800 11px/1 Inter,ui-sans-serif,system-ui,sans-serif}\n      #cot-industrial-hotspots .is-marker{position:absolute;left:0;top:0;display:flex;align-items:center;gap:7px;min-width:44px;min-height:44px;padding:0 10px 0 0;border:0;border-radius:999px;color:#071113;background:rgba(232,244,241,.92);box-shadow:0 10px 28px rgba(0,0,0,.38);cursor:pointer;pointer-events:auto;transform:translate3d(-200px,-200px,0);transition:opacity .16s ease,transform .16s ease}#cot-industrial-hotspots .is-marker[hidden]{display:none}#cot-industrial-hotspots .is-marker b{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;color:#081011;background:var(--is-accent,#ffa33f);font-size:12px}#cot-industrial-hotspots .is-marker[aria-pressed=true]{color:#fff;background:rgba(12,18,20,.94);box-shadow:0 0 0 2px #ffa33f,0 12px 34px rgba(0,0,0,.5)}\n      html[data-cot-industrial-showroom=true] .cot-studio .dock{display:none!important}\n      @media(max-width:640px){#cot-industrial-showroom{left:8px;right:8px;top:auto;bottom:8px;width:auto;max-height:43vh;overflow:auto;border-radius:16px}#cot-industrial-showroom .is-head{padding:10px 12px 8px}#cot-industrial-showroom h1{margin-top:6px;font-size:17px}#cot-industrial-showroom .is-sub,#cot-industrial-showroom .is-proof{display:none}#cot-industrial-showroom .is-detail{min-height:65px;padding:8px 12px 7px}#cot-industrial-showroom .is-detail p{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}#cot-industrial-showroom .is-hotspot-list{padding:7px 8px 6px}#cot-industrial-showroom .is-hotspot-card{min-height:48px}#cot-industrial-showroom .is-section-label{display:none}#cot-industrial-showroom .is-variants{padding:0 8px 7px}#cot-industrial-showroom .is-actions{padding:7px 8px 8px}#cot-industrial-showroom .is-status{display:none}#cot-industrial-hotspots .is-marker{width:44px;padding:0}#cot-industrial-hotspots .is-marker span{display:none}}\n      @media(prefers-reduced-motion:reduce){#cot-industrial-showroom,#cot-industrial-showroom *,#cot-industrial-hotspots .is-marker{animation:none!important;transition-duration:0s!important;scroll-behavior:auto!important;backdrop-filter:none!important}}\n    \n    \n      ATLAS / FIELD SYSTEMSPROGRAMMATIC PROTOTYPE\n      ATLAS INSPECTION ROVER\n      工业巡检设备概念展示 · 复用同一 Studio 渲染、镜头与后期管线\n      程序化资产 · Prototype / L2 · 非商业生产模型 · 0 个外部 3D 模型\n    \n    OVERVIEW可维护的工业巡检平台选择热点查看构造层级，或切换材料验证同一几何的产品表达。\n    \n      01传感系统02能源模块03全地形驱动\n    \n    Material variants · V 循环\n    \n      石墨现场版救援橙极地维护版\n    \n    返回全景 · Esc转台 关闭\n    同一 Studio 场景内挂载 · 0 坦克 actor · 1–3 热点 / V 材质 / Esc 全景",
+      "detailText": "OVERVIEW可维护的工业巡检平台选择热点查看构造层级，或切换材料验证同一几何的产品表达。",
+      "provenanceText": "程序化资产 · Prototype / L2 · 非商业生产模型 · 0 个外部 3D 模型",
+      "capabilityInstalled": false,
+      "labInstalled": false,
+      "labPanel": false,
+      "capabilityPanel": false
+    }
+  },
+  "mobileLayout": {
+    "timeOrigin": 1787545915662,
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "scrollWidth": 390,
+    "maxTouchPoints": 5,
+    "coarsePointer": true,
+    "panel": {
+      "left": 8,
+      "right": 382,
+      "top": 505.6875,
+      "bottom": 836,
+      "width": 374,
+      "height": 330.3125
+    },
+    "canvas": {
+      "left": 0,
+      "right": 390,
+      "top": 0,
+      "bottom": 844,
+      "width": 390,
+      "height": 844
+    },
+    "controls": [
+      {
+        "selector": "#cot-industrial-showroom [data-variant=\"graphite-field\"]",
+        "visible": true,
+        "left": 17,
+        "right": 131.65625,
+        "top": 724,
+        "bottom": 768,
+        "width": 114.65625,
+        "height": 44
+      },
+      {
+        "selector": "#cot-industrial-showroom [data-variant=\"rescue-orange\"]",
+        "visible": true,
+        "left": 137.65625,
+        "right": 252.328125,
+        "top": 724,
+        "bottom": 768,
+        "width": 114.671875,
+        "height": 44
+      },
+      {
+        "selector": "#cot-industrial-showroom [data-variant=\"arctic-service\"]",
+        "visible": true,
+        "left": 258.328125,
+        "right": 372.984375,
+        "top": 724,
+        "bottom": 768,
+        "width": 114.65625,
+        "height": 44
+      },
+      {
+        "selector": "#cot-industrial-showroom [data-hotspot-card=\"sensor-system\"]",
+        "visible": true,
+        "left": 17,
+        "right": 131.65625,
+        "top": 664.3125,
+        "bottom": 718,
+        "width": 114.65625,
+        "height": 53.6875
+      },
+      {
+        "selector": "#cot-industrial-showroom [data-hotspot-card=\"energy-module\"]",
+        "visible": true,
+        "left": 137.65625,
+        "right": 252.328125,
+        "top": 664.3125,
+        "bottom": 718,
+        "width": 114.671875,
+        "height": 53.6875
+      },
+      {
+        "selector": "#cot-industrial-showroom [data-hotspot-card=\"all-terrain-drive\"]",
+        "visible": true,
+        "left": 258.328125,
+        "right": 372.984375,
+        "top": 664.3125,
+        "bottom": 718,
+        "width": 114.65625,
+        "height": 53.6875
+      }
+    ]
+  },
+  "mobileSelection": {
+    "present": true,
+    "version": 1,
+    "status": "ready",
+    "auditError": null,
+    "timeOrigin": 1787545915662,
+    "subject": {
+      "id": "atlas-inspection-rover",
+      "kind": "industrial-equipment",
+      "rootName": "atlas-inspection-rover"
+    },
+    "provenance": {
+      "origin": "procedural",
+      "qualityClaim": "Prototype / L2 — procedural presentation asset; not a commercial production model",
+      "sourceModule": "showcase/industrial-showroom-asset.js",
+      "externalModelCount": 0,
+      "generatedMeshCount": 59
+    },
+    "variants": [
+      {
+        "id": "graphite-field",
+        "label": "石墨现场版",
+        "targets": [
+          "body",
+          "secondary",
+          "panel",
+          "accent",
+          "hub"
+        ]
+      },
+      {
+        "id": "rescue-orange",
+        "label": "救援橙",
+        "targets": [
+          "body",
+          "secondary",
+          "panel",
+          "accent",
+          "hub"
+        ]
+      },
+      {
+        "id": "arctic-service",
+        "label": "极地维护版",
+        "targets": [
+          "body",
+          "secondary",
+          "panel",
+          "accent",
+          "hub"
+        ]
+      }
+    ],
+    "variantIds": [
+      "graphite-field",
+      "rescue-orange",
+      "arctic-service"
+    ],
+    "hotspots": [
+      {
+        "id": "sensor-system",
+        "label": "传感系统",
+        "targetPartId": "sensor-system",
+        "cameraPresetId": "sensor-system"
+      },
+      {
+        "id": "energy-module",
+        "label": "能源模块",
+        "targetPartId": "energy-module",
+        "cameraPresetId": "energy-module"
+      },
+      {
+        "id": "all-terrain-drive",
+        "label": "全地形驱动",
+        "targetPartId": "all-terrain-drive",
+        "cameraPresetId": "all-terrain-drive"
+      }
+    ],
+    "hotspotIds": [
+      "sensor-system",
+      "energy-module",
+      "all-terrain-drive"
+    ],
+    "cameraPresets": [
+      {
+        "id": "sensor-system",
+        "pos": [
+          35.2,
+          9.09,
+          -76.3
+        ],
+        "lookAt": [
+          30,
+          7.29,
+          -81.45
+        ],
+        "fov": 30
+      },
+      {
+        "id": "energy-module",
+        "pos": [
+          24.4,
+          7.59,
+          -83.9
+        ],
+        "lookAt": [
+          28.95,
+          6.1899999999999995,
+          -82.45
+        ],
+        "fov": 31
+      },
+      {
+        "id": "all-terrain-drive",
+        "pos": [
+          35.4,
+          6.59,
+          -77.35
+        ],
+        "lookAt": [
+          31.35,
+          5.54,
+          -81.05
+        ],
+        "fov": 32
+      }
+    ],
+    "selectedSubjectId": "atlas-inspection-rover",
+    "selectedPartId": "sensor-system",
+    "selectedVariantId": "rescue-orange",
+    "selectedHotspotId": "sensor-system",
+    "activeCameraPresetId": "sensor-system",
+    "reducedMotion": false,
+    "motion": {
+      "active": false,
+      "durationMs": 680,
+      "autoRotate": false
+    },
+    "camera": {
+      "pos": [
+        35.2,
+        9.09,
+        -76.3
+      ],
+      "lookAt": [
+        21.4,
+        4.31,
+        -89.97
+      ],
+      "fov": 30
+    },
+    "materialFingerprint": "fnv1a-866a081c",
+    "renderedMeshCount": 59,
+    "tankActorCount": 0,
+    "subjectRootVisible": true,
+    "panelPresent": true,
+    "panelText": "#cot-industrial-showroom{--is-accent:#ffa33f;--is-cyan:#8feaff;position:fixed;z-index:100004;left:18px;top:18px;width:min(370px,calc(100vw - 36px));overflow:hidden;border:1px solid rgba(255,255,255,.14);border-radius:18px;color:#edf4f3;background:linear-gradient(155deg,rgba(10,15,17,.96),rgba(7,11,13,.91));box-shadow:0 28px 90px rgba(0,0,0,.56);backdrop-filter:blur(18px);font:13px/1.45 Inter,ui-sans-serif,system-ui,sans-serif}\n      #cot-industrial-showroom *{box-sizing:border-box}#cot-industrial-showroom button{font:inherit;touch-action:manipulation}\n      #cot-industrial-showroom .is-head{padding:15px 16px 13px;border-bottom:1px solid rgba(255,255,255,.08)}\n      #cot-industrial-showroom .is-kicker{display:flex;align-items:center;justify-content:space-between;gap:10px;color:#9caeae;font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}\n      #cot-industrial-showroom .is-badge{padding:4px 7px;border:1px solid rgba(143,234,255,.28);border-radius:999px;color:var(--is-cyan);letter-spacing:.08em;background:rgba(143,234,255,.07)}\n      #cot-industrial-showroom h1{margin:10px 0 4px;color:#fff;font-size:20px;line-height:1.05;letter-spacing:.015em}#cot-industrial-showroom .is-sub{margin:0;color:#a9b8b8}\n      #cot-industrial-showroom .is-proof{margin-top:11px;padding:8px 10px;border-left:3px solid var(--is-accent);color:#d8e2df;background:rgba(255,163,63,.07);font-size:11px}\n      #cot-industrial-showroom .is-detail{min-height:86px;padding:13px 16px 10px;border-bottom:1px solid rgba(255,255,255,.07)}#cot-industrial-showroom .is-detail small{display:block;color:var(--is-accent);font-weight:800;letter-spacing:.1em}#cot-industrial-showroom .is-detail strong{display:block;margin-top:3px;color:#fff;font-size:15px}#cot-industrial-showroom .is-detail p{margin:4px 0 0;color:#aebcbb}\n      #cot-industrial-showroom .is-hotspot-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;padding:10px 12px}\n      #cot-industrial-showroom .is-hotspot-card{min-width:0;min-height:54px;padding:7px 5px;border:1px solid rgba(255,255,255,.12);border-radius:10px;color:#b7c3c2;background:rgba(255,255,255,.035);cursor:pointer}#cot-industrial-showroom .is-hotspot-card span{display:block;color:var(--is-accent);font-weight:900}#cot-industrial-showroom .is-hotspot-card[aria-pressed=true]{border-color:rgba(255,163,63,.64);color:#fff;background:rgba(255,163,63,.12)}\n      #cot-industrial-showroom .is-section-label{padding:0 14px;color:#748687;font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}\n      #cot-industrial-showroom .is-variants{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;padding:7px 12px 10px}\n      #cot-industrial-showroom .is-variant{min-width:0;min-height:44px;padding:6px;border:1px solid rgba(255,255,255,.12);border-radius:9px;color:#adbbba;background:#151d20;cursor:pointer;font-size:10px}#cot-industrial-showroom .is-variant[aria-pressed=true]{border-color:var(--is-cyan);color:#071113;background:var(--is-cyan);font-weight:800}\n      #cot-industrial-showroom .is-actions{display:flex;gap:6px;padding:10px 12px 12px;border-top:1px solid rgba(255,255,255,.07)}#cot-industrial-showroom .is-actions button{min-height:44px;padding:7px 10px;border:1px solid rgba(255,255,255,.14);border-radius:9px;color:#e9f0ef;background:#182124;cursor:pointer}#cot-industrial-showroom .is-actions button:first-child{flex:1}#cot-industrial-showroom .is-actions button[aria-pressed=true]{border-color:rgba(255,163,63,.5);color:var(--is-accent)}#cot-industrial-showroom .is-actions button:disabled{opacity:.42;cursor:not-allowed}\n      #cot-industrial-showroom .is-status{padding:0 14px 11px;color:#758788;font-size:10px}#cot-industrial-showroom button:focus-visible,#cot-industrial-hotspots button:focus-visible{outline:2px solid #fff;outline-offset:2px}\n      #cot-industrial-hotspots{position:fixed;z-index:100003;inset:0;pointer-events:none;font:800 11px/1 Inter,ui-sans-serif,system-ui,sans-serif}\n      #cot-industrial-hotspots .is-marker{position:absolute;left:0;top:0;display:flex;align-items:center;gap:7px;min-width:44px;min-height:44px;padding:0 10px 0 0;border:0;border-radius:999px;color:#071113;background:rgba(232,244,241,.92);box-shadow:0 10px 28px rgba(0,0,0,.38);cursor:pointer;pointer-events:auto;transform:translate3d(-200px,-200px,0);transition:opacity .16s ease,transform .16s ease}#cot-industrial-hotspots .is-marker[hidden]{display:none}#cot-industrial-hotspots .is-marker b{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;color:#081011;background:var(--is-accent,#ffa33f);font-size:12px}#cot-industrial-hotspots .is-marker[aria-pressed=true]{color:#fff;background:rgba(12,18,20,.94);box-shadow:0 0 0 2px #ffa33f,0 12px 34px rgba(0,0,0,.5)}\n      html[data-cot-industrial-showroom=true] .cot-studio .dock{display:none!important}\n      @media(max-width:640px){#cot-industrial-showroom{left:8px;right:8px;top:auto;bottom:8px;width:auto;max-height:43vh;overflow:auto;border-radius:16px}#cot-industrial-showroom .is-head{padding:10px 12px 8px}#cot-industrial-showroom h1{margin-top:6px;font-size:17px}#cot-industrial-showroom .is-sub,#cot-industrial-showroom .is-proof{display:none}#cot-industrial-showroom .is-detail{min-height:65px;padding:8px 12px 7px}#cot-industrial-showroom .is-detail p{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}#cot-industrial-showroom .is-hotspot-list{padding:7px 8px 6px}#cot-industrial-showroom .is-hotspot-card{min-height:48px}#cot-industrial-showroom .is-section-label{display:none}#cot-industrial-showroom .is-variants{padding:0 8px 7px}#cot-industrial-showroom .is-actions{padding:7px 8px 8px}#cot-industrial-showroom .is-status{display:none}#cot-industrial-hotspots .is-marker{width:44px;padding:0}#cot-industrial-hotspots .is-marker span{display:none}}\n      @media(prefers-reduced-motion:reduce){#cot-industrial-showroom,#cot-industrial-showroom *,#cot-industrial-hotspots .is-marker{animation:none!important;transition-duration:0s!important;scroll-behavior:auto!important;backdrop-filter:none!important}}\n    \n    \n      ATLAS / FIELD SYSTEMSPROGRAMMATIC PROTOTYPE\n      ATLAS INSPECTION ROVER\n      工业巡检设备概念展示 · 复用同一 Studio 渲染、镜头与后期管线\n      程序化资产 · Prototype / L2 · 非商业生产模型 · 0 个外部 3D 模型\n    \n    01 / SENSOR ARRAY传感系统双目测距、环形 LiDAR 与状态灯构成可更换的巡检感知头。\n    \n      01传感系统02能源模块03全地形驱动\n    \n    Material variants · V 循环\n    \n      石墨现场版救援橙极地维护版\n    \n    返回全景 · Esc转台 关闭\n    同一 Studio 场景内挂载 · 0 坦克 actor · 1–3 热点 / V 材质 / Esc 全景",
+    "detailText": "01 / SENSOR ARRAY传感系统双目测距、环形 LiDAR 与状态灯构成可更换的巡检感知头。",
+    "provenanceText": "程序化资产 · Prototype / L2 · 非商业生产模型 · 0 个外部 3D 模型",
+    "capabilityInstalled": false,
+    "labInstalled": false,
+    "labPanel": false,
+    "capabilityPanel": false
+  },
+  "reducedMotion": {
+    "timeOrigin": 1787545915662,
+    "matches": true,
+    "reachedMs": 131,
+    "first": {
+      "present": true,
+      "version": 1,
+      "status": "ready",
+      "auditError": null,
+      "timeOrigin": 1787545915662,
+      "subject": {
+        "id": "atlas-inspection-rover",
+        "kind": "industrial-equipment",
+        "rootName": "atlas-inspection-rover"
+      },
+      "provenance": {
+        "origin": "procedural",
+        "qualityClaim": "Prototype / L2 — procedural presentation asset; not a commercial production model",
+        "sourceModule": "showcase/industrial-showroom-asset.js",
+        "externalModelCount": 0,
+        "generatedMeshCount": 59
+      },
+      "variants": [
+        {
+          "id": "graphite-field",
+          "label": "石墨现场版",
+          "targets": [
+            "body",
+            "secondary",
+            "panel",
+            "accent",
+            "hub"
+          ]
+        },
+        {
+          "id": "rescue-orange",
+          "label": "救援橙",
+          "targets": [
+            "body",
+            "secondary",
+            "panel",
+            "accent",
+            "hub"
+          ]
+        },
+        {
+          "id": "arctic-service",
+          "label": "极地维护版",
+          "targets": [
+            "body",
+            "secondary",
+            "panel",
+            "accent",
+            "hub"
+          ]
+        }
+      ],
+      "variantIds": [
+        "graphite-field",
+        "rescue-orange",
+        "arctic-service"
+      ],
+      "hotspots": [
+        {
+          "id": "sensor-system",
+          "label": "传感系统",
+          "targetPartId": "sensor-system",
+          "cameraPresetId": "sensor-system"
+        },
+        {
+          "id": "energy-module",
+          "label": "能源模块",
+          "targetPartId": "energy-module",
+          "cameraPresetId": "energy-module"
+        },
+        {
+          "id": "all-terrain-drive",
+          "label": "全地形驱动",
+          "targetPartId": "all-terrain-drive",
+          "cameraPresetId": "all-terrain-drive"
+        }
+      ],
+      "hotspotIds": [
+        "sensor-system",
+        "energy-module",
+        "all-terrain-drive"
+      ],
+      "cameraPresets": [
+        {
+          "id": "sensor-system",
+          "pos": [
+            35.2,
+            9.09,
+            -76.3
+          ],
+          "lookAt": [
+            30,
+            7.29,
+            -81.45
+          ],
+          "fov": 30
+        },
+        {
+          "id": "energy-module",
+          "pos": [
+            24.4,
+            7.59,
+            -83.9
+          ],
+          "lookAt": [
+            28.95,
+            6.1899999999999995,
+            -82.45
+          ],
+          "fov": 31
+        },
+        {
+          "id": "all-terrain-drive",
+          "pos": [
+            35.4,
+            6.59,
+            -77.35
+          ],
+          "lookAt": [
+            31.35,
+            5.54,
+            -81.05
+          ],
+          "fov": 32
+        }
+      ],
+      "selectedSubjectId": "atlas-inspection-rover",
+      "selectedPartId": "energy-module",
+      "selectedVariantId": "rescue-orange",
+      "selectedHotspotId": "energy-module",
+      "activeCameraPresetId": "energy-module",
+      "reducedMotion": true,
+      "motion": {
+        "active": false,
+        "durationMs": 0,
+        "autoRotate": false
+      },
+      "camera": {
+        "pos": [
+          24.4,
+          7.59,
+          -83.9
+        ],
+        "lookAt": [
+          42.69,
+          1.96,
+          -78.07
+        ],
+        "fov": 31
+      },
+      "materialFingerprint": "fnv1a-866a081c",
+      "renderedMeshCount": 59,
+      "tankActorCount": 0,
+      "subjectRootVisible": true,
+      "panelPresent": true,
+      "panelText": "#cot-industrial-showroom{--is-accent:#ffa33f;--is-cyan:#8feaff;position:fixed;z-index:100004;left:18px;top:18px;width:min(370px,calc(100vw - 36px));overflow:hidden;border:1px solid rgba(255,255,255,.14);border-radius:18px;color:#edf4f3;background:linear-gradient(155deg,rgba(10,15,17,.96),rgba(7,11,13,.91));box-shadow:0 28px 90px rgba(0,0,0,.56);backdrop-filter:blur(18px);font:13px/1.45 Inter,ui-sans-serif,system-ui,sans-serif}\n      #cot-industrial-showroom *{box-sizing:border-box}#cot-industrial-showroom button{font:inherit;touch-action:manipulation}\n      #cot-industrial-showroom .is-head{padding:15px 16px 13px;border-bottom:1px solid rgba(255,255,255,.08)}\n      #cot-industrial-showroom .is-kicker{display:flex;align-items:center;justify-content:space-between;gap:10px;color:#9caeae;font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}\n      #cot-industrial-showroom .is-badge{padding:4px 7px;border:1px solid rgba(143,234,255,.28);border-radius:999px;color:var(--is-cyan);letter-spacing:.08em;background:rgba(143,234,255,.07)}\n      #cot-industrial-showroom h1{margin:10px 0 4px;color:#fff;font-size:20px;line-height:1.05;letter-spacing:.015em}#cot-industrial-showroom .is-sub{margin:0;color:#a9b8b8}\n      #cot-industrial-showroom .is-proof{margin-top:11px;padding:8px 10px;border-left:3px solid var(--is-accent);color:#d8e2df;background:rgba(255,163,63,.07);font-size:11px}\n      #cot-industrial-showroom .is-detail{min-height:86px;padding:13px 16px 10px;border-bottom:1px solid rgba(255,255,255,.07)}#cot-industrial-showroom .is-detail small{display:block;color:var(--is-accent);font-weight:800;letter-spacing:.1em}#cot-industrial-showroom .is-detail strong{display:block;margin-top:3px;color:#fff;font-size:15px}#cot-industrial-showroom .is-detail p{margin:4px 0 0;color:#aebcbb}\n      #cot-industrial-showroom .is-hotspot-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;padding:10px 12px}\n      #cot-industrial-showroom .is-hotspot-card{min-width:0;min-height:54px;padding:7px 5px;border:1px solid rgba(255,255,255,.12);border-radius:10px;color:#b7c3c2;background:rgba(255,255,255,.035);cursor:pointer}#cot-industrial-showroom .is-hotspot-card span{display:block;color:var(--is-accent);font-weight:900}#cot-industrial-showroom .is-hotspot-card[aria-pressed=true]{border-color:rgba(255,163,63,.64);color:#fff;background:rgba(255,163,63,.12)}\n      #cot-industrial-showroom .is-section-label{padding:0 14px;color:#748687;font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}\n      #cot-industrial-showroom .is-variants{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;padding:7px 12px 10px}\n      #cot-industrial-showroom .is-variant{min-width:0;min-height:44px;padding:6px;border:1px solid rgba(255,255,255,.12);border-radius:9px;color:#adbbba;background:#151d20;cursor:pointer;font-size:10px}#cot-industrial-showroom .is-variant[aria-pressed=true]{border-color:var(--is-cyan);color:#071113;background:var(--is-cyan);font-weight:800}\n      #cot-industrial-showroom .is-actions{display:flex;gap:6px;padding:10px 12px 12px;border-top:1px solid rgba(255,255,255,.07)}#cot-industrial-showroom .is-actions button{min-height:44px;padding:7px 10px;border:1px solid rgba(255,255,255,.14);border-radius:9px;color:#e9f0ef;background:#182124;cursor:pointer}#cot-industrial-showroom .is-actions button:first-child{flex:1}#cot-industrial-showroom .is-actions button[aria-pressed=true]{border-color:rgba(255,163,63,.5);color:var(--is-accent)}#cot-industrial-showroom .is-actions button:disabled{opacity:.42;cursor:not-allowed}\n      #cot-industrial-showroom .is-status{padding:0 14px 11px;color:#758788;font-size:10px}#cot-industrial-showroom button:focus-visible,#cot-industrial-hotspots button:focus-visible{outline:2px solid #fff;outline-offset:2px}\n      #cot-industrial-hotspots{position:fixed;z-index:100003;inset:0;pointer-events:none;font:800 11px/1 Inter,ui-sans-serif,system-ui,sans-serif}\n      #cot-industrial-hotspots .is-marker{position:absolute;left:0;top:0;display:flex;align-items:center;gap:7px;min-width:44px;min-height:44px;padding:0 10px 0 0;border:0;border-radius:999px;color:#071113;background:rgba(232,244,241,.92);box-shadow:0 10px 28px rgba(0,0,0,.38);cursor:pointer;pointer-events:auto;transform:translate3d(-200px,-200px,0);transition:opacity .16s ease,transform .16s ease}#cot-industrial-hotspots .is-marker[hidden]{display:none}#cot-industrial-hotspots .is-marker b{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;color:#081011;background:var(--is-accent,#ffa33f);font-size:12px}#cot-industrial-hotspots .is-marker[aria-pressed=true]{color:#fff;background:rgba(12,18,20,.94);box-shadow:0 0 0 2px #ffa33f,0 12px 34px rgba(0,0,0,.5)}\n      html[data-cot-industrial-showroom=true] .cot-studio .dock{display:none!important}\n      @media(max-width:640px){#cot-industrial-showroom{left:8px;right:8px;top:auto;bottom:8px;width:auto;max-height:43vh;overflow:auto;border-radius:16px}#cot-industrial-showroom .is-head{padding:10px 12px 8px}#cot-industrial-showroom h1{margin-top:6px;font-size:17px}#cot-industrial-showroom .is-sub,#cot-industrial-showroom .is-proof{display:none}#cot-industrial-showroom .is-detail{min-height:65px;padding:8px 12px 7px}#cot-industrial-showroom .is-detail p{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}#cot-industrial-showroom .is-hotspot-list{padding:7px 8px 6px}#cot-industrial-showroom .is-hotspot-card{min-height:48px}#cot-industrial-showroom .is-section-label{display:none}#cot-industrial-showroom .is-variants{padding:0 8px 7px}#cot-industrial-showroom .is-actions{padding:7px 8px 8px}#cot-industrial-showroom .is-status{display:none}#cot-industrial-hotspots .is-marker{width:44px;padding:0}#cot-industrial-hotspots .is-marker span{display:none}}\n      @media(prefers-reduced-motion:reduce){#cot-industrial-showroom,#cot-industrial-showroom *,#cot-industrial-hotspots .is-marker{animation:none!important;transition-duration:0s!important;scroll-behavior:auto!important;backdrop-filter:none!important}}\n    \n    \n      ATLAS / FIELD SYSTEMSPROGRAMMATIC PROTOTYPE\n      ATLAS INSPECTION ROVER\n      工业巡检设备概念展示 · 复用同一 Studio 渲染、镜头与后期管线\n      程序化资产 · Prototype / L2 · 非商业生产模型 · 0 个外部 3D 模型\n    \n    02 / ENERGY PACK能源模块侧抽式电池盒与热管理鳍片，强调现场快速维护路径。\n    \n      01传感系统02能源模块03全地形驱动\n    \n    Material variants · V 循环\n    \n      石墨现场版救援橙极地维护版\n    \n    返回全景 · Esc减少动态\n    同一 Studio 场景内挂载 · 0 坦克 actor · 1–3 热点 / V 材质 / Esc 全景",
+      "detailText": "02 / ENERGY PACK能源模块侧抽式电池盒与热管理鳍片，强调现场快速维护路径。",
+      "provenanceText": "程序化资产 · Prototype / L2 · 非商业生产模型 · 0 个外部 3D 模型",
+      "capabilityInstalled": false,
+      "labInstalled": false,
+      "labPanel": false,
+      "capabilityPanel": false
+    },
+    "stable": {
+      "present": true,
+      "version": 1,
+      "status": "ready",
+      "auditError": null,
+      "timeOrigin": 1787545915662,
+      "subject": {
+        "id": "atlas-inspection-rover",
+        "kind": "industrial-equipment",
+        "rootName": "atlas-inspection-rover"
+      },
+      "provenance": {
+        "origin": "procedural",
+        "qualityClaim": "Prototype / L2 — procedural presentation asset; not a commercial production model",
+        "sourceModule": "showcase/industrial-showroom-asset.js",
+        "externalModelCount": 0,
+        "generatedMeshCount": 59
+      },
+      "variants": [
+        {
+          "id": "graphite-field",
+          "label": "石墨现场版",
+          "targets": [
+            "body",
+            "secondary",
+            "panel",
+            "accent",
+            "hub"
+          ]
+        },
+        {
+          "id": "rescue-orange",
+          "label": "救援橙",
+          "targets": [
+            "body",
+            "secondary",
+            "panel",
+            "accent",
+            "hub"
+          ]
+        },
+        {
+          "id": "arctic-service",
+          "label": "极地维护版",
+          "targets": [
+            "body",
+            "secondary",
+            "panel",
+            "accent",
+            "hub"
+          ]
+        }
+      ],
+      "variantIds": [
+        "graphite-field",
+        "rescue-orange",
+        "arctic-service"
+      ],
+      "hotspots": [
+        {
+          "id": "sensor-system",
+          "label": "传感系统",
+          "targetPartId": "sensor-system",
+          "cameraPresetId": "sensor-system"
+        },
+        {
+          "id": "energy-module",
+          "label": "能源模块",
+          "targetPartId": "energy-module",
+          "cameraPresetId": "energy-module"
+        },
+        {
+          "id": "all-terrain-drive",
+          "label": "全地形驱动",
+          "targetPartId": "all-terrain-drive",
+          "cameraPresetId": "all-terrain-drive"
+        }
+      ],
+      "hotspotIds": [
+        "sensor-system",
+        "energy-module",
+        "all-terrain-drive"
+      ],
+      "cameraPresets": [
+        {
+          "id": "sensor-system",
+          "pos": [
+            35.2,
+            9.09,
+            -76.3
+          ],
+          "lookAt": [
+            30,
+            7.29,
+            -81.45
+          ],
+          "fov": 30
+        },
+        {
+          "id": "energy-module",
+          "pos": [
+            24.4,
+            7.59,
+            -83.9
+          ],
+          "lookAt": [
+            28.95,
+            6.1899999999999995,
+            -82.45
+          ],
+          "fov": 31
+        },
+        {
+          "id": "all-terrain-drive",
+          "pos": [
+            35.4,
+            6.59,
+            -77.35
+          ],
+          "lookAt": [
+            31.35,
+            5.54,
+            -81.05
+          ],
+          "fov": 32
+        }
+      ],
+      "selectedSubjectId": "atlas-inspection-rover",
+      "selectedPartId": "energy-module",
+      "selectedVariantId": "rescue-orange",
+      "selectedHotspotId": "energy-module",
+      "activeCameraPresetId": "energy-module",
+      "reducedMotion": true,
+      "motion": {
+        "active": false,
+        "durationMs": 0,
+        "autoRotate": false
+      },
+      "camera": {
+        "pos": [
+          24.4,
+          7.59,
+          -83.9
+        ],
+        "lookAt": [
+          42.69,
+          1.96,
+          -78.07
+        ],
+        "fov": 31
+      },
+      "materialFingerprint": "fnv1a-866a081c",
+      "renderedMeshCount": 59,
+      "tankActorCount": 0,
+      "subjectRootVisible": true,
+      "panelPresent": true,
+      "panelText": "#cot-industrial-showroom{--is-accent:#ffa33f;--is-cyan:#8feaff;position:fixed;z-index:100004;left:18px;top:18px;width:min(370px,calc(100vw - 36px));overflow:hidden;border:1px solid rgba(255,255,255,.14);border-radius:18px;color:#edf4f3;background:linear-gradient(155deg,rgba(10,15,17,.96),rgba(7,11,13,.91));box-shadow:0 28px 90px rgba(0,0,0,.56);backdrop-filter:blur(18px);font:13px/1.45 Inter,ui-sans-serif,system-ui,sans-serif}\n      #cot-industrial-showroom *{box-sizing:border-box}#cot-industrial-showroom button{font:inherit;touch-action:manipulation}\n      #cot-industrial-showroom .is-head{padding:15px 16px 13px;border-bottom:1px solid rgba(255,255,255,.08)}\n      #cot-industrial-showroom .is-kicker{display:flex;align-items:center;justify-content:space-between;gap:10px;color:#9caeae;font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}\n      #cot-industrial-showroom .is-badge{padding:4px 7px;border:1px solid rgba(143,234,255,.28);border-radius:999px;color:var(--is-cyan);letter-spacing:.08em;background:rgba(143,234,255,.07)}\n      #cot-industrial-showroom h1{margin:10px 0 4px;color:#fff;font-size:20px;line-height:1.05;letter-spacing:.015em}#cot-industrial-showroom .is-sub{margin:0;color:#a9b8b8}\n      #cot-industrial-showroom .is-proof{margin-top:11px;padding:8px 10px;border-left:3px solid var(--is-accent);color:#d8e2df;background:rgba(255,163,63,.07);font-size:11px}\n      #cot-industrial-showroom .is-detail{min-height:86px;padding:13px 16px 10px;border-bottom:1px solid rgba(255,255,255,.07)}#cot-industrial-showroom .is-detail small{display:block;color:var(--is-accent);font-weight:800;letter-spacing:.1em}#cot-industrial-showroom .is-detail strong{display:block;margin-top:3px;color:#fff;font-size:15px}#cot-industrial-showroom .is-detail p{margin:4px 0 0;color:#aebcbb}\n      #cot-industrial-showroom .is-hotspot-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;padding:10px 12px}\n      #cot-industrial-showroom .is-hotspot-card{min-width:0;min-height:54px;padding:7px 5px;border:1px solid rgba(255,255,255,.12);border-radius:10px;color:#b7c3c2;background:rgba(255,255,255,.035);cursor:pointer}#cot-industrial-showroom .is-hotspot-card span{display:block;color:var(--is-accent);font-weight:900}#cot-industrial-showroom .is-hotspot-card[aria-pressed=true]{border-color:rgba(255,163,63,.64);color:#fff;background:rgba(255,163,63,.12)}\n      #cot-industrial-showroom .is-section-label{padding:0 14px;color:#748687;font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}\n      #cot-industrial-showroom .is-variants{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;padding:7px 12px 10px}\n      #cot-industrial-showroom .is-variant{min-width:0;min-height:44px;padding:6px;border:1px solid rgba(255,255,255,.12);border-radius:9px;color:#adbbba;background:#151d20;cursor:pointer;font-size:10px}#cot-industrial-showroom .is-variant[aria-pressed=true]{border-color:var(--is-cyan);color:#071113;background:var(--is-cyan);font-weight:800}\n      #cot-industrial-showroom .is-actions{display:flex;gap:6px;padding:10px 12px 12px;border-top:1px solid rgba(255,255,255,.07)}#cot-industrial-showroom .is-actions button{min-height:44px;padding:7px 10px;border:1px solid rgba(255,255,255,.14);border-radius:9px;color:#e9f0ef;background:#182124;cursor:pointer}#cot-industrial-showroom .is-actions button:first-child{flex:1}#cot-industrial-showroom .is-actions button[aria-pressed=true]{border-color:rgba(255,163,63,.5);color:var(--is-accent)}#cot-industrial-showroom .is-actions button:disabled{opacity:.42;cursor:not-allowed}\n      #cot-industrial-showroom .is-status{padding:0 14px 11px;color:#758788;font-size:10px}#cot-industrial-showroom button:focus-visible,#cot-industrial-hotspots button:focus-visible{outline:2px solid #fff;outline-offset:2px}\n      #cot-industrial-hotspots{position:fixed;z-index:100003;inset:0;pointer-events:none;font:800 11px/1 Inter,ui-sans-serif,system-ui,sans-serif}\n      #cot-industrial-hotspots .is-marker{position:absolute;left:0;top:0;display:flex;align-items:center;gap:7px;min-width:44px;min-height:44px;padding:0 10px 0 0;border:0;border-radius:999px;color:#071113;background:rgba(232,244,241,.92);box-shadow:0 10px 28px rgba(0,0,0,.38);cursor:pointer;pointer-events:auto;transform:translate3d(-200px,-200px,0);transition:opacity .16s ease,transform .16s ease}#cot-industrial-hotspots .is-marker[hidden]{display:none}#cot-industrial-hotspots .is-marker b{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;color:#081011;background:var(--is-accent,#ffa33f);font-size:12px}#cot-industrial-hotspots .is-marker[aria-pressed=true]{color:#fff;background:rgba(12,18,20,.94);box-shadow:0 0 0 2px #ffa33f,0 12px 34px rgba(0,0,0,.5)}\n      html[data-cot-industrial-showroom=true] .cot-studio .dock{display:none!important}\n      @media(max-width:640px){#cot-industrial-showroom{left:8px;right:8px;top:auto;bottom:8px;width:auto;max-height:43vh;overflow:auto;border-radius:16px}#cot-industrial-showroom .is-head{padding:10px 12px 8px}#cot-industrial-showroom h1{margin-top:6px;font-size:17px}#cot-industrial-showroom .is-sub,#cot-industrial-showroom .is-proof{display:none}#cot-industrial-showroom .is-detail{min-height:65px;padding:8px 12px 7px}#cot-industrial-showroom .is-detail p{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}#cot-industrial-showroom .is-hotspot-list{padding:7px 8px 6px}#cot-industrial-showroom .is-hotspot-card{min-height:48px}#cot-industrial-showroom .is-section-label{display:none}#cot-industrial-showroom .is-variants{padding:0 8px 7px}#cot-industrial-showroom .is-actions{padding:7px 8px 8px}#cot-industrial-showroom .is-status{display:none}#cot-industrial-hotspots .is-marker{width:44px;padding:0}#cot-industrial-hotspots .is-marker span{display:none}}\n      @media(prefers-reduced-motion:reduce){#cot-industrial-showroom,#cot-industrial-showroom *,#cot-industrial-hotspots .is-marker{animation:none!important;transition-duration:0s!important;scroll-behavior:auto!important;backdrop-filter:none!important}}\n    \n    \n      ATLAS / FIELD SYSTEMSPROGRAMMATIC PROTOTYPE\n      ATLAS INSPECTION ROVER\n      工业巡检设备概念展示 · 复用同一 Studio 渲染、镜头与后期管线\n      程序化资产 · Prototype / L2 · 非商业生产模型 · 0 个外部 3D 模型\n    \n    02 / ENERGY PACK能源模块侧抽式电池盒与热管理鳍片，强调现场快速维护路径。\n    \n      01传感系统02能源模块03全地形驱动\n    \n    Material variants · V 循环\n    \n      石墨现场版救援橙极地维护版\n    \n    返回全景 · Esc减少动态\n    同一 Studio 场景内挂载 · 0 坦克 actor · 1–3 热点 / V 材质 / Esc 全景",
+      "detailText": "02 / ENERGY PACK能源模块侧抽式电池盒与热管理鳍片，强调现场快速维护路径。",
+      "provenanceText": "程序化资产 · Prototype / L2 · 非商业生产模型 · 0 个外部 3D 模型",
+      "capabilityInstalled": false,
+      "labInstalled": false,
+      "labPanel": false,
+      "capabilityPanel": false
+    },
+    "control": {
+      "tagName": "BUTTON",
+      "text": "02能源模块",
+      "tabIndex": 0,
+      "disabled": false,
+      "ariaPressed": "true",
+      "visible": true,
+      "rect": {
+        "left": 148.328125,
+        "right": 259.65625,
+        "top": 315.84375,
+        "bottom": 369.84375,
+        "width": 111.328125,
+        "height": 54
+      },
+      "animationDuration": "0s",
+      "transitionDuration": "0s"
+    },
+    "styles": [
+      {
+        "animationDuration": "0s",
+        "transitionDuration": "0s"
+      },
+      {
+        "animationDuration": "0s",
+        "transitionDuration": "0s"
+      },
+      {
+        "animationDuration": "0s",
+        "transitionDuration": "0s"
+      },
+      {
+        "animationDuration": "0s",
+        "transitionDuration": "0s"
+      },
+      {
+        "animationDuration": "0s",
+        "transitionDuration": "0s"
+      },
+      {
+        "animationDuration": "0s",
+        "transitionDuration": "0s"
+      },
+      {
+        "animationDuration": "0s",
+        "transitionDuration": "0s"
+      },
+      {
+        "animationDuration": "0s",
+        "transitionDuration": "0s"
+      },
+      {
+        "animationDuration": "0s",
+        "transitionDuration": "0s"
+      },
+      {
+        "animationDuration": "0s",
+        "transitionDuration": "0s"
+      }
+    ]
+  },
+  "labHttpStatus": 200,
+  "labGuard": {
+    "showroomInstalled": false,
+    "showroomPanel": false,
+    "labInstalled": false,
+    "labPanel": false,
+    "labSceneVersion": 8,
+    "labSceneMode": "single-hero-readable-fx",
+    "actorNames": [
+      "red-lead"
+    ],
+    "actorCount": 1,
+    "effectCount": 16,
+    "missingRequiredTypes": []
+  },
+  "fullDemoHttpStatus": 200,
+  "fullDemoGuard": {
+    "showroomInstalled": false,
+    "showroomPanel": false,
+    "hasLabScene": false,
+    "actorNames": [
+      "red-lead",
+      "blue-lead",
+      "support",
+      "old-wreck"
+    ],
+    "effectCount": 25,
+    "effectTypeCount": 17,
+    "missingRequiredTypes": [],
+    "actorTracks": 3,
+    "shots": 6,
+    "labInstalled": false,
+    "labPanel": false
+  },
+  "finishedAt": "2026-08-24T04:33:06.889Z"
+}

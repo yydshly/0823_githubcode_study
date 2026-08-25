@@ -1,0 +1,147 @@
+diff --git a/src/game/studio.js b/src/game/studio.js
+index 220b426..719bdde 100644
+--- a/src/game/studio.js
++++ b/src/game/studio.js
+@@ -29,6 +29,7 @@
+  * frames.
+  */
+ import * as THREE from 'three';
++import { disposeObject3DResources } from '../engine/resourceLifetime.js';
+ import { VISIBLE_TANK_IDS, getSpec } from '../vehicles/specs.js';
+ import { createTank } from '../vehicles/tankFactory.js';
+ import {
+@@ -151,8 +152,88 @@ export function createStudio(ctx) {
+   let recording = null;
+   const perf = { renderedFrames: 0, skippedFrames: 0, poolSweeps: 0 };
+ 
++  // Generic Studio extensions live under one private root so they cannot leak
++  // into the garage when Studio releases frame ownership. The caller retains
++  // asset ownership: exit/load/stop only hide or restage Studio state and never
++  // dispose or clear these externally supplied objects/callbacks.
++  const mountedObjects = new Set();
++  const registeredTicks = new Set();
++  const objectMountRoot = new THREE.Group();
++  objectMountRoot.name = 'studio_external_objects';
++  objectMountRoot.visible = false;
++  scene.add(objectMountRoot);
++
+   function invalidate() { frameDirty = true; }
+ 
++  function assertObject3D(root, apiName) {
++    if (!root || root.isObject3D !== true) {
++      throw new TypeError(`${apiName}(root) requires a THREE.Object3D`);
++    }
++    if (root === scene || root === objectMountRoot) {
++      throw new TypeError(`${apiName}(root) cannot mount the Studio scene root`);
++    }
++    // Reject a cycle before Object3D.add() has a chance to partially mutate
++    // the graph (possible if a caller hands us an ancestor of the scene).
++    for (let p = objectMountRoot; p; p = p.parent) {
++      if (p === root) throw new TypeError(`${apiName}(root) would create a scene-graph cycle`);
++    }
++  }
++
++  /** Mount an externally owned Object3D into the Studio scene, idempotently. */
++  function mountObject3D(root) {
++    assertObject3D(root, 'mountObject3D');
++    if (mountedObjects.has(root)) return root;
++    objectMountRoot.add(root);
++    mountedObjects.add(root);
++    invalidate();
++    return root;
++  }
++
++  /**
++   * Unmount an Object3D previously mounted through mountObject3D(). Resources
++   * remain caller-owned unless disposal is explicitly requested here.
++   */
++  function unmountObject3D(root, opts = {}) {
++    assertObject3D(root, 'unmountObject3D');
++    if (opts == null || typeof opts !== 'object' || Array.isArray(opts)) {
++      throw new TypeError('unmountObject3D options must be an object');
++    }
++    const dispose = opts.dispose ?? false;
++    if (typeof dispose !== 'boolean') {
++      throw new TypeError('unmountObject3D options.dispose must be a boolean');
++    }
++    if (!mountedObjects.delete(root)) return false;
++    root.removeFromParent();
++    if (dispose) disposeObject3DResources(root, { preserveRoots: [scene] });
++    invalidate();
++    return true;
++  }
++
++  /** Register a synchronous per-Studio-frame hook; return an idempotent off(). */
++  function registerTick(fn) {
++    if (typeof fn !== 'function') throw new TypeError('registerTick(fn) requires a function');
++    registeredTicks.add(fn);
++    let registered = true;
++    return () => {
++      if (!registered) return false;
++      registered = false;
++      return registeredTicks.delete(fn);
++    };
++  }
++
++  function runRegisteredTicks(dt) {
++    // Snapshot so a callback may safely unregister itself (or register a new
++    // callback) without changing which hooks execute in the current frame.
++    for (const fn of [...registeredTicks]) {
++      try {
++        if (fn(dt) === true) invalidate();
++      } catch (error) {
++        registeredTicks.delete(fn);
++        console.error('[studio] registered tick failed', error);
++      }
++    }
++  }
++
+   // fx event channel: a PRIVATE bus bound to the fx system only, so synthetic
+   // events (muzzle flash, impact, smoke column, detrack burst) reuse the real
+   // effect language without touching main.js/hud/audio/killcam listeners.
+@@ -2213,6 +2294,7 @@ export function createStudio(ctx) {
+       setGarageSunTrim(false); // authored map sun, not the neutral pedestal key
+       ensureFxBus();
+       active = true;        // tick branch takes the frame from here on
++      objectMountRoot.visible = true;
+       panel.show();
+       mark('shell');
+       // Both paths are frame-budgeted and independent. Interleave their yield
+@@ -2288,6 +2370,7 @@ export function createStudio(ctx) {
+       }
+     } catch (error) {
+       active = false;
++      objectMountRoot.visible = false;
+       panel.hide();
+       game.phase = 'garage';
+       throw error;
+@@ -2319,6 +2402,7 @@ export function createStudio(ctx) {
+     if (!active) return;
+     if (recording) stopRecording();
+     active = false;
++    objectMountRoot.visible = false;
+     panel.hide();
+     marker.group.visible = false;
+     placeArmed = null;
+@@ -2348,6 +2432,7 @@ export function createStudio(ctx) {
+ 
+   // --- per-frame (owns the whole frame while active; called from main tick) ---
+   function tick(dt) {
++    runRegisteredTicks(dt);
+     const cameraMoved = updateCamera(dt);
+     poolSweepAcc += dt;
+     if (poolSweepAcc >= 0.5) {
+@@ -2467,6 +2552,13 @@ export function createStudio(ctx) {
+     get active() { return active; },
+     get mapId() { const w = getWorld(); return w ? w.mapId : null; },
+     performance: () => ({ ...perf }),
++    // generic scene extensions (externally owned lifecycle)
++    mountObject3D,
++    unmountObject3D,
++    invalidate,
++    registerTick,
++    get mountedObjectCount() { return mountedObjects.size; },
++    get registeredTickCount() { return registeredTicks.size; },
+     // actors
+     addActor: (cfg) => {
+       if (recording) return null;

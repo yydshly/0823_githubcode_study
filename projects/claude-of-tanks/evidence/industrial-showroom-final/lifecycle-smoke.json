@@ -1,0 +1,472 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-08-24T04:35:10.152Z",
+  "url": "http://127.0.0.1:4175/studio?map=desert&showcase=industrial-showroom&nogate=1",
+  "result": "pass",
+  "checks": {
+    "routeReady": true,
+    "manualCameraMarkers": true,
+    "suspendedState": true,
+    "reenteredState": true,
+    "countsNotDuplicated": true,
+    "noConsoleErrors": true
+  },
+  "httpStatus": 200,
+  "readyMs": 67431,
+  "before": {
+    "href": "http://127.0.0.1:4175/studio?map=desert&showcase=industrial-showroom&nogate=1",
+    "pathname": "/studio",
+    "search": "?map=desert&showcase=industrial-showroom&nogate=1",
+    "controllerPresent": true,
+    "status": "ready",
+    "motion": {
+      "active": false,
+      "durationMs": 680,
+      "autoRotate": false
+    },
+    "studioActive": true,
+    "mountedObjectCount": 1,
+    "registeredTickCount": 1,
+    "panel": {
+      "present": true,
+      "hidden": false
+    },
+    "markerLayer": {
+      "present": true,
+      "hidden": false
+    },
+    "root": {
+      "source": "window.__DEBUG.scene.getObjectByName",
+      "present": true,
+      "visible": true
+    },
+    "camera": {
+      "mode": "fly",
+      "pos": [
+        39.6,
+        9.74,
+        -71.2
+      ],
+      "yawDeg": 41.77,
+      "pitchDeg": -13.84,
+      "rollDeg": 0,
+      "fov": 34,
+      "lookAt": [
+        26.66,
+        4.96,
+        -85.68
+      ]
+    },
+    "screenPoints": [
+      {
+        "id": "sensor-system",
+        "visible": true,
+        "x": 681.2,
+        "y": 275.7,
+        "ndc": [
+          -0.0539,
+          0.3874,
+          0.9927
+        ],
+        "world": [
+          30.201,
+          8.04,
+          -81.175
+        ]
+      },
+      {
+        "id": "energy-module",
+        "visible": true,
+        "x": 676.8,
+        "y": 378.2,
+        "ndc": [
+          -0.06,
+          0.1595,
+          0.994
+        ],
+        "world": [
+          28.442,
+          6.58,
+          -82.959
+        ]
+      },
+      {
+        "id": "all-terrain-drive",
+        "visible": true,
+        "x": 702.8,
+        "y": 548.3,
+        "ndc": [
+          -0.0238,
+          -0.2185,
+          0.9923
+        ],
+        "world": [
+          31.3,
+          5.83,
+          -80.263
+        ]
+      }
+    ],
+    "markerDom": [
+      {
+        "id": "sensor-system",
+        "hidden": false,
+        "transform": "translate3d(659px, 254px, 0px)"
+      },
+      {
+        "id": "energy-module",
+        "hidden": false,
+        "transform": "translate3d(655px, 356px, 0px)"
+      },
+      {
+        "id": "all-terrain-drive",
+        "hidden": false,
+        "transform": "translate3d(681px, 526px, 0px)"
+      }
+    ]
+  },
+  "afterManualCamera": {
+    "href": "http://127.0.0.1:4175/studio?map=desert&showcase=industrial-showroom&nogate=1",
+    "pathname": "/studio",
+    "search": "?map=desert&showcase=industrial-showroom&nogate=1",
+    "controllerPresent": true,
+    "status": "ready",
+    "motion": {
+      "active": false,
+      "durationMs": 680,
+      "autoRotate": false
+    },
+    "studioActive": true,
+    "mountedObjectCount": 1,
+    "registeredTickCount": 1,
+    "panel": {
+      "present": true,
+      "hidden": false
+    },
+    "markerLayer": {
+      "present": true,
+      "hidden": false
+    },
+    "root": {
+      "source": "window.__DEBUG.scene.getObjectByName",
+      "present": true,
+      "visible": true
+    },
+    "camera": {
+      "mode": "fly",
+      "pos": [
+        35.71,
+        8.3,
+        -75.55
+      ],
+      "yawDeg": 41.77,
+      "pitchDeg": -13.84,
+      "rollDeg": 0,
+      "fov": 34,
+      "lookAt": [
+        22.78,
+        3.52,
+        -90.04
+      ]
+    },
+    "screenPoints": [
+      {
+        "id": "sensor-system",
+        "visible": true,
+        "x": 650.1,
+        "y": 138.9,
+        "ndc": [
+          -0.0971,
+          0.6913,
+          0.987
+        ],
+        "world": [
+          30.201,
+          8.04,
+          -81.175
+        ]
+      },
+      {
+        "id": "energy-module",
+        "visible": true,
+        "x": 651.2,
+        "y": 336.6,
+        "ndc": [
+          -0.0956,
+          0.2521,
+          0.9905
+        ],
+        "world": [
+          28.442,
+          6.58,
+          -82.959
+        ]
+      },
+      {
+        "id": "all-terrain-drive",
+        "visible": true,
+        "x": 687.2,
+        "y": 633.8,
+        "ndc": [
+          -0.0456,
+          -0.4084,
+          0.9854
+        ],
+        "world": [
+          31.3,
+          5.83,
+          -80.263
+        ]
+      }
+    ],
+    "markerDom": [
+      {
+        "id": "sensor-system",
+        "hidden": false,
+        "transform": "translate3d(628px, 117px, 0px)"
+      },
+      {
+        "id": "energy-module",
+        "hidden": false,
+        "transform": "translate3d(629px, 315px, 0px)"
+      },
+      {
+        "id": "all-terrain-drive",
+        "hidden": false,
+        "transform": "translate3d(665px, 612px, 0px)"
+      }
+    ]
+  },
+  "manualCamera": {
+    "cameraDistance": 6.0107,
+    "markerDomChanged": true
+  },
+  "suspended": {
+    "href": "http://127.0.0.1:4175/?map=desert&showcase=industrial-showroom&nogate=1",
+    "pathname": "/",
+    "search": "?map=desert&showcase=industrial-showroom&nogate=1",
+    "controllerPresent": true,
+    "status": "suspended",
+    "motion": {
+      "active": false,
+      "durationMs": 680,
+      "autoRotate": false
+    },
+    "studioActive": false,
+    "mountedObjectCount": 1,
+    "registeredTickCount": 1,
+    "panel": {
+      "present": true,
+      "hidden": true
+    },
+    "markerLayer": {
+      "present": true,
+      "hidden": true
+    },
+    "root": {
+      "source": "window.__DEBUG.scene.getObjectByName",
+      "present": true,
+      "visible": true
+    },
+    "camera": {
+      "mode": "fly",
+      "pos": [
+        -1513.37,
+        39.43,
+        -1513.51
+      ],
+      "yawDeg": 41.77,
+      "pitchDeg": -13.84,
+      "rollDeg": 0,
+      "fov": 34,
+      "lookAt": [
+        -1499.32,
+        37.24,
+        -1499.45
+      ]
+    },
+    "screenPoints": [
+      {
+        "id": "sensor-system",
+        "visible": true,
+        "x": 664.2,
+        "y": 310,
+        "ndc": [
+          -0.0775,
+          0.3111,
+          1
+        ],
+        "world": [
+          30.201,
+          8.04,
+          -81.175
+        ]
+      },
+      {
+        "id": "energy-module",
+        "visible": true,
+        "x": 664.1,
+        "y": 311.1,
+        "ndc": [
+          -0.0776,
+          0.3087,
+          1
+        ],
+        "world": [
+          28.442,
+          6.58,
+          -82.959
+        ]
+      },
+      {
+        "id": "all-terrain-drive",
+        "visible": true,
+        "x": 664.2,
+        "y": 311.6,
+        "ndc": [
+          -0.0775,
+          0.3076,
+          1
+        ],
+        "world": [
+          31.3,
+          5.83,
+          -80.263
+        ]
+      }
+    ],
+    "markerDom": [
+      {
+        "id": "sensor-system",
+        "hidden": false,
+        "transform": "translate3d(642px, 288px, 0px)"
+      },
+      {
+        "id": "energy-module",
+        "hidden": false,
+        "transform": "translate3d(642px, 289px, 0px)"
+      },
+      {
+        "id": "all-terrain-drive",
+        "hidden": false,
+        "transform": "translate3d(642px, 290px, 0px)"
+      }
+    ]
+  },
+  "identityAfterSuspend": true,
+  "reentered": {
+    "href": "http://127.0.0.1:4175/studio?map=desert&showcase=industrial-showroom&nogate=1",
+    "pathname": "/studio",
+    "search": "?map=desert&showcase=industrial-showroom&nogate=1",
+    "controllerPresent": true,
+    "status": "ready",
+    "motion": {
+      "active": false,
+      "durationMs": 680,
+      "autoRotate": false
+    },
+    "studioActive": true,
+    "mountedObjectCount": 1,
+    "registeredTickCount": 1,
+    "panel": {
+      "present": true,
+      "hidden": false
+    },
+    "markerLayer": {
+      "present": true,
+      "hidden": false
+    },
+    "root": {
+      "source": "window.__DEBUG.scene.getObjectByName",
+      "present": true,
+      "visible": true
+    },
+    "camera": {
+      "mode": "fly",
+      "pos": [
+        72.66,
+        11.79,
+        -103.5
+      ],
+      "yawDeg": 167.77,
+      "pitchDeg": -17.65,
+      "rollDeg": 0,
+      "fov": 50,
+      "lookAt": [
+        68.62,
+        5.73,
+        -84.87
+      ]
+    },
+    "screenPoints": [
+      {
+        "id": "sensor-system",
+        "visible": false,
+        "x": null,
+        "y": null,
+        "ndc": [
+          1.6153,
+          0.4051,
+          0.9967
+        ],
+        "world": [
+          30.201,
+          8.04,
+          -81.175
+        ]
+      },
+      {
+        "id": "energy-module",
+        "visible": false,
+        "x": null,
+        "y": null,
+        "ndc": [
+          1.7572,
+          0.2862,
+          0.9967
+        ],
+        "world": [
+          28.442,
+          6.58,
+          -82.959
+        ]
+      },
+      {
+        "id": "all-terrain-drive",
+        "visible": false,
+        "x": null,
+        "y": null,
+        "ndc": [
+          1.4961,
+          0.26,
+          0.9969
+        ],
+        "world": [
+          31.3,
+          5.83,
+          -80.263
+        ]
+      }
+    ],
+    "markerDom": [
+      {
+        "id": "sensor-system",
+        "hidden": true,
+        "transform": "translate3d(642px, 288px, 0px)"
+      },
+      {
+        "id": "energy-module",
+        "hidden": true,
+        "transform": "translate3d(642px, 289px, 0px)"
+      },
+      {
+        "id": "all-terrain-drive",
+        "hidden": true,
+        "transform": "translate3d(642px, 290px, 0px)"
+      }
+    ]
+  },
+  "identityAfterReenter": true,
+  "consoleErrors": [],
+  "finishedAt": "2026-08-24T04:36:44.677Z"
+}

@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Claude of Tanks / Three.js 能力研究 Phase 01 阶段归档：能力、意义、复用边界、性能风险与扩展方向。">
+  <title>Claude of Tanks · Phase 01 阶段归档</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../project.css">
+  <link rel="stylesheet" href="../claude-of-tanks.css">
+</head>
+<body>
+  <a class="skip-link" href="#content">跳到正文</a>
+  <header class="site-nav">
+    <a class="brand" href="../index.html">0823 / CODE STUDY</a>
+    <nav aria-label="阶段归档导航">
+      <a href="./claude-of-tanks.html">能力总览</a>
+      <a href="#conclusion">阶段结论</a>
+      <a href="#capabilities">能力地图</a>
+      <a href="#evidence">证据</a>
+      <a href="#directions">恢复方向</a>
+    </nav>
+  </header>
+
+  <main id="content" class="project-main cot-main cot-archive-main">
+    <section class="project-hero cot-archive-hero">
+      <div>
+        <p class="eyebrow">PHASE 01 · ARCHIVED 2026-08-26</p>
+        <h1>效果已看清，<br><span>边界也已说清。</span></h1>
+        <p class="project-lead">这是一项 Three.js 程序化 3D 技术研究，不是产品交付。阶段一已经完成能力演示、原理拆解、复用验证、风险登记和浏览器证据，因此暂时归档；出现明确资产与业务目标时再恢复。</p>
+        <div class="cot-actions">
+          <a class="primary-action" href="./claude-of-tanks/workbench/">在线运行产品工作台</a>
+          <a href="./claude-of-tanks.html">查看能力总览</a>
+          <a href="https://cot.kevinliu.studio/">上游在线游戏 ↗</a>
+          <a href="https://github.com/yydshly/0823_githubcode_study/tree/main/projects/claude-of-tanks">研究源文件 ↗</a>
+        </div>
+      </div>
+      <div class="cot-archive-stamp" aria-label="归档元数据">
+        <span>RESEARCH FREEZE</span>
+        <strong>01</strong>
+        <dl>
+          <div><dt>状态</dt><dd>暂时归档</dd></div>
+          <div><dt>上游固定版本</dt><dd><code>fba54d0</code></dd></div>
+          <div><dt>浏览器终验</dt><dd>27 / 27</dd></div>
+          <div><dt>控制台错误</dt><dd>0</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <nav class="cot-section-nav" aria-label="归档章节">
+      <a href="#conclusion">01 结论</a>
+      <a href="#capabilities">02 能力</a>
+      <a href="#reuse">03 复用</a>
+      <a href="#evidence">04 证据</a>
+      <a href="#boundaries">05 边界</a>
+      <a href="#directions">06 方向</a>
+    </nav>
+
+    <section id="conclusion" class="research-section cot-archive-section">
+      <div class="section-kicker">01 / 阶段结论</div>
+      <div class="section-content">
+        <h2>有意义，但它不是<span>万能 3D 引擎</span>。</h2>
+        <p class="section-intro">Claude of Tanks 的价值，是提供一份可运行、可拆解的程序化 Web 3D 参考：简单几何通过比例、材质、灯光、环境密度、镜头和反馈协同，形成完整观感。我们应该复用这些系统模式，而不是复制坦克与沙漠内容。</p>
+        <div class="cot-conclusion-grid">
+          <article><b>它证明了什么</b><p>浏览器可以用代码组织实体、场景、交互和导演逻辑，形成可读、可玩的 3D 表达。</p></article>
+          <article><b>为什么看起来不错</b><p>统一风格、轮廓比例、PBR 材质、光影、空气透视、镜头构图与动态反馈共同成立。</p></article>
+          <article><b>对我们的意义</b><p>得到研究基座、拆解方法和可复用接口；不再把“好效果”误解为只需一个模型或一个 Three.js API。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="capabilities" class="research-section cot-archive-section">
+      <div class="section-kicker">02 / 能力地图</div>
+      <div class="section-content">
+        <h2>四类页面，回答<span>四个不同问题</span>。</h2>
+        <div class="cot-capability-map">
+          <article><span>公开可运行</span><h3>产品工作台</h3><p>没有沙漠和战斗系统；独立验证双主体、热点、材质变体、分解、镜头和性能采样。</p><a href="./claude-of-tanks/workbench/">运行工作台 →</a></article>
+          <article><span>本地研究</span><h3>视觉层实验室</h3><p>拆分几何、材质、灯光、环境和后期，解释画面为何成立。</p><code>/studio?...&amp;lab=layers</code></article>
+          <article><span>本地研究</span><h3>沙漠能力场景</h3><p>组合地形、植被、建筑、载具、粒子和战斗反馈，观察系统级效果。</p><code>/studio?...showcase=capabilities</code></article>
+          <article><span>解释与冻结</span><h3>研究控制台 / 归档</h3><p>登记能力、证据、预算、风险和恢复条件；页面本身不启动 Three.js。</p><code>/research · /research/archive</code></article>
+        </div>
+        <p class="cot-boundary-note"><strong>关键区分：</strong>展台是产品观察逻辑，沙漠是环境与游戏场景逻辑。它们共享渲染技术，但不是同一个业务场景。</p>
+      </div>
+    </section>
+
+    <section id="reuse" class="research-section cot-archive-section">
+      <div class="section-kicker">03 / 可复用判断</div>
+      <div class="section-content">
+        <h2>复用系统模式，<span>重做领域内容</span>。</h2>
+        <div class="cot-reuse-table" role="table" aria-label="能力复用等级">
+          <div class="cot-reuse-head" role="row"><span role="columnheader">能力层</span><span role="columnheader">复用度</span><span role="columnheader">判断</span></div>
+          <div role="row"><strong role="cell">渲染初始化、循环、尺寸适配</strong><b role="cell">高</b><span role="cell">可直接抽成 Web 3D 底座。</span></div>
+          <div role="row"><strong role="cell">相机、输入、实体生命周期</strong><b role="cell">高 / 中高</b><span role="cell">改成数据驱动接口后可服务展台、漫游和模拟。</span></div>
+          <div role="row"><strong role="cell">材质主题、灯光、粒子反馈</strong><b role="cell">中高 / 中</b><span role="cell">策略可复用，参数和预算必须针对新内容重校。</span></div>
+          <div role="row"><strong role="cell">程序化载具</strong><b role="cell">中</b><span role="cell">造型方法可参考，坦克几何不是通用产品模型。</span></div>
+          <div role="row"><strong role="cell">沙漠地图、战斗规则</strong><b role="cell">低 / 低到中</b><span role="cell">仅对相近游戏、教学或模拟需求有直接价值。</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="evidence" class="research-section cot-archive-section">
+      <div class="section-kicker">04 / 浏览器证据</div>
+      <div class="section-content">
+        <h2>结论来自运行记录，<span>不是截图猜测</span>。</h2>
+        <div class="cot-evidence-summary">
+          <div><strong>27 / 27</strong><span>归档页终验</span></div>
+          <div><strong>30 + 8</strong><span>工作台检查与预算</span></div>
+          <div><strong>20 / 20</strong><span>视觉层功能检查</span></div>
+          <div><strong>17</strong><span>组合场景效果类别</span></div>
+        </div>
+        <p class="section-intro">归档页在 1440px、768px、390px、键盘与 reduced-motion 路径中通过，0 个控制台错误，且不加载 Three.js、模型或媒体。3D 路线的数字用于标记负载与风险，不包装为跨设备生产指标。</p>
+        <div class="cot-archive-shots">
+          <figure><img src="../assets/claude-of-tanks/archive-desktop.png" loading="lazy" decoding="async" alt="Phase 01 归档页桌面验收截图"><figcaption>桌面 · 1440px</figcaption></figure>
+          <figure><img src="../assets/claude-of-tanks/archive-tablet.png" loading="lazy" decoding="async" alt="Phase 01 归档页平板验收截图"><figcaption>平板 · 768px</figcaption></figure>
+          <figure><img src="../assets/claude-of-tanks/archive-mobile.png" loading="lazy" decoding="async" alt="Phase 01 归档页移动端验收截图"><figcaption>移动 · 390px</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="boundaries" class="research-section cot-archive-section">
+      <div class="section-kicker">05 / 风险与边界</div>
+      <div class="section-content">
+        <h2>“可运行”不等于<span>生产就绪</span>。</h2>
+        <div class="cot-risk-grid">
+          <article><b>01</b><h3>语义错位</h3><p>不能把坦克和沙漠换个标签就称为工业展示。</p></article>
+          <article><b>02</b><h3>造型上限</h3><p>程序化低多边形适合概念与风格化，不等于 CAD 或高保真商品模型。</p></article>
+          <article><b>03</b><h3>场景成本</h3><p>独立网格、阴影、透明粒子和后期会迅速增加 draw calls 与 GPU 压力。</p></article>
+          <article><b>04</b><h3>移动差异</h3><p>桌面 WebGL 跑通，不代表中低端移动设备已稳定。</p></article>
+          <article><b>05</b><h3>来源归属</h3><p>必须区分上游实现、本地研究扩展和浏览器证据。</p></article>
+          <article><b>06</b><h3>Claude 归因</h3><p>AI 可辅助生成和迭代代码；观感仍来自明确约束、观察与参数校准。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="directions" class="research-section cot-archive-section">
+      <div class="section-kicker">06 / 恢复方向</div>
+      <div class="section-content">
+        <h2>有真实输入时，<span>再恢复研究</span>。</h2>
+        <div class="cot-direction-list">
+          <article><strong>外部资产管线</strong><span>触发条件：获得明确 GLB / GLTF 产品资产和目标画面。</span></article>
+          <article><strong>数字孪生</strong><span>触发条件：有真实设备结构、数据源和业务操作流程。</span></article>
+          <article><strong>虚拟展厅</strong><span>触发条件：有展品清单、空间脚本、品牌视觉和目标终端。</span></article>
+          <article><strong>教学模拟</strong><span>触发条件：有教学目标、操作步骤、错误反馈和评估标准。</span></article>
+          <article><strong>自动宣传视频</strong><span>触发条件：有镜头脚本、输出规格和离线质量目标。</span></article>
+          <article><strong>性能专项</strong><span>触发条件：有目标设备、场景规模、FPS 和加载预算。</span></article>
+        </div>
+        <p class="cot-boundary-note"><strong>阶段决定：</strong>停止继续堆叠新场景。保留在线工作台、能力总览、研究证据、上游固定版本和补丁说明，作为下一阶段的可恢复基线。</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>Claude of Tanks / Three.js Capability Research · Phase 01 archived</footer>
+</body>
+</html>

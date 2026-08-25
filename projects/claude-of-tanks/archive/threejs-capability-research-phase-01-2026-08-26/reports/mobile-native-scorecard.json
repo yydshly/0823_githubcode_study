@@ -1,0 +1,1528 @@
+{
+  "stations": {
+    "garage_idle": {
+      "wallMs": 10008,
+      "simS": 0,
+      "frames": 255,
+      "ltfPct": 88.6,
+      "gapP95": 63,
+      "gapMax": 250,
+      "taskCount": 9,
+      "worstMs": 232,
+      "over100Count": 5,
+      "over100Per10s": 5,
+      "tasks": [
+        {
+          "t": 22608,
+          "d": 129
+        },
+        {
+          "t": 22840,
+          "d": 232
+        },
+        {
+          "t": 23116,
+          "d": 84
+        },
+        {
+          "t": 23222,
+          "d": 167
+        },
+        {
+          "t": 23411,
+          "d": 66
+        },
+        {
+          "t": 23500,
+          "d": 157
+        },
+        {
+          "t": 23658,
+          "d": 56
+        },
+        {
+          "t": 23731,
+          "d": 163
+        },
+        {
+          "t": 27304,
+          "d": 85
+        }
+      ],
+      "programsDelta": 1,
+      "texturesDelta": 0,
+      "geometriesDelta": 0,
+      "drawCalls": 1,
+      "heapDeltaMB": 2.5
+    },
+    "tank_switch": {
+      "wallMs": 8820,
+      "simS": 0,
+      "frames": 368,
+      "ltfPct": 100,
+      "gapP95": 33,
+      "gapMax": 121,
+      "taskCount": 0,
+      "worstMs": 0,
+      "over100Count": 0,
+      "over100Per10s": 0,
+      "tasks": [],
+      "programsDelta": 0,
+      "texturesDelta": 0,
+      "geometriesDelta": 0,
+      "drawCalls": 1,
+      "heapDeltaMB": -2.2
+    },
+    "battle_load": {
+      "wallMs": 73896,
+      "simS": 0,
+      "frames": 270,
+      "ltfPct": 13.6,
+      "gapP95": 767,
+      "gapMax": 11446,
+      "taskCount": 87,
+      "worstMs": 11443,
+      "over100Count": 74,
+      "over100Per10s": 10.01,
+      "tasks": [
+        {
+          "t": 57401,
+          "d": 147
+        },
+        {
+          "t": 57550,
+          "d": 228
+        },
+        {
+          "t": 57780,
+          "d": 228
+        },
+        {
+          "t": 58010,
+          "d": 52
+        },
+        {
+          "t": 58141,
+          "d": 61
+        },
+        {
+          "t": 58226,
+          "d": 55
+        },
+        {
+          "t": 58282,
+          "d": 62
+        },
+        {
+          "t": 58727,
+          "d": 59
+        },
+        {
+          "t": 58912,
+          "d": 60
+        },
+        {
+          "t": 58973,
+          "d": 51
+        },
+        {
+          "t": 59160,
+          "d": 105
+        },
+        {
+          "t": 59266,
+          "d": 272
+        },
+        {
+          "t": 59539,
+          "d": 302
+        },
+        {
+          "t": 59963,
+          "d": 257
+        },
+        {
+          "t": 60223,
+          "d": 52
+        },
+        {
+          "t": 60290,
+          "d": 51
+        },
+        {
+          "t": 60341,
+          "d": 282
+        },
+        {
+          "t": 60626,
+          "d": 61
+        },
+        {
+          "t": 60718,
+          "d": 113
+        },
+        {
+          "t": 60873,
+          "d": 9582
+        },
+        {
+          "t": 70457,
+          "d": 465
+        },
+        {
+          "t": 71017,
+          "d": 3740
+        },
+        {
+          "t": 74843,
+          "d": 204
+        },
+        {
+          "t": 75167,
+          "d": 216
+        },
+        {
+          "t": 75496,
+          "d": 196
+        },
+        {
+          "t": 75766,
+          "d": 180
+        },
+        {
+          "t": 76054,
+          "d": 228
+        },
+        {
+          "t": 76364,
+          "d": 253
+        },
+        {
+          "t": 76728,
+          "d": 294
+        },
+        {
+          "t": 77063,
+          "d": 303
+        },
+        {
+          "t": 77369,
+          "d": 201
+        },
+        {
+          "t": 77623,
+          "d": 275
+        },
+        {
+          "t": 77903,
+          "d": 104
+        },
+        {
+          "t": 78010,
+          "d": 143
+        },
+        {
+          "t": 78200,
+          "d": 128
+        },
+        {
+          "t": 78403,
+          "d": 113
+        },
+        {
+          "t": 78696,
+          "d": 122
+        },
+        {
+          "t": 78940,
+          "d": 50
+        },
+        {
+          "t": 79103,
+          "d": 53
+        },
+        {
+          "t": 79306,
+          "d": 1211
+        }
+      ],
+      "programsDelta": 276,
+      "texturesDelta": 239,
+      "geometriesDelta": 588,
+      "drawCalls": 1,
+      "heapDeltaMB": 182.6
+    },
+    "look": {
+      "wallMs": 61490,
+      "simS": 38.3,
+      "frames": 590,
+      "ltfPct": 98.3,
+      "gapP95": 192,
+      "gapMax": 291,
+      "taskCount": 14,
+      "worstMs": 286,
+      "over100Count": 1,
+      "over100Per10s": 0.16,
+      "tasks": [
+        {
+          "t": 131366,
+          "d": 54
+        },
+        {
+          "t": 139007,
+          "d": 60
+        },
+        {
+          "t": 144117,
+          "d": 54
+        },
+        {
+          "t": 149087,
+          "d": 58
+        },
+        {
+          "t": 185508,
+          "d": 58
+        },
+        {
+          "t": 185576,
+          "d": 286
+        },
+        {
+          "t": 185949,
+          "d": 64
+        },
+        {
+          "t": 187282,
+          "d": 51
+        },
+        {
+          "t": 187991,
+          "d": 52
+        },
+        {
+          "t": 188761,
+          "d": 51
+        },
+        {
+          "t": 189656,
+          "d": 70
+        },
+        {
+          "t": 189793,
+          "d": 54
+        },
+        {
+          "t": 191439,
+          "d": 56
+        },
+        {
+          "t": 191778,
+          "d": 65
+        }
+      ],
+      "programsDelta": 1,
+      "texturesDelta": 13,
+      "geometriesDelta": 182,
+      "drawCalls": 1,
+      "heapDeltaMB": 26.7
+    },
+    "drive": {
+      "wallMs": 15058,
+      "simS": 13.5,
+      "frames": 218,
+      "ltfPct": 96.6,
+      "gapP95": 84,
+      "gapMax": 125,
+      "taskCount": 9,
+      "worstMs": 70,
+      "over100Count": 0,
+      "over100Per10s": 0,
+      "tasks": [
+        {
+          "t": 196438,
+          "d": 61
+        },
+        {
+          "t": 197124,
+          "d": 50
+        },
+        {
+          "t": 199032,
+          "d": 51
+        },
+        {
+          "t": 199763,
+          "d": 50
+        },
+        {
+          "t": 201175,
+          "d": 60
+        },
+        {
+          "t": 201299,
+          "d": 52
+        },
+        {
+          "t": 201953,
+          "d": 55
+        },
+        {
+          "t": 206041,
+          "d": 70
+        },
+        {
+          "t": 207782,
+          "d": 59
+        }
+      ],
+      "programsDelta": 0,
+      "texturesDelta": 0,
+      "geometriesDelta": 3,
+      "drawCalls": 1,
+      "heapDeltaMB": -3.4
+    },
+    "fire": {
+      "wallMs": 8464,
+      "simS": 6.6,
+      "frames": 107,
+      "ltfPct": 85.8,
+      "gapP95": 89,
+      "gapMax": 794,
+      "taskCount": 16,
+      "worstMs": 256,
+      "over100Count": 2,
+      "over100Per10s": 2.36,
+      "tasks": [
+        {
+          "t": 207920,
+          "d": 50
+        },
+        {
+          "t": 208985,
+          "d": 256
+        },
+        {
+          "t": 209242,
+          "d": 60
+        },
+        {
+          "t": 211510,
+          "d": 61
+        },
+        {
+          "t": 211710,
+          "d": 51
+        },
+        {
+          "t": 211983,
+          "d": 54
+        },
+        {
+          "t": 212388,
+          "d": 50
+        },
+        {
+          "t": 212766,
+          "d": 52
+        },
+        {
+          "t": 212840,
+          "d": 52
+        },
+        {
+          "t": 213698,
+          "d": 178
+        },
+        {
+          "t": 214032,
+          "d": 52
+        },
+        {
+          "t": 214152,
+          "d": 68
+        },
+        {
+          "t": 215066,
+          "d": 51
+        },
+        {
+          "t": 215339,
+          "d": 63
+        },
+        {
+          "t": 215491,
+          "d": 51
+        },
+        {
+          "t": 215561,
+          "d": 50
+        }
+      ],
+      "programsDelta": 3,
+      "texturesDelta": 0,
+      "geometriesDelta": 6,
+      "drawCalls": 1,
+      "heapDeltaMB": -8.6
+    },
+    "fight": {
+      "wallMs": 20025,
+      "simS": 17.7,
+      "frames": 287,
+      "ltfPct": 96.8,
+      "gapP95": 91,
+      "gapMax": 135,
+      "taskCount": 11,
+      "worstMs": 73,
+      "over100Count": 0,
+      "over100Per10s": 0,
+      "tasks": [
+        {
+          "t": 221616,
+          "d": 56
+        },
+        {
+          "t": 224349,
+          "d": 61
+        },
+        {
+          "t": 224559,
+          "d": 60
+        },
+        {
+          "t": 226353,
+          "d": 64
+        },
+        {
+          "t": 227285,
+          "d": 52
+        },
+        {
+          "t": 231173,
+          "d": 52
+        },
+        {
+          "t": 231586,
+          "d": 54
+        },
+        {
+          "t": 232137,
+          "d": 63
+        },
+        {
+          "t": 232945,
+          "d": 73
+        },
+        {
+          "t": 233103,
+          "d": 53
+        },
+        {
+          "t": 234289,
+          "d": 55
+        }
+      ],
+      "programsDelta": 0,
+      "texturesDelta": 0,
+      "geometriesDelta": 1,
+      "drawCalls": 1,
+      "heapDeltaMB": -1.2
+    },
+    "rematch": {
+      "wallMs": 7216,
+      "simS": -76.4,
+      "frames": 4,
+      "ltfPct": 46.3,
+      "gapP95": 3992,
+      "gapMax": 3992,
+      "taskCount": 2,
+      "worstMs": 3020,
+      "over100Count": 2,
+      "over100Per10s": 2.77,
+      "tasks": [
+        {
+          "t": 241089,
+          "d": 854
+        },
+        {
+          "t": 241960,
+          "d": 3020
+        }
+      ],
+      "programsDelta": -66,
+      "texturesDelta": -136,
+      "geometriesDelta": -262,
+      "drawCalls": 1,
+      "heapDeltaMB": 68
+    },
+    "map_cycle": {
+      "wallMs": 19776,
+      "simS": 0.4,
+      "frames": 405,
+      "ltfPct": 40.8,
+      "gapP95": 84,
+      "gapMax": 5733,
+      "taskCount": 24,
+      "worstMs": 5733,
+      "over100Count": 15,
+      "over100Per10s": 7.58,
+      "tasks": [
+        {
+          "t": 245228,
+          "d": 150
+        },
+        {
+          "t": 245413,
+          "d": 81
+        },
+        {
+          "t": 245530,
+          "d": 326
+        },
+        {
+          "t": 245911,
+          "d": 91
+        },
+        {
+          "t": 246486,
+          "d": 63
+        },
+        {
+          "t": 246632,
+          "d": 51
+        },
+        {
+          "t": 246723,
+          "d": 76
+        },
+        {
+          "t": 246800,
+          "d": 64
+        },
+        {
+          "t": 246865,
+          "d": 345
+        },
+        {
+          "t": 247210,
+          "d": 50
+        },
+        {
+          "t": 247294,
+          "d": 249
+        },
+        {
+          "t": 247551,
+          "d": 178
+        },
+        {
+          "t": 247780,
+          "d": 1583
+        },
+        {
+          "t": 249365,
+          "d": 51
+        },
+        {
+          "t": 249425,
+          "d": 1217
+        },
+        {
+          "t": 250834,
+          "d": 154
+        },
+        {
+          "t": 251676,
+          "d": 50
+        },
+        {
+          "t": 251813,
+          "d": 158
+        },
+        {
+          "t": 252159,
+          "d": 250
+        },
+        {
+          "t": 252452,
+          "d": 108
+        },
+        {
+          "t": 252565,
+          "d": 101
+        },
+        {
+          "t": 252669,
+          "d": 165
+        },
+        {
+          "t": 253177,
+          "d": 5733
+        },
+        {
+          "t": 264423,
+          "d": 409
+        }
+      ],
+      "programsDelta": -36,
+      "texturesDelta": 42,
+      "geometriesDelta": -16,
+      "drawCalls": 1,
+      "heapDeltaMB": 116.6
+    }
+  },
+  "spotted": [
+    {
+      "wall": 183925.19999998808,
+      "station": "look",
+      "ev": "fv510_milan"
+    },
+    {
+      "wall": 183925.39999997616,
+      "station": "look",
+      "ev": "t80bv"
+    },
+    {
+      "wall": 185113.69999998808,
+      "station": "look",
+      "ev": "bwp1"
+    },
+    {
+      "wall": 186500.89999997616,
+      "station": "look",
+      "ev": "t80b"
+    },
+    {
+      "wall": 189683.29999995232,
+      "station": "look",
+      "ev": "t80"
+    },
+    {
+      "wall": 197410.69999998808,
+      "station": "drive",
+      "ev": "ztz85_iii"
+    },
+    {
+      "wall": 197614.89999997616,
+      "station": "drive",
+      "ev": "t80"
+    },
+    {
+      "wall": 198838.69999998808,
+      "station": "drive",
+      "ev": "m1a1ha"
+    },
+    {
+      "wall": 200830.19999998808,
+      "station": "drive",
+      "ev": "amx40"
+    },
+    {
+      "wall": 203049.79999995232,
+      "station": "drive",
+      "ev": "type90"
+    },
+    {
+      "wall": 203117.89999997616,
+      "station": "drive",
+      "ev": "carro45t"
+    },
+    {
+      "wall": 203254.5,
+      "station": "drive",
+      "ev": "mbt70"
+    },
+    {
+      "wall": 215353.59999996424,
+      "station": "fire",
+      "ev": "m2a2_bradley"
+    },
+    {
+      "wall": 224422.79999995232,
+      "station": "fight",
+      "ev": "bwp1"
+    },
+    {
+      "wall": 227427,
+      "station": "fight",
+      "ev": "strv103a"
+    }
+  ],
+  "ua": "Mozilla/5.0 (iPhone; CPU iPhone OS 26_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.0 Mobile/15E148 Safari/604.1",
+  "dpr": 3,
+  "battleLoadStages": {
+    "map": "delta",
+    "worldCached": false,
+    "stages": {
+      "world": 13055,
+      "roster": 500,
+      "bake": 3,
+      "warm": 52662,
+      "holdCountdown": 5,
+      "restoreRenderer": 0,
+      "hide": 321,
+      "open": 1
+    },
+    "world": {
+      "id": "delta",
+      "cached": false,
+      "buildDetail": {
+        "heightField": 143,
+        "terrain": 1192,
+        "vegetation": 818,
+        "props": 1336,
+        "assemble": 3,
+        "vegetationDetail": {
+          "grassPrep": 14,
+          "grassScatter": 390,
+          "grassCarpet": 2,
+          "treeClusters": 100,
+          "treeLoneAndBelts": 2,
+          "treeRimAndMeshes": 23,
+          "treeRootDecals": 245,
+          "bushes": 16,
+          "finalize": 0
+        },
+        "terrainDetail": {
+          "enabled": true,
+          "totalGeometryCount": 192,
+          "initialGeometryCount": 64,
+          "initialFineGridCount": 18,
+          "streamedGeometryCount": 0
+        }
+      },
+      "build": 3492,
+      "present": 0,
+      "compile": 0,
+      "shadowWarm": 0,
+      "clouds": 0,
+      "activate": 9562,
+      "totalMs": 13053
+    },
+    "totalMs": 66547
+  },
+  "profile": {
+    "name": "native",
+    "cpuRate": 1,
+    "cores": null,
+    "memoryGB": null,
+    "softwareGpu": false,
+    "production": true,
+    "url": "http://127.0.0.1:5780/?tier=mobile&gfxreset=1&debug=1",
+    "viewport": {
+      "width": 892,
+      "height": 412,
+      "isMobile": true,
+      "hasTouch": true,
+      "isLandscape": true,
+      "deviceScaleFactor": 3
+    }
+  },
+  "mobileResidency": {
+    "limits": {
+      "pedestalVisuals": 2,
+      "worldScenes": 1
+    },
+    "worlds": [
+      "desert"
+    ],
+    "pedestal": [
+      "m2a2_bradley"
+    ],
+    "release": {
+      "id": "delta",
+      "objects": 212,
+      "geometries": 187,
+      "materials": 33,
+      "textures": 32
+    },
+    "memory": {
+      "geometries": 718,
+      "textures": 218
+    },
+    "garageEntry": {
+      "stages": {
+        "presentationReset": 1,
+        "networkRelease": 1,
+        "worldServices": 0,
+        "worldAndHero": 1,
+        "lighting": 0,
+        "eventAndHud": 5,
+        "garageUi": 40,
+        "camera": 2,
+        "audio": 1
+      },
+      "totalMs": 49
+    },
+    "battleLoad": {
+      "map": "desert",
+      "worldCached": false,
+      "stages": {
+        "world": 4153,
+        "roster": 1298,
+        "bake": 0,
+        "warm": 2194,
+        "holdCountdown": 1,
+        "restoreRenderer": 0,
+        "hide": 321,
+        "open": 0
+      },
+      "world": {
+        "id": "desert",
+        "cached": false,
+        "buildDetail": {
+          "heightField": 132,
+          "terrain": 1126,
+          "vegetation": 381,
+          "props": 930,
+          "assemble": 1,
+          "vegetationDetail": {
+            "grassPrep": 27,
+            "grassScatter": 195,
+            "grassCarpet": 2,
+            "treeClusters": 73,
+            "treeLoneAndBelts": 0,
+            "treeRimAndMeshes": 6,
+            "treeRootDecals": 57,
+            "bushes": 8,
+            "finalize": 0
+          },
+          "terrainDetail": {
+            "enabled": true,
+            "totalGeometryCount": 192,
+            "initialGeometryCount": 64,
+            "initialFineGridCount": 37,
+            "streamedGeometryCount": 0
+          }
+        },
+        "build": 2571,
+        "present": 0,
+        "compile": 0,
+        "shadowWarm": 0,
+        "clouds": 0,
+        "activate": 1557,
+        "totalMs": 4128
+      },
+      "totalMs": 7967
+    },
+    "countdownWarm": {
+      "done": true,
+      "phase": "transition",
+      "stages": {
+        "camo": 1574,
+        "allyVisuals": 179,
+        "enemyVisuals": 427,
+        "terrainGrid": 14,
+        "combatWarm": 0
+      },
+      "totalMs": 2194,
+      "preBattleRemainingS": null,
+      "doneBeforeRollout": true
+    }
+  },
+  "soak": {
+    "cycles": 0,
+    "secondsPerCycle": 5,
+    "samples": [
+      {
+        "label": "baseline",
+        "map": "desert",
+        "phase": "battle",
+        "limits": {
+          "pedestalVisuals": 2,
+          "worldScenes": 1
+        },
+        "worlds": [
+          "desert"
+        ],
+        "pedestal": [
+          "m2a2_bradley"
+        ],
+        "roster": [
+          "amx30b2",
+          "bmp3",
+          "carro45t",
+          "centurion5",
+          "leo2a4",
+          "leopard2_proto",
+          "m2a2_bradley",
+          "m60a2",
+          "merkava2d",
+          "t64bv1",
+          "t72bu",
+          "t80",
+          "t80u",
+          "ztz85_iii"
+        ],
+        "programs": 317,
+        "textures": 218,
+        "geometries": 718,
+        "heapMB": 443.8,
+        "preset": "mobile",
+        "dynScale": 0.715,
+        "contextLost": false
+      }
+    ],
+    "deterministicRoster": true,
+    "comparable": false,
+    "comparisonMap": null,
+    "coldGrowth": null,
+    "growth": null,
+    "budgets": {
+      "programs": 8,
+      "textures": 24,
+      "geometries": 48,
+      "heapMB": 96
+    }
+  },
+  "orientationRecovery": {
+    "before": {
+      "viewport": [
+        892,
+        412
+      ],
+      "phase": "battle",
+      "map": "desert",
+      "cameraAspect": 2.165,
+      "expectedAspect": 2.165,
+      "canvasCss": [
+        892,
+        412
+      ],
+      "canvasBuffer": [
+        2676,
+        1236
+      ],
+      "deviceDpr": 3,
+      "rendererDpr": 3,
+      "outputResolution": {
+        "width": 892,
+        "height": 412,
+        "devicePixelRatio": 3,
+        "pixelRatio": 3,
+        "bufferWidth": 2676,
+        "bufferHeight": 1236,
+        "outputPixels": 3307536,
+        "native": true,
+        "budgetLimited": false
+      },
+      "reconstruction": {
+        "mode": "linear",
+        "input": [
+          892.8919999999999,
+          412.412
+        ],
+        "output": [
+          2676,
+          1236
+        ],
+        "inputScale": 0.334,
+        "sharpness": 0
+      },
+      "touchVisible": true,
+      "criticalOverlaps": [],
+      "contextLost": false
+    },
+    "portrait": {
+      "viewport": [
+        412,
+        892
+      ],
+      "phase": "battle",
+      "map": "desert",
+      "cameraAspect": 0.4619,
+      "expectedAspect": 0.4619,
+      "canvasCss": [
+        412,
+        892
+      ],
+      "canvasBuffer": [
+        1236,
+        2676
+      ],
+      "deviceDpr": 3,
+      "rendererDpr": 3,
+      "outputResolution": {
+        "width": 412,
+        "height": 892,
+        "devicePixelRatio": 3,
+        "pixelRatio": 3,
+        "bufferWidth": 1236,
+        "bufferHeight": 2676,
+        "outputPixels": 3307536,
+        "native": true,
+        "budgetLimited": false
+      },
+      "reconstruction": {
+        "mode": "linear",
+        "input": [
+          412.412,
+          892.8919999999999
+        ],
+        "output": [
+          1236,
+          2676
+        ],
+        "inputScale": 0.334,
+        "sharpness": 0
+      },
+      "touchVisible": true,
+      "criticalOverlaps": [
+        "scoreboard:minimap",
+        "scoreboard:mobileChrome"
+      ],
+      "contextLost": false
+    },
+    "after": {
+      "viewport": [
+        892,
+        412
+      ],
+      "phase": "battle",
+      "map": "desert",
+      "cameraAspect": 2.165,
+      "expectedAspect": 2.165,
+      "canvasCss": [
+        892,
+        412
+      ],
+      "canvasBuffer": [
+        2676,
+        1236
+      ],
+      "deviceDpr": 3,
+      "rendererDpr": 3,
+      "outputResolution": {
+        "width": 892,
+        "height": 412,
+        "devicePixelRatio": 3,
+        "pixelRatio": 3,
+        "bufferWidth": 2676,
+        "bufferHeight": 1236,
+        "outputPixels": 3307536,
+        "native": true,
+        "budgetLimited": false
+      },
+      "reconstruction": {
+        "mode": "linear",
+        "input": [
+          892.8919999999999,
+          412.412
+        ],
+        "output": [
+          2676,
+          1236
+        ],
+        "inputScale": 0.334,
+        "sharpness": 0
+      },
+      "touchVisible": true,
+      "criticalOverlaps": [],
+      "contextLost": false
+    },
+    "statePreserved": true
+  },
+  "lifecycleRecovery": {
+    "supported": true,
+    "before": {
+      "phase": "battle",
+      "map": "desert",
+      "simS": 2.1499999999999972
+    },
+    "after": {
+      "phase": "battle",
+      "map": "desert",
+      "simS": 2.4833333333333294,
+      "contextLost": false,
+      "renderCalls": 1,
+      "hidden": false,
+      "visibilityState": "visible",
+      "focused": true,
+      "input": {
+        "throttle": 0,
+        "steer": 0,
+        "fire": false
+      }
+    },
+    "statePreserved": true,
+    "simDeltaS": 0.33
+  },
+  "contextRecovery": {
+    "supported": true,
+    "phase": "battle",
+    "map": "desert",
+    "during": {
+      "paused": true,
+      "overlay": true
+    },
+    "after": {
+      "paused": false,
+      "overlay": false,
+      "phase": "battle",
+      "map": "desert",
+      "preset": "mobile-low",
+      "contextLost": false,
+      "renderCalls": 1
+    },
+    "renderResumed": true,
+    "statePreserved": true
+  },
+  "trace": {
+    "stats": {
+      "enabled": true,
+      "active": true,
+      "traceMode": "production-qa",
+      "sessionId": "mt62s9rj-e6k7cl5",
+      "durationMs": 289746.8,
+      "frames": 3184,
+      "framesDropped": 0,
+      "events": 3670,
+      "eventsDropped": 0,
+      "eventCounts": {
+        "ui:bindingsChanged": 1,
+        "ui:volumes": 1,
+        "ui:perfMeter": 1,
+        "ui:click": 2,
+        "ui:battleStart": 1,
+        "phase:change": 4,
+        "ui:consumableReset": 3,
+        "battle:rollout": 3,
+        "prop:crushed": 239,
+        "prop:destroyed": 44,
+        "tank:impact": 10,
+        "tank:spotted": 15,
+        "shell:fired": 73,
+        "shell:hit": 25,
+        "shell:expired": 61,
+        "module:state": 8,
+        "player:reload": 1466,
+        "tank:destroyed": 2,
+        "network:roomState": 1
+      },
+      "gapP50": 41.3,
+      "gapP95": 179.2,
+      "gapP99": 527.4,
+      "maxGapMs": 15208.3,
+      "spikes": 1411,
+      "freezes": 82,
+      "longTasks": 190,
+      "longTaskMs": 126340,
+      "consoleAll": false
+    },
+    "environment": {
+      "url": "http://127.0.0.1:5780/?tier=mobile&gfxreset=1&debug=1",
+      "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 26_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.0 Mobile/15E148 Safari/604.1",
+      "platform": "Win32",
+      "hardwareConcurrency": 32,
+      "deviceMemoryGB": 16,
+      "dpr": 3,
+      "viewport": [
+        892,
+        412
+      ],
+      "gpu": null,
+      "mode": "production",
+      "traceMode": "production-qa"
+    },
+    "telemetry": {
+      "quality": {
+        "buffer": "2676×1236",
+        "dpr": 3,
+        "deviceDpr": 3,
+        "nativeOutput": true,
+        "outputBudgetLimited": false,
+        "outputPixels": 3307536,
+        "renderScale": 1,
+        "dynScale": 1,
+        "reconstruction": {
+          "mode": "linear",
+          "input": [
+            892,
+            412
+          ],
+          "output": [
+            2676,
+            1236
+          ],
+          "inputScale": 0.333,
+          "sharpness": 0
+        },
+        "perfTrim": 0,
+        "preset": "mobile-low",
+        "tier": "mobile",
+        "gpu": "ANGLE (Intel, Intel(R) UHD Graphics (0x0000A788) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+      },
+      "simulation": {
+        "phase": "battle",
+        "map": "desert",
+        "timeS": 2.7333333333333285,
+        "tanks": 14,
+        "alive": 14,
+        "shells": 0
+      },
+      "world": {
+        "obstacles": 1748,
+        "colliders": 549,
+        "concealers": 1255,
+        "destructibles": 347,
+        "wrecks": 2,
+        "looseTotal": 55,
+        "looseActive": 0
+      },
+      "shadows": {
+        "maxFar": 260,
+        "throttle": 0,
+        "frame": 2653,
+        "forceFrames": 0,
+        "scheduledMask": 7,
+        "cascades": [
+          {
+            "size": 768,
+            "allocated": true,
+            "allocatedSize": 768,
+            "worldUnitsPerTexel": 0.163352,
+            "position": "[Array]",
+            "radius": 1.25,
+            "normalBias": 0.045,
+            "autoUpdate": true,
+            "needsUpdate": false
+          },
+          {
+            "size": 768,
+            "allocated": true,
+            "allocatedSize": 768,
+            "worldUnitsPerTexel": 0.369882,
+            "position": "[Array]",
+            "radius": 1.25,
+            "normalBias": 0.045,
+            "autoUpdate": true,
+            "needsUpdate": false
+          },
+          {
+            "size": 512,
+            "allocated": true,
+            "allocatedSize": 512,
+            "worldUnitsPerTexel": 1.406652,
+            "position": "[Array]",
+            "radius": 1.25,
+            "normalBias": 0.045,
+            "autoUpdate": false,
+            "needsUpdate": false
+          }
+        ],
+        "enabled": true,
+        "rescue": null,
+        "shaderErrors": 0,
+        "casters": 56,
+        "receivers": 139
+      },
+      "network": {
+        "connected": null
+      },
+      "memory": {
+        "drawBuffer": "2676×1236"
+      }
+    },
+    "frameSchema": [
+      "tMs",
+      "gapMs",
+      "dtMs",
+      "simS",
+      "preBattleS",
+      "phase",
+      "flags",
+      "renderFrame",
+      "calls",
+      "triangles",
+      "programs",
+      "geometries",
+      "textures",
+      "heapMB",
+      "renderScale",
+      "throttle",
+      "steer",
+      "fire"
+    ],
+    "errors": [],
+    "contextEvents": [
+      {
+        "seq": 3658,
+        "tMs": 273553.5,
+        "kind": "anomaly",
+        "name": "webgl:context-lost",
+        "phase": "battle",
+        "simS": 2.5333,
+        "data": {
+          "statusMessage": "",
+          "lastEventSeq": 3647,
+          "lastEventName": "ui:click"
+        }
+      },
+      {
+        "seq": 3661,
+        "tMs": 274309.3,
+        "kind": "lifecycle",
+        "name": "webglcontextrestored",
+        "phase": "battle",
+        "simS": 2.5333,
+        "data": {}
+      }
+    ],
+    "lifecycleEvents": [
+      {
+        "seq": 5,
+        "tMs": 905.7,
+        "kind": "lifecycle",
+        "name": "pageshow",
+        "phase": "garage",
+        "simS": 0,
+        "data": {
+          "persisted": false,
+          "hidden": false,
+          "visibilityState": "visible",
+          "focused": true,
+          "viewport": [
+            892,
+            412
+          ]
+        }
+      },
+      {
+        "seq": 3624,
+        "tMs": 262872.1,
+        "kind": "lifecycle",
+        "name": "orientationchange",
+        "phase": "battle",
+        "simS": 0.6,
+        "data": {
+          "hidden": false,
+          "visibilityState": "visible",
+          "focused": true,
+          "viewport": [
+            892,
+            412
+          ]
+        }
+      },
+      {
+        "seq": 3625,
+        "tMs": 262969.8,
+        "kind": "lifecycle",
+        "name": "resize",
+        "phase": "battle",
+        "simS": 0.6,
+        "data": {
+          "hidden": false,
+          "visibilityState": "visible",
+          "focused": true,
+          "viewport": [
+            412,
+            892
+          ]
+        }
+      },
+      {
+        "seq": 3641,
+        "tMs": 265124.3,
+        "kind": "lifecycle",
+        "name": "orientationchange",
+        "phase": "battle",
+        "simS": 2.0333,
+        "data": {
+          "hidden": false,
+          "visibilityState": "visible",
+          "focused": true,
+          "viewport": [
+            412,
+            892
+          ]
+        }
+      },
+      {
+        "seq": 3642,
+        "tMs": 265146.9,
+        "kind": "lifecycle",
+        "name": "resize",
+        "phase": "battle",
+        "simS": 2.0333,
+        "data": {
+          "hidden": false,
+          "visibilityState": "visible",
+          "focused": true,
+          "viewport": [
+            892,
+            412
+          ]
+        }
+      },
+      {
+        "seq": 3646,
+        "tMs": 270647.3,
+        "kind": "lifecycle",
+        "name": "visibilitychange",
+        "phase": "battle",
+        "simS": 2.15,
+        "data": {
+          "hidden": true,
+          "visibilityState": "hidden",
+          "focused": false,
+          "viewport": [
+            892,
+            412
+          ]
+        }
+      },
+      {
+        "seq": 3648,
+        "tMs": 271852.5,
+        "kind": "lifecycle",
+        "name": "visibilitychange",
+        "phase": "battle",
+        "simS": 2.15,
+        "data": {
+          "hidden": false,
+          "visibilityState": "visible",
+          "focused": true,
+          "viewport": [
+            892,
+            412
+          ]
+        }
+      },
+      {
+        "seq": 3661,
+        "tMs": 274309.3,
+        "kind": "lifecycle",
+        "name": "webglcontextrestored",
+        "phase": "battle",
+        "simS": 2.5333,
+        "data": {}
+      }
+    ]
+  },
+  "reveals": [
+    {
+      "worstMs": 61
+    },
+    {
+      "worstMs": 52
+    }
+  ],
+  "verdicts": {
+    "garage_idle": "FAIL",
+    "tank_switch": "PASS",
+    "battle_load": "FAIL",
+    "look": "FAIL",
+    "drive": "FAIL",
+    "fire": "FAIL",
+    "fight": "FAIL",
+    "rematch": "PASS",
+    "map_cycle": "PASS",
+    "mobile_residency": "PASS",
+    "context_recovery": "PASS",
+    "soak": "SKIP",
+    "orientation_recovery": "FAIL",
+    "lifecycle_recovery": "PASS",
+    "trace": "PASS"
+  }
+}

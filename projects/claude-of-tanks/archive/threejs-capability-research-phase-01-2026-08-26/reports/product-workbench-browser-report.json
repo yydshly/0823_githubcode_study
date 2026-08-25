@@ -1,0 +1,718 @@
+{
+  "url": "http://127.0.0.1:4176/workbench",
+  "startedAt": "2026-08-24T10:11:20.373Z",
+  "result": "pass",
+  "consoleErrors": [],
+  "forbiddenRuntimeRequests": [],
+  "externalModelRequests": [],
+  "screenshots": [
+    "01-desktop-atlas.png",
+    "02-desktop-atlas-exploded.png",
+    "03-desktop-nova.png",
+    "04-mobile-nova.png"
+  ],
+  "checks": {
+    "route200": true,
+    "runtimeReady": true,
+    "trueWorldNone": true,
+    "independentRenderCore": true,
+    "twoSubjectRegistry": true,
+    "subjectAdapterContract": true,
+    "noGameOrWorldModules": true,
+    "noExternalModelRequests": true,
+    "canvasVisible": true,
+    "twoSubjectControls": true,
+    "atlasThreeHotspots": true,
+    "atlasThreeMaterialVariants": true,
+    "atlasInteractionContract": true,
+    "shadowBudgetApplied": true,
+    "atlasCallOptimization": true,
+    "novaSubjectSwitch": true,
+    "novaIndependentContract": true,
+    "novaThreeHotspots": true,
+    "novaThreeMaterialVariants": true,
+    "directorCrossesSubjects": true,
+    "performanceMeasured": true,
+    "performanceBudgetsReported": true,
+    "mobileQualityReducesCalls": true,
+    "sourceTextureFree": true,
+    "mobileNoHorizontalOverflow": true,
+    "mobileTouchTargets": true,
+    "mobileLowQuality": true,
+    "reducedMotionStopsTurntable": true,
+    "evidenceComplete": true,
+    "noConsoleErrors": true
+  },
+  "desktopAtlas": {
+    "snapshot": {
+      "version": 2,
+      "status": "ready",
+      "route": "/workbench",
+      "architecture": {
+        "renderCore": "standalone-threejs",
+        "scene": "neutral-inspection-world-none",
+        "subject": "atlas-inspection-rover",
+        "subjectAdapter": "product-subject-v1",
+        "presentation": "product-stage-v2",
+        "world": "none"
+      },
+      "registryAudit": {
+        "version": 1,
+        "subjectCount": 2,
+        "subjectIds": [
+          "atlas-inspection-rover",
+          "nova-field-node"
+        ],
+        "issues": [],
+        "valid": true
+      },
+      "availableSubjectIds": [
+        "atlas-inspection-rover",
+        "nova-field-node"
+      ],
+      "sceneProfile": {
+        "id": "neutral-inspection-world-none",
+        "kind": "scene",
+        "world": "none",
+        "status": "proven",
+        "externalAssetCount": 0,
+        "textureCount": 0,
+        "capabilities": [
+          "independent-renderer",
+          "inspection-light-rig",
+          "contact-platform",
+          "responsive-quality-tier"
+        ]
+      },
+      "subjectManifest": {
+        "version": 1,
+        "id": "atlas-inspection-rover",
+        "kind": "industrial-equipment",
+        "origin": "procedural",
+        "qualityClaim": "Prototype / L2 — procedural presentation asset; not a commercial production model",
+        "sourceModule": "showcase/industrial-showroom-asset.js",
+        "externalModelCount": 0,
+        "generatedMeshCount": 59,
+        "meshFingerprint": "fnv1a-df24d04c",
+        "partIds": [
+          "chassis",
+          "sensor-system",
+          "energy-module",
+          "all-terrain-drive",
+          "safety-frame",
+          "service-bay"
+        ],
+        "sockets": [
+          "sensor-system",
+          "energy-module",
+          "all-terrain-drive"
+        ],
+        "materialVariantIds": [
+          "graphite-field",
+          "rescue-orange",
+          "arctic-service"
+        ]
+      },
+      "subjectAdapter": {
+        "version": 1,
+        "contract": "product-subject-v1",
+        "id": "atlas-inspection-rover",
+        "sourceHeight": 3.13,
+        "normalizedHeight": 3.18,
+        "scale": 1.016,
+        "stageY": 0.22,
+        "renderableCount": 59,
+        "visibleRenderableCount": 59,
+        "outlineCount": 20,
+        "visibleOutlineCount": 20,
+        "shadowCandidateCount": 59,
+        "shadowCasterBudget": 24,
+        "activeShadowCasters": 24,
+        "quality": "high",
+        "externalModelCount": 0
+      },
+      "provenance": {
+        "origin": "procedural",
+        "qualityClaim": "Prototype / L2 — procedural presentation asset; not a commercial production model",
+        "sourceModule": "showcase/industrial-showroom-asset.js",
+        "externalModelCount": 0
+      },
+      "activeSubjectId": "atlas-inspection-rover",
+      "activeHotspotId": null,
+      "activeVariantId": "graphite-field",
+      "exploded": false,
+      "autoRotate": true,
+      "quality": "high",
+      "reducedMotion": false,
+      "director": {
+        "playing": false,
+        "paused": false,
+        "elapsedMs": 0,
+        "segmentId": null,
+        "caption": "双主体产品工作台"
+      },
+      "metrics": {
+        "readyMs": 138,
+        "fps": 124,
+        "frameP95Ms": 12.4,
+        "calls": 116,
+        "triangles": 7380,
+        "geometries": 92,
+        "textures": 3,
+        "sampleCount": 120,
+        "quality": "high"
+      },
+      "renderer": {
+        "outputColorSpace": "srgb",
+        "toneMapping": 4,
+        "pixelRatio": 1,
+        "shadows": true
+      }
+    },
+    "canvas": {
+      "width": 1440,
+      "height": 900
+    },
+    "subjectButtons": 2,
+    "hotspotTabs": 3,
+    "materialVariants": 3,
+    "worldHotspots": 3,
+    "scrollWidth": 1440,
+    "innerWidth": 1440
+  },
+  "atlasInteraction": {
+    "version": 2,
+    "status": "ready",
+    "route": "/workbench",
+    "architecture": {
+      "renderCore": "standalone-threejs",
+      "scene": "neutral-inspection-world-none",
+      "subject": "atlas-inspection-rover",
+      "subjectAdapter": "product-subject-v1",
+      "presentation": "product-stage-v2",
+      "world": "none"
+    },
+    "registryAudit": {
+      "version": 1,
+      "subjectCount": 2,
+      "subjectIds": [
+        "atlas-inspection-rover",
+        "nova-field-node"
+      ],
+      "issues": [],
+      "valid": true
+    },
+    "availableSubjectIds": [
+      "atlas-inspection-rover",
+      "nova-field-node"
+    ],
+    "sceneProfile": {
+      "id": "neutral-inspection-world-none",
+      "kind": "scene",
+      "world": "none",
+      "status": "proven",
+      "externalAssetCount": 0,
+      "textureCount": 0,
+      "capabilities": [
+        "independent-renderer",
+        "inspection-light-rig",
+        "contact-platform",
+        "responsive-quality-tier"
+      ]
+    },
+    "subjectManifest": {
+      "version": 1,
+      "id": "atlas-inspection-rover",
+      "kind": "industrial-equipment",
+      "origin": "procedural",
+      "qualityClaim": "Prototype / L2 — procedural presentation asset; not a commercial production model",
+      "sourceModule": "showcase/industrial-showroom-asset.js",
+      "externalModelCount": 0,
+      "generatedMeshCount": 59,
+      "meshFingerprint": "fnv1a-df24d04c",
+      "partIds": [
+        "chassis",
+        "sensor-system",
+        "energy-module",
+        "all-terrain-drive",
+        "safety-frame",
+        "service-bay"
+      ],
+      "sockets": [
+        "sensor-system",
+        "energy-module",
+        "all-terrain-drive"
+      ],
+      "materialVariantIds": [
+        "graphite-field",
+        "rescue-orange",
+        "arctic-service"
+      ]
+    },
+    "subjectAdapter": {
+      "version": 1,
+      "contract": "product-subject-v1",
+      "id": "atlas-inspection-rover",
+      "sourceHeight": 3.13,
+      "normalizedHeight": 3.18,
+      "scale": 1.016,
+      "stageY": 0.22,
+      "renderableCount": 59,
+      "visibleRenderableCount": 59,
+      "outlineCount": 20,
+      "visibleOutlineCount": 20,
+      "shadowCandidateCount": 59,
+      "shadowCasterBudget": 24,
+      "activeShadowCasters": 24,
+      "quality": "high",
+      "externalModelCount": 0
+    },
+    "provenance": {
+      "origin": "procedural",
+      "qualityClaim": "Prototype / L2 — procedural presentation asset; not a commercial production model",
+      "sourceModule": "showcase/industrial-showroom-asset.js",
+      "externalModelCount": 0
+    },
+    "activeSubjectId": "atlas-inspection-rover",
+    "activeHotspotId": "energy-module",
+    "activeVariantId": "rescue-orange",
+    "exploded": true,
+    "autoRotate": true,
+    "quality": "high",
+    "reducedMotion": false,
+    "director": {
+      "playing": false,
+      "paused": false,
+      "elapsedMs": 0,
+      "segmentId": null,
+      "caption": "双主体产品工作台"
+    },
+    "metrics": {
+      "readyMs": 138,
+      "fps": 106,
+      "frameP95Ms": 12.6,
+      "calls": 103,
+      "triangles": 6692,
+      "geometries": 92,
+      "textures": 3,
+      "sampleCount": 120,
+      "quality": "high"
+    },
+    "renderer": {
+      "outputColorSpace": "srgb",
+      "toneMapping": 4,
+      "pixelRatio": 1,
+      "shadows": true
+    }
+  },
+  "desktopNova": {
+    "snapshot": {
+      "version": 2,
+      "status": "ready",
+      "route": "/workbench",
+      "architecture": {
+        "renderCore": "standalone-threejs",
+        "scene": "neutral-inspection-world-none",
+        "subject": "nova-field-node",
+        "subjectAdapter": "product-subject-v1",
+        "presentation": "product-stage-v2",
+        "world": "none"
+      },
+      "registryAudit": {
+        "version": 1,
+        "subjectCount": 2,
+        "subjectIds": [
+          "atlas-inspection-rover",
+          "nova-field-node"
+        ],
+        "issues": [],
+        "valid": true
+      },
+      "availableSubjectIds": [
+        "atlas-inspection-rover",
+        "nova-field-node"
+      ],
+      "sceneProfile": {
+        "id": "neutral-inspection-world-none",
+        "kind": "scene",
+        "world": "none",
+        "status": "proven",
+        "externalAssetCount": 0,
+        "textureCount": 0,
+        "capabilities": [
+          "independent-renderer",
+          "inspection-light-rig",
+          "contact-platform",
+          "responsive-quality-tier"
+        ]
+      },
+      "subjectManifest": {
+        "version": 1,
+        "id": "nova-field-node",
+        "kind": "industrial-energy-node",
+        "origin": "procedural",
+        "qualityClaim": "Prototype / L2 — procedural presentation asset; not a commercial production model",
+        "sourceModule": "showcase/nova-field-node-asset.js",
+        "externalModelCount": 0,
+        "generatedMeshCount": 26,
+        "instanceCount": 12,
+        "meshFingerprint": "fnv1a-ac2651ed",
+        "partIds": [
+          "structure",
+          "power-core",
+          "sensor-crown",
+          "stabilizers",
+          "thermal-system"
+        ],
+        "sockets": [
+          "sensor-crown",
+          "power-core",
+          "stabilizers"
+        ],
+        "materialVariantIds": [
+          "reactor-cyan",
+          "hazard-amber",
+          "polar-white"
+        ],
+        "animationIds": [
+          "sensor-crown-rotation",
+          "core-pulse"
+        ]
+      },
+      "subjectAdapter": {
+        "version": 1,
+        "contract": "product-subject-v1",
+        "id": "nova-field-node",
+        "sourceHeight": 4.05,
+        "normalizedHeight": 3.42,
+        "scale": 0.8444,
+        "stageY": 0.22,
+        "renderableCount": 26,
+        "visibleRenderableCount": 26,
+        "outlineCount": 0,
+        "visibleOutlineCount": 0,
+        "shadowCandidateCount": 22,
+        "shadowCasterBudget": 12,
+        "activeShadowCasters": 12,
+        "quality": "high",
+        "externalModelCount": 0
+      },
+      "provenance": {
+        "origin": "procedural",
+        "qualityClaim": "Prototype / L2 — procedural presentation asset; not a commercial production model",
+        "sourceModule": "showcase/nova-field-node-asset.js",
+        "externalModelCount": 0
+      },
+      "activeSubjectId": "nova-field-node",
+      "activeHotspotId": null,
+      "activeVariantId": "reactor-cyan",
+      "exploded": false,
+      "autoRotate": true,
+      "quality": "high",
+      "reducedMotion": false,
+      "director": {
+        "playing": false,
+        "paused": false,
+        "elapsedMs": 0,
+        "segmentId": null,
+        "caption": "双主体产品工作台"
+      },
+      "metrics": {
+        "readyMs": 138,
+        "fps": 128,
+        "frameP95Ms": 12.4,
+        "calls": 51,
+        "triangles": 12904,
+        "geometries": 33,
+        "textures": 3,
+        "sampleCount": 120,
+        "quality": "high"
+      },
+      "renderer": {
+        "outputColorSpace": "srgb",
+        "toneMapping": 4,
+        "pixelRatio": 1,
+        "shadows": true
+      }
+    },
+    "hotspotTabs": 3,
+    "materialVariants": 3,
+    "worldHotspots": 3,
+    "activeSubjectLabel": "Nova 节点"
+  },
+  "directorCrossSubject": {
+    "director": {
+      "playing": true,
+      "paused": false,
+      "elapsedMs": 13854.199999999999,
+      "segmentId": "nova-sensor",
+      "caption": "06 · Nova：主体自带局部动画"
+    },
+    "activeSubjectId": "nova-field-node",
+    "presentation": "product-stage-v2"
+  },
+  "mobileNova": {
+    "snapshot": {
+      "version": 2,
+      "status": "ready",
+      "route": "/workbench",
+      "architecture": {
+        "renderCore": "standalone-threejs",
+        "scene": "neutral-inspection-world-none",
+        "subject": "nova-field-node",
+        "subjectAdapter": "product-subject-v1",
+        "presentation": "product-stage-v2",
+        "world": "none"
+      },
+      "registryAudit": {
+        "version": 1,
+        "subjectCount": 2,
+        "subjectIds": [
+          "atlas-inspection-rover",
+          "nova-field-node"
+        ],
+        "issues": [],
+        "valid": true
+      },
+      "availableSubjectIds": [
+        "atlas-inspection-rover",
+        "nova-field-node"
+      ],
+      "sceneProfile": {
+        "id": "neutral-inspection-world-none",
+        "kind": "scene",
+        "world": "none",
+        "status": "proven",
+        "externalAssetCount": 0,
+        "textureCount": 0,
+        "capabilities": [
+          "independent-renderer",
+          "inspection-light-rig",
+          "contact-platform",
+          "responsive-quality-tier"
+        ]
+      },
+      "subjectManifest": {
+        "version": 1,
+        "id": "nova-field-node",
+        "kind": "industrial-energy-node",
+        "origin": "procedural",
+        "qualityClaim": "Prototype / L2 — procedural presentation asset; not a commercial production model",
+        "sourceModule": "showcase/nova-field-node-asset.js",
+        "externalModelCount": 0,
+        "generatedMeshCount": 26,
+        "instanceCount": 12,
+        "meshFingerprint": "fnv1a-ac2651ed",
+        "partIds": [
+          "structure",
+          "power-core",
+          "sensor-crown",
+          "stabilizers",
+          "thermal-system"
+        ],
+        "sockets": [
+          "sensor-crown",
+          "power-core",
+          "stabilizers"
+        ],
+        "materialVariantIds": [
+          "reactor-cyan",
+          "hazard-amber",
+          "polar-white"
+        ],
+        "animationIds": [
+          "sensor-crown-rotation",
+          "core-pulse"
+        ]
+      },
+      "subjectAdapter": {
+        "version": 1,
+        "contract": "product-subject-v1",
+        "id": "nova-field-node",
+        "sourceHeight": 4.05,
+        "normalizedHeight": 3.42,
+        "scale": 0.8444,
+        "stageY": 0.22,
+        "renderableCount": 26,
+        "visibleRenderableCount": 26,
+        "outlineCount": 0,
+        "visibleOutlineCount": 0,
+        "shadowCandidateCount": 22,
+        "shadowCasterBudget": 12,
+        "activeShadowCasters": 0,
+        "quality": "low",
+        "externalModelCount": 0
+      },
+      "provenance": {
+        "origin": "procedural",
+        "qualityClaim": "Prototype / L2 — procedural presentation asset; not a commercial production model",
+        "sourceModule": "showcase/nova-field-node-asset.js",
+        "externalModelCount": 0
+      },
+      "activeSubjectId": "nova-field-node",
+      "activeHotspotId": null,
+      "activeVariantId": "reactor-cyan",
+      "exploded": false,
+      "autoRotate": false,
+      "quality": "low",
+      "reducedMotion": true,
+      "director": {
+        "playing": false,
+        "paused": false,
+        "elapsedMs": 13870.800000000001,
+        "segmentId": null,
+        "caption": "06 · Nova：主体自带局部动画"
+      },
+      "metrics": {
+        "readyMs": 138,
+        "fps": 203,
+        "frameP95Ms": 8.4,
+        "calls": 37,
+        "triangles": 8768,
+        "geometries": 33,
+        "textures": 3,
+        "sampleCount": 120,
+        "quality": "low"
+      },
+      "renderer": {
+        "outputColorSpace": "srgb",
+        "toneMapping": 4,
+        "pixelRatio": 1,
+        "shadows": false
+      }
+    },
+    "innerWidth": 390,
+    "scrollWidth": 390,
+    "reducedMotion": true,
+    "controlSizes": [
+      {
+        "width": 132,
+        "height": 44
+      },
+      {
+        "width": 157,
+        "height": 47
+      },
+      {
+        "width": 157,
+        "height": 47
+      },
+      {
+        "width": 109.328125,
+        "height": 48.75
+      },
+      {
+        "width": 109.328125,
+        "height": 48.75
+      },
+      {
+        "width": 109.34375,
+        "height": 48.75
+      },
+      {
+        "width": 108,
+        "height": 44
+      },
+      {
+        "width": 108,
+        "height": 44
+      },
+      {
+        "width": 108,
+        "height": 44
+      },
+      {
+        "width": 108,
+        "height": 44
+      },
+      {
+        "width": 108,
+        "height": 44
+      },
+      {
+        "width": 108,
+        "height": 44
+      }
+    ],
+    "inspectionBottom": 795,
+    "viewportHeight": 844
+  },
+  "performanceBudgets": [
+    {
+      "id": "workbench-ready",
+      "label": "工作台 ready",
+      "value": 138,
+      "target": 5000,
+      "unit": "ms",
+      "status": "pass"
+    },
+    {
+      "id": "atlas-frame-p95",
+      "label": "Atlas 桌面动态帧 p95",
+      "value": 12.4,
+      "target": 33.4,
+      "unit": "ms",
+      "status": "pass"
+    },
+    {
+      "id": "atlas-draw-calls",
+      "label": "Atlas 高质量 draw calls",
+      "value": 116,
+      "target": 120,
+      "unit": "count",
+      "status": "pass"
+    },
+    {
+      "id": "atlas-triangles",
+      "label": "Atlas 高质量 triangles",
+      "value": 7380,
+      "target": 150000,
+      "unit": "count",
+      "status": "pass"
+    },
+    {
+      "id": "nova-draw-calls",
+      "label": "Nova 高质量 draw calls",
+      "value": 51,
+      "target": 60,
+      "unit": "count",
+      "status": "pass"
+    },
+    {
+      "id": "nova-triangles",
+      "label": "Nova 高质量 triangles",
+      "value": 12904,
+      "target": 150000,
+      "unit": "count",
+      "status": "pass"
+    },
+    {
+      "id": "runtime-textures",
+      "label": "运行时纹理（含阴影）",
+      "value": 3,
+      "target": 4,
+      "unit": "count",
+      "status": "pass"
+    },
+    {
+      "id": "mobile-draw-calls",
+      "label": "Nova 移动轻质量 draw calls",
+      "value": 37,
+      "target": 70,
+      "unit": "count",
+      "status": "pass"
+    }
+  ],
+  "performanceSummary": {
+    "pass": 8,
+    "over": 0
+  },
+  "optimization": {
+    "atlasCallsBefore": 151,
+    "atlasCallsAfter": 116,
+    "delta": -35,
+    "reductionPercent": 23.2,
+    "strategy": "largest-silhouette shadow budget + low-tier outline suppression"
+  },
+  "finishedAt": "2026-08-24T10:11:45.400Z"
+}

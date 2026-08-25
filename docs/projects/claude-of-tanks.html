@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Claude of Tanks / Three.js Phase 01 能力研究：程序化战车、场景、战斗、工作台、复用边界与浏览器证据。">
+  <title>Claude of Tanks · Three.js 能力研究总览</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../project.css">
+  <link rel="stylesheet" href="../claude-of-tanks.css">
+</head>
+<body>
+  <a class="skip-link" href="#content">跳到正文</a>
+  <header class="site-nav">
+    <a class="brand" href="../index.html">0823 / CODE STUDY</a>
+    <nav aria-label="项目导航">
+      <a href="#demos">能力演示</a><a href="#architecture">工作原理</a>
+      <a href="#evidence">实测证据</a><a href="./claude-of-tanks-archive.html">阶段归档</a>
+      <a href="#reproduce">本地复现</a>
+      <a href="https://github.com/Kevin-Liu-01/Claude-of-Tanks">上游源码 ↗</a>
+    </nav>
+  </header>
+  <main id="content" class="project-main cot-main">
+    <section class="project-hero">
+      <div class="cot-hero">
+        <div>
+          <p class="eyebrow">PHASE 01 ARCHIVED · THREE.JS · PROCEDURAL VEHICLES</p>
+          <h1>不是 3D 展柜，<br><span>是一套战车运行时。</span></h1>
+          <p class="project-lead">Claude of Tanks 在浏览器中把程序化战车、驾驶与火控、伤害模型、AI、地图、车库、剖面图库、场景导演和多人同步连成一个系统。它可以作为 Web 3D 战车项目的研究基座，但并不是换模型就能适配所有 3D 产品的通用引擎。</p>
+          <div class="cot-actions"><a class="primary-action" href="./claude-of-tanks/workbench/">在线：产品工作台</a><a href="./claude-of-tanks-archive.html">Phase 01 归档</a><a href="https://cot.kevinliu.studio/">上游在线游戏</a><a href="#evidence">本机实测</a></div>
+        </div>
+        <figure class="cot-hero-media"><img src="../assets/claude-of-tanks/local-home.png" fetchpriority="high" alt="本机运行的 Claude of Tanks 车库首页"><figcaption class="cot-media-label">本机实测 · GARAGE</figcaption></figure>
+      </div>
+      <div class="cot-metrics" aria-label="项目能力摘要">
+        <div><strong>122</strong><span>程序化可玩战车</span></div><div><strong>20</strong><span>战斗地图</span></div>
+        <div><strong>60Hz</strong><span>固定步长权威模拟</span></div><div><strong>5</strong><span>独立 Web 入口</span></div>
+      </div>
+    </section>
+
+    <section id="demos" class="research-section">
+      <div class="section-kicker">01 / 全量能力演示</div>
+      <div class="section-content">
+        <h2>从开火到剖面，从战斗到<span>镜头编排</span>。</h2>
+        <p class="section-intro">标记为“本机实测”的画面来自当前固定版本真实运行，其余为上游随版本发布的素材。发布素材用于确认能力边界；是否跑通，以“实测证据”为准。</p>
+        <div class="cot-gallery">
+          <figure class="cot-shot"><img src="../assets/claude-of-tanks/local-home.png" loading="lazy" decoding="async" alt="本机车库首页"><figcaption><small>本机实测</small><strong>Garage / 车辆入口</strong><span>车辆、地图、涂装、Bot、Studio、Gallery 与 Docs 汇入同一入口。</span></figcaption></figure>
+          <figure class="cot-shot"><img src="../assets/claude-of-tanks/ui_player_view.webp" loading="lazy" decoding="async" alt="战斗玩家视角与 HUD"><figcaption><small>上游发布素材</small><strong>可驾驶 7v7 战斗</strong><span>驾驶、瞄准、开火、装填、生命值、队伍、计时、战术地图与命中反馈。</span></figcaption></figure>
+          <figure class="cot-shot"><img src="../assets/claude-of-tanks/ui_tank_closeup_modern.webp" loading="lazy" decoding="async" alt="现代主战坦克近景"><figcaption><small>上游发布素材</small><strong>程序化车辆工厂</strong><span>122 辆可玩车辆由代码装配，不依赖可玩 GLB；覆盖轮式、履带、悬挂、炮塔与导弹架。</span></figcaption></figure>
+          <figure class="cot-shot"><img src="../assets/claude-of-tanks/02_desert_rooftop_dive.webp" loading="lazy" decoding="async" alt="沙漠城市战斗与破坏效果"><figcaption><small>上游发布素材</small><strong>地图、物理与破坏</strong><span>20 张地图、28 类结构、16 类可破坏物，含沙尘、撞击、履带和爆炸事件。</span></figcaption></figure>
+          <figure class="cot-shot"><img src="../assets/claude-of-tanks/ui_killcam_xray.webp" loading="lazy" decoding="async" alt="击毁回放与剖面透视"><figcaption><small>上游发布素材</small><strong>伤害解剖与 Killcam</strong><span>炮弹、装甲、模块、乘员、弹药架和命中链路可以被解释，而不只是扣血。</span></figcaption></figure>
+          <figure class="cot-shot"><img src="../assets/claude-of-tanks/ui_gallery.webp" loading="lazy" decoding="async" alt="车辆 Gallery 剖面检视"><figcaption><small>上游素材 / 本机交互已验证</small><strong>Gallery 车辆检查器</strong><span>外观、装甲、模块、乘员和标注五层检视；支持按真实网格三角面添加标注。</span></figcaption></figure>
+          <figure class="cot-shot"><img src="../assets/claude-of-tanks/studio_action_04_3900ms.webp" loading="lazy" decoding="async" alt="Scene Studio 动作镜头"><figcaption><small>上游发布素材</small><strong>Scene Studio 导演系统</strong><span>地图、演员、镜头轨道、开火、命中、断履带、击毁、尘土与捕获元数据。</span></figcaption></figure>
+          <figure class="cot-shot"><img src="../assets/claude-of-tanks/capability-showcase-hero.png" loading="lazy" decoding="async" alt="本机运行的 Claude of Tanks 全能力组合场景"><figcaption><small>本机实时场景 · 结构与视觉验收通过</small><strong>17 类效果综合场景</strong><span>4 辆载具、25 个效果实例、6 个镜头和 3 条车辆轨道组合为 20 秒确定性战斗演示。</span></figcaption></figure>
+          <figure class="cot-shot"><img src="../assets/claude-of-tanks/ui_mobile.webp" loading="lazy" decoding="async" alt="移动端战斗界面"><figcaption><small>上游设计目标</small><strong>触屏与移动端路线</strong><span>完整操作流程可达，但本机 QA 的性能和竖屏遮挡尚未过线。</span></figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="architecture" class="research-section">
+      <div class="section-kicker">02 / 工作原理</div>
+      <div class="section-content">
+        <h2>同一份状态，驱动玩法、画面与<span>审查工具</span>。</h2>
+        <div class="cot-flow">
+          <article><b>01 / INPUT</b><h3>输入与意图</h3><p>键鼠、触屏、AI 或网络输入变成驾驶、炮塔、开火和装备意图。</p></article>
+          <article><b>02 / SIMULATION</b><h3>60 Hz 权威模拟</h3><p>固定步长更新车辆、弹道、装甲穿透、模块、乘员、可见性和胜负。</p></article>
+          <article><b>03 / EVENTS</b><h3>状态与事件</h3><p>连续状态负责位置姿态，离散事件描述开火、命中、断履带和击毁。</p></article>
+          <article><b>04 / CONSUMERS</b><h3>多种消费者</h3><p>Three.js、HUD、录像、联机、Gallery 和 Studio 读取同一套领域数据。</p></article>
+        </div>
+        <p class="section-intro">可复用的不是“坦克皮肤”，而是数据驱动车辆工厂、固定步长模拟、状态/事件协议、相机与后处理、调试审查界面。做机甲、舰船或工程机械时可以保留骨架；做建筑可视化或电商展厅时只应取渲染、相机和资产管线。</p>
+      </div>
+    </section>
+
+    <section id="evidence" class="research-section">
+      <div class="section-kicker">03 / 本机实测证据</div>
+      <div class="section-content">
+        <h2>哪些已跑通，哪些<span>仍有边界</span>。</h2>
+        <div class="cot-results">
+          <div class="cot-result"><span class="cot-status">通过</span><strong>完整测试集</strong><p>122 辆战车、20 张地图、移动、战斗、侦察、装备、归因和 Studio 时间线测试全部通过。</p></div>
+          <div class="cot-result"><span class="cot-status">通过</span><strong>综合能力场景</strong><p>真实 Chromium/WebGL 中构建 4 辆载具和 25 个实例，覆盖全部 17 类 Studio 效果、6 镜头和 3 条车辆轨道；控制台 0 错误。</p></div>
+          <div class="cot-result"><span class="cot-status">通过</span><strong>生产构建</strong><p>Vite 私有构建完成：295 个模块、5 个 HTML 入口；主包和车辆工厂包偏大。</p></div>
+          <div class="cot-result"><span class="cot-status">通过</span><strong>真实 3D 交互</strong><p>进入车库和 Bot 战斗；Gallery 切换 5 个检视层，并创建带网格、法线和三角面信息的标注。</p></div>
+          <div class="cot-result"><span class="cot-status">通过</span><strong>双浏览器联机</strong><p>85 ms 延迟、35 ms 抖动、12% 状态丢包下完成同步、权威采样、第二回合与干净离场。</p></div>
+          <div class="cot-result"><span class="cot-status warn">部分通过</span><strong>2v2 / 7v7</strong><p>2v2 四人握手与权威切换成功，但最慢推进 34.8 ms；14 会话均建立，完整大厅名单未收敛。</p></div>
+          <div class="cot-result"><span class="cot-status warn">部分通过</span><strong>Studio 浏览器</strong><p>20 秒综合场景在真实 Chromium 中进入 ready，17 类效果、seek 与三张截图通过；2560px 原生 capture 和 WebM 完整门禁尚未重新认证。</p></div>
+          <div class="cot-result"><span class="cot-status warn">未过线</span><strong>移动端 QA</strong><p>全功能流程与 WebGL 恢复均完成，但 7 个性能站点失败。</p></div>
+        </div>
+        <div class="cot-limitations">
+          <article class="cot-limitation"><h3>当前最值得先修的四件事</h3><ol><li>拆分车辆工厂与主运行时大包，降低加载和预热成本。</li><li>修复 Windows 下公开构建和浏览器测试的路径归一化。</li><li>重做移动端帧预算与竖屏 HUD，避免计分板和小地图遮挡。</li><li>为 7v7 大厅同步增加可观测性、重试和收敛诊断。</li></ol></article>
+          <figure class="cot-limitation-shot"><img src="../assets/claude-of-tanks/local-mobile-portrait.png" alt="本机移动端竖屏 QA 截图"><figcaption>本机失败证据 · 412×892 竖屏中计分板与小地图/移动控件发生遮挡</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="archive" class="research-section">
+      <div class="section-kicker">04 / 阶段归档</div>
+      <div class="section-content">
+        <h2>研究已收敛，保留<span>可恢复基线</span>。</h2>
+        <p class="section-intro">Phase 01 已完成能力、原理、意义、复用边界、性能风险和扩展方向的整理。公开发布能力总览、轻量归档与独立产品工作台；沙漠组合场景和视觉层实验室保留为本地研究证据。</p>
+        <div class="cot-links">
+          <a href="./claude-of-tanks-archive.html">阅读 Phase 01 阶段归档</a>
+          <a href="./claude-of-tanks/workbench/">运行独立产品工作台</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="reproduce" class="research-section">
+      <div class="section-kicker">05 / 本地复现</div>
+      <div class="section-content">
+        <h2>源码固定，研究证据<span>留在外层</span>。</h2>
+        <p class="section-intro">上游以 Git submodule 固定到 <code>fba54d06a5ccf1053477efde5e60bb9b338584e9</code>。研究脚本、截图和报告不污染上游工作树。</p>
+        <div class="cot-command-grid">
+          <pre><code>git submodule update --init projects/claude-of-tanks/upstream
+npm.cmd --prefix projects/claude-of-tanks/upstream install --no-package-lock</code></pre>
+          <pre><code>powershell -File projects/claude-of-tanks/scripts/start-research-platform.ps1
+# open http://127.0.0.1:4176/research</code></pre>
+        </div>
+        <div class="cot-links"><a href="./claude-of-tanks-archive.html">Phase 01 阶段归档</a><a href="https://github.com/yydshly/0823_githubcode_study/tree/main/projects/claude-of-tanks">完整研究记录</a><a href="https://github.com/Kevin-Liu-01/Claude-of-Tanks">上游仓库</a></div>
+      </div>
+    </section>
+  </main>
+  <footer>Phase 01 archived · Upstream media → local runtime evidence → bounded conclusion</footer>
+</body>
+</html>

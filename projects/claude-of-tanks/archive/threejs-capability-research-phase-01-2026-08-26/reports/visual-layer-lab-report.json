@@ -1,0 +1,769 @@
+{
+  "url": "http://127.0.0.1:4176/studio?map=desert&showcase=capabilities&lab=layers&nogate=1",
+  "fullDemoUrl": "http://127.0.0.1:4176/studio?map=desert&showcase=capabilities&nogate=1",
+  "startedAt": "2026-08-24T07:23:20.498Z",
+  "result": "pass",
+  "consoleErrors": [],
+  "screenshots": [
+    "01-desktop-geometry.png",
+    "02-desktop-post.png",
+    "03-desktop-fx.png",
+    "04-desktop-studio-tools.png",
+    "05-mobile-post.png"
+  ],
+  "checks": {
+    "deterministicPreload": true,
+    "fullCapabilityPreservedInMetadata": true,
+    "playbackStable": true,
+    "singleHeroRuntime": true,
+    "flatHeroPlacement": true,
+    "neutralGround": true,
+    "atmosphereHidden": true,
+    "cleanStage": true,
+    "sevenLayerContract": true,
+    "cameraPairs": true,
+    "fxLayerVisible": true,
+    "compareRoundTrip": true,
+    "keyboardJourney": true,
+    "studioToolsForeground": true,
+    "mobileSheet": true,
+    "reducedMotion": true,
+    "singleLabDocument": true,
+    "fullDemoUnaffected": true,
+    "evidenceBounded": true,
+    "noConsoleErrors": true
+  },
+  "preloadContract": {
+    "version": 8,
+    "mode": "single-hero-readable-fx",
+    "actorNames": [
+      "red-lead"
+    ],
+    "actorCount": 1,
+    "effectCount": 16,
+    "effectTypes": [
+      "armor_scar",
+      "barrage",
+      "burning",
+      "detrack",
+      "dust",
+      "engine_smoke",
+      "exhaust",
+      "explosion",
+      "explosion_moment",
+      "fire",
+      "firing_moment",
+      "impact",
+      "muzzle_flash",
+      "sparks",
+      "tracer"
+    ],
+    "requiredEffectTypes": [
+      "armor_scar",
+      "barrage",
+      "burning",
+      "detrack",
+      "dust",
+      "engine_smoke",
+      "exhaust",
+      "explosion",
+      "explosion_moment",
+      "fire",
+      "firing_moment",
+      "impact",
+      "muzzle_flash",
+      "sparks",
+      "tracer"
+    ],
+    "missingRequiredTypes": [],
+    "actorAnchors": [
+      "red-lead"
+    ],
+    "trackActors": [
+      "red-lead"
+    ],
+    "heroPosition": [
+      30,
+      -82
+    ],
+    "sampledTiltDeg": 0.254,
+    "originalFullCounts": {
+      "actors": 4,
+      "effects": 25,
+      "effectTypes": 17
+    },
+    "reloadName": "reloadLayerLabScene",
+    "playbackLocked": true
+  },
+  "desktopReadyMs": 55038,
+  "playbackStability": {
+    "before": {
+      "timeMs": 0,
+      "stageIndex": 0,
+      "camera": {
+        "mode": "fly",
+        "pos": [
+          37.5,
+          9.02,
+          -70.04
+        ],
+        "yawDeg": 34.8,
+        "pitchDeg": -9.97,
+        "rollDeg": 0,
+        "fov": 34,
+        "lookAt": [
+          26.26,
+          5.56,
+          -86.22
+        ]
+      },
+      "actor": [
+        30,
+        4.840366791034365,
+        -82,
+        0
+      ]
+    },
+    "after": {
+      "timeMs": 0,
+      "stageIndex": 0,
+      "camera": {
+        "mode": "fly",
+        "pos": [
+          37.5,
+          9.02,
+          -70.04
+        ],
+        "yawDeg": 34.8,
+        "pitchDeg": -9.97,
+        "rollDeg": 0,
+        "fov": 34,
+        "lookAt": [
+          26.26,
+          5.56,
+          -86.22
+        ]
+      },
+      "actor": [
+        30,
+        4.840366791034365,
+        -82,
+        0
+      ]
+    }
+  },
+  "desktopDefault": {
+    "audit": {
+      "status": "ready",
+      "stageIndex": 0,
+      "stageId": "geometry",
+      "activeLayers": [
+        "geometry"
+      ],
+      "materialMode": "normal",
+      "materialKinds": [
+        "MeshNormalMaterial"
+      ],
+      "heroMeshCount": 65,
+      "worldVisible": false,
+      "shadowsEnabled": false,
+      "postEnabled": false,
+      "fxVisible": false,
+      "camera": {
+        "mode": "fly",
+        "pos": [
+          37.5,
+          9.02,
+          -70.04
+        ],
+        "yawDeg": 34.8,
+        "pitchDeg": -9.97,
+        "rollDeg": 0,
+        "fov": 34,
+        "lookAt": [
+          26.26,
+          5.56,
+          -86.22
+        ]
+      },
+      "timeMs": 0
+    },
+    "timeOrigin": 1787556201225.4,
+    "actorNames": [
+      "red-lead"
+    ],
+    "visibleActors": [
+      "red-lead"
+    ],
+    "rememberedMeshes": 65,
+    "actorPose": {
+      "x": 30,
+      "z": -82,
+      "pitch": -0.0027184768068339213,
+      "roll": 0.003504693586161853
+    },
+    "nearbyObstacles": 0,
+    "panel": {
+      "left": 1066,
+      "right": 1426,
+      "top": 14,
+      "bottom": 376.1875,
+      "width": 360
+    },
+    "dockDisplay": "none",
+    "directorDisplay": "none",
+    "atmosphere": [
+      {
+        "visible": false
+      },
+      {
+        "visible": false
+      },
+      {
+        "visible": false
+      }
+    ],
+    "ground": {
+      "visible": true,
+      "plane": true,
+      "grid": true
+    }
+  },
+  "stageRows": [
+    {
+      "elapsedMs": 88,
+      "audit": {
+        "status": "ready",
+        "stageIndex": 0,
+        "stageId": "geometry",
+        "activeLayers": [
+          "geometry"
+        ],
+        "materialMode": "normal",
+        "materialKinds": [
+          "MeshNormalMaterial"
+        ],
+        "heroMeshCount": 65,
+        "worldVisible": false,
+        "shadowsEnabled": false,
+        "postEnabled": false,
+        "fxVisible": false,
+        "camera": {
+          "mode": "fly",
+          "pos": [
+            37.5,
+            9.02,
+            -70.04
+          ],
+          "yawDeg": 34.8,
+          "pitchDeg": -9.97,
+          "rollDeg": 0,
+          "fov": 34,
+          "lookAt": [
+            26.26,
+            5.56,
+            -86.22
+          ]
+        },
+        "timeMs": 0
+      },
+      "canvasStage": "geometry",
+      "visibleFxObjects": 16,
+      "resident": {
+        "stageIndex": 0,
+        "timeMs": 0
+      }
+    },
+    {
+      "elapsedMs": 86,
+      "audit": {
+        "status": "ready",
+        "stageIndex": 1,
+        "stageId": "materials",
+        "activeLayers": [
+          "geometry",
+          "materials"
+        ],
+        "materialMode": "basic",
+        "materialKinds": [
+          "MeshBasicMaterial"
+        ],
+        "heroMeshCount": 65,
+        "worldVisible": false,
+        "shadowsEnabled": false,
+        "postEnabled": false,
+        "fxVisible": false,
+        "camera": {
+          "mode": "fly",
+          "pos": [
+            37.5,
+            9.02,
+            -70.04
+          ],
+          "yawDeg": 34.8,
+          "pitchDeg": -9.97,
+          "rollDeg": 0,
+          "fov": 34,
+          "lookAt": [
+            26.26,
+            5.56,
+            -86.22
+          ]
+        },
+        "timeMs": 0
+      },
+      "canvasStage": "materials",
+      "visibleFxObjects": 16,
+      "resident": {
+        "stageIndex": 1,
+        "timeMs": 0
+      }
+    },
+    {
+      "elapsedMs": 86,
+      "audit": {
+        "status": "ready",
+        "stageIndex": 2,
+        "stageId": "lighting",
+        "activeLayers": [
+          "geometry",
+          "materials",
+          "lighting"
+        ],
+        "materialMode": "original",
+        "materialKinds": [
+          "MeshBasicMaterial",
+          "MeshPhysicalMaterial",
+          "MeshStandardMaterial"
+        ],
+        "heroMeshCount": 65,
+        "worldVisible": false,
+        "shadowsEnabled": true,
+        "postEnabled": false,
+        "fxVisible": false,
+        "camera": {
+          "mode": "fly",
+          "pos": [
+            37.5,
+            9.02,
+            -70.04
+          ],
+          "yawDeg": 34.8,
+          "pitchDeg": -9.97,
+          "rollDeg": 0,
+          "fov": 34,
+          "lookAt": [
+            26.26,
+            5.56,
+            -86.22
+          ]
+        },
+        "timeMs": 0
+      },
+      "canvasStage": "lighting",
+      "visibleFxObjects": 16,
+      "resident": {
+        "stageIndex": 2,
+        "timeMs": 0
+      }
+    },
+    {
+      "elapsedMs": 87,
+      "audit": {
+        "status": "ready",
+        "stageIndex": 3,
+        "stageId": "environment",
+        "activeLayers": [
+          "geometry",
+          "materials",
+          "lighting",
+          "environment"
+        ],
+        "materialMode": "original",
+        "materialKinds": [
+          "MeshBasicMaterial",
+          "MeshPhysicalMaterial",
+          "MeshStandardMaterial"
+        ],
+        "heroMeshCount": 65,
+        "worldVisible": true,
+        "shadowsEnabled": true,
+        "postEnabled": false,
+        "fxVisible": false,
+        "camera": {
+          "mode": "fly",
+          "pos": [
+            37.5,
+            9.02,
+            -70.04
+          ],
+          "yawDeg": 34.8,
+          "pitchDeg": -9.97,
+          "rollDeg": 0,
+          "fov": 34,
+          "lookAt": [
+            26.26,
+            5.56,
+            -86.22
+          ]
+        },
+        "timeMs": 0
+      },
+      "canvasStage": "environment",
+      "visibleFxObjects": 16,
+      "resident": {
+        "stageIndex": 3,
+        "timeMs": 0
+      }
+    },
+    {
+      "elapsedMs": 739,
+      "audit": {
+        "status": "ready",
+        "stageIndex": 4,
+        "stageId": "post",
+        "activeLayers": [
+          "geometry",
+          "materials",
+          "lighting",
+          "environment",
+          "post"
+        ],
+        "materialMode": "original",
+        "materialKinds": [
+          "MeshBasicMaterial",
+          "MeshPhysicalMaterial",
+          "MeshStandardMaterial"
+        ],
+        "heroMeshCount": 65,
+        "worldVisible": true,
+        "shadowsEnabled": true,
+        "postEnabled": true,
+        "fxVisible": false,
+        "camera": {
+          "mode": "fly",
+          "pos": [
+            37.5,
+            9.02,
+            -70.04
+          ],
+          "yawDeg": 34.8,
+          "pitchDeg": -9.97,
+          "rollDeg": 0,
+          "fov": 34,
+          "lookAt": [
+            26.26,
+            5.56,
+            -86.22
+          ]
+        },
+        "timeMs": 0
+      },
+      "canvasStage": "post",
+      "visibleFxObjects": 16,
+      "resident": {
+        "stageIndex": 4,
+        "timeMs": 0
+      }
+    },
+    {
+      "elapsedMs": 928,
+      "audit": {
+        "status": "ready",
+        "stageIndex": 5,
+        "stageId": "camera",
+        "activeLayers": [
+          "geometry",
+          "materials",
+          "lighting",
+          "environment",
+          "post",
+          "camera"
+        ],
+        "materialMode": "original",
+        "materialKinds": [
+          "MeshBasicMaterial",
+          "MeshPhysicalMaterial",
+          "MeshStandardMaterial"
+        ],
+        "heroMeshCount": 65,
+        "worldVisible": true,
+        "shadowsEnabled": true,
+        "postEnabled": true,
+        "fxVisible": false,
+        "camera": {
+          "mode": "fly",
+          "pos": [
+            44.72,
+            9.52,
+            -70.1
+          ],
+          "yawDeg": 53.93,
+          "pitchDeg": -8.84,
+          "rollDeg": 0,
+          "fov": 40,
+          "lookAt": [
+            28.75,
+            6.44,
+            -81.74
+          ]
+        },
+        "timeMs": 11800
+      },
+      "canvasStage": "camera",
+      "visibleFxObjects": 20,
+      "resident": {
+        "stageIndex": 5,
+        "timeMs": 11800
+      }
+    },
+    {
+      "elapsedMs": 494,
+      "audit": {
+        "status": "ready",
+        "stageIndex": 6,
+        "stageId": "fx",
+        "activeLayers": [
+          "geometry",
+          "materials",
+          "lighting",
+          "environment",
+          "post",
+          "camera",
+          "fx"
+        ],
+        "materialMode": "original",
+        "materialKinds": [
+          "MeshBasicMaterial",
+          "MeshPhysicalMaterial",
+          "MeshStandardMaterial"
+        ],
+        "heroMeshCount": 74,
+        "worldVisible": true,
+        "shadowsEnabled": true,
+        "postEnabled": true,
+        "fxVisible": true,
+        "camera": {
+          "mode": "fly",
+          "pos": [
+            44.72,
+            9.52,
+            -70.1
+          ],
+          "yawDeg": 53.93,
+          "pitchDeg": -8.84,
+          "rollDeg": 0,
+          "fov": 40,
+          "lookAt": [
+            28.75,
+            6.44,
+            -81.74
+          ]
+        },
+        "timeMs": 15000
+      },
+      "canvasStage": "fx",
+      "visibleFxObjects": 23,
+      "resident": {
+        "stageIndex": 6,
+        "timeMs": 15000
+      }
+    }
+  ],
+  "cameraConsistency": {
+    "inspection": true,
+    "cinematic": true
+  },
+  "compare": {
+    "previous": {
+      "audit": {
+        "status": "ready",
+        "stageIndex": 3,
+        "stageId": "environment",
+        "activeLayers": [
+          "geometry",
+          "materials",
+          "lighting",
+          "environment"
+        ],
+        "materialMode": "original",
+        "materialKinds": [
+          "MeshBasicMaterial",
+          "MeshPhysicalMaterial",
+          "MeshStandardMaterial"
+        ],
+        "heroMeshCount": 73,
+        "worldVisible": true,
+        "shadowsEnabled": true,
+        "postEnabled": false,
+        "fxVisible": false,
+        "camera": {
+          "mode": "fly",
+          "pos": [
+            37.5,
+            9.02,
+            -70.04
+          ],
+          "yawDeg": 34.8,
+          "pitchDeg": -9.97,
+          "rollDeg": 0,
+          "fov": 34,
+          "lookAt": [
+            26.26,
+            5.56,
+            -86.22
+          ]
+        },
+        "timeMs": 0
+      },
+      "compareBase": 4,
+      "pressed": "true"
+    },
+    "returned": {
+      "audit": {
+        "status": "ready",
+        "stageIndex": 4,
+        "stageId": "post",
+        "activeLayers": [
+          "geometry",
+          "materials",
+          "lighting",
+          "environment",
+          "post"
+        ],
+        "materialMode": "original",
+        "materialKinds": [
+          "MeshBasicMaterial",
+          "MeshPhysicalMaterial",
+          "MeshStandardMaterial"
+        ],
+        "heroMeshCount": 73,
+        "worldVisible": true,
+        "shadowsEnabled": true,
+        "postEnabled": true,
+        "fxVisible": false,
+        "camera": {
+          "mode": "fly",
+          "pos": [
+            37.5,
+            9.02,
+            -70.04
+          ],
+          "yawDeg": 34.8,
+          "pitchDeg": -9.97,
+          "rollDeg": 0,
+          "fov": 34,
+          "lookAt": [
+            26.26,
+            5.56,
+            -86.22
+          ]
+        },
+        "timeMs": 0
+      },
+      "compareBase": null,
+      "pressed": "false"
+    }
+  },
+  "keyboard": {
+    "compareBase": 1,
+    "returnedBase": null,
+    "autoOn": true,
+    "autoOff": false,
+    "events": [
+      "ArrowRight",
+      "KeyB",
+      "KeyB",
+      "Space",
+      "Space"
+    ],
+    "stageId": "materials"
+  },
+  "studioTools": {
+    "dockDisplay": "block",
+    "panel": {
+      "left": 676,
+      "right": 1036
+    },
+    "dock": {
+      "left": 1050,
+      "right": 1440
+    },
+    "pressed": "true"
+  },
+  "mobile": {
+    "timeOrigin": 1787556201225.4,
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "panel": {
+      "left": 8,
+      "right": 382,
+      "top": 597.9375,
+      "bottom": 836,
+      "width": 374,
+      "height": 238.0625
+    },
+    "buttons": [
+      {
+        "left": 25,
+        "right": 74,
+        "top": 786,
+        "bottom": 820
+      },
+      {
+        "left": 80,
+        "right": 129,
+        "top": 786,
+        "bottom": 820
+      },
+      {
+        "left": 135,
+        "right": 175,
+        "top": 786,
+        "bottom": 820
+      },
+      {
+        "left": 181,
+        "right": 248,
+        "top": 786,
+        "bottom": 820
+      },
+      {
+        "left": 307,
+        "right": 365,
+        "top": 786,
+        "bottom": 820
+      }
+    ],
+    "dockDisplay": "none"
+  },
+  "reducedMotion": {
+    "timeOrigin": 1787556201225.4,
+    "matches": true,
+    "reduceMotion": true,
+    "autoPlaying": true,
+    "intervalMs": 5200,
+    "backdropFilter": "none",
+    "autoStopped": true
+  },
+  "fullDemoContract": {
+    "hasLabScene": false,
+    "actorNames": [
+      "red-lead",
+      "blue-lead",
+      "support",
+      "old-wreck"
+    ],
+    "effectCount": 25,
+    "effectTypeCount": 17,
+    "missingRequiredTypes": [],
+    "actorTracks": 3,
+    "shots": 6,
+    "reloadName": "reload",
+    "labPanel": false,
+    "labInstalled": false
+  },
+  "finishedAt": "2026-08-24T07:25:44.208Z"
+}

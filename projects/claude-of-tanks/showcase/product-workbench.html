@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="color-scheme" content="dark" />
+  <meta name="description" content="Claude of Tanks 独立程序化产品工作台：world:none，无外部 3D 资源。" />
+  <title>COT · 程序化产品工作台</title>
+  <link rel="icon" href="data:," />
+  <link rel="stylesheet" href="/@cot-research/product-workbench.css" />
+</head>
+<body>
+  <main class="workbench" aria-busy="true">
+    <canvas id="workbench-canvas" aria-label="程序化工业产品三维展示工作台"></canvas>
+    <div class="ambient-grid" aria-hidden="true"></div>
+
+    <header class="topbar">
+      <a class="back-link" href="/research" aria-label="返回 3D 能力研究平台">← 研究平台</a>
+      <div class="runtime-badges" aria-label="运行时边界">
+        <span>WORLD:NONE</span>
+        <span>0 EXTERNAL MODELS</span>
+        <span>2 PROCEDURAL SUBJECTS</span>
+      </div>
+    </header>
+
+    <section class="story-panel" aria-labelledby="product-title">
+      <span class="eyebrow">SUBJECT / <span data-subject-code>ATLAS-01</span></span>
+      <h1 id="product-title">程序化产品<br />工作台</h1>
+      <p class="lede" data-subject-summary>不加载沙漠、植被或战斗系统。这里独立组合场景、主体和展示逻辑，验证同一套 Three.js 能力能否迁移到其他产品。</p>
+      <div class="architecture-strip" aria-label="当前组合">
+        <span>Neutral Scene</span><i>+</i><span data-architecture-subject>Atlas 载具</span><i>+</i><span>Product Stage v2</span>
+      </div>
+      <div class="primary-actions">
+        <button class="primary" type="button" data-action="play">▶ 双主体演示</button>
+        <button type="button" data-action="overview">回到全景</button>
+      </div>
+    </section>
+
+    <aside class="inspection-panel" aria-label="产品检查控制">
+      <div class="panel-head">
+        <div><span class="eyebrow">INSPECTION</span><strong data-active-title>整体视图</strong></div>
+        <span class="step-count" data-step-count>00 / 03</span>
+      </div>
+      <p data-active-detail>拖动旋转、滚轮缩放，或选择部件查看程序化层级与独立镜头。</p>
+      <div class="subject-switch">
+        <span class="control-label">SUBJECT ADAPTER / S 切换</span>
+        <div class="subject-row" data-subject-row></div>
+      </div>
+      <div class="feature-tabs" role="list" aria-label="当前主体部件热点"></div>
+      <div class="control-block">
+        <span class="control-label">MATERIAL VARIANTS</span>
+        <div class="variant-row" data-variant-row></div>
+      </div>
+      <div class="toggle-row">
+        <button type="button" data-action="explode" aria-pressed="false">分解结构</button>
+        <button type="button" data-action="rotate" aria-pressed="true">自动转台</button>
+        <button type="button" data-action="quality" aria-pressed="false">质量：高</button>
+      </div>
+    </aside>
+
+    <div class="hotspot-layer" aria-label="三维部件热点"></div>
+
+    <section class="timeline" aria-label="导演时间线">
+      <div class="timeline-copy"><span data-director-state>READY</span><strong data-director-caption>独立产品工作台</strong></div>
+      <div class="timeline-track"><i data-timeline-progress></i></div>
+      <button type="button" data-action="pause" aria-label="暂停或继续全量演示">暂停</button>
+    </section>
+
+    <footer class="telemetry" aria-label="渲染性能">
+      <span><b data-metric="fps">--</b> FPS</span>
+      <span><b data-metric="frame">--</b> ms p95</span>
+      <span><b data-metric="calls">--</b> calls</span>
+      <span><b data-metric="triangles">--</b> tris</span>
+      <span><b data-metric="textures">--</b> textures</span>
+      <span class="telemetry-note">真实动态采样 · 非静止页估算</span>
+    </footer>
+
+    <div class="loading" role="status" aria-live="polite">
+      <span>COT / PRODUCT WORKBENCH</span>
+      <strong>正在组合独立场景…</strong>
+      <i></i>
+    </div>
+  </main>
+  <noscript>此三维工作台需要 JavaScript。</noscript>
+  <script type="module" src="/@cot-research/product-workbench.js"></script>
+</body>
+</html>

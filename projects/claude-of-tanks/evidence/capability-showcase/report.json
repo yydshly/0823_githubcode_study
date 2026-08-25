@@ -1,0 +1,352 @@
+{
+  "url": "http://127.0.0.1:4176/studio?showcase=capabilities",
+  "startedAt": "2026-08-24T07:21:21.438Z",
+  "result": "pass",
+  "consoleErrors": [],
+  "audit": {
+    "status": "ready",
+    "map": "desert",
+    "actors": 4,
+    "effects": 25,
+    "missingEffectTypes": [],
+    "storyboard": {
+      "version": 1,
+      "durationMs": 20000,
+      "shots": [
+        {
+          "id": "establish",
+          "label": "战场全景",
+          "tMs": 0,
+          "pos": [
+            15,
+            66.06,
+            -154
+          ],
+          "lookAt": [
+            14,
+            16.82,
+            -88
+          ],
+          "fov": 44,
+          "rollDeg": 0,
+          "transition": "linear"
+        },
+        {
+          "id": "advance",
+          "label": "联合推进",
+          "tMs": 2800,
+          "pos": [
+            15,
+            38.54,
+            -146
+          ],
+          "lookAt": [
+            13,
+            19.45,
+            -102
+          ],
+          "fov": 38,
+          "rollDeg": 0,
+          "transition": "linear"
+        },
+        {
+          "id": "ballistics",
+          "label": "弹道与命中",
+          "tMs": 7200,
+          "pos": [
+            6,
+            30.44,
+            -88
+          ],
+          "lookAt": [
+            18,
+            12.27,
+            -66
+          ],
+          "fov": 34,
+          "rollDeg": 0,
+          "transition": "cut"
+        },
+        {
+          "id": "destruction",
+          "label": "炮击与战损",
+          "tMs": 11800,
+          "pos": [
+            25,
+            15.81,
+            -92
+          ],
+          "lookAt": [
+            15,
+            16.46,
+            -72
+          ],
+          "fov": 40,
+          "rollDeg": 0,
+          "transition": "linear"
+        },
+        {
+          "id": "kill",
+          "label": "击毁特写",
+          "tMs": 16000,
+          "pos": [
+            12,
+            20.26,
+            -47
+          ],
+          "lookAt": [
+            18,
+            12.25,
+            -62
+          ],
+          "fov": 32,
+          "rollDeg": 0,
+          "transition": "cut"
+        },
+        {
+          "id": "hero",
+          "label": "战后英雄镜头",
+          "tMs": 18500,
+          "pos": [
+            3,
+            34.54,
+            -91
+          ],
+          "lookAt": [
+            14,
+            17.94,
+            -76
+          ],
+          "fov": 38,
+          "rollDeg": 0,
+          "transition": "linear"
+        }
+      ],
+      "actorTracks": [
+        {
+          "actor": "red-lead",
+          "keys": [
+            {
+              "id": "red-0",
+              "tMs": 0,
+              "pos": [
+                12,
+                -125
+              ],
+              "facingDeg": 0,
+              "turretDeg": 0,
+              "gunDeg": 2,
+              "transition": "smooth"
+            },
+            {
+              "id": "red-1",
+              "tMs": 7200,
+              "pos": [
+                13,
+                -94
+              ],
+              "facingDeg": 2,
+              "turretDeg": 4,
+              "gunDeg": 1,
+              "transition": "smooth"
+            },
+            {
+              "id": "red-2",
+              "tMs": 18500,
+              "pos": [
+                14,
+                -78
+              ],
+              "facingDeg": 3,
+              "turretDeg": 2,
+              "gunDeg": 0,
+              "transition": "smooth"
+            }
+          ]
+        },
+        {
+          "actor": "blue-lead",
+          "keys": [
+            {
+              "id": "blue-0",
+              "tMs": 0,
+              "pos": [
+                18,
+                -58
+              ],
+              "facingDeg": 180,
+              "turretDeg": 0,
+              "gunDeg": 1,
+              "transition": "smooth"
+            },
+            {
+              "id": "blue-1",
+              "tMs": 7200,
+              "pos": [
+                17,
+                -67
+              ],
+              "facingDeg": 180,
+              "turretDeg": 0,
+              "gunDeg": 0,
+              "transition": "smooth"
+            },
+            {
+              "id": "blue-2",
+              "tMs": 11800,
+              "pos": [
+                17,
+                -70
+              ],
+              "facingDeg": 180,
+              "turretDeg": -2,
+              "gunDeg": -1,
+              "transition": "smooth"
+            }
+          ]
+        },
+        {
+          "actor": "support",
+          "keys": [
+            {
+              "id": "support-0",
+              "tMs": 0,
+              "pos": [
+                7,
+                -137
+              ],
+              "facingDeg": 2,
+              "turretDeg": 0,
+              "gunDeg": 0,
+              "transition": "smooth"
+            },
+            {
+              "id": "support-1",
+              "tMs": 9000,
+              "pos": [
+                9,
+                -104
+              ],
+              "facingDeg": 4,
+              "turretDeg": 5,
+              "gunDeg": 2,
+              "transition": "smooth"
+            },
+            {
+              "id": "support-2",
+              "tMs": 18500,
+              "pos": [
+                10,
+                -88
+              ],
+              "facingDeg": 4,
+              "turretDeg": 3,
+              "gunDeg": 1,
+              "transition": "smooth"
+            }
+          ]
+        }
+      ]
+    },
+    "performance": {
+      "renderedFrames": 2,
+      "skippedFrames": 48,
+      "poolSweeps": 6
+    },
+    "effectTypes": [
+      "exhaust",
+      "dust",
+      "dust",
+      "mg_burst",
+      "muzzle_flash",
+      "fire",
+      "tracer",
+      "impact",
+      "impact",
+      "impact",
+      "impact",
+      "sparks",
+      "impact",
+      "impact",
+      "armor_scar",
+      "explosion",
+      "explosion",
+      "barrage",
+      "detrack",
+      "engine_smoke",
+      "burning",
+      "firing_moment",
+      "explosion_moment",
+      "explosion",
+      "tank_kill"
+    ],
+    "actorDetails": [
+      {
+        "name": "red-lead",
+        "id": "t90m",
+        "state": "intact"
+      },
+      {
+        "name": "blue-lead",
+        "id": "m1a2",
+        "state": "intact"
+      },
+      {
+        "name": "support",
+        "id": "m2a2_bradley",
+        "state": "intact"
+      },
+      {
+        "name": "old-wreck",
+        "id": "tiger1",
+        "state": "wrecked-burnt"
+      }
+    ],
+    "loadTrace": {
+      "mapId": "verdant",
+      "directBoot": true,
+      "stages": {
+        "shell": 4,
+        "worldAndFx": 10667,
+        "present": 12190
+      },
+      "totalMs": 22861
+    },
+    "warmTrace": {
+      "stages": {
+        "textures": 478,
+        "effects": 12
+      },
+      "totalMs": 489
+    }
+  },
+  "frames": [
+    {
+      "timeMs": 0,
+      "name": "01-establishing.png",
+      "file": "E:\\0823_codex_project\\projects\\claude-of-tanks\\evidence\\capability-showcase\\01-establishing.png"
+    },
+    {
+      "timeMs": 9000,
+      "name": "02-impact-language.png",
+      "file": "E:\\0823_codex_project\\projects\\claude-of-tanks\\evidence\\capability-showcase\\02-impact-language.png"
+    },
+    {
+      "timeMs": 19500,
+      "name": "03-destruction-hero.png",
+      "file": "E:\\0823_codex_project\\projects\\claude-of-tanks\\evidence\\capability-showcase\\03-destruction-hero.png"
+    }
+  ],
+  "assertions": {
+    "ready": true,
+    "map": true,
+    "actors": true,
+    "effectInstances": true,
+    "allEffectTypes": true,
+    "cameraShots": true,
+    "actorTracks": true,
+    "requiredTypesUnique": true,
+    "noConsoleErrors": true
+  },
+  "finishedAt": "2026-08-24T07:23:18.020Z"
+}

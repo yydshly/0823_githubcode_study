@@ -1,0 +1,124 @@
+{
+  "archiveId": "threejs-capability-research-phase-01-2026-08-26",
+  "status": "archived",
+  "archiveDate": "2026-08-26",
+  "sourceRevision": "fba54d06a5ccf1053477efde5e60bb9b338584e9",
+  "registryVersion": 3,
+  "policy": "lightweight-evidence-bundle",
+  "generatedBy": "scripts/build-phase-01-archive.mjs",
+  "entryCount": 14,
+  "entries": [
+    {
+      "id": "archive-readme",
+      "kind": "document",
+      "source": "archive/threejs-capability-research-phase-01-2026-08-26/README.md",
+      "archived": "README.md",
+      "bytes": 2389,
+      "sha256": "15be01af6bc015b7c83181a57dd7211a2981fd1f89420a56332c5427b727dd4a"
+    },
+    {
+      "id": "stage-conclusion",
+      "kind": "document",
+      "source": "analysis/phase-01-stage-archive-2026-08-26.md",
+      "archived": "phase-01-stage-archive.md",
+      "bytes": 11951,
+      "sha256": "c0e8f2220725b95b21255d22a1857ecef9e87143a992ac8cfab15fe296e90ba5"
+    },
+    {
+      "id": "archive-refinement-r2",
+      "kind": "document",
+      "source": "analysis/archive-refinement-r2.md",
+      "archived": "archive-refinement-r2.md",
+      "bytes": 4328,
+      "sha256": "43e42e3fa57a69e5e40c2f37f9085fa95a1f41f205c645ca3c9c5735ac631f4c"
+    },
+    {
+      "id": "research-platform-v3",
+      "kind": "document",
+      "source": "analysis/research-platform-v3.md",
+      "archived": "reports/research-platform-v3.md",
+      "bytes": 6915,
+      "sha256": "e9a5f0d896eb8d0abac168f1b74d37f6b6cc2d5aafb82749ae9ba6db0e2681a1"
+    },
+    {
+      "id": "archive-browser-report",
+      "kind": "browser-report",
+      "source": "evidence/research-archive/browser-report.json",
+      "archived": "reports/archive-browser-report.json",
+      "bytes": 9664,
+      "sha256": "e5939403678b89dc83b0daa949ce72774120ed6f4d18261591dc5f167dcfc3bd"
+    },
+    {
+      "id": "research-platform-audit",
+      "kind": "audit-report",
+      "source": "evidence/research-platform/audit.json",
+      "archived": "reports/research-platform-audit.json",
+      "bytes": 6654,
+      "sha256": "5c66c08949ffeb790799d983665048a1e7fe1fcbae2a2f3abf000b99ea30e5b2"
+    },
+    {
+      "id": "research-platform-browser-report",
+      "kind": "browser-report",
+      "source": "evidence/research-platform/browser-report.json",
+      "archived": "reports/research-platform-browser-report.json",
+      "bytes": 2798,
+      "sha256": "71e100713236014985ead0f72afb133b0a0c4be4c45a9412737b6f57a0dc879d"
+    },
+    {
+      "id": "product-workbench-browser-report",
+      "kind": "browser-report",
+      "source": "evidence/product-workbench/browser-report.json",
+      "archived": "reports/product-workbench-browser-report.json",
+      "bytes": 19015,
+      "sha256": "abc68cca0b43df50836b2f54704adaaddc7a2132a44b211a75f2c8d2a30ba0ed"
+    },
+    {
+      "id": "visual-layer-lab-report",
+      "kind": "browser-report",
+      "source": "evidence/visual-layer-lab-final/report.json",
+      "archived": "reports/visual-layer-lab-report.json",
+      "bytes": 16019,
+      "sha256": "d9311285e2d728be2b8c8588e6a5cf00bf1e470441ca9997a599e448ee2c265e"
+    },
+    {
+      "id": "desert-capability-report",
+      "kind": "browser-report",
+      "source": "evidence/capability-showcase/report.json",
+      "archived": "reports/desert-capability-report.json",
+      "bytes": 7612,
+      "sha256": "6469e1acc8606ad6e65c6763023715bf1bcab7efb4ffb97c98a3e2a1fa3285fa"
+    },
+    {
+      "id": "mobile-native-scorecard",
+      "kind": "performance-report",
+      "source": "evidence/mobile-native-scorecard.json",
+      "archived": "reports/mobile-native-scorecard.json",
+      "bytes": 30194,
+      "sha256": "919aab570912aea286e7fdfc84bcb0be68557a650306b96afe09d47470bd64cc"
+    },
+    {
+      "id": "archive-desktop-screenshot",
+      "kind": "screenshot",
+      "source": "evidence/research-archive/01-desktop-archive.png",
+      "archived": "screenshots/01-desktop-archive.png",
+      "bytes": 1084968,
+      "sha256": "42b3dd026d8cace9006d425f8b1554a741e2d80b4b13942495bce282fdab2957"
+    },
+    {
+      "id": "archive-tablet-screenshot",
+      "kind": "screenshot",
+      "source": "evidence/research-archive/02-tablet-archive.png",
+      "archived": "screenshots/02-tablet-archive.png",
+      "bytes": 840347,
+      "sha256": "6a9fbf512e4fc7427443846a567c8734b120d8e6b6affe4b3e5549d38676b1da"
+    },
+    {
+      "id": "archive-mobile-screenshot",
+      "kind": "screenshot",
+      "source": "evidence/research-archive/03-mobile-archive.png",
+      "archived": "screenshots/03-mobile-archive.png",
+      "bytes": 706962,
+      "sha256": "eb753741cd6b8111672d24de8a36dedc04a15a7506f4108a676a4e555db4bfd0"
+    }
+  ]
+}
