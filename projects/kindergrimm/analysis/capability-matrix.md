@@ -1,15 +1,18 @@
 # Kindergrimm 全入口能力矩阵
 
-基线提交：`de339ad739d8cbd28ff2dd4a940af38c0ede86c8`。除特别说明外，所有入口均已在本地 `serve.py` + Chromium 中打开、截图并检查页面错误。
+首轮深度交互研究基线为 `de339ad739d8cbd28ff2dd4a940af38c0ede86c8`；当前归档与 GitHub Pages 固定上游为 `5857b1e1cae2713d6714ad7dd7f89626bb242f0f`。前者保留 14 个主能力的详细交互证据，后者新增 Crowd Brush、Styles、Timeline 3 个补充实验。当前 18 个 HTML 页面（1 个菜单 + 17 个入口）均纳入真实 Chromium 自动验收。
 
 | 入口 | 类别 | 展示能力 | 已验证交互 | 结果 |
 | --- | --- | --- | --- | --- |
-| `/` | 菜单 | 14 个演示路由和视觉缩略图 | 导航元素快照 | 通过 |
+| `/` | 菜单 | 17 个演示路由和视觉缩略图 | 导航元素快照、全入口 HTTP 与资源巡检 | 通过 |
 | `/orla` | 游戏 | 10 选 5 的班级合影、扑克式组合评分、两轮照片 | Canvas 选五人、拍照、评分 | 通过，示例 440 分 |
 | `/game` | 游戏 | 纸片角色进入 3D 暗场、光照可见性、集体移动、自动战斗、装备 draft | 开始、地面移动、旋转/缩放、奖励 | 通过 |
 | `/marbles` | 游戏 | 冰道、蓄力拖拽、碰撞、自动战斗、波次、Boss、升级、音乐 | 开始、拖拽发射、远端战斗 | 通过 |
 | `/editor` | Drawn 2D | recipe、种子、物种、媒介、颜色、20 部件、姿势、表情、动画开关 | 固定种子、锁定、表情+攻击、局部面板 | 通过 |
 | `/crowd` | Drawn 2D | 7×5 活角色、物种/媒介过滤、群体微行为 | 页面、群像、错误检查 | 通过 |
+| `/crowdbrush` | Drawn 2D / Brush | 同一 Seed 的 35 个角色改由 p5.brush 绘制，可与 graphite hand 对照 | `seed` / `hand` 参数、真实 Canvas 与资源巡检 | 当前固定版本通过 |
+| `/styles` | Style Comparison | 同一批角色按九种艺术史样式逐行绘制，支持 style、seed、species、n、hand | 全样式画布、参数入口与资源巡检 | 当前固定版本通过 |
+| `/timeline` | Style Timeline | 九种样式按 1310–1929 的真实年份间距排列，展示艺术史时间轴与长间隔 | 线性年份轴、style cluster、资源巡检 | 当前固定版本通过 |
 | `/items` | Drawn 2D | 13 物品族 × 4 品阶 contact sheet | 全页生成 | 通过，156 canvases |
 | `/how` | 教学 | pencil、shape、material、head、map、parts、species、boil、face、pose、seed | 11 个 live step | 通过，3 canvases |
 | `/voxel` | Voxel 3D | 同一 recipe 思想转为 cells、可旋转角色、表情与调色板 | 页面、调试 stats/audit | 通过，audit 0 issue |

@@ -20,6 +20,20 @@
 | Program 主计划 | [PROGRAM.md](PROGRAM.md) |
 | v2 扩展计划 | [PROGRAM-V2.md](PROGRAM-V2.md) |
 
+## 研究封板
+
+当前结论是“源库研究完成，按场景触发式继续”，不是继续无目标扩张样式或演示。源库原生能力、机制复用、我们的扩展、平行实验与应用证明已经分层归档；最终边界和再启动条件见 [研究收束总结](analysis/research-closure-summary.md)。
+
+部署完整性由 29 个页面和 5 个总览入口的真实 Chromium 验收保护：
+
+```powershell
+cd projects/kindergrimm
+npm ci
+npm run test:pages -- --base-url https://yydshly.github.io/0823_githubcode_study/
+```
+
+路由事实来源是 [acceptance/routes.json](acceptance/routes.json)，验收实现是 [scripts/verify-pages-browser.mjs](scripts/verify-pages-browser.mjs)。GitHub Pages 工作流会在每次发布后自动执行并上传 JSON 报告。
+
 ## Program v1
 
 North Star：让创作意图、Seed 和 Style Pack 进入版本化合同，经确定性生成核心和可替换 Renderer 生成 PNG、Sprite Sheet、Manifest、ZIP 与未来独立 3D 资产，并被编辑器、游戏、剧情、商店和审查工具稳定消费。

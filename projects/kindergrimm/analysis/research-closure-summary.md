@@ -30,6 +30,18 @@ Kindergrimm 是一个确定性、参数化、童话视觉风格的浏览器素�
 
 最新专项与回归验证合计 79/79：v0.5 19/19、v0.4 20/20、v0.3 22/22、v0.2 18/18。
 
+## 封板验收
+
+本研究将“页面存在”与“入口真实可达”分开验收：
+
+- 页面清单：29 个，包括仓库首页、项目总览、9 个研究/扩展页面和上游 18 个 HTML 页面。
+- 导航清单：5 个，包括 Asset Lab、Research Lab、Production Studio、Scene Studio、Story Demo 到项目总览的真实点击；Production Studio 保留 `#program` 锚点。
+- 浏览器门槛：HTTP 200、标题与主体 DOM、页面高度、破图、Console Error、Page Error、失败资源以及入口最终 URL。
+- 自动化入口：`acceptance/routes.json` + `scripts/verify-pages-browser.mjs`；GitHub Pages 每次部署后自动运行并上传 JSON 报告。
+- 首次固化基线：页面 29/29、总览入口 5/5。
+
+专项功能回归 79/79 与封板页面验收 34/34 是两组独立证据，不混合计数：前者验证生成合同与交互功能，后者验证部署完整性和导航可达性。
+
 ## 当前决策
 
 本轮源库研究目的已经达到，项目进入“第一轮研究完成，按需归档”状态。继续泛化场景或增加演示的边际意义较低。

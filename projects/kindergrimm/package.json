@@ -1,0 +1,12 @@
+{
+  "name": "kindergrimm-research-acceptance",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test:pages": "node scripts/verify-pages-browser.mjs"
+  },
+  "devDependencies": {
+    "playwright": "1.62.1"
+  }
+}

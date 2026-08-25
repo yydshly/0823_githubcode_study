@@ -20,6 +20,8 @@ concurrency:
 
 jobs:
   deploy:
+    outputs:
+      page_url: ${{ steps.deployment.outputs.page_url }}
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -51,5 +53,32 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
 
-
-
+  acceptance:
+    name: Verify Kindergrimm Pages
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: projects/kindergrimm/package-lock.json
+      - name: Install acceptance dependencies
+        working-directory: projects/kindergrimm
+        run: npm ci
+      - name: Install Chromium
+        working-directory: projects/kindergrimm
+        run: npx playwright install --with-deps chromium
+      - name: Verify 29 pages and 5 overview links
+        working-directory: projects/kindergrimm
+        run: npm run test:pages -- --base-url "${{ needs.deploy.outputs.page_url }}" --report acceptance/report.json
+      - name: Upload acceptance report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kindergrimm-pages-acceptance
+          path: projects/kindergrimm/acceptance/report.json
+          if-no-files-found: warn

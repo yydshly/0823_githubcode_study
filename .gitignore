@@ -25,3 +25,6 @@ __pycache__/
 # Temporary files
 *.log
 *.tmp
+
+# Generated browser acceptance reports
+projects/kindergrimm/acceptance/report.json

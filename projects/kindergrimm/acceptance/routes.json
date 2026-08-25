@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "expectedPageCount": 29,
+  "pages": [
+    { "id": "site-index", "path": "/", "kind": "repository", "requireKindergrimmLink": true },
+    { "id": "project-overview", "path": "/projects/kindergrimm.html", "kind": "research" },
+    { "id": "research-atlas", "path": "/projects/kindergrimm/research-atlas/", "kind": "research" },
+    { "id": "asset-lab", "path": "/projects/kindergrimm/asset-lab/?mode=usage", "kind": "research", "settleMs": 1800 },
+    { "id": "asset-catalog", "path": "/projects/kindergrimm/asset-catalog/", "kind": "research", "settleMs": 1200 },
+    { "id": "research-lab", "path": "/projects/kindergrimm/lab/", "kind": "research", "settleMs": 1000 },
+    { "id": "npc-factory", "path": "/projects/kindergrimm/npc-factory/", "kind": "extension", "settleMs": 1800 },
+    { "id": "npc-scenarios", "path": "/projects/kindergrimm/npc-scenarios/?seed=240824", "kind": "extension", "settleMs": 1800 },
+    { "id": "production-studio", "path": "/projects/kindergrimm/production-studio/", "kind": "extension", "settleMs": 1800 },
+    { "id": "scene-studio", "path": "/projects/kindergrimm/scene-studio/", "kind": "extension", "settleMs": 1800 },
+    { "id": "story-demo", "path": "/projects/kindergrimm/story-demo/", "kind": "extension", "settleMs": 1800 },
+    { "id": "upstream-index", "path": "/projects/kindergrimm/upstream/index.html", "kind": "upstream", "settleMs": 1200 },
+    { "id": "upstream-crowd", "path": "/projects/kindergrimm/upstream/crowd.html", "kind": "upstream", "settleMs": 2500 },
+    { "id": "upstream-crowdbrush", "path": "/projects/kindergrimm/upstream/crowdbrush.html", "kind": "upstream", "settleMs": 2500 },
+    { "id": "upstream-editor", "path": "/projects/kindergrimm/upstream/editor.html", "kind": "upstream", "settleMs": 1500 },
+    { "id": "upstream-game", "path": "/projects/kindergrimm/upstream/game.html", "kind": "upstream", "settleMs": 1800 },
+    { "id": "upstream-gloss", "path": "/projects/kindergrimm/upstream/gloss.html", "kind": "upstream", "settleMs": 2200 },
+    { "id": "upstream-glosscrowd", "path": "/projects/kindergrimm/upstream/glosscrowd.html", "kind": "upstream", "settleMs": 9000 },
+    { "id": "upstream-how", "path": "/projects/kindergrimm/upstream/how.html", "kind": "upstream", "settleMs": 1800 },
+    { "id": "upstream-items", "path": "/projects/kindergrimm/upstream/items.html", "kind": "upstream", "settleMs": 3000 },
+    { "id": "upstream-marbles", "path": "/projects/kindergrimm/upstream/marbles.html", "kind": "upstream", "settleMs": 1800 },
+    { "id": "upstream-objects", "path": "/projects/kindergrimm/upstream/objects.html", "kind": "upstream", "settleMs": 1800 },
+    { "id": "upstream-orla", "path": "/projects/kindergrimm/upstream/orla.html", "kind": "upstream", "settleMs": 1500 },
+    { "id": "upstream-photo", "path": "/projects/kindergrimm/upstream/photo.html", "kind": "upstream", "settleMs": 4500 },
+    { "id": "upstream-pipes", "path": "/projects/kindergrimm/upstream/pipes.html", "kind": "upstream", "settleMs": 1800 },
+    { "id": "upstream-styles", "path": "/projects/kindergrimm/upstream/styles.html", "kind": "upstream", "settleMs": 4200 },
+    { "id": "upstream-timeline", "path": "/projects/kindergrimm/upstream/timeline.html", "kind": "upstream", "settleMs": 4200 },
+    { "id": "upstream-voxel", "path": "/projects/kindergrimm/upstream/voxel.html", "kind": "upstream", "settleMs": 2200 },
+    { "id": "upstream-voxelcrowd", "path": "/projects/kindergrimm/upstream/voxelcrowd.html", "kind": "upstream", "settleMs": 4500 }
+  ],
+  "overviewLinks": [
+    { "id": "asset-lab-overview", "path": "/projects/kindergrimm/asset-lab/?mode=usage", "target": "/projects/kindergrimm.html" },
+    { "id": "research-lab-overview", "path": "/projects/kindergrimm/lab/", "target": "/projects/kindergrimm.html" },
+    { "id": "production-studio-program", "path": "/projects/kindergrimm/production-studio/", "target": "/projects/kindergrimm.html#program" },
+    { "id": "scene-studio-overview", "path": "/projects/kindergrimm/scene-studio/", "target": "/projects/kindergrimm.html" },
+    { "id": "story-demo-overview", "path": "/projects/kindergrimm/story-demo/", "target": "/projects/kindergrimm.html" }
+  ]
+}
