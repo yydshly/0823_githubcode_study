@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="reverse-skill 架构、Skill 调度机制、完整能力目录，以及逆向工程与网络安全知识地图。">
+    <title>Reverse Skill · AI 安全技能架构与知识地图</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../project.css">
+    <link rel="stylesheet" href="../reverse-skill.css">
+    <script src="../reverse-skill.js" defer></script>
+  </head>
+  <body class="rs-page">
+    <a class="skip-link" href="#content">跳到正文</a>
+
+    <header class="site-nav rs-site-nav">
+      <a class="brand" href="../index.html">0823 / CODE STUDY</a>
+      <nav aria-label="页面导航">
+        <a href="#architecture">总体架构</a>
+        <a href="#control">调度控制</a>
+        <a href="#skills">Skill 目录</a>
+        <a href="#knowledge">知识地图</a>
+      </nav>
+      <button class="theme-toggle" type="button" aria-label="切换深色主题" aria-pressed="false">
+        <span aria-hidden="true">◐</span><span class="theme-label">深色</span>
+      </button>
+    </header>
+
+    <main id="content" class="project-main rs-main">
+      <section class="project-hero rs-hero" aria-labelledby="page-title">
+        <div class="hero-copy">
+          <p class="eyebrow">AI SECURITY SKILL ROUTER · ARCHITECTURE STUDY</p>
+          <h1 id="page-title">不是一件工具，<br><span>而是一套作业系统。</span></h1>
+          <p class="project-lead">reverse-skill 把安全领域的操作手册、任务分诊、工具准备、授权闸门、证据记录和经验复用放进同一个仓库，让 AI 知道“当前该做什么、用什么做、做到什么才算有证据”。</p>
+          <div class="hero-actions">
+            <a class="primary-action" href="#architecture">从总体架构开始</a>
+            <a href="#skills">直接查 44 个 Skill</a>
+            <a href="https://github.com/zhaoxuya520/reverse-skill">查看上游仓库 ↗</a>
+          </div>
+        </div>
+
+        <aside class="definition-card" aria-label="核心定义">
+          <p>一句话定义</p>
+          <strong>安全领域的<br>AI Skill 编排包</strong>
+          <div class="definition-equation" aria-label="组成公式">
+            <span>专业 Skills</span><i>+</i><span>确定性路由</span><i>+</i><span>工具桥接</span><i>+</i><span>作业契约</span>
+          </div>
+          <small>它本身不反编译程序；真正工作的仍是 jadx、IDA、Frida、Burp、Ghidra 等工具。</small>
+        </aside>
+
+        <div class="metric-grid rs-metrics" aria-label="仓库规模摘要">
+          <div><strong>43</strong><span>PRIMARY ROUTES</span></div>
+          <div><strong>44</strong><span>INDEXED SKILLS</span></div>
+          <div><strong>173</strong><span>ROUTING CASES</span></div>
+          <div><strong>42</strong><span>CTF SUB-SKILLS</span></div>
+        </div>
+        <p class="metric-note">数量来自仓库 2026-08-24 的 README、Skill 索引与路由基准；它们说明覆盖范围，不等同于独立验证过的任务成功率。</p>
+      </section>
+
+      <div class="reading-layout">
+        <aside class="reading-rail" aria-label="章节目录">
+          <p>阅读路径</p>
+          <ol>
+            <li><a href="#architecture"><span>01</span>总体架构</a></li>
+            <li><a href="#control"><span>02</span>调度控制</a></li>
+            <li><a href="#skills"><span>03</span>全部 Skill</a></li>
+            <li><a href="#knowledge"><span>04</span>知识地图</a></li>
+            <li><a href="#boundaries"><span>05</span>边界与价值</a></li>
+          </ol>
+        </aside>
+
+        <div class="reading-content">
+          <section id="architecture" class="rs-section" aria-labelledby="architecture-title">
+            <header class="section-header">
+              <p class="section-kicker">01 / SYSTEM ARCHITECTURE</p>
+              <h2 id="architecture-title">从一句需求，到一条可审查的分析链。</h2>
+              <p>这套仓库不是平铺 44 份说明书，而是六层协作。上层决定方向和边界，中层选择方法并接通工具，下层保存证据、交付和经验。</p>
+            </header>
+
+            <div class="architecture-stack" aria-label="reverse-skill 六层架构">
+              <article class="architecture-layer layer-policy">
+                <div><span>01</span><strong>意图与边界层</strong></div>
+                <p>理解用户目标，并用 <code>scope.md</code> 固定授权、资产、活动和网络模式。</p>
+                <small>RULES · scope-contract</small>
+              </article>
+              <article class="architecture-layer layer-router">
+                <div><span>02</span><strong>任务路由层</strong></div>
+                <p>用统一的 <code>routing.json</code> 对关键词规则计分，选择一个 PRIMARY 和必要的 secondary。</p>
+                <small>MASTER-ROUTING · master-route</small>
+              </article>
+              <article class="architecture-layer layer-skill">
+                <div><span>03</span><strong>专业 Skill 层</strong></div>
+                <p>加载领域操作手册，规定分析阶段、工具选择、失败切换与交付标准。</p>
+                <small>44 INDEXED SKILLS</small>
+              </article>
+              <article class="architecture-layer layer-tool">
+                <div><span>04</span><strong>工具与 MCP 层</strong></div>
+                <p>从本机工具索引确认真实能力；缺失时按 manifest 自举，再用 CLI 或 MCP 操作工具。</p>
+                <small>tool-index · bootstrap-manifest</small>
+              </article>
+              <article class="architecture-layer layer-case">
+                <div><span>05</span><strong>案件与证据层</strong></div>
+                <p>持续记录 timeline、work item、Evidence、Finding 与 Path，避免结论脱离观察。</p>
+                <small>work/&lt;case&gt; · case-review</small>
+              </article>
+              <article class="architecture-layer layer-memory">
+                <div><span>06</span><strong>交付与记忆层</strong></div>
+                <p>生成文档和图表，把脱敏经验写回 field journal，并用路由基准与 CI 防止规则漂移。</p>
+                <small>docs · diagrams · journal · tests</small>
+              </article>
+            </div>
+
+            <div class="system-flow" aria-label="端到端工作流">
+              <div><span>输入</span><strong>用户任务</strong></div><i aria-hidden="true">→</i>
+              <div><span>分诊</span><strong>PRIMARY</strong></div><i aria-hidden="true">→</i>
+              <div><span>门禁</span><strong>Scope</strong></div><i aria-hidden="true">→</i>
+              <div><span>执行</span><strong>Skill + Tools</strong></div><i aria-hidden="true">→</i>
+              <div><span>证明</span><strong>E → F → P</strong></div><i aria-hidden="true">→</i>
+              <div><span>复用</span><strong>Report + Journal</strong></div>
+            </div>
+
+            <div class="concept-pair">
+              <article>
+                <span>它控制的是什么</span>
+                <h3>AI 的工作顺序与质量门槛</h3>
+                <p>用 Markdown 规则、结构化配置和脚本，让 Agent 先路由、再授权、后执行，并留下可以复查的结果。</p>
+              </article>
+              <article>
+                <span>它没有控制什么</span>
+                <h3>模型底层能力与宿主权限</h3>
+                <p>它不训练模型，也不能越过 Codex、操作系统或用户审批。没有终端、文件或 MCP 权限时，Skill 只能提供方法。</p>
+              </article>
+            </div>
+          </section>
+
+          <section id="control" class="rs-section" aria-labelledby="control-title">
+            <header class="section-header">
+              <p class="section-kicker">02 / CONTROL PLANE</p>
+              <h2 id="control-title">“调度”不是 AI 猜测，而是一段可测试的选择过程。</h2>
+              <p>路由器负责决定先加载哪个专业 Skill；安全契约决定能否行动；工具层决定现实中可以调用什么。三者不能混为一谈。</p>
+            </header>
+
+            <div class="control-grid">
+              <article class="control-card control-route">
+                <span>ROUTER / 选择谁</span>
+                <h3>正则命中、累计计分、优先级破同分</h3>
+                <ol>
+                  <li><code>must</code> 命中，规则进入候选。</li>
+                  <li><code>mustAll</code> 补充必要上下文。</li>
+                  <li><code>exclude</code> 排除“越狱”等歧义。</li>
+                  <li>同一路由多条规则命中则加分。</li>
+                  <li>最高分为 PRIMARY；同分看优先级。</li>
+                  <li>完全未命中时回退 R0 通用逆向。</li>
+                </ol>
+              </article>
+              <article class="control-card control-gate">
+                <span>SCOPE / 能不能做</span>
+                <h3>授权、资产、活动、网络四个硬条件</h3>
+                <dl>
+                  <div><dt>授权</dt><dd><code>auth.status = granted</code></dd></div>
+                  <div><dt>对象</dt><dd>明确资产或离线样本路径</dd></div>
+                  <div><dt>范围</dt><dd>允许与禁止的具体活动</dd></div>
+                  <div><dt>网络</dt><dd>offline / lab / authorized target</dd></div>
+                </dl>
+                <p>路由命中不代表获得授权；用户提到某个目标也不等于可以扫描它。</p>
+              </article>
+              <article class="control-card control-tools">
+                <span>TOOL PLANE / 用什么做</span>
+                <h3>工具索引是机器能力的事实源</h3>
+                <p><code>tool-index</code> 记录工具路径、版本和验证命令；<code>bootstrap-manifest</code> 只允许准备白名单能力；MCP 把 GUI 或服务暴露为 Agent 可调用接口。</p>
+                <div class="mini-flow"><b>检测</b><i>→</i><b>按需安装</b><i>→</i><b>验证</b><i>→</i><b>注册/调用</b></div>
+              </article>
+              <article class="control-card control-proof">
+                <span>EVIDENCE / 如何证明</span>
+                <h3>观察、结论和路径必须分开</h3>
+                <div class="proof-flow">
+                  <div><b>E</b><strong>Evidence</strong><small>命令、文件、日志、截图、哈希</small></div>
+                  <i aria-hidden="true">→</i>
+                  <div><b>F</b><strong>Finding</strong><small>位置、影响、置信度、修复</small></div>
+                  <i aria-hidden="true">→</i>
+                  <div><b>P</b><strong>Path</strong><small>攻击、调用或解题步骤</small></div>
+                </div>
+              </article>
+            </div>
+
+            <div class="route-examples">
+              <div class="table-heading"><h3>调度示例</h3><span>目标语境比单个词更重要</span></div>
+              <div class="table-scroll" tabindex="0" aria-label="调度示例表格，可横向滚动">
+                <table>
+                  <thead><tr><th>用户描述</th><th>PRIMARY</th><th>为什么</th><th>可能的协同</th></tr></thead>
+                  <tbody>
+                    <tr><td>“反编译 APK，查证书校验”</td><td>R1 · apk-reverse</td><td>目标是 Android 包与 pinning</td><td>so 深挖时转 IDA / r2</td></tr>
+                    <tr><td>“前端签名参数怎么生成”</td><td>R3 · js-reverse</td><td>目标是浏览器运行时与 JS 数据链</td><td>CDP / Hook / 抓包</td></tr>
+                    <tr><td>“完整渗透并分析域内路径”</td><td>R10 · attack-chain</td><td>任务跨越多个阶段，不能只给 AD Skill</td><td>pentest + windows-ad</td></tr>
+                    <tr><td>“LLM 越狱和工具滥用测试”</td><td>R14 · llm-security</td><td>“越狱”处于模型语境，不是 iOS</td><td>报告与证据审查</td></tr>
+                    <tr><td>“CTF pwn 栈溢出”</td><td>R17 · pwn-chain</td><td>具体漏洞类型优先于泛 CTF</td><td>CTF 编排保留为外围上下文</td></tr>
+                    <tr><td>“分析一个未知加壳二进制”</td><td>R0 · reverse-engineering</td><td>目标宽泛，先做通用 triage</td><td>识别格式后再转专用 Skill</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+          <section id="skills" class="rs-section skills-section" aria-labelledby="skills-title">
+            <header class="section-header">
+              <p class="section-kicker">03 / SKILL ATLAS</p>
+              <h2 id="skills-title">44 个 Skill，固定回答三个问题。</h2>
+              <p>“能力”说明它会处理什么，“意义”说明它在系统中的职责，“何时调度”说明触发条件。分类是本研究为阅读建立的主归属，不改变上游路由优先级。</p>
+            </header>
+
+            <div class="skill-controls" aria-label="Skill 筛选">
+              <label class="skill-search">
+                <span>搜索 Skill、对象或技术</span>
+                <input id="skillSearch" type="search" placeholder="例如：APK、取证、OAuth、Ghidra" autocomplete="off">
+              </label>
+              <div class="filter-row" role="group" aria-label="按领域筛选">
+                <button type="button" class="is-active" data-filter="all" aria-pressed="true">全部</button>
+                <button type="button" data-filter="reverse" aria-pressed="false">逆向分析</button>
+                <button type="button" data-filter="offense" aria-pressed="false">进攻与验证</button>
+                <button type="button" data-filter="defense" aria-pressed="false">检测与取证</button>
+                <button type="button" data-filter="platform" aria-pressed="false">平台安全</button>
+                <button type="button" data-filter="orchestration" aria-pressed="false">编排与交付</button>
+              </div>
+              <p class="skill-result" aria-live="polite"><strong id="skillCount">44</strong> / 44 SKILLS</p>
+            </div>
+
+            <div id="skillGrid" class="skill-grid" aria-label="reverse-skill 能力目录"></div>
+            <div id="skillEmpty" class="skill-empty" hidden>
+              <strong>没有匹配的 Skill</strong>
+              <p>换一个目标、工具或安全概念，例如“二进制”“取证”“API”。</p>
+            </div>
+            <noscript><p class="noscript-note">此目录需要 JavaScript 才能展开 44 个 Skill；架构和知识地图正文不受影响。</p></noscript>
+          </section>
+
+          <section id="knowledge" class="rs-section knowledge-section" aria-labelledby="knowledge-title">
+            <header class="section-header">
+              <p class="section-kicker">04 / KNOWLEDGE MAP</p>
+              <h2 id="knowledge-title">安全是目标空间，逆向是其中一种理解手段。</h2>
+              <p>逆向回答“程序如何工作”；安全回答“资产面临什么风险、如何验证、检测和修复”。二者经常交叉，但不是包含方向相反的同义词。</p>
+            </header>
+
+            <div class="relationship-map" aria-label="逆向与网络安全的关系">
+              <div class="security-field">
+                <span>CYBERSECURITY / 更大的问题空间</span>
+                <strong>保护资产、身份、数据和业务连续性</strong>
+                <div class="security-domains">
+                  <span>进攻验证</span><span>防御检测</span><span>事件响应</span><span>平台治理</span>
+                </div>
+                <div class="reverse-field">
+                  <span>REVERSE ENGINEERING / 一种技术方法</span>
+                  <strong>在缺少源码或文档时理解实现</strong>
+                </div>
+              </div>
+              <aside>
+                <p><b>逆向但不一定是安全：</b>兼容旧格式、迁移数据、理解遗留软件。</p>
+                <p><b>安全但不一定需要逆向：</b>云权限审计、API 越权检查、日志取证。</p>
+                <p><b>交集：</b>恶意软件、漏洞研究、客户端安全、固件与协议分析。</p>
+              </aside>
+            </div>
+
+            <div class="knowledge-tabs" role="tablist" aria-label="知识地图视图">
+              <button id="tab-reverse" type="button" role="tab" aria-selected="true" aria-controls="panel-reverse">逆向分析路径</button>
+              <button id="tab-security" type="button" role="tab" aria-selected="false" aria-controls="panel-security" tabindex="-1">安全工作生命周期</button>
+              <button id="tab-surfaces" type="button" role="tab" aria-selected="false" aria-controls="panel-surfaces" tabindex="-1">目标与技术面</button>
+            </div>
+
+            <div id="panel-reverse" class="knowledge-panel" role="tabpanel" aria-labelledby="tab-reverse">
+              <div class="map-heading"><span>MAP A</span><h3>逆向：从未知对象到可解释模型</h3></div>
+              <ol class="knowledge-path">
+                <li><span>01</span><div><strong>Triage · 识别</strong><p>确认文件格式、平台、CPU 架构、语言、打包器、保护机制和可用符号。输出“下一步值得走哪条路径”。</p><small>魔数 · PE/ELF/Mach-O · APK/DEX · imports · strings · entropy</small></div></li>
+                <li><span>02</span><div><strong>Static · 静态理解</strong><p>不运行目标，观察反编译代码、汇编、资源、交叉引用、控制流和数据流，建立函数与模块假设。</p><small>decompile · disassemble · CFG · xref · symbol recovery</small></div></li>
+                <li><span>03</span><div><strong>Dynamic · 运行验证</strong><p>在隔离环境中调试、Hook、采样网络与内存，验证静态假设并捕获真实参数和状态变化。</p><small>debugger · breakpoint · Frida · tracing · memory · traffic</small></div></li>
+                <li><span>04</span><div><strong>Deobfuscate · 消除阻碍</strong><p>处理混淆、加壳、虚拟机、反调试和环境检测；目标是恢复可分析结构，而不是盲目“破解”。</p><small>unpack · OLLVM · control-flow flattening · anti-debug · VM opcode</small></div></li>
+                <li><span>05</span><div><strong>Synthesis · 建模与复现</strong><p>把观察整理成调用链、算法、协议状态机或可运行的最小复现，并注明证据和不确定性。</p><small>call flow · data model · protocol grammar · reproduction · confidence</small></div></li>
+              </ol>
+              <div class="tech-dictionary">
+                <article><strong>反编译</strong><p>把字节码或机器码转换为接近高级语言的表示；可读性不等于原始源码。</p></article>
+                <article><strong>反汇编</strong><p>把机器码转换成汇编指令；更接近真实执行，但需要理解架构与调用约定。</p></article>
+                <article><strong>Hook</strong><p>在运行时拦截函数调用，观察或有限修改参数、返回值和行为。</p></article>
+                <article><strong>符号恢复</strong><p>通过元数据、模式和旧版本信息，为匿名函数重新建立名称和职责。</p></article>
+                <article><strong>协议恢复</strong><p>从流量与程序逻辑推断字段、编码、状态和错误处理。</p></article>
+                <article><strong>去混淆</strong><p>把刻意隐藏控制流、字符串或运行语义的结构恢复为可分析形式。</p></article>
+              </div>
+            </div>
+
+            <div id="panel-security" class="knowledge-panel" role="tabpanel" aria-labelledby="tab-security" hidden>
+              <div class="map-heading"><span>MAP B</span><h3>安全：从资产与信任边界到持续改进</h3></div>
+              <div class="security-lifecycle">
+                <article><span>01</span><strong>定义范围</strong><p>明确资产、所有者、授权、数据敏感度、允许活动和不可接受影响。</p><small>scope · asset · threat model</small></article>
+                <article><span>02</span><strong>发现暴露面</strong><p>枚举接口、端口、身份、依赖、客户端、云资源和信任边界。</p><small>recon · inventory · SBOM</small></article>
+                <article><span>03</span><strong>验证弱点</strong><p>用最小影响方式证明错误配置、漏洞或设计缺陷是否真实可利用。</p><small>authn · authz · injection · exploitability</small></article>
+                <article><span>04</span><strong>评估影响</strong><p>把单点问题放进攻击路径，判断对机密性、完整性、可用性和业务的影响。</p><small>finding · path · severity</small></article>
+                <article><span>05</span><strong>检测与响应</strong><p>建立日志、规则和取证路径，确认组织能否发现、遏制并解释攻击。</p><small>SIEM · Sigma · YARA · timeline</small></article>
+                <article><span>06</span><strong>修复与复测</strong><p>调整代码、配置和架构后复现原始路径，确认问题关闭且没有引入旁路。</p><small>remediation · regression · assurance</small></article>
+              </div>
+              <div class="security-concepts">
+                <article><h4>身份认证 AuthN</h4><p>你是谁？密码、证书、令牌和设备信任是否可靠。</p></article>
+                <article><h4>授权 AuthZ</h4><p>你能做什么？对象级、功能级和租户边界是否正确。</p></article>
+                <article><h4>攻击面</h4><p>外部可以触达的入口、数据、组件和关系集合。</p></article>
+                <article><h4>信任边界</h4><p>数据或身份跨越不同可信级别的位置，通常是设计审查重点。</p></article>
+                <article><h4>可利用性</h4><p>弱点是否能在现实约束下形成稳定影响，而不只是理论可能。</p></article>
+                <article><h4>可检测性</h4><p>攻击发生时，日志、告警和调查证据是否足够及时且可信。</p></article>
+              </div>
+            </div>
+
+            <div id="panel-surfaces" class="knowledge-panel" role="tabpanel" aria-labelledby="tab-surfaces" hidden>
+              <div class="map-heading"><span>MAP C</span><h3>目标面：对象决定技术，目标决定结论</h3></div>
+              <div class="surface-map">
+                <article><span>客户端</span><h4>APK、IPA、桌面程序、扩展</h4><p>反编译、运行时 Hook、本地存储、更新链、证书校验、信任边界。</p><small>apk · mobile · thick-client · browser-extension</small></article>
+                <article><span>二进制</span><h4>PE、ELF、Mach-O、Go/Rust</h4><p>指令、调用约定、控制流、符号、漏洞原语、版本差分和利用链。</p><small>ida · ghidra · radare2 · pwn · binary-diff</small></article>
+                <article><span>Web 与接口</span><h4>JS、REST、GraphQL、身份协议</h4><p>前端签名、请求链、对象权限、会话、令牌、SSO 和服务端信任。</p><small>js-reverse · api-security · identity-federation</small></article>
+                <article><span>基础设施</span><h4>云、K8s、AD、数据库、供应链</h4><p>权限关系、暴露配置、横向路径、依赖来源、构建完整性和秘密管理。</p><small>cloud-k8s · windows-ad · database · supply-chain</small></article>
+                <article><span>物理与边缘</span><h4>固件、硬件、OT、Wi-Fi、射频</h4><p>文件系统提取、调试口、工业协议、无线帧和隔离实验环境。</p><small>firmware · hardware · ot-ics · wifi · radio-sdr</small></article>
+                <article><span>检测与调查</span><h4>恶意软件、取证、狩猎、情报</h4><p>行为、IOC、内存/磁盘时间线、检测规则、攻击活动和公开信息关联。</p><small>malware · forensics · threat-hunting · intelligence</small></article>
+                <article><span>AI 系统</span><h4>LLM、Agent、RAG、MCP</h4><p>提示注入、工具滥用、数据泄露、记忆污染和 Skill/MCP 供应链。</p><small>llm-security · skill-supply-chain</small></article>
+                <article><span>交付治理</span><h4>范围、证据、报告、复核</h4><p>让技术活动可授权、可复现、可复查，并为决策者保留边界。</p><small>scope · case-review · docs · diagrams</small></article>
+              </div>
+            </div>
+          </section>
+
+          <section id="boundaries" class="rs-section boundaries-section" aria-labelledby="boundaries-title">
+            <header class="section-header">
+              <p class="section-kicker">05 / VALUE &amp; BOUNDARIES</p>
+              <h2 id="boundaries-title">当前最值得学的是架构，不是一次装完所有工具。</h2>
+              <p>对于暂时不做安全实操的人，这个仓库首先是一份“大型专业 Skill 系统如何工程化”的案例。</p>
+            </header>
+            <div class="value-grid">
+              <article><span>现在学习</span><h3>路由单一事实源</h3><p>把任务与 Skill 的映射集中管理，给歧义、回退和优先级建立可测试规则。</p></article>
+              <article><span>现在学习</span><h3>按需加载</h3><p>只给 Agent 一个 PRIMARY 和必要协同，减少上下文堆叠与职责冲突。</p></article>
+              <article><span>现在学习</span><h3>能力索引</h3><p>区分“文档说能做”和“当前机器真的有工具可做”。</p></article>
+              <article><span>现在学习</span><h3>证据化完成</h3><p>把观察、结论与路径绑定，避免用流畅文字替代真实验证。</p></article>
+              <article class="later"><span>以后再做</span><h3>安全工具链安装</h3><p>只有产生真实逆向或授权安全任务时，再在隔离环境中按需准备。</p></article>
+              <article class="later"><span>保持警惕</span><h3>强制提示与自动执行</h3><p>仓库中的“立即执行、自动安装”不能高于宿主安全规则、用户授权和人工审批。</p></article>
+            </div>
+
+            <div class="risk-note">
+              <div><span>采用建议</span><strong>把它当架构样本，而不是可信执行根。</strong></div>
+              <ul>
+                <li>先读路由、Skill 契约、工具 manifest 和脚本，再决定是否执行。</li>
+                <li>真实安全操作只在自有、CTF、实验室或书面授权范围内进行。</li>
+                <li>安装 MCP 与第三方工具会扩大本机攻击面，优先使用隔离 VM。</li>
+                <li>路由基准只能证明“选到了预期 Skill”，不能证明安全结论正确。</li>
+                <li>field journal 是外部记忆，不是模型训练；需要脱敏、审核和版本治理。</li>
+              </ul>
+            </div>
+          </section>
+
+          <section class="sources-section" aria-labelledby="sources-title">
+            <div>
+              <p class="section-kicker">SOURCES / 2026-08-24</p>
+              <h2 id="sources-title">来源与阅读边界</h2>
+            </div>
+            <ul>
+              <li><a href="https://github.com/zhaoxuya520/reverse-skill">项目 README 与仓库结构 ↗</a></li>
+              <li><a href="https://github.com/zhaoxuya520/reverse-skill/blob/main/skills/config/routing.json">路由单一事实源 routing.json ↗</a></li>
+              <li><a href="https://github.com/zhaoxuya520/reverse-skill/blob/main/skills/INDEX.md">自动生成的 Skill 索引 ↗</a></li>
+              <li><a href="https://github.com/zhaoxuya520/reverse-skill/blob/main/skills/ops/scope-contract.md">Scope 授权契约 ↗</a></li>
+              <li><a href="https://github.com/zhaoxuya520/reverse-skill/blob/main/skills/ops/evidence-finding-path.md">Evidence → Finding → Path ↗</a></li>
+              <li><a href="https://github.com/zhaoxuya520/reverse-skill/issues/32">曾报告的安全缺陷与修复背景 ↗</a></li>
+            </ul>
+            <p>本页是架构研究与知识导航，不是安全操作指南；不会指导对未授权目标进行扫描、利用或绕过。</p>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <footer>Understand the system → choose the skill → preserve the evidence</footer>
+  </body>
+</html>
