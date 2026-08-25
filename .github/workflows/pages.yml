@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - "docs/**"
+      - "projects/kindergrimm/**"
       - ".github/workflows/pages.yml"
   workflow_dispatch:
 
@@ -26,12 +27,26 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Checkout pinned Kindergrimm upstream
+        uses: actions/checkout@v4
+        with:
+          repository: albertobeiz/kindergrimm
+          ref: 5857b1e1cae2713d6714ad7dd7f89626bb242f0f
+          path: _kindergrimm_upstream
+      - name: Assemble Pages site
+        run: |
+          mkdir -p _site/projects/kindergrimm
+          cp -a docs/. _site/
+          rsync -a --exclude upstream --exclude evidence projects/kindergrimm/ _site/projects/kindergrimm/
+          rsync -a --exclude .git _kindergrimm_upstream/ _site/projects/kindergrimm/upstream/
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Upload site
         uses: actions/upload-pages-artifact@v3
         with:
-          path: docs
+          path: _site
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
+
+

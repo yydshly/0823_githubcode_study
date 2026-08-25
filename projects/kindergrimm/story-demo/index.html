@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="zh-CN" data-style="mosslight">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Kindergrimm 可交互故事演示：风暴前的回信。">
+    <title>风暴前的回信 · Kindergrimm Story Proof</title>
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="./story.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#story-actions">跳到故事行动</a>
+    <header class="topbar">
+      <a class="brand" href="../asset-catalog/"><span>KINDERGRIMM</span><small>STORY PROOF · V2-M3</small></a>
+      <nav aria-label="研究导航">
+        <a href="../research-atlas/">源库谱系</a>
+        <a href="../scene-studio/">场景工作台</a>
+        <a href="../asset-catalog/">素材能力</a>
+        <a href="../production-studio/">生产研究</a>
+        <a href="../../../docs/projects/kindergrimm.html">研究总览</a>
+      </nav>
+      <button id="restart-top" class="text-button" type="button">重新开始</button>
+    </header>
+
+    <main class="story-shell">
+      <section class="scene-column" aria-labelledby="story-title">
+        <header class="story-heading">
+          <div>
+            <p class="kicker">AN INTERACTIVE STORY ABOUT PUBLIC KNOWLEDGE</p>
+            <h1 id="story-title">风暴前的回信</h1>
+            <p class="premise">河水封城前，把一条人人都需要的路线送到旧水闸。</p>
+          </div>
+          <div class="style-switch" role="group" aria-label="故事世界样式">
+            <button type="button" data-style-id="mosslight-prop-gouache" aria-pressed="true"><span></span>水粉</button>
+            <button type="button" data-style-id="moonharbor-inkcut-props" aria-pressed="false"><span></span>墨刻</button>
+            <button type="button" data-style-id="sunpatch-felt-props" aria-pressed="false"><span></span>毛毡</button>
+          </div>
+        </header>
+
+        <div id="scene-frame" class="scene-frame" data-mood="quiet">
+          <canvas id="story-scene" width="1200" height="675" aria-label="当前故事场景"></canvas>
+          <div id="canvas-fallback" class="canvas-fallback" hidden>
+            <strong>图像渲染不可用</strong>
+            <p>完整文字故事与选择仍然可用。当前页面没有生成或伪装任何场景图片。</p>
+          </div>
+          <div class="weather-layer" aria-hidden="true"></div>
+          <div id="scene-caption" class="scene-caption">
+            <span id="chapter-eyebrow">第一章 · 信使驿站</span>
+            <strong id="chapter-title">没有写收件人的回信</strong>
+          </div>
+          <div id="hotspot-layer" class="hotspot-layer" aria-label="场景热点"></div>
+          <div class="scene-proof" aria-label="渲染能力说明">
+            <span>CANVAS 2D</span><span>SEED 240824</span><span>LLM 0</span>
+          </div>
+        </div>
+
+        <section class="chapter-track" aria-label="故事进度">
+          <div data-chapter="0"><span>01</span><strong>驿站</strong></div>
+          <div data-chapter="1"><span>02</span><strong>山径</strong></div>
+          <div data-chapter="2"><span>03</span><strong>水闸</strong></div>
+        </section>
+      </section>
+
+      <aside class="story-workspace" aria-label="故事工作台">
+        <section class="status-strip" aria-label="故事状态">
+          <div><small>社区信任</small><strong id="trust-value">0</strong><span id="trust-dots" aria-hidden="true"></span></div>
+          <div><small>风暴进度</small><strong id="storm-value">0 / 3</strong><span id="storm-dots" aria-hidden="true"></span></div>
+        </section>
+
+        <section class="dialogue-card" aria-live="polite">
+          <div id="portrait" class="portrait" role="img" aria-label="当前说话者肖像"></div>
+          <div class="dialogue-copy">
+            <div class="speaker-line"><strong id="speaker-name">奥伦</strong><span id="speaker-role">守站人</span></div>
+            <p id="dialogue-text"></p>
+          </div>
+        </section>
+
+        <section class="objective-card">
+          <small>此刻要做的事</small>
+          <p id="objective-text"></p>
+        </section>
+
+        <section id="story-actions" class="story-actions" aria-labelledby="actions-title">
+          <div class="section-title"><span id="actions-title">你的行动</span><small>选择会被故事记住</small></div>
+          <div id="action-list"></div>
+        </section>
+
+        <section class="inventory-section" aria-labelledby="inventory-title">
+          <div class="section-title"><span id="inventory-title">随身物品</span><small id="inventory-count">0 / 5</small></div>
+          <div id="inventory-list" class="inventory-list"><p>还没有领取任何东西。</p></div>
+        </section>
+
+        <details class="journal">
+          <summary>行动记录与技术边界 <span id="history-count">0</span></summary>
+          <ol id="history-list"><li>故事尚未开始。</li></ol>
+          <p>场景、肖像和道具均由本地确定性 Canvas 2D 规则生成；运行时不调用大模型或云端 API。</p>
+        </details>
+      </aside>
+    </main>
+
+    <footer>
+      <p><strong>这个演示证明什么？</strong> 同一套 Recipe + Style Grammar 不只会导出素材，还能驱动真实场景、库存、任务、状态变化和叙事结局。</p>
+      <span>2D PROCEDURAL STORY SYSTEM · LOCAL · DETERMINISTIC</span>
+    </footer>
+    <script type="module" src="./story.js"></script>
+  </body>
+</html>

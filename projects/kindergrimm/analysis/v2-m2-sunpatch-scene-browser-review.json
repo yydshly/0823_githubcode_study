@@ -1,0 +1,47 @@
+{
+  "schemaVersion": "kindergrimm-scene-browser-review/0.1",
+  "capturedAt": "2026-08-25",
+  "packId": "sunpatch-felt-2d",
+  "packFingerprint": "f51ce69c",
+  "rendererId": "sunpatch-felt-2d",
+  "rendererFingerprint": "f1d70ebd",
+  "consoleErrors": 0,
+  "modes": [
+    {
+      "id": "waystation",
+      "role": "service-and-social-spacing",
+      "actors": 8,
+      "unique": 8,
+      "partPlanes": 208,
+      "authoredPartPlanes": 208,
+      "upstreamVisiblePartPlanes": 0,
+      "independentActors": 8,
+      "screenshot": "evidence/v2-m2-scene-waystation-felt.png",
+      "ok": true
+    },
+    {
+      "id": "encounter",
+      "role": "combat-readability-and-formation",
+      "actors": 8,
+      "unique": 8,
+      "partPlanes": 208,
+      "authoredPartPlanes": 208,
+      "upstreamVisiblePartPlanes": 0,
+      "independentActors": 8,
+      "screenshot": "evidence/v2-m2-scene-encounter-felt.png",
+      "ok": true
+    },
+    {
+      "id": "council",
+      "role": "dialogue-blocking-and-narrative-focus",
+      "actors": 8,
+      "unique": 8,
+      "partPlanes": 208,
+      "authoredPartPlanes": 208,
+      "upstreamVisiblePartPlanes": 0,
+      "independentActors": 8,
+      "screenshot": "evidence/v2-m2-scene-council-felt.png",
+      "ok": true
+    }
+  ]
+}

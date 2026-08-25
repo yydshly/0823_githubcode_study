@@ -1,0 +1,1384 @@
+{
+  "schemaVersion": "kindergrimm-three-way-review/0.1",
+  "masterSeed": 240824,
+  "slotCount": 50,
+  "routes": {
+    "kindergrimm-original": {
+      "packFingerprint": "7d63c5ae",
+      "rendererId": "kindergrimm-drawn-2d",
+      "rendererFingerprint": null,
+      "features": 0,
+      "coverageGroups": 0,
+      "slots": [
+        {
+          "slot": 0,
+          "seed": 233143426,
+          "species": "cat",
+          "base": "quad",
+          "media": "ink",
+          "recipeFingerprint": "9b8ee20e",
+          "visualFingerprint": null
+        },
+        {
+          "slot": 1,
+          "seed": 249921045,
+          "species": "cat",
+          "base": "quad",
+          "media": "oil",
+          "recipeFingerprint": "60dd7467",
+          "visualFingerprint": null
+        },
+        {
+          "slot": 2,
+          "seed": 199588188,
+          "species": "nightmare",
+          "base": "biped",
+          "media": "watercolor",
+          "recipeFingerprint": "2bedfe5c",
+          "visualFingerprint": null
+        },
+        {
+          "slot": 3,
+          "seed": 216365807,
+          "species": "cat",
+          "base": "quad",
+          "media": "ink",
+          "recipeFingerprint": "23fcfc59",
+          "visualFingerprint": null
+        },
+        {
+          "slot": 4,
+          "seed": 166032950,
+          "species": "cat",
+          "base": "quad",
+          "media": "watercolor",
+          "recipeFingerprint": "8fdde9a0",
+          "visualFingerprint": null
+        },
+        {
+          "slot": 5,
+          "seed": 182810569,
+          "species": "nightmare",
+          "base": "sit",
+          "media": "oil",
+          "recipeFingerprint": "8c273d4f",
+          "visualFingerprint": null
+        },
+        {
+          "slot": 6,
+          "seed": 132477712,
+          "species": "dog",
+          "base": "quad",
+          "media": "ink",
+          "recipeFingerprint": "65d45772",
+          "visualFingerprint": null
+        },
+        {
+          "slot": 7,
+          "seed": 149255331,
+          "species": "human",
+          "base": "biped",
+          "media": "ink",
+          "recipeFingerprint": "d1b61381",
+          "visualFingerprint": null
+        },
+        {
+          "slot": 8,
+          "seed": 367364378,
+          "species": "nightmare",
+          "base": "biped",
+          "media": "graphite",
+          "recipeFingerprint": "316f7d63",
+          "visualFingerprint": null
+        },
+        {
+          "slot": 9,
+          "seed": 384141997,
+          "species": "human",
+          "base": "biped",
+          "media": "oil",
+          "recipeFingerprint": "0d5e667a",
+          "visualFingerprint": null
+        },
+        {
+          "slot": 10,
+          "seed": 100845119,
+          "species": "human",
+          "base": "biped",
+          "media": "chalk",
+          "recipeFingerprint": "8e87231a",
+          "visualFingerprint": null
+        },
+        {
+          "slot": 11,
+          "seed": 84067500,
+          "species": "human",
+          "base": "biped",
+          "media": "watercolor",
+          "recipeFingerprint": "feada8a0",
+          "visualFingerprint": null
+        },
+        {
+          "slot": 12,
+          "seed": 134400357,
+          "species": "cat",
+          "base": "quad",
+          "media": "oil",
+          "recipeFingerprint": "9f00cf53",
+          "visualFingerprint": null
+        },
+        {
+          "slot": 13,
+          "seed": 117622738,
+          "species": "cat",
+          "base": "quad",
+          "media": "chalk",
+          "recipeFingerprint": "d1e29007",
+          "visualFingerprint": null
+        },
+        {
+          "slot": 14,
+          "seed": 33734643,
+          "species": "human",
+          "base": "biped",
+          "media": "marker",
+          "recipeFingerprint": "fd592dbb",
+          "visualFingerprint": null
+        },
+        {
+          "slot": 15,
+          "seed": 16957024,
+          "species": "nightmare",
+          "base": "biped",
+          "media": "graphite",
+          "recipeFingerprint": "c912be9d",
+          "visualFingerprint": null
+        },
+        {
+          "slot": 16,
+          "seed": 67289881,
+          "species": "cat",
+          "base": "quad",
+          "media": "marker",
+          "recipeFingerprint": "1367c322",
+          "visualFingerprint": null
+        },
+        {
+          "slot": 17,
+          "seed": 50512262,
+          "species": "cat",
+          "base": "quad",
+          "media": "watercolor",
+          "recipeFingerprint": "6cf3b764",
+          "visualFingerprint": null
+        },
+        {
+          "slot": 18,
+          "seed": 235066071,
+          "species": "nightmare",
+          "base": "sit",
+          "media": "oil",
+          "recipeFingerprint": "4929735e",
+          "visualFingerprint": null
+        },
+        {
+          "slot": 19,
+          "seed": 218288452,
+          "species": "dog",
+          "base": "quad",
+          "media": "oil",
+          "recipeFingerprint": "fca617b2",
+          "visualFingerprint": null
+        },
+        {
+          "slot": 20,
+          "seed": 482722564,
+          "species": "cat",
+          "base": "quad",
+          "media": "marker",
+          "recipeFingerprint": "eb3e3e23",
+          "visualFingerprint": null
+        },
+        {
+          "slot": 21,
+          "seed": 499500183,
+          "species": "human",
+          "base": "biped",
+          "media": "oil",
+          "recipeFingerprint": "c446f23f",
+          "visualFingerprint": null
+        },
+        {
+          "slot": 22,
+          "seed": 516277802,
+          "species": "human",
+          "base": "biped",
+          "media": "chalk",
+          "recipeFingerprint": "789bc799",
+          "visualFingerprint": null
+        },
+        {
+          "slot": 23,
+          "seed": 533055421,
+          "species": "human",
+          "base": "biped",
+          "media": "watercolor",
+          "recipeFingerprint": "00d622ed",
+          "visualFingerprint": null
+        },
+        {
+          "slot": 24,
+          "seed": 415612088,
+          "species": "human",
+          "base": "biped",
+          "media": "graphite",
+          "recipeFingerprint": "bbf218ea",
+          "visualFingerprint": null
+        },
+        {
+          "slot": 25,
+          "seed": 432389707,
+          "species": "nightmare",
+          "base": "biped",
+          "media": "watercolor",
+          "recipeFingerprint": "1225f10f",
+          "visualFingerprint": null
+        },
+        {
+          "slot": 26,
+          "seed": 449167326,
+          "species": "human",
+          "base": "biped",
+          "media": "ink",
+          "recipeFingerprint": "e580a436",
+          "visualFingerprint": null
+        },
+        {
+          "slot": 27,
+          "seed": 465944945,
+          "species": "dog",
+          "base": "quad",
+          "media": "oil",
+          "recipeFingerprint": "825f31d3",
+          "visualFingerprint": null
+        },
+        {
+          "slot": 28,
+          "seed": 348501612,
+          "species": "cat",
+          "base": "quad",
+          "media": "oil",
+          "recipeFingerprint": "4b62c20e",
+          "visualFingerprint": null
+        },
+        {
+          "slot": 29,
+          "seed": 365279231,
+          "species": "human",
+          "base": "biped",
+          "media": "chalk",
+          "recipeFingerprint": "e39df2ef",
+          "visualFingerprint": null
+        },
+        {
+          "slot": 30,
+          "seed": 583535373,
+          "species": "cat",
+          "base": "quad",
+          "media": "oil",
+          "recipeFingerprint": "3a3f694c",
+          "visualFingerprint": null
+        },
+        {
+          "slot": 31,
+          "seed": 566757754,
+          "species": "nightmare",
+          "base": "sit",
+          "media": "marker",
+          "recipeFingerprint": "c7490781",
+          "visualFingerprint": null
+        },
+        {
+          "slot": 32,
+          "seed": 549980135,
+          "species": "cat",
+          "base": "quad",
+          "media": "chalk",
+          "recipeFingerprint": "6a44369c",
+          "visualFingerprint": null
+        },
+        {
+          "slot": 33,
+          "seed": 533202516,
+          "species": "cat",
+          "base": "quad",
+          "media": "watercolor",
+          "recipeFingerprint": "4d597752",
+          "visualFingerprint": null
+        },
+        {
+          "slot": 34,
+          "seed": 516424897,
+          "species": "dog",
+          "base": "quad",
+          "media": "graphite",
+          "recipeFingerprint": "edb82d2d",
+          "visualFingerprint": null
+        },
+        {
+          "slot": 35,
+          "seed": 499647278,
+          "species": "dog",
+          "base": "quad",
+          "media": "marker",
+          "recipeFingerprint": "b3091529",
+          "visualFingerprint": null
+        },
+        {
+          "slot": 36,
+          "seed": 482869659,
+          "species": "cat",
+          "base": "quad",
+          "media": "chalk",
+          "recipeFingerprint": "7ebdc5e0",
+          "visualFingerprint": null
+        },
+        {
+          "slot": 37,
+          "seed": 466092040,
+          "species": "cat",
+          "base": "quad",
+          "media": "watercolor",
+          "recipeFingerprint": "43c9a646",
+          "visualFingerprint": null
+        },
+        {
+          "slot": 38,
+          "seed": 449314421,
+          "species": "human",
+          "base": "biped",
+          "media": "watercolor",
+          "recipeFingerprint": "4d2614c3",
+          "visualFingerprint": null
+        },
+        {
+          "slot": 39,
+          "seed": 432536802,
+          "species": "human",
+          "base": "biped",
+          "media": "watercolor",
+          "recipeFingerprint": "d858fd94",
+          "visualFingerprint": null
+        },
+        {
+          "slot": 40,
+          "seed": 133561714,
+          "species": "nightmare",
+          "base": "sit",
+          "media": "graphite",
+          "recipeFingerprint": "c86bef8b",
+          "visualFingerprint": null
+        },
+        {
+          "slot": 41,
+          "seed": 150339333,
+          "species": "cat",
+          "base": "quad",
+          "media": "watercolor",
+          "recipeFingerprint": "2b9d3374",
+          "visualFingerprint": null
+        },
+        {
+          "slot": 42,
+          "seed": 100006476,
+          "species": "human",
+          "base": "biped",
+          "media": "marker",
+          "recipeFingerprint": "013c35ba",
+          "visualFingerprint": null
+        },
+        {
+          "slot": 43,
+          "seed": 116784095,
+          "species": "nightmare",
+          "base": "biped",
+          "media": "ink",
+          "recipeFingerprint": "f0544cc4",
+          "visualFingerprint": null
+        },
+        {
+          "slot": 44,
+          "seed": 66451238,
+          "species": "human",
+          "base": "biped",
+          "media": "chalk",
+          "recipeFingerprint": "66be7d95",
+          "visualFingerprint": null
+        },
+        {
+          "slot": 45,
+          "seed": 83228857,
+          "species": "dog",
+          "base": "quad",
+          "media": "watercolor",
+          "recipeFingerprint": "376c77d9",
+          "visualFingerprint": null
+        },
+        {
+          "slot": 46,
+          "seed": 32896000,
+          "species": "nightmare",
+          "base": "biped",
+          "media": "chalk",
+          "recipeFingerprint": "b20ccfb0",
+          "visualFingerprint": null
+        },
+        {
+          "slot": 47,
+          "seed": 49673619,
+          "species": "human",
+          "base": "biped",
+          "media": "marker",
+          "recipeFingerprint": "13250e0f",
+          "visualFingerprint": null
+        },
+        {
+          "slot": 48,
+          "seed": 267782666,
+          "species": "human",
+          "base": "biped",
+          "media": "chalk",
+          "recipeFingerprint": "750ad33d",
+          "visualFingerprint": null
+        },
+        {
+          "slot": 49,
+          "seed": 284560285,
+          "species": "nightmare",
+          "base": "biped",
+          "media": "marker",
+          "recipeFingerprint": "4ef04757",
+          "visualFingerprint": null
+        }
+      ]
+    },
+    "mosslight-waystation": {
+      "packFingerprint": "a79de443",
+      "rendererId": "mosslight-canvas-decorator",
+      "rendererFingerprint": "091c354d",
+      "features": 12,
+      "coverageGroups": 5,
+      "slots": [
+        {
+          "slot": 0,
+          "seed": 233143426,
+          "species": "dog",
+          "base": "quad",
+          "media": "watercolor",
+          "recipeFingerprint": "e4bdc857",
+          "visualFingerprint": "722d4014"
+        },
+        {
+          "slot": 1,
+          "seed": 249921045,
+          "species": "human",
+          "base": "biped",
+          "media": "ink",
+          "recipeFingerprint": "a5b0cdfd",
+          "visualFingerprint": "f839e85a"
+        },
+        {
+          "slot": 2,
+          "seed": 199588188,
+          "species": "dog",
+          "base": "quad",
+          "media": "watercolor",
+          "recipeFingerprint": "42f0408c",
+          "visualFingerprint": "fd3e3a43"
+        },
+        {
+          "slot": 3,
+          "seed": 216365807,
+          "species": "human",
+          "base": "biped",
+          "media": "ink",
+          "recipeFingerprint": "f2721c3a",
+          "visualFingerprint": "4f445572"
+        },
+        {
+          "slot": 4,
+          "seed": 166032950,
+          "species": "dog",
+          "base": "quad",
+          "media": "watercolor",
+          "recipeFingerprint": "fde2b9ab",
+          "visualFingerprint": "ee3127cc"
+        },
+        {
+          "slot": 5,
+          "seed": 182810569,
+          "species": "human",
+          "base": "biped",
+          "media": "watercolor",
+          "recipeFingerprint": "72b9e543",
+          "visualFingerprint": "2c1f0b64"
+        },
+        {
+          "slot": 6,
+          "seed": 132477712,
+          "species": "dog",
+          "base": "quad",
+          "media": "watercolor",
+          "recipeFingerprint": "dd899c7e",
+          "visualFingerprint": "76312645"
+        },
+        {
+          "slot": 7,
+          "seed": 149255331,
+          "species": "dog",
+          "base": "quad",
+          "media": "watercolor",
+          "recipeFingerprint": "19dbeb43",
+          "visualFingerprint": "f2281693"
+        },
+        {
+          "slot": 8,
+          "seed": 367364378,
+          "species": "dog",
+          "base": "quad",
+          "media": "watercolor",
+          "recipeFingerprint": "acb75542",
+          "visualFingerprint": "87d93e14"
+        },
+        {
+          "slot": 9,
+          "seed": 384141997,
+          "species": "cat",
+          "base": "quad",
+          "media": "watercolor",
+          "recipeFingerprint": "ff14b20f",
+          "visualFingerprint": "b67a53d5"
+        },
+        {
+          "slot": 10,
+          "seed": 100845119,
+          "species": "dog",
+          "base": "quad",
+          "media": "ink",
+          "recipeFingerprint": "33d6b190",
+          "visualFingerprint": "edc105ad"
+        },
+        {
+          "slot": 11,
+          "seed": 84067500,
+          "species": "dog",
+          "base": "quad",
+          "media": "watercolor",
+          "recipeFingerprint": "ba5506fc",
+          "visualFingerprint": "0ca788ca"
+        },
+        {
+          "slot": 12,
+          "seed": 134400357,
+          "species": "dog",
+          "base": "quad",
+          "media": "ink",
+          "recipeFingerprint": "da451e19",
+          "visualFingerprint": "6bb63078"
+        },
+        {
+          "slot": 13,
+          "seed": 117622738,
+          "species": "human",
+          "base": "biped",
+          "media": "ink",
+          "recipeFingerprint": "8d3e9977",
+          "visualFingerprint": "e42683df"
+        },
+        {
+          "slot": 14,
+          "seed": 33734643,
+          "species": "cat",
+          "base": "quad",
+          "media": "ink",
+          "recipeFingerprint": "a606013a",
+          "visualFingerprint": "8f0603c8"
+        },
+        {
+          "slot": 15,
+          "seed": 16957024,
+          "species": "cat",
+          "base": "quad",
+          "media": "ink",
+          "recipeFingerprint": "29140b4e",
+          "visualFingerprint": "9ff387f3"
+        },
+        {
+          "slot": 16,
+          "seed": 67289881,
+          "species": "human",
+          "base": "biped",
+          "media": "ink",
+          "recipeFingerprint": "75daff5f",
+          "visualFingerprint": "724b08b4"
+        },
+        {
+          "slot": 17,
+          "seed": 50512262,
+          "species": "human",
+          "base": "biped",
+          "media": "watercolor",
+          "recipeFingerprint": "46c33173",
+          "visualFingerprint": "8574cc68"
+        },
+        {
+          "slot": 18,
+          "seed": 235066071,
+          "species": "cat",
+          "base": "quad",
+          "media": "ink",
+          "recipeFingerprint": "fc0a097c",
+          "visualFingerprint": "9f7f1944"
+        },
+        {
+          "slot": 19,
+          "seed": 218288452,
+          "species": "human",
+          "base": "biped",
+          "media": "watercolor",
+          "recipeFingerprint": "02821786",
+          "visualFingerprint": "3dcc9a8c"
+        },
+        {
+          "slot": 20,
+          "seed": 482722564,
+          "species": "cat",
+          "base": "quad",
+          "media": "ink",
+          "recipeFingerprint": "ea17eb33",
+          "visualFingerprint": "1e4e8eda"
+        },
+        {
+          "slot": 21,
+          "seed": 499500183,
+          "species": "human",
+          "base": "biped",
+          "media": "ink",
+          "recipeFingerprint": "1799c015",
+          "visualFingerprint": "8c2c387b"
+        },
+        {
+          "slot": 22,
+          "seed": 516277802,
+          "species": "human",
+          "base": "biped",
+          "media": "ink",
+          "recipeFingerprint": "c54169ec",
+          "visualFingerprint": "60899c1a"
+        },
+        {
+          "slot": 23,
+          "seed": 533055421,
+          "species": "dog",
+          "base": "quad",
+          "media": "ink",
+          "recipeFingerprint": "2d74198f",
+          "visualFingerprint": "81b72299"
+        },
+        {
+          "slot": 24,
+          "seed": 415612088,
+          "species": "human",
+          "base": "biped",
+          "media": "ink",
+          "recipeFingerprint": "ac9bd508",
+          "visualFingerprint": "81bda659"
+        },
+        {
+          "slot": 25,
+          "seed": 432389707,
+          "species": "dog",
+          "base": "quad",
+          "media": "watercolor",
+          "recipeFingerprint": "c4e5fe97",
+          "visualFingerprint": "9dce1f2f"
+        },
+        {
+          "slot": 26,
+          "seed": 449167326,
+          "species": "cat",
+          "base": "quad",
+          "media": "ink",
+          "recipeFingerprint": "251f890f",
+          "visualFingerprint": "73371b62"
+        },
+        {
+          "slot": 27,
+          "seed": 465944945,
+          "species": "human",
+          "base": "biped",
+          "media": "watercolor",
+          "recipeFingerprint": "d4bf9149",
+          "visualFingerprint": "64d27a4c"
+        },
+        {
+          "slot": 28,
+          "seed": 348501612,
+          "species": "human",
+          "base": "biped",
+          "media": "watercolor",
+          "recipeFingerprint": "d131bac3",
+          "visualFingerprint": "1dcb9169"
+        },
+        {
+          "slot": 29,
+          "seed": 365279231,
+          "species": "cat",
+          "base": "quad",
+          "media": "ink",
+          "recipeFingerprint": "0384997e",
+          "visualFingerprint": "e70027d0"
+        },
+        {
+          "slot": 30,
+          "seed": 583535373,
+          "species": "dog",
+          "base": "quad",
+          "media": "ink",
+          "recipeFingerprint": "c468c21a",
+          "visualFingerprint": "b953f55f"
+        },
+        {
+          "slot": 31,
+          "seed": 566757754,
+          "species": "cat",
+          "base": "quad",
+          "media": "watercolor",
+          "recipeFingerprint": "b53da652",
+          "visualFingerprint": "e8171508"
+        },
+        {
+          "slot": 32,
+          "seed": 549980135,
+          "species": "human",
+          "base": "biped",
+          "media": "watercolor",
+          "recipeFingerprint": "c1683551",
+          "visualFingerprint": "4502d39c"
+        },
+        {
+          "slot": 33,
+          "seed": 533202516,
+          "species": "dog",
+          "base": "quad",
+          "media": "watercolor",
+          "recipeFingerprint": "5e4832c2",
+          "visualFingerprint": "3e1e708f"
+        },
+        {
+          "slot": 34,
+          "seed": 516424897,
+          "species": "dog",
+          "base": "quad",
+          "media": "watercolor",
+          "recipeFingerprint": "e777dd67",
+          "visualFingerprint": "4e9b870f"
+        },
+        {
+          "slot": 35,
+          "seed": 499647278,
+          "species": "dog",
+          "base": "quad",
+          "media": "watercolor",
+          "recipeFingerprint": "1f6f837d",
+          "visualFingerprint": "fe399729"
+        },
+        {
+          "slot": 36,
+          "seed": 482869659,
+          "species": "dog",
+          "base": "quad",
+          "media": "watercolor",
+          "recipeFingerprint": "3f5fcd03",
+          "visualFingerprint": "117456cb"
+        },
+        {
+          "slot": 37,
+          "seed": 466092040,
+          "species": "dog",
+          "base": "quad",
+          "media": "ink",
+          "recipeFingerprint": "77b55bb6",
+          "visualFingerprint": "083ab602"
+        },
+        {
+          "slot": 38,
+          "seed": 449314421,
+          "species": "dog",
+          "base": "quad",
+          "media": "ink",
+          "recipeFingerprint": "51800a67",
+          "visualFingerprint": "819255e3"
+        },
+        {
+          "slot": 39,
+          "seed": 432536802,
+          "species": "dog",
+          "base": "quad",
+          "media": "watercolor",
+          "recipeFingerprint": "91798718",
+          "visualFingerprint": "eab36941"
+        },
+        {
+          "slot": 40,
+          "seed": 133561714,
+          "species": "dog",
+          "base": "quad",
+          "media": "watercolor",
+          "recipeFingerprint": "4ad9dadf",
+          "visualFingerprint": "6adadb67"
+        },
+        {
+          "slot": 41,
+          "seed": 150339333,
+          "species": "dog",
+          "base": "quad",
+          "media": "watercolor",
+          "recipeFingerprint": "ddaccabe",
+          "visualFingerprint": "f33d3896"
+        },
+        {
+          "slot": 42,
+          "seed": 100006476,
+          "species": "dog",
+          "base": "quad",
+          "media": "ink",
+          "recipeFingerprint": "f8511844",
+          "visualFingerprint": "342cff84"
+        },
+        {
+          "slot": 43,
+          "seed": 116784095,
+          "species": "cat",
+          "base": "quad",
+          "media": "watercolor",
+          "recipeFingerprint": "680cc00f",
+          "visualFingerprint": "9ba5cad1"
+        },
+        {
+          "slot": 44,
+          "seed": 66451238,
+          "species": "cat",
+          "base": "quad",
+          "media": "ink",
+          "recipeFingerprint": "112ab126",
+          "visualFingerprint": "6a1f995d"
+        },
+        {
+          "slot": 45,
+          "seed": 83228857,
+          "species": "human",
+          "base": "biped",
+          "media": "ink",
+          "recipeFingerprint": "7f74a379",
+          "visualFingerprint": "7cbc2844"
+        },
+        {
+          "slot": 46,
+          "seed": 32896000,
+          "species": "cat",
+          "base": "quad",
+          "media": "watercolor",
+          "recipeFingerprint": "90a79fa2",
+          "visualFingerprint": "c50d4604"
+        },
+        {
+          "slot": 47,
+          "seed": 49673619,
+          "species": "human",
+          "base": "biped",
+          "media": "watercolor",
+          "recipeFingerprint": "e7a96629",
+          "visualFingerprint": "18935fcd"
+        },
+        {
+          "slot": 48,
+          "seed": 267782666,
+          "species": "cat",
+          "base": "quad",
+          "media": "ink",
+          "recipeFingerprint": "0c7363dc",
+          "visualFingerprint": "27955583"
+        },
+        {
+          "slot": 49,
+          "seed": 284560285,
+          "species": "cat",
+          "base": "quad",
+          "media": "watercolor",
+          "recipeFingerprint": "ef6c2bbb",
+          "visualFingerprint": "ad4cfaa3"
+        }
+      ]
+    },
+    "mosslight-core-2d": {
+      "packFingerprint": "a96d877a",
+      "rendererId": "mosslight-core-2d",
+      "rendererFingerprint": "32d9c2cf",
+      "features": 17,
+      "coverageGroups": 6,
+      "slots": [
+        {
+          "slot": 0,
+          "seed": 233143426,
+          "species": "dog",
+          "base": "biped",
+          "media": "mosslight-gouache",
+          "recipeFingerprint": "6ff95817",
+          "visualFingerprint": "8303165d"
+        },
+        {
+          "slot": 1,
+          "seed": 249921045,
+          "species": "dog",
+          "base": "biped",
+          "media": "mosslight-gouache",
+          "recipeFingerprint": "95f00ae4",
+          "visualFingerprint": "48e4be96"
+        },
+        {
+          "slot": 2,
+          "seed": 199588188,
+          "species": "dog",
+          "base": "biped",
+          "media": "mosslight-gouache",
+          "recipeFingerprint": "1ec74d78",
+          "visualFingerprint": "085541f6"
+        },
+        {
+          "slot": 3,
+          "seed": 216365807,
+          "species": "dog",
+          "base": "biped",
+          "media": "mosslight-gouache",
+          "recipeFingerprint": "cd5aa216",
+          "visualFingerprint": "aad0d438"
+        },
+        {
+          "slot": 4,
+          "seed": 166032950,
+          "species": "human",
+          "base": "biped",
+          "media": "mosslight-gouache",
+          "recipeFingerprint": "c825eaa6",
+          "visualFingerprint": "05a09956"
+        },
+        {
+          "slot": 5,
+          "seed": 182810569,
+          "species": "human",
+          "base": "biped",
+          "media": "mosslight-gouache",
+          "recipeFingerprint": "4b35c0f6",
+          "visualFingerprint": "0f03e617"
+        },
+        {
+          "slot": 6,
+          "seed": 132477712,
+          "species": "cat",
+          "base": "biped",
+          "media": "mosslight-gouache",
+          "recipeFingerprint": "58be7a38",
+          "visualFingerprint": "aca32d29"
+        },
+        {
+          "slot": 7,
+          "seed": 149255331,
+          "species": "human",
+          "base": "biped",
+          "media": "mosslight-gouache",
+          "recipeFingerprint": "fd616572",
+          "visualFingerprint": "4e28a39b"
+        },
+        {
+          "slot": 8,
+          "seed": 367364378,
+          "species": "cat",
+          "base": "biped",
+          "media": "mosslight-gouache",
+          "recipeFingerprint": "7dbc5ee9",
+          "visualFingerprint": "96e7e1cb"
+        },
+        {
+          "slot": 9,
+          "seed": 384141997,
+          "species": "cat",
+          "base": "biped",
+          "media": "mosslight-gouache",
+          "recipeFingerprint": "759c009f",
+          "visualFingerprint": "eb3c6715"
+        },
+        {
+          "slot": 10,
+          "seed": 100845119,
+          "species": "dog",
+          "base": "biped",
+          "media": "mosslight-gouache",
+          "recipeFingerprint": "079d5822",
+          "visualFingerprint": "ac2c20a7"
+        },
+        {
+          "slot": 11,
+          "seed": 84067500,
+          "species": "human",
+          "base": "biped",
+          "media": "mosslight-gouache",
+          "recipeFingerprint": "acd2f4b9",
+          "visualFingerprint": "f04634d9"
+        },
+        {
+          "slot": 12,
+          "seed": 134400357,
+          "species": "dog",
+          "base": "biped",
+          "media": "mosslight-gouache",
+          "recipeFingerprint": "51122ddb",
+          "visualFingerprint": "42b87406"
+        },
+        {
+          "slot": 13,
+          "seed": 117622738,
+          "species": "cat",
+          "base": "biped",
+          "media": "mosslight-gouache",
+          "recipeFingerprint": "116b316a",
+          "visualFingerprint": "99148b59"
+        },
+        {
+          "slot": 14,
+          "seed": 33734643,
+          "species": "dog",
+          "base": "biped",
+          "media": "mosslight-gouache",
+          "recipeFingerprint": "ced7f90e",
+          "visualFingerprint": "46baabc8"
+        },
+        {
+          "slot": 15,
+          "seed": 16957024,
+          "species": "cat",
+          "base": "biped",
+          "media": "mosslight-gouache",
+          "recipeFingerprint": "fd16bf66",
+          "visualFingerprint": "95b1a898"
+        },
+        {
+          "slot": 16,
+          "seed": 67289881,
+          "species": "cat",
+          "base": "biped",
+          "media": "mosslight-gouache",
+          "recipeFingerprint": "90dfca58",
+          "visualFingerprint": "642ff76f"
+        },
+        {
+          "slot": 17,
+          "seed": 50512262,
+          "species": "cat",
+          "base": "biped",
+          "media": "mosslight-gouache",
+          "recipeFingerprint": "1d20a5aa",
+          "visualFingerprint": "7b2bd3fd"
+        },
+        {
+          "slot": 18,
+          "seed": 235066071,
+          "species": "cat",
+          "base": "biped",
+          "media": "mosslight-gouache",
+          "recipeFingerprint": "fed71694",
+          "visualFingerprint": "188b014c"
+        },
+        {
+          "slot": 19,
+          "seed": 218288452,
+          "species": "cat",
+          "base": "biped",
+          "media": "mosslight-gouache",
+          "recipeFingerprint": "ced50601",
+          "visualFingerprint": "fa907dd1"
+        },
+        {
+          "slot": 20,
+          "seed": 482722564,
+          "species": "cat",
+          "base": "biped",
+          "media": "mosslight-gouache",
+          "recipeFingerprint": "09205157",
+          "visualFingerprint": "469ea303"
+        },
+        {
+          "slot": 21,
+          "seed": 499500183,
+          "species": "human",
+          "base": "biped",
+          "media": "mosslight-gouache",
+          "recipeFingerprint": "6e582b30",
+          "visualFingerprint": "723e4829"
+        },
+        {
+          "slot": 22,
+          "seed": 516277802,
+          "species": "human",
+          "base": "biped",
+          "media": "mosslight-gouache",
+          "recipeFingerprint": "612228d3",
+          "visualFingerprint": "2e176f77"
+        },
+        {
+          "slot": 23,
+          "seed": 533055421,
+          "species": "human",
+          "base": "biped",
+          "media": "mosslight-gouache",
+          "recipeFingerprint": "9195d264",
+          "visualFingerprint": "8655e039"
+        },
+        {
+          "slot": 24,
+          "seed": 415612088,
+          "species": "human",
+          "base": "biped",
+          "media": "mosslight-gouache",
+          "recipeFingerprint": "64482c71",
+          "visualFingerprint": "7cef7f4e"
+        },
+        {
+          "slot": 25,
+          "seed": 432389707,
+          "species": "cat",
+          "base": "biped",
+          "media": "mosslight-gouache",
+          "recipeFingerprint": "1ac0030c",
+          "visualFingerprint": "2df877ea"
+        },
+        {
+          "slot": 26,
+          "seed": 449167326,
+          "species": "human",
+          "base": "biped",
+          "media": "mosslight-gouache",
+          "recipeFingerprint": "de505f05",
+          "visualFingerprint": "30b7f4d6"
+        },
+        {
+          "slot": 27,
+          "seed": 465944945,
+          "species": "human",
+          "base": "biped",
+          "media": "mosslight-gouache",
+          "recipeFingerprint": "e1972dbe",
+          "visualFingerprint": "2c7e39b5"
+        },
+        {
+          "slot": 28,
+          "seed": 348501612,
+          "species": "human",
+          "base": "biped",
+          "media": "mosslight-gouache",
+          "recipeFingerprint": "8033a1f6",
+          "visualFingerprint": "20b334ef"
+        },
+        {
+          "slot": 29,
+          "seed": 365279231,
+          "species": "cat",
+          "base": "biped",
+          "media": "mosslight-gouache",
+          "recipeFingerprint": "3d78d242",
+          "visualFingerprint": "eac4d8d7"
+        },
+        {
+          "slot": 30,
+          "seed": 583535373,
+          "species": "cat",
+          "base": "biped",
+          "media": "mosslight-gouache",
+          "recipeFingerprint": "b6bd5970",
+          "visualFingerprint": "0e47d037"
+        },
+        {
+          "slot": 31,
+          "seed": 566757754,
+          "species": "dog",
+          "base": "biped",
+          "media": "mosslight-gouache",
+          "recipeFingerprint": "4390dc12",
+          "visualFingerprint": "aaf4d633"
+        },
+        {
+          "slot": 32,
+          "seed": 549980135,
+          "species": "human",
+          "base": "biped",
+          "media": "mosslight-gouache",
+          "recipeFingerprint": "963d0a6c",
+          "visualFingerprint": "17afbd9f"
+        },
+        {
+          "slot": 33,
+          "seed": 533202516,
+          "species": "human",
+          "base": "biped",
+          "media": "mosslight-gouache",
+          "recipeFingerprint": "e009634b",
+          "visualFingerprint": "a900e5ae"
+        },
+        {
+          "slot": 34,
+          "seed": 516424897,
+          "species": "dog",
+          "base": "biped",
+          "media": "mosslight-gouache",
+          "recipeFingerprint": "72163717",
+          "visualFingerprint": "bb7664b0"
+        },
+        {
+          "slot": 35,
+          "seed": 499647278,
+          "species": "cat",
+          "base": "biped",
+          "media": "mosslight-gouache",
+          "recipeFingerprint": "a1d02002",
+          "visualFingerprint": "c51b2764"
+        },
+        {
+          "slot": 36,
+          "seed": 482869659,
+          "species": "cat",
+          "base": "biped",
+          "media": "mosslight-gouache",
+          "recipeFingerprint": "5a8c737d",
+          "visualFingerprint": "d6e9a025"
+        },
+        {
+          "slot": 37,
+          "seed": 466092040,
+          "species": "cat",
+          "base": "biped",
+          "media": "mosslight-gouache",
+          "recipeFingerprint": "7128f68c",
+          "visualFingerprint": "b7f3efb3"
+        },
+        {
+          "slot": 38,
+          "seed": 449314421,
+          "species": "human",
+          "base": "biped",
+          "media": "mosslight-gouache",
+          "recipeFingerprint": "d7c627aa",
+          "visualFingerprint": "1a589061"
+        },
+        {
+          "slot": 39,
+          "seed": 432536802,
+          "species": "cat",
+          "base": "biped",
+          "media": "mosslight-gouache",
+          "recipeFingerprint": "d44d9eab",
+          "visualFingerprint": "b1174ad1"
+        },
+        {
+          "slot": 40,
+          "seed": 133561714,
+          "species": "human",
+          "base": "biped",
+          "media": "mosslight-gouache",
+          "recipeFingerprint": "b7058dbb",
+          "visualFingerprint": "03101fcb"
+        },
+        {
+          "slot": 41,
+          "seed": 150339333,
+          "species": "human",
+          "base": "biped",
+          "media": "mosslight-gouache",
+          "recipeFingerprint": "f7db1bc4",
+          "visualFingerprint": "2e614f77"
+        },
+        {
+          "slot": 42,
+          "seed": 100006476,
+          "species": "human",
+          "base": "biped",
+          "media": "mosslight-gouache",
+          "recipeFingerprint": "b9dbdf2d",
+          "visualFingerprint": "65fdd0e0"
+        },
+        {
+          "slot": 43,
+          "seed": 116784095,
+          "species": "human",
+          "base": "biped",
+          "media": "mosslight-gouache",
+          "recipeFingerprint": "e97a599a",
+          "visualFingerprint": "d007e5a9"
+        },
+        {
+          "slot": 44,
+          "seed": 66451238,
+          "species": "human",
+          "base": "biped",
+          "media": "mosslight-gouache",
+          "recipeFingerprint": "3fa8bd4d",
+          "visualFingerprint": "af96e8b2"
+        },
+        {
+          "slot": 45,
+          "seed": 83228857,
+          "species": "human",
+          "base": "biped",
+          "media": "mosslight-gouache",
+          "recipeFingerprint": "0e722eaa",
+          "visualFingerprint": "ae8e9cda"
+        },
+        {
+          "slot": 46,
+          "seed": 32896000,
+          "species": "cat",
+          "base": "biped",
+          "media": "mosslight-gouache",
+          "recipeFingerprint": "eea7bea2",
+          "visualFingerprint": "d3d0bd7f"
+        },
+        {
+          "slot": 47,
+          "seed": 49673619,
+          "species": "dog",
+          "base": "biped",
+          "media": "mosslight-gouache",
+          "recipeFingerprint": "b2e80e1e",
+          "visualFingerprint": "6e3ac115"
+        },
+        {
+          "slot": 48,
+          "seed": 267782666,
+          "species": "dog",
+          "base": "biped",
+          "media": "mosslight-gouache",
+          "recipeFingerprint": "d6edaf70",
+          "visualFingerprint": "91393042"
+        },
+        {
+          "slot": 49,
+          "seed": 284560285,
+          "species": "cat",
+          "base": "biped",
+          "media": "mosslight-gouache",
+          "recipeFingerprint": "48426f1b",
+          "visualFingerprint": "ec5d3b29"
+        }
+      ]
+    }
+  }
+}

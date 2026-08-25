@@ -1,0 +1,504 @@
+{
+  "schemaVersion": "kindergrimm-scene-demand-orchestrator-browser-review/0.3",
+  "canonicalUrl": "http://127.0.0.1:8882/projects/kindergrimm/asset-lab/",
+  "capturedAt": "2026-08-25T06:25:49.425Z",
+  "baseline": {
+    "snapshot": {
+      "canRender": true,
+      "renderOff": false,
+      "busy": false,
+      "activeMode": "scene",
+      "assetId": "scene-605203-human",
+      "seed": 605203,
+      "species": "human",
+      "fingerprint": "kg-2eda2fcc",
+      "mapping": [
+        "exact",
+        "adapted",
+        "adapted",
+        "local",
+        "unsupported"
+      ],
+      "nativeSeeds": [
+        605203,
+        605203,
+        605203
+      ],
+      "readiness": 3,
+      "characterCanvases": 3,
+      "canvases": 3,
+      "styleCapabilities": 15,
+      "itemFamilies": 13,
+      "itemRanks": 4,
+      "environmentSpecies": 5,
+      "environmentPalettes": 6,
+      "itemFingerprint": "kg-6de15d72",
+      "environmentFingerprint": "kg-8f0ef689",
+      "sceneFingerprint": "kg-c6b013e0",
+      "scenePresetCount": 3,
+      "usageProofCount": 3,
+      "activeUsageProof": "narrative",
+      "usageWorldCanvas": 1,
+      "usageWorldCalls": null,
+      "usageWorldTriangles": null,
+      "scenePreviewCount": 5,
+      "sceneExplanationCount": 4,
+      "fallbackVisible": false,
+      "capabilitySummary": {
+        "modes": 6,
+        "characterBackends": 3,
+        "media": 6,
+        "historyStyles": 9,
+        "itemFamilies": 13,
+        "itemRanks": 4,
+        "environmentSpecies": 5,
+        "environmentPalettes": 6
+      }
+    },
+    "tabCount": 6,
+    "presetOptions": 3,
+    "plan": {
+      "schemaVersion": "kindergrimm-scene-material-plan/1.0",
+      "source": {
+        "repository": "https://github.com/albertobeiz/kindergrimm",
+        "commit": "5857b1e1cae2713d6714ad7dd7f89626bb242f0f",
+        "runtimeModel": "none"
+      },
+      "intent": {
+        "schemaVersion": "kindergrimm-scene-demand/1.0",
+        "title": "暴雨后的港口回信",
+        "purpose": "信使穿过退潮后的码头，把求救信交给守灯人。",
+        "seed": 605203,
+        "sceneType": "rescue",
+        "mood": "urgent",
+        "biome": "harbour",
+        "interaction": "deliver",
+        "actor": "human"
+      },
+      "selections": {
+        "character": {
+          "seed": 605203,
+          "species": "human",
+          "look": "gloom",
+          "sceneRole": "quest-giver",
+          "assetId": "scene-605203-human"
+        },
+        "style": {
+          "id": "expressionism",
+          "seed": 605220,
+          "n": 6
+        },
+        "item": {
+          "family": "charm",
+          "rank": "nightmare",
+          "seed": 605304
+        },
+        "environment": {
+          "species": "grass",
+          "palette": "desert",
+          "material": "matte",
+          "seed": 605414
+        }
+      },
+      "explanations": [
+        {
+          "capability": "character",
+          "signal": "sceneType:rescue",
+          "decision": "human / quest-giver / gloom",
+          "reason": "任务信息必须清晰，角色被匹配为任务发起者。",
+          "source": "compileIntent → buildCharacter / buildVoxelCharacter / buildGloss",
+          "representation": "2D planes + procedural 3D",
+          "gap": "跨 Backend 仍不共享部件几何。"
+        },
+        {
+          "capability": "style",
+          "signal": "mood:urgent",
+          "decision": "expressionism",
+          "reason": "紧迫情绪使用高张力轮廓与最高道具等级。",
+          "source": "styles.html / stylesheet.js",
+          "representation": "source contact sheet",
+          "gap": "风格样张用于选型，不是场景几何。"
+        },
+        {
+          "capability": "item",
+          "signal": "interaction:deliver",
+          "decision": "charm / nightmare",
+          "reason": "传递行为匹配体积小、可作为任务信物的 Charm。",
+          "source": "rollItem + thumbFor",
+          "representation": "procedural 2D transparent asset",
+          "gap": "PNG 不冒充 3D 模型。"
+        },
+        {
+          "capability": "environment",
+          "signal": "biome:harbour",
+          "decision": "grass / desert / matte",
+          "reason": "盐碱港口匹配低矮、耐候的草本轮廓。",
+          "source": "buildPlant",
+          "representation": "procedural Three.js geometry",
+          "gap": "包内 PNG 只是目录代理；运行时资产是 Group。"
+        }
+      ],
+      "fingerprint": "kg-c6b013e0"
+    },
+    "previewSources": [
+      {
+        "id": "scene-drawn-preview",
+        "hasSource": true,
+        "sourceLength": 43462
+      },
+      {
+        "id": "scene-voxel-preview",
+        "hasSource": true,
+        "sourceLength": 23458
+      },
+      {
+        "id": "scene-gloss-preview",
+        "hasSource": true,
+        "sourceLength": 54758
+      },
+      {
+        "id": "scene-item-preview",
+        "hasSource": true,
+        "sourceLength": 72066
+      },
+      {
+        "id": "scene-environment-preview",
+        "hasSource": true,
+        "sourceLength": 33394
+      }
+    ],
+    "styleFrame": "../upstream/styles.html?style=expressionism&seed=605220&species=human&n=6&hand=brush&shot",
+    "exportDisabled": false,
+    "viewport": 1440,
+    "scrollWidth": 1440
+  },
+  "deterministic": {
+    "samePlan": true,
+    "fingerprint": "kg-c6b013e0",
+    "itemFingerprint": "kg-6de15d72",
+    "environmentRecipeSeed": 605414
+  },
+  "custom": {
+    "snapshot": {
+      "canRender": true,
+      "renderOff": false,
+      "busy": false,
+      "activeMode": "scene",
+      "assetId": "scene-123456-nightmare",
+      "seed": 123456,
+      "species": "nightmare",
+      "fingerprint": "kg-25bc90d5",
+      "mapping": [
+        "exact",
+        "adapted",
+        "adapted",
+        "local",
+        "unsupported"
+      ],
+      "nativeSeeds": [
+        123456,
+        123456,
+        123456
+      ],
+      "readiness": 3,
+      "characterCanvases": 3,
+      "canvases": 3,
+      "styleCapabilities": 15,
+      "itemFamilies": 13,
+      "itemRanks": 4,
+      "environmentSpecies": 5,
+      "environmentPalettes": 6,
+      "itemFingerprint": "kg-a728e0b6",
+      "environmentFingerprint": "kg-27e5ac1b",
+      "sceneFingerprint": "kg-ebfc6a70",
+      "scenePresetCount": 3,
+      "usageProofCount": 3,
+      "activeUsageProof": "narrative",
+      "usageWorldCanvas": 1,
+      "usageWorldCalls": null,
+      "usageWorldTriangles": null,
+      "scenePreviewCount": 5,
+      "sceneExplanationCount": 4,
+      "fallbackVisible": false,
+      "capabilitySummary": {
+        "modes": 6,
+        "characterBackends": 3,
+        "media": 6,
+        "historyStyles": 9,
+        "itemFamilies": 13,
+        "itemRanks": 4,
+        "environmentSpecies": 5,
+        "environmentPalettes": 6
+      }
+    },
+    "plan": {
+      "schemaVersion": "kindergrimm-scene-material-plan/1.0",
+      "source": {
+        "repository": "https://github.com/albertobeiz/kindergrimm",
+        "commit": "5857b1e1cae2713d6714ad7dd7f89626bb242f0f",
+        "runtimeModel": "none"
+      },
+      "intent": {
+        "schemaVersion": "kindergrimm-scene-demand/1.0",
+        "title": "雾中遗迹的灯光线索",
+        "purpose": "梦魇目击者在遗迹里发现一盏可以揭示隐藏路径的灯。",
+        "seed": 123456,
+        "sceneType": "mystery",
+        "mood": "uncanny",
+        "biome": "ruin",
+        "interaction": "discover",
+        "actor": "nightmare"
+      },
+      "selections": {
+        "character": {
+          "seed": 123456,
+          "species": "nightmare",
+          "look": "gloom",
+          "sceneRole": "witness",
+          "assetId": "scene-123456-nightmare"
+        },
+        "style": {
+          "id": "surrealism",
+          "seed": 123473,
+          "n": 6
+        },
+        "item": {
+          "family": "lantern",
+          "rank": "nightmare",
+          "seed": 123557
+        },
+        "environment": {
+          "species": "wildcard",
+          "palette": "tundra",
+          "material": "fuzz",
+          "seed": 123667
+        }
+      },
+      "explanations": [
+        {
+          "capability": "character",
+          "signal": "sceneType:mystery",
+          "decision": "nightmare / witness / gloom",
+          "reason": "调查场景需要可辨认的目击者或线索持有者。",
+          "source": "compileIntent → buildCharacter / buildVoxelCharacter / buildGloss",
+          "representation": "2D planes + procedural 3D",
+          "gap": "跨 Backend 仍不共享部件几何。"
+        },
+        {
+          "capability": "style",
+          "signal": "mood:uncanny",
+          "decision": "surrealism",
+          "reason": "异常情绪使用梦境风格与暗域角色配色。",
+          "source": "styles.html / stylesheet.js",
+          "representation": "source contact sheet",
+          "gap": "风格样张用于选型，不是场景几何。"
+        },
+        {
+          "capability": "item",
+          "signal": "interaction:discover",
+          "decision": "lantern / nightmare",
+          "reason": "调查行为匹配能进入地面照明宿主的 Lantern。",
+          "source": "rollItem + thumbFor",
+          "representation": "procedural 2D transparent asset",
+          "gap": "PNG 不冒充 3D 模型。"
+        },
+        {
+          "capability": "environment",
+          "signal": "biome:ruin",
+          "decision": "wildcard / tundra / fuzz",
+          "reason": "遗迹使用不规则植物与灰冷表面表达失序。",
+          "source": "buildPlant",
+          "representation": "procedural Three.js geometry",
+          "gap": "包内 PNG 只是目录代理；运行时资产是 Group。"
+        }
+      ],
+      "fingerprint": "kg-ebfc6a70"
+    },
+    "title": "雾中遗迹的灯光线索",
+    "itemLabel": "fat scribbled lantern · nightmare",
+    "environmentLabel": "tundra wildcard",
+    "styleLabel": "surrealism",
+    "explanationRows": 4,
+    "previewCount": 5,
+    "styleSrc": "../upstream/styles.html?style=surrealism&seed=123473&species=human&n=6&hand=brush&shot",
+    "scrollWidth": 1440,
+    "viewport": 1440
+  },
+  "exportResult": {
+    "fileCount": 6,
+    "totalBytes": 693806,
+    "files": [
+      {
+        "filename": "scene-123456-nightmare--drawn.png",
+        "bytes": 274408,
+        "type": "image/png"
+      },
+      {
+        "filename": "scene-123456-nightmare--voxel.png",
+        "bytes": 45094,
+        "type": "image/png"
+      },
+      {
+        "filename": "scene-123456-nightmare--gloss.png",
+        "bytes": 159444,
+        "type": "image/png"
+      },
+      {
+        "filename": "lantern-nightmare-123557.png",
+        "bytes": 93687,
+        "type": "image/png"
+      },
+      {
+        "filename": "wildcard-tundra-123667--proxy.png",
+        "bytes": 115869,
+        "type": "image/png"
+      },
+      {
+        "filename": "kg-ebfc6a70-123456--scene-manifest.json",
+        "bytes": 5304,
+        "type": "application/json"
+      }
+    ],
+    "manifest": {
+      "schemaVersion": "kindergrimm-scene-material-package/1.0",
+      "assetCount": 5,
+      "runtimeModel": "none",
+      "fingerprint": "kg-ebfc6a70",
+      "assemblyBoundary": "This package provides source-backed materials and provenance for later scene assembly; it is not a composed game level."
+    },
+    "assets": [
+      {
+        "id": "character-drawn",
+        "width": 768,
+        "height": 768,
+        "bytes": 274408,
+        "shaLength": 64,
+        "representation": "2D transparent PNG"
+      },
+      {
+        "id": "character-voxel",
+        "width": 768,
+        "height": 768,
+        "bytes": 45094,
+        "shaLength": 64,
+        "representation": "procedural 3D + PNG proxy"
+      },
+      {
+        "id": "character-gloss",
+        "width": 768,
+        "height": 768,
+        "bytes": 159444,
+        "shaLength": 64,
+        "representation": "procedural 3D + PNG proxy"
+      },
+      {
+        "id": "item",
+        "width": 512,
+        "height": 512,
+        "bytes": 93687,
+        "shaLength": 64,
+        "representation": "procedural-2d-transparent-png"
+      },
+      {
+        "id": "environment",
+        "width": 768,
+        "height": 768,
+        "bytes": 115869,
+        "shaLength": 64,
+        "representation": "procedural-threejs-geometry"
+      }
+    ]
+  },
+  "invalid": {
+    "message": "Scene Seed 必须是 1–2147483647 的整数。",
+    "preserved": true,
+    "exportDisabled": false
+  },
+  "keyboard": {
+    "activeMode": "environment",
+    "focusMode": "environment",
+    "outline": "3px"
+  },
+  "tablet": {
+    "viewport": 1024,
+    "scrollWidth": 1024,
+    "orchestratorColumns": "962.562px",
+    "previewCount": 5
+  },
+  "mobile": {
+    "viewport": 390,
+    "scrollWidth": 390,
+    "activeMode": "scene",
+    "orchestratorColumns": "353.219px",
+    "characterColumns": "351.219px",
+    "previewCount": 5
+  },
+  "fallback": {
+    "snapshot": {
+      "canRender": false,
+      "renderOff": true,
+      "busy": false,
+      "activeMode": "scene",
+      "assetId": "scene-605203-human",
+      "seed": 605203,
+      "species": "human",
+      "fingerprint": "kg-4cfb8a82",
+      "mapping": [
+        "exact",
+        "adapted",
+        "adapted",
+        "local",
+        "unsupported"
+      ],
+      "nativeSeeds": [
+        605203,
+        605203,
+        605203
+      ],
+      "readiness": 3,
+      "characterCanvases": 0,
+      "canvases": 0,
+      "styleCapabilities": 15,
+      "itemFamilies": 13,
+      "itemRanks": 4,
+      "environmentSpecies": 5,
+      "environmentPalettes": 6,
+      "itemFingerprint": "kg-6de15d72",
+      "environmentFingerprint": "kg-5c23b650",
+      "sceneFingerprint": "kg-c6b013e0",
+      "scenePresetCount": 3,
+      "usageProofCount": 3,
+      "activeUsageProof": "narrative",
+      "usageWorldCanvas": 0,
+      "usageWorldCalls": null,
+      "usageWorldTriangles": null,
+      "scenePreviewCount": 1,
+      "sceneExplanationCount": 4,
+      "fallbackVisible": false,
+      "capabilitySummary": {
+        "modes": 6,
+        "characterBackends": 3,
+        "media": 6,
+        "historyStyles": 9,
+        "itemFamilies": 13,
+        "itemRanks": 4,
+        "environmentSpecies": 5,
+        "environmentPalettes": 6
+      }
+    },
+    "exportDisabled": true,
+    "unavailableFrames": 4,
+    "itemPreview": true,
+    "styleFrame": true,
+    "recipeManifest": true,
+    "status": "已完成确定性匹配、道具和 Recipe；WebGL 资产与整包导出已关闭。"
+  },
+  "consoleErrors": [],
+  "evidence": [
+    "evidence/asset-lab-v03-scene-default.png",
+    "evidence/asset-lab-v03-scene-custom.png",
+    "evidence/asset-lab-v03-keyboard.png",
+    "evidence/asset-lab-v03-mobile.png",
+    "evidence/asset-lab-v03-fallback.png"
+  ]
+}

@@ -1,0 +1,135 @@
+{
+  "schemaVersion": "kindergrimm-source-first-atlas-browser-review/1.0",
+  "canonicalUrl": "http://127.0.0.1:8882/projects/kindergrimm/research-atlas/",
+  "capturedAt": "2026-08-25T04:58:17.432Z",
+  "hero": {
+    "viewport": 1440,
+    "scrollWidth": 1440,
+    "title": "先看清源库，再谈我们的扩展。",
+    "counts": [
+      "135",
+      "18",
+      "13",
+      "9"
+    ],
+    "commit": "5857b1e1",
+    "sourceCard": true
+  },
+  "styles": {
+    "snapshot": {
+      "proofId": "styles",
+      "proof": {
+        "name": "九种历史风格",
+        "kind": "STYLE SYSTEM",
+        "file": "styles.html · src/styles/*",
+        "src": "../upstream/styles.html?style=cubism&n=5",
+        "summary": "Gothic、Renaissance、Baroque、Ukiyo-e、Impressionism、Expressionism、Cubism、Dadaism、Surrealism 使用共享 Style Contract。"
+      },
+      "embedOff": false,
+      "upstreamCommit": "5857b1e1",
+      "frameSrc": "../upstream/styles.html?style=cubism&n=5"
+    },
+    "frameTitle": "drawai — styles",
+    "selected": [
+      "styles"
+    ]
+  },
+  "voxel": {
+    "snapshot": {
+      "proofId": "voxel",
+      "proof": {
+        "name": "Voxel 角色实验室",
+        "kind": "VOXEL · 3D",
+        "file": "voxel.html · src/voxel/*",
+        "src": "../upstream/voxel.html",
+        "summary": "真正的 Three.js 体素实体，可旋转、缩放、选部件、重投、锁定和播放面部/呼吸状态。"
+      },
+      "embedOff": false,
+      "upstreamCommit": "5857b1e1",
+      "frameSrc": "../upstream/voxel.html"
+    },
+    "frameTitle": "drawai — voxel lab",
+    "openHref": "../upstream/voxel.html"
+  },
+  "lineage": {
+    "rows": 7,
+    "reassess": 2,
+    "applications": 2,
+    "roadmap": 5,
+    "capabilities": 9
+  },
+  "tablet": {
+    "viewport": 1024,
+    "scrollWidth": 1024,
+    "heroColumns": "921.625px",
+    "capabilityColumns": "453.609px 453.625px"
+  },
+  "mobile": {
+    "viewport": 390,
+    "scrollWidth": 390,
+    "snapshot": {
+      "proofId": "items",
+      "proof": {
+        "name": "Toy Shop 物品系统",
+        "kind": "ITEM SYSTEM",
+        "file": "items.html · src/items/*",
+        "src": "../upstream/items.html",
+        "summary": "13 个 Item Family × 4 个 Rank 的原生审查表；同一对象参数驱动画法、数值和游戏行为。"
+      },
+      "embedOff": false,
+      "upstreamCommit": "5857b1e1",
+      "frameSrc": "../upstream/items.html"
+    },
+    "tabsScrollable": true,
+    "frameWidth": 363,
+    "openVisible": true
+  },
+  "keyboard": {
+    "snapshot": {
+      "proofId": "styles",
+      "proof": {
+        "name": "九种历史风格",
+        "kind": "STYLE SYSTEM",
+        "file": "styles.html · src/styles/*",
+        "src": "../upstream/styles.html?style=cubism&n=5",
+        "summary": "Gothic、Renaissance、Baroque、Ukiyo-e、Impressionism、Expressionism、Cubism、Dadaism、Surrealism 使用共享 Style Contract。"
+      },
+      "embedOff": false,
+      "upstreamCommit": "5857b1e1",
+      "frameSrc": "../upstream/styles.html?style=cubism&n=5"
+    },
+    "activeRole": "tab",
+    "outline": "3px"
+  },
+  "reduced": {
+    "matched": true,
+    "scrollBehavior": "auto"
+  },
+  "embedOff": {
+    "snapshot": {
+      "proofId": "gloss",
+      "proof": {
+        "name": "Gloss 角色实验室",
+        "kind": "GLOSS · 3D",
+        "file": "gloss.html · src/gloss/*",
+        "src": "../upstream/gloss.html",
+        "summary": "程序化实体几何 Chibi，独立控制物种、身体、姿态、颜色、材质和表情。"
+      },
+      "embedOff": true,
+      "upstreamCommit": "5857b1e1",
+      "frameSrc": null
+    },
+    "frameHidden": true,
+    "fallbackVisible": true,
+    "openHref": "../upstream/gloss.html"
+  },
+  "consoleErrors": [],
+  "evidence": [
+    "evidence/source-atlas-desktop-hero.png",
+    "evidence/source-atlas-upstream-styles.png",
+    "evidence/source-atlas-lineage.png",
+    "evidence/source-atlas-tablet.png",
+    "evidence/source-atlas-mobile-proof.png",
+    "evidence/source-atlas-embed-off.png"
+  ]
+}

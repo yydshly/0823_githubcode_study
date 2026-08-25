@@ -1,0 +1,1270 @@
+{
+  "schemaVersion": "kindergrimm-v2-m3-asset-type-golden/0.1",
+  "seed": 240824,
+  "styles": [
+    {
+      "id": "mosslight-prop-gouache",
+      "fingerprint": "da570369"
+    },
+    {
+      "id": "moonharbor-inkcut-props",
+      "fingerprint": "e008924b"
+    },
+    {
+      "id": "sunpatch-felt-props",
+      "fingerprint": "ccd34255"
+    }
+  ],
+  "props": [
+    {
+      "slot": 0,
+      "archetype": "lantern",
+      "recipe": {
+        "schemaVersion": "kindergrimm-asset-type-recipe/0.1",
+        "seed": 721219850,
+        "slot": 0,
+        "assetType": "prop",
+        "archetype": "lantern",
+        "variant": {
+          "silhouette": "wide",
+          "detail": "star",
+          "wear": "soft-worn",
+          "scale": 0.89,
+          "accentIndex": 2
+        },
+        "anchor": {
+          "id": "ground-center",
+          "x": 0.5,
+          "y": 0.88
+        },
+        "bounds": {
+          "width": 0.64,
+          "height": 0.72
+        },
+        "parts": [
+          "body",
+          "frame",
+          "handle",
+          "light",
+          "emblem"
+        ],
+        "provenance": {
+          "kind": "local-authored-procedural-2d",
+          "upstreamMechanism": "Kindergrimm seeded RNG + Canvas part grammar",
+          "runtimeLlmCalls": 0,
+          "cloudApiCalls": 0
+        },
+        "fingerprint": "636ec62c"
+      },
+      "visuals": {
+        "mosslight-prop-gouache": {
+          "visualFingerprint": "e0966e26",
+          "iconFingerprint": "23f9411b"
+        },
+        "moonharbor-inkcut-props": {
+          "visualFingerprint": "6e7290c6",
+          "iconFingerprint": "e87827d3"
+        },
+        "sunpatch-felt-props": {
+          "visualFingerprint": "5d513ddf",
+          "iconFingerprint": "fda7e6a8"
+        }
+      }
+    },
+    {
+      "slot": 1,
+      "archetype": "satchel",
+      "recipe": {
+        "schemaVersion": "kindergrimm-asset-type-recipe/0.1",
+        "seed": 737997469,
+        "slot": 1,
+        "assetType": "prop",
+        "archetype": "satchel",
+        "variant": {
+          "silhouette": "wide",
+          "detail": "leaf",
+          "wear": "clean",
+          "scale": 1.026,
+          "accentIndex": 1
+        },
+        "anchor": {
+          "id": "ground-center",
+          "x": 0.5,
+          "y": 0.88
+        },
+        "bounds": {
+          "width": 0.64,
+          "height": 0.72
+        },
+        "parts": [
+          "body",
+          "flap",
+          "strap",
+          "buckle",
+          "emblem"
+        ],
+        "provenance": {
+          "kind": "local-authored-procedural-2d",
+          "upstreamMechanism": "Kindergrimm seeded RNG + Canvas part grammar",
+          "runtimeLlmCalls": 0,
+          "cloudApiCalls": 0
+        },
+        "fingerprint": "7110f6e8"
+      },
+      "visuals": {
+        "mosslight-prop-gouache": {
+          "visualFingerprint": "c1bb9b76",
+          "iconFingerprint": "c8b815c8"
+        },
+        "moonharbor-inkcut-props": {
+          "visualFingerprint": "17588cec",
+          "iconFingerprint": "251737d3"
+        },
+        "sunpatch-felt-props": {
+          "visualFingerprint": "646eec73",
+          "iconFingerprint": "9da718fd"
+        }
+      }
+    },
+    {
+      "slot": 2,
+      "archetype": "scroll",
+      "recipe": {
+        "schemaVersion": "kindergrimm-asset-type-recipe/0.1",
+        "seed": 687664612,
+        "slot": 2,
+        "assetType": "prop",
+        "archetype": "scroll",
+        "variant": {
+          "silhouette": "tall",
+          "detail": "sun",
+          "wear": "clean",
+          "scale": 1.057,
+          "accentIndex": 2
+        },
+        "anchor": {
+          "id": "center",
+          "x": 0.5,
+          "y": 0.5
+        },
+        "bounds": {
+          "width": 0.78,
+          "height": 0.72
+        },
+        "parts": [
+          "paper",
+          "rollers",
+          "ribbon",
+          "mark",
+          "seal"
+        ],
+        "provenance": {
+          "kind": "local-authored-procedural-2d",
+          "upstreamMechanism": "Kindergrimm seeded RNG + Canvas part grammar",
+          "runtimeLlmCalls": 0,
+          "cloudApiCalls": 0
+        },
+        "fingerprint": "fa518c70"
+      },
+      "visuals": {
+        "mosslight-prop-gouache": {
+          "visualFingerprint": "5ab5b158",
+          "iconFingerprint": "d679c74e"
+        },
+        "moonharbor-inkcut-props": {
+          "visualFingerprint": "8fd3ff14",
+          "iconFingerprint": "8180d740"
+        },
+        "sunpatch-felt-props": {
+          "visualFingerprint": "ae885ef9",
+          "iconFingerprint": "9f6ecf78"
+        }
+      }
+    },
+    {
+      "slot": 3,
+      "archetype": "waymark",
+      "recipe": {
+        "schemaVersion": "kindergrimm-asset-type-recipe/0.1",
+        "seed": 704442231,
+        "slot": 3,
+        "assetType": "prop",
+        "archetype": "waymark",
+        "variant": {
+          "silhouette": "wide",
+          "detail": "star",
+          "wear": "clean",
+          "scale": 0.942,
+          "accentIndex": 0
+        },
+        "anchor": {
+          "id": "ground-center",
+          "x": 0.5,
+          "y": 0.88
+        },
+        "bounds": {
+          "width": 0.74,
+          "height": 0.88
+        },
+        "parts": [
+          "post",
+          "board",
+          "arrow",
+          "mark",
+          "ground"
+        ],
+        "provenance": {
+          "kind": "local-authored-procedural-2d",
+          "upstreamMechanism": "Kindergrimm seeded RNG + Canvas part grammar",
+          "runtimeLlmCalls": 0,
+          "cloudApiCalls": 0
+        },
+        "fingerprint": "fa609629"
+      },
+      "visuals": {
+        "mosslight-prop-gouache": {
+          "visualFingerprint": "4b0c1591",
+          "iconFingerprint": "c3e72e62"
+        },
+        "moonharbor-inkcut-props": {
+          "visualFingerprint": "287e694b",
+          "iconFingerprint": "e60235b1"
+        },
+        "sunpatch-felt-props": {
+          "visualFingerprint": "1cd59c7e",
+          "iconFingerprint": "a679f326"
+        }
+      }
+    },
+    {
+      "slot": 4,
+      "archetype": "charm",
+      "recipe": {
+        "schemaVersion": "kindergrimm-asset-type-recipe/0.1",
+        "seed": 654109374,
+        "slot": 4,
+        "assetType": "prop",
+        "archetype": "charm",
+        "variant": {
+          "silhouette": "wide",
+          "detail": "route",
+          "wear": "clean",
+          "scale": 1.087,
+          "accentIndex": 1
+        },
+        "anchor": {
+          "id": "center",
+          "x": 0.5,
+          "y": 0.5
+        },
+        "bounds": {
+          "width": 0.64,
+          "height": 0.62
+        },
+        "parts": [
+          "token",
+          "rim",
+          "cord",
+          "mark",
+          "tassel"
+        ],
+        "provenance": {
+          "kind": "local-authored-procedural-2d",
+          "upstreamMechanism": "Kindergrimm seeded RNG + Canvas part grammar",
+          "runtimeLlmCalls": 0,
+          "cloudApiCalls": 0
+        },
+        "fingerprint": "5ead525b"
+      },
+      "visuals": {
+        "mosslight-prop-gouache": {
+          "visualFingerprint": "134b95b3",
+          "iconFingerprint": "d5f41e0c"
+        },
+        "moonharbor-inkcut-props": {
+          "visualFingerprint": "48cba733",
+          "iconFingerprint": "13525525"
+        },
+        "sunpatch-felt-props": {
+          "visualFingerprint": "0a047362",
+          "iconFingerprint": "d8f08442"
+        }
+      }
+    },
+    {
+      "slot": 5,
+      "archetype": "lantern",
+      "recipe": {
+        "schemaVersion": "kindergrimm-asset-type-recipe/0.1",
+        "seed": 670886993,
+        "slot": 5,
+        "assetType": "prop",
+        "archetype": "lantern",
+        "variant": {
+          "silhouette": "tall",
+          "detail": "star",
+          "wear": "patched",
+          "scale": 1.115,
+          "accentIndex": 2
+        },
+        "anchor": {
+          "id": "ground-center",
+          "x": 0.5,
+          "y": 0.88
+        },
+        "bounds": {
+          "width": 0.64,
+          "height": 0.72
+        },
+        "parts": [
+          "body",
+          "frame",
+          "handle",
+          "light",
+          "emblem"
+        ],
+        "provenance": {
+          "kind": "local-authored-procedural-2d",
+          "upstreamMechanism": "Kindergrimm seeded RNG + Canvas part grammar",
+          "runtimeLlmCalls": 0,
+          "cloudApiCalls": 0
+        },
+        "fingerprint": "4f0c9735"
+      },
+      "visuals": {
+        "mosslight-prop-gouache": {
+          "visualFingerprint": "9fb29087",
+          "iconFingerprint": "d8ee5368"
+        },
+        "moonharbor-inkcut-props": {
+          "visualFingerprint": "9f9efa41",
+          "iconFingerprint": "da719f05"
+        },
+        "sunpatch-felt-props": {
+          "visualFingerprint": "4a741534",
+          "iconFingerprint": "5151fef6"
+        }
+      }
+    },
+    {
+      "slot": 6,
+      "archetype": "satchel",
+      "recipe": {
+        "schemaVersion": "kindergrimm-asset-type-recipe/0.1",
+        "seed": 620554136,
+        "slot": 6,
+        "assetType": "prop",
+        "archetype": "satchel",
+        "variant": {
+          "silhouette": "tall",
+          "detail": "leaf",
+          "wear": "clean",
+          "scale": 1.008,
+          "accentIndex": 2
+        },
+        "anchor": {
+          "id": "ground-center",
+          "x": 0.5,
+          "y": 0.88
+        },
+        "bounds": {
+          "width": 0.64,
+          "height": 0.72
+        },
+        "parts": [
+          "body",
+          "flap",
+          "strap",
+          "buckle",
+          "emblem"
+        ],
+        "provenance": {
+          "kind": "local-authored-procedural-2d",
+          "upstreamMechanism": "Kindergrimm seeded RNG + Canvas part grammar",
+          "runtimeLlmCalls": 0,
+          "cloudApiCalls": 0
+        },
+        "fingerprint": "97999667"
+      },
+      "visuals": {
+        "mosslight-prop-gouache": {
+          "visualFingerprint": "fd5986dc",
+          "iconFingerprint": "5b901e9d"
+        },
+        "moonharbor-inkcut-props": {
+          "visualFingerprint": "19c8d78a",
+          "iconFingerprint": "523f1820"
+        },
+        "sunpatch-felt-props": {
+          "visualFingerprint": "8fd1fb11",
+          "iconFingerprint": "e6d58ffd"
+        }
+      }
+    },
+    {
+      "slot": 7,
+      "archetype": "scroll",
+      "recipe": {
+        "schemaVersion": "kindergrimm-asset-type-recipe/0.1",
+        "seed": 637331755,
+        "slot": 7,
+        "assetType": "prop",
+        "archetype": "scroll",
+        "variant": {
+          "silhouette": "wide",
+          "detail": "route",
+          "wear": "soft-worn",
+          "scale": 0.961,
+          "accentIndex": 2
+        },
+        "anchor": {
+          "id": "center",
+          "x": 0.5,
+          "y": 0.5
+        },
+        "bounds": {
+          "width": 0.78,
+          "height": 0.72
+        },
+        "parts": [
+          "paper",
+          "rollers",
+          "ribbon",
+          "mark",
+          "seal"
+        ],
+        "provenance": {
+          "kind": "local-authored-procedural-2d",
+          "upstreamMechanism": "Kindergrimm seeded RNG + Canvas part grammar",
+          "runtimeLlmCalls": 0,
+          "cloudApiCalls": 0
+        },
+        "fingerprint": "f2d42159"
+      },
+      "visuals": {
+        "mosslight-prop-gouache": {
+          "visualFingerprint": "c8f033ae",
+          "iconFingerprint": "63378a56"
+        },
+        "moonharbor-inkcut-props": {
+          "visualFingerprint": "da31abd2",
+          "iconFingerprint": "e38f7536"
+        },
+        "sunpatch-felt-props": {
+          "visualFingerprint": "7a75d3af",
+          "iconFingerprint": "0f461fc3"
+        }
+      }
+    },
+    {
+      "slot": 8,
+      "archetype": "waymark",
+      "recipe": {
+        "schemaVersion": "kindergrimm-asset-type-recipe/0.1",
+        "seed": 586998898,
+        "slot": 8,
+        "assetType": "prop",
+        "archetype": "waymark",
+        "variant": {
+          "silhouette": "round",
+          "detail": "sun",
+          "wear": "patched",
+          "scale": 1.077,
+          "accentIndex": 1
+        },
+        "anchor": {
+          "id": "ground-center",
+          "x": 0.5,
+          "y": 0.88
+        },
+        "bounds": {
+          "width": 0.74,
+          "height": 0.88
+        },
+        "parts": [
+          "post",
+          "board",
+          "arrow",
+          "mark",
+          "ground"
+        ],
+        "provenance": {
+          "kind": "local-authored-procedural-2d",
+          "upstreamMechanism": "Kindergrimm seeded RNG + Canvas part grammar",
+          "runtimeLlmCalls": 0,
+          "cloudApiCalls": 0
+        },
+        "fingerprint": "ca9e387f"
+      },
+      "visuals": {
+        "mosslight-prop-gouache": {
+          "visualFingerprint": "4990401a",
+          "iconFingerprint": "77e2e076"
+        },
+        "moonharbor-inkcut-props": {
+          "visualFingerprint": "02e8e72a",
+          "iconFingerprint": "60fbc875"
+        },
+        "sunpatch-felt-props": {
+          "visualFingerprint": "91a113d3",
+          "iconFingerprint": "30ea3681"
+        }
+      }
+    },
+    {
+      "slot": 9,
+      "archetype": "charm",
+      "recipe": {
+        "schemaVersion": "kindergrimm-asset-type-recipe/0.1",
+        "seed": 603776517,
+        "slot": 9,
+        "assetType": "prop",
+        "archetype": "charm",
+        "variant": {
+          "silhouette": "wide",
+          "detail": "sun",
+          "wear": "clean",
+          "scale": 1.079,
+          "accentIndex": 0
+        },
+        "anchor": {
+          "id": "center",
+          "x": 0.5,
+          "y": 0.5
+        },
+        "bounds": {
+          "width": 0.64,
+          "height": 0.62
+        },
+        "parts": [
+          "token",
+          "rim",
+          "cord",
+          "mark",
+          "tassel"
+        ],
+        "provenance": {
+          "kind": "local-authored-procedural-2d",
+          "upstreamMechanism": "Kindergrimm seeded RNG + Canvas part grammar",
+          "runtimeLlmCalls": 0,
+          "cloudApiCalls": 0
+        },
+        "fingerprint": "9c6004ea"
+      },
+      "visuals": {
+        "mosslight-prop-gouache": {
+          "visualFingerprint": "6a5baae6",
+          "iconFingerprint": "5e5c380b"
+        },
+        "moonharbor-inkcut-props": {
+          "visualFingerprint": "5eff23b0",
+          "iconFingerprint": "60d0b1f2"
+        },
+        "sunpatch-felt-props": {
+          "visualFingerprint": "3ee0770d",
+          "iconFingerprint": "2ff0d4c7"
+        }
+      }
+    },
+    {
+      "slot": 10,
+      "archetype": "lantern",
+      "recipe": {
+        "schemaVersion": "kindergrimm-asset-type-recipe/0.1",
+        "seed": 3962701399,
+        "slot": 10,
+        "assetType": "prop",
+        "archetype": "lantern",
+        "variant": {
+          "silhouette": "wide",
+          "detail": "leaf",
+          "wear": "clean",
+          "scale": 0.985,
+          "accentIndex": 1
+        },
+        "anchor": {
+          "id": "ground-center",
+          "x": 0.5,
+          "y": 0.88
+        },
+        "bounds": {
+          "width": 0.64,
+          "height": 0.72
+        },
+        "parts": [
+          "body",
+          "frame",
+          "handle",
+          "light",
+          "emblem"
+        ],
+        "provenance": {
+          "kind": "local-authored-procedural-2d",
+          "upstreamMechanism": "Kindergrimm seeded RNG + Canvas part grammar",
+          "runtimeLlmCalls": 0,
+          "cloudApiCalls": 0
+        },
+        "fingerprint": "abe61d55"
+      },
+      "visuals": {
+        "mosslight-prop-gouache": {
+          "visualFingerprint": "e782600b",
+          "iconFingerprint": "e75e2237"
+        },
+        "moonharbor-inkcut-props": {
+          "visualFingerprint": "56d7ff6d",
+          "iconFingerprint": "de65fed4"
+        },
+        "sunpatch-felt-props": {
+          "visualFingerprint": "b61642f0",
+          "iconFingerprint": "88ed9290"
+        }
+      }
+    },
+    {
+      "slot": 11,
+      "archetype": "satchel",
+      "recipe": {
+        "schemaVersion": "kindergrimm-asset-type-recipe/0.1",
+        "seed": 3945923780,
+        "slot": 11,
+        "assetType": "prop",
+        "archetype": "satchel",
+        "variant": {
+          "silhouette": "wide",
+          "detail": "sun",
+          "wear": "patched",
+          "scale": 0.882,
+          "accentIndex": 1
+        },
+        "anchor": {
+          "id": "ground-center",
+          "x": 0.5,
+          "y": 0.88
+        },
+        "bounds": {
+          "width": 0.64,
+          "height": 0.72
+        },
+        "parts": [
+          "body",
+          "flap",
+          "strap",
+          "buckle",
+          "emblem"
+        ],
+        "provenance": {
+          "kind": "local-authored-procedural-2d",
+          "upstreamMechanism": "Kindergrimm seeded RNG + Canvas part grammar",
+          "runtimeLlmCalls": 0,
+          "cloudApiCalls": 0
+        },
+        "fingerprint": "608af91d"
+      },
+      "visuals": {
+        "mosslight-prop-gouache": {
+          "visualFingerprint": "9ac23297",
+          "iconFingerprint": "8998f7a9"
+        },
+        "moonharbor-inkcut-props": {
+          "visualFingerprint": "091fff3f",
+          "iconFingerprint": "cfc10521"
+        },
+        "sunpatch-felt-props": {
+          "visualFingerprint": "7c1f9d84",
+          "iconFingerprint": "af314e3b"
+        }
+      }
+    }
+  ],
+  "scenes": [
+    {
+      "slot": 0,
+      "archetype": "waystation-display",
+      "recipe": {
+        "schemaVersion": "kindergrimm-scene-component-recipe/0.1",
+        "seed": 3317295747,
+        "slot": 0,
+        "assetType": "scene-component",
+        "archetype": "waystation-display",
+        "variant": {
+          "canopy": "banner",
+          "time": "dawn",
+          "accentIndex": 0
+        },
+        "propSlots": [
+          0,
+          3,
+          7
+        ],
+        "parts": [
+          "backdrop",
+          "ground",
+          "structure",
+          "sign",
+          "prop-cluster"
+        ],
+        "bounds": {
+          "width": 1,
+          "height": 0.5
+        },
+        "anchor": {
+          "id": "ground-center",
+          "x": 0.5,
+          "y": 0.92
+        },
+        "provenance": {
+          "kind": "local-authored-procedural-2d-scene-component",
+          "upstreamMechanism": "Kindergrimm seeded RNG + Canvas part composition",
+          "runtimeLlmCalls": 0,
+          "cloudApiCalls": 0
+        },
+        "fingerprint": "9a27fcdd"
+      },
+      "visuals": {
+        "mosslight-prop-gouache": "465e522d",
+        "moonharbor-inkcut-props": "bc67039d",
+        "sunpatch-felt-props": "e83b4b5a"
+      }
+    },
+    {
+      "slot": 1,
+      "archetype": "trail-shrine",
+      "recipe": {
+        "schemaVersion": "kindergrimm-scene-component-recipe/0.1",
+        "seed": 3300518128,
+        "slot": 1,
+        "assetType": "scene-component",
+        "archetype": "trail-shrine",
+        "variant": {
+          "canopy": "banner",
+          "time": "dawn",
+          "accentIndex": 1
+        },
+        "propSlots": [
+          1,
+          4,
+          8
+        ],
+        "parts": [
+          "backdrop",
+          "ground",
+          "structure",
+          "sign",
+          "prop-cluster"
+        ],
+        "bounds": {
+          "width": 1,
+          "height": 0.5
+        },
+        "anchor": {
+          "id": "ground-center",
+          "x": 0.5,
+          "y": 0.92
+        },
+        "provenance": {
+          "kind": "local-authored-procedural-2d-scene-component",
+          "upstreamMechanism": "Kindergrimm seeded RNG + Canvas part composition",
+          "runtimeLlmCalls": 0,
+          "cloudApiCalls": 0
+        },
+        "fingerprint": "d6e02fd9"
+      },
+      "visuals": {
+        "mosslight-prop-gouache": "d8f072f5",
+        "moonharbor-inkcut-props": "b61eaf85",
+        "sunpatch-felt-props": "98e4d6a2"
+      }
+    },
+    {
+      "slot": 2,
+      "archetype": "courier-post",
+      "recipe": {
+        "schemaVersion": "kindergrimm-scene-component-recipe/0.1",
+        "seed": 3350850985,
+        "slot": 2,
+        "assetType": "scene-component",
+        "archetype": "courier-post",
+        "variant": {
+          "canopy": "scallop",
+          "time": "dusk",
+          "accentIndex": 1
+        },
+        "propSlots": [
+          2,
+          5,
+          9
+        ],
+        "parts": [
+          "backdrop",
+          "ground",
+          "structure",
+          "sign",
+          "prop-cluster"
+        ],
+        "bounds": {
+          "width": 1,
+          "height": 0.5
+        },
+        "anchor": {
+          "id": "ground-center",
+          "x": 0.5,
+          "y": 0.92
+        },
+        "provenance": {
+          "kind": "local-authored-procedural-2d-scene-component",
+          "upstreamMechanism": "Kindergrimm seeded RNG + Canvas part composition",
+          "runtimeLlmCalls": 0,
+          "cloudApiCalls": 0
+        },
+        "fingerprint": "df2a715b"
+      },
+      "visuals": {
+        "mosslight-prop-gouache": "057e8e21",
+        "moonharbor-inkcut-props": "f0c1d3b9",
+        "sunpatch-felt-props": "cb76d2b6"
+      }
+    },
+    {
+      "slot": 3,
+      "archetype": "waystation-display",
+      "recipe": {
+        "schemaVersion": "kindergrimm-scene-component-recipe/0.1",
+        "seed": 3334073366,
+        "slot": 3,
+        "assetType": "scene-component",
+        "archetype": "waystation-display",
+        "variant": {
+          "canopy": "banner",
+          "time": "dusk",
+          "accentIndex": 2
+        },
+        "propSlots": [
+          3,
+          6,
+          10
+        ],
+        "parts": [
+          "backdrop",
+          "ground",
+          "structure",
+          "sign",
+          "prop-cluster"
+        ],
+        "bounds": {
+          "width": 1,
+          "height": 0.5
+        },
+        "anchor": {
+          "id": "ground-center",
+          "x": 0.5,
+          "y": 0.92
+        },
+        "provenance": {
+          "kind": "local-authored-procedural-2d-scene-component",
+          "upstreamMechanism": "Kindergrimm seeded RNG + Canvas part composition",
+          "runtimeLlmCalls": 0,
+          "cloudApiCalls": 0
+        },
+        "fingerprint": "214fd545"
+      },
+      "visuals": {
+        "mosslight-prop-gouache": "02348dec",
+        "moonharbor-inkcut-props": "cd0fc2e2",
+        "sunpatch-felt-props": "0423c9d1"
+      }
+    },
+    {
+      "slot": 4,
+      "archetype": "trail-shrine",
+      "recipe": {
+        "schemaVersion": "kindergrimm-scene-component-recipe/0.1",
+        "seed": 3384406223,
+        "slot": 4,
+        "assetType": "scene-component",
+        "archetype": "trail-shrine",
+        "variant": {
+          "canopy": "banner",
+          "time": "dawn",
+          "accentIndex": 1
+        },
+        "propSlots": [
+          4,
+          7,
+          11
+        ],
+        "parts": [
+          "backdrop",
+          "ground",
+          "structure",
+          "sign",
+          "prop-cluster"
+        ],
+        "bounds": {
+          "width": 1,
+          "height": 0.5
+        },
+        "anchor": {
+          "id": "ground-center",
+          "x": 0.5,
+          "y": 0.92
+        },
+        "provenance": {
+          "kind": "local-authored-procedural-2d-scene-component",
+          "upstreamMechanism": "Kindergrimm seeded RNG + Canvas part composition",
+          "runtimeLlmCalls": 0,
+          "cloudApiCalls": 0
+        },
+        "fingerprint": "df755314"
+      },
+      "visuals": {
+        "mosslight-prop-gouache": "7d5a736a",
+        "moonharbor-inkcut-props": "8ec8d5a8",
+        "sunpatch-felt-props": "c8c0848f"
+      }
+    },
+    {
+      "slot": 5,
+      "archetype": "courier-post",
+      "recipe": {
+        "schemaVersion": "kindergrimm-scene-component-recipe/0.1",
+        "seed": 3367628604,
+        "slot": 5,
+        "assetType": "scene-component",
+        "archetype": "courier-post",
+        "variant": {
+          "canopy": "banner",
+          "time": "dawn",
+          "accentIndex": 2
+        },
+        "propSlots": [
+          5,
+          8,
+          0
+        ],
+        "parts": [
+          "backdrop",
+          "ground",
+          "structure",
+          "sign",
+          "prop-cluster"
+        ],
+        "bounds": {
+          "width": 1,
+          "height": 0.5
+        },
+        "anchor": {
+          "id": "ground-center",
+          "x": 0.5,
+          "y": 0.92
+        },
+        "provenance": {
+          "kind": "local-authored-procedural-2d-scene-component",
+          "upstreamMechanism": "Kindergrimm seeded RNG + Canvas part composition",
+          "runtimeLlmCalls": 0,
+          "cloudApiCalls": 0
+        },
+        "fingerprint": "5d2fcd3c"
+      },
+      "visuals": {
+        "mosslight-prop-gouache": "3ea13fbd",
+        "moonharbor-inkcut-props": "38ffcd0d",
+        "sunpatch-felt-props": "5cd02eea"
+      }
+    },
+    {
+      "slot": 6,
+      "archetype": "waystation-display",
+      "recipe": {
+        "schemaVersion": "kindergrimm-scene-component-recipe/0.1",
+        "seed": 3417961461,
+        "slot": 6,
+        "assetType": "scene-component",
+        "archetype": "waystation-display",
+        "variant": {
+          "canopy": "banner",
+          "time": "day",
+          "accentIndex": 1
+        },
+        "propSlots": [
+          6,
+          9,
+          1
+        ],
+        "parts": [
+          "backdrop",
+          "ground",
+          "structure",
+          "sign",
+          "prop-cluster"
+        ],
+        "bounds": {
+          "width": 1,
+          "height": 0.5
+        },
+        "anchor": {
+          "id": "ground-center",
+          "x": 0.5,
+          "y": 0.92
+        },
+        "provenance": {
+          "kind": "local-authored-procedural-2d-scene-component",
+          "upstreamMechanism": "Kindergrimm seeded RNG + Canvas part composition",
+          "runtimeLlmCalls": 0,
+          "cloudApiCalls": 0
+        },
+        "fingerprint": "ec8b61e8"
+      },
+      "visuals": {
+        "mosslight-prop-gouache": "f7fe9de9",
+        "moonharbor-inkcut-props": "8b530fa1",
+        "sunpatch-felt-props": "223df27e"
+      }
+    },
+    {
+      "slot": 7,
+      "archetype": "trail-shrine",
+      "recipe": {
+        "schemaVersion": "kindergrimm-scene-component-recipe/0.1",
+        "seed": 3401183842,
+        "slot": 7,
+        "assetType": "scene-component",
+        "archetype": "trail-shrine",
+        "variant": {
+          "canopy": "scallop",
+          "time": "dawn",
+          "accentIndex": 1
+        },
+        "propSlots": [
+          7,
+          10,
+          2
+        ],
+        "parts": [
+          "backdrop",
+          "ground",
+          "structure",
+          "sign",
+          "prop-cluster"
+        ],
+        "bounds": {
+          "width": 1,
+          "height": 0.5
+        },
+        "anchor": {
+          "id": "ground-center",
+          "x": 0.5,
+          "y": 0.92
+        },
+        "provenance": {
+          "kind": "local-authored-procedural-2d-scene-component",
+          "upstreamMechanism": "Kindergrimm seeded RNG + Canvas part composition",
+          "runtimeLlmCalls": 0,
+          "cloudApiCalls": 0
+        },
+        "fingerprint": "e1c3b443"
+      },
+      "visuals": {
+        "mosslight-prop-gouache": "cf71d7ee",
+        "moonharbor-inkcut-props": "54b339e4",
+        "sunpatch-felt-props": "c86d190b"
+      }
+    },
+    {
+      "slot": 8,
+      "archetype": "courier-post",
+      "recipe": {
+        "schemaVersion": "kindergrimm-scene-component-recipe/0.1",
+        "seed": 3451516699,
+        "slot": 8,
+        "assetType": "scene-component",
+        "archetype": "courier-post",
+        "variant": {
+          "canopy": "scallop",
+          "time": "dawn",
+          "accentIndex": 2
+        },
+        "propSlots": [
+          8,
+          11,
+          3
+        ],
+        "parts": [
+          "backdrop",
+          "ground",
+          "structure",
+          "sign",
+          "prop-cluster"
+        ],
+        "bounds": {
+          "width": 1,
+          "height": 0.5
+        },
+        "anchor": {
+          "id": "ground-center",
+          "x": 0.5,
+          "y": 0.92
+        },
+        "provenance": {
+          "kind": "local-authored-procedural-2d-scene-component",
+          "upstreamMechanism": "Kindergrimm seeded RNG + Canvas part composition",
+          "runtimeLlmCalls": 0,
+          "cloudApiCalls": 0
+        },
+        "fingerprint": "f50b6ef1"
+      },
+      "visuals": {
+        "mosslight-prop-gouache": "d038f5b6",
+        "moonharbor-inkcut-props": "47e17aec",
+        "sunpatch-felt-props": "f3a15953"
+      }
+    },
+    {
+      "slot": 9,
+      "archetype": "waystation-display",
+      "recipe": {
+        "schemaVersion": "kindergrimm-scene-component-recipe/0.1",
+        "seed": 3434739080,
+        "slot": 9,
+        "assetType": "scene-component",
+        "archetype": "waystation-display",
+        "variant": {
+          "canopy": "scallop",
+          "time": "day",
+          "accentIndex": 1
+        },
+        "propSlots": [
+          9,
+          0,
+          4
+        ],
+        "parts": [
+          "backdrop",
+          "ground",
+          "structure",
+          "sign",
+          "prop-cluster"
+        ],
+        "bounds": {
+          "width": 1,
+          "height": 0.5
+        },
+        "anchor": {
+          "id": "ground-center",
+          "x": 0.5,
+          "y": 0.92
+        },
+        "provenance": {
+          "kind": "local-authored-procedural-2d-scene-component",
+          "upstreamMechanism": "Kindergrimm seeded RNG + Canvas part composition",
+          "runtimeLlmCalls": 0,
+          "cloudApiCalls": 0
+        },
+        "fingerprint": "2b990b5b"
+      },
+      "visuals": {
+        "mosslight-prop-gouache": "cabd5fc8",
+        "moonharbor-inkcut-props": "45817666",
+        "sunpatch-felt-props": "397e9575"
+      }
+    },
+    {
+      "slot": 10,
+      "archetype": "trail-shrine",
+      "recipe": {
+        "schemaVersion": "kindergrimm-scene-component-recipe/0.1",
+        "seed": 1890149952,
+        "slot": 10,
+        "assetType": "scene-component",
+        "archetype": "trail-shrine",
+        "variant": {
+          "canopy": "leaf",
+          "time": "day",
+          "accentIndex": 1
+        },
+        "propSlots": [
+          10,
+          1,
+          5
+        ],
+        "parts": [
+          "backdrop",
+          "ground",
+          "structure",
+          "sign",
+          "prop-cluster"
+        ],
+        "bounds": {
+          "width": 1,
+          "height": 0.5
+        },
+        "anchor": {
+          "id": "ground-center",
+          "x": 0.5,
+          "y": 0.92
+        },
+        "provenance": {
+          "kind": "local-authored-procedural-2d-scene-component",
+          "upstreamMechanism": "Kindergrimm seeded RNG + Canvas part composition",
+          "runtimeLlmCalls": 0,
+          "cloudApiCalls": 0
+        },
+        "fingerprint": "54dcc3ba"
+      },
+      "visuals": {
+        "mosslight-prop-gouache": "db6b4ec2",
+        "moonharbor-inkcut-props": "75becda0",
+        "sunpatch-felt-props": "15e0f267"
+      }
+    },
+    {
+      "slot": 11,
+      "archetype": "courier-post",
+      "recipe": {
+        "schemaVersion": "kindergrimm-scene-component-recipe/0.1",
+        "seed": 1906927571,
+        "slot": 11,
+        "assetType": "scene-component",
+        "archetype": "courier-post",
+        "variant": {
+          "canopy": "scallop",
+          "time": "dawn",
+          "accentIndex": 0
+        },
+        "propSlots": [
+          11,
+          2,
+          6
+        ],
+        "parts": [
+          "backdrop",
+          "ground",
+          "structure",
+          "sign",
+          "prop-cluster"
+        ],
+        "bounds": {
+          "width": 1,
+          "height": 0.5
+        },
+        "anchor": {
+          "id": "ground-center",
+          "x": 0.5,
+          "y": 0.92
+        },
+        "provenance": {
+          "kind": "local-authored-procedural-2d-scene-component",
+          "upstreamMechanism": "Kindergrimm seeded RNG + Canvas part composition",
+          "runtimeLlmCalls": 0,
+          "cloudApiCalls": 0
+        },
+        "fingerprint": "d2c9b9c4"
+      },
+      "visuals": {
+        "mosslight-prop-gouache": "ee5e4769",
+        "moonharbor-inkcut-props": "5340f421",
+        "sunpatch-felt-props": "7ad5c6fe"
+      }
+    }
+  ]
+}

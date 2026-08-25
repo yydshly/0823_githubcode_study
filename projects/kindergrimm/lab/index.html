@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Kindergrimm 能力、技术扩展与应用场景实验室。">
+    <title>Kindergrimm 能力与场景实验室</title>
+    <link rel="stylesheet" href="./lab.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#workspace">跳到实验室</a>
+
+    <header class="app-header">
+      <div class="brand-block">
+        <a class="brand" href="../../../docs/projects/kindergrimm.html">KINDERGRIMM / LAB</a>
+        <span class="revision">FIXED SOURCE · de339ad</span>
+      </div>
+      <nav aria-label="研究导航">
+        <a href="../../../docs/projects/kindergrimm.html">研究展厅</a>
+        <a href="../npc-factory/">NPC 工厂</a>
+        <a href="../npc-scenarios/">运行场景</a>
+        <a href="../README.md">研究说明</a>
+        <a href="https://github.com/albertobeiz/kindergrimm">上游源码 ↗</a>
+      </nav>
+    </header>
+
+    <main id="workspace" class="workspace">
+      <section class="control-deck" aria-labelledby="lab-title">
+        <div class="deck-intro">
+          <p class="eyebrow">CAPABILITY → EXTENSION → SCENARIO</p>
+          <h1 id="lab-title">从看懂能力，<br>到决定下一步。</h1>
+          <p>右侧不是效果截图，而是固定上游提交的真实运行页面。先操作现有能力，再沿着技术路线组合成产品场景。</p>
+        </div>
+
+        <div class="mode-tabs" role="tablist" aria-label="实验室工作区">
+          <button id="tab-capabilities" role="tab" aria-controls="panel-capabilities" aria-selected="true" data-mode="capabilities">
+            <span>01</span>已有能力
+          </button>
+          <button id="tab-extensions" role="tab" aria-controls="panel-extensions" aria-selected="false" tabindex="-1" data-mode="extensions">
+            <span>02</span>技术扩展
+          </button>
+          <button id="tab-scenarios" role="tab" aria-controls="panel-scenarios" aria-selected="false" tabindex="-1" data-mode="scenarios">
+            <span>03</span>场景演示
+          </button>
+        </div>
+
+        <section id="panel-capabilities" class="mode-panel" role="tabpanel" aria-labelledby="tab-capabilities">
+          <div class="panel-heading">
+            <div>
+              <small>EXISTING / VERIFIED</small>
+              <h2>14 项真实能力</h2>
+            </div>
+            <span id="capability-count" class="count-badge">14 / 14</span>
+          </div>
+          <div id="capability-filters" class="filter-row" aria-label="能力类型筛选"></div>
+          <div id="capability-list" class="selection-list" aria-label="能力列表"></div>
+        </section>
+
+        <section id="panel-extensions" class="mode-panel" role="tabpanel" aria-labelledby="tab-extensions" hidden>
+          <div class="panel-heading">
+            <div>
+              <small>NEXT / BUILDABLE</small>
+              <h2>复制能力的方法</h2>
+            </div>
+            <span class="count-badge">5 TRACKS</span>
+          </div>
+          <p class="panel-lead">每条路线都从一个已经跑通的上游证据出发，明确下一建设、代码落点和验收标准。</p>
+          <div id="extension-list" class="selection-list" aria-label="技术扩展路线"></div>
+          <article id="extension-detail" class="detail-card" aria-live="polite"></article>
+        </section>
+
+        <section id="panel-scenarios" class="mode-panel" role="tabpanel" aria-labelledby="tab-scenarios" hidden>
+          <div class="panel-heading">
+            <div>
+              <small>USE CASE / DIRECTED DEMO</small>
+              <h2>把能力放进业务</h2>
+            </div>
+            <span class="count-badge">4 SCENES</span>
+          </div>
+          <div id="scenario-list" class="scenario-switcher" aria-label="使用场景"></div>
+          <article id="scenario-brief" class="scenario-brief" aria-live="polite"></article>
+          <ol id="scenario-steps" class="scenario-steps" aria-label="场景演示步骤"></ol>
+        </section>
+      </section>
+
+      <section class="live-stage" aria-labelledby="stage-title">
+        <header class="stage-toolbar">
+          <div class="stage-identity">
+            <span class="live-dot" aria-hidden="true"></span>
+            <div>
+              <small id="stage-kicker">LIVE LOCAL DEMO</small>
+              <h2 id="stage-title">角色编辑器</h2>
+            </div>
+          </div>
+          <div class="stage-route">
+            <code id="stage-route">/editor.html</code>
+            <span id="stage-state" role="status" aria-live="polite">READY</span>
+          </div>
+          <div class="stage-actions">
+            <button id="reload-demo" type="button">重新加载</button>
+            <a id="open-demo" href="../upstream/editor.html" target="_blank" rel="noopener">新窗口 ↗</a>
+          </div>
+        </header>
+
+        <div class="stage-frame-wrap">
+          <div id="stage-loading" class="stage-loading" aria-hidden="true">
+            <span></span>
+            <strong>LOADING LIVE DEMO</strong>
+          </div>
+          <iframe
+            id="demo-frame"
+            title="Kindergrimm 角色编辑器实时演示"
+            src="../upstream/editor.html"
+            loading="eager"
+            allow="autoplay; fullscreen"
+          ></iframe>
+        </div>
+
+        <footer class="stage-caption">
+          <div>
+            <small>当前输出</small>
+            <strong id="stage-output">可复现的手绘纸片角色</strong>
+          </div>
+          <div>
+            <small>渲染类型</small>
+            <strong id="stage-rendering">2D CanvasTexture + Three.js</strong>
+          </div>
+          <div>
+            <small>研究判断</small>
+            <strong id="stage-proof">部件、姿势、表情和 Seed 已实测</strong>
+          </div>
+        </footer>
+      </section>
+    </main>
+
+    <section class="boundary-strip" aria-label="能力边界">
+      <div><span>现在已有</span><strong>运行时生成器、自有十二部件视觉套件、资产工厂、场景与游戏</strong></div>
+      <div><span>下一建设</span><strong>完整自有媒介与核心部件、3D glTF、稳定 SDK 与规模化优化</strong></div>
+      <div><span>当前边界</span><strong>不是通用建模软件，也不是正式资产 SDK</strong></div>
+    </section>
+
+    <noscript>
+      <section class="noscript-note">
+        <h2>实验室需要 JavaScript</h2>
+        <p>你仍可从 <a href="../upstream/index.html">上游演示菜单</a>逐项打开全部能力。</p>
+      </section>
+    </noscript>
+
+    <script type="module" src="./lab.js"></script>
+  </body>
+</html>

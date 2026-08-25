@@ -1,0 +1,635 @@
+{
+  "schemaVersion": "kindergrimm-scene-asset-manifest/1.0",
+  "assetId": "harbour-courier-240824",
+  "fingerprint": "kg-6b67b7fd",
+  "generatedAt": "2026-08-25T04:56:09.621Z",
+  "source": {
+    "repository": "https://github.com/albertobeiz/kindergrimm",
+    "commit": "5857b1e1cae2713d6714ad7dd7f89626bb242f0f"
+  },
+  "intent": {
+    "schemaVersion": "kindergrimm-asset-intent/1.0",
+    "assetId": "harbour-courier-240824",
+    "seed": 240824,
+    "species": "human",
+    "look": "harbour",
+    "sceneRole": "quest-giver"
+  },
+  "nativeRecipes": {
+    "drawn": {
+      "seed": 240824,
+      "species": "human",
+      "base": "biped",
+      "media": "watercolor",
+      "color": "color",
+      "parts": {
+        "tail": {
+          "params": {
+            "style": "none",
+            "len": 0.9410791554022581,
+            "side": -1
+          }
+        },
+        "legs": {
+          "params": {
+            "style": "stub",
+            "len": 0.5130544477142394,
+            "foot": "oval"
+          }
+        },
+        "torso": {
+          "params": {
+            "shape": "drop",
+            "wF": 0.3681201096205041,
+            "hF": 0.5897518096864224,
+            "lean": -0.0002113062422722592,
+            "pattern": "belly",
+            "clothOn": true,
+            "clothIdx": 0,
+            "tone": "light"
+          }
+        },
+        "arms": {
+          "params": {
+            "style": "stub",
+            "len": 0.6878444865345955,
+            "droop": 0.8618096702499315,
+            "asym": 0.17246689050924033,
+            "hand": "mitten"
+          }
+        },
+        "wings": {
+          "params": {
+            "style": "none",
+            "len": 1.114532930869609,
+            "feathers": 5
+          }
+        },
+        "paws": {
+          "params": {
+            "front": "oval",
+            "spread": 0.9180206848774105,
+            "toes": true
+          }
+        },
+        "quadlegs": {
+          "params": {
+            "thick": 0.8033802476711571,
+            "toes": false,
+            "back": false
+          }
+        },
+        "offhand": {
+          "params": {
+            "family": "none",
+            "rank": "sketch",
+            "seed": 980422824
+          }
+        },
+        "held": {
+          "params": {
+            "family": "none",
+            "rank": "inked",
+            "seed": 665510293
+          }
+        },
+        "hair": {
+          "params": {
+            "style": "mohawk",
+            "tone": "black",
+            "colOn": true,
+            "colIdx": 4,
+            "bang": "none",
+            "bangN": 11,
+            "cpart": false,
+            "longZig": false,
+            "longNt": 4,
+            "flare": 1.0011126608564518,
+            "fall": 0.9283554602297954,
+            "spikyN": 11,
+            "bunsTop": true,
+            "afroR": 1.26855084287934,
+            "mohawkN": 8,
+            "tailUp": true
+          }
+        },
+        "crest": {
+          "params": {
+            "style": "none",
+            "tone": "bone",
+            "len": 1.3184840715490282,
+            "curve": 0.27445527175441375,
+            "spread": 0.5262548294011503,
+            "tilt": 0.020895376987755343,
+            "earAsym": 0.129179606102407,
+            "nSpikes": 7,
+            "branches": 2
+          }
+        },
+        "skull": {
+          "params": {
+            "s": 0.543436717549339,
+            "wf": 0.7682449490576982,
+            "turn": 0.31889937599189583,
+            "shroud": false,
+            "round": 0.9352435292024165,
+            "shape": "bumpy",
+            "muzzle": 0,
+            "muzzleY": 0.7229696964845062,
+            "fur": false,
+            "jaw": 1.0689685448654926,
+            "chinW": 1.0309685261920094,
+            "skullY": 0.9152285090554506,
+            "chinY": 0.7775102367438376,
+            "press": 1.2052684507798404,
+            "shade": "none",
+            "hollows": false,
+            "construction": false,
+            "darkSkin": false,
+            "plain": false,
+            "skinOn": false,
+            "skinIdx": 0,
+            "skinScrib": true
+          }
+        },
+        "ears": {
+          "params": {
+            "rings": false,
+            "nRings": 3
+          }
+        },
+        "eyes": {
+          "params": {
+            "type": "dot",
+            "type2": "angry",
+            "scaleR": 1.0679756519268266,
+            "scale": 1.591902465140447,
+            "ehJit": 1.0428362896665933,
+            "fierce": 0.06678844038397075,
+            "gazeJit": -0.05485680149868131,
+            "sx": 0.49675956165418034,
+            "sink": 0.8173261131974868,
+            "lashes": false,
+            "glint": true
+          }
+        },
+        "brows": {
+          "params": {
+            "on": true,
+            "a": 0.22493147833738478,
+            "thF": 0.04057094869017601,
+            "yF": 0.12067509428597988
+          }
+        },
+        "nose": {
+          "params": {
+            "style": "line",
+            "nostril": true,
+            "size": 0.9763452200219035,
+            "snoutLen": 1.432032438693568,
+            "snoutFat": 0.9663936697877944,
+            "snoutTip": -0.03618484146893024
+          }
+        },
+        "mouth": {
+          "params": {
+            "style": "wobble",
+            "myF": 0.5560829670215026,
+            "wF": 1.6869142673444004,
+            "beakLen": 0.8489255820401014,
+            "upperLip": false,
+            "crease": false,
+            "nTeeth": 3,
+            "nStitch": 5
+          }
+        },
+        "extras": {
+          "params": {
+            "mark": "none",
+            "mod": "none",
+            "tears": false,
+            "freckles": false,
+            "spots": false,
+            "whiskers": false,
+            "studs": false,
+            "bandage": false,
+            "blush": true,
+            "glasses": false,
+            "antenna": false,
+            "accentIdx": 2,
+            "accidents": false,
+            "smudge": true,
+            "eraser": false
+          }
+        },
+        "tearsWet": {
+          "params": {
+            "len": 0.7423484211205504,
+            "wob": 1.015962833154481
+          }
+        },
+        "worn": {
+          "params": {
+            "family": "none",
+            "rank": "sketch",
+            "seed": 188823313
+          }
+        }
+      }
+    },
+    "voxel": {
+      "seed": 240824,
+      "species": "human",
+      "base": "biped",
+      "palette": "crayon",
+      "parts": {
+        "tail": {
+          "params": {
+            "style": "none",
+            "len": 1.1197746144142002,
+            "tone": "hair"
+          }
+        },
+        "legs": {
+          "params": {
+            "style": "noodle",
+            "len": 3,
+            "w": 2,
+            "feet": true,
+            "trouser": true
+          }
+        },
+        "legs4": {
+          "params": {
+            "len": 4,
+            "w": 1,
+            "paws": true,
+            "sock": false
+          }
+        },
+        "torso": {
+          "params": {
+            "shape": "tiny",
+            "w": 2,
+            "h": 3,
+            "d": 2,
+            "cloth": true,
+            "hem": 0.7130879969336092,
+            "band": false
+          }
+        },
+        "arms": {
+          "params": {
+            "style": "up",
+            "len": 0.5910193309769965,
+            "thick": 1.0061332774348557,
+            "hand": "dot",
+            "sleeve": true
+          }
+        },
+        "skull": {
+          "params": {
+            "shape": "box",
+            "w": 12,
+            "h": 19,
+            "d": 8,
+            "jaw": 0.9730722763203085,
+            "muzzle": 0,
+            "muzzleY": 0.36299880110193045,
+            "wonk": -0.9043885990977287,
+            "pale": false,
+            "chin": false
+          }
+        },
+        "extras": {
+          "params": {
+            "spots": false,
+            "patch": false,
+            "freckles": false,
+            "blush": true,
+            "whiskers": false,
+            "belly": false,
+            "side": 1,
+            "density": 0.35062323774676774
+          }
+        },
+        "hair": {
+          "params": {
+            "style": "widow",
+            "len": 1.1696214772877283,
+            "side": -1,
+            "tone": "hair"
+          }
+        },
+        "crest": {
+          "params": {
+            "style": "none",
+            "len": 1.0753214565571398,
+            "spread": 0.5885762002319098,
+            "lean": 0.6040801571449266,
+            "tone": "skin",
+            "n": 5
+          }
+        },
+        "mouth": {
+          "params": {
+            "style": "line",
+            "w": 1,
+            "y": 0.5064566140063107
+          }
+        },
+        "eyes": {
+          "params": {
+            "type": "button",
+            "sep": 0.8595320163154975,
+            "y": 0.5648003650922329,
+            "w": 7,
+            "h": 7,
+            "proud": false
+          }
+        },
+        "brows": {
+          "params": {
+            "on": false,
+            "style": "bar",
+            "lift": 2,
+            "tone": "hair"
+          }
+        },
+        "nose": {
+          "params": {
+            "style": "button",
+            "size": 1.0384948140243069,
+            "tone": "line"
+          }
+        },
+        "hat": {
+          "params": {
+            "style": "none",
+            "size": 1.146542888879776,
+            "tone": "accent"
+          }
+        }
+      }
+    },
+    "gloss": {
+      "seed": 240824,
+      "species": "humanoid",
+      "body": "sphere",
+      "stance": "biped",
+      "palette": "harbour",
+      "colorIx": 4,
+      "material": "resin",
+      "parts": {
+        "body": {
+          "params": {
+            "r": 0.5378234435804189,
+            "wide": 1.0998426850512624,
+            "tall": 0.9843457998521626,
+            "deep": 0.9160691223479808,
+            "corner": 3.426233019353822
+          }
+        },
+        "frame": {
+          "params": {
+            "hips": 0.2695171765983105,
+            "squat": 0.2389065336319618,
+            "belly": 2.649523468501866,
+            "float": 0.09621299023274332,
+            "footR": 0.15851720289327206,
+            "handR": 0.10430863394401968,
+            "handY": 0.3960153737221844,
+            "dressed": true,
+            "clothIx": 0,
+            "motif": "zig"
+          }
+        },
+        "crest": {
+          "params": {
+            "style": "none",
+            "spread": 0.7206408799183555,
+            "size": 0.8068940959521569
+          }
+        },
+        "hair": {
+          "params": {
+            "style": "pony",
+            "color": "chocolate",
+            "vol": 1.3169920958578587,
+            "density": 1.0140467310440726,
+            "width": 1.1322744548437185,
+            "jag": 1.1762898677028715,
+            "wave": 1.2889828894520179,
+            "part": 1.101803818019107,
+            "pomp": 1.331691236793995,
+            "whorl": 0.15923151874449104,
+            "wisps": 1.1701003832742571,
+            "seed": 3.267175557791954,
+            "tailAng": 1.7725914484821261,
+            "tailY": 0.649351911097765,
+            "tailLen": 0.9602991062914953,
+            "bunAng": 0.8394139190320856,
+            "bunR": 0.24568536476697772,
+            "ahoge": false,
+            "ahogeAng": -0.13701771688647568,
+            "ahogeDir": 1
+          }
+        },
+        "hat": {
+          "params": {
+            "style": "beanie",
+            "accIx": 2,
+            "size": 0.9532589239673689,
+            "side": -1,
+            "lean": 0.8608984622755087
+          }
+        },
+        "eyes": {
+          "params": {
+            "style": "box",
+            "pupilY": -0.72,
+            "lid": false,
+            "wink": true,
+            "x": 0.5916179529204965,
+            "y": -0.34165379374288024,
+            "size": 0.16550431345589459,
+            "proud": 0.2733480508904904
+          }
+        },
+        "brows": {
+          "params": {
+            "style": "none",
+            "lift": 0.42534707984887066,
+            "size": 1.1494853340904228
+          }
+        },
+        "specs": {
+          "params": {
+            "style": "none",
+            "size": 1.0233535473980009,
+            "ink": true,
+            "side": -1
+          }
+        },
+        "nose": {
+          "params": {
+            "style": "none",
+            "bias": -0.029936450142413376,
+            "size": 0.5903475392237306,
+            "warm": false
+          }
+        },
+        "mouth": {
+          "params": {
+            "style": "none",
+            "y": -0.37368975289165973,
+            "size": 0.33532824093010277,
+            "proud": 0.14023019332438708,
+            "teeth": true,
+            "tongue": false
+          }
+        },
+        "blush": {
+          "params": {
+            "style": "none",
+            "out": 0.29191688187420367,
+            "drop": 0.22197929874062539,
+            "size": 1.0958147275028751
+          }
+        },
+        "mark": {
+          "params": {
+            "style": "none",
+            "side": 1,
+            "size": 0.8776895448099822,
+            "roll": 0.36454113223589957,
+            "high": true
+          }
+        }
+      }
+    }
+  },
+  "mapping": [
+    {
+      "field": "seed",
+      "level": "exact",
+      "label": "精确",
+      "detail": "三个 Backend 接收同一个整数 Seed。"
+    },
+    {
+      "field": "species",
+      "level": "adapted",
+      "label": "适配",
+      "detail": "Gloss 使用 humanoid casting。"
+    },
+    {
+      "field": "look",
+      "level": "adapted",
+      "label": "适配",
+      "detail": "watercolor / crayon / harbour + resin"
+    },
+    {
+      "field": "parts",
+      "level": "local",
+      "label": "各自生成",
+      "detail": "三个源库 Backend 使用独立部件参数表。"
+    },
+    {
+      "field": "hair · glasses · outfit · socket",
+      "level": "unsupported",
+      "label": "未统一",
+      "detail": "尚无跨 Backend 的共享语义合同。"
+    }
+  ],
+  "outputs": [
+    {
+      "backend": "drawn",
+      "filename": "harbour-courier-240824--drawn.png",
+      "mime": "image/png",
+      "bytes": 122510,
+      "width": 768,
+      "height": 768,
+      "sha256": "5a48da62a0ecf2c9b7d5f32f059a9daf3fe8883924ca34c59bf3e29093ccb73d",
+      "representation": "2D transparent PNG",
+      "provenance": {
+        "builder": "upstream/src/rig.js · buildCharacter",
+        "representation": "drawn 2D planes"
+      },
+      "cornerAlpha": 0
+    },
+    {
+      "backend": "voxel",
+      "filename": "harbour-courier-240824--voxel.png",
+      "mime": "image/png",
+      "bytes": 79914,
+      "width": 768,
+      "height": 768,
+      "sha256": "8df657cdb3a9bc892a1db35fcff612cda8a680d12f941955c0c2a5690c8ab77d",
+      "representation": "procedural 3D + PNG proxy",
+      "provenance": {
+        "builder": "upstream/src/voxel/vrig.js · buildVoxelCharacter",
+        "representation": "procedural voxel solids"
+      },
+      "cornerAlpha": 0
+    },
+    {
+      "backend": "gloss",
+      "filename": "harbour-courier-240824--gloss.png",
+      "mime": "image/png",
+      "bytes": 196570,
+      "width": 768,
+      "height": 768,
+      "sha256": "4c520fcafda0ebbddaf158344885d258dd310b83bd479ce2dd6f22fbf5993189",
+      "representation": "procedural 3D + PNG proxy",
+      "provenance": {
+        "builder": "upstream/src/gloss/grig.js · buildGloss",
+        "representation": "procedural molded solids"
+      },
+      "cornerAlpha": 0
+    }
+  ],
+  "sceneReadiness": [
+    {
+      "backend": "drawn",
+      "representation": "2D transparent PNG",
+      "sceneUse": "对话头像、任务卡、2D 场景角色",
+      "ready": [
+        "确定性身份",
+        "透明导出",
+        "动画 Rig 可继续接入"
+      ],
+      "gap": "尚未输出 sprite sheet 与统一碰撞框。",
+      "filename": "harbour-courier-240824--drawn.png"
+    },
+    {
+      "backend": "voxel",
+      "representation": "procedural 3D + PNG proxy",
+      "sceneUse": "可旋转世界角色、俯视场景 NPC、拾取物尺度验证",
+      "ready": [
+        "真实几何",
+        "体素/三角面统计",
+        "部件动画面板"
+      ],
+      "gap": "本轮导出 PNG proxy；GLB/scene factory 仍是下一层。",
+      "filename": "harbour-courier-240824--voxel.png"
+    },
+    {
+      "backend": "gloss",
+      "representation": "procedural 3D + PNG proxy",
+      "sceneUse": "收藏品、角色肖像、风格化 3D 演出",
+      "ready": [
+        "真实程序化几何",
+        "材质变体",
+        "标准化 PNG"
+      ],
+      "gap": "Gloss 物种与 Drawn/Voxel 并非一一对应。",
+      "filename": "harbour-courier-240824--gloss.png"
+    }
+  ],
+  "runtimeModel": "none",
+  "notes": [
+    "PNG files are standardized 768×768 scene proxies generated by upstream render builders.",
+    "Detailed part identity is backend-local until a shared semantic-part contract exists."
+  ],
+  "samplePath": "asset-lab/samples/harbour-courier-240824"
+}

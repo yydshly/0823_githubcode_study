@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "kindergrimm-visual-record/0.1",
+  "title": "Kindergrimm Visual Record",
+  "description": "The schema id versions this legacy-compatible record; current runtime records intentionally do not add a schemaVersion field because that would change historical visual fingerprints.",
+  "type": "object",
+  "required": ["rendererId", "rendererVersion", "rendererFingerprint", "baseRenderer", "addedParts", "variant", "fingerprint"],
+  "properties": {
+    "rendererId": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "rendererVersion": { "type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$" },
+    "rendererFingerprint": { "type": "string", "pattern": "^[0-9a-f]{8}$" },
+    "baseRenderer": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "addedParts": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" }
+    },
+    "variant": { "type": "object" },
+    "fingerprint": { "type": "string", "pattern": "^[0-9a-f]{8}$" }
+  },
+  "additionalProperties": false
+}

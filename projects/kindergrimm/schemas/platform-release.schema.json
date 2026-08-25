@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "kindergrimm-platform-release/1.0",
+  "title": "Kindergrimm Platform Release",
+  "type": "object",
+  "required": ["schemaVersion", "id", "version", "releasedAt", "status", "scope", "identity", "gates", "artifacts", "browserEvidence", "provenance", "verification", "fingerprint"],
+  "properties": {
+    "schemaVersion": { "const": "kindergrimm-platform-release/1.0" },
+    "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "version": { "type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$" },
+    "releasedAt": { "type": "string", "format": "date-time" },
+    "status": { "const": "research-release" },
+    "scope": { "type": "object" },
+    "identity": { "type": "object" },
+    "gates": { "type": "array", "minItems": 8, "maxItems": 8 },
+    "artifacts": { "type": "array", "minItems": 4 },
+    "browserEvidence": { "type": "array", "minItems": 2 },
+    "provenance": { "type": "object" },
+    "verification": { "type": "object" },
+    "fingerprint": { "type": "string", "pattern": "^[0-9a-f]{8}$" }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "kindergrimm-runtime-sdk/0.1",
+  "id": "kindergrimm-runtime-sdk",
+  "version": "0.1.0",
+  "pureEntry": "runtime-sdk/index.js",
+  "rendererEntry": "runtime-sdk/three.js",
+  "modules": [
+    "bundle-loader",
+    "asset-cache",
+    "state-hooks",
+    "runtime-session",
+    "diagnostics",
+    "scene-adapter"
+  ],
+  "runtimeLlmCalls": 0,
+  "cloudApiCalls": 0
+}

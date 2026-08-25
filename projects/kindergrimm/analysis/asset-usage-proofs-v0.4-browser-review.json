@@ -1,0 +1,724 @@
+{
+  "schemaVersion": "kindergrimm-asset-usage-proofs-browser-review/0.4",
+  "canonicalUrl": "http://127.0.0.1:8882/projects/kindergrimm/asset-lab/",
+  "capturedAt": "2026-08-25T06:23:31.883Z",
+  "loadMs": 2619,
+  "narrative": {
+    "snapshot": {
+      "canRender": true,
+      "renderOff": false,
+      "busy": false,
+      "activeMode": "usage",
+      "assetId": "scene-605203-human",
+      "seed": 605203,
+      "species": "human",
+      "fingerprint": "kg-2eda2fcc",
+      "mapping": [
+        "exact",
+        "adapted",
+        "adapted",
+        "local",
+        "unsupported"
+      ],
+      "nativeSeeds": [
+        605203,
+        605203,
+        605203
+      ],
+      "readiness": 3,
+      "characterCanvases": 3,
+      "canvases": 3,
+      "styleCapabilities": 15,
+      "itemFamilies": 13,
+      "itemRanks": 4,
+      "environmentSpecies": 5,
+      "environmentPalettes": 6,
+      "itemFingerprint": "kg-6de15d72",
+      "environmentFingerprint": "kg-b97bfd3f",
+      "sceneFingerprint": "kg-c6b013e0",
+      "scenePresetCount": 3,
+      "usageProofCount": 3,
+      "activeUsageProof": "narrative",
+      "usageWorldCanvas": 1,
+      "usageWorldCalls": 37,
+      "usageWorldTriangles": 36780,
+      "scenePreviewCount": 5,
+      "sceneExplanationCount": 4,
+      "fallbackVisible": false,
+      "capabilitySummary": {
+        "modes": 6,
+        "characterBackends": 3,
+        "media": 6,
+        "historyStyles": 9,
+        "itemFamilies": 13,
+        "itemRanks": 4,
+        "environmentSpecies": 5,
+        "environmentPalettes": 6
+      }
+    },
+    "stats": {
+      "planFingerprint": "kg-c6b013e0",
+      "proofCount": 3,
+      "generatedMs": 1529.7000000476837,
+      "world": {
+        "buildMs": 78.19999998807907,
+        "voxel": {
+          "voxels": 5836,
+          "tris": 6468,
+          "parts": 10,
+          "height": 39,
+          "depth": 12,
+          "cz": -1.5,
+          "radius": 15.03329637837291,
+          "vx": 0.0625,
+          "recipe": {
+            "seed": 605203,
+            "species": "human",
+            "base": "biped",
+            "palette": "gloom",
+            "parts": {
+              "tail": {
+                "params": {
+                  "style": "none",
+                  "len": 1.3470096634235234,
+                  "tone": "hair"
+                }
+              },
+              "legs": {
+                "params": {
+                  "style": "noodle",
+                  "len": 3,
+                  "w": 2,
+                  "feet": true,
+                  "trouser": true
+                }
+              },
+              "legs4": {
+                "params": {
+                  "len": 5,
+                  "w": 1,
+                  "paws": true,
+                  "sock": true
+                }
+              },
+              "torso": {
+                "params": {
+                  "shape": "bean",
+                  "w": 2,
+                  "h": 5,
+                  "d": 2,
+                  "cloth": true,
+                  "hem": 0.29277089308016,
+                  "band": false
+                }
+              },
+              "arms": {
+                "params": {
+                  "style": "stub",
+                  "len": 0.7271089610061608,
+                  "thick": 0.7761995332315564,
+                  "hand": "mitten",
+                  "sleeve": false
+                }
+              },
+              "skull": {
+                "params": {
+                  "shape": "box",
+                  "w": 12,
+                  "h": 17,
+                  "d": 7,
+                  "jaw": 1.0110658796876668,
+                  "muzzle": 0,
+                  "muzzleY": 0.30447621865198016,
+                  "wonk": 1.239730142056942,
+                  "pale": false,
+                  "chin": false
+                }
+              },
+              "extras": {
+                "params": {
+                  "spots": false,
+                  "patch": false,
+                  "freckles": true,
+                  "blush": true,
+                  "whiskers": false,
+                  "belly": false,
+                  "side": 1,
+                  "density": 0.21021547760348766
+                }
+              },
+              "hair": {
+                "params": {
+                  "style": "pigtails",
+                  "len": 1.075355080794543,
+                  "side": 1,
+                  "tone": "hair"
+                }
+              },
+              "crest": {
+                "params": {
+                  "style": "bunny",
+                  "len": 1.0032964460086078,
+                  "spread": 0.8669710850343109,
+                  "lean": 0.2758541934890673,
+                  "tone": "skin",
+                  "n": 4
+                }
+              },
+              "mouth": {
+                "params": {
+                  "style": "line",
+                  "w": 1,
+                  "y": -0.4367573061026633
+                }
+              },
+              "eyes": {
+                "params": {
+                  "type": "saucer",
+                  "sep": 0.8047979841707275,
+                  "y": 0.5173655275534839,
+                  "w": 7,
+                  "h": 9,
+                  "proud": false
+                }
+              },
+              "brows": {
+                "params": {
+                  "on": true,
+                  "style": "dot",
+                  "lift": 2,
+                  "tone": "hair"
+                }
+              },
+              "nose": {
+                "params": {
+                  "style": "none",
+                  "size": 1.2143367015523836,
+                  "tone": "line"
+                }
+              },
+              "hat": {
+                "params": {
+                  "style": "none",
+                  "size": 0.9409122291021049,
+                  "tone": "cloth"
+                }
+              }
+            }
+          }
+        },
+        "plant": {
+          "buildMs": 18,
+          "verts": 82023,
+          "meshes": 23,
+          "bounds": {
+            "w": 2.669831378427341,
+            "h": 2.1820387336924845,
+            "cy": 1.1615306036330846,
+            "minY": 0.1410224735736847,
+            "maxY": 2.1820387336924845
+          },
+          "recipe": {
+            "seed": 605414,
+            "species": "grass",
+            "palette": "desert",
+            "material": "matte",
+            "parts": {
+              "mound": {
+                "params": {
+                  "r": 1.010631719045341,
+                  "tall": 0.34157051048241555,
+                  "bump": false,
+                  "seed": 568782928
+                }
+              },
+              "stem": {
+                "params": {
+                  "style": "none",
+                  "h": 1.264112792350352,
+                  "r": 0.3394219023641199,
+                  "belly": 0.21150698871351775,
+                  "lean": 0.10975765717215835,
+                  "leanRot": 4.2571725919606305,
+                  "seed": 483761882
+                }
+              },
+              "leaves": {
+                "params": {
+                  "style": "tuft",
+                  "count": 10.371293257921934,
+                  "size": 1.0778906654333695,
+                  "lean": 0.38663741503842175,
+                  "seed": 91731253
+                }
+              },
+              "bloom": {
+                "params": {
+                  "style": "none",
+                  "size": 0.6730952056823298,
+                  "petals": 6.8977573569864035,
+                  "seed": 250562037
+                }
+              }
+            }
+          }
+        },
+        "renderer": {
+          "calls": 37,
+          "triangles": 36780,
+          "geometries": 39
+        },
+        "representation": "live procedural Three.js placement"
+      },
+      "twoDConsumersReady": true
+    },
+    "title": "暴雨后的港口回信",
+    "copy": "信使穿过退潮后的码头，把求救信交给守灯人。",
+    "characterSource": true,
+    "itemSource": true,
+    "contextTitle": "叙事对话",
+    "contextFields": 4,
+    "selectedTabs": 1,
+    "viewport": 1440,
+    "scrollWidth": 1440
+  },
+  "collection": {
+    "snapshot": {
+      "canRender": true,
+      "renderOff": false,
+      "busy": false,
+      "activeMode": "usage",
+      "assetId": "scene-605203-human",
+      "seed": 605203,
+      "species": "human",
+      "fingerprint": "kg-2eda2fcc",
+      "mapping": [
+        "exact",
+        "adapted",
+        "adapted",
+        "local",
+        "unsupported"
+      ],
+      "nativeSeeds": [
+        605203,
+        605203,
+        605203
+      ],
+      "readiness": 3,
+      "characterCanvases": 3,
+      "canvases": 3,
+      "styleCapabilities": 15,
+      "itemFamilies": 13,
+      "itemRanks": 4,
+      "environmentSpecies": 5,
+      "environmentPalettes": 6,
+      "itemFingerprint": "kg-6de15d72",
+      "environmentFingerprint": "kg-b97bfd3f",
+      "sceneFingerprint": "kg-c6b013e0",
+      "scenePresetCount": 3,
+      "usageProofCount": 3,
+      "activeUsageProof": "collection",
+      "usageWorldCanvas": 1,
+      "usageWorldCalls": 37,
+      "usageWorldTriangles": 36780,
+      "scenePreviewCount": 5,
+      "sceneExplanationCount": 4,
+      "fallbackVisible": false,
+      "capabilitySummary": {
+        "modes": 6,
+        "characterBackends": 3,
+        "media": 6,
+        "historyStyles": 9,
+        "itemFamilies": 13,
+        "itemRanks": 4,
+        "environmentSpecies": 5,
+        "environmentPalettes": 6
+      }
+    },
+    "characterSource": true,
+    "itemSource": true,
+    "ledgerRows": 4,
+    "title": "暴雨后的港口回信 · human",
+    "contextTitle": "收藏 / 奖励"
+  },
+  "world": {
+    "snapshot": {
+      "canRender": true,
+      "renderOff": false,
+      "busy": false,
+      "activeMode": "usage",
+      "assetId": "scene-605203-human",
+      "seed": 605203,
+      "species": "human",
+      "fingerprint": "kg-2eda2fcc",
+      "mapping": [
+        "exact",
+        "adapted",
+        "adapted",
+        "local",
+        "unsupported"
+      ],
+      "nativeSeeds": [
+        605203,
+        605203,
+        605203
+      ],
+      "readiness": 3,
+      "characterCanvases": 3,
+      "canvases": 3,
+      "styleCapabilities": 15,
+      "itemFamilies": 13,
+      "itemRanks": 4,
+      "environmentSpecies": 5,
+      "environmentPalettes": 6,
+      "itemFingerprint": "kg-6de15d72",
+      "environmentFingerprint": "kg-b97bfd3f",
+      "sceneFingerprint": "kg-c6b013e0",
+      "scenePresetCount": 3,
+      "usageProofCount": 3,
+      "activeUsageProof": "world",
+      "usageWorldCanvas": 1,
+      "usageWorldCalls": 37,
+      "usageWorldTriangles": 36780,
+      "scenePreviewCount": 5,
+      "sceneExplanationCount": 4,
+      "fallbackVisible": false,
+      "capabilitySummary": {
+        "modes": 6,
+        "characterBackends": 3,
+        "media": 6,
+        "historyStyles": 9,
+        "itemFamilies": 13,
+        "itemRanks": 4,
+        "environmentSpecies": 5,
+        "environmentPalettes": 6
+      }
+    },
+    "stats": {
+      "buildMs": 78.19999998807907,
+      "voxel": {
+        "voxels": 5836,
+        "tris": 6468,
+        "parts": 10,
+        "height": 39,
+        "depth": 12,
+        "cz": -1.5,
+        "radius": 15.03329637837291,
+        "vx": 0.0625,
+        "recipe": {
+          "seed": 605203,
+          "species": "human",
+          "base": "biped",
+          "palette": "gloom",
+          "parts": {
+            "tail": {
+              "params": {
+                "style": "none",
+                "len": 1.3470096634235234,
+                "tone": "hair"
+              }
+            },
+            "legs": {
+              "params": {
+                "style": "noodle",
+                "len": 3,
+                "w": 2,
+                "feet": true,
+                "trouser": true
+              }
+            },
+            "legs4": {
+              "params": {
+                "len": 5,
+                "w": 1,
+                "paws": true,
+                "sock": true
+              }
+            },
+            "torso": {
+              "params": {
+                "shape": "bean",
+                "w": 2,
+                "h": 5,
+                "d": 2,
+                "cloth": true,
+                "hem": 0.29277089308016,
+                "band": false
+              }
+            },
+            "arms": {
+              "params": {
+                "style": "stub",
+                "len": 0.7271089610061608,
+                "thick": 0.7761995332315564,
+                "hand": "mitten",
+                "sleeve": false
+              }
+            },
+            "skull": {
+              "params": {
+                "shape": "box",
+                "w": 12,
+                "h": 17,
+                "d": 7,
+                "jaw": 1.0110658796876668,
+                "muzzle": 0,
+                "muzzleY": 0.30447621865198016,
+                "wonk": 1.239730142056942,
+                "pale": false,
+                "chin": false
+              }
+            },
+            "extras": {
+              "params": {
+                "spots": false,
+                "patch": false,
+                "freckles": true,
+                "blush": true,
+                "whiskers": false,
+                "belly": false,
+                "side": 1,
+                "density": 0.21021547760348766
+              }
+            },
+            "hair": {
+              "params": {
+                "style": "pigtails",
+                "len": 1.075355080794543,
+                "side": 1,
+                "tone": "hair"
+              }
+            },
+            "crest": {
+              "params": {
+                "style": "bunny",
+                "len": 1.0032964460086078,
+                "spread": 0.8669710850343109,
+                "lean": 0.2758541934890673,
+                "tone": "skin",
+                "n": 4
+              }
+            },
+            "mouth": {
+              "params": {
+                "style": "line",
+                "w": 1,
+                "y": -0.4367573061026633
+              }
+            },
+            "eyes": {
+              "params": {
+                "type": "saucer",
+                "sep": 0.8047979841707275,
+                "y": 0.5173655275534839,
+                "w": 7,
+                "h": 9,
+                "proud": false
+              }
+            },
+            "brows": {
+              "params": {
+                "on": true,
+                "style": "dot",
+                "lift": 2,
+                "tone": "hair"
+              }
+            },
+            "nose": {
+              "params": {
+                "style": "none",
+                "size": 1.2143367015523836,
+                "tone": "line"
+              }
+            },
+            "hat": {
+              "params": {
+                "style": "none",
+                "size": 0.9409122291021049,
+                "tone": "cloth"
+              }
+            }
+          }
+        }
+      },
+      "plant": {
+        "buildMs": 18,
+        "verts": 82023,
+        "meshes": 23,
+        "bounds": {
+          "w": 2.669831378427341,
+          "h": 2.1820387336924845,
+          "cy": 1.1615306036330846,
+          "minY": 0.1410224735736847,
+          "maxY": 2.1820387336924845
+        },
+        "recipe": {
+          "seed": 605414,
+          "species": "grass",
+          "palette": "desert",
+          "material": "matte",
+          "parts": {
+            "mound": {
+              "params": {
+                "r": 1.010631719045341,
+                "tall": 0.34157051048241555,
+                "bump": false,
+                "seed": 568782928
+              }
+            },
+            "stem": {
+              "params": {
+                "style": "none",
+                "h": 1.264112792350352,
+                "r": 0.3394219023641199,
+                "belly": 0.21150698871351775,
+                "lean": 0.10975765717215835,
+                "leanRot": 4.2571725919606305,
+                "seed": 483761882
+              }
+            },
+            "leaves": {
+              "params": {
+                "style": "tuft",
+                "count": 10.371293257921934,
+                "size": 1.0778906654333695,
+                "lean": 0.38663741503842175,
+                "seed": 91731253
+              }
+            },
+            "bloom": {
+              "params": {
+                "style": "none",
+                "size": 0.6730952056823298,
+                "petals": 6.8977573569864035,
+                "seed": 250562037
+              }
+            }
+          }
+        }
+      },
+      "renderer": {
+        "calls": 37,
+        "triangles": 36780,
+        "geometries": 39
+      },
+      "representation": "live procedural Three.js placement"
+    },
+    "canvas": {
+      "width": 1001,
+      "height": 540,
+      "cssWidth": 1001,
+      "cssHeight": 540
+    },
+    "itemHud": true,
+    "fallbackHidden": true,
+    "contextTitle": "3D 世界放置",
+    "statLabel": "37 calls · 36780 tris · 78.2 ms build"
+  },
+  "alternative": {
+    "planFingerprint": "kg-09d40260",
+    "sceneTitle": "冬日温室的临时庇护",
+    "storyTitle": "冬日温室的临时庇护",
+    "collectionTitle": "冬日温室的临时庇护 · dog",
+    "worldTitle": "冬日温室的临时庇护",
+    "itemLabel": "great gilded shield",
+    "worldTriangles": 21490
+  },
+  "deterministic": {
+    "samePlan": true,
+    "worldTriangles": 21490,
+    "generatedMs": 161.5
+  },
+  "keyboard": {
+    "activeUsageProof": "collection",
+    "focusProof": "collection",
+    "outline": "3px"
+  },
+  "tablet": {
+    "viewport": 1024,
+    "scrollWidth": 1024,
+    "workspaceColumns": "962.562px",
+    "usageProofs": 3
+  },
+  "mobile": {
+    "viewport": 390,
+    "scrollWidth": 390,
+    "activeUsageProof": "world",
+    "workspaceColumns": "353.219px",
+    "worldCanvas": 1
+  },
+  "reduced": {
+    "matched": true,
+    "transition": "1e-05s",
+    "proofCount": 3
+  },
+  "fallback": {
+    "snapshot": {
+      "canRender": false,
+      "renderOff": true,
+      "busy": false,
+      "activeMode": "usage",
+      "assetId": "scene-605203-human",
+      "seed": 605203,
+      "species": "human",
+      "fingerprint": "kg-4cfb8a82",
+      "mapping": [
+        "exact",
+        "adapted",
+        "adapted",
+        "local",
+        "unsupported"
+      ],
+      "nativeSeeds": [
+        605203,
+        605203,
+        605203
+      ],
+      "readiness": 3,
+      "characterCanvases": 0,
+      "canvases": 0,
+      "styleCapabilities": 15,
+      "itemFamilies": 13,
+      "itemRanks": 4,
+      "environmentSpecies": 5,
+      "environmentPalettes": 6,
+      "itemFingerprint": "kg-6de15d72",
+      "environmentFingerprint": "kg-5c23b650",
+      "sceneFingerprint": "kg-c6b013e0",
+      "scenePresetCount": 3,
+      "usageProofCount": 3,
+      "activeUsageProof": "world",
+      "usageWorldCanvas": 0,
+      "usageWorldCalls": null,
+      "usageWorldTriangles": null,
+      "scenePreviewCount": 1,
+      "sceneExplanationCount": 4,
+      "fallbackVisible": false,
+      "capabilitySummary": {
+        "modes": 6,
+        "characterBackends": 3,
+        "media": 6,
+        "historyStyles": 9,
+        "itemFamilies": 13,
+        "itemRanks": 4,
+        "environmentSpecies": 5,
+        "environmentPalettes": 6
+      }
+    },
+    "worldCanvas": 0,
+    "fallbackVisible": true,
+    "itemHud": true,
+    "storyItem": true,
+    "collectionItem": true,
+    "unavailableMedia": 2,
+    "contextTitle": "3D 世界放置"
+  },
+  "consoleErrors": [],
+  "evidence": [
+    "evidence/asset-lab-v04-usage-narrative.png",
+    "evidence/asset-lab-v04-usage-collection.png",
+    "evidence/asset-lab-v04-usage-world.png",
+    "evidence/asset-lab-v04-usage-mobile.png",
+    "evidence/asset-lab-v04-usage-fallback.png"
+  ]
+}

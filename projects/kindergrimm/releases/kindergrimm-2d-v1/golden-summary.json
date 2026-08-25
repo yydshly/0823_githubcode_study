@@ -1,0 +1,24 @@
+{
+  "schemaVersion": "kindergrimm-golden-summary/1.0",
+  "pack": {
+    "id": "mosslight-core-2d",
+    "version": "0.1.0",
+    "fingerprint": "a96d877a"
+  },
+  "renderer": {
+    "id": "mosslight-core-2d",
+    "version": "0.1.0",
+    "fingerprint": "32d9c2cf"
+  },
+  "recipes": 50,
+  "uniqueRecipeFingerprints": 50,
+  "uniqueVisualFingerprints": 50,
+  "species": [
+    "cat",
+    "dog",
+    "human"
+  ],
+  "supportedBases": [
+    "biped"
+  ]
+}

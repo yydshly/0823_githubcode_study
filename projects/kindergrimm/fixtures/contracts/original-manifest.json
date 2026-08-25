@@ -1,0 +1,2761 @@
+{
+  "schemaVersion": "kindergrimm-research/0.2",
+  "generator": {
+    "name": "kindergrimm",
+    "source": "albertobeiz/kindergrimm",
+    "upstreamCommit": "de339ad739d8cbd28ff2dd4a940af38c0ede86c8",
+    "license": "Unlicense / public domain dedication",
+    "representation": "procedural 2D Canvas parts composed as CanvasTexture planes",
+    "runtime": "browser-local JavaScript + Canvas 2D + Three.js/WebGL",
+    "runtimeLlmCalls": 0,
+    "cloudApiCalls": 0
+  },
+  "batch": {
+    "id": "batch-240824",
+    "input": {
+      "seed": 240824,
+      "count": 12,
+      "color": "auto",
+      "species": "all",
+      "media": "all"
+    },
+    "count": 12,
+    "unique": 12,
+    "deterministicOrder": true
+  },
+  "spritesheet": {
+    "tileSize": 256,
+    "columns": 4,
+    "rows": 3,
+    "width": 1024,
+    "height": 768,
+    "background": "transparent",
+    "order": "row-major"
+  },
+  "assets": [
+    {
+      "id": "npc-9b8ee20e",
+      "fingerprint": "9b8ee20e",
+      "batchIndex": 0,
+      "representation": "procedural-2d-canvas-texture",
+      "recipe": {
+        "seed": 233143426,
+        "species": "cat",
+        "base": "quad",
+        "color": "auto",
+        "media": "ink",
+        "parts": {
+          "tail": {
+            "params": {
+              "style": "curl",
+              "len": 1.0793336858507245,
+              "side": 1
+            }
+          },
+          "legs": {
+            "params": {
+              "style": "wide",
+              "len": 0.614843541290611,
+              "foot": "mitten"
+            }
+          },
+          "torso": {
+            "params": {
+              "shape": "tiny",
+              "wF": 0.5092253678152338,
+              "hF": 0.5392821108549833,
+              "lean": -0.05018727307207882,
+              "pattern": "buttons",
+              "clothOn": true,
+              "clothIdx": 2,
+              "tone": "light"
+            }
+          },
+          "arms": {
+            "params": {
+              "style": "stub",
+              "len": 0.5775213843211532,
+              "droop": 0.7687344853999093,
+              "asym": -0.16645516120363027,
+              "hand": "dot"
+            }
+          },
+          "wings": {
+            "params": {
+              "style": "folded",
+              "len": 0.955403009406291,
+              "feathers": 4
+            }
+          },
+          "paws": {
+            "params": {
+              "front": "oval",
+              "spread": 0.9664284507511183,
+              "toes": false
+            }
+          },
+          "quadlegs": {
+            "params": {
+              "thick": 1.1052143814973534,
+              "toes": true,
+              "back": true
+            }
+          },
+          "offhand": {
+            "params": {
+              "family": "none",
+              "rank": "inked",
+              "seed": 619479332
+            }
+          },
+          "held": {
+            "params": {
+              "family": "none",
+              "rank": "sketch",
+              "seed": 504395005
+            }
+          },
+          "hair": {
+            "params": {
+              "style": "bald",
+              "tone": "stipple",
+              "colOn": true,
+              "colIdx": 3,
+              "bang": "none",
+              "bangN": 6,
+              "cpart": false,
+              "longZig": false,
+              "longNt": 5,
+              "flare": 1.1910145755996928,
+              "fall": 0.8477769242133946,
+              "spikyN": 13,
+              "bunsTop": true,
+              "afroR": 1.2465041579585523,
+              "mohawkN": 8,
+              "tailUp": true
+            }
+          },
+          "crest": {
+            "params": {
+              "style": "cat",
+              "tone": "skin",
+              "len": 1.1071586975012906,
+              "curve": 0.1592206452973186,
+              "spread": 0.7616337050870061,
+              "tilt": 0.3518698500469328,
+              "earAsym": -0.025943225631490346,
+              "nSpikes": 7,
+              "branches": 2
+            }
+          },
+          "skull": {
+            "params": {
+              "s": 0.3969183094985783,
+              "wf": 0.8152930662035942,
+              "turn": 0.08936023381538691,
+              "shroud": false,
+              "round": 0.861661526390817,
+              "shape": "round",
+              "muzzle": 0.1833273297920823,
+              "muzzleY": 0.4474470339342952,
+              "fur": true,
+              "jaw": 0.9773441588389687,
+              "chinW": 0.9008305307477713,
+              "skullY": 0.892919643339701,
+              "chinY": 0.7270288730971515,
+              "press": 1.3655312227085235,
+              "shade": "none",
+              "hollows": false,
+              "construction": false,
+              "darkSkin": true,
+              "plain": true,
+              "skinOn": false,
+              "skinIdx": 7,
+              "skinScrib": false
+            }
+          },
+          "ears": {
+            "params": {
+              "rings": true,
+              "nRings": 2
+            }
+          },
+          "eyes": {
+            "params": {
+              "type": "closed",
+              "type2": "xcross",
+              "scaleR": 1.2340920601505787,
+              "scale": 1.358316010364797,
+              "ehJit": 1.0353025080636145,
+              "fierce": 0.48219078374095276,
+              "gazeJit": -0.04188691987656057,
+              "sx": 0.6706495563918724,
+              "sink": 0.7771884722053073,
+              "lashes": false,
+              "glint": true
+            }
+          },
+          "brows": {
+            "params": {
+              "on": false,
+              "a": 0.12206853698007766,
+              "thF": 0.04492348212003708,
+              "yF": 0.11674680560827255
+            }
+          },
+          "nose": {
+            "params": {
+              "style": "triangle",
+              "nostril": true,
+              "size": 1.0436534635489807,
+              "snoutLen": 0.9658731305971742,
+              "snoutFat": 0.9695363115286455,
+              "snoutTip": 0.047390328617766514
+            }
+          },
+          "mouth": {
+            "params": {
+              "style": "cat",
+              "myF": 0.47106667567044497,
+              "wF": 1.8942828854080291,
+              "beakLen": 1.29002879797481,
+              "upperLip": false,
+              "crease": false,
+              "nTeeth": 3,
+              "nStitch": 3
+            }
+          },
+          "extras": {
+            "params": {
+              "mark": "none",
+              "mod": "none",
+              "tears": false,
+              "freckles": false,
+              "spots": false,
+              "whiskers": true,
+              "studs": false,
+              "bandage": false,
+              "blush": true,
+              "glasses": false,
+              "antenna": false,
+              "accentIdx": 1,
+              "accidents": false,
+              "smudge": true,
+              "eraser": false
+            }
+          },
+          "tearsWet": {
+            "params": {
+              "len": 0.8171658563893288,
+              "wob": 1.175846951629501
+            }
+          },
+          "worn": {
+            "params": {
+              "family": "none",
+              "rank": "sketch",
+              "seed": 465247774
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "npc-60dd7467",
+      "fingerprint": "60dd7467",
+      "batchIndex": 1,
+      "representation": "procedural-2d-canvas-texture",
+      "recipe": {
+        "seed": 249921045,
+        "species": "cat",
+        "base": "quad",
+        "color": "auto",
+        "media": "oil",
+        "parts": {
+          "tail": {
+            "params": {
+              "style": "wag",
+              "len": 1.03001705436036,
+              "side": -1
+            }
+          },
+          "legs": {
+            "params": {
+              "style": "stub",
+              "len": 0.6391188643872737,
+              "foot": "mitten"
+            }
+          },
+          "torso": {
+            "params": {
+              "shape": "bean",
+              "wF": 0.4011564517533407,
+              "hF": 0.6613131957501173,
+              "lean": 0.02494252773933113,
+              "pattern": "none",
+              "clothOn": true,
+              "clothIdx": 2,
+              "tone": "light"
+            }
+          },
+          "arms": {
+            "params": {
+              "style": "wing",
+              "len": 0.7428708426654339,
+              "droop": 0.7284124335623345,
+              "asym": 0.1570972409984097,
+              "hand": "dot"
+            }
+          },
+          "wings": {
+            "params": {
+              "style": "folded",
+              "len": 0.9238777735503391,
+              "feathers": 3
+            }
+          },
+          "paws": {
+            "params": {
+              "front": "oval",
+              "spread": 0.8622291560284793,
+              "toes": true
+            }
+          },
+          "quadlegs": {
+            "params": {
+              "thick": 0.9914659940637648,
+              "toes": true,
+              "back": true
+            }
+          },
+          "offhand": {
+            "params": {
+              "family": "none",
+              "rank": "sketch",
+              "seed": 637535790
+            }
+          },
+          "held": {
+            "params": {
+              "family": "none",
+              "rank": "inked",
+              "seed": 400063920
+            }
+          },
+          "hair": {
+            "params": {
+              "style": "bald",
+              "tone": "stipple",
+              "colOn": false,
+              "colIdx": 2,
+              "bang": "none",
+              "bangN": 7,
+              "cpart": true,
+              "longZig": true,
+              "longNt": 4,
+              "flare": 1.119395952085033,
+              "fall": 0.842829869221896,
+              "spikyN": 13,
+              "bunsTop": false,
+              "afroR": 1.13604924345389,
+              "mohawkN": 7,
+              "tailUp": true
+            }
+          },
+          "crest": {
+            "params": {
+              "style": "cat",
+              "tone": "skin",
+              "len": 0.9294553195242771,
+              "curve": 0.04761265926063052,
+              "spread": 0.5759293383173645,
+              "tilt": -0.2819983536377549,
+              "earAsym": -0.04720449629239737,
+              "nSpikes": 6,
+              "branches": 3
+            }
+          },
+          "skull": {
+            "params": {
+              "s": 0.4054540495947003,
+              "wf": 0.8474160068109632,
+              "turn": -0.01115454374812544,
+              "shroud": false,
+              "round": 0.9352662842883728,
+              "shape": "round",
+              "muzzle": 0.298944620154798,
+              "muzzleY": 0.36762570515275,
+              "fur": true,
+              "jaw": 1.1130064365919679,
+              "chinW": 1.0386058473959565,
+              "skullY": 0.8816015186114237,
+              "chinY": 0.7917262803390621,
+              "press": 1.2522866611834615,
+              "shade": "none",
+              "hollows": false,
+              "construction": false,
+              "darkSkin": true,
+              "plain": true,
+              "skinOn": false,
+              "skinIdx": 7,
+              "skinScrib": true
+            }
+          },
+          "ears": {
+            "params": {
+              "rings": true,
+              "nRings": 1
+            }
+          },
+          "eyes": {
+            "params": {
+              "type": "dot",
+              "type2": "none",
+              "scaleR": 1.0205094620119781,
+              "scale": 1.5342547319130972,
+              "ehJit": 0.975663392432034,
+              "fierce": 0.03942883401177824,
+              "gazeJit": 0.056136860372498626,
+              "sx": 0.6816132287681103,
+              "sink": 0.5927026677876711,
+              "lashes": false,
+              "glint": true
+            }
+          },
+          "brows": {
+            "params": {
+              "on": false,
+              "a": -0.025654482608661044,
+              "thF": 0.04252371136844158,
+              "yF": 0.18362112273462117
+            }
+          },
+          "nose": {
+            "params": {
+              "style": "triangle",
+              "nostril": false,
+              "size": 1.1347115401178598,
+              "snoutLen": 0.9280146065284498,
+              "snoutFat": 1.0237925623776392,
+              "snoutTip": 0.11904402192682029
+            }
+          },
+          "mouth": {
+            "params": {
+              "style": "cat",
+              "myF": 0.5303233085153625,
+              "wF": 0.90770848733373,
+              "beakLen": 1.1118464541621507,
+              "upperLip": false,
+              "crease": false,
+              "nTeeth": 3,
+              "nStitch": 3
+            }
+          },
+          "extras": {
+            "params": {
+              "mark": "none",
+              "mod": "none",
+              "tears": false,
+              "freckles": false,
+              "spots": false,
+              "whiskers": true,
+              "studs": false,
+              "bandage": false,
+              "blush": true,
+              "glasses": false,
+              "antenna": false,
+              "accentIdx": 0,
+              "accidents": true,
+              "smudge": false,
+              "eraser": false
+            }
+          },
+          "tearsWet": {
+            "params": {
+              "len": 0.8526751388446427,
+              "wob": 1.1062992681981996
+            }
+          },
+          "worn": {
+            "params": {
+              "family": "none",
+              "rank": "gilded",
+              "seed": 88749887
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "npc-2bedfe5c",
+      "fingerprint": "2bedfe5c",
+      "batchIndex": 2,
+      "representation": "procedural-2d-canvas-texture",
+      "recipe": {
+        "seed": 199588188,
+        "species": "nightmare",
+        "base": "biped",
+        "color": "auto",
+        "media": "watercolor",
+        "parts": {
+          "tail": {
+            "params": {
+              "style": "curl",
+              "len": 0.9374343099538237,
+              "side": -1
+            }
+          },
+          "legs": {
+            "params": {
+              "style": "noodle",
+              "len": 0.3015664310194552,
+              "foot": "claw"
+            }
+          },
+          "torso": {
+            "params": {
+              "shape": "drop",
+              "wF": 0.4312086958345026,
+              "hF": 0.6614126180112363,
+              "lean": 0.007067028544843201,
+              "pattern": "none",
+              "clothOn": false,
+              "clothIdx": 1,
+              "tone": "black"
+            }
+          },
+          "arms": {
+            "params": {
+              "style": "behind",
+              "len": 1.0099142236402259,
+              "droop": 0.6453985289786942,
+              "asym": 0.04830006798263639,
+              "hand": "dot"
+            }
+          },
+          "wings": {
+            "params": {
+              "style": "none",
+              "len": 1.1059660512022673,
+              "feathers": 4
+            }
+          },
+          "paws": {
+            "params": {
+              "front": "oval",
+              "spread": 1.1749208388733678,
+              "toes": true
+            }
+          },
+          "quadlegs": {
+            "params": {
+              "thick": 1.0176456362009048,
+              "toes": false,
+              "back": true
+            }
+          },
+          "offhand": {
+            "params": {
+              "family": "none",
+              "rank": "sketch",
+              "seed": 873913873
+            }
+          },
+          "held": {
+            "params": {
+              "family": "none",
+              "rank": "sketch",
+              "seed": 703516224
+            }
+          },
+          "hair": {
+            "params": {
+              "style": "bald",
+              "tone": "black",
+              "colOn": false,
+              "colIdx": 4,
+              "bang": "none",
+              "bangN": 5,
+              "cpart": false,
+              "longZig": true,
+              "longNt": 3,
+              "flare": 1.1977554697310553,
+              "fall": 0.8753516099415719,
+              "spikyN": 12,
+              "bunsTop": false,
+              "afroR": 1.2092642756551504,
+              "mohawkN": 6,
+              "tailUp": false
+            }
+          },
+          "crest": {
+            "params": {
+              "style": "antlers",
+              "tone": "dark",
+              "len": 1.2644432959146799,
+              "curve": -0.4393225842155516,
+              "spread": 0.5906056764721871,
+              "tilt": -0.260111441463232,
+              "earAsym": -0.13248186454176902,
+              "nSpikes": 5,
+              "branches": 2
+            }
+          },
+          "skull": {
+            "params": {
+              "s": 0.5993062650738284,
+              "wf": 0.9609171464666724,
+              "turn": 0.0016926887445151834,
+              "shroud": true,
+              "round": 0.8238649391732178,
+              "shape": "tall",
+              "muzzle": 0.1207187930494547,
+              "muzzleY": 0.6698880507610738,
+              "fur": false,
+              "jaw": 1.050492725195363,
+              "chinW": 1.1111795892938972,
+              "skullY": 0.8955257005663588,
+              "chinY": 0.759325900808908,
+              "press": 1.4995868682395668,
+              "shade": "none",
+              "hollows": false,
+              "construction": false,
+              "darkSkin": false,
+              "plain": false,
+              "skinOn": false,
+              "skinIdx": 0,
+              "skinScrib": false
+            }
+          },
+          "ears": {
+            "params": {
+              "rings": false,
+              "nRings": 1
+            }
+          },
+          "eyes": {
+            "params": {
+              "type": "void",
+              "type2": "none",
+              "scaleR": 0.9530729658668862,
+              "scale": 1.6174005646724252,
+              "ehJit": 0.9205040147062391,
+              "fierce": 0.5049971251748503,
+              "gazeJit": -0.021692552743479615,
+              "sx": 0.5034415220376104,
+              "sink": 0.8243080528220161,
+              "lashes": false,
+              "glint": true
+            }
+          },
+          "brows": {
+            "params": {
+              "on": false,
+              "a": 0.468291678512469,
+              "thF": 0.02170518159121275,
+              "yF": 0.19680870769079775
+            }
+          },
+          "nose": {
+            "params": {
+              "style": "skull",
+              "nostril": false,
+              "size": 0.9554852242581546,
+              "snoutLen": 1.055520600057207,
+              "snoutFat": 0.9665718531003222,
+              "snoutTip": 0.06614863120950759
+            }
+          },
+          "mouth": {
+            "params": {
+              "style": "fangs",
+              "myF": 0.456466284818016,
+              "wF": 1.3201618700288238,
+              "beakLen": 1.398941839626059,
+              "upperLip": false,
+              "crease": true,
+              "nTeeth": 4,
+              "nStitch": 5
+            }
+          },
+          "extras": {
+            "params": {
+              "mark": "none",
+              "mod": "none",
+              "tears": false,
+              "freckles": false,
+              "spots": false,
+              "whiskers": false,
+              "studs": false,
+              "bandage": false,
+              "blush": false,
+              "glasses": false,
+              "antenna": false,
+              "accentIdx": 0,
+              "accidents": false,
+              "smudge": false,
+              "eraser": false
+            }
+          },
+          "tearsWet": {
+            "params": {
+              "len": 0.8128724060719832,
+              "wob": 0.9462035600328818
+            }
+          },
+          "worn": {
+            "params": {
+              "family": "none",
+              "rank": "inked",
+              "seed": 803054870
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "npc-23fcfc59",
+      "fingerprint": "23fcfc59",
+      "batchIndex": 3,
+      "representation": "procedural-2d-canvas-texture",
+      "recipe": {
+        "seed": 216365807,
+        "species": "cat",
+        "base": "quad",
+        "color": "auto",
+        "media": "ink",
+        "parts": {
+          "tail": {
+            "params": {
+              "style": "curl",
+              "len": 1.2083527485840022,
+              "side": 1
+            }
+          },
+          "legs": {
+            "params": {
+              "style": "stub",
+              "len": 0.5388054439797997,
+              "foot": "oval"
+            }
+          },
+          "torso": {
+            "params": {
+              "shape": "tiny",
+              "wF": 0.40045912178233267,
+              "hF": 0.3684763779491186,
+              "lean": 0.0026639201771467974,
+              "pattern": "belly",
+              "clothOn": true,
+              "clothIdx": 1,
+              "tone": "light"
+            }
+          },
+          "arms": {
+            "params": {
+              "style": "wing",
+              "len": 0.8975475456565618,
+              "droop": 0.9606490290723741,
+              "asym": 0.20310579412151128,
+              "hand": "mitten"
+            }
+          },
+          "wings": {
+            "params": {
+              "style": "open",
+              "len": 1.3987357212230562,
+              "feathers": 5
+            }
+          },
+          "paws": {
+            "params": {
+              "front": "mitten",
+              "spread": 1.1066601061145775,
+              "toes": false
+            }
+          },
+          "quadlegs": {
+            "params": {
+              "thick": 1.1435948245227336,
+              "toes": true,
+              "back": true
+            }
+          },
+          "offhand": {
+            "params": {
+              "family": "none",
+              "rank": "inked",
+              "seed": 105913039
+            }
+          },
+          "held": {
+            "params": {
+              "family": "none",
+              "rank": "sketch",
+              "seed": 729813880
+            }
+          },
+          "hair": {
+            "params": {
+              "style": "bald",
+              "tone": "scribble",
+              "colOn": false,
+              "colIdx": 4,
+              "bang": "none",
+              "bangN": 8,
+              "cpart": true,
+              "longZig": true,
+              "longNt": 5,
+              "flare": 1.1055165127920918,
+              "fall": 0.8346566396416165,
+              "spikyN": 13,
+              "bunsTop": true,
+              "afroR": 1.2202069024648519,
+              "mohawkN": 8,
+              "tailUp": true
+            }
+          },
+          "crest": {
+            "params": {
+              "style": "none",
+              "tone": "skin",
+              "len": 1.2295059009920806,
+              "curve": -0.4310709937475622,
+              "spread": 0.7611044893227518,
+              "tilt": 0.36041307412087925,
+              "earAsym": -0.005281191691756254,
+              "nSpikes": 5,
+              "branches": 3
+            }
+          },
+          "skull": {
+            "params": {
+              "s": 0.35365798737388104,
+              "wf": 0.8648682770878077,
+              "turn": -0.05668741464614868,
+              "shroud": false,
+              "round": 0.9526738899806514,
+              "shape": "wide",
+              "muzzle": 0.2203093831334263,
+              "muzzleY": 0.37225522112101317,
+              "fur": false,
+              "jaw": 1.0187376917805522,
+              "chinW": 0.9545939736068249,
+              "skullY": 0.8955376226594671,
+              "chinY": 0.795293823000975,
+              "press": 1.057345723733306,
+              "shade": "scrib",
+              "hollows": false,
+              "construction": false,
+              "darkSkin": true,
+              "plain": false,
+              "skinOn": true,
+              "skinIdx": 0,
+              "skinScrib": true
+            }
+          },
+          "ears": {
+            "params": {
+              "rings": true,
+              "nRings": 2
+            }
+          },
+          "eyes": {
+            "params": {
+              "type": "dot",
+              "type2": "none",
+              "scaleR": 0.9146284907474183,
+              "scale": 1.3879296573228204,
+              "ehJit": 0.9227505869232119,
+              "fierce": 0.17038044454529883,
+              "gazeJit": -0.00660746344365179,
+              "sx": 0.7077031767787412,
+              "sink": 0.8213357606786302,
+              "lashes": false,
+              "glint": true
+            }
+          },
+          "brows": {
+            "params": {
+              "on": false,
+              "a": 0.36574038767721506,
+              "thF": 0.025122146926820278,
+              "yF": 0.17967788828536868
+            }
+          },
+          "nose": {
+            "params": {
+              "style": "button",
+              "nostril": true,
+              "size": 1.1013564810622483,
+              "snoutLen": 0.7963619699003175,
+              "snoutFat": 0.9111408869037405,
+              "snoutTip": 0.1643577268533409
+            }
+          },
+          "mouth": {
+            "params": {
+              "style": "cat",
+              "myF": 0.4217358694039285,
+              "wF": 0.8409845637623221,
+              "beakLen": 0.8545472864992917,
+              "upperLip": false,
+              "crease": true,
+              "nTeeth": 3,
+              "nStitch": 4
+            }
+          },
+          "extras": {
+            "params": {
+              "mark": "none",
+              "mod": "none",
+              "tears": false,
+              "freckles": false,
+              "spots": true,
+              "whiskers": true,
+              "studs": false,
+              "bandage": false,
+              "blush": true,
+              "glasses": false,
+              "antenna": false,
+              "accentIdx": 2,
+              "accidents": false,
+              "smudge": false,
+              "eraser": false
+            }
+          },
+          "tearsWet": {
+            "params": {
+              "len": 1.0791367774247191,
+              "wob": 0.9392428124789148
+            }
+          },
+          "worn": {
+            "params": {
+              "family": "none",
+              "rank": "gilded",
+              "seed": 606064941
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "npc-8fdde9a0",
+      "fingerprint": "8fdde9a0",
+      "batchIndex": 4,
+      "representation": "procedural-2d-canvas-texture",
+      "recipe": {
+        "seed": 166032950,
+        "species": "cat",
+        "base": "quad",
+        "color": "auto",
+        "media": "watercolor",
+        "parts": {
+          "tail": {
+            "params": {
+              "style": "curl",
+              "len": 1.1673869551159441,
+              "side": -1
+            }
+          },
+          "legs": {
+            "params": {
+              "style": "wide",
+              "len": 0.42200627205893393,
+              "foot": "mitten"
+            }
+          },
+          "torso": {
+            "params": {
+              "shape": "bean",
+              "wF": 0.5115332819567993,
+              "hF": 0.447424086779356,
+              "lean": 0.03975007250905037,
+              "pattern": "belly",
+              "clothOn": true,
+              "clothIdx": 2,
+              "tone": "scribble"
+            }
+          },
+          "arms": {
+            "params": {
+              "style": "wing",
+              "len": 0.8577993216924369,
+              "droop": 0.4618527058046311,
+              "asym": 0.05167569939047098,
+              "hand": "claw"
+            }
+          },
+          "wings": {
+            "params": {
+              "style": "open",
+              "len": 1.3665583218447863,
+              "feathers": 3
+            }
+          },
+          "paws": {
+            "params": {
+              "front": "claw",
+              "spread": 1.1677707445225678,
+              "toes": false
+            }
+          },
+          "quadlegs": {
+            "params": {
+              "thick": 1.1192464136518538,
+              "toes": true,
+              "back": false
+            }
+          },
+          "offhand": {
+            "params": {
+              "family": "none",
+              "rank": "inked",
+              "seed": 722871045
+            }
+          },
+          "held": {
+            "params": {
+              "family": "none",
+              "rank": "sketch",
+              "seed": 1340261
+            }
+          },
+          "hair": {
+            "params": {
+              "style": "bald",
+              "tone": "light",
+              "colOn": false,
+              "colIdx": 0,
+              "bang": "none",
+              "bangN": 9,
+              "cpart": true,
+              "longZig": true,
+              "longNt": 5,
+              "flare": 1.0558987697190605,
+              "fall": 0.8294669496826828,
+              "spikyN": 12,
+              "bunsTop": true,
+              "afroR": 1.0437548618670554,
+              "mohawkN": 6,
+              "tailUp": false
+            }
+          },
+          "crest": {
+            "params": {
+              "style": "cat",
+              "tone": "skin",
+              "len": 1.076751317945309,
+              "curve": -0.3842533340677619,
+              "spread": 0.7448941257502883,
+              "tilt": -0.03536051232367754,
+              "earAsym": 0.17407929436303674,
+              "nSpikes": 5,
+              "branches": 3
+            }
+          },
+          "skull": {
+            "params": {
+              "s": 0.39387654171092434,
+              "wf": 0.8402711693383753,
+              "turn": 0.09458006257191301,
+              "shroud": false,
+              "round": 0.8882917461148463,
+              "shape": "wide",
+              "muzzle": 0.22731453138403593,
+              "muzzleY": 0.4108783167228103,
+              "fur": false,
+              "jaw": 0.9092568187974394,
+              "chinW": 1.0218687751330435,
+              "skullY": 0.9635177912935615,
+              "chinY": 0.7471127218520268,
+              "press": 1.0665203507058323,
+              "shade": "scrib",
+              "hollows": false,
+              "construction": false,
+              "darkSkin": false,
+              "plain": false,
+              "skinOn": false,
+              "skinIdx": 4,
+              "skinScrib": false
+            }
+          },
+          "ears": {
+            "params": {
+              "rings": false,
+              "nRings": 1
+            }
+          },
+          "eyes": {
+            "params": {
+              "type": "dot",
+              "type2": "dot",
+              "scaleR": 0.9932259323773907,
+              "scale": 1.6164900201023555,
+              "ehJit": 1.025509880948812,
+              "fierce": 0.477866327436641,
+              "gazeJit": 0.028943881439045083,
+              "sx": 0.610741139082238,
+              "sink": 0.7648177808849141,
+              "lashes": false,
+              "glint": true
+            }
+          },
+          "brows": {
+            "params": {
+              "on": false,
+              "a": 0.26822657641023406,
+              "thF": 0.027758603125810622,
+              "yF": 0.10620408803224564
+            }
+          },
+          "nose": {
+            "params": {
+              "style": "button",
+              "nostril": false,
+              "size": 1.1838058959692717,
+              "snoutLen": 1.4289012366207317,
+              "snoutFat": 0.8803269568132237,
+              "snoutTip": 0.02987187142483891
+            }
+          },
+          "mouth": {
+            "params": {
+              "style": "cat",
+              "myF": 0.45887297175824643,
+              "wF": 0.6074733178014867,
+              "beakLen": 0.9608921582810581,
+              "upperLip": false,
+              "crease": false,
+              "nTeeth": 4,
+              "nStitch": 4
+            }
+          },
+          "extras": {
+            "params": {
+              "mark": "none",
+              "mod": "none",
+              "tears": false,
+              "freckles": true,
+              "spots": false,
+              "whiskers": true,
+              "studs": true,
+              "bandage": false,
+              "blush": true,
+              "glasses": false,
+              "antenna": false,
+              "accentIdx": 2,
+              "accidents": false,
+              "smudge": false,
+              "eraser": false
+            }
+          },
+          "tearsWet": {
+            "params": {
+              "len": 1.0297354410751722,
+              "wob": 1.1634089893894268
+            }
+          },
+          "worn": {
+            "params": {
+              "family": "none",
+              "rank": "gilded",
+              "seed": 837234258
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "npc-8c273d4f",
+      "fingerprint": "8c273d4f",
+      "batchIndex": 5,
+      "representation": "procedural-2d-canvas-texture",
+      "recipe": {
+        "seed": 182810569,
+        "species": "nightmare",
+        "base": "sit",
+        "color": "auto",
+        "media": "oil",
+        "parts": {
+          "tail": {
+            "params": {
+              "style": "none",
+              "len": 1.2394246829673647,
+              "side": 1
+            }
+          },
+          "legs": {
+            "params": {
+              "style": "noodle",
+              "len": 0.568962946627289,
+              "foot": "oval"
+            }
+          },
+          "torso": {
+            "params": {
+              "shape": "tiny",
+              "wF": 0.5736145757650957,
+              "hF": 0.531600143685937,
+              "lean": 0.0063866509683430245,
+              "pattern": "buttons",
+              "clothOn": true,
+              "clothIdx": 2,
+              "tone": "black"
+            }
+          },
+          "arms": {
+            "params": {
+              "style": "noodle",
+              "len": 1.0756809333804995,
+              "droop": 0.3757972192135639,
+              "asym": -0.18653331525158137,
+              "hand": "claw"
+            }
+          },
+          "wings": {
+            "params": {
+              "style": "folded",
+              "len": 1.025888778711669,
+              "feathers": 4
+            }
+          },
+          "paws": {
+            "params": {
+              "front": "mitten",
+              "spread": 0.8621470603975467,
+              "toes": true
+            }
+          },
+          "quadlegs": {
+            "params": {
+              "thick": 1.1026518034748733,
+              "toes": true,
+              "back": true
+            }
+          },
+          "offhand": {
+            "params": {
+              "family": "none",
+              "rank": "inked",
+              "seed": 100213420
+            }
+          },
+          "held": {
+            "params": {
+              "family": "none",
+              "rank": "sketch",
+              "seed": 313513860
+            }
+          },
+          "hair": {
+            "params": {
+              "style": "bald",
+              "tone": "hatch",
+              "colOn": false,
+              "colIdx": 1,
+              "bang": "none",
+              "bangN": 10,
+              "cpart": false,
+              "longZig": true,
+              "longNt": 3,
+              "flare": 1.0531936924741603,
+              "fall": 0.9091069335467182,
+              "spikyN": 12,
+              "bunsTop": true,
+              "afroR": 1.0448015077505262,
+              "mohawkN": 7,
+              "tailUp": true
+            }
+          },
+          "crest": {
+            "params": {
+              "style": "spikes",
+              "tone": "dark",
+              "len": 0.8604312630137428,
+              "curve": -0.47072199755348265,
+              "spread": 0.6101315392926335,
+              "tilt": -0.17153015490621326,
+              "earAsym": -0.05783234387636185,
+              "nSpikes": 8,
+              "branches": 3
+            }
+          },
+          "skull": {
+            "params": {
+              "s": 0.5969661957398057,
+              "wf": 0.8979227662086486,
+              "turn": 0.09584730956703424,
+              "shroud": false,
+              "round": 0.9603403205331414,
+              "shape": "bumpy",
+              "muzzle": 0.04437746011652052,
+              "muzzleY": 0.619828082760796,
+              "fur": false,
+              "jaw": 1.1386249735136516,
+              "chinW": 0.9134831069037318,
+              "skullY": 0.9711669025430456,
+              "chinY": 0.8101889813877642,
+              "press": 1.0331961845513433,
+              "shade": "none",
+              "hollows": false,
+              "construction": false,
+              "darkSkin": false,
+              "plain": false,
+              "skinOn": false,
+              "skinIdx": 4,
+              "skinScrib": true
+            }
+          },
+          "ears": {
+            "params": {
+              "rings": false,
+              "nRings": 3
+            }
+          },
+          "eyes": {
+            "params": {
+              "type": "void",
+              "type2": "void",
+              "scaleR": 0.9025865543284454,
+              "scale": 1.4028723883908243,
+              "ehJit": 0.9817375178448856,
+              "fierce": 0.4538826194591821,
+              "gazeJit": 0.06314709181897343,
+              "sx": 0.44629048521164805,
+              "sink": 0.7486613974208012,
+              "lashes": false,
+              "glint": false
+            }
+          },
+          "brows": {
+            "params": {
+              "on": true,
+              "a": 0.1589402657002211,
+              "thF": 0.046821256957948205,
+              "yF": 0.1988575865281746
+            }
+          },
+          "nose": {
+            "params": {
+              "style": "skull",
+              "nostril": false,
+              "size": 1.1683141454821453,
+              "snoutLen": 1.4827921394607984,
+              "snoutFat": 1.1075736535247416,
+              "snoutTip": 0.15033525645732884
+            }
+          },
+          "mouth": {
+            "params": {
+              "style": "void",
+              "myF": 0.4405228753760457,
+              "wF": 1.8573191566858442,
+              "beakLen": 0.8387915596365929,
+              "upperLip": false,
+              "crease": false,
+              "nTeeth": 4,
+              "nStitch": 4
+            }
+          },
+          "extras": {
+            "params": {
+              "mark": "seam",
+              "mod": "none",
+              "tears": false,
+              "freckles": false,
+              "spots": false,
+              "whiskers": false,
+              "studs": false,
+              "bandage": false,
+              "blush": true,
+              "glasses": false,
+              "antenna": false,
+              "accentIdx": 2,
+              "accidents": false,
+              "smudge": false,
+              "eraser": false
+            }
+          },
+          "tearsWet": {
+            "params": {
+              "len": 0.7006842043832875,
+              "wob": 0.8686127015156672
+            }
+          },
+          "worn": {
+            "params": {
+              "family": "none",
+              "rank": "sketch",
+              "seed": 224653779
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "npc-65d45772",
+      "fingerprint": "65d45772",
+      "batchIndex": 6,
+      "representation": "procedural-2d-canvas-texture",
+      "recipe": {
+        "seed": 132477712,
+        "species": "dog",
+        "base": "quad",
+        "color": "auto",
+        "media": "ink",
+        "parts": {
+          "tail": {
+            "params": {
+              "style": "wag",
+              "len": 1.2625885822810232,
+              "side": -1
+            }
+          },
+          "legs": {
+            "params": {
+              "style": "stub",
+              "len": 0.5039985724724829,
+              "foot": "claw"
+            }
+          },
+          "torso": {
+            "params": {
+              "shape": "bean",
+              "wF": 0.5730248910933733,
+              "hF": 0.5027734885364771,
+              "lean": -0.04212554516270757,
+              "pattern": "none",
+              "clothOn": false,
+              "clothIdx": 0,
+              "tone": "light"
+            }
+          },
+          "arms": {
+            "params": {
+              "style": "clasped",
+              "len": 0.8254542205482721,
+              "droop": 0.41672305981628593,
+              "asym": 0.17957728004083037,
+              "hand": "dot"
+            }
+          },
+          "wings": {
+            "params": {
+              "style": "folded",
+              "len": 1.3326850513461976,
+              "feathers": 4
+            }
+          },
+          "paws": {
+            "params": {
+              "front": "oval",
+              "spread": 1.138217865547631,
+              "toes": false
+            }
+          },
+          "quadlegs": {
+            "params": {
+              "thick": 0.8120590922422708,
+              "toes": true,
+              "back": true
+            }
+          },
+          "offhand": {
+            "params": {
+              "family": "none",
+              "rank": "sketch",
+              "seed": 980249956
+            }
+          },
+          "held": {
+            "params": {
+              "family": "none",
+              "rank": "sketch",
+              "seed": 3576932
+            }
+          },
+          "hair": {
+            "params": {
+              "style": "bald",
+              "tone": "black",
+              "colOn": true,
+              "colIdx": 1,
+              "bang": "none",
+              "bangN": 11,
+              "cpart": true,
+              "longZig": false,
+              "longNt": 3,
+              "flare": 1.0970422197273,
+              "fall": 0.8965487486915663,
+              "spikyN": 11,
+              "bunsTop": false,
+              "afroR": 1.1763663369324058,
+              "mohawkN": 8,
+              "tailUp": true
+            }
+          },
+          "crest": {
+            "params": {
+              "style": "floppy",
+              "tone": "skin",
+              "len": 1.917963180085644,
+              "curve": 0.8344764315057545,
+              "spread": 1.0585356172546745,
+              "tilt": 0.4696454359218479,
+              "earAsym": 0.1767292182799429,
+              "nSpikes": 5,
+              "branches": 3
+            }
+          },
+          "skull": {
+            "params": {
+              "s": 0.3171537232049741,
+              "wf": 0.9128657502122224,
+              "turn": -0.43333254287485035,
+              "shroud": false,
+              "round": 0.8444945881189778,
+              "shape": "lump",
+              "muzzle": 0.40907556131016465,
+              "muzzleY": 0.6178591546136887,
+              "fur": false,
+              "jaw": 0.9569123636232689,
+              "chinW": 1.0033549983985721,
+              "skullY": 1.007650019270368,
+              "chinY": 0.743669063183479,
+              "press": 1.3438728619832547,
+              "shade": "none",
+              "hollows": false,
+              "construction": false,
+              "darkSkin": false,
+              "plain": false,
+              "skinOn": false,
+              "skinIdx": 3,
+              "skinScrib": true
+            }
+          },
+          "ears": {
+            "params": {
+              "rings": true,
+              "nRings": 3
+            }
+          },
+          "eyes": {
+            "params": {
+              "type": "dot",
+              "type2": "dot",
+              "scaleR": 0.9000163461896591,
+              "scale": 1.0299743114039301,
+              "ehJit": 0.9042353772092611,
+              "fierce": 0.2141237813979388,
+              "gazeJit": 0.044938813056796784,
+              "sx": 0.45181537215132267,
+              "sink": 0.6401756551815196,
+              "lashes": false,
+              "glint": false
+            }
+          },
+          "brows": {
+            "params": {
+              "on": false,
+              "a": 0.490380749758333,
+              "thF": 0.03138837038725614,
+              "yF": 0.18213130270596595
+            }
+          },
+          "nose": {
+            "params": {
+              "style": "button",
+              "nostril": true,
+              "size": 1.523746180627495,
+              "snoutLen": 1.1618155135656707,
+              "snoutFat": 1.0901914330432192,
+              "snoutTip": 0.16633011793717742
+            }
+          },
+          "mouth": {
+            "params": {
+              "style": "tongue",
+              "myF": 0.5456624232558533,
+              "wF": 1.3288878926192411,
+              "beakLen": 1.329443870903924,
+              "upperLip": false,
+              "crease": true,
+              "nTeeth": 4,
+              "nStitch": 5
+            }
+          },
+          "extras": {
+            "params": {
+              "mark": "none",
+              "mod": "none",
+              "tears": false,
+              "freckles": false,
+              "spots": true,
+              "whiskers": false,
+              "studs": false,
+              "bandage": false,
+              "blush": false,
+              "glasses": false,
+              "antenna": false,
+              "accentIdx": 1,
+              "accidents": false,
+              "smudge": false,
+              "eraser": false
+            }
+          },
+          "tearsWet": {
+            "params": {
+              "len": 0.9630535710253751,
+              "wob": 1.065859618585091
+            }
+          },
+          "worn": {
+            "params": {
+              "family": "none",
+              "rank": "sketch",
+              "seed": 813228347
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "npc-d1b61381",
+      "fingerprint": "d1b61381",
+      "batchIndex": 7,
+      "representation": "procedural-2d-canvas-texture",
+      "recipe": {
+        "seed": 149255331,
+        "species": "human",
+        "base": "biped",
+        "color": "auto",
+        "media": "ink",
+        "parts": {
+          "tail": {
+            "params": {
+              "style": "none",
+              "len": 1.3831550649367272,
+              "side": 1
+            }
+          },
+          "legs": {
+            "params": {
+              "style": "stub",
+              "len": 0.5606427948921919,
+              "foot": "oval"
+            }
+          },
+          "torso": {
+            "params": {
+              "shape": "round",
+              "wF": 0.4052900527603924,
+              "hF": 0.6779548928886652,
+              "lean": 0.02951502271927893,
+              "pattern": "none",
+              "clothOn": true,
+              "clothIdx": 0,
+              "tone": "scribble"
+            }
+          },
+          "arms": {
+            "params": {
+              "style": "wing",
+              "len": 0.6067019795067609,
+              "droop": 0.4971742553403601,
+              "asym": 0.16542862026952207,
+              "hand": "claw"
+            }
+          },
+          "wings": {
+            "params": {
+              "style": "folded",
+              "len": 1.311148393061012,
+              "feathers": 3
+            }
+          },
+          "paws": {
+            "params": {
+              "front": "oval",
+              "spread": 1.1220239089103416,
+              "toes": false
+            }
+          },
+          "quadlegs": {
+            "params": {
+              "thick": 0.8141776678152383,
+              "toes": true,
+              "back": true
+            }
+          },
+          "offhand": {
+            "params": {
+              "family": "none",
+              "rank": "inked",
+              "seed": 82475530
+            }
+          },
+          "held": {
+            "params": {
+              "family": "lamp",
+              "rank": "sketch",
+              "seed": 64669699
+            }
+          },
+          "hair": {
+            "params": {
+              "style": "bob",
+              "tone": "stipple",
+              "colOn": false,
+              "colIdx": 1,
+              "bang": "clumps",
+              "bangN": 11,
+              "cpart": false,
+              "longZig": true,
+              "longNt": 5,
+              "flare": 1.0269942584307863,
+              "fall": 0.8258046670467593,
+              "spikyN": 12,
+              "bunsTop": true,
+              "afroR": 1.0974494186975061,
+              "mohawkN": 6,
+              "tailUp": true
+            }
+          },
+          "crest": {
+            "params": {
+              "style": "none",
+              "tone": "bone",
+              "len": 1.269860222726129,
+              "curve": 0.34726298325695093,
+              "spread": 0.7735645970422775,
+              "tilt": 0.34145267475396396,
+              "earAsym": 0.006412254367023695,
+              "nSpikes": 5,
+              "branches": 3
+            }
+          },
+          "skull": {
+            "params": {
+              "s": 0.650081239733845,
+              "wf": 0.8522659284248948,
+              "turn": -0.09468128443695606,
+              "shroud": false,
+              "round": 0.9595526185748167,
+              "shape": "tall",
+              "muzzle": 0,
+              "muzzleY": 0.6717657604720444,
+              "fur": false,
+              "jaw": 1.0402529852930456,
+              "chinW": 1.0558316341601313,
+              "skullY": 1.0180681322980671,
+              "chinY": 0.744428027542308,
+              "press": 1.0272592258173971,
+              "shade": "hatch",
+              "hollows": false,
+              "construction": false,
+              "darkSkin": false,
+              "plain": false,
+              "skinOn": false,
+              "skinIdx": 5,
+              "skinScrib": true
+            }
+          },
+          "ears": {
+            "params": {
+              "rings": true,
+              "nRings": 1
+            }
+          },
+          "eyes": {
+            "params": {
+              "type": "sparkle",
+              "type2": "saucer",
+              "scaleR": 0.9715166455833242,
+              "scale": 1.430313170980662,
+              "ehJit": 0.9700869884807617,
+              "fierce": 0.004012396326288588,
+              "gazeJit": -0.08868497535586357,
+              "sx": 0.4610923575470224,
+              "sink": 0.6082447663415224,
+              "lashes": false,
+              "glint": true
+            }
+          },
+          "brows": {
+            "params": {
+              "on": false,
+              "a": -0.14792955829761922,
+              "thF": 0.04603866086900234,
+              "yF": 0.10555887015070767
+            }
+          },
+          "nose": {
+            "params": {
+              "style": "triangle",
+              "nostril": true,
+              "size": 1.022546698199585,
+              "snoutLen": 1.0333236924489029,
+              "snoutFat": 1.2300810418790207,
+              "snoutTip": -0.02332232778891921
+            }
+          },
+          "mouth": {
+            "params": {
+              "style": "smirk",
+              "myF": 0.5499148295540364,
+              "wF": 1.272362446191255,
+              "beakLen": 1.144366386346519,
+              "upperLip": true,
+              "crease": false,
+              "nTeeth": 4,
+              "nStitch": 5
+            }
+          },
+          "extras": {
+            "params": {
+              "mark": "none",
+              "mod": "cyber",
+              "tears": true,
+              "freckles": true,
+              "spots": false,
+              "whiskers": false,
+              "studs": false,
+              "bandage": false,
+              "blush": false,
+              "glasses": false,
+              "antenna": false,
+              "accentIdx": 2,
+              "accidents": false,
+              "smudge": false,
+              "eraser": false
+            }
+          },
+          "tearsWet": {
+            "params": {
+              "len": 0.7194010479142889,
+              "wob": 1.102767998899799
+            }
+          },
+          "worn": {
+            "params": {
+              "family": "none",
+              "rank": "sketch",
+              "seed": 912551776
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "npc-316f7d63",
+      "fingerprint": "316f7d63",
+      "batchIndex": 8,
+      "representation": "procedural-2d-canvas-texture",
+      "recipe": {
+        "seed": 367364378,
+        "species": "nightmare",
+        "base": "biped",
+        "color": "auto",
+        "media": "graphite",
+        "parts": {
+          "tail": {
+            "params": {
+              "style": "spike",
+              "len": 1.006350785959512,
+              "side": 1
+            }
+          },
+          "legs": {
+            "params": {
+              "style": "stub",
+              "len": 0.6124611160717904,
+              "foot": "oval"
+            }
+          },
+          "torso": {
+            "params": {
+              "shape": "tiny",
+              "wF": 0.41924987323582175,
+              "hF": 0.5458532525599002,
+              "lean": -0.005360121466219427,
+              "pattern": "stripes",
+              "clothOn": false,
+              "clothIdx": 0,
+              "tone": "black"
+            }
+          },
+          "arms": {
+            "params": {
+              "style": "stub",
+              "len": 1.0872185441665352,
+              "droop": 0.908971572224982,
+              "asym": -0.050146589083597065,
+              "hand": "claw"
+            }
+          },
+          "wings": {
+            "params": {
+              "style": "folded",
+              "len": 1.1360399288590997,
+              "feathers": 4
+            }
+          },
+          "paws": {
+            "params": {
+              "front": "oval",
+              "spread": 0.855505233805161,
+              "toes": false
+            }
+          },
+          "quadlegs": {
+            "params": {
+              "thick": 0.9323485150933266,
+              "toes": false,
+              "back": true
+            }
+          },
+          "offhand": {
+            "params": {
+              "family": "none",
+              "rank": "sketch",
+              "seed": 590048863
+            }
+          },
+          "held": {
+            "params": {
+              "family": "none",
+              "rank": "sketch",
+              "seed": 174385189
+            }
+          },
+          "hair": {
+            "params": {
+              "style": "bald",
+              "tone": "hatch",
+              "colOn": false,
+              "colIdx": 2,
+              "bang": "none",
+              "bangN": 8,
+              "cpart": true,
+              "longZig": false,
+              "longNt": 5,
+              "flare": 0.980381403947249,
+              "fall": 0.8889119025552645,
+              "spikyN": 9,
+              "bunsTop": false,
+              "afroR": 1.194203353561461,
+              "mohawkN": 7,
+              "tailUp": true
+            }
+          },
+          "crest": {
+            "params": {
+              "style": "stalks",
+              "tone": "dark",
+              "len": 1.1107036519329996,
+              "curve": 0.11091515403240915,
+              "spread": 0.6387275519222021,
+              "tilt": 0.4186802100390196,
+              "earAsym": -0.0710004865191877,
+              "nSpikes": 6,
+              "branches": 3
+            }
+          },
+          "skull": {
+            "params": {
+              "s": 0.6497078323969618,
+              "wf": 0.8493467781506479,
+              "turn": -0.09612194518558681,
+              "shroud": false,
+              "round": 0.8503225221810862,
+              "shape": "wonky",
+              "muzzle": 0.20170035306364298,
+              "muzzleY": 0.6706377246417106,
+              "fur": false,
+              "jaw": 0.932323818304576,
+              "chinW": 1.1429573204368353,
+              "skullY": 0.955439091352746,
+              "chinY": 0.716030531763099,
+              "press": 1.292936759069562,
+              "shade": "scrib",
+              "hollows": false,
+              "construction": false,
+              "darkSkin": false,
+              "plain": false,
+              "skinOn": true,
+              "skinIdx": 2,
+              "skinScrib": false
+            }
+          },
+          "ears": {
+            "params": {
+              "rings": false,
+              "nRings": 3
+            }
+          },
+          "eyes": {
+            "params": {
+              "type": "void",
+              "type2": "void",
+              "scaleR": 1.0356670254957863,
+              "scale": 1.404505783971399,
+              "ehJit": 0.9953085390385241,
+              "fierce": 0.11353655960410834,
+              "gazeJit": 0.09741511465981603,
+              "sx": 0.5347347345435992,
+              "sink": 0.6912469954462722,
+              "lashes": false,
+              "glint": true
+            }
+          },
+          "brows": {
+            "params": {
+              "on": false,
+              "a": 0.11405473384074868,
+              "thF": 0.0267725775167346,
+              "yF": 0.1376863499870524
+            }
+          },
+          "nose": {
+            "params": {
+              "style": "skull",
+              "nostril": false,
+              "size": 1.0547532491153107,
+              "snoutLen": 1.1836850128602237,
+              "snoutFat": 1.2450132256606594,
+              "snoutTip": 0.0999886357691139
+            }
+          },
+          "mouth": {
+            "params": {
+              "style": "zigzag",
+              "myF": 0.5425999551219867,
+              "wF": 1.007621309091337,
+              "beakLen": 1.2477644153870642,
+              "upperLip": false,
+              "crease": false,
+              "nTeeth": 4,
+              "nStitch": 3
+            }
+          },
+          "extras": {
+            "params": {
+              "mark": "none",
+              "mod": "none",
+              "tears": true,
+              "freckles": false,
+              "spots": false,
+              "whiskers": false,
+              "studs": false,
+              "bandage": true,
+              "blush": false,
+              "glasses": false,
+              "antenna": false,
+              "accentIdx": 0,
+              "accidents": false,
+              "smudge": false,
+              "eraser": false
+            }
+          },
+          "tearsWet": {
+            "params": {
+              "len": 0.9200298473122529,
+              "wob": 1.1905043327598832
+            }
+          },
+          "worn": {
+            "params": {
+              "family": "none",
+              "rank": "sketch",
+              "seed": 770794564
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "npc-0d5e667a",
+      "fingerprint": "0d5e667a",
+      "batchIndex": 9,
+      "representation": "procedural-2d-canvas-texture",
+      "recipe": {
+        "seed": 384141997,
+        "species": "human",
+        "base": "biped",
+        "color": "auto",
+        "media": "oil",
+        "parts": {
+          "tail": {
+            "params": {
+              "style": "none",
+              "len": 1.0150586106348782,
+              "side": -1
+            }
+          },
+          "legs": {
+            "params": {
+              "style": "wide",
+              "len": 0.623163444828242,
+              "foot": "mitten"
+            }
+          },
+          "torso": {
+            "params": {
+              "shape": "round",
+              "wF": 0.5420649999566376,
+              "hF": 0.5031324636936187,
+              "lean": 0.04534828665666282,
+              "pattern": "stripes",
+              "clothOn": true,
+              "clothIdx": 2,
+              "tone": "scribble"
+            }
+          },
+          "arms": {
+            "params": {
+              "style": "wing",
+              "len": 0.6530440021306276,
+              "droop": 0.815082531387452,
+              "asym": -0.0872446965938434,
+              "hand": "mitten"
+            }
+          },
+          "wings": {
+            "params": {
+              "style": "open",
+              "len": 1.2108991193585097,
+              "feathers": 4
+            }
+          },
+          "paws": {
+            "params": {
+              "front": "oval",
+              "spread": 1.1239045135676862,
+              "toes": false
+            }
+          },
+          "quadlegs": {
+            "params": {
+              "thick": 0.9906842730939388,
+              "toes": false,
+              "back": true
+            }
+          },
+          "offhand": {
+            "params": {
+              "family": "none",
+              "rank": "sketch",
+              "seed": 187333559
+            }
+          },
+          "held": {
+            "params": {
+              "family": "none",
+              "rank": "sketch",
+              "seed": 94310805
+            }
+          },
+          "hair": {
+            "params": {
+              "style": "curly",
+              "tone": "light",
+              "colOn": false,
+              "colIdx": 2,
+              "bang": "none",
+              "bangN": 12,
+              "cpart": true,
+              "longZig": true,
+              "longNt": 3,
+              "flare": 1.2072303499141708,
+              "fall": 0.8541503384592943,
+              "spikyN": 10,
+              "bunsTop": true,
+              "afroR": 1.1027721382305027,
+              "mohawkN": 8,
+              "tailUp": true
+            }
+          },
+          "crest": {
+            "params": {
+              "style": "none",
+              "tone": "bone",
+              "len": 0.9121151956729591,
+              "curve": 0.37570579703897233,
+              "spread": 0.5804779073689132,
+              "tilt": 0.27909671440720557,
+              "earAsym": -0.16295189555734396,
+              "nSpikes": 7,
+              "branches": 2
+            }
+          },
+          "skull": {
+            "params": {
+              "s": 0.5723394419066609,
+              "wf": 0.8762431179918349,
+              "turn": -0.048822110239416364,
+              "shroud": false,
+              "round": 0.8965888026333414,
+              "shape": "round",
+              "muzzle": 0,
+              "muzzleY": 0.6970062117092312,
+              "fur": false,
+              "jaw": 1.0520509356050751,
+              "chinW": 1.1196539878845215,
+              "skullY": 0.9525485870987177,
+              "chinY": 0.7368016711762174,
+              "press": 1.3057820069603623,
+              "shade": "none",
+              "hollows": false,
+              "construction": false,
+              "darkSkin": false,
+              "plain": false,
+              "skinOn": true,
+              "skinIdx": 0,
+              "skinScrib": true
+            }
+          },
+          "ears": {
+            "params": {
+              "rings": false,
+              "nRings": 1
+            }
+          },
+          "eyes": {
+            "params": {
+              "type": "angry",
+              "type2": "none",
+              "scaleR": 1.0073435134254396,
+              "scale": 1.2759427557233722,
+              "ehJit": 0.9076310212723911,
+              "fierce": 0.39453401411883543,
+              "gazeJit": -0.08627542681060732,
+              "sx": 0.45320019603706896,
+              "sink": 0.7301010606228374,
+              "lashes": false,
+              "glint": false
+            }
+          },
+          "brows": {
+            "params": {
+              "on": false,
+              "a": 0.36628085796255616,
+              "thF": 0.037017710752785205,
+              "yF": 0.19365649740211666
+            }
+          },
+          "nose": {
+            "params": {
+              "style": "none",
+              "nostril": false,
+              "size": 1.1261415670160204,
+              "snoutLen": 0.9065843898570165,
+              "snoutFat": 0.8344169080490247,
+              "snoutTip": -0.04551846533082426
+            }
+          },
+          "mouth": {
+            "params": {
+              "style": "grit",
+              "myF": 0.5486514018150047,
+              "wF": 1.772399560478516,
+              "beakLen": 1.032002126518637,
+              "upperLip": false,
+              "crease": false,
+              "nTeeth": 3,
+              "nStitch": 3
+            }
+          },
+          "extras": {
+            "params": {
+              "mark": "none",
+              "mod": "none",
+              "tears": false,
+              "freckles": true,
+              "spots": false,
+              "whiskers": false,
+              "studs": true,
+              "bandage": false,
+              "blush": true,
+              "glasses": false,
+              "antenna": false,
+              "accentIdx": 1,
+              "accidents": true,
+              "smudge": true,
+              "eraser": false
+            }
+          },
+          "tearsWet": {
+            "params": {
+              "len": 1.0558771555894053,
+              "wob": 1.1897950052982196
+            }
+          },
+          "worn": {
+            "params": {
+              "family": "none",
+              "rank": "sketch",
+              "seed": 791613709
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "npc-8e87231a",
+      "fingerprint": "8e87231a",
+      "batchIndex": 10,
+      "representation": "procedural-2d-canvas-texture",
+      "recipe": {
+        "seed": 100845119,
+        "species": "human",
+        "base": "biped",
+        "color": "auto",
+        "media": "chalk",
+        "parts": {
+          "tail": {
+            "params": {
+              "style": "none",
+              "len": 1.1978822268545626,
+              "side": 1
+            }
+          },
+          "legs": {
+            "params": {
+              "style": "wide",
+              "len": 0.45678351288661356,
+              "foot": "mitten"
+            }
+          },
+          "torso": {
+            "params": {
+              "shape": "square",
+              "wF": 0.4730157317267731,
+              "hF": 0.42239441484212875,
+              "lean": -0.053799386126920576,
+              "pattern": "none",
+              "clothOn": false,
+              "clothIdx": 5,
+              "tone": "light"
+            }
+          },
+          "arms": {
+            "params": {
+              "style": "noodle",
+              "len": 0.7884882856160402,
+              "droop": 0.7225398941547609,
+              "asym": 0.23680230064317584,
+              "hand": "mitten"
+            }
+          },
+          "wings": {
+            "params": {
+              "style": "open",
+              "len": 0.9648123119026423,
+              "feathers": 4
+            }
+          },
+          "paws": {
+            "params": {
+              "front": "oval",
+              "spread": 0.8620471213944256,
+              "toes": false
+            }
+          },
+          "quadlegs": {
+            "params": {
+              "thick": 1.0681194556877016,
+              "toes": true,
+              "back": true
+            }
+          },
+          "offhand": {
+            "params": {
+              "family": "shield",
+              "rank": "sketch",
+              "seed": 315579919
+            }
+          },
+          "held": {
+            "params": {
+              "family": "none",
+              "rank": "inked",
+              "seed": 819642866
+            }
+          },
+          "hair": {
+            "params": {
+              "style": "spiky",
+              "tone": "light",
+              "colOn": false,
+              "colIdx": 5,
+              "bang": "none",
+              "bangN": 11,
+              "cpart": false,
+              "longZig": true,
+              "longNt": 5,
+              "flare": 1.0109356111753731,
+              "fall": 0.899222670099698,
+              "spikyN": 10,
+              "bunsTop": true,
+              "afroR": 1.13319993856363,
+              "mohawkN": 6,
+              "tailUp": true
+            }
+          },
+          "crest": {
+            "params": {
+              "style": "flower",
+              "tone": "bone",
+              "len": 0.9165943439817056,
+              "curve": 0.7196291806641966,
+              "spread": 0.602366886548698,
+              "tilt": 0.22851061653345822,
+              "earAsym": 0.08717406738549469,
+              "nSpikes": 7,
+              "branches": 3
+            }
+          },
+          "skull": {
+            "params": {
+              "s": 0.6438802508427762,
+              "wf": 0.8760381619073451,
+              "turn": -0.35380804883316164,
+              "shroud": false,
+              "round": 0.8446791947516612,
+              "shape": "bumpy",
+              "muzzle": 0,
+              "muzzleY": 0.7426255113445223,
+              "fur": false,
+              "jaw": 0.9781374371726997,
+              "chinW": 1.0012429364025592,
+              "skullY": 0.9036616507405415,
+              "chinY": 0.7537944726413115,
+              "press": 1.5339477526023986,
+              "shade": "none",
+              "hollows": false,
+              "construction": false,
+              "darkSkin": false,
+              "plain": false,
+              "skinOn": true,
+              "skinIdx": 3,
+              "skinScrib": false
+            }
+          },
+          "ears": {
+            "params": {
+              "rings": false,
+              "nRings": 3
+            }
+          },
+          "eyes": {
+            "params": {
+              "type": "saucer",
+              "type2": "none",
+              "scaleR": 0.9873494926956483,
+              "scale": 1.2315383405424656,
+              "ehJit": 1.037622889271006,
+              "fierce": 0.4297357937786729,
+              "gazeJit": 0.09624514668248593,
+              "sx": 0.5238679993944243,
+              "sink": 0.6367592391557991,
+              "lashes": false,
+              "glint": true
+            }
+          },
+          "brows": {
+            "params": {
+              "on": false,
+              "a": 0.10255717823747548,
+              "thF": 0.04724309875071049,
+              "yF": 0.13053381741046907
+            }
+          },
+          "nose": {
+            "params": {
+              "style": "triangle",
+              "nostril": false,
+              "size": 0.9052591477520764,
+              "snoutLen": 1.1751620284630917,
+              "snoutFat": 1.2122716853162274,
+              "snoutTip": -0.04544369759038091
+            }
+          },
+          "mouth": {
+            "params": {
+              "style": "tiny",
+              "myF": 0.45348702516872436,
+              "wF": 1.183606771065388,
+              "beakLen": 1.2845571656245738,
+              "upperLip": false,
+              "crease": false,
+              "nTeeth": 4,
+              "nStitch": 3
+            }
+          },
+          "extras": {
+            "params": {
+              "mark": "none",
+              "mod": "none",
+              "tears": false,
+              "freckles": false,
+              "spots": false,
+              "whiskers": false,
+              "studs": false,
+              "bandage": false,
+              "blush": false,
+              "glasses": true,
+              "antenna": false,
+              "accentIdx": 0,
+              "accidents": true,
+              "smudge": false,
+              "eraser": false
+            }
+          },
+          "tearsWet": {
+            "params": {
+              "len": 1.1363479403196832,
+              "wob": 1.1500437959330156
+            }
+          },
+          "worn": {
+            "params": {
+              "family": "none",
+              "rank": "sketch",
+              "seed": 319379325
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "npc-feada8a0",
+      "fingerprint": "feada8a0",
+      "batchIndex": 11,
+      "representation": "procedural-2d-canvas-texture",
+      "recipe": {
+        "seed": 84067500,
+        "species": "human",
+        "base": "biped",
+        "color": "auto",
+        "media": "watercolor",
+        "parts": {
+          "tail": {
+            "params": {
+              "style": "none",
+              "len": 1.252500006975606,
+              "side": -1
+            }
+          },
+          "legs": {
+            "params": {
+              "style": "wide",
+              "len": 0.3833597031421959,
+              "foot": "claw"
+            }
+          },
+          "torso": {
+            "params": {
+              "shape": "round",
+              "wF": 0.5621250152122229,
+              "hF": 0.45505887471139433,
+              "lean": 0.0585749863833189,
+              "pattern": "buttons",
+              "clothOn": true,
+              "clothIdx": 6,
+              "tone": "scribble"
+            }
+          },
+          "arms": {
+            "params": {
+              "style": "clasped",
+              "len": 0.9239067991264165,
+              "droop": 0.8149460637941957,
+              "asym": -0.1196705929748714,
+              "hand": "dot"
+            }
+          },
+          "wings": {
+            "params": {
+              "style": "open",
+              "len": 1.2592498193029313,
+              "feathers": 4
+            }
+          },
+          "paws": {
+            "params": {
+              "front": "mitten",
+              "spread": 1.16388280474348,
+              "toes": false
+            }
+          },
+          "quadlegs": {
+            "params": {
+              "thick": 1.1154364360496403,
+              "toes": true,
+              "back": true
+            }
+          },
+          "offhand": {
+            "params": {
+              "family": "none",
+              "rank": "sketch",
+              "seed": 950896403
+            }
+          },
+          "held": {
+            "params": {
+              "family": "none",
+              "rank": "inked",
+              "seed": 957303274
+            }
+          },
+          "hair": {
+            "params": {
+              "style": "spiky",
+              "tone": "stipple",
+              "colOn": false,
+              "colIdx": 0,
+              "bang": "none",
+              "bangN": 7,
+              "cpart": true,
+              "longZig": true,
+              "longNt": 3,
+              "flare": 0.8648211307497695,
+              "fall": 0.8069209353881889,
+              "spikyN": 13,
+              "bunsTop": true,
+              "afroR": 1.1818364334851503,
+              "mohawkN": 8,
+              "tailUp": true
+            }
+          },
+          "crest": {
+            "params": {
+              "style": "none",
+              "tone": "bone",
+              "len": 1.140125378407538,
+              "curve": 0.7870443037245423,
+              "spread": 0.6974378986191004,
+              "tilt": 0.37312619648873807,
+              "earAsym": -0.08035851117223503,
+              "nSpikes": 7,
+              "branches": 3
+            }
+          },
+          "skull": {
+            "params": {
+              "s": 0.585645603814628,
+              "wf": 0.8274216966889798,
+              "turn": 0.018190827267244455,
+              "shroud": false,
+              "round": 0.9128762238589115,
+              "shape": "square",
+              "muzzle": 0,
+              "muzzleY": 0.6241090424358845,
+              "fur": false,
+              "jaw": 1.0100718498346395,
+              "chinW": 1.0246620574966072,
+              "skullY": 0.8942898309370503,
+              "chinY": 0.8238024168461561,
+              "press": 1.5265970939770341,
+              "shade": "hatch",
+              "hollows": false,
+              "construction": false,
+              "darkSkin": false,
+              "plain": false,
+              "skinOn": true,
+              "skinIdx": 3,
+              "skinScrib": false
+            }
+          },
+          "ears": {
+            "params": {
+              "rings": true,
+              "nRings": 2
+            }
+          },
+          "eyes": {
+            "params": {
+              "type": "happy",
+              "type2": "saucer",
+              "scaleR": 0.9697439013514668,
+              "scale": 1.2735959220211954,
+              "ehJit": 1.0720427537802608,
+              "fierce": 0.39396881288848823,
+              "gazeJit": -0.017078021774068475,
+              "sx": 0.4730848937481642,
+              "sink": 0.6383075146120973,
+              "lashes": false,
+              "glint": true
+            }
+          },
+          "brows": {
+            "params": {
+              "on": true,
+              "a": 0.2826552621321753,
+              "thF": 0.047324511893093585,
+              "yF": 0.13861211519688368
+            }
+          },
+          "nose": {
+            "params": {
+              "style": "none",
+              "nostril": true,
+              "size": 1.1486832534195854,
+              "snoutLen": 1.0331187779665925,
+              "snoutFat": 1.0090064159128815,
+              "snoutTip": 0.08172883084975185
+            }
+          },
+          "mouth": {
+            "params": {
+              "style": "wobble",
+              "myF": 0.47580954547040166,
+              "wF": 1.3848487327224577,
+              "beakLen": 1.220440916577354,
+              "upperLip": false,
+              "crease": false,
+              "nTeeth": 4,
+              "nStitch": 5
+            }
+          },
+          "extras": {
+            "params": {
+              "mark": "none",
+              "mod": "none",
+              "tears": false,
+              "freckles": true,
+              "spots": false,
+              "whiskers": false,
+              "studs": false,
+              "bandage": false,
+              "blush": false,
+              "glasses": true,
+              "antenna": false,
+              "accentIdx": 2,
+              "accidents": false,
+              "smudge": false,
+              "eraser": false
+            }
+          },
+          "tearsWet": {
+            "params": {
+              "len": 0.706273266323842,
+              "wob": 1.1779094977770002
+            }
+          },
+          "worn": {
+            "params": {
+              "family": "none",
+              "rank": "sketch",
+              "seed": 340552421
+            }
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,265 @@
+{
+  "schemaVersion": "kindergrimm-cross-backend-asset-lab-browser-review/1.0",
+  "canonicalUrl": "http://127.0.0.1:8882/projects/kindergrimm/asset-lab/",
+  "capturedAt": "2026-08-25T06:07:59.346Z",
+  "loadMs": 1443,
+  "desktop": {
+    "snapshot": {
+      "canRender": true,
+      "renderOff": false,
+      "busy": false,
+      "activeMode": "character",
+      "assetId": "harbour-courier-240824",
+      "seed": 240824,
+      "species": "human",
+      "fingerprint": "kg-6b67b7fd",
+      "mapping": [
+        "exact",
+        "adapted",
+        "adapted",
+        "local",
+        "unsupported"
+      ],
+      "nativeSeeds": [
+        240824,
+        240824,
+        240824
+      ],
+      "readiness": 3,
+      "characterCanvases": 3,
+      "canvases": 3,
+      "styleCapabilities": 15,
+      "itemFamilies": 13,
+      "itemRanks": 4,
+      "environmentSpecies": 5,
+      "environmentPalettes": 6,
+      "itemFingerprint": null,
+      "environmentFingerprint": null,
+      "sceneFingerprint": null,
+      "scenePresetCount": 3,
+      "scenePreviewCount": 0,
+      "sceneExplanationCount": 0,
+      "fallbackVisible": false,
+      "capabilitySummary": {
+        "modes": 5,
+        "characterBackends": 3,
+        "media": 6,
+        "historyStyles": 9,
+        "itemFamilies": 13,
+        "itemRanks": 4,
+        "environmentSpecies": 5,
+        "environmentPalettes": 6
+      }
+    },
+    "viewport": 1440,
+    "scrollWidth": 1440,
+    "title": "用源库生成可进入场景的素材",
+    "cards": 3,
+    "canvasSizes": [
+      {
+        "width": 325,
+        "height": 325
+      },
+      {
+        "width": 325,
+        "height": 325
+      },
+      {
+        "width": 325,
+        "height": 325
+      }
+    ],
+    "sourceBoundary": true
+  },
+  "interaction": {
+    "snapshot": {
+      "canRender": true,
+      "renderOff": false,
+      "busy": false,
+      "activeMode": "character",
+      "assetId": "forest-scout-418203",
+      "seed": 418203,
+      "species": "cat",
+      "fingerprint": "kg-bed167fd",
+      "mapping": [
+        "exact",
+        "exact",
+        "adapted",
+        "local",
+        "unsupported"
+      ],
+      "nativeSeeds": [
+        418203,
+        418203,
+        418203
+      ],
+      "readiness": 3,
+      "characterCanvases": 3,
+      "canvases": 3,
+      "styleCapabilities": 15,
+      "itemFamilies": 13,
+      "itemRanks": 4,
+      "environmentSpecies": 5,
+      "environmentPalettes": 6,
+      "itemFingerprint": null,
+      "environmentFingerprint": null,
+      "sceneFingerprint": null,
+      "scenePresetCount": 3,
+      "scenePreviewCount": 0,
+      "sceneExplanationCount": 0,
+      "fallbackVisible": false,
+      "capabilitySummary": {
+        "modes": 5,
+        "characterBackends": 3,
+        "media": 6,
+        "historyStyles": 9,
+        "itemFamilies": 13,
+        "itemRanks": 4,
+        "environmentSpecies": 5,
+        "environmentPalettes": 6
+      }
+    },
+    "intent": {
+      "schemaVersion": "kindergrimm-asset-intent/1.0",
+      "assetId": "forest-scout-418203",
+      "seed": 418203,
+      "species": "cat",
+      "look": "field",
+      "sceneRole": "companion"
+    },
+    "statLabels": [
+      "10 parts · 13 planes · marker",
+      "1040 voxels · 2436 tris · 9 parts",
+      "19 meshes · 47686 verts · flocked"
+    ]
+  },
+  "exportResult": {
+    "fileCount": 4,
+    "pngs": [
+      {
+        "backend": "drawn",
+        "bytes": 122729,
+        "width": 768,
+        "height": 768,
+        "shaLength": 64
+      },
+      {
+        "backend": "voxel",
+        "bytes": 84167,
+        "width": 768,
+        "height": 768,
+        "shaLength": 64
+      },
+      {
+        "backend": "gloss",
+        "bytes": 122243,
+        "width": 768,
+        "height": 768,
+        "shaLength": 64
+      }
+    ],
+    "manifestBytes": 16775,
+    "manifest": {
+      "schemaVersion": "kindergrimm-scene-asset-manifest/1.0",
+      "commit": "5857b1e1cae2713d6714ad7dd7f89626bb242f0f",
+      "outputCount": 3,
+      "runtimeModel": "none",
+      "fingerprint": "kg-bed167fd"
+    }
+  },
+  "invalid": {
+    "message": "Seed 必须是 1–2147483647 的整数。",
+    "currentSeed": 418203
+  },
+  "keyboard": {
+    "seed": 418204,
+    "activeTag": "BODY",
+    "outline": "3px"
+  },
+  "tablet": {
+    "viewport": 1024,
+    "scrollWidth": 1024,
+    "columns": "473.281px 473.281px"
+  },
+  "mobile": {
+    "viewport": 390,
+    "scrollWidth": 390,
+    "columns": "353.219px",
+    "canvasWidth": 351,
+    "exportVisible": true
+  },
+  "reduced": {
+    "matched": true,
+    "scrollBehavior": "auto"
+  },
+  "fallback": {
+    "snapshot": {
+      "canRender": false,
+      "renderOff": true,
+      "busy": false,
+      "activeMode": "character",
+      "assetId": "harbour-courier-240824",
+      "seed": 240824,
+      "species": "human",
+      "fingerprint": "kg-da1071a8",
+      "mapping": [
+        "exact",
+        "adapted",
+        "adapted",
+        "local",
+        "unsupported"
+      ],
+      "nativeSeeds": [
+        240824,
+        240824,
+        240824
+      ],
+      "readiness": 3,
+      "characterCanvases": 0,
+      "canvases": 0,
+      "styleCapabilities": 15,
+      "itemFamilies": 13,
+      "itemRanks": 4,
+      "environmentSpecies": 5,
+      "environmentPalettes": 6,
+      "itemFingerprint": null,
+      "environmentFingerprint": null,
+      "sceneFingerprint": null,
+      "scenePresetCount": 3,
+      "scenePreviewCount": 0,
+      "sceneExplanationCount": 0,
+      "fallbackVisible": true,
+      "capabilitySummary": {
+        "modes": 5,
+        "characterBackends": 3,
+        "media": 6,
+        "historyStyles": 9,
+        "itemFamilies": 13,
+        "itemRanks": 4,
+        "environmentSpecies": 5,
+        "environmentPalettes": 6
+      }
+    },
+    "recipes": 3,
+    "sourceLinks": 3,
+    "exportDisabled": true
+  },
+  "overview": {
+    "links": [
+      "跨形态素材实验室",
+      "生成角色 / 风格 / 道具 / 环境素材（含 Drawn / Voxel / Gloss）",
+      "打开五模式源素材实验室",
+      "Cross-backend Asset Lab"
+    ],
+    "scrollWidth": 1280,
+    "viewport": 1280
+  },
+  "consoleErrors": [],
+  "evidence": [
+    "evidence/asset-lab-desktop.png",
+    "evidence/asset-lab-three-outputs.png",
+    "evidence/asset-lab-tablet.png",
+    "evidence/asset-lab-mobile-outputs.png",
+    "evidence/asset-lab-fallback.png"
+  ]
+}

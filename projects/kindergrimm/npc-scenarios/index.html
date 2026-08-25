@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="使用 KinderGrimm 确定性 Recipe 和真实动画角色构建的 NPC 运行场景。">
+    <title>NPC Runtime Scenarios · Kindergrimm Research</title>
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="./scenarios.css">
+    <script type="importmap">{ "imports": { "three": "../upstream/vendor/three.module.js" } }</script>
+  </head>
+  <body>
+    <a class="skip-link" href="#scene-stage">跳到运行场景</a>
+
+    <header class="topbar">
+      <div class="brand-block">
+        <a class="brand" href="../lab/">KINDERGRIMM / RUNTIME</a>
+        <span>AUTHORED VISUAL CONSUMER · V0.6</span>
+      </div>
+      <nav aria-label="研究导航">
+        <a href="../production-studio/">Production Studio</a>
+        <a href="../npc-factory/">NPC 工厂</a>
+        <a href="../lab/">能力实验室</a>
+        <a href="../upstream/crowd.html">上游群像</a>
+      </nav>
+    </header>
+
+    <main class="scene-shell">
+      <aside class="scenario-panel" aria-labelledby="scenario-title">
+        <div class="intro">
+          <p class="eyebrow">SAME RECIPE · DIFFERENT USE</p>
+          <h1 id="scenario-title">角色不变，<br>用途改变。</h1>
+          <p>这里不是第二套生成器。它消费同一 Recipe 核心与内容包合同，把一批有明确视觉语法身份的角色放进三种运行构图。</p>
+        </div>
+
+        <form id="scene-form" class="seed-form">
+          <label for="scene-seed">MASTER SEED</label>
+          <div>
+            <input id="scene-seed" name="seed" type="number" min="0" max="999999999" value="240824" inputmode="numeric">
+            <button id="rebuild-scene" type="submit">重建 8 NPC</button>
+          </div>
+        </form>
+
+        <section class="scene-pack" aria-labelledby="scene-pack-title">
+          <label for="scene-pack"><span>CONTENT PACK</span><strong id="scene-pack-title">Seed 生成方向</strong></label>
+          <select id="scene-pack">
+            <option value="kindergrimm-original" selected>KinderGrimm Original</option>
+          </select>
+          <div id="scene-pack-card" data-pack="kindergrimm-original">
+            <small id="scene-pack-status">UPSTREAM CONTENT</small>
+            <strong id="scene-pack-name">KinderGrimm Original</strong>
+            <p id="scene-pack-copy">上游完整内容 / input-driven</p>
+            <code id="scene-pack-fingerprint">—</code>
+            <code id="scene-renderer">BASE RENDERER / NO DECORATOR</code>
+            <code id="scene-kit-summary">0 PARTS / BASE COVERAGE</code>
+          </div>
+        </section>
+
+        <section class="manifest-import" aria-labelledby="manifest-import-title">
+          <div>
+            <small>PORTABLE INPUT</small>
+            <strong id="manifest-import-title">导入 Batch Manifest</strong>
+          </div>
+          <input id="manifest-file" class="visually-hidden" type="file" accept="application/json,.json">
+          <label class="import-action" for="manifest-file"><span>选择 Manifest JSON</span><small>VALIDATE → REBUILD</small></label>
+          <button id="restore-seed" type="button" disabled>恢复 Master Seed</button>
+          <p id="import-status" data-state="seed" role="status" aria-live="polite"><strong>SEED</strong><span>当前角色由 Master Seed 生成</span></p>
+        </section>
+
+        <fieldset class="mode-switcher">
+          <legend>用途模式</legend>
+          <button type="button" data-mode="waystation" aria-pressed="true"><span>01</span><strong>旅站服务</strong><small>WAYSTATION</small></button>
+          <button type="button" data-mode="encounter" aria-pressed="false"><span>02</span><strong>战斗遭遇</strong><small>ENCOUNTER</small></button>
+          <button type="button" data-mode="council" aria-pressed="false"><span>03</span><strong>剧情议事</strong><small>COUNCIL</small></button>
+        </fieldset>
+
+        <section class="runtime-proof" aria-labelledby="runtime-proof-title">
+          <small>ASSET REPRESENTATION</small>
+          <h2 id="runtime-proof-title">程序化 2D + 可携带视觉层</h2>
+          <dl>
+            <div><dt>Source</dt><dd id="runtime-source">Seed Recipe</dd></div>
+            <div><dt>Runtime</dt><dd>Live rigs</dd></div>
+            <div><dt>Pack</dt><dd id="runtime-pack">ORIGINAL</dd></div>
+            <div><dt>Pack FP</dt><dd id="runtime-pack-fingerprint">—</dd></div>
+            <div><dt>Renderer</dt><dd id="runtime-renderer">BASE</dd></div>
+            <div><dt>Renderer FP</dt><dd id="runtime-renderer-fingerprint">—</dd></div>
+            <div><dt>Kit parts</dt><dd id="runtime-kit-parts">0</dd></div>
+            <div><dt>Coverage</dt><dd id="runtime-coverage">BASE</dd></div>
+            <div><dt>License</dt><dd>Unlicense</dd></div>
+            <div><dt>LLM/API</dt><dd>0 / 0</dd></div>
+          </dl>
+        </section>
+      </aside>
+
+      <section id="scene-stage" class="stage-column" aria-labelledby="stage-title">
+        <header class="stage-header">
+          <div>
+            <p id="stage-kicker" class="eyebrow">SERVICE ROLES / SOCIAL SPACING</p>
+            <h2 id="stage-title">暮色旅站</h2>
+          </div>
+          <div class="stage-actions">
+            <button id="pause-scene" type="button" aria-pressed="false">暂停动画</button>
+            <a href="../npc-factory/">返回资产工厂</a>
+          </div>
+        </header>
+
+        <div class="stage-wrap" data-mode="waystation">
+          <canvas id="runtime-canvas" tabindex="0" aria-label="八个可选择的 KinderGrimm 角色运行场景；使用左右方向键切换角色，Enter 触发动作"></canvas>
+          <div id="scene-fallback" class="scene-fallback" hidden>
+            <strong>WebGL 场景不可用</strong>
+            <span>Recipe roster、用途模式和角色检查仍然可以使用。</span>
+          </div>
+          <div class="stage-hud">
+            <span id="scene-mode-label">WAYSTATION / 8 LIVE RIGS</span>
+            <span id="scene-status" role="status" aria-live="polite">正在读取 Recipe…</span>
+          </div>
+          <div class="scene-key" aria-hidden="true"><span></span> SELECTED NPC</div>
+        </div>
+
+        <div class="metric-row" aria-label="运行指标">
+          <div><small>RECIPES</small><strong id="metric-recipes">0</strong></div>
+          <div><small>ALL / AUTHORED PLANES</small><strong id="metric-parts">0 / 0</strong></div>
+          <div><small>BUILD</small><strong id="metric-build">—</strong></div>
+          <div><small>DRAW CALLS</small><strong id="metric-draws">—</strong></div>
+        </div>
+
+        <article class="scenario-brief" aria-labelledby="brief-title">
+          <div>
+            <small>WHY THIS SCENE</small>
+            <h2 id="brief-title">服务型 NPC 需要身份区分与可读站位</h2>
+          </div>
+          <p id="brief-copy">同一批角色被分配为守卫、商人、信使等运行时角色。Recipe 只负责视觉身份；职业和任务属于场景状态，因此换场景不必重生成美术资产。</p>
+          <ul id="brief-points">
+            <li>适合城镇、营地、商店和任务中继站</li>
+            <li>角色视觉身份由 fingerprint 保持稳定</li>
+            <li>玩法身份保留在运行时，不污染 Recipe</li>
+          </ul>
+        </article>
+      </section>
+
+      <aside class="roster-panel" aria-labelledby="roster-title">
+        <header>
+          <p class="eyebrow">RUNTIME ROSTER</p>
+          <h2 id="roster-title">本场角色</h2>
+          <p>点击画面或列表选择角色；列表是 WebGL 的语义降级界面。</p>
+        </header>
+        <div id="roster-list" class="roster-list" aria-live="polite"></div>
+
+        <section class="runtime-inspector" aria-labelledby="selected-name">
+          <small>SELECTED / RUNTIME IDENTITY</small>
+          <h2 id="selected-name">等待角色</h2>
+          <dl>
+            <div><dt>Role</dt><dd id="selected-role">—</dd></div>
+            <div><dt>Species</dt><dd id="selected-species">—</dd></div>
+            <div><dt>Medium</dt><dd id="selected-media">—</dd></div>
+            <div><dt>Fingerprint</dt><dd id="selected-fingerprint">—</dd></div>
+            <div><dt>Visual FP</dt><dd id="selected-visual-fingerprint">—</dd></div>
+            <div><dt>Visual Parts</dt><dd id="selected-visual-parts">0</dd></div>
+          </dl>
+          <p id="selected-advice">角色完成构建后，这里会说明它在当前用途中的消费方式。</p>
+        </section>
+
+        <p class="keyboard-note"><strong>键盘：</strong>Tab 可到达所有操作；画布聚焦后使用 ←/→ 选择角色，Enter 触发当前角色动作。</p>
+      </aside>
+    </main>
+
+    <script type="module" src="./scenarios.js"></script>
+  </body>
+</html>

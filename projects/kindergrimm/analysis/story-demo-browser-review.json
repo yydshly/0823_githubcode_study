@@ -1,0 +1,292 @@
+{
+  "schemaVersion": "kindergrimm-story-demo-browser-review/1.0",
+  "canonicalUrl": "http://127.0.0.1:8882/projects/kindergrimm/story-demo/",
+  "capturedAt": "2026-08-25T03:15:53.324Z",
+  "trailState": {
+    "story": {
+      "schemaVersion": "kindergrimm-story-reply-before-storm/1.0",
+      "seed": 240824,
+      "chapter": 1,
+      "step": "waymark-fixed",
+      "trust": 1,
+      "storm": 1,
+      "inventory": [
+        "scroll",
+        "satchel",
+        "lantern",
+        "waymark",
+        "charm"
+      ],
+      "flags": {
+        "letterAccepted": true,
+        "lanternLit": true,
+        "waymarkFixed": true
+      },
+      "ending": null,
+      "history": [
+        "accept_letter",
+        "light_lantern",
+        "repair_waymark"
+      ]
+    },
+    "styleId": "mosslight-prop-gouache",
+    "canvasAvailable": true
+  },
+  "stateAfterStyle": {
+    "story": {
+      "schemaVersion": "kindergrimm-story-reply-before-storm/1.0",
+      "seed": 240824,
+      "chapter": 1,
+      "step": "family-guided",
+      "trust": 3,
+      "storm": 2,
+      "inventory": [
+        "scroll",
+        "satchel",
+        "lantern",
+        "waymark",
+        "charm"
+      ],
+      "flags": {
+        "letterAccepted": true,
+        "lanternLit": true,
+        "waymarkFixed": true,
+        "familyGuided": true
+      },
+      "ending": null,
+      "history": [
+        "accept_letter",
+        "light_lantern",
+        "repair_waymark",
+        "guide_family"
+      ]
+    },
+    "styleId": "moonharbor-inkcut-props",
+    "canvasAvailable": true
+  },
+  "community": {
+    "snapshot": {
+      "story": {
+        "schemaVersion": "kindergrimm-story-reply-before-storm/1.0",
+        "seed": 240824,
+        "chapter": 2,
+        "step": "complete",
+        "trust": 5,
+        "storm": 2,
+        "inventory": [
+          "scroll",
+          "satchel",
+          "lantern",
+          "waymark",
+          "charm"
+        ],
+        "flags": {
+          "letterAccepted": true,
+          "lanternLit": true,
+          "waymarkFixed": true,
+          "familyGuided": true,
+          "reachedGate": true,
+          "routeKnown": true,
+          "bellRung": true
+        },
+        "ending": "community",
+        "history": [
+          "accept_letter",
+          "light_lantern",
+          "repair_waymark",
+          "guide_family",
+          "continue_gate",
+          "unseal_route",
+          "signal_public"
+        ]
+      },
+      "styleId": "moonharbor-inkcut-props",
+      "canvasAvailable": true
+    },
+    "width": 1440,
+    "scrollWidth": 1440,
+    "canvasVisible": true,
+    "inventoryItems": 5,
+    "chapterComplete": 3,
+    "actionLabel": "重新选择这条路"
+  },
+  "council": {
+    "story": {
+      "schemaVersion": "kindergrimm-story-reply-before-storm/1.0",
+      "seed": 240824,
+      "chapter": 2,
+      "step": "complete",
+      "trust": 1,
+      "storm": 1,
+      "inventory": [
+        "scroll",
+        "satchel",
+        "lantern",
+        "waymark",
+        "charm"
+      ],
+      "flags": {
+        "letterAccepted": true,
+        "lanternLit": true,
+        "waymarkFixed": true,
+        "reachedGate": true,
+        "routeKnown": true,
+        "letterDelivered": true
+      },
+      "ending": "council",
+      "history": [
+        "accept_letter",
+        "light_lantern",
+        "repair_waymark",
+        "continue_gate",
+        "unseal_route",
+        "deliver_council"
+      ]
+    },
+    "styleId": "mosslight-prop-gouache",
+    "canvasAvailable": true
+  },
+  "mobile": {
+    "snapshot": {
+      "story": {
+        "schemaVersion": "kindergrimm-story-reply-before-storm/1.0",
+        "seed": 240824,
+        "chapter": 1,
+        "step": "family-guided",
+        "trust": 3,
+        "storm": 2,
+        "inventory": [
+          "scroll",
+          "satchel",
+          "lantern",
+          "waymark",
+          "charm"
+        ],
+        "flags": {
+          "letterAccepted": true,
+          "lanternLit": true,
+          "waymarkFixed": true,
+          "familyGuided": true
+        },
+        "ending": null,
+        "history": [
+          "accept_letter",
+          "light_lantern",
+          "repair_waymark",
+          "guide_family"
+        ]
+      },
+      "styleId": "mosslight-prop-gouache",
+      "canvasAvailable": true
+    },
+    "viewport": 390,
+    "scrollWidth": 390,
+    "actionReachable": true,
+    "canvasRect": {
+      "x": 12,
+      "y": -109.875,
+      "width": 366,
+      "height": 205.875,
+      "top": -109.875,
+      "right": 378,
+      "bottom": 96,
+      "left": 12
+    }
+  },
+  "keyboard": {
+    "snapshot": {
+      "story": {
+        "schemaVersion": "kindergrimm-story-reply-before-storm/1.0",
+        "seed": 240824,
+        "chapter": 2,
+        "step": "complete",
+        "trust": 1,
+        "storm": 1,
+        "inventory": [
+          "scroll",
+          "satchel",
+          "lantern",
+          "waymark",
+          "charm"
+        ],
+        "flags": {
+          "letterAccepted": true,
+          "lanternLit": true,
+          "waymarkFixed": true,
+          "reachedGate": true,
+          "routeKnown": true,
+          "letterDelivered": true
+        },
+        "ending": "council",
+        "history": [
+          "accept_letter",
+          "light_lantern",
+          "repair_waymark",
+          "continue_gate",
+          "unseal_route",
+          "deliver_council"
+        ]
+      },
+      "styleId": "mosslight-prop-gouache",
+      "canvasAvailable": true
+    },
+    "activeTag": "BUTTON",
+    "outlineWidth": "3px",
+    "focusVisibleRule": true
+  },
+  "reducedMotion": {
+    "matched": true,
+    "rainDuration": "1e-06s"
+  },
+  "canvasOff": {
+    "snapshot": {
+      "story": {
+        "schemaVersion": "kindergrimm-story-reply-before-storm/1.0",
+        "seed": 240824,
+        "chapter": 2,
+        "step": "complete",
+        "trust": 1,
+        "storm": 1,
+        "inventory": [
+          "scroll",
+          "satchel",
+          "lantern",
+          "waymark",
+          "charm"
+        ],
+        "flags": {
+          "letterAccepted": true,
+          "lanternLit": true,
+          "waymarkFixed": true,
+          "reachedGate": true,
+          "routeKnown": true,
+          "letterDelivered": true
+        },
+        "ending": "council",
+        "history": [
+          "accept_letter",
+          "light_lantern",
+          "repair_waymark",
+          "continue_gate",
+          "unseal_route",
+          "deliver_council"
+        ]
+      },
+      "styleId": "mosslight-prop-gouache",
+      "canvasAvailable": false
+    },
+    "fallbackVisible": true,
+    "canvasHidden": true,
+    "actionStillAvailable": true,
+    "dialogue": "艾萝把回信交给维斯，水闸按旧规关闭。城中心的人先得到了路线，但外街直到钟声很晚才知道方向。任务完成了，责任却没有随封蜡一起结束。"
+  },
+  "consoleErrors": [],
+  "evidence": [
+    "evidence/story-reply-desktop-opening.png",
+    "evidence/story-reply-trail-choice.png",
+    "evidence/story-reply-inkcut-final-choice.png",
+    "evidence/story-reply-community-ending.png",
+    "evidence/story-reply-mobile.png",
+    "evidence/story-reply-canvas-off.png"
+  ]
+}

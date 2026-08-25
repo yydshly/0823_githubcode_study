@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Kindergrimm 确定性 2D Content Pack 的创作、比较、审查、Gate 与 Release Candidate 生产台。">
+    <title>Content Pack Production Studio · Kindergrimm</title>
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="./studio.css">
+    <script type="importmap">{ "imports": { "three": "../upstream/vendor/three.module.js" } }</script>
+  </head>
+  <body>
+    <a class="skip-link" href="#studio">跳到生产台</a>
+
+    <header class="topbar">
+      <div class="brand-block">
+        <a class="brand" href="../lab/">KINDERGRIMM / STUDIO</a>
+        <span>M4 · PRODUCTION FRONTEND</span>
+      </div>
+      <nav aria-label="研究导航">
+        <a href="../npc-factory/?pack=moonharbor-core-2d">V2 多风格扩展</a>
+        <a href="../npc-factory/">NPC 工厂</a>
+        <a href="../npc-scenarios/">运行场景</a>
+        <a href="../../../docs/projects/kindergrimm.html#program">Program</a>
+      </nav>
+    </header>
+
+    <main id="studio" class="studio-shell">
+      <aside class="author-panel" aria-labelledby="studio-title">
+        <div class="intro">
+          <p class="eyebrow">AUTHOR / COMPARE / REVIEW / RELEASE</p>
+          <h1 id="studio-title">把一个视觉包，<br>推进到候选版本。</h1>
+          <p>同一个 Seed Slot 同时进入 Original、Decorator 和独立 Core；批准只属于当前输入，任何改动都会让它失效。</p>
+        </div>
+
+        <form id="author-form" class="author-form">
+          <div class="panel-heading">
+            <div><small>01 / AUTHOR INTENT</small><h2>确定性草案</h2></div>
+            <span id="dirty-badge" data-state="clean">CLEAN</span>
+          </div>
+
+          <label>
+            <span>MASTER SEED</span>
+            <input id="master-seed" name="seed" type="number" min="0" max="999999999" value="240824" inputmode="numeric">
+          </label>
+          <div class="field-pair">
+            <label>
+              <span>COMPARE SLOT</span>
+              <input id="compare-slot" name="slot" type="number" min="0" max="49" value="0" inputmode="numeric">
+            </label>
+            <label>
+              <span>BATCH</span>
+              <select id="batch-count" name="count">
+                <option value="8">8 NPC</option>
+                <option value="12" selected>12 NPC</option>
+                <option value="24">24 NPC</option>
+              </select>
+            </label>
+          </div>
+          <label>
+            <span>RC VERSION</span>
+            <input id="candidate-version" name="version" type="text" value="0.1.0" pattern="\d+\.\d+\.\d+" spellcheck="false">
+          </label>
+
+          <section class="pack-lock" aria-label="发布目标内容包">
+            <div><small>RELEASE TARGET</small><strong>Mosslight Core 2D</strong></div>
+            <dl>
+              <div><dt>PACK FP</dt><dd id="pack-fingerprint">—</dd></div>
+              <div><dt>RENDERER FP</dt><dd id="renderer-fingerprint">—</dd></div>
+              <div><dt>MEDIA</dt><dd>mosslight-gouache</dd></div>
+              <div><dt>BASE</dt><dd>biped</dd></div>
+            </dl>
+          </section>
+
+          <button id="generate-draft" class="primary" type="submit"><span>生成并比较</span><small>BUILD 5 ROUTES</small></button>
+        </form>
+
+        <div class="session-actions">
+          <button id="restore-session" type="button">恢复本地会话</button>
+          <button id="reset-session" type="button">新建会话</button>
+          <button id="export-session" type="button">下载 Session JSON</button>
+        </div>
+
+        <div class="runtime-boundary">
+          <small>BOUNDARY</small>
+          <strong>0 runtime LLM / 0 cloud calls</strong>
+          <p>AI 不进入确定性渲染核心；WebGL 仅用于预览和 spritesheet。</p>
+        </div>
+      </aside>
+
+      <section class="workspace" aria-labelledby="compare-title">
+        <header class="workspace-head">
+          <div>
+            <p class="eyebrow">02 / SAME SLOT · FIVE ROUTES</p>
+            <h2 id="compare-title">五路比较，不隐藏约束差异。</h2>
+          </div>
+          <div class="workspace-metrics" aria-label="比较指标">
+            <span><small>REFRESH</small><strong id="compare-time">—</strong></span>
+            <span><small>WEBGL</small><strong id="webgl-status">CHECK</strong></span>
+            <span><small>REVISION</small><strong id="revision-count">0</strong></span>
+          </div>
+        </header>
+
+        <div id="studio-status" class="status-line" role="status" aria-live="polite" data-state="idle">
+          <span></span><strong>准备生成第一版五路比较。</strong>
+        </div>
+
+        <div class="compare-stage" role="group" aria-label="Original、Decorator、Core、Inkcut 与 Felt 比较">
+          <article class="route-card" data-route="kindergrimm-original">
+            <header><span>BASELINE</span><strong>Original</strong></header>
+            <div class="preview-frame"><img id="preview-original" alt="Original 同槽角色预览"><div class="preview-fallback">PREVIEW OPTIONAL<br><span>Recipe 和指纹仍可审查</span></div></div>
+            <dl>
+              <div><dt>RECIPE</dt><dd id="recipe-original">—</dd></div>
+              <div><dt>SPECIES / MEDIA</dt><dd id="traits-original">—</dd></div>
+              <div><dt>RENDERER</dt><dd>kindergrimm-drawn-2d</dd></div>
+              <div><dt>VISIBLE SOURCE</dt><dd>upstream complete</dd></div>
+            </dl>
+          </article>
+
+          <article class="route-card" data-route="mosslight-waystation">
+            <header><span>BRIDGE</span><strong>Decorator</strong></header>
+            <div class="preview-frame"><img id="preview-decorator" alt="Mosslight Decorator 同槽角色预览"><div class="preview-fallback">PREVIEW OPTIONAL<br><span>12-part overlay contract</span></div></div>
+            <dl>
+              <div><dt>RECIPE</dt><dd id="recipe-decorator">—</dd></div>
+              <div><dt>VISUAL</dt><dd id="visual-decorator">—</dd></div>
+              <div><dt>SPECIES / MEDIA</dt><dd id="traits-decorator">—</dd></div>
+              <div><dt>VISIBLE SOURCE</dt><dd>upstream + 12 local</dd></div>
+            </dl>
+          </article>
+
+          <article class="route-card is-target" data-route="mosslight-core-2d">
+            <header><span>RELEASE TARGET</span><strong>Core 2D</strong></header>
+            <div class="preview-frame"><img id="preview-core" alt="Mosslight Core 2D 同槽角色预览"><div class="preview-fallback">PREVIEW OPTIONAL<br><span>23 authored planes / 0 upstream</span></div></div>
+            <dl>
+              <div><dt>RECIPE</dt><dd id="recipe-core">—</dd></div>
+              <div><dt>VISUAL</dt><dd id="visual-core">—</dd></div>
+              <div><dt>SPECIES / MEDIA</dt><dd id="traits-core">—</dd></div>
+              <div><dt>VISIBLE SOURCE</dt><dd id="source-core">23 / 23 authored</dd></div>
+            </dl>
+          </article>
+
+          <article class="route-card is-v2" data-route="moonharbor-inkcut-2d">
+            <header><span>RENDERER PROOF</span><strong>Inkcut 2D</strong></header>
+            <div class="preview-frame"><img id="preview-inkcut" alt="Moonharbor Inkcut 2D 同槽角色预览"><div class="preview-fallback">PREVIEW OPTIONAL<br><span>25 authored planes / 0 upstream</span></div></div>
+            <dl>
+              <div><dt>RECIPE</dt><dd id="recipe-inkcut">—</dd></div>
+              <div><dt>VISUAL</dt><dd id="visual-inkcut">—</dd></div>
+              <div><dt>SPECIES / MEDIA</dt><dd id="traits-inkcut">—</dd></div>
+              <div><dt>VISIBLE SOURCE</dt><dd id="source-inkcut">25 / 25 authored</dd></div>
+            </dl>
+          </article>
+
+          <article class="route-card is-v2 is-felt" data-route="sunpatch-felt-2d">
+            <header><span>THIRD STYLE</span><strong>Felt 2D</strong></header>
+            <div class="preview-frame"><img id="preview-felt" alt="Sunpatch Felt 2D 同槽角色预览"><div class="preview-fallback">PREVIEW OPTIONAL<br><span>26 authored planes / 0 upstream</span></div></div>
+            <dl>
+              <div><dt>RECIPE</dt><dd id="recipe-felt">—</dd></div>
+              <div><dt>VISUAL</dt><dd id="visual-felt">—</dd></div>
+              <div><dt>SPECIES / MEDIA</dt><dd id="traits-felt">—</dd></div>
+              <div><dt>VISIBLE SOURCE</dt><dd id="source-felt">26 / 26 authored</dd></div>
+            </dl>
+          </article>
+        </div>
+
+        <section class="constraint-note" aria-labelledby="constraint-title">
+          <div><small>COMPARISON DISCLOSURE</small><h3 id="constraint-title">同一个 Slot，不等于五条路线使用相同 Recipe。</h3></div>
+          <p>Original 保留输入驱动；Decorator 锁定 watercolor/ink；Core 锁定 mosslight-gouache；Inkcut 锁定 moonharbor-inkcut；Felt 锁定 sunpatch-felt。四条本地路线均限定 human/cat/dog，结构 Renderer 使用 biped。比较的是素材生产路线、结构语言和视觉所有权，不是假装约束不存在的像素对照。</p>
+        </section>
+
+        <section class="output-compare" aria-labelledby="output-compare-title">
+          <div class="output-compare-heading">
+            <div><small>03 / SAME ASSET · FOUR OUTPUTS</small><h2 id="output-compare-title">身份不变，交付形态改变。</h2></div>
+            <code id="output-identity">等待同槽素材</code>
+          </div>
+          <p class="output-compare-copy">四种预览都来自 Felt 路线的同一 Recipe / Visual；Output Profile 只负责裁切、尺寸、背景和排版，不重新抽取角色参数。</p>
+          <div class="output-grid">
+            <article>
+              <header><span>RUNTIME ART</span><strong>Transparent Character</strong></header>
+              <div class="output-frame is-square"><img id="output-transparent-character" alt="透明全身角色输出"></div>
+              <dl><div><dt>SIZE</dt><dd id="output-transparent-character-dimensions">—</dd></div><div><dt>OUTPUT FP</dt><dd id="output-transparent-character-fingerprint">—</dd></div></dl>
+            </article>
+            <article>
+              <header><span>DIALOGUE</span><strong>Portrait / Avatar</strong></header>
+              <div class="output-frame is-square"><img id="output-portrait-avatar" alt="对话头像输出"></div>
+              <dl><div><dt>SIZE</dt><dd id="output-portrait-avatar-dimensions">—</dd></div><div><dt>OUTPUT FP</dt><dd id="output-portrait-avatar-fingerprint">—</dd></div></dl>
+            </article>
+            <article>
+              <header><span>CATALOG</span><strong>Card / Catalog</strong></header>
+              <div class="output-frame is-card"><img id="output-card-catalog" alt="角色卡片输出"></div>
+              <dl><div><dt>SIZE</dt><dd id="output-card-catalog-dimensions">—</dd></div><div><dt>OUTPUT FP</dt><dd id="output-card-catalog-fingerprint">—</dd></div></dl>
+            </article>
+            <article>
+              <header><span>ATLAS TILE</span><strong>Sprite Sheet Profile</strong></header>
+              <div class="output-frame is-square"><img id="output-sprite-sheet" alt="精灵图集瓦片输出"></div>
+              <dl><div><dt>SIZE</dt><dd id="output-sprite-sheet-dimensions">—</dd></div><div><dt>OUTPUT FP</dt><dd id="output-sprite-sheet-fingerprint">—</dd></div></dl>
+            </article>
+          </div>
+        </section>
+
+        <section class="review-panel" aria-labelledby="review-title">
+          <div class="panel-heading">
+            <div><small>04 / REVIEW</small><h2 id="review-title">批准属于当前草案。</h2></div>
+            <span id="review-state" data-state="pending">PENDING</span>
+          </div>
+          <label>
+            <span>REVIEW NOTES</span>
+            <textarea id="review-notes" rows="4" placeholder="记录轮廓、辨识度、约束或发布风险。"></textarea>
+          </label>
+          <div class="review-actions">
+            <button id="reject-candidate" type="button">拒绝并保留备注</button>
+            <button id="approve-candidate" class="primary" type="button">批准 Core 候选</button>
+          </div>
+          <p id="review-copy">生成比较后，可批准或拒绝当前 revision。</p>
+        </section>
+      </section>
+
+      <aside class="release-panel" aria-labelledby="release-title">
+        <section class="candidate-inspector">
+          <p class="eyebrow">SELECTED CANDIDATE</p>
+          <h2 id="release-title">Core Release Candidate</h2>
+          <dl>
+            <div><dt>PACK</dt><dd id="candidate-pack">—</dd></div>
+            <div><dt>RENDERER</dt><dd id="candidate-renderer">—</dd></div>
+            <div><dt>RECIPE FP</dt><dd id="candidate-recipe">—</dd></div>
+            <div><dt>VISUAL FP</dt><dd id="candidate-visual">—</dd></div>
+            <div><dt>PLANES</dt><dd id="candidate-planes">—</dd></div>
+            <div><dt>SESSION</dt><dd id="session-state">NEW</dd></div>
+          </dl>
+        </section>
+
+        <section class="gate-panel" aria-labelledby="gate-title">
+          <div class="panel-heading">
+            <div><small>04 / GATE RUNNER</small><h2 id="gate-title">G1–G6</h2></div>
+            <span id="gate-summary" data-state="idle">NOT RUN</span>
+          </div>
+          <ol id="gate-list" class="gate-list">
+            <li data-gate="g1-contract"><span>G1</span><div><strong>Contract</strong><small>等待执行</small></div></li>
+            <li data-gate="g2-asset"><span>G2</span><div><strong>Asset</strong><small>等待执行</small></div></li>
+            <li data-gate="g3-visual"><span>G3</span><div><strong>Visual</strong><small>等待执行</small></div></li>
+            <li data-gate="g4-portability"><span>G4</span><div><strong>Portability</strong><small>等待执行</small></div></li>
+            <li data-gate="g5-runtime"><span>G5</span><div><strong>Runtime</strong><small>等待执行</small></div></li>
+            <li data-gate="g6-budget"><span>G6</span><div><strong>Budget</strong><small>等待执行</small></div></li>
+          </ol>
+          <button id="run-gates" type="button">运行 G1–G6 审查</button>
+        </section>
+
+        <section class="release-box" aria-labelledby="rc-title">
+          <div><small>05 / RELEASE CANDIDATE</small><h2 id="rc-title">尚未可发布</h2></div>
+          <p id="release-copy">需要当前 revision 已批准，并且 G1–G6 全部通过。</p>
+          <dl class="release-metrics">
+            <div><dt>RC FP</dt><dd id="rc-fingerprint">—</dd></div>
+            <div><dt>ZIP</dt><dd id="rc-size">—</dd></div>
+            <div><dt>FILES</dt><dd id="rc-files">—</dd></div>
+            <div><dt>CRC</dt><dd id="rc-crc">—</dd></div>
+          </dl>
+          <button id="build-release" class="primary" type="button" disabled>构建 Release Candidate</button>
+          <div class="release-downloads">
+            <button id="download-rc-json" type="button" disabled>下载 RC JSON</button>
+            <button id="download-rc-zip" type="button" disabled>下载 RC ZIP</button>
+          </div>
+        </section>
+      </aside>
+    </main>
+
+    <canvas id="render-canvas" width="420" height="420" aria-hidden="true"></canvas>
+    <script type="module" src="./studio.js"></script>
+  </body>
+</html>

@@ -1,0 +1,1246 @@
+{
+  "schemaVersion": "kindergrimm-scene-studio-browser-review/1.0",
+  "canonicalUrl": "http://127.0.0.1:8882/projects/kindergrimm/scene-studio/",
+  "capturedAt": "2026-08-25T04:57:58.657Z",
+  "idle": {
+    "state": "idle",
+    "emptyVisible": true,
+    "contract": null,
+    "inputLength": 71
+  },
+  "flood": {
+    "snapshot": {
+      "contract": {
+        "schemaVersion": "kindergrimm-scene-intent-contract/1.0",
+        "sourceText": "做一个儿童山洪预警场景：夜晚山路上，一名年轻信使提着灯，扶正倒下的路标，帮助迷路家庭前往高地。画面紧张但不能恐怖，使用水粉风格，移动端可操作。",
+        "seed": 240824,
+        "intentAdapter": "local-explainable-rules",
+        "scene": {
+          "id": "trail-shrine",
+          "label": "山径神龛 / Trail Shrine"
+        },
+        "style": {
+          "id": "mosslight-prop-gouache",
+          "label": "Mosslight Gouache"
+        },
+        "narrativeGoal": "public-warning",
+        "audience": "children",
+        "time": "night",
+        "mood": "urgent",
+        "safetyTone": "gentle",
+        "tension": 2,
+        "platform": "mobile-first",
+        "characters": [
+          {
+            "id": "courier",
+            "label": "信使"
+          },
+          {
+            "id": "family",
+            "label": "迷路家庭"
+          }
+        ],
+        "props": [
+          {
+            "id": "lantern",
+            "label": "提灯"
+          },
+          {
+            "id": "waymark",
+            "label": "路标"
+          },
+          {
+            "id": "satchel",
+            "label": "信使包"
+          }
+        ],
+        "interactions": [
+          "light-lantern",
+          "repair-waymark",
+          "guide-family",
+          "signal-public"
+        ],
+        "requestedGaps": [],
+        "provenance": {
+          "runtimeLlmCalls": 0,
+          "cloudApiCalls": 0,
+          "compiler": "workspace-authored-rule-dictionary/1.0"
+        },
+        "fingerprint": "bd53eb1a"
+      },
+      "plan": {
+        "schemaVersion": "kindergrimm-asset-resolution-plan/1.0",
+        "sceneContractFingerprint": "bd53eb1a",
+        "strategy": "reuse-then-variant-then-gap",
+        "items": [
+          {
+            "id": "scene:trail-shrine",
+            "kind": "scene-component",
+            "requirement": "山径神龛 / Trail Shrine",
+            "status": "matched",
+            "resolution": "复用已验证 Scene Component Recipe，并按合同重绘天气、时间与情绪。",
+            "targetId": "trail-shrine",
+            "provenance": "local-authored-procedural-2d-scene-component"
+          },
+          {
+            "id": "prop:lantern",
+            "kind": "prop",
+            "requirement": "提灯",
+            "status": "matched",
+            "resolution": "匹配稳定 Prop archetype；样式由当前 Style Grammar 决定。",
+            "targetId": "lantern",
+            "provenance": "local-authored-procedural-canvas-2d"
+          },
+          {
+            "id": "prop:waymark",
+            "kind": "prop",
+            "requirement": "路标",
+            "status": "matched",
+            "resolution": "匹配稳定 Prop archetype；样式由当前 Style Grammar 决定。",
+            "targetId": "waymark",
+            "provenance": "local-authored-procedural-canvas-2d"
+          },
+          {
+            "id": "prop:satchel",
+            "kind": "prop",
+            "requirement": "信使包",
+            "status": "matched",
+            "resolution": "匹配稳定 Prop archetype；样式由当前 Style Grammar 决定。",
+            "targetId": "satchel",
+            "provenance": "local-authored-procedural-canvas-2d"
+          },
+          {
+            "id": "character:courier",
+            "kind": "character-token",
+            "requirement": "信使",
+            "status": "generated-variant",
+            "resolution": "使用确定性角色 Token 语法生成场景姿态与颜色变体；不声明完整骨骼角色资产。",
+            "targetId": "courier",
+            "provenance": "local-authored-procedural-character-token-2d"
+          },
+          {
+            "id": "character:family",
+            "kind": "character-token",
+            "requirement": "迷路家庭",
+            "status": "generated-variant",
+            "resolution": "使用确定性角色 Token 语法生成场景姿态与颜色变体；不声明完整骨骼角色资产。",
+            "targetId": "family",
+            "provenance": "local-authored-procedural-character-token-2d"
+          },
+          {
+            "id": "interaction:light-lantern",
+            "kind": "scene-state",
+            "requirement": "light-lantern",
+            "status": "generated-variant",
+            "resolution": "根据场景合同映射为可见状态与热点，不写入素材身份。",
+            "targetId": "light-lantern",
+            "provenance": "local-authored-runtime-state-mapping"
+          },
+          {
+            "id": "interaction:repair-waymark",
+            "kind": "scene-state",
+            "requirement": "repair-waymark",
+            "status": "generated-variant",
+            "resolution": "根据场景合同映射为可见状态与热点，不写入素材身份。",
+            "targetId": "repair-waymark",
+            "provenance": "local-authored-runtime-state-mapping"
+          },
+          {
+            "id": "interaction:guide-family",
+            "kind": "scene-state",
+            "requirement": "guide-family",
+            "status": "generated-variant",
+            "resolution": "根据场景合同映射为可见状态与热点，不写入素材身份。",
+            "targetId": "guide-family",
+            "provenance": "local-authored-runtime-state-mapping"
+          },
+          {
+            "id": "interaction:signal-public",
+            "kind": "scene-state",
+            "requirement": "signal-public",
+            "status": "generated-variant",
+            "resolution": "根据场景合同映射为可见状态与热点，不写入素材身份。",
+            "targetId": "signal-public",
+            "provenance": "local-authored-runtime-state-mapping"
+          }
+        ],
+        "counts": {
+          "matched": 4,
+          "generatedVariant": 6,
+          "capabilityGap": 0
+        },
+        "provenance": {
+          "runtimeLlmCalls": 0,
+          "cloudApiCalls": 0
+        },
+        "fingerprint": "ef4415e4"
+      },
+      "audit": {
+        "rendered": true,
+        "representation": "local-authored-procedural-canvas-2d-scene",
+        "sceneRecipe": "d6e02fd9",
+        "styleFingerprint": "da570369",
+        "embeddedProps": 3,
+        "requestedProps": [
+          "abe61d55",
+          "d16b3b1b",
+          "608af91d"
+        ],
+        "characterTokens": 2,
+        "runtimeLlmCalls": 0,
+        "cloudApiCalls": 0
+      },
+      "elapsedMs": 66,
+      "canvasAvailable": true
+    },
+    "viewport": 1440,
+    "scrollWidth": 1440,
+    "sceneRect": {
+      "x": 365.265625,
+      "y": 178.703125,
+      "width": 691.109375,
+      "height": 388.734375,
+      "top": 178.703125,
+      "right": 1056.375,
+      "bottom": 567.4375,
+      "left": 365.265625
+    },
+    "planItems": 10,
+    "hotspots": 4,
+    "downloadEnabled": true
+  },
+  "gap": {
+    "snapshot": {
+      "contract": {
+        "schemaVersion": "kindergrimm-scene-intent-contract/1.0",
+        "sourceText": "做一个夜晚港口场景，信使坐着小船带小狗穿过木桥，使用墨刻风格。",
+        "seed": 240824,
+        "intentAdapter": "local-explainable-rules",
+        "scene": {
+          "id": "waystation-display",
+          "label": "旧水闸 / Waystation"
+        },
+        "style": {
+          "id": "moonharbor-inkcut-props",
+          "label": "Moonharbor Inkcut"
+        },
+        "narrativeGoal": "exploration",
+        "audience": "general",
+        "time": "night",
+        "mood": "hopeful",
+        "safetyTone": "standard",
+        "tension": 1,
+        "platform": "responsive-web",
+        "characters": [
+          {
+            "id": "courier",
+            "label": "信使"
+          }
+        ],
+        "props": [
+          {
+            "id": "lantern",
+            "label": "提灯"
+          },
+          {
+            "id": "satchel",
+            "label": "信使包"
+          }
+        ],
+        "interactions": [
+          "light-lantern"
+        ],
+        "requestedGaps": [
+          {
+            "id": "boat",
+            "label": "船只",
+            "capability": "vehicle-2d"
+          },
+          {
+            "id": "bridge",
+            "label": "可交互桥梁",
+            "capability": "architecture-state-2d"
+          },
+          {
+            "id": "dog",
+            "label": "动物伙伴",
+            "capability": "animal-character-2d"
+          }
+        ],
+        "provenance": {
+          "runtimeLlmCalls": 0,
+          "cloudApiCalls": 0,
+          "compiler": "workspace-authored-rule-dictionary/1.0"
+        },
+        "fingerprint": "c4c77a07"
+      },
+      "plan": {
+        "schemaVersion": "kindergrimm-asset-resolution-plan/1.0",
+        "sceneContractFingerprint": "c4c77a07",
+        "strategy": "reuse-then-variant-then-gap",
+        "items": [
+          {
+            "id": "scene:waystation-display",
+            "kind": "scene-component",
+            "requirement": "旧水闸 / Waystation",
+            "status": "matched",
+            "resolution": "复用已验证 Scene Component Recipe，并按合同重绘天气、时间与情绪。",
+            "targetId": "waystation-display",
+            "provenance": "local-authored-procedural-2d-scene-component"
+          },
+          {
+            "id": "prop:lantern",
+            "kind": "prop",
+            "requirement": "提灯",
+            "status": "matched",
+            "resolution": "匹配稳定 Prop archetype；样式由当前 Style Grammar 决定。",
+            "targetId": "lantern",
+            "provenance": "local-authored-procedural-canvas-2d"
+          },
+          {
+            "id": "prop:satchel",
+            "kind": "prop",
+            "requirement": "信使包",
+            "status": "matched",
+            "resolution": "匹配稳定 Prop archetype；样式由当前 Style Grammar 决定。",
+            "targetId": "satchel",
+            "provenance": "local-authored-procedural-canvas-2d"
+          },
+          {
+            "id": "character:courier",
+            "kind": "character-token",
+            "requirement": "信使",
+            "status": "generated-variant",
+            "resolution": "使用确定性角色 Token 语法生成场景姿态与颜色变体；不声明完整骨骼角色资产。",
+            "targetId": "courier",
+            "provenance": "local-authored-procedural-character-token-2d"
+          },
+          {
+            "id": "interaction:light-lantern",
+            "kind": "scene-state",
+            "requirement": "light-lantern",
+            "status": "generated-variant",
+            "resolution": "根据场景合同映射为可见状态与热点，不写入素材身份。",
+            "targetId": "light-lantern",
+            "provenance": "local-authored-runtime-state-mapping"
+          },
+          {
+            "id": "gap:boat",
+            "kind": "capability-gap",
+            "requirement": "船只",
+            "status": "capability-gap",
+            "resolution": "需要新增 vehicle-2d 能力；本轮不生成占位素材。",
+            "targetId": "vehicle-2d",
+            "provenance": "unresolved-no-asset-generated"
+          },
+          {
+            "id": "gap:bridge",
+            "kind": "capability-gap",
+            "requirement": "可交互桥梁",
+            "status": "capability-gap",
+            "resolution": "需要新增 architecture-state-2d 能力；本轮不生成占位素材。",
+            "targetId": "architecture-state-2d",
+            "provenance": "unresolved-no-asset-generated"
+          },
+          {
+            "id": "gap:dog",
+            "kind": "capability-gap",
+            "requirement": "动物伙伴",
+            "status": "capability-gap",
+            "resolution": "需要新增 animal-character-2d 能力；本轮不生成占位素材。",
+            "targetId": "animal-character-2d",
+            "provenance": "unresolved-no-asset-generated"
+          }
+        ],
+        "counts": {
+          "matched": 3,
+          "generatedVariant": 2,
+          "capabilityGap": 3
+        },
+        "provenance": {
+          "runtimeLlmCalls": 0,
+          "cloudApiCalls": 0
+        },
+        "fingerprint": "df66c8a4"
+      },
+      "audit": {
+        "rendered": true,
+        "representation": "local-authored-procedural-canvas-2d-scene",
+        "sceneRecipe": "9a27fcdd",
+        "styleFingerprint": "e008924b",
+        "embeddedProps": 3,
+        "requestedProps": [
+          "abe61d55",
+          "608af91d"
+        ],
+        "characterTokens": 1,
+        "runtimeLlmCalls": 0,
+        "cloudApiCalls": 0
+      },
+      "elapsedMs": 30,
+      "canvasAvailable": true
+    },
+    "gapCards": 3,
+    "backlogVisible": true,
+    "gapBadge": "GAP 3 · 未渲染"
+  },
+  "revised": {
+    "contract": {
+      "schemaVersion": "kindergrimm-scene-intent-contract/1.0",
+      "sourceText": "做一个儿童山洪预警场景：夜晚山路上，一名年轻信使提着灯，扶正倒下的路标，帮助迷路家庭前往高地。画面紧张但不能恐怖，移动端可操作。 使用毛毡风格。",
+      "seed": 240824,
+      "intentAdapter": "local-explainable-rules",
+      "scene": {
+        "id": "trail-shrine",
+        "label": "山径神龛 / Trail Shrine"
+      },
+      "style": {
+        "id": "sunpatch-felt-props",
+        "label": "Sunpatch Felt"
+      },
+      "narrativeGoal": "public-warning",
+      "audience": "children",
+      "time": "night",
+      "mood": "urgent",
+      "safetyTone": "gentle",
+      "tension": 2,
+      "platform": "mobile-first",
+      "characters": [
+        {
+          "id": "courier",
+          "label": "信使"
+        },
+        {
+          "id": "family",
+          "label": "迷路家庭"
+        }
+      ],
+      "props": [
+        {
+          "id": "lantern",
+          "label": "提灯"
+        },
+        {
+          "id": "waymark",
+          "label": "路标"
+        },
+        {
+          "id": "satchel",
+          "label": "信使包"
+        }
+      ],
+      "interactions": [
+        "light-lantern",
+        "repair-waymark",
+        "guide-family",
+        "signal-public"
+      ],
+      "requestedGaps": [],
+      "provenance": {
+        "runtimeLlmCalls": 0,
+        "cloudApiCalls": 0,
+        "compiler": "workspace-authored-rule-dictionary/1.0"
+      },
+      "fingerprint": "6153e6b0"
+    },
+    "plan": {
+      "schemaVersion": "kindergrimm-asset-resolution-plan/1.0",
+      "sceneContractFingerprint": "6153e6b0",
+      "strategy": "reuse-then-variant-then-gap",
+      "items": [
+        {
+          "id": "scene:trail-shrine",
+          "kind": "scene-component",
+          "requirement": "山径神龛 / Trail Shrine",
+          "status": "matched",
+          "resolution": "复用已验证 Scene Component Recipe，并按合同重绘天气、时间与情绪。",
+          "targetId": "trail-shrine",
+          "provenance": "local-authored-procedural-2d-scene-component"
+        },
+        {
+          "id": "prop:lantern",
+          "kind": "prop",
+          "requirement": "提灯",
+          "status": "matched",
+          "resolution": "匹配稳定 Prop archetype；样式由当前 Style Grammar 决定。",
+          "targetId": "lantern",
+          "provenance": "local-authored-procedural-canvas-2d"
+        },
+        {
+          "id": "prop:waymark",
+          "kind": "prop",
+          "requirement": "路标",
+          "status": "matched",
+          "resolution": "匹配稳定 Prop archetype；样式由当前 Style Grammar 决定。",
+          "targetId": "waymark",
+          "provenance": "local-authored-procedural-canvas-2d"
+        },
+        {
+          "id": "prop:satchel",
+          "kind": "prop",
+          "requirement": "信使包",
+          "status": "matched",
+          "resolution": "匹配稳定 Prop archetype；样式由当前 Style Grammar 决定。",
+          "targetId": "satchel",
+          "provenance": "local-authored-procedural-canvas-2d"
+        },
+        {
+          "id": "character:courier",
+          "kind": "character-token",
+          "requirement": "信使",
+          "status": "generated-variant",
+          "resolution": "使用确定性角色 Token 语法生成场景姿态与颜色变体；不声明完整骨骼角色资产。",
+          "targetId": "courier",
+          "provenance": "local-authored-procedural-character-token-2d"
+        },
+        {
+          "id": "character:family",
+          "kind": "character-token",
+          "requirement": "迷路家庭",
+          "status": "generated-variant",
+          "resolution": "使用确定性角色 Token 语法生成场景姿态与颜色变体；不声明完整骨骼角色资产。",
+          "targetId": "family",
+          "provenance": "local-authored-procedural-character-token-2d"
+        },
+        {
+          "id": "interaction:light-lantern",
+          "kind": "scene-state",
+          "requirement": "light-lantern",
+          "status": "generated-variant",
+          "resolution": "根据场景合同映射为可见状态与热点，不写入素材身份。",
+          "targetId": "light-lantern",
+          "provenance": "local-authored-runtime-state-mapping"
+        },
+        {
+          "id": "interaction:repair-waymark",
+          "kind": "scene-state",
+          "requirement": "repair-waymark",
+          "status": "generated-variant",
+          "resolution": "根据场景合同映射为可见状态与热点，不写入素材身份。",
+          "targetId": "repair-waymark",
+          "provenance": "local-authored-runtime-state-mapping"
+        },
+        {
+          "id": "interaction:guide-family",
+          "kind": "scene-state",
+          "requirement": "guide-family",
+          "status": "generated-variant",
+          "resolution": "根据场景合同映射为可见状态与热点，不写入素材身份。",
+          "targetId": "guide-family",
+          "provenance": "local-authored-runtime-state-mapping"
+        },
+        {
+          "id": "interaction:signal-public",
+          "kind": "scene-state",
+          "requirement": "signal-public",
+          "status": "generated-variant",
+          "resolution": "根据场景合同映射为可见状态与热点，不写入素材身份。",
+          "targetId": "signal-public",
+          "provenance": "local-authored-runtime-state-mapping"
+        }
+      ],
+      "counts": {
+        "matched": 4,
+        "generatedVariant": 6,
+        "capabilityGap": 0
+      },
+      "provenance": {
+        "runtimeLlmCalls": 0,
+        "cloudApiCalls": 0
+      },
+      "fingerprint": "8360dcb7"
+    },
+    "audit": {
+      "rendered": true,
+      "representation": "local-authored-procedural-canvas-2d-scene",
+      "sceneRecipe": "d6e02fd9",
+      "styleFingerprint": "ccd34255",
+      "embeddedProps": 3,
+      "requestedProps": [
+        "abe61d55",
+        "d16b3b1b",
+        "608af91d"
+      ],
+      "characterTokens": 2,
+      "runtimeLlmCalls": 0,
+      "cloudApiCalls": 0
+    },
+    "elapsedMs": 30,
+    "canvasAvailable": true
+  },
+  "tablet": {
+    "viewport": 1024,
+    "scrollWidth": 1024,
+    "snapshot": {
+      "contract": {
+        "schemaVersion": "kindergrimm-scene-intent-contract/1.0",
+        "sourceText": "构建月港旧水闸的夜间送信场景：信使带着卷轴和信使包，管理员在闸门旁等待。画面神秘克制，使用墨刻风格，重点是按时交付回信。",
+        "seed": 240824,
+        "intentAdapter": "local-explainable-rules",
+        "scene": {
+          "id": "waystation-display",
+          "label": "旧水闸 / Waystation"
+        },
+        "style": {
+          "id": "moonharbor-inkcut-props",
+          "label": "Moonharbor Inkcut"
+        },
+        "narrativeGoal": "delivery",
+        "audience": "general",
+        "time": "night",
+        "mood": "mysterious",
+        "safetyTone": "standard",
+        "tension": 1,
+        "platform": "responsive-web",
+        "characters": [
+          {
+            "id": "courier",
+            "label": "信使"
+          },
+          {
+            "id": "gatekeeper",
+            "label": "闸门管理员"
+          }
+        ],
+        "props": [
+          {
+            "id": "scroll",
+            "label": "卷轴 / 回信"
+          },
+          {
+            "id": "satchel",
+            "label": "信使包"
+          }
+        ],
+        "interactions": [
+          "deliver-letter"
+        ],
+        "requestedGaps": [],
+        "provenance": {
+          "runtimeLlmCalls": 0,
+          "cloudApiCalls": 0,
+          "compiler": "workspace-authored-rule-dictionary/1.0"
+        },
+        "fingerprint": "8eeb662a"
+      },
+      "plan": {
+        "schemaVersion": "kindergrimm-asset-resolution-plan/1.0",
+        "sceneContractFingerprint": "8eeb662a",
+        "strategy": "reuse-then-variant-then-gap",
+        "items": [
+          {
+            "id": "scene:waystation-display",
+            "kind": "scene-component",
+            "requirement": "旧水闸 / Waystation",
+            "status": "matched",
+            "resolution": "复用已验证 Scene Component Recipe，并按合同重绘天气、时间与情绪。",
+            "targetId": "waystation-display",
+            "provenance": "local-authored-procedural-2d-scene-component"
+          },
+          {
+            "id": "prop:scroll",
+            "kind": "prop",
+            "requirement": "卷轴 / 回信",
+            "status": "matched",
+            "resolution": "匹配稳定 Prop archetype；样式由当前 Style Grammar 决定。",
+            "targetId": "scroll",
+            "provenance": "local-authored-procedural-canvas-2d"
+          },
+          {
+            "id": "prop:satchel",
+            "kind": "prop",
+            "requirement": "信使包",
+            "status": "matched",
+            "resolution": "匹配稳定 Prop archetype；样式由当前 Style Grammar 决定。",
+            "targetId": "satchel",
+            "provenance": "local-authored-procedural-canvas-2d"
+          },
+          {
+            "id": "character:courier",
+            "kind": "character-token",
+            "requirement": "信使",
+            "status": "generated-variant",
+            "resolution": "使用确定性角色 Token 语法生成场景姿态与颜色变体；不声明完整骨骼角色资产。",
+            "targetId": "courier",
+            "provenance": "local-authored-procedural-character-token-2d"
+          },
+          {
+            "id": "character:gatekeeper",
+            "kind": "character-token",
+            "requirement": "闸门管理员",
+            "status": "generated-variant",
+            "resolution": "使用确定性角色 Token 语法生成场景姿态与颜色变体；不声明完整骨骼角色资产。",
+            "targetId": "gatekeeper",
+            "provenance": "local-authored-procedural-character-token-2d"
+          },
+          {
+            "id": "interaction:deliver-letter",
+            "kind": "scene-state",
+            "requirement": "deliver-letter",
+            "status": "generated-variant",
+            "resolution": "根据场景合同映射为可见状态与热点，不写入素材身份。",
+            "targetId": "deliver-letter",
+            "provenance": "local-authored-runtime-state-mapping"
+          }
+        ],
+        "counts": {
+          "matched": 3,
+          "generatedVariant": 3,
+          "capabilityGap": 0
+        },
+        "provenance": {
+          "runtimeLlmCalls": 0,
+          "cloudApiCalls": 0
+        },
+        "fingerprint": "0d0329d0"
+      },
+      "audit": {
+        "rendered": true,
+        "representation": "local-authored-procedural-canvas-2d-scene",
+        "sceneRecipe": "9a27fcdd",
+        "styleFingerprint": "e008924b",
+        "embeddedProps": 3,
+        "requestedProps": [
+          "21fad06c",
+          "608af91d"
+        ],
+        "characterTokens": 2,
+        "runtimeLlmCalls": 0,
+        "cloudApiCalls": 0
+      },
+      "elapsedMs": 47,
+      "canvasAvailable": true
+    },
+    "columns": "349.656px 674.344px"
+  },
+  "mobile": {
+    "viewport": 390,
+    "scrollWidth": 390,
+    "snapshot": {
+      "contract": {
+        "schemaVersion": "kindergrimm-scene-intent-contract/1.0",
+        "sourceText": "做一个温暖的儿童森林指路场景：白天山径旁有路标和护符，信使帮助迷路家庭找到回家方向，使用毛毡风格，画面轻松有希望。",
+        "seed": 240824,
+        "intentAdapter": "local-explainable-rules",
+        "scene": {
+          "id": "trail-shrine",
+          "label": "山径神龛 / Trail Shrine"
+        },
+        "style": {
+          "id": "sunpatch-felt-props",
+          "label": "Sunpatch Felt"
+        },
+        "narrativeGoal": "wayfinding",
+        "audience": "children",
+        "time": "day",
+        "mood": "hopeful",
+        "safetyTone": "gentle",
+        "tension": 1,
+        "platform": "responsive-web",
+        "characters": [
+          {
+            "id": "courier",
+            "label": "信使"
+          },
+          {
+            "id": "family",
+            "label": "迷路家庭"
+          }
+        ],
+        "props": [
+          {
+            "id": "waymark",
+            "label": "路标"
+          },
+          {
+            "id": "satchel",
+            "label": "信使包"
+          },
+          {
+            "id": "charm",
+            "label": "护符"
+          }
+        ],
+        "interactions": [
+          "repair-waymark",
+          "guide-family"
+        ],
+        "requestedGaps": [],
+        "provenance": {
+          "runtimeLlmCalls": 0,
+          "cloudApiCalls": 0,
+          "compiler": "workspace-authored-rule-dictionary/1.0"
+        },
+        "fingerprint": "12569c58"
+      },
+      "plan": {
+        "schemaVersion": "kindergrimm-asset-resolution-plan/1.0",
+        "sceneContractFingerprint": "12569c58",
+        "strategy": "reuse-then-variant-then-gap",
+        "items": [
+          {
+            "id": "scene:trail-shrine",
+            "kind": "scene-component",
+            "requirement": "山径神龛 / Trail Shrine",
+            "status": "matched",
+            "resolution": "复用已验证 Scene Component Recipe，并按合同重绘天气、时间与情绪。",
+            "targetId": "trail-shrine",
+            "provenance": "local-authored-procedural-2d-scene-component"
+          },
+          {
+            "id": "prop:waymark",
+            "kind": "prop",
+            "requirement": "路标",
+            "status": "matched",
+            "resolution": "匹配稳定 Prop archetype；样式由当前 Style Grammar 决定。",
+            "targetId": "waymark",
+            "provenance": "local-authored-procedural-canvas-2d"
+          },
+          {
+            "id": "prop:satchel",
+            "kind": "prop",
+            "requirement": "信使包",
+            "status": "matched",
+            "resolution": "匹配稳定 Prop archetype；样式由当前 Style Grammar 决定。",
+            "targetId": "satchel",
+            "provenance": "local-authored-procedural-canvas-2d"
+          },
+          {
+            "id": "prop:charm",
+            "kind": "prop",
+            "requirement": "护符",
+            "status": "matched",
+            "resolution": "匹配稳定 Prop archetype；样式由当前 Style Grammar 决定。",
+            "targetId": "charm",
+            "provenance": "local-authored-procedural-canvas-2d"
+          },
+          {
+            "id": "character:courier",
+            "kind": "character-token",
+            "requirement": "信使",
+            "status": "generated-variant",
+            "resolution": "使用确定性角色 Token 语法生成场景姿态与颜色变体；不声明完整骨骼角色资产。",
+            "targetId": "courier",
+            "provenance": "local-authored-procedural-character-token-2d"
+          },
+          {
+            "id": "character:family",
+            "kind": "character-token",
+            "requirement": "迷路家庭",
+            "status": "generated-variant",
+            "resolution": "使用确定性角色 Token 语法生成场景姿态与颜色变体；不声明完整骨骼角色资产。",
+            "targetId": "family",
+            "provenance": "local-authored-procedural-character-token-2d"
+          },
+          {
+            "id": "interaction:repair-waymark",
+            "kind": "scene-state",
+            "requirement": "repair-waymark",
+            "status": "generated-variant",
+            "resolution": "根据场景合同映射为可见状态与热点，不写入素材身份。",
+            "targetId": "repair-waymark",
+            "provenance": "local-authored-runtime-state-mapping"
+          },
+          {
+            "id": "interaction:guide-family",
+            "kind": "scene-state",
+            "requirement": "guide-family",
+            "status": "generated-variant",
+            "resolution": "根据场景合同映射为可见状态与热点，不写入素材身份。",
+            "targetId": "guide-family",
+            "provenance": "local-authored-runtime-state-mapping"
+          }
+        ],
+        "counts": {
+          "matched": 4,
+          "generatedVariant": 4,
+          "capabilityGap": 0
+        },
+        "provenance": {
+          "runtimeLlmCalls": 0,
+          "cloudApiCalls": 0
+        },
+        "fingerprint": "f7b6b03c"
+      },
+      "audit": {
+        "rendered": true,
+        "representation": "local-authored-procedural-canvas-2d-scene",
+        "sceneRecipe": "d6e02fd9",
+        "styleFingerprint": "ccd34255",
+        "embeddedProps": 3,
+        "requestedProps": [
+          "d16b3b1b",
+          "608af91d",
+          "576c7e61"
+        ],
+        "characterTokens": 2,
+        "runtimeLlmCalls": 0,
+        "cloudApiCalls": 0
+      },
+      "elapsedMs": 46,
+      "canvasAvailable": true
+    },
+    "inputTop": 280,
+    "sceneTop": 860,
+    "planTop": 1627,
+    "compileVisible": true
+  },
+  "keyboard": {
+    "snapshot": {
+      "contract": {
+        "schemaVersion": "kindergrimm-scene-intent-contract/1.0",
+        "sourceText": "做一个儿童森林指路场景，信使拿着路标和护符，使用毛毡风格。 画面更紧张，风暴和预警更明显。",
+        "seed": 240824,
+        "intentAdapter": "local-explainable-rules",
+        "scene": {
+          "id": "trail-shrine",
+          "label": "山径神龛 / Trail Shrine"
+        },
+        "style": {
+          "id": "sunpatch-felt-props",
+          "label": "Sunpatch Felt"
+        },
+        "narrativeGoal": "public-warning",
+        "audience": "children",
+        "time": "day",
+        "mood": "urgent",
+        "safetyTone": "gentle",
+        "tension": 2,
+        "platform": "responsive-web",
+        "characters": [
+          {
+            "id": "courier",
+            "label": "信使"
+          }
+        ],
+        "props": [
+          {
+            "id": "waymark",
+            "label": "路标"
+          },
+          {
+            "id": "satchel",
+            "label": "信使包"
+          },
+          {
+            "id": "charm",
+            "label": "护符"
+          }
+        ],
+        "interactions": [
+          "repair-waymark",
+          "signal-public"
+        ],
+        "requestedGaps": [],
+        "provenance": {
+          "runtimeLlmCalls": 0,
+          "cloudApiCalls": 0,
+          "compiler": "workspace-authored-rule-dictionary/1.0"
+        },
+        "fingerprint": "84ed3c19"
+      },
+      "plan": {
+        "schemaVersion": "kindergrimm-asset-resolution-plan/1.0",
+        "sceneContractFingerprint": "84ed3c19",
+        "strategy": "reuse-then-variant-then-gap",
+        "items": [
+          {
+            "id": "scene:trail-shrine",
+            "kind": "scene-component",
+            "requirement": "山径神龛 / Trail Shrine",
+            "status": "matched",
+            "resolution": "复用已验证 Scene Component Recipe，并按合同重绘天气、时间与情绪。",
+            "targetId": "trail-shrine",
+            "provenance": "local-authored-procedural-2d-scene-component"
+          },
+          {
+            "id": "prop:waymark",
+            "kind": "prop",
+            "requirement": "路标",
+            "status": "matched",
+            "resolution": "匹配稳定 Prop archetype；样式由当前 Style Grammar 决定。",
+            "targetId": "waymark",
+            "provenance": "local-authored-procedural-canvas-2d"
+          },
+          {
+            "id": "prop:satchel",
+            "kind": "prop",
+            "requirement": "信使包",
+            "status": "matched",
+            "resolution": "匹配稳定 Prop archetype；样式由当前 Style Grammar 决定。",
+            "targetId": "satchel",
+            "provenance": "local-authored-procedural-canvas-2d"
+          },
+          {
+            "id": "prop:charm",
+            "kind": "prop",
+            "requirement": "护符",
+            "status": "matched",
+            "resolution": "匹配稳定 Prop archetype；样式由当前 Style Grammar 决定。",
+            "targetId": "charm",
+            "provenance": "local-authored-procedural-canvas-2d"
+          },
+          {
+            "id": "character:courier",
+            "kind": "character-token",
+            "requirement": "信使",
+            "status": "generated-variant",
+            "resolution": "使用确定性角色 Token 语法生成场景姿态与颜色变体；不声明完整骨骼角色资产。",
+            "targetId": "courier",
+            "provenance": "local-authored-procedural-character-token-2d"
+          },
+          {
+            "id": "interaction:repair-waymark",
+            "kind": "scene-state",
+            "requirement": "repair-waymark",
+            "status": "generated-variant",
+            "resolution": "根据场景合同映射为可见状态与热点，不写入素材身份。",
+            "targetId": "repair-waymark",
+            "provenance": "local-authored-runtime-state-mapping"
+          },
+          {
+            "id": "interaction:signal-public",
+            "kind": "scene-state",
+            "requirement": "signal-public",
+            "status": "generated-variant",
+            "resolution": "根据场景合同映射为可见状态与热点，不写入素材身份。",
+            "targetId": "signal-public",
+            "provenance": "local-authored-runtime-state-mapping"
+          }
+        ],
+        "counts": {
+          "matched": 4,
+          "generatedVariant": 3,
+          "capabilityGap": 0
+        },
+        "provenance": {
+          "runtimeLlmCalls": 0,
+          "cloudApiCalls": 0
+        },
+        "fingerprint": "ad28994b"
+      },
+      "audit": {
+        "rendered": true,
+        "representation": "local-authored-procedural-canvas-2d-scene",
+        "sceneRecipe": "d6e02fd9",
+        "styleFingerprint": "ccd34255",
+        "embeddedProps": 3,
+        "requestedProps": [
+          "d16b3b1b",
+          "608af91d",
+          "576c7e61"
+        ],
+        "characterTokens": 1,
+        "runtimeLlmCalls": 0,
+        "cloudApiCalls": 0
+      },
+      "elapsedMs": 23,
+      "canvasAvailable": true
+    },
+    "activeTag": "BUTTON",
+    "focusedBefore": {
+      "tag": "BUTTON",
+      "className": "compile-button",
+      "outline": "3px"
+    },
+    "revisionOutline": "3px"
+  },
+  "errorState": {
+    "message": "请至少描述场景、人物或行动中的两项需求。",
+    "visible": true,
+    "focused": "scene-brief",
+    "state": "idle"
+  },
+  "reduced": {
+    "matched": true,
+    "duration": "1e-06s"
+  },
+  "canvasOff": {
+    "snapshot": {
+      "contract": {
+        "schemaVersion": "kindergrimm-scene-intent-contract/1.0",
+        "sourceText": "做一个儿童山洪预警场景：夜晚山路上，一名年轻信使提着灯，扶正倒下的路标，帮助迷路家庭前往高地。画面紧张但不能恐怖，使用水粉风格，移动端可操作。",
+        "seed": 240824,
+        "intentAdapter": "local-explainable-rules",
+        "scene": {
+          "id": "trail-shrine",
+          "label": "山径神龛 / Trail Shrine"
+        },
+        "style": {
+          "id": "mosslight-prop-gouache",
+          "label": "Mosslight Gouache"
+        },
+        "narrativeGoal": "public-warning",
+        "audience": "children",
+        "time": "night",
+        "mood": "urgent",
+        "safetyTone": "gentle",
+        "tension": 2,
+        "platform": "mobile-first",
+        "characters": [
+          {
+            "id": "courier",
+            "label": "信使"
+          },
+          {
+            "id": "family",
+            "label": "迷路家庭"
+          }
+        ],
+        "props": [
+          {
+            "id": "lantern",
+            "label": "提灯"
+          },
+          {
+            "id": "waymark",
+            "label": "路标"
+          },
+          {
+            "id": "satchel",
+            "label": "信使包"
+          }
+        ],
+        "interactions": [
+          "light-lantern",
+          "repair-waymark",
+          "guide-family",
+          "signal-public"
+        ],
+        "requestedGaps": [],
+        "provenance": {
+          "runtimeLlmCalls": 0,
+          "cloudApiCalls": 0,
+          "compiler": "workspace-authored-rule-dictionary/1.0"
+        },
+        "fingerprint": "bd53eb1a"
+      },
+      "plan": {
+        "schemaVersion": "kindergrimm-asset-resolution-plan/1.0",
+        "sceneContractFingerprint": "bd53eb1a",
+        "strategy": "reuse-then-variant-then-gap",
+        "items": [
+          {
+            "id": "scene:trail-shrine",
+            "kind": "scene-component",
+            "requirement": "山径神龛 / Trail Shrine",
+            "status": "matched",
+            "resolution": "复用已验证 Scene Component Recipe，并按合同重绘天气、时间与情绪。",
+            "targetId": "trail-shrine",
+            "provenance": "local-authored-procedural-2d-scene-component"
+          },
+          {
+            "id": "prop:lantern",
+            "kind": "prop",
+            "requirement": "提灯",
+            "status": "matched",
+            "resolution": "匹配稳定 Prop archetype；样式由当前 Style Grammar 决定。",
+            "targetId": "lantern",
+            "provenance": "local-authored-procedural-canvas-2d"
+          },
+          {
+            "id": "prop:waymark",
+            "kind": "prop",
+            "requirement": "路标",
+            "status": "matched",
+            "resolution": "匹配稳定 Prop archetype；样式由当前 Style Grammar 决定。",
+            "targetId": "waymark",
+            "provenance": "local-authored-procedural-canvas-2d"
+          },
+          {
+            "id": "prop:satchel",
+            "kind": "prop",
+            "requirement": "信使包",
+            "status": "matched",
+            "resolution": "匹配稳定 Prop archetype；样式由当前 Style Grammar 决定。",
+            "targetId": "satchel",
+            "provenance": "local-authored-procedural-canvas-2d"
+          },
+          {
+            "id": "character:courier",
+            "kind": "character-token",
+            "requirement": "信使",
+            "status": "generated-variant",
+            "resolution": "使用确定性角色 Token 语法生成场景姿态与颜色变体；不声明完整骨骼角色资产。",
+            "targetId": "courier",
+            "provenance": "local-authored-procedural-character-token-2d"
+          },
+          {
+            "id": "character:family",
+            "kind": "character-token",
+            "requirement": "迷路家庭",
+            "status": "generated-variant",
+            "resolution": "使用确定性角色 Token 语法生成场景姿态与颜色变体；不声明完整骨骼角色资产。",
+            "targetId": "family",
+            "provenance": "local-authored-procedural-character-token-2d"
+          },
+          {
+            "id": "interaction:light-lantern",
+            "kind": "scene-state",
+            "requirement": "light-lantern",
+            "status": "generated-variant",
+            "resolution": "根据场景合同映射为可见状态与热点，不写入素材身份。",
+            "targetId": "light-lantern",
+            "provenance": "local-authored-runtime-state-mapping"
+          },
+          {
+            "id": "interaction:repair-waymark",
+            "kind": "scene-state",
+            "requirement": "repair-waymark",
+            "status": "generated-variant",
+            "resolution": "根据场景合同映射为可见状态与热点，不写入素材身份。",
+            "targetId": "repair-waymark",
+            "provenance": "local-authored-runtime-state-mapping"
+          },
+          {
+            "id": "interaction:guide-family",
+            "kind": "scene-state",
+            "requirement": "guide-family",
+            "status": "generated-variant",
+            "resolution": "根据场景合同映射为可见状态与热点，不写入素材身份。",
+            "targetId": "guide-family",
+            "provenance": "local-authored-runtime-state-mapping"
+          },
+          {
+            "id": "interaction:signal-public",
+            "kind": "scene-state",
+            "requirement": "signal-public",
+            "status": "generated-variant",
+            "resolution": "根据场景合同映射为可见状态与热点，不写入素材身份。",
+            "targetId": "signal-public",
+            "provenance": "local-authored-runtime-state-mapping"
+          }
+        ],
+        "counts": {
+          "matched": 4,
+          "generatedVariant": 6,
+          "capabilityGap": 0
+        },
+        "provenance": {
+          "runtimeLlmCalls": 0,
+          "cloudApiCalls": 0
+        },
+        "fingerprint": "ef4415e4"
+      },
+      "audit": {
+        "rendered": false,
+        "representation": "semantic-ui-fallback"
+      },
+      "elapsedMs": 5,
+      "canvasAvailable": false
+    },
+    "fallbackVisible": true,
+    "canvasHidden": true,
+    "planItems": 10,
+    "downloadEnabled": true
+  },
+  "consoleErrors": [],
+  "evidence": [
+    "evidence/scene-studio-desktop-flood.png",
+    "evidence/scene-studio-capability-gap.png",
+    "evidence/scene-studio-felt-revision.png",
+    "evidence/scene-studio-tablet.png",
+    "evidence/scene-studio-mobile.png",
+    "evidence/scene-studio-canvas-off.png"
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "schemaVersion": "kindergrimm-contract-fixtures/0.1",
+  "generatedFrom": "http://127.0.0.1:8882/projects/kindergrimm/npc-factory/",
+  "upstreamCommit": "de339ad739d8cbd28ff2dd4a940af38c0ede86c8",
+  "fixtures": [
+    {
+      "file": "original-manifest.json",
+      "kind": "runtime-capture",
+      "expect": "accept",
+      "packFingerprint": null,
+      "firstRecipeFingerprint": "9b8ee20e"
+    },
+    {
+      "file": "mosslight-v05-compat-manifest.json",
+      "kind": "runtime-generated-compatibility",
+      "expect": "accept",
+      "packFingerprint": "660b9350",
+      "rendererFingerprint": "2bd2c78e",
+      "partsPerAsset": 3,
+      "firstVisualFingerprint": "f666e685",
+      "historicalReference": {
+        "packFingerprint": "f78b264d",
+        "rendererFingerprint": "f7d84f29",
+        "firstVisualFingerprint": "aef31a9b"
+      },
+      "note": "This fixture exercises the v0.1.0 three-feature compatibility path using the current pack metadata. Historical v0.5 fingerprints remain a separate immutable regression reference because the original full JSON payload was not retained."
+    },
+    {
+      "file": "mosslight-v06-manifest.json",
+      "kind": "runtime-capture",
+      "expect": "accept",
+      "packFingerprint": "a79de443",
+      "rendererFingerprint": "091c354d",
+      "partsPerAsset": 12,
+      "firstVisualFingerprint": "722d4014"
+    },
+    {
+      "file": "tampered-visual-fingerprint.json",
+      "kind": "runtime-derived-tamper",
+      "expect": "reject",
+      "expectedCode": "contract.fingerprint.mismatch",
+      "expectedPath": "assets[0].visual.fingerprint"
+    }
+  ]
+}

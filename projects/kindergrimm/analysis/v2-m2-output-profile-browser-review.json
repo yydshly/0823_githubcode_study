@@ -1,0 +1,120 @@
+{
+  "schemaVersion": "kindergrimm-output-browser-review/0.1",
+  "capturedAt": "2026-08-25",
+  "url": "http://127.0.0.1:8882/projects/kindergrimm/npc-factory/?pack=sunpatch-felt-2d",
+  "runtime": {
+    "generated": 12,
+    "unique": 12,
+    "webgl": true,
+    "packId": "sunpatch-felt-2d",
+    "packFingerprint": "f51ce69c",
+    "rendererId": "sunpatch-felt-2d",
+    "rendererFingerprint": "f1d70ebd",
+    "assetFingerprint": "8c67d2d8",
+    "visualFingerprint": "ff18f7b3",
+    "consoleErrors": 0
+  },
+  "profiles": [
+    {
+      "id": "transparent-character",
+      "width": 1024,
+      "height": 1024,
+      "cornerAlpha": 0,
+      "outputFingerprint": "ab751a0e",
+      "screenshot": "evidence/v2-m2-output-transparent-character.png",
+      "ok": true
+    },
+    {
+      "id": "portrait-avatar",
+      "width": 512,
+      "height": 512,
+      "cornerAlpha": 0,
+      "outputFingerprint": "5d770ef2",
+      "screenshot": "evidence/v2-m2-output-portrait-avatar.png",
+      "ok": true
+    },
+    {
+      "id": "card-catalog",
+      "width": 768,
+      "height": 1024,
+      "cornerAlpha": 255,
+      "outputFingerprint": "ca06e723",
+      "screenshot": "evidence/v2-m2-output-card-catalog.png",
+      "ok": true
+    },
+    {
+      "id": "sprite-sheet",
+      "width": 1024,
+      "height": 768,
+      "cornerAlpha": 0,
+      "columns": 4,
+      "rows": 3,
+      "tileSize": 256,
+      "outputFingerprint": "6e98a31b",
+      "screenshot": "evidence/v2-m2-output-sprite-sheet.png",
+      "ok": true
+    }
+  ],
+  "environmentMatrix": [
+    {
+      "id": "mobile-390",
+      "viewportWidth": 390,
+      "scrollWidth": 390,
+      "outputProfile": "card-catalog",
+      "screenshot": "evidence/v2-m2-output-factory-mobile.png",
+      "ok": true
+    },
+    {
+      "id": "reduced-motion",
+      "matched": true,
+      "screenshot": "evidence/v2-m2-output-factory-reduced-motion.png",
+      "ok": true
+    },
+    {
+      "id": "webgl-off",
+      "webgl": false,
+      "generated": 12,
+      "unique": 12,
+      "pngExportDisabled": true,
+      "screenshot": "evidence/v2-m2-output-factory-webgl-off.png",
+      "ok": true
+    }
+  ],
+  "productionStudio": {
+    "assetFingerprint": "8c67d2d8",
+    "visualFingerprint": "ff18f7b3",
+    "routes": 5,
+    "profiles": {
+      "transparent-character": "ab751a0e",
+      "portrait-avatar": "5d770ef2",
+      "card-catalog": "ca06e723",
+      "sprite-sheet": "12ed86d2"
+    },
+    "desktopScreenshot": "evidence/v2-m2-production-studio-four-outputs.png",
+    "fullScreenshot": "evidence/v2-m2-production-studio-five-routes-four-outputs.png",
+    "mobileScreenshot": "evidence/v2-m2-production-studio-outputs-mobile.png",
+    "webglOffScreenshot": "evidence/v2-m2-production-studio-outputs-webgl-off.png",
+    "mobileViewport": 390,
+    "mobileScrollWidth": 390,
+    "webglOffRecordsAvailable": true,
+    "webglOffImagesRendered": false,
+    "consoleErrors": 0,
+    "ok": true
+  },
+  "portability": {
+    "selectedManifestProfile": "card-catalog",
+    "selectedManifestFingerprint": "ca06e723",
+    "bundleEntries": [
+      "manifest.json",
+      "spritesheet.png",
+      "output-profiles.json",
+      "content-pack.json"
+    ],
+    "outputProfileRecords": 4,
+    "outputProfilesBytes": 3021,
+    "allCrcValid": true,
+    "runtimeLlmCalls": 0,
+    "cloudApiCalls": 0,
+    "ok": true
+  }
+}

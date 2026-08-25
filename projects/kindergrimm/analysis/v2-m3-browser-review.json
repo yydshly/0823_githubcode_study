@@ -1,0 +1,82 @@
+{
+  "schemaVersion": "kindergrimm-v2-m3-browser-review/0.1",
+  "capturedAt": "2026-08-25",
+  "canonicalUrl": "http://127.0.0.1:8882/projects/kindergrimm/asset-catalog/",
+  "desktop": {
+    "viewport": 1700,
+    "recipes": 12,
+    "recipeUnique": 12,
+    "propVisuals": 24,
+    "propVisualUnique": 24,
+    "sceneRecipes": 12,
+    "sceneRecipeUnique": 12,
+    "sceneVisuals": 24,
+    "sceneVisualUnique": 24,
+    "styles": {
+      "mosslight-prop-gouache": "da570369",
+      "sunpatch-felt-props": "ccd34255"
+    },
+    "selected": {
+      "slot": 8,
+      "recipeFingerprint": "ca9e387f",
+      "visualFingerprint": "91a113d3",
+      "styleFingerprint": "ccd34255",
+      "propAuthoredParts": 5,
+      "propUpstreamVisibleParts": 0
+    },
+    "outputs": {
+      "transparent-prop": { "fingerprint": "89592cd0", "width": 512, "height": 512, "cornerAlpha": 0 },
+      "inventory-icon": { "fingerprint": "30ea3681", "width": 256, "height": 256, "cornerAlpha": 255 },
+      "catalog-card": { "fingerprint": "fbe2afd6", "width": 512, "height": 640, "cornerAlpha": 255 },
+      "prop-sheet": { "fingerprint": "c591dd8f", "width": 1024, "height": 768, "cornerAlpha": 0 }
+    },
+    "scene": {
+      "recipeFingerprint": "f50b6ef1",
+      "visualFingerprint": "f3a15953",
+      "authoredParts": 5,
+      "upstreamVisibleParts": 0,
+      "embeddedProps": 3,
+      "rendered": true
+    },
+    "buildMs": 96,
+    "consoleErrors": 0
+  },
+  "sampleMatrix": {
+    "propRecipes": 12,
+    "propVisuals": 12,
+    "icons": 12,
+    "sceneRecipes": 12,
+    "sceneVisuals": 12,
+    "allUnique": true,
+    "allRendered": true,
+    "allNamedParts": true
+  },
+  "bundle": {
+    "entries": [
+      "manifest.json",
+      "style-grammars.json",
+      "scene-components.json",
+      "selected/prop.png",
+      "selected/icon.png",
+      "selected/card.png",
+      "batch/prop-sheet.png",
+      "scene/scene-component.png"
+    ],
+    "size": 521219,
+    "allCrcValid": true
+  },
+  "environmentMatrix": {
+    "mobile": { "viewport": 390, "scrollWidth": 390, "sceneRendered": true, "screenshot": "evidence/v2-m3-material-catalog-mobile.png", "ok": true },
+    "reducedMotion": { "matched": true, "sceneRendered": true, "screenshot": "evidence/v2-m3-material-catalog-reduced-motion.png", "ok": true },
+    "canvasOff": { "canvas": false, "recipes": 12, "visuals": 24, "sceneVisuals": 24, "manifestEnabled": true, "bundleDisabled": true, "verified": true, "screenshot": "evidence/v2-m3-material-catalog-canvas-off.png", "ok": true },
+    "keyboard": { "focusStopsChecked": 9, "visibleOutlineStops": 9, "ok": true }
+  },
+  "evidence": [
+    "evidence/v2-m3-material-catalog-desktop.png",
+    "evidence/v2-m3-material-catalog-selected.png",
+    "evidence/v2-m3-scene-component-sunpatch.png",
+    "evidence/v2-m3-material-catalog-mobile.png",
+    "evidence/v2-m3-material-catalog-reduced-motion.png",
+    "evidence/v2-m3-material-catalog-canvas-off.png"
+  ]
+}

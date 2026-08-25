@@ -1,0 +1,28 @@
+{
+  "schemaVersion": "kindergrimm-release-verification/1.0",
+  "generatedAt": "2026-08-24T14:00:00.000Z",
+  "suites": [
+    {
+      "id": "m2-contracts",
+      "status": "pass",
+      "summary": "7 schemas · 4 fixtures · 0 failures",
+      "reportSchema": "kindergrimm-contract-verification/0.1"
+    },
+    {
+      "id": "m3-independent-2d",
+      "status": "pass",
+      "summary": "9/9 · 50 golden · 17 features",
+      "reportSchema": "kindergrimm-m3-verification/0.1"
+    },
+    {
+      "id": "m5-runtime-sdk",
+      "status": "pass",
+      "summary": "9/9 · loader/cache/state/session/diagnostics pass",
+      "reportSchema": "kindergrimm-m5-verification/0.1"
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 0
+  }
+}

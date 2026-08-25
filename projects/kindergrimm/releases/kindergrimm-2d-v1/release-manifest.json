@@ -1,0 +1,235 @@
+{
+  "schemaVersion": "kindergrimm-platform-release/1.0",
+  "id": "kindergrimm-2d-v1",
+  "version": "1.0.0",
+  "releasedAt": "2026-08-24T14:00:00.000Z",
+  "status": "research-release",
+  "scope": {
+    "northStar": "Versioned deterministic 2D game assets from author intent to reviewed release and stable runtime consumption.",
+    "included": [
+      "domain contracts",
+      "independent Mosslight Core 2D",
+      "Production Studio",
+      "Runtime SDK",
+      "G0–G7 evidence"
+    ],
+    "excluded": [
+      "external publishing",
+      "backend collaboration",
+      "AI intent adapter",
+      "3D backend program"
+    ]
+  },
+  "identity": {
+    "upstream": {
+      "repository": "https://github.com/albertobeiz/kindergrimm",
+      "commit": "de339ad739d8cbd28ff2dd4a940af38c0ede86c8",
+      "license": "Unlicense"
+    },
+    "contentPack": {
+      "id": "mosslight-core-2d",
+      "version": "0.1.0",
+      "fingerprint": "a96d877a"
+    },
+    "renderer": {
+      "id": "mosslight-core-2d",
+      "version": "0.1.0",
+      "fingerprint": "32d9c2cf"
+    },
+    "runtimeSdk": {
+      "id": "kindergrimm-runtime-sdk",
+      "version": "0.1.0",
+      "schemaVersion": "kindergrimm-runtime-sdk/0.1"
+    }
+  },
+  "gates": [
+    {
+      "id": "g0-goal",
+      "status": "pass",
+      "evidence": [
+        "PROGRAM.md North Star and 2D/AI/3D boundaries"
+      ]
+    },
+    {
+      "id": "g1-contract",
+      "status": "pass",
+      "evidence": [
+        "7 schemas",
+        "4 accept/reject fixtures",
+        "pure validators"
+      ]
+    },
+    {
+      "id": "g2-asset",
+      "status": "pass",
+      "evidence": [
+        "23/23 Core authored planes",
+        "0 upstream visible planes"
+      ]
+    },
+    {
+      "id": "g3-visual",
+      "status": "pass",
+      "evidence": [
+        "50 unique Recipe fingerprints",
+        "50 unique Visual fingerprints"
+      ]
+    },
+    {
+      "id": "g4-portability",
+      "status": "pass",
+      "evidence": [
+        "Manifest validation",
+        "RC JSON",
+        "stored ZIP CRC evidence"
+      ]
+    },
+    {
+      "id": "g5-runtime",
+      "status": "pass",
+      "evidence": [
+        "Runtime SDK 0.1.0",
+        "three modes preserve 8 identities",
+        "transactional import"
+      ]
+    },
+    {
+      "id": "g6-budget",
+      "status": "pass",
+      "evidence": [
+        "Studio compare/RC budgets",
+        "Runtime warm rebuild 177ms",
+        "desktop/390/keyboard/motion/WebGL-off"
+      ]
+    },
+    {
+      "id": "g7-release",
+      "status": "pass",
+      "evidence": [
+        "artifact inventory",
+        "provenance boundary",
+        "operator handoff",
+        "release verifier"
+      ]
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "content-pack.json",
+      "role": "locked-content-pack",
+      "bytes": 3165,
+      "fingerprint": "d5ab9d4d"
+    },
+    {
+      "path": "runtime-sdk.json",
+      "role": "runtime-sdk-descriptor",
+      "bytes": 379,
+      "fingerprint": "7adb6f78"
+    },
+    {
+      "path": "golden-summary.json",
+      "role": "visual-golden-summary",
+      "bytes": 442,
+      "fingerprint": "b26e8584"
+    },
+    {
+      "path": "browser-matrix.json",
+      "role": "browser-evidence-index",
+      "bytes": 1079,
+      "fingerprint": "7c95f7b9"
+    },
+    {
+      "path": "verification-matrix.json",
+      "role": "automated-verification-matrix",
+      "bytes": 735,
+      "fingerprint": "e483755c"
+    },
+    {
+      "path": "provenance.md",
+      "role": "source-and-license-boundary",
+      "bytes": 686,
+      "fingerprint": "e133da09"
+    },
+    {
+      "path": "README.md",
+      "role": "operator-handoff",
+      "bytes": 933,
+      "fingerprint": "404894d7"
+    }
+  ],
+  "browserEvidence": [
+    {
+      "id": "production-studio",
+      "paths": [
+        "evidence/m4-production-studio-desktop.png",
+        "evidence/m4-production-studio-mobile.png",
+        "evidence/m4-production-studio-webgl-off.png"
+      ],
+      "assertions": [
+        "Original/Decorator/Core comparison",
+        "6/6 gates",
+        "4-file RC CRC pass",
+        "390 no overflow",
+        "keyboard journey",
+        "reduced-motion",
+        "WebGL-off semantic workflow"
+      ]
+    },
+    {
+      "id": "runtime-sdk",
+      "paths": [
+        "evidence/m5-runtime-sdk-desktop.png",
+        "evidence/m5-runtime-sdk-mobile.png",
+        "evidence/m5-runtime-sdk-webgl-off.png"
+      ],
+      "assertions": [
+        "three modes preserve 8 identities",
+        "184 authored / 0 upstream planes",
+        "186 draw calls",
+        "warm rebuild 177ms",
+        "390 no overflow",
+        "keyboard actor state",
+        "WebGL-off roster/session/cache"
+      ]
+    }
+  ],
+  "provenance": {
+    "runtimeLlmCalls": 0,
+    "cloudApiCalls": 0,
+    "authoredPaths": [
+      "runtime/",
+      "runtime-sdk/",
+      "production-studio/",
+      "npc-factory/",
+      "npc-scenarios/",
+      "schemas/",
+      "scripts/",
+      "analysis/",
+      "evidence/"
+    ],
+    "upstreamPaths": [
+      "upstream/"
+    ]
+  },
+  "verification": {
+    "command": "node projects/kindergrimm/scripts/verify-release.mjs",
+    "suites": [
+      {
+        "id": "m2-contracts",
+        "status": "pass",
+        "summary": "7 schemas · 4 fixtures · 0 failures"
+      },
+      {
+        "id": "m3-independent-2d",
+        "status": "pass",
+        "summary": "9/9 · 50 golden · 17 features"
+      },
+      {
+        "id": "m5-runtime-sdk",
+        "status": "pass",
+        "summary": "9/9 · loader/cache/state/session/diagnostics pass"
+      }
+    ]
+  },
+  "fingerprint": "df8ac08c"
+}

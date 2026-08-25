@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "kindergrimm-recipe/0.1",
+  "title": "Kindergrimm Recipe",
+  "type": "object",
+  "required": ["seed", "species", "base", "color", "media", "parts"],
+  "properties": {
+    "seed": { "type": "integer", "minimum": 0 },
+    "species": { "type": "string", "minLength": 1 },
+    "base": { "type": ["string", "null"] },
+    "color": { "type": "string", "minLength": 1 },
+    "media": { "type": "string", "minLength": 1 },
+    "parts": { "type": "object" }
+  },
+  "additionalProperties": true
+}

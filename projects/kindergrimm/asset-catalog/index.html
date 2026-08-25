@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Kindergrimm V2-M3 双风格 Prop、Icon 与素材输出研究台。">
+    <title>Material Catalog · Kindergrimm V2-M3</title>
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="./catalog.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#catalog">跳到素材目录</a>
+    <header class="topbar">
+      <div class="brand-block">
+        <a href="../lab/" class="brand">KINDERGRIMM / MATERIALS</a>
+        <span>V2-M3 · ASSET TYPE EXPANSION</span>
+      </div>
+      <nav aria-label="项目导航">
+        <a href="../research-atlas/">Source Atlas</a>
+        <a href="../scene-studio/">Scene Studio</a>
+        <a href="../story-demo/">Story Proof</a>
+        <a href="../npc-factory/">NPC Factory</a>
+        <a href="../production-studio/">Studio</a>
+        <a href="../npc-scenarios/">Runtime</a>
+        <a href="../PROGRAM-V2.md">Program</a>
+      </nav>
+    </header>
+
+    <main id="catalog" class="catalog-shell">
+      <aside class="control-panel" aria-labelledby="catalog-title">
+        <p class="eyebrow">PROP RECIPE / STYLE GRAMMAR</p>
+        <h1 id="catalog-title">同一道具，<br>三种风格。</h1>
+        <p class="intro-copy">复用 Kindergrimm 的 Seed 与 Canvas 部件思想，把角色之外的灯笼、包、卷轴、路标和护符变成可验证素材。</p>
+
+        <form id="catalog-form" class="catalog-form">
+          <label for="master-seed"><span>MASTER SEED</span><input id="master-seed" type="number" min="0" max="999999999" value="240824" inputmode="numeric"></label>
+          <div class="contract-box">
+            <small>ASSET TYPE CONTRACT</small>
+            <strong>PROP / ITEM</strong>
+            <dl>
+              <div><dt>SAMPLES</dt><dd>12</dd></div>
+              <div><dt>STYLES</dt><dd>3</dd></div>
+              <div><dt>PARTS</dt><dd>5 / ASSET</dd></div>
+              <div><dt>UPSTREAM VISIBLE</dt><dd>0</dd></div>
+            </dl>
+          </div>
+          <button id="generate-assets" class="primary" type="submit"><span>生成三风格素材</span><small>12 RECIPE · 36 VISUAL</small></button>
+          <button id="verify-assets" type="button" disabled>验证确定性与命名部件</button>
+        </form>
+
+        <section class="style-proof" aria-labelledby="style-proof-title">
+          <div><small>STYLE GRAMMAR</small><strong id="style-proof-title">三套独立材质语言</strong></div>
+          <article data-style="mosslight-prop-gouache"><span></span><div><strong>Mosslight Gouache</strong><small id="mosslight-style-fp">—</small></div></article>
+          <article data-style="moonharbor-inkcut-props"><span></span><div><strong>Moonharbor Inkcut</strong><small id="inkcut-style-fp">—</small></div></article>
+          <article data-style="sunpatch-felt-props"><span></span><div><strong>Sunpatch Felt</strong><small id="sunpatch-style-fp">—</small></div></article>
+        </section>
+
+        <p class="boundary"><strong>边界：</strong>这里生成程序化 2D Prop、Icon 和 Catalog 素材，不生成 mesh、碰撞体或 glTF；玩法状态不写入素材 Recipe。</p>
+      </aside>
+
+      <section class="workspace" aria-labelledby="comparison-title">
+        <header class="workspace-head">
+          <div><p class="eyebrow">SAME RECIPE · CROSS-STYLE REVIEW</p><h2 id="comparison-title">12 个 Recipe，36 个视觉资产。</h2></div>
+          <div class="metrics" aria-label="批次指标">
+            <span><small>RECIPE</small><strong id="metric-recipes">0</strong></span>
+            <span><small>VISUAL</small><strong id="metric-visuals">0</strong></span>
+            <span><small>UNIQUE</small><strong id="metric-unique">0</strong></span>
+            <span><small>BUILD</small><strong id="metric-build">—</strong></span>
+          </div>
+        </header>
+
+        <div id="catalog-status" class="status-line" data-state="idle" role="status" aria-live="polite"><span></span><strong>准备生成第一批 Prop。</strong></div>
+
+        <section id="result-stage" class="result-stage" aria-labelledby="result-stage-title">
+          <header>
+            <div><p class="eyebrow">OUTPUT SHOWCASE / REAL SCENE CONSUMER</p><h3 id="result-stage-title">先看产出：同一场景，三套完整素材效果。</h3></div>
+            <code id="showcase-scene-recipe">SCENE R#—</code>
+          </header>
+          <div class="result-stage-grid">
+            <button class="result-card" type="button" data-showcase-style="mosslight-prop-gouache" aria-pressed="false">
+              <span class="result-card-head"><strong>Mosslight Gouache</strong><small>纸张水洗 · 柔边 · 暖光</small></span>
+              <span class="result-visual"><img id="showcase-mosslight" alt="Mosslight Gouache 真实 Scene Component 产出"><span>RECIPE READY<br>CANVAS OFF</span></span>
+              <span class="result-card-foot"><small>SCENE VISUAL</small><code id="showcase-mosslight-fp">—</code></span>
+            </button>
+                        <button class="result-card" type="button" data-showcase-style="moonharbor-inkcut-props" aria-pressed="false">
+              <span class="result-card-head"><strong>Moonharbor Inkcut</strong><small>折角轮廓 · 硬墨边 · 斜向排线</small></span>
+              <span class="result-visual"><img id="showcase-inkcut" alt="Moonharbor Inkcut 真实 Scene Component 产出"><span>RECIPE READY<br>CANVAS OFF</span></span>
+              <span class="result-card-foot"><small>SCENE VISUAL</small><code id="showcase-inkcut-fp">—</code></span>
+            </button><button class="result-card" type="button" data-showcase-style="sunpatch-felt-props" aria-pressed="false">
+              <span class="result-card-head"><strong>Sunpatch Felt</strong><small>毛毡纤维 · 毯边缝线 · 贴布</small></span>
+              <span class="result-visual"><img id="showcase-sunpatch" alt="Sunpatch Felt 真实 Scene Component 产出"><span>RECIPE READY<br>CANVAS OFF</span></span>
+              <span class="result-card-foot"><small>SCENE VISUAL</small><code id="showcase-sunpatch-fp">—</code></span>
+            </button>
+          </div>
+          <dl class="delivery-proof" aria-label="当前批次真实交付">
+            <div><dt>PROP RECIPES</dt><dd>12</dd></div>
+            <div><dt>PROP VISUALS</dt><dd>36</dd></div>
+            <div><dt>SCENE VISUALS</dt><dd>36</dd></div>
+            <div><dt>OUTPUT PROFILES</dt><dd>4</dd></div>
+            <div><dt>ZIP ENTRIES</dt><dd>8</dd></div>
+          </dl>
+        </section>
+
+        <div class="column-legend" aria-hidden="true">
+          <span>RECIPE</span><strong>MOSSLIGHT / GOUACHE</strong><strong>MOONHARBOR / INKCUT</strong><strong>SUNPATCH / FELT</strong>
+        </div>
+        <div id="comparison-grid" class="comparison-grid" aria-busy="false"></div>
+
+        <section class="mechanism-note">
+          <div><small>WHY THIS IS AN EXTENSION</small><h3>复用机制，不复制角色。</h3></div>
+          <p>上游 Seeded RNG 负责稳定变体；Asset Type Recipe 固化 archetype、anchor、bounds 与 named parts；Style Grammar 只决定纸张水洗或毛毡缝线；Output 层再派生透明素材、UI Icon、Catalog Card 和批量 Sheet。</p>
+        </section>
+
+        <section class="scene-component-demo" aria-labelledby="scene-component-title">
+          <header>
+            <div><small>REAL CONSUMER / SCENE COMPONENT</small><h3 id="scene-component-title">不是摆在查看器里，而是组合成场景素材。</h3></div>
+            <code id="scene-component-identity">等待生成</code>
+          </header>
+          <div class="scene-component-frame"><img id="scene-component-preview" alt="使用真实 Prop 组合的 Scene Component"></div>
+          <dl>
+            <div><dt>SCENE RECIPE</dt><dd id="scene-recipe-fp">—</dd></div>
+            <div><dt>SCENE VISUAL</dt><dd id="scene-visual-fp">—</dd></div>
+            <div><dt>NAMED PARTS</dt><dd id="scene-parts">—</dd></div>
+            <div><dt>EMBEDDED PROPS</dt><dd id="scene-props">—</dd></div>
+          </dl>
+        </section>
+      </section>
+
+      <aside class="inspector" aria-labelledby="inspector-title">
+        <header><p class="eyebrow">SELECTED MATERIAL</p><h2 id="inspector-title">等待选择</h2></header>
+        <div id="selected-preview" class="selected-preview"><span>生成后选择任一风格素材</span></div>
+        <dl class="selected-meta">
+          <div><dt>RECIPE FP</dt><dd id="meta-recipe">—</dd></div>
+          <div><dt>VISUAL FP</dt><dd id="meta-visual">—</dd></div>
+          <div><dt>STYLE FP</dt><dd id="meta-style">—</dd></div>
+          <div><dt>ARCHETYPE</dt><dd id="meta-archetype">—</dd></div>
+          <div><dt>NAMED PARTS</dt><dd id="meta-parts">—</dd></div>
+          <div><dt>VISIBLE SOURCE</dt><dd id="meta-source">—</dd></div>
+        </dl>
+
+        <section class="output-section" aria-labelledby="outputs-title">
+          <div class="section-heading"><small>FOUR OUTPUTS</small><strong id="outputs-title">同一身份的交付形态</strong></div>
+          <div class="output-grid">
+            <article><div class="output-frame is-square"><img id="output-transparent-prop" alt="透明 Prop 输出"></div><strong>Transparent</strong><small id="output-transparent-prop-fp">—</small></article>
+            <article><div class="output-frame is-square"><img id="output-inventory-icon" alt="Inventory Icon 输出"></div><strong>Icon</strong><small id="output-inventory-icon-fp">—</small></article>
+            <article><div class="output-frame is-card"><img id="output-catalog-card" alt="Catalog Card 输出"></div><strong>Card</strong><small id="output-catalog-card-fp">—</small></article>
+            <article><div class="output-frame is-sheet"><img id="output-prop-sheet" alt="Prop Sheet 输出"></div><strong>Sheet</strong><small id="output-prop-sheet-fp">—</small></article>
+          </div>
+        </section>
+
+        <div class="export-actions">
+          <button id="download-manifest" type="button" disabled>下载 Manifest</button>
+          <button id="download-bundle" class="primary" type="button" disabled>下载素材 ZIP</button>
+        </div>
+        <p id="bundle-summary" class="bundle-summary">ZIP 将包含 Manifest、选中 Prop、Icon、Card、Sheet、Scene Component 与 Style Grammar。</p>
+      </aside>
+    </main>
+
+    <script type="module" src="./catalog.js"></script>
+  </body>
+</html>

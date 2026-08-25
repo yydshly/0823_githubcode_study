@@ -1,0 +1,323 @@
+{
+  "schemaVersion": "kindergrimm-asset-demand-board-browser-review/0.5",
+  "canonicalUrl": "http://127.0.0.1:8882/projects/kindergrimm/asset-lab/?mode=usage",
+  "capturedAt": "2026-08-25T08:21:06.941Z",
+  "loadMs": 2362,
+  "narrative": {
+    "proof": "narrative",
+    "filter": "all",
+    "rows": 5,
+    "coverage": {
+      "total": 5,
+      "ready": 3,
+      "gaps": 2,
+      "percent": 60
+    },
+    "percent": "60%",
+    "label": "3/5 项当前可用 · 2 项需扩展",
+    "nextTitle": "表情状态组",
+    "nextCopy": "源库只给出单一角色状态。扩展 Drawn 参数：neutral / alert / sad / joy。",
+    "statuses": [
+      "source-ready",
+      "source-ready",
+      "generated-ready",
+      "extension-needed",
+      "extension-needed"
+    ],
+    "sources": [
+      "Drawn Renderer · human/gloom",
+      "Item Generator · charm/nightmare",
+      "Asset Lab consumer",
+      "缺失",
+      "风格样张仅作参考"
+    ],
+    "pressedFilters": 1
+  },
+  "narrativeGaps": {
+    "proof": "narrative",
+    "filter": "gap",
+    "rows": 2,
+    "coverage": {
+      "total": 5,
+      "ready": 3,
+      "gaps": 2,
+      "percent": 60
+    },
+    "percent": "60%",
+    "label": "3/5 项当前可用 · 2 项需扩展",
+    "nextTitle": "表情状态组",
+    "nextCopy": "源库只给出单一角色状态。扩展 Drawn 参数：neutral / alert / sad / joy。",
+    "statuses": [
+      "extension-needed",
+      "extension-needed"
+    ],
+    "sources": [
+      "缺失",
+      "风格样张仅作参考"
+    ],
+    "pressedFilters": 1
+  },
+  "collectionGaps": {
+    "proof": "collection",
+    "filter": "gap",
+    "rows": 2,
+    "coverage": {
+      "total": 5,
+      "ready": 3,
+      "gaps": 2,
+      "percent": 60
+    },
+    "percent": "60%",
+    "label": "3/5 项当前可用 · 2 项需扩展",
+    "nextTitle": "稀有度与系列框体",
+    "nextCopy": "Item rank 尚未映射到收藏视觉系统。建立 rank → frame / color / badge 规则。",
+    "statuses": [
+      "extension-needed",
+      "extension-needed"
+    ],
+    "sources": [
+      "缺失",
+      "缺失"
+    ],
+    "pressedFilters": 1
+  },
+  "collectionReady": {
+    "proof": "collection",
+    "filter": "ready",
+    "rows": 3,
+    "coverage": {
+      "total": 5,
+      "ready": 3,
+      "gaps": 2,
+      "percent": 60
+    },
+    "percent": "60%",
+    "label": "3/5 项当前可用 · 2 项需扩展",
+    "nextTitle": "稀有度与系列框体",
+    "nextCopy": "Item rank 尚未映射到收藏视觉系统。建立 rank → frame / color / badge 规则。",
+    "statuses": [
+      "source-ready",
+      "source-ready",
+      "generated-ready"
+    ],
+    "sources": [
+      "Gloss Renderer · human/gloom",
+      "Item Generator · charm/nightmare",
+      "Scene Orchestrator · kg-c6b013e0"
+    ],
+    "pressedFilters": 1
+  },
+  "worldReady": {
+    "proof": "world",
+    "filter": "ready",
+    "rows": 4,
+    "coverage": {
+      "total": 6,
+      "ready": 4,
+      "gaps": 2,
+      "percent": 67
+    },
+    "percent": "67%",
+    "label": "4/6 项当前可用 · 2 项需扩展",
+    "nextTitle": "可拾取道具模型",
+    "nextCopy": "当前道具只有 2D 图标。按家族建立少量程序化 3D 原型或导入 GLB。",
+    "statuses": [
+      "source-ready",
+      "source-ready",
+      "source-ready",
+      "generated-ready"
+    ],
+    "sources": [
+      "Voxel Builder · human/gloom",
+      "Plant Builder · grass",
+      "Item Generator · charm/nightmare",
+      "Scene Orchestrator · kg-c6b013e0"
+    ],
+    "pressedFilters": 1
+  },
+  "worldGaps": {
+    "proof": "world",
+    "filter": "gap",
+    "rows": 2,
+    "coverage": {
+      "total": 6,
+      "ready": 4,
+      "gaps": 2,
+      "percent": 67
+    },
+    "percent": "67%",
+    "label": "4/6 项当前可用 · 2 项需扩展",
+    "nextTitle": "可拾取道具模型",
+    "nextCopy": "当前道具只有 2D 图标。按家族建立少量程序化 3D 原型或导入 GLB。",
+    "statuses": [
+      "extension-needed",
+      "extension-needed"
+    ],
+    "sources": [
+      "缺失 · charm/nightmare",
+      "缺失"
+    ],
+    "pressedFilters": 1
+  },
+  "presetSync": {
+    "demand": {
+      "proof": "world",
+      "filter": "all",
+      "rows": 6,
+      "coverage": {
+        "total": 6,
+        "ready": 4,
+        "gaps": 2,
+        "percent": 67
+      },
+      "percent": "67%",
+      "label": "4/6 项当前可用 · 2 项需扩展",
+      "nextTitle": "可拾取道具模型",
+      "nextCopy": "当前道具只有 2D 图标。按家族建立少量程序化 3D 原型或导入 GLB。",
+      "statuses": [
+        "source-ready",
+        "source-ready",
+        "source-ready",
+        "generated-ready",
+        "extension-needed",
+        "extension-needed"
+      ],
+      "sources": [
+        "Voxel Builder · dog/field",
+        "Plant Builder · plant",
+        "Item Generator · shield/gilded",
+        "Scene Orchestrator · kg-09d40260",
+        "缺失 · shield/gilded",
+        "缺失"
+      ],
+      "pressedFilters": 1
+    },
+    "title": "冬日温室的临时庇护",
+    "fingerprintChanged": true
+  },
+  "sourceSync": {
+    "beforeSources": [
+      "缺失 · charm/nightmare",
+      "缺失"
+    ],
+    "afterSources": [
+      "Voxel Builder · dog/field",
+      "Plant Builder · plant",
+      "Item Generator · shield/gilded",
+      "Scene Orchestrator · kg-09d40260",
+      "缺失 · shield/gilded",
+      "缺失"
+    ],
+    "changed": true
+  },
+  "focusOutline": "3px",
+  "proofSync": {
+    "proof": "narrative",
+    "filter": "all",
+    "rows": 5,
+    "coverage": {
+      "total": 5,
+      "ready": 3,
+      "gaps": 2,
+      "percent": 60
+    },
+    "percent": "60%",
+    "label": "3/5 项当前可用 · 2 项需扩展",
+    "nextTitle": "表情状态组",
+    "nextCopy": "源库只给出单一角色状态。扩展 Drawn 参数：neutral / alert / sad / joy。",
+    "statuses": [
+      "source-ready",
+      "source-ready",
+      "generated-ready",
+      "extension-needed",
+      "extension-needed"
+    ],
+    "sources": [
+      "Drawn Renderer · dog/field",
+      "Item Generator · shield/gilded",
+      "Asset Lab consumer",
+      "缺失",
+      "风格样张仅作参考"
+    ],
+    "pressedFilters": 1
+  },
+  "tablet": {
+    "viewport": 1024,
+    "scrollWidth": 1024,
+    "rows": 5
+  },
+  "mobile": {
+    "viewport": 390,
+    "scrollWidth": 390,
+    "filtersColumns": "105.344px 105.344px 105.344px",
+    "demand": {
+      "proof": "narrative",
+      "filter": "gap",
+      "rows": 2,
+      "coverage": {
+        "total": 5,
+        "ready": 3,
+        "gaps": 2,
+        "percent": 60
+      },
+      "percent": "60%",
+      "label": "3/5 项当前可用 · 2 项需扩展",
+      "nextTitle": "表情状态组",
+      "nextCopy": "源库只给出单一角色状态。扩展 Drawn 参数：neutral / alert / sad / joy。",
+      "statuses": [
+        "extension-needed",
+        "extension-needed"
+      ],
+      "sources": [
+        "缺失",
+        "风格样张仅作参考"
+      ],
+      "pressedFilters": 1
+    }
+  },
+  "reduced": {
+    "matched": true,
+    "meterTransition": "1e-05s"
+  },
+  "fallback": {
+    "worldCanvas": 0,
+    "fallbackVisible": true,
+    "demand": {
+      "proof": "world",
+      "filter": "all",
+      "rows": 6,
+      "coverage": {
+        "total": 6,
+        "ready": 4,
+        "gaps": 2,
+        "percent": 67
+      },
+      "percent": "67%",
+      "label": "4/6 项当前可用 · 2 项需扩展",
+      "nextTitle": "可拾取道具模型",
+      "nextCopy": "当前道具只有 2D 图标。按家族建立少量程序化 3D 原型或导入 GLB。",
+      "statuses": [
+        "source-ready",
+        "source-ready",
+        "source-ready",
+        "generated-ready",
+        "extension-needed",
+        "extension-needed"
+      ],
+      "sources": [
+        "Voxel Builder · human/gloom",
+        "Plant Builder · grass",
+        "Item Generator · charm/nightmare",
+        "Scene Orchestrator · kg-c6b013e0",
+        "缺失 · charm/nightmare",
+        "缺失"
+      ],
+      "pressedFilters": 1
+    }
+  },
+  "consoleErrors": [],
+  "evidence": [
+    "evidence/asset-lab-v05-demand-world-gaps.png",
+    "evidence/asset-lab-v05-demand-mobile.png"
+  ]
+}

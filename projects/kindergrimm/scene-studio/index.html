@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="zh-CN" data-style="mosslight">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="从用户场景意图到可解释素材计划与真实 2D 场景的 Kindergrimm 工作台。">
+    <title>Scene Studio · Kindergrimm</title>
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="./studio.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#scene-brief">跳到场景描述</a>
+    <header class="topbar">
+      <a class="brand" href="../../../docs/projects/kindergrimm.html"><strong>KINDERGRIMM</strong><span>SCENE STUDIO</span></a>
+      <div class="model-boundary"><i></i><span>LOCAL INTENT COMPILER</span><strong>LLM 0 · CLOUD 0</strong></div>
+      <nav aria-label="研究工具">
+        <a href="../research-atlas/">源库谱系</a>
+        <a href="../asset-lab/">生成场景素材</a>
+        <a href="../story-demo/">故事证明</a>
+        <a href="../asset-catalog/">素材目录</a>
+        <a href="../production-studio/">生产台</a>
+      </nav>
+    </header>
+
+    <main class="studio-shell">
+      <aside class="brief-panel" aria-labelledby="brief-title">
+        <header>
+          <p class="eyebrow">01 / DESCRIBE THE NEED</p>
+          <h1 id="brief-title">你想实现什么场景？</h1>
+          <p>描述人物、地点、行动、受众和氛围。系统会先理解需求，再决定复用、生成或暴露缺口。</p>
+        </header>
+
+        <div class="preset-row" role="group" aria-label="场景意图示例">
+          <button type="button" data-preset="flood-warning" aria-pressed="true">山洪预警</button>
+          <button type="button" data-preset="moonharbor-letter" aria-pressed="false">月港送信</button>
+          <button type="button" data-preset="sunny-wayfinding" aria-pressed="false">森林指路</button>
+        </div>
+
+        <form id="intent-form">
+          <label for="scene-brief" class="field-label"><span>场景描述</span><small id="character-count">0 / 320</small></label>
+          <textarea id="scene-brief" maxlength="320" rows="9" spellcheck="false"></textarea>
+          <div id="intent-error" class="intent-error" role="alert" hidden></div>
+          <button class="compile-button" type="submit">
+            <span>分析并构建场景</span>
+            <small>COMPILE → MATCH → COMPOSE</small>
+          </button>
+        </form>
+
+        <section id="revision-section" class="revision-section" aria-labelledby="revision-title" hidden>
+          <div class="section-heading"><strong id="revision-title">继续用心智修订</strong><small>只重算受影响需求</small></div>
+          <div class="revision-grid">
+            <button type="button" data-revision="urgent">更紧张</button>
+            <button type="button" data-revision="gentle">儿童友好</button>
+            <button type="button" data-revision="gouache">水粉</button>
+            <button type="button" data-revision="inkcut">墨刻</button>
+            <button type="button" data-revision="felt">毛毡</button>
+            <button type="button" data-revision="mobile">移动优先</button>
+          </div>
+        </section>
+
+        <details class="method-note">
+          <summary>当前如何理解用户描述？</summary>
+          <p>第一版使用可解释的本地词典与优先级规则，把文本编译为 Scene Contract。大模型未来只能替换 Intent Adapter，不能绕过素材合同和来源审查。</p>
+        </details>
+      </aside>
+
+      <section class="stage-column" aria-labelledby="output-title">
+        <header class="stage-heading">
+          <div><p class="eyebrow">02 / COMPOSE THE RESULT</p><h2 id="output-title">场景产出</h2></div>
+          <div id="build-identity" class="build-identity"><span>等待意图</span><code>SCENE R#—</code></div>
+        </header>
+
+        <div id="scene-stage" class="scene-stage" data-state="idle" data-mood="hopeful">
+          <canvas id="scene-canvas" width="1200" height="675" aria-label="根据用户意图生成的场景"></canvas>
+          <div id="scene-empty" class="scene-empty">
+            <span>SCENE CONTRACT</span>
+            <strong>先描述你真正想实现的场景</strong>
+            <p>这里不会默认展示一包素材。画面只在需求被编译后出现。</p>
+          </div>
+          <div id="canvas-fallback" class="canvas-fallback" hidden><strong>Canvas 图像能力不可用</strong><p>意图合同和素材计划仍可完整生成；当前不会用占位图片冒充场景结果。</p></div>
+          <div id="scene-hotspots" class="scene-hotspots" aria-label="场景需求热点"></div>
+          <div id="scene-badges" class="scene-badges"></div>
+          <div class="runtime-proof"><span>2D</span><span>SEED 240824</span><span>DETERMINISTIC</span></div>
+        </div>
+
+        <section id="result-summary" class="result-summary" aria-live="polite">
+          <article><small>匹配复用</small><strong id="matched-count">—</strong><span>现有稳定素材</span></article>
+          <article><small>参数变体</small><strong id="variant-count">—</strong><span>状态与组合生成</span></article>
+          <article><small>能力缺口</small><strong id="gap-count">—</strong><span>不伪装为已生成</span></article>
+          <article><small>构建耗时</small><strong id="build-time">—</strong><span>本地编译与绘制</span></article>
+        </section>
+
+        <section class="contract-strip" aria-labelledby="contract-strip-title">
+          <div class="section-heading"><strong id="contract-strip-title">系统理解出的场景</strong><code id="contract-fingerprint">R#—</code></div>
+          <dl id="contract-fields">
+            <div><dt>状态</dt><dd>等待用户输入</dd></div>
+          </dl>
+        </section>
+      </section>
+
+      <aside class="plan-panel" aria-labelledby="plan-title">
+        <header>
+          <p class="eyebrow">03 / RESOLVE THE ASSETS</p>
+          <h2 id="plan-title">素材需求计划</h2>
+          <p>每个场景需求都必须有明确去向。</p>
+        </header>
+        <div class="legend" aria-label="解析状态图例">
+          <span data-status="matched">直接匹配</span>
+          <span data-status="generated-variant">生成变体</span>
+          <span data-status="capability-gap">能力缺口</span>
+        </div>
+        <div id="asset-plan" class="asset-plan">
+          <div class="plan-empty"><strong>尚未形成需求清单</strong><p>编译场景后，这里会解释每个素材是复用、生成变体还是缺失。</p></div>
+        </div>
+        <section id="gap-backlog" class="gap-backlog" hidden>
+          <small>EXTENSION BACKLOG</small>
+          <strong>这些词正在驱动下一轮能力扩展</strong>
+          <ul id="gap-list"></ul>
+        </section>
+        <button id="download-contract" class="download-button" type="button" disabled>下载 Scene Contract</button>
+      </aside>
+    </main>
+
+    <footer>
+      <p><strong>主线：</strong>用户心智 → Scene Contract → 素材需求 → 匹配 / 变体 / 缺口 → 真实场景。</p>
+      <span>故事演示是 Golden Scenario · 素材目录是底层审查工具</span>
+    </footer>
+
+    <script type="module" src="./studio.js"></script>
+  </body>
+</html>

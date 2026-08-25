@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="基于 Kindergrimm 真实 Recipe 和手绘角色生成器的批量 NPC 资产工厂。">
+    <title>NPC Asset Factory · Kindergrimm Research</title>
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="./factory.css">
+    <script type="importmap">{ "imports": { "three": "../upstream/vendor/three.module.js" } }</script>
+  </head>
+  <body>
+    <a class="skip-link" href="#factory">跳到 NPC 工厂</a>
+
+    <header class="topbar">
+      <div class="brand-block">
+        <a class="brand" href="../lab/">KINDERGRIMM / FACTORY</a>
+        <span>AUTHORED VISUAL KIT · V0.6</span>
+      </div>
+      <nav aria-label="研究导航">
+        <a href="../production-studio/">Production Studio</a>
+        <a href="../lab/">能力实验室</a>
+        <a href="../npc-scenarios/">运行场景</a>
+        <a href="../upstream/editor.html">原始编辑器</a>
+        <a href="https://github.com/albertobeiz/kindergrimm">上游源码 ↗</a>
+      </nav>
+    </header>
+
+    <main id="factory" class="factory-shell">
+      <aside class="generator-panel" aria-labelledby="factory-title">
+        <div class="intro">
+          <p class="eyebrow">RECIPE-DRIVEN NPC PRODUCTION</p>
+          <h1 id="factory-title">批量生成，<br>不是重复抽卡。</h1>
+          <p>相同 Seed 与内容包得到相同批次。每个角色保留完整 Recipe，也携带自己属于哪套视觉语法。</p>
+        </div>
+
+        <form id="generator-form" class="generator-form">
+          <label>
+            <span>MASTER SEED</span>
+            <input id="master-seed" name="seed" type="number" min="0" max="999999999" value="240824" inputmode="numeric">
+          </label>
+
+          <label class="pack-control">
+            <span>CONTENT PACK</span>
+            <select id="content-pack" name="contentPack">
+              <option value="kindergrimm-original" selected>KinderGrimm Original · 上游完整内容</option>
+            </select>
+          </label>
+
+          <section id="pack-summary" class="pack-summary" data-pack="kindergrimm-original" aria-labelledby="pack-name" aria-live="polite">
+            <div class="pack-heading"><small id="pack-status">UPSTREAM CONTENT</small><strong id="pack-name">KinderGrimm Original</strong></div>
+            <p id="pack-description">保留上游全部物种、媒介和用户输入控制；作为向后兼容基线。</p>
+            <dl>
+              <div><dt>Species</dt><dd id="pack-species">4 / input</dd></div>
+              <div><dt>Media</dt><dd id="pack-media">6 / input</dd></div>
+              <div><dt>Color</dt><dd id="pack-color">input-driven</dd></div>
+              <div><dt>Pack FP</dt><dd id="pack-fingerprint">—</dd></div>
+              <div><dt>Renderer</dt><dd id="pack-renderer">BASE ONLY</dd></div>
+              <div><dt>Renderer FP</dt><dd id="pack-renderer-fingerprint">—</dd></div>
+              <div><dt>Visual Parts</dt><dd id="pack-part-count">0</dd></div>
+              <div><dt>Coverage</dt><dd id="pack-coverage">BASE</dd></div>
+            </dl>
+          </section>
+
+          <div class="form-pair">
+            <label>
+              <span>批次数量</span>
+              <select id="batch-size" name="count">
+                <option value="8">8 NPC</option>
+                <option value="12" selected>12 NPC</option>
+                <option value="24">24 NPC</option>
+              </select>
+            </label>
+            <label>
+              <span>颜色策略</span>
+              <select id="color-mode" name="color">
+                <option value="auto" selected>自动</option>
+                <option value="plain">单色</option>
+                <option value="color">彩色</option>
+              </select>
+            </label>
+          </div>
+
+          <label>
+            <span>物种</span>
+            <select id="species" name="species">
+              <option value="all" selected>全部 · Seed 决定</option>
+              <option value="human">Human</option>
+              <option value="dog">Dog</option>
+              <option value="cat">Cat</option>
+              <option value="nightmare">Nightmare</option>
+            </select>
+          </label>
+
+          <label>
+            <span>手绘媒介</span>
+            <select id="media" name="media">
+              <option value="all" selected>全部 · Seed 决定</option>
+              <option value="graphite">Graphite</option>
+              <option value="ink">Ink</option>
+              <option value="watercolor">Watercolour</option>
+              <option value="oil">Oil</option>
+              <option value="chalk">Charcoal</option>
+              <option value="marker">Marker</option>
+            </select>
+          </label>
+
+          <button id="generate" class="primary-action" type="submit">
+            <span>生成真实 NPC 批次</span>
+            <small>BUILD FROM CONTENT PACK</small>
+          </button>
+          <button id="verify-batch" class="secondary-action" type="button">复验当前批次确定性</button>
+        </form>
+
+        <section class="engine-proof" aria-labelledby="engine-title">
+          <div class="proof-heading">
+            <small>RUNTIME DEPENDENCY</small>
+            <strong id="engine-title">没有大模型调用</strong>
+          </div>
+          <dl>
+            <div><dt>LLM calls</dt><dd>0</dd></div>
+            <div><dt>Cloud APIs</dt><dd>0</dd></div>
+            <div><dt>Seed RNG</dt><dd>Mulberry32</dd></div>
+            <div><dt>Renderer</dt><dd id="engine-renderer">Base Canvas</dd></div>
+          </dl>
+        </section>
+      </aside>
+
+      <section class="asset-workspace" aria-labelledby="batch-title">
+        <header class="workspace-header">
+          <div>
+            <p class="eyebrow">LIVE GENERATED ASSETS</p>
+            <h2 id="batch-title">NPC 批次</h2>
+          </div>
+          <div class="batch-tools">
+            <label class="saved-toggle"><input id="saved-only" type="checkbox"> 只看收藏</label>
+            <button id="new-seed" type="button">换一组 Seed</button>
+          </div>
+        </header>
+
+        <div class="metric-row" aria-label="批次指标">
+          <div><small>GENERATED</small><strong id="metric-generated">0</strong></div>
+          <div><small>UNIQUE</small><strong id="metric-unique">0</strong></div>
+          <div><small>SAVED</small><strong id="metric-saved">0</strong></div>
+          <div><small>BUILD</small><strong id="metric-time">—</strong></div>
+        </div>
+
+        <div id="factory-status" class="factory-status" role="status" aria-live="polite">
+          <span></span><strong>准备生成第一批角色</strong>
+        </div>
+
+        <div class="batch-exports" role="group" aria-label="批次交付操作">
+          <button id="export-batch" type="button" disabled><span>下载 Batch Manifest</span><small>JSON · SOURCE + RECIPE</small></button>
+          <button id="export-sheet" type="button" disabled><span>导出 Sprite Sheet</span><small>PNG · 256PX TILES</small></button>
+          <button id="export-bundle" type="button" disabled><span>下载完整 Bundle</span><small id="bundle-detail">ZIP · MANIFEST + SHEET</small></button>
+          <a href="../npc-scenarios/"><span>进入运行场景</span><small>SAME SEED → LIVE RIGS</small></a>
+        </div>
+
+        <div id="asset-grid" class="asset-grid" aria-live="polite" aria-busy="false"></div>
+
+        <section class="driver-explainer" aria-labelledby="driver-title">
+          <div class="section-heading">
+            <small>HOW IT IS DRIVEN</small>
+            <h2 id="driver-title">一条确定性的程序化流水线</h2>
+          </div>
+          <div class="driver-flow">
+            <article><span>01</span><strong>Seed</strong><p>整数经过 FNV-1a 派生，为每个 NPC 和部件建立独立随机流。</p></article>
+            <article><span>02</span><strong>Content Pack</strong><p>内容包同时声明生成约束与可验证 renderer descriptor，不再只是风格标签。</p></article>
+            <article><span>03</span><strong>Recipe</strong><p>在内容包范围内，概率结果固化成普通 JSON 参数，之后不再依赖概率。</p></article>
+            <article><span>04</span><strong>Layout</strong><p>共享骨骼和锚点统一计算头、眼、手、身体与地面位置。</p></article>
+            <article><span>05</span><strong>Canvas</strong><p>上游部件完成基础角色，本地 kit 再追加覆盖环境、头部、脸部、身体与地面的十二个纹理平面。</p></article>
+            <article><span>06</span><strong>Three.js</strong><p>CanvasTexture 挂到平面和骨骼组，完成组合、动画和透明 PNG 输出。</p></article>
+          </div>
+          <div class="llm-note">
+            <strong>大模型只可能是未来的“意图翻译层”。</strong>
+            <p>它可以把“胆小的蓝色猫，拿旧灯笼”转换成受校验 Recipe；最终角色仍由确定性规则引擎生成。仓库里唯一的 Gemini 提及是建议开发者离线制作可选音乐 MP3，运行时只读取本地文件，与角色生成无关。</p>
+          </div>
+        </section>
+      </section>
+
+      <aside id="inspector" class="inspector" aria-labelledby="inspector-title">
+        <header>
+          <p class="eyebrow">SELECTED ASSET</p>
+          <h2 id="inspector-title">尚未选择</h2>
+        </header>
+
+        <div id="hero-preview" class="hero-preview">
+          <span>生成批次后<br>选择一个 NPC</span>
+        </div>
+
+        <dl class="asset-meta">
+          <div><dt>Seed</dt><dd id="meta-seed">—</dd></div>
+          <div><dt>Species</dt><dd id="meta-species">—</dd></div>
+          <div><dt>Medium</dt><dd id="meta-media">—</dd></div>
+          <div><dt>Fingerprint</dt><dd id="meta-fingerprint">—</dd></div>
+          <div><dt>Content Pack</dt><dd id="meta-pack">—</dd></div>
+          <div><dt>Pack FP</dt><dd id="meta-pack-fingerprint">—</dd></div>
+          <div><dt>Renderer</dt><dd id="meta-renderer">—</dd></div>
+          <div><dt>Visual FP</dt><dd id="meta-visual-fingerprint">—</dd></div>
+          <div><dt>Visual Parts</dt><dd id="meta-visual-parts">0</dd></div>
+          <div><dt>Coverage</dt><dd id="meta-coverage">BASE</dd></div>
+        </dl>
+
+        <div class="inspector-actions">
+          <label class="output-profile-control" for="output-profile">
+            <span>OUTPUT PROFILE / 素材交付规格</span>
+            <select id="output-profile" aria-describedby="output-profile-detail"></select>
+            <small id="output-profile-detail">FULL BODY RUNTIME ART · 1024×1024 · TRANSPARENT</small>
+          </label>
+          <button id="toggle-saved" type="button" disabled>☆ 收藏角色</button>
+          <button id="copy-json" type="button" disabled>复制 Recipe</button>
+          <button id="export-json" type="button" disabled>下载 JSON</button>
+          <button id="export-png" class="export-primary" type="button" disabled>导出透明 PNG · 1024</button>
+        </div>
+
+        <section class="recipe-summary" aria-labelledby="recipe-title">
+          <div><small>RECIPE / SOURCE OF TRUTH</small><strong id="recipe-title">角色参数摘要</strong></div>
+          <pre id="recipe-preview"><code>等待角色生成…</code></pre>
+        </section>
+
+        <p class="boundary-note"><strong>V2-M2 边界：</strong>三套结构风格都由本地确定性 Canvas2D 部件生成，并复用上游 Recipe / Part / 骨骼协议；输出规格只改变裁切、尺寸、背景和排版，不改变角色 Recipe。这里展示的是程序化 2D 素材管线，不是独立 3D 模型生成器。</p>
+      </aside>
+    </main>
+
+    <canvas id="render-canvas" width="320" height="320" aria-hidden="true"></canvas>
+    <script type="module" src="./factory.js"></script>
+  </body>
+</html>

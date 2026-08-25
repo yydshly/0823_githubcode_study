@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="从 Kindergrimm 上游原生能力、核心机制到本地扩展归属的研究谱系。">
+    <title>Source-first Research Atlas · Kindergrimm</title>
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="./atlas.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#source-proof">跳到源库证据</a>
+    <header class="topbar">
+      <a class="brand" href="#top"><strong>KINDERGRIMM</strong><span>SOURCE-FIRST ATLAS</span></a>
+      <div class="source-lock"><i></i><span>UPSTREAM</span><code>5857b1e1</code></div>
+      <nav aria-label="研究导航">
+        <a href="../asset-lab/">素材实验室</a>
+        <a href="#capabilities">原生能力</a>
+        <a href="#mechanism">实现机制</a>
+        <a href="#lineage">扩展归属</a>
+        <a href="https://github.com/albertobeiz/kindergrimm" target="_blank" rel="noreferrer">GitHub ↗</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">RESEARCH RESET / UPSTREAM FIRST</p>
+          <h1>先看清源库，<br>再谈我们的扩展。</h1>
+          <p class="hero-lead">Kindergrimm 不是一个调用大模型生成图片的包装器。它是一套以 Recipe 为唯一状态、可确定性重建角色与物品，并让同一内容进入 2D、3D、动画和游戏的程序化内容实验室。</p>
+          <div class="truth-row">
+            <span><strong>135</strong><small>JS MODULES</small></span>
+            <span><strong>18</strong><small>HTML ENTRYPOINTS</small></span>
+            <span><strong>13</strong><small>ITEM FAMILIES</small></span>
+            <span><strong>9</strong><small>STYLE BACKENDS</small></span>
+          </div>
+          <div class="hero-actions">
+            <a class="primary" href="#source-proof">查看上游实时效果</a>
+            <a href="../upstream/" target="_blank">打开原始菜单 ↗</a>
+          </div>
+        </div>
+
+        <aside class="source-card" aria-label="上游事实卡">
+          <div class="source-card-head"><span>UPSTREAM ORIGINAL</span><code>origin/main</code></div>
+          <blockquote>Procedural doodle characters, drawn as if by hand on cream paper, rigged one part per bone.</blockquote>
+          <dl>
+            <div><dt>核心状态</dt><dd>{ seed, media, color, parts }</dd></div>
+            <div><dt>2D</dt><dd>Sketch · Parts · Rig · Anim · Crowd</dd></div>
+            <div><dt>3D</dt><dd>Voxel · Gloss · Objects · Photo</dd></div>
+            <div><dt>应用</dt><dd>3 Games · Items · Styles · Timeline</dd></div>
+            <div><dt>运行时模型</dt><dd>0 OpenAI / Anthropic / Gemini</dd></div>
+            <div><dt>许可证</dt><dd>Unlicense / Public Domain</dd></div>
+          </dl>
+          <p>依据：上游 README、ARCHITECTURE.md、入口页面与源码注册表。</p>
+        </aside>
+      </section>
+
+      <section id="source-proof" class="proof-section" aria-labelledby="proof-title">
+        <header class="section-header">
+          <div><p class="eyebrow">LIVE UPSTREAM / NOT OUR RECREATION</p><h2 id="proof-title">直接运行源库，而不是模拟它。</h2></div>
+          <p>下面的画面来自 <code>projects/kindergrimm/upstream</code>。切换能力时加载对应原生 HTML，研究页本身不重画人物、物品或 3D 模型。</p>
+        </header>
+        <div class="proof-tabs" role="tablist" aria-label="上游原生能力">
+          <button type="button" role="tab" aria-selected="true" data-proof="menu">完整菜单</button>
+          <button type="button" role="tab" aria-selected="false" data-proof="editor">2D 编辑器</button>
+          <button type="button" role="tab" aria-selected="false" data-proof="styles">九种风格</button>
+          <button type="button" role="tab" aria-selected="false" data-proof="items">物品系统</button>
+          <button type="button" role="tab" aria-selected="false" data-proof="voxel">Voxel 3D</button>
+          <button type="button" role="tab" aria-selected="false" data-proof="gloss">Gloss 3D</button>
+          <button type="button" role="tab" aria-selected="false" data-proof="objects">Object 3D</button>
+          <button type="button" role="tab" aria-selected="false" data-proof="game">游戏场景</button>
+        </div>
+        <div class="proof-layout">
+          <div class="proof-frame">
+            <iframe id="upstream-frame" title="Kindergrimm 上游原生演示" src="../upstream/index.html"></iframe>
+            <div id="embed-fallback" class="embed-fallback" hidden><strong>内嵌证据已关闭</strong><p>研究归纳仍然可读。使用右侧的“打开原生页面”直接检查源库运行结果。</p></div>
+          </div>
+          <aside class="proof-notes">
+            <span id="proof-kind">UPSTREAM INDEX</span>
+            <h3 id="proof-name">完整能力菜单</h3>
+            <p id="proof-summary">源库把三个游戏、原始 2D、Voxel、Gloss、Object 和实验入口并列展示。</p>
+            <dl>
+              <div><dt>源文件</dt><dd id="proof-file">index.html</dd></div>
+              <div><dt>归属</dt><dd>UPSTREAM ORIGINAL</dd></div>
+              <div><dt>我们做了什么</dt><dd>仅本地镜像与研究索引</dd></div>
+            </dl>
+            <a id="proof-open" href="../upstream/index.html" target="_blank">打开原生页面 ↗</a>
+          </aside>
+        </div>
+      </section>
+
+      <section id="capabilities" class="capability-section" aria-labelledby="capability-title">
+        <header class="section-header compact">
+          <div><p class="eyebrow">WHAT THE SOURCE ALREADY HAS</p><h2 id="capability-title">上游原生能力地图</h2></div>
+          <p>这里列出的能力全部能在固定提交中找到入口和源码，不来自我们的扩展页面。</p>
+        </header>
+        <div class="capability-grid">
+          <article><img src="../upstream/assets/thumbs/editor.jpg" alt="上游原生 2D 编辑器"><span>DRAWN · 2D</span><h3>Recipe 驱动的手绘角色</h3><p>编辑、锁定和重投各部件；相同 JSON 可在游戏运行时重建同一角色。</p><code>editor.html · src/parts · rig.js</code></article>
+          <article><img src="../upstream/assets/thumbs/items.jpg" alt="上游原生物品系统"><span>ITEM SYSTEM</span><h3>13 个对象家族，三种 Host</h3><p>物品的参数同时决定画法、数值与行为；同一对象进入卡片、地面和角色。</p><code>items.html · src/items/*</code></article>
+          <article><img src="../upstream/assets/thumbs/styles.jpg" alt="上游原生九种风格"><span>STYLE SYSTEM</span><h3>九种历史风格后端</h3><p>Gothic 到 Surrealism；同一批人物由 Graphite 与 Brush 两只手绘制。</p><code>styles.html · src/styles/*</code></article>
+          <article><img src="../upstream/assets/thumbs/voxel.jpg" alt="上游原生 Voxel 3D"><span>VOXEL · 3D</span><h3>同一 Recipe 的体素实体</h3><p>可绕行、选部件、重投和锁定；具有呼吸、摆动、眨眼、视线和说话状态。</p><code>voxel.html · src/voxel/*</code></article>
+          <article><img src="../upstream/assets/thumbs/gloss.jpg" alt="上游原生 Gloss 3D"><span>GLOSS · 3D</span><h3>实体几何的 Chibi 模塑</h3><p>独立 body、stance、palette、material、expression 控制，并有 35 人动态墙。</p><code>gloss.html · src/gloss/*</code></article>
+          <article><img src="../upstream/assets/thumbs/objects.jpg" alt="上游原生 3D 植物对象"><span>OBJECT · 3D</span><h3>程序化植物与场景物体</h3><p>Grass、Plant、Tree、Flower 四种实体植物，共享 Recipe、材质和形成语法。</p><code>objects.html · src/obj/*</code></article>
+          <article><img src="../upstream/assets/thumbs/orla.jpg" alt="上游 Class Photo 游戏"><span>APPLICATION</span><h3>Class Photo</h3><p>从十个孩子中选五个，根据角色和墙上对象像扑克一样形成组合评分。</p><code>orla.html · src/orla.js</code></article>
+          <article><img src="../upstream/assets/thumbs/game.jpg" alt="上游 The Dark Floor 游戏"><span>APPLICATION</span><h3>The Dark Floor</h3><p>移动端导向的暗室玩法；角色只会攻击看得见的目标，光是唯一视野。</p><code>game.html · src/game.js</code></article>
+          <article><img src="../upstream/assets/thumbs/marbles.jpg" alt="上游 Marbles 游戏"><span>APPLICATION</span><h3>Marbles</h3><p>拉动、释放、碾压、自动战斗、融化、敌潮、成长卡与完整节奏系统。</p><code>marbles.html · src/marbles/*</code></article>
+        </div>
+      </section>
+
+      <section id="mechanism" class="mechanism-section" aria-labelledby="mechanism-title">
+        <header class="section-header compact">
+          <div><p class="eyebrow">HOW THE SOURCE WORKS</p><h2 id="mechanism-title">它的价值不是“出一张图”，而是内容能流动。</h2></div>
+          <p>Recipe 把身份与运行时状态分离；Hand、Parts、Rig 和 Host 让同一内容跨编辑器、群像、物品和游戏复用。</p>
+        </header>
+        <div class="mechanism-flow" aria-label="源库机制流程">
+          <article data-step="1"><small>IDENTITY</small><strong>Recipe</strong><span>seed · media · color · parts</span><code>src/editor.js</code></article>
+          <i aria-hidden="true">→</i>
+          <article data-step="2"><small>APPEARANCE</small><strong>Hand + Style</strong><span>Sketch / Brush · 9 styles</span><code>sketch.js · media.js</code></article>
+          <i aria-hidden="true">→</i>
+          <article data-step="3"><small>STRUCTURE</small><strong>Parts + Layout</strong><span>共享锚点 · loaded dice species</span><code>parts/* · layout.js</code></article>
+          <i aria-hidden="true">→</i>
+          <article data-step="4"><small>RUNTIME</small><strong>Rig + Animation</strong><span>bones · meshes · blink · talk</span><code>rig.js · anim.js</code></article>
+          <i aria-hidden="true">→</i>
+          <article data-step="5"><small>CONSUMERS</small><strong>Hosts + Games</strong><span>crowd · item · floor · game</span><code>crowd.js · game.js</code></article>
+        </div>
+        <div class="principle-grid">
+          <article><span>01</span><strong>同一 JSON，同一身份</strong><p>确定性使内容可保存、分享、回放和在运行时重建。</p></article>
+          <article><span>02</span><strong>部件只描述形，媒介决定怎么画</strong><p>Shape 与 technique 分离，让新物种和新风格不必复制整套角色。</p></article>
+          <article><span>03</span><strong>物品数值就是画面</strong><p>参数不是附加 Metadata；长度、光圈和耐久直接进入视觉与玩法。</p></article>
+          <article><span>04</span><strong>生成器最终进入游戏</strong><p>群像、卡片、地面、装备和场景共享同一内容身份。</p></article>
+        </div>
+      </section>
+
+      <section id="lineage" class="lineage-section" aria-labelledby="lineage-title">
+        <header class="section-header compact">
+          <div><p class="eyebrow">WHAT IS OURS — AND WHAT IS NOT</p><h2 id="lineage-title">重新归属现有研究</h2></div>
+          <p>“做过”不等于“新增”。最新上游已经覆盖的能力，应标为平行实验并重新评估。</p>
+        </header>
+        <div class="lineage-legend">
+          <span data-kind="upstream">上游原生</span><span data-kind="reuse">机制复用</span><span data-kind="extension">我们的增量</span><span data-kind="reassess">平行 / 重评</span><span data-kind="application">应用证明</span>
+        </div>
+        <div class="lineage-table" role="table" aria-label="研究成果归属矩阵">
+          <div class="lineage-head" role="row"><span>成果</span><span>归属</span><span>重新理解</span><span>去向</span></div>
+          <article role="row"><strong>Recipe / RNG / Parts / Rig</strong><span data-kind="upstream">UPSTREAM ORIGINAL</span><p>源库核心，不是我们的架构发明。</p><a href="../upstream/how.html" target="_blank">看原理 ↗</a></article>
+          <article role="row"><strong>三风格 Inkcut / Felt</strong><span data-kind="reassess">PARALLEL / REASSESS</span><p>上游已有九个 Style Backend；保留为对照，不再计为净新增。</p><a href="../upstream/styles.html" target="_blank">看上游风格 ↗</a></article>
+          <article role="row"><strong>Prop / Icon / Scene Component</strong><span data-kind="reassess">PARALLEL / REASSESS</span><p>上游物品已经具有 13 Family、4 Rank 与三种 Host；需要迁移或淘汰重复实现。</p><a href="../upstream/items.html" target="_blank">看上游物品 ↗</a></article>
+          <article role="row"><strong>NPC Factory / Gates</strong><span data-kind="extension">OUR EXTENSION</span><p>确定性批次、身份指纹、Gate 和审查界面是工程生产层增量。</p><a href="../npc-factory/">打开工具</a></article>
+          <article role="row"><strong>Runtime SDK / RC ZIP / CRC</strong><span data-kind="extension">OUR EXTENSION</span><p>把实验性源码组织为版本化、可校验、可消费的交付合同。</p><a href="../production-studio/">打开生产台</a></article>
+          <article role="row"><strong>《风暴前的回信》</strong><span data-kind="application">APPLICATION PROOF</span><p>验证素材进入任务、库存和结局；不是源库新能力。</p><a href="../story-demo/">体验故事</a></article>
+          <article role="row"><strong>Scene Studio</strong><span data-kind="application">APPLICATION PROOF</span><p>用户心智产品实验；保留，但不作为源库研究主结论。</p><a href="../scene-studio/">打开实验</a></article>
+        </div>
+      </section>
+
+      <section class="roadmap-section" aria-labelledby="roadmap-title">
+        <header class="section-header compact">
+          <div><p class="eyebrow">EXTEND WHAT IS ACTUALLY MISSING</p><h2 id="roadmap-title">接下来只做真正的增量</h2></div>
+          <p>优先解决源库从实验到可持续生产之间的缺口，而不是再造它已经拥有的画法和对象。</p>
+        </header>
+        <ol class="roadmap">
+          <li><span>P0</span><div><strong>上游兼容与版本追踪</strong><p>对 Recipe、Item Family、Style Backend 和 3D Backend 建立版本 Schema、迁移与变更检测。</p></div><code>INTEROP</code></li>
+          <li><span>P0</span><div><strong>跨 Backend 身份一致性</strong><p>素材实验室已验证共享 Seed、物种意图与视觉适配；下一层统一发型、服装、眼镜与场景 Socket。</p></div><code>ACTIVE LAB</code></li>
+          <li><span>P1</span><div><strong>正式导出与发布管线</strong><p>透明媒体、动画帧、Recipe Bundle、版本 Manifest、CRC 与运行时加载合同。</p></div><code>DELIVERY</code></li>
+          <li><span>P1</span><div><strong>原生能力回归矩阵</strong><p>固定 Seed 跨 9 Styles、13 Items、2D/3D Backend 和游戏 Host 做可视回归。</p></div><code>QA</code></li>
+          <li><span>P2</span><div><strong>可选 AI Intent Adapter</strong><p>大模型只把自然语言转成合法 Recipe/Scene Intent；不能绕过注册表、身份和来源。</p></div><code>OPTIONAL AI</code></li>
+        </ol>
+      </section>
+
+      <section class="tool-shelf" aria-labelledby="tool-title">
+        <div><p class="eyebrow">RESEARCH TOOL SHELF</p><h2 id="tool-title">现有页面保留，但不再混淆层级。</h2></div>
+        <nav aria-label="现有研究工具">
+          <a href="../upstream/"><span>UPSTREAM</span><strong>原始能力菜单</strong><small>源库真实基线</small></a>
+          <a href="../asset-lab/"><span>MECHANISM + EXTENSION</span><strong>Source Asset Lab</strong><small>三 Backend 素材与导出</small></a>
+          <a href="../npc-factory/"><span>EXTENSION</span><strong>NPC Factory</strong><small>批次与 Gate</small></a>
+          <a href="../production-studio/"><span>EXTENSION</span><strong>Production Studio</strong><small>RC 与交付</small></a>
+          <a href="../asset-catalog/"><span>REASSESS</span><strong>Material Catalog</strong><small>平行素材实验</small></a>
+          <a href="../story-demo/"><span>APPLICATION</span><strong>Story Proof</strong><small>固定消费证明</small></a>
+          <a href="../scene-studio/"><span>APPLICATION</span><strong>Scene Studio</strong><small>用户心智实验</small></a>
+        </nav>
+      </section>
+    </main>
+
+    <footer>
+      <p><strong>研究主线：</strong>Upstream Original → Mechanism → Valid Extension → Application Proof。</p>
+      <span>LOCAL MIRROR 5857b1e1 · 2026-08-25 · UNLICENSE</span>
+    </footer>
+    <script type="module" src="./atlas.js"></script>
+  </body>
+</html>

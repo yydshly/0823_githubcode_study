@@ -1,0 +1,1246 @@
+{
+  "schemaVersion": "kindergrimm-v2-m2-three-style-review/0.1",
+  "slotCount": 50,
+  "seed": 260825,
+  "routes": {
+    "mosslight-core-2d": {
+      "packId": "mosslight-core-2d",
+      "packFingerprint": "a96d877a",
+      "rendererId": "mosslight-core-2d",
+      "rendererFingerprint": "32d9c2cf",
+      "features": 17,
+      "coverageGroups": 6,
+      "relation": "independent-structural-renderer",
+      "slots": [
+        {
+          "slot": 0,
+          "recipeFingerprint": "b68ec0b0",
+          "visualFingerprint": "f5861564",
+          "species": "dog",
+          "media": "mosslight-gouache",
+          "base": "biped"
+        },
+        {
+          "slot": 1,
+          "recipeFingerprint": "b273cbb4",
+          "visualFingerprint": "810fdee3",
+          "species": "cat",
+          "media": "mosslight-gouache",
+          "base": "biped"
+        },
+        {
+          "slot": 2,
+          "recipeFingerprint": "491b0692",
+          "visualFingerprint": "2e24dac2",
+          "species": "cat",
+          "media": "mosslight-gouache",
+          "base": "biped"
+        },
+        {
+          "slot": 3,
+          "recipeFingerprint": "502cf0d0",
+          "visualFingerprint": "52e79a48",
+          "species": "human",
+          "media": "mosslight-gouache",
+          "base": "biped"
+        },
+        {
+          "slot": 4,
+          "recipeFingerprint": "05ae5a53",
+          "visualFingerprint": "baa44edf",
+          "species": "cat",
+          "media": "mosslight-gouache",
+          "base": "biped"
+        },
+        {
+          "slot": 5,
+          "recipeFingerprint": "6756567f",
+          "visualFingerprint": "2a911e83",
+          "species": "cat",
+          "media": "mosslight-gouache",
+          "base": "biped"
+        },
+        {
+          "slot": 6,
+          "recipeFingerprint": "18a111d0",
+          "visualFingerprint": "3890c17d",
+          "species": "cat",
+          "media": "mosslight-gouache",
+          "base": "biped"
+        },
+        {
+          "slot": 7,
+          "recipeFingerprint": "8cdb0c07",
+          "visualFingerprint": "f0048881",
+          "species": "dog",
+          "media": "mosslight-gouache",
+          "base": "biped"
+        },
+        {
+          "slot": 8,
+          "recipeFingerprint": "8ee6b352",
+          "visualFingerprint": "72e426e1",
+          "species": "human",
+          "media": "mosslight-gouache",
+          "base": "biped"
+        },
+        {
+          "slot": 9,
+          "recipeFingerprint": "081ab83e",
+          "visualFingerprint": "e4241fff",
+          "species": "dog",
+          "media": "mosslight-gouache",
+          "base": "biped"
+        },
+        {
+          "slot": 10,
+          "recipeFingerprint": "222cb8f5",
+          "visualFingerprint": "4cfb5546",
+          "species": "cat",
+          "media": "mosslight-gouache",
+          "base": "biped"
+        },
+        {
+          "slot": 11,
+          "recipeFingerprint": "5b076ad7",
+          "visualFingerprint": "a91866ee",
+          "species": "human",
+          "media": "mosslight-gouache",
+          "base": "biped"
+        },
+        {
+          "slot": 12,
+          "recipeFingerprint": "b1dfd04a",
+          "visualFingerprint": "3b00fb83",
+          "species": "dog",
+          "media": "mosslight-gouache",
+          "base": "biped"
+        },
+        {
+          "slot": 13,
+          "recipeFingerprint": "8f06aa13",
+          "visualFingerprint": "381b389e",
+          "species": "human",
+          "media": "mosslight-gouache",
+          "base": "biped"
+        },
+        {
+          "slot": 14,
+          "recipeFingerprint": "22e631a6",
+          "visualFingerprint": "44b4a177",
+          "species": "cat",
+          "media": "mosslight-gouache",
+          "base": "biped"
+        },
+        {
+          "slot": 15,
+          "recipeFingerprint": "2d1c1221",
+          "visualFingerprint": "b2d06dce",
+          "species": "dog",
+          "media": "mosslight-gouache",
+          "base": "biped"
+        },
+        {
+          "slot": 16,
+          "recipeFingerprint": "87d28208",
+          "visualFingerprint": "b15b77a6",
+          "species": "human",
+          "media": "mosslight-gouache",
+          "base": "biped"
+        },
+        {
+          "slot": 17,
+          "recipeFingerprint": "f2df3f2e",
+          "visualFingerprint": "a2e4533f",
+          "species": "cat",
+          "media": "mosslight-gouache",
+          "base": "biped"
+        },
+        {
+          "slot": 18,
+          "recipeFingerprint": "42163dd5",
+          "visualFingerprint": "31ad52ff",
+          "species": "dog",
+          "media": "mosslight-gouache",
+          "base": "biped"
+        },
+        {
+          "slot": 19,
+          "recipeFingerprint": "e8d97097",
+          "visualFingerprint": "2144652d",
+          "species": "dog",
+          "media": "mosslight-gouache",
+          "base": "biped"
+        },
+        {
+          "slot": 20,
+          "recipeFingerprint": "63b6e830",
+          "visualFingerprint": "5bbe13a2",
+          "species": "human",
+          "media": "mosslight-gouache",
+          "base": "biped"
+        },
+        {
+          "slot": 21,
+          "recipeFingerprint": "0cf1e46d",
+          "visualFingerprint": "4a945501",
+          "species": "cat",
+          "media": "mosslight-gouache",
+          "base": "biped"
+        },
+        {
+          "slot": 22,
+          "recipeFingerprint": "8f99dd76",
+          "visualFingerprint": "8b5fbf8e",
+          "species": "dog",
+          "media": "mosslight-gouache",
+          "base": "biped"
+        },
+        {
+          "slot": 23,
+          "recipeFingerprint": "7601a875",
+          "visualFingerprint": "25849b34",
+          "species": "cat",
+          "media": "mosslight-gouache",
+          "base": "biped"
+        },
+        {
+          "slot": 24,
+          "recipeFingerprint": "be5054f6",
+          "visualFingerprint": "ff4ec194",
+          "species": "cat",
+          "media": "mosslight-gouache",
+          "base": "biped"
+        },
+        {
+          "slot": 25,
+          "recipeFingerprint": "c42f0033",
+          "visualFingerprint": "fe3bcec9",
+          "species": "dog",
+          "media": "mosslight-gouache",
+          "base": "biped"
+        },
+        {
+          "slot": 26,
+          "recipeFingerprint": "d9617bdf",
+          "visualFingerprint": "be0a0759",
+          "species": "dog",
+          "media": "mosslight-gouache",
+          "base": "biped"
+        },
+        {
+          "slot": 27,
+          "recipeFingerprint": "7b4027cd",
+          "visualFingerprint": "d0314efb",
+          "species": "human",
+          "media": "mosslight-gouache",
+          "base": "biped"
+        },
+        {
+          "slot": 28,
+          "recipeFingerprint": "131a49f2",
+          "visualFingerprint": "414127ec",
+          "species": "human",
+          "media": "mosslight-gouache",
+          "base": "biped"
+        },
+        {
+          "slot": 29,
+          "recipeFingerprint": "a77c9fc2",
+          "visualFingerprint": "98949740",
+          "species": "human",
+          "media": "mosslight-gouache",
+          "base": "biped"
+        },
+        {
+          "slot": 30,
+          "recipeFingerprint": "e8635f3e",
+          "visualFingerprint": "77f21878",
+          "species": "human",
+          "media": "mosslight-gouache",
+          "base": "biped"
+        },
+        {
+          "slot": 31,
+          "recipeFingerprint": "483e8070",
+          "visualFingerprint": "74fc0da8",
+          "species": "cat",
+          "media": "mosslight-gouache",
+          "base": "biped"
+        },
+        {
+          "slot": 32,
+          "recipeFingerprint": "f5f72cc5",
+          "visualFingerprint": "46a18c57",
+          "species": "cat",
+          "media": "mosslight-gouache",
+          "base": "biped"
+        },
+        {
+          "slot": 33,
+          "recipeFingerprint": "f44b9a91",
+          "visualFingerprint": "09c70752",
+          "species": "cat",
+          "media": "mosslight-gouache",
+          "base": "biped"
+        },
+        {
+          "slot": 34,
+          "recipeFingerprint": "e66384a6",
+          "visualFingerprint": "982935c6",
+          "species": "human",
+          "media": "mosslight-gouache",
+          "base": "biped"
+        },
+        {
+          "slot": 35,
+          "recipeFingerprint": "b747943d",
+          "visualFingerprint": "2f8aa5a3",
+          "species": "cat",
+          "media": "mosslight-gouache",
+          "base": "biped"
+        },
+        {
+          "slot": 36,
+          "recipeFingerprint": "eaa32a33",
+          "visualFingerprint": "9c1f44eb",
+          "species": "human",
+          "media": "mosslight-gouache",
+          "base": "biped"
+        },
+        {
+          "slot": 37,
+          "recipeFingerprint": "ddfa3e05",
+          "visualFingerprint": "5123c37a",
+          "species": "human",
+          "media": "mosslight-gouache",
+          "base": "biped"
+        },
+        {
+          "slot": 38,
+          "recipeFingerprint": "01a046af",
+          "visualFingerprint": "4269dbed",
+          "species": "dog",
+          "media": "mosslight-gouache",
+          "base": "biped"
+        },
+        {
+          "slot": 39,
+          "recipeFingerprint": "eca346aa",
+          "visualFingerprint": "d64bd430",
+          "species": "human",
+          "media": "mosslight-gouache",
+          "base": "biped"
+        },
+        {
+          "slot": 40,
+          "recipeFingerprint": "addd7586",
+          "visualFingerprint": "d3b32343",
+          "species": "cat",
+          "media": "mosslight-gouache",
+          "base": "biped"
+        },
+        {
+          "slot": 41,
+          "recipeFingerprint": "2fb8e0ed",
+          "visualFingerprint": "fdc24977",
+          "species": "human",
+          "media": "mosslight-gouache",
+          "base": "biped"
+        },
+        {
+          "slot": 42,
+          "recipeFingerprint": "d082d1e0",
+          "visualFingerprint": "f91d9b6d",
+          "species": "human",
+          "media": "mosslight-gouache",
+          "base": "biped"
+        },
+        {
+          "slot": 43,
+          "recipeFingerprint": "9e104a36",
+          "visualFingerprint": "0ac90fc4",
+          "species": "cat",
+          "media": "mosslight-gouache",
+          "base": "biped"
+        },
+        {
+          "slot": 44,
+          "recipeFingerprint": "5dc56463",
+          "visualFingerprint": "a51dc603",
+          "species": "dog",
+          "media": "mosslight-gouache",
+          "base": "biped"
+        },
+        {
+          "slot": 45,
+          "recipeFingerprint": "0d318dff",
+          "visualFingerprint": "b784e539",
+          "species": "dog",
+          "media": "mosslight-gouache",
+          "base": "biped"
+        },
+        {
+          "slot": 46,
+          "recipeFingerprint": "042e3ac4",
+          "visualFingerprint": "07b75c53",
+          "species": "cat",
+          "media": "mosslight-gouache",
+          "base": "biped"
+        },
+        {
+          "slot": 47,
+          "recipeFingerprint": "70dcb461",
+          "visualFingerprint": "d92711c7",
+          "species": "human",
+          "media": "mosslight-gouache",
+          "base": "biped"
+        },
+        {
+          "slot": 48,
+          "recipeFingerprint": "ea975aec",
+          "visualFingerprint": "f94f05da",
+          "species": "cat",
+          "media": "mosslight-gouache",
+          "base": "biped"
+        },
+        {
+          "slot": 49,
+          "recipeFingerprint": "c373fdfa",
+          "visualFingerprint": "b135b285",
+          "species": "human",
+          "media": "mosslight-gouache",
+          "base": "biped"
+        }
+      ]
+    },
+    "moonharbor-inkcut-2d": {
+      "packId": "moonharbor-inkcut-2d",
+      "packFingerprint": "102a504a",
+      "rendererId": "moonharbor-inkcut-2d",
+      "rendererFingerprint": "8698bcfe",
+      "features": 19,
+      "coverageGroups": 6,
+      "relation": "independent-structural-renderer",
+      "slots": [
+        {
+          "slot": 0,
+          "recipeFingerprint": "1085734b",
+          "visualFingerprint": "e3be5f0c",
+          "species": "dog",
+          "media": "moonharbor-inkcut",
+          "base": "biped"
+        },
+        {
+          "slot": 1,
+          "recipeFingerprint": "af0daf4b",
+          "visualFingerprint": "2b6a1113",
+          "species": "cat",
+          "media": "moonharbor-inkcut",
+          "base": "biped"
+        },
+        {
+          "slot": 2,
+          "recipeFingerprint": "37d5bd99",
+          "visualFingerprint": "0c57981c",
+          "species": "dog",
+          "media": "moonharbor-inkcut",
+          "base": "biped"
+        },
+        {
+          "slot": 3,
+          "recipeFingerprint": "d4ffc39d",
+          "visualFingerprint": "8c8924fa",
+          "species": "human",
+          "media": "moonharbor-inkcut",
+          "base": "biped"
+        },
+        {
+          "slot": 4,
+          "recipeFingerprint": "612602c6",
+          "visualFingerprint": "3519e606",
+          "species": "cat",
+          "media": "moonharbor-inkcut",
+          "base": "biped"
+        },
+        {
+          "slot": 5,
+          "recipeFingerprint": "559756c6",
+          "visualFingerprint": "58124a54",
+          "species": "dog",
+          "media": "moonharbor-inkcut",
+          "base": "biped"
+        },
+        {
+          "slot": 6,
+          "recipeFingerprint": "f0245932",
+          "visualFingerprint": "71c82b6d",
+          "species": "human",
+          "media": "moonharbor-inkcut",
+          "base": "biped"
+        },
+        {
+          "slot": 7,
+          "recipeFingerprint": "965678e9",
+          "visualFingerprint": "858d1dee",
+          "species": "human",
+          "media": "moonharbor-inkcut",
+          "base": "biped"
+        },
+        {
+          "slot": 8,
+          "recipeFingerprint": "33014c71",
+          "visualFingerprint": "f1ecce78",
+          "species": "dog",
+          "media": "moonharbor-inkcut",
+          "base": "biped"
+        },
+        {
+          "slot": 9,
+          "recipeFingerprint": "70ca952f",
+          "visualFingerprint": "60f3708a",
+          "species": "dog",
+          "media": "moonharbor-inkcut",
+          "base": "biped"
+        },
+        {
+          "slot": 10,
+          "recipeFingerprint": "af747ff1",
+          "visualFingerprint": "68834312",
+          "species": "dog",
+          "media": "moonharbor-inkcut",
+          "base": "biped"
+        },
+        {
+          "slot": 11,
+          "recipeFingerprint": "7867eeb8",
+          "visualFingerprint": "2f1d1f85",
+          "species": "cat",
+          "media": "moonharbor-inkcut",
+          "base": "biped"
+        },
+        {
+          "slot": 12,
+          "recipeFingerprint": "8670b413",
+          "visualFingerprint": "1ae15255",
+          "species": "cat",
+          "media": "moonharbor-inkcut",
+          "base": "biped"
+        },
+        {
+          "slot": 13,
+          "recipeFingerprint": "1ff7115e",
+          "visualFingerprint": "62fe1619",
+          "species": "cat",
+          "media": "moonharbor-inkcut",
+          "base": "biped"
+        },
+        {
+          "slot": 14,
+          "recipeFingerprint": "dec50df0",
+          "visualFingerprint": "d68613b1",
+          "species": "human",
+          "media": "moonharbor-inkcut",
+          "base": "biped"
+        },
+        {
+          "slot": 15,
+          "recipeFingerprint": "75327122",
+          "visualFingerprint": "b1708580",
+          "species": "dog",
+          "media": "moonharbor-inkcut",
+          "base": "biped"
+        },
+        {
+          "slot": 16,
+          "recipeFingerprint": "a366ff34",
+          "visualFingerprint": "2eb7bc19",
+          "species": "dog",
+          "media": "moonharbor-inkcut",
+          "base": "biped"
+        },
+        {
+          "slot": 17,
+          "recipeFingerprint": "7ae2ce85",
+          "visualFingerprint": "b37017f8",
+          "species": "human",
+          "media": "moonharbor-inkcut",
+          "base": "biped"
+        },
+        {
+          "slot": 18,
+          "recipeFingerprint": "8f5f8ffa",
+          "visualFingerprint": "ad51d891",
+          "species": "cat",
+          "media": "moonharbor-inkcut",
+          "base": "biped"
+        },
+        {
+          "slot": 19,
+          "recipeFingerprint": "a65f60ad",
+          "visualFingerprint": "56af0c7e",
+          "species": "cat",
+          "media": "moonharbor-inkcut",
+          "base": "biped"
+        },
+        {
+          "slot": 20,
+          "recipeFingerprint": "8318b7d9",
+          "visualFingerprint": "89a90091",
+          "species": "human",
+          "media": "moonharbor-inkcut",
+          "base": "biped"
+        },
+        {
+          "slot": 21,
+          "recipeFingerprint": "17f1d420",
+          "visualFingerprint": "cfa4c73f",
+          "species": "human",
+          "media": "moonharbor-inkcut",
+          "base": "biped"
+        },
+        {
+          "slot": 22,
+          "recipeFingerprint": "c262c045",
+          "visualFingerprint": "049cafbb",
+          "species": "dog",
+          "media": "moonharbor-inkcut",
+          "base": "biped"
+        },
+        {
+          "slot": 23,
+          "recipeFingerprint": "2b29ec32",
+          "visualFingerprint": "724b6482",
+          "species": "cat",
+          "media": "moonharbor-inkcut",
+          "base": "biped"
+        },
+        {
+          "slot": 24,
+          "recipeFingerprint": "c340b26d",
+          "visualFingerprint": "a5204326",
+          "species": "cat",
+          "media": "moonharbor-inkcut",
+          "base": "biped"
+        },
+        {
+          "slot": 25,
+          "recipeFingerprint": "d112e830",
+          "visualFingerprint": "e86c6af4",
+          "species": "human",
+          "media": "moonharbor-inkcut",
+          "base": "biped"
+        },
+        {
+          "slot": 26,
+          "recipeFingerprint": "8be6ac58",
+          "visualFingerprint": "06a200d3",
+          "species": "dog",
+          "media": "moonharbor-inkcut",
+          "base": "biped"
+        },
+        {
+          "slot": 27,
+          "recipeFingerprint": "98322d5b",
+          "visualFingerprint": "78f8735b",
+          "species": "dog",
+          "media": "moonharbor-inkcut",
+          "base": "biped"
+        },
+        {
+          "slot": 28,
+          "recipeFingerprint": "91787683",
+          "visualFingerprint": "0c63fb88",
+          "species": "human",
+          "media": "moonharbor-inkcut",
+          "base": "biped"
+        },
+        {
+          "slot": 29,
+          "recipeFingerprint": "969ea229",
+          "visualFingerprint": "7f97fa21",
+          "species": "cat",
+          "media": "moonharbor-inkcut",
+          "base": "biped"
+        },
+        {
+          "slot": 30,
+          "recipeFingerprint": "284212c8",
+          "visualFingerprint": "e673e9d2",
+          "species": "dog",
+          "media": "moonharbor-inkcut",
+          "base": "biped"
+        },
+        {
+          "slot": 31,
+          "recipeFingerprint": "65f49967",
+          "visualFingerprint": "d64fbc5b",
+          "species": "cat",
+          "media": "moonharbor-inkcut",
+          "base": "biped"
+        },
+        {
+          "slot": 32,
+          "recipeFingerprint": "4f3c1b97",
+          "visualFingerprint": "e767212a",
+          "species": "human",
+          "media": "moonharbor-inkcut",
+          "base": "biped"
+        },
+        {
+          "slot": 33,
+          "recipeFingerprint": "56959b10",
+          "visualFingerprint": "91b058f9",
+          "species": "human",
+          "media": "moonharbor-inkcut",
+          "base": "biped"
+        },
+        {
+          "slot": 34,
+          "recipeFingerprint": "79d58f15",
+          "visualFingerprint": "f4687de4",
+          "species": "human",
+          "media": "moonharbor-inkcut",
+          "base": "biped"
+        },
+        {
+          "slot": 35,
+          "recipeFingerprint": "16eaef0a",
+          "visualFingerprint": "3c2c47b2",
+          "species": "dog",
+          "media": "moonharbor-inkcut",
+          "base": "biped"
+        },
+        {
+          "slot": 36,
+          "recipeFingerprint": "d2bb2f4d",
+          "visualFingerprint": "6b86e025",
+          "species": "cat",
+          "media": "moonharbor-inkcut",
+          "base": "biped"
+        },
+        {
+          "slot": 37,
+          "recipeFingerprint": "f8ee6878",
+          "visualFingerprint": "04a20d5d",
+          "species": "dog",
+          "media": "moonharbor-inkcut",
+          "base": "biped"
+        },
+        {
+          "slot": 38,
+          "recipeFingerprint": "9474c49d",
+          "visualFingerprint": "e4e4a697",
+          "species": "human",
+          "media": "moonharbor-inkcut",
+          "base": "biped"
+        },
+        {
+          "slot": 39,
+          "recipeFingerprint": "148f5be6",
+          "visualFingerprint": "f7ff7cb2",
+          "species": "dog",
+          "media": "moonharbor-inkcut",
+          "base": "biped"
+        },
+        {
+          "slot": 40,
+          "recipeFingerprint": "8e750f22",
+          "visualFingerprint": "59cd7734",
+          "species": "dog",
+          "media": "moonharbor-inkcut",
+          "base": "biped"
+        },
+        {
+          "slot": 41,
+          "recipeFingerprint": "7c790c18",
+          "visualFingerprint": "c9a276a7",
+          "species": "human",
+          "media": "moonharbor-inkcut",
+          "base": "biped"
+        },
+        {
+          "slot": 42,
+          "recipeFingerprint": "101e038f",
+          "visualFingerprint": "f8058e5f",
+          "species": "cat",
+          "media": "moonharbor-inkcut",
+          "base": "biped"
+        },
+        {
+          "slot": 43,
+          "recipeFingerprint": "1d8eeed8",
+          "visualFingerprint": "ae66c84f",
+          "species": "human",
+          "media": "moonharbor-inkcut",
+          "base": "biped"
+        },
+        {
+          "slot": 44,
+          "recipeFingerprint": "bcd2e558",
+          "visualFingerprint": "1c3e4421",
+          "species": "dog",
+          "media": "moonharbor-inkcut",
+          "base": "biped"
+        },
+        {
+          "slot": 45,
+          "recipeFingerprint": "2214d02f",
+          "visualFingerprint": "d1458066",
+          "species": "cat",
+          "media": "moonharbor-inkcut",
+          "base": "biped"
+        },
+        {
+          "slot": 46,
+          "recipeFingerprint": "a1eae1f5",
+          "visualFingerprint": "3bd5ad5b",
+          "species": "human",
+          "media": "moonharbor-inkcut",
+          "base": "biped"
+        },
+        {
+          "slot": 47,
+          "recipeFingerprint": "430d7b98",
+          "visualFingerprint": "3069043a",
+          "species": "human",
+          "media": "moonharbor-inkcut",
+          "base": "biped"
+        },
+        {
+          "slot": 48,
+          "recipeFingerprint": "10bd7363",
+          "visualFingerprint": "9d661697",
+          "species": "cat",
+          "media": "moonharbor-inkcut",
+          "base": "biped"
+        },
+        {
+          "slot": 49,
+          "recipeFingerprint": "0427096f",
+          "visualFingerprint": "c4eb6656",
+          "species": "human",
+          "media": "moonharbor-inkcut",
+          "base": "biped"
+        }
+      ]
+    },
+    "sunpatch-felt-2d": {
+      "packId": "sunpatch-felt-2d",
+      "packFingerprint": "f51ce69c",
+      "rendererId": "sunpatch-felt-2d",
+      "rendererFingerprint": "f1d70ebd",
+      "features": 20,
+      "coverageGroups": 6,
+      "relation": "independent-structural-renderer",
+      "slots": [
+        {
+          "slot": 0,
+          "recipeFingerprint": "dd920030",
+          "visualFingerprint": "e939fadb",
+          "species": "cat",
+          "media": "sunpatch-felt",
+          "base": "biped"
+        },
+        {
+          "slot": 1,
+          "recipeFingerprint": "e6e6ebf1",
+          "visualFingerprint": "9261cbeb",
+          "species": "dog",
+          "media": "sunpatch-felt",
+          "base": "biped"
+        },
+        {
+          "slot": 2,
+          "recipeFingerprint": "1a2f8469",
+          "visualFingerprint": "b8d059ff",
+          "species": "dog",
+          "media": "sunpatch-felt",
+          "base": "biped"
+        },
+        {
+          "slot": 3,
+          "recipeFingerprint": "a922f03e",
+          "visualFingerprint": "3e397174",
+          "species": "cat",
+          "media": "sunpatch-felt",
+          "base": "biped"
+        },
+        {
+          "slot": 4,
+          "recipeFingerprint": "ae0ba071",
+          "visualFingerprint": "646893ac",
+          "species": "dog",
+          "media": "sunpatch-felt",
+          "base": "biped"
+        },
+        {
+          "slot": 5,
+          "recipeFingerprint": "935608a6",
+          "visualFingerprint": "25ff5a08",
+          "species": "dog",
+          "media": "sunpatch-felt",
+          "base": "biped"
+        },
+        {
+          "slot": 6,
+          "recipeFingerprint": "1a2c10d1",
+          "visualFingerprint": "743119e5",
+          "species": "cat",
+          "media": "sunpatch-felt",
+          "base": "biped"
+        },
+        {
+          "slot": 7,
+          "recipeFingerprint": "993521a9",
+          "visualFingerprint": "e5ba3101",
+          "species": "human",
+          "media": "sunpatch-felt",
+          "base": "biped"
+        },
+        {
+          "slot": 8,
+          "recipeFingerprint": "5f06b389",
+          "visualFingerprint": "6fb1737e",
+          "species": "dog",
+          "media": "sunpatch-felt",
+          "base": "biped"
+        },
+        {
+          "slot": 9,
+          "recipeFingerprint": "427272f9",
+          "visualFingerprint": "2450ee9b",
+          "species": "human",
+          "media": "sunpatch-felt",
+          "base": "biped"
+        },
+        {
+          "slot": 10,
+          "recipeFingerprint": "bc27bb49",
+          "visualFingerprint": "1b28cf7e",
+          "species": "dog",
+          "media": "sunpatch-felt",
+          "base": "biped"
+        },
+        {
+          "slot": 11,
+          "recipeFingerprint": "32f9d251",
+          "visualFingerprint": "c8b418c9",
+          "species": "dog",
+          "media": "sunpatch-felt",
+          "base": "biped"
+        },
+        {
+          "slot": 12,
+          "recipeFingerprint": "428fb069",
+          "visualFingerprint": "74478d56",
+          "species": "human",
+          "media": "sunpatch-felt",
+          "base": "biped"
+        },
+        {
+          "slot": 13,
+          "recipeFingerprint": "c9b39dfe",
+          "visualFingerprint": "e99b7e06",
+          "species": "human",
+          "media": "sunpatch-felt",
+          "base": "biped"
+        },
+        {
+          "slot": 14,
+          "recipeFingerprint": "88d3e7c9",
+          "visualFingerprint": "c0bdf8e0",
+          "species": "cat",
+          "media": "sunpatch-felt",
+          "base": "biped"
+        },
+        {
+          "slot": 15,
+          "recipeFingerprint": "ad0fd917",
+          "visualFingerprint": "7672834d",
+          "species": "human",
+          "media": "sunpatch-felt",
+          "base": "biped"
+        },
+        {
+          "slot": 16,
+          "recipeFingerprint": "598e9d49",
+          "visualFingerprint": "62bd1d12",
+          "species": "cat",
+          "media": "sunpatch-felt",
+          "base": "biped"
+        },
+        {
+          "slot": 17,
+          "recipeFingerprint": "85739a7d",
+          "visualFingerprint": "b8e2cb00",
+          "species": "human",
+          "media": "sunpatch-felt",
+          "base": "biped"
+        },
+        {
+          "slot": 18,
+          "recipeFingerprint": "18337234",
+          "visualFingerprint": "46a0b81b",
+          "species": "human",
+          "media": "sunpatch-felt",
+          "base": "biped"
+        },
+        {
+          "slot": 19,
+          "recipeFingerprint": "def7f188",
+          "visualFingerprint": "9937289a",
+          "species": "dog",
+          "media": "sunpatch-felt",
+          "base": "biped"
+        },
+        {
+          "slot": 20,
+          "recipeFingerprint": "6682e3b9",
+          "visualFingerprint": "5827df09",
+          "species": "human",
+          "media": "sunpatch-felt",
+          "base": "biped"
+        },
+        {
+          "slot": 21,
+          "recipeFingerprint": "87bdcde8",
+          "visualFingerprint": "d4914ca7",
+          "species": "cat",
+          "media": "sunpatch-felt",
+          "base": "biped"
+        },
+        {
+          "slot": 22,
+          "recipeFingerprint": "ce89a0ef",
+          "visualFingerprint": "86110023",
+          "species": "human",
+          "media": "sunpatch-felt",
+          "base": "biped"
+        },
+        {
+          "slot": 23,
+          "recipeFingerprint": "758baa73",
+          "visualFingerprint": "100417cf",
+          "species": "dog",
+          "media": "sunpatch-felt",
+          "base": "biped"
+        },
+        {
+          "slot": 24,
+          "recipeFingerprint": "9bca9cc8",
+          "visualFingerprint": "a40c9963",
+          "species": "dog",
+          "media": "sunpatch-felt",
+          "base": "biped"
+        },
+        {
+          "slot": 25,
+          "recipeFingerprint": "ba307ac6",
+          "visualFingerprint": "0ed636af",
+          "species": "dog",
+          "media": "sunpatch-felt",
+          "base": "biped"
+        },
+        {
+          "slot": 26,
+          "recipeFingerprint": "d4a44dd1",
+          "visualFingerprint": "96f6a2a9",
+          "species": "cat",
+          "media": "sunpatch-felt",
+          "base": "biped"
+        },
+        {
+          "slot": 27,
+          "recipeFingerprint": "7ee8b7bb",
+          "visualFingerprint": "b7cf53e8",
+          "species": "dog",
+          "media": "sunpatch-felt",
+          "base": "biped"
+        },
+        {
+          "slot": 28,
+          "recipeFingerprint": "a8ed6b63",
+          "visualFingerprint": "cc86baee",
+          "species": "human",
+          "media": "sunpatch-felt",
+          "base": "biped"
+        },
+        {
+          "slot": 29,
+          "recipeFingerprint": "9c454870",
+          "visualFingerprint": "03caad90",
+          "species": "dog",
+          "media": "sunpatch-felt",
+          "base": "biped"
+        },
+        {
+          "slot": 30,
+          "recipeFingerprint": "dba344f7",
+          "visualFingerprint": "e7fc0cfc",
+          "species": "cat",
+          "media": "sunpatch-felt",
+          "base": "biped"
+        },
+        {
+          "slot": 31,
+          "recipeFingerprint": "e99cf12f",
+          "visualFingerprint": "4c18c302",
+          "species": "cat",
+          "media": "sunpatch-felt",
+          "base": "biped"
+        },
+        {
+          "slot": 32,
+          "recipeFingerprint": "e1105135",
+          "visualFingerprint": "f9b7b1cd",
+          "species": "dog",
+          "media": "sunpatch-felt",
+          "base": "biped"
+        },
+        {
+          "slot": 33,
+          "recipeFingerprint": "0bdbf2fe",
+          "visualFingerprint": "cea8c668",
+          "species": "dog",
+          "media": "sunpatch-felt",
+          "base": "biped"
+        },
+        {
+          "slot": 34,
+          "recipeFingerprint": "e8e3b303",
+          "visualFingerprint": "93290177",
+          "species": "cat",
+          "media": "sunpatch-felt",
+          "base": "biped"
+        },
+        {
+          "slot": 35,
+          "recipeFingerprint": "ea9c9d6c",
+          "visualFingerprint": "c9f86b66",
+          "species": "human",
+          "media": "sunpatch-felt",
+          "base": "biped"
+        },
+        {
+          "slot": 36,
+          "recipeFingerprint": "58e60596",
+          "visualFingerprint": "63efb379",
+          "species": "human",
+          "media": "sunpatch-felt",
+          "base": "biped"
+        },
+        {
+          "slot": 37,
+          "recipeFingerprint": "df12f916",
+          "visualFingerprint": "3d26cdc8",
+          "species": "human",
+          "media": "sunpatch-felt",
+          "base": "biped"
+        },
+        {
+          "slot": 38,
+          "recipeFingerprint": "fe40b97d",
+          "visualFingerprint": "f51b5ae2",
+          "species": "human",
+          "media": "sunpatch-felt",
+          "base": "biped"
+        },
+        {
+          "slot": 39,
+          "recipeFingerprint": "6fdd1629",
+          "visualFingerprint": "75058889",
+          "species": "human",
+          "media": "sunpatch-felt",
+          "base": "biped"
+        },
+        {
+          "slot": 40,
+          "recipeFingerprint": "8bdf3cf8",
+          "visualFingerprint": "43cac6d5",
+          "species": "human",
+          "media": "sunpatch-felt",
+          "base": "biped"
+        },
+        {
+          "slot": 41,
+          "recipeFingerprint": "18601985",
+          "visualFingerprint": "c525a6df",
+          "species": "dog",
+          "media": "sunpatch-felt",
+          "base": "biped"
+        },
+        {
+          "slot": 42,
+          "recipeFingerprint": "818493d7",
+          "visualFingerprint": "3f73887e",
+          "species": "cat",
+          "media": "sunpatch-felt",
+          "base": "biped"
+        },
+        {
+          "slot": 43,
+          "recipeFingerprint": "e36259e0",
+          "visualFingerprint": "79669b7c",
+          "species": "human",
+          "media": "sunpatch-felt",
+          "base": "biped"
+        },
+        {
+          "slot": 44,
+          "recipeFingerprint": "3c163597",
+          "visualFingerprint": "96a069cf",
+          "species": "cat",
+          "media": "sunpatch-felt",
+          "base": "biped"
+        },
+        {
+          "slot": 45,
+          "recipeFingerprint": "9939c282",
+          "visualFingerprint": "f6c13401",
+          "species": "dog",
+          "media": "sunpatch-felt",
+          "base": "biped"
+        },
+        {
+          "slot": 46,
+          "recipeFingerprint": "11f83b39",
+          "visualFingerprint": "d8d96499",
+          "species": "cat",
+          "media": "sunpatch-felt",
+          "base": "biped"
+        },
+        {
+          "slot": 47,
+          "recipeFingerprint": "b0bcb378",
+          "visualFingerprint": "3448c22e",
+          "species": "human",
+          "media": "sunpatch-felt",
+          "base": "biped"
+        },
+        {
+          "slot": 48,
+          "recipeFingerprint": "0b3c648b",
+          "visualFingerprint": "93b52f56",
+          "species": "cat",
+          "media": "sunpatch-felt",
+          "base": "biped"
+        },
+        {
+          "slot": 49,
+          "recipeFingerprint": "5b0fb5ef",
+          "visualFingerprint": "f548f699",
+          "species": "human",
+          "media": "sunpatch-felt",
+          "base": "biped"
+        }
+      ]
+    }
+  },
+  "comparisonDisclosure": "Slots share one master input and index; each locked Content Pack derives a legal Recipe under its own media constraints.",
+  "conclusion": {
+    "mosslightCore": "rounded fairy-tale silhouette with gouache grammar",
+    "moonharborInkcut": "narrow angular silhouette with hard ink hatch grammar",
+    "sunpatchFelt": "wide soft silhouette with layered felt, button and blanket-stitch grammar"
+  }
+}

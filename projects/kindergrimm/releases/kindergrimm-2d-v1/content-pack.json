@@ -1,0 +1,141 @@
+{
+  "schemaVersion": "kindergrimm-content-pack/0.1",
+  "id": "mosslight-core-2d",
+  "version": "0.1.0",
+  "status": "authored-content",
+  "provenance": {
+    "kind": "local-authored-procedural-2d",
+    "source": "Kindergrimm research extension / Mosslight Core independent renderer",
+    "upstreamCommit": "de339ad739d8cbd28ff2dd4a940af38c0ede86c8",
+    "supportedBases": [
+      "biped"
+    ],
+    "license": "Local authored renderer under workspace terms; low-level upstream Canvas plane and animation protocol remain Unlicense"
+  },
+  "constraints": {
+    "mode": "locked",
+    "species": [
+      "human",
+      "cat",
+      "dog"
+    ],
+    "media": [
+      "mosslight-gouache"
+    ],
+    "color": "color"
+  },
+  "identity": {
+    "names": [
+      "Aster",
+      "Bramble",
+      "Cairn",
+      "Dew",
+      "Ember",
+      "Fern",
+      "Gale",
+      "Hearth",
+      "Ilex",
+      "Lark",
+      "Morrow",
+      "Nim"
+    ],
+    "roles": [
+      "path-keeper",
+      "lantern-scout",
+      "gate-tender",
+      "moss-mender",
+      "route-singer",
+      "parcel-guide",
+      "night-reader",
+      "waystation-host"
+    ]
+  },
+  "presentation": {
+    "name": "Mosslight Core 2D",
+    "shortName": "CORE 2D",
+    "label": "苔光核心",
+    "summary": "不调用上游角色构建器，由自有 gouache 语法、独立布局和 17 类核心部件完整生成可动画 2D 角色。",
+    "accent": "#e1d278",
+    "tags": [
+      "authored-content",
+      "independent-renderer",
+      "procedural-2d-core",
+      "mosslight-gouache"
+    ]
+  },
+  "visual": {
+    "schemaVersion": "kindergrimm-visual-renderer/0.1",
+    "id": "mosslight-core-2d",
+    "version": "0.1.0",
+    "kind": "procedural-2d-core",
+    "baseRenderer": "none",
+    "runtimeModule": "runtime/mosslight-core.js",
+    "seedContract": "recipe.seed + renderer fingerprint + authored core part id + side",
+    "features": [
+      "core-shadow",
+      "core-body",
+      "core-mantle",
+      "core-collar",
+      "core-waymark",
+      "core-arms",
+      "core-legs",
+      "core-head",
+      "core-ears",
+      "core-hair",
+      "core-leaf-crown",
+      "core-eyes",
+      "core-brows",
+      "core-nose",
+      "core-mouth",
+      "core-cheek-sprigs",
+      "core-lantern"
+    ],
+    "coverage": {
+      "head": [
+        "core-head",
+        "core-ears",
+        "core-hair",
+        "core-leaf-crown"
+      ],
+      "face": [
+        "core-eyes",
+        "core-brows",
+        "core-nose",
+        "core-mouth",
+        "core-cheek-sprigs"
+      ],
+      "body": [
+        "core-body",
+        "core-shadow"
+      ],
+      "limbs": [
+        "core-arms",
+        "core-legs"
+      ],
+      "clothing": [
+        "core-mantle",
+        "core-collar",
+        "core-waymark"
+      ],
+      "prop": [
+        "core-lantern"
+      ]
+    },
+    "palette": {
+      "foliage": "#42694f",
+      "glow": "#e1d278",
+      "paper": "#f6f1e5",
+      "shadow": "#223a2d",
+      "bark": "#6a4b3b",
+      "mist": "#c8d8ce",
+      "accentRose": "#efaa88",
+      "accents": [
+        "#b7d6be",
+        "#efaa88",
+        "#8aa3c2"
+      ]
+    },
+    "fingerprint": "32d9c2cf"
+  },
+  "fingerprint": "a96d877a"
+}

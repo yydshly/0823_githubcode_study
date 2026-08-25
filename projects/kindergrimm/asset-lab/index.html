@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light">
+    <title>Kindergrimm · 跨形态素材实验室</title>
+    <link rel="stylesheet" href="./lab.css">
+    <script type="importmap">{"imports":{"three":"../upstream/vendor/three.module.js"}}</script>
+  </head>
+  <body>
+    <a class="skip-link" href="#workspace">跳到素材工作区</a>
+    <header class="topbar">
+      <a class="brand" href="../research-atlas/">
+        <span>KINDERGRIMM</span>
+        <strong>SOURCE ASSET LAB</strong>
+      </a>
+      <nav aria-label="研究导航">
+        <a href="../research-atlas/">源库图谱</a>
+        <a href="../../../../docs/projects/kindergrimm.html">项目总览</a>
+        <a href="../upstream/index.html">原生菜单 ↗</a>
+      </nav>
+    </header>
+
+    <main id="workspace" class="workspace">
+      <aside class="control-rail" aria-labelledby="control-title">
+        <p class="eyebrow">SOURCE → COMPILE → ASSET</p>
+        <h1 id="control-title">用源库生成<br>可进入场景的素材</h1>
+        <p class="intro">一个上层素材意图，编译为 Drawn、Voxel、Gloss 三份源库原生 Recipe。细节部件仍由各 Backend 自己生成。</p>
+
+        <form id="intent-form" novalidate>
+          <label>
+            <span>素材预设</span>
+            <select id="preset" name="preset"></select>
+          </label>
+          <div class="field-pair">
+            <label>
+              <span>Seed</span>
+              <input id="seed" name="seed" type="number" min="1" max="2147483647" step="1" inputmode="numeric" required>
+            </label>
+            <label>
+              <span>物种意图</span>
+              <select id="species" name="species"></select>
+            </label>
+          </div>
+          <label>
+            <span>视觉意图</span>
+            <select id="look" name="look"></select>
+          </label>
+          <label>
+            <span>未来场景角色</span>
+            <input id="scene-role" name="sceneRole" type="text" maxlength="40" autocomplete="off">
+          </label>
+          <p id="form-error" class="form-error" role="alert" hidden></p>
+          <div class="primary-actions">
+            <button class="primary" type="submit">重新生成三种素材</button>
+            <button id="reroll" type="button">换一个 Seed</button>
+          </div>
+        </form>
+
+        <section class="intent-card" aria-labelledby="intent-title">
+          <div class="section-heading">
+            <h2 id="intent-title">统一素材意图</h2>
+            <button id="copy-intent" type="button">复制</button>
+          </div>
+          <pre id="intent-json" tabindex="0"></pre>
+        </section>
+
+        <div class="export-actions">
+          <button id="export-package" class="export" type="button">导出 3 PNG + Manifest</button>
+          <p id="export-status" role="status" aria-live="polite">等待首次生成。</p>
+        </div>
+      </aside>
+
+      <section class="asset-stage" aria-labelledby="stage-title">
+        <header class="stage-head">
+          <div>
+            <p class="eyebrow">LIVE UPSTREAM BUILDERS</p>
+            <h2 id="stage-title">同一意图，三种真实素材形态</h2>
+          </div>
+          <div class="build-lock">
+            <span>UPSTREAM LOCK</span>
+            <code>5857b1e1</code>
+          </div>
+        </header>
+        <nav class="capability-switcher" role="tablist" aria-label="素材能力模式">
+          <button type="button" role="tab" aria-selected="true" aria-controls="character-mode" data-mode="character"><span>01</span><strong>角色形态</strong><small>3 条生成链</small></button>
+          <button type="button" role="tab" aria-selected="false" aria-controls="style-mode" data-mode="style"><span>02</span><strong>风格系统</strong><small>15 种源能力</small></button>
+          <button type="button" role="tab" aria-selected="false" aria-controls="item-mode" data-mode="item"><span>03</span><strong>道具系统</strong><small>13 家族 × 4 等级</small></button>
+          <button type="button" role="tab" aria-selected="false" aria-controls="environment-mode" data-mode="environment"><span>04</span><strong>环境对象</strong><small>程序化 3D</small></button>
+          <button type="button" role="tab" aria-selected="false" aria-controls="scene-mode" data-mode="scene"><span>05</span><strong>场景编排</strong><small>需求 → 素材包</small></button>
+          <button type="button" role="tab" aria-selected="false" aria-controls="usage-mode" data-mode="usage"><span>06</span><strong>使用场景</strong><small>3 类消费验证</small></button>
+        </nav>
+        <div id="render-fallback" class="render-fallback" hidden>
+          <strong>当前关闭了实时 WebGL。</strong>
+          <p>Recipe、映射和导出合同仍可检查；请直接打开源库的 <a href="../upstream/editor.html">Drawn</a>、<a href="../upstream/voxel.html">Voxel</a>、<a href="../upstream/gloss.html">Gloss</a> 页面验证 Renderer。</p>
+        </div>
+
+        <div class="preview-grid" aria-live="polite">
+          <article class="preview-card" data-backend="drawn">
+            <header>
+              <div><span class="ordinal">01</span><h3>Drawn 2D</h3></div>
+              <span class="origin">SOURCE ORIGINAL</span>
+            </header>
+            <div class="canvas-host" id="drawn-stage" data-canvas-label="Drawn 2D generated asset"></div>
+            <div class="preview-meta">
+              <p id="drawn-stats">等待生成</p>
+              <button type="button" data-export="drawn">导出透明 PNG</button>
+            </div>
+            <details><summary>查看 Native Recipe</summary><pre id="drawn-recipe"></pre></details>
+          </article>
+
+          <article class="preview-card" data-backend="voxel">
+            <header>
+              <div><span class="ordinal">02</span><h3>Voxel 3D</h3></div>
+              <span class="origin">SOURCE ORIGINAL</span>
+            </header>
+            <div class="canvas-host" id="voxel-stage" data-canvas-label="Voxel 3D generated asset"></div>
+            <div class="preview-meta">
+              <p id="voxel-stats">等待生成</p>
+              <button type="button" data-export="voxel">导出透明 PNG</button>
+            </div>
+            <details><summary>查看 Native Recipe</summary><pre id="voxel-recipe"></pre></details>
+          </article>
+
+          <article class="preview-card" data-backend="gloss">
+            <header>
+              <div><span class="ordinal">03</span><h3>Gloss 3D</h3></div>
+              <span class="origin">SOURCE ORIGINAL</span>
+            </header>
+            <div class="canvas-host" id="gloss-stage" data-canvas-label="Gloss 3D generated asset"></div>
+            <div class="preview-meta">
+              <p id="gloss-stats">等待生成</p>
+              <button type="button" data-export="gloss">导出透明 PNG</button>
+            </div>
+            <details><summary>查看 Native Recipe</summary><pre id="gloss-recipe"></pre></details>
+          </article>
+        </div>
+
+        <section class="truth-panel" aria-labelledby="truth-title">
+          <header>
+            <div>
+              <p class="eyebrow">IDENTITY TRUTH</p>
+              <h2 id="truth-title">哪些保持一致，哪些还没有统一</h2>
+            </div>
+            <span id="fingerprint" class="fingerprint"></span>
+          </header>
+          <div id="mapping-list" class="mapping-list"></div>
+        </section>
+
+        <section class="readiness" aria-labelledby="readiness-title">
+          <header>
+            <p class="eyebrow">SCENE READINESS</p>
+            <h2 id="readiness-title">这些素材下一步可以怎样进入场景</h2>
+          </header>
+          <div id="readiness-grid" class="readiness-grid"></div>
+        </section>
+
+        <footer class="source-boundary">
+          <strong>没有运行时大模型。</strong>
+          <p>页面直接调用源库的 <code>buildCharacter</code>、<code>buildVoxelCharacter</code> 与 <code>buildGloss</code>。我们的增量是意图编译、归因、导出和场景就绪记录。</p>
+        </footer>
+        <section id="style-mode" class="mode-panel" role="tabpanel" aria-label="风格系统" hidden>
+          <header class="mode-hero"><div><p class="eyebrow">UPSTREAM STYLE REGISTRY</p><h2>不是三个效果：这里有 15 种源库风格能力</h2></div><span class="mode-count">6 MEDIA + 9 HISTORY</span></header>
+          <div class="mode-workbench style-workbench">
+            <form id="style-form" class="mode-controls">
+              <label><span>风格能力</span><select id="style-capability"></select></label>
+              <div class="field-pair"><label><span>Seed</span><input id="style-seed" type="number" min="1" value="4096"></label><label><span>样本数量</span><select id="style-count"><option value="6">6 人</option><option value="9">9 人</option></select></label></div>
+              <button class="primary" type="submit">按源能力生成样张</button>
+              <a id="style-source-link" class="source-link" href="../upstream/styles.html" target="_blank" rel="noreferrer">打开源库原生风格页 ↗</a>
+              <p class="mode-truth"><strong>真实边界：</strong>此处直接装载源库 <code>styles.html</code>，用于风格选型与角色外观对比；它不是文生图模型，也不生成场景几何。</p>
+            </form>
+            <div class="style-proof"><iframe id="style-frame" title="源库实时风格样张" loading="eager"></iframe></div>
+          </div>
+          <div id="style-registry" class="style-registry" aria-label="风格能力清单"></div>
+        </section>
+
+        <section id="item-mode" class="mode-panel" role="tabpanel" aria-label="道具系统" hidden>
+          <header class="mode-hero"><div><p class="eyebrow">SOURCE ITEM FACTORY</p><h2>生成可被界面、地面与角色消费的透明道具素材</h2></div><span class="mode-count">13 FAMILIES · 52 STATES</span></header>
+          <div class="mode-workbench item-workbench">
+            <form id="item-form" class="mode-controls">
+              <label><span>道具家族</span><select id="item-family"></select></label>
+              <div class="field-pair"><label><span>等级</span><select id="item-rank"></select></label><label><span>Seed</span><input id="item-seed" type="number" min="1" value="424242"></label></div>
+              <button class="primary" type="submit">调用 rollItem 生成</button><button id="item-export" class="export" type="button">导出透明 PNG + JSON</button>
+              <a class="source-link" href="../upstream/items.html" target="_blank" rel="noreferrer">打开源库原生道具页 ↗</a>
+            </form>
+            <article class="generated-output item-output"><div id="item-stage" class="item-stage" aria-label="源库生成的透明道具"></div><div class="output-copy"><p class="eyebrow">GENERATED SOURCE ITEM</p><h3 id="item-name">等待生成</h3><p id="item-copy"></p><div id="item-hosts" class="host-chips"></div><p id="item-stats" class="mono-stat"></p></div></article>
+          </div>
+          <details class="manifest-proof" open><summary>道具来源与可复现 Manifest</summary><pre id="item-manifest"></pre></details>
+          <p class="mode-truth"><strong>真实边界：</strong>这里调用源库 <code>rollItem</code> 和 <code>thumbFor</code>。PNG 是真实 2D 透明素材；同一 Recipe 可继续交给源库的地面与穿戴绘制器，但不会伪装成 3D 模型。</p>
+        </section>
+
+        <section id="environment-mode" class="mode-panel" role="tabpanel" aria-label="环境对象" hidden>
+          <header class="mode-hero"><div><p class="eyebrow">PROCEDURAL OBJECT BUILDER</p><h2>生成可进入 Three.js 场景的程序化植物对象</h2></div><span class="mode-count">5 SPECIES · 6 PALETTES</span></header>
+          <div class="mode-workbench object-workbench">
+            <form id="environment-form" class="mode-controls">
+              <label><span>对象原型</span><select id="environment-species"></select></label>
+              <div class="field-pair"><label><span>配色</span><select id="environment-palette"></select></label><label><span>表面</span><select id="environment-finish"></select></label></div>
+              <label><span>Seed</span><input id="environment-seed" type="number" min="1" value="731409"></label>
+              <button class="primary" type="submit">调用 buildPlant 生成</button><button id="environment-export" class="export" type="button">导出 PNG 代理图 + JSON</button>
+              <a class="source-link" href="../upstream/objects.html" target="_blank" rel="noreferrer">打开源库原生对象页 ↗</a>
+            </form>
+            <article class="generated-output object-output"><div id="environment-stage" class="object-stage" data-canvas-label="源库程序化环境对象"></div><div class="output-copy"><p class="eyebrow">LIVE PROCEDURAL GEOMETRY</p><h3 id="environment-name">等待生成</h3><p id="environment-stats" class="mono-stat"></p><p>运行时资产是源库构建出的 Three.js Group；导出的 PNG 仅用于目录、选型与非 3D 消费端。</p></div></article>
+          </div>
+          <details class="manifest-proof" open><summary>对象来源与可复现 Recipe</summary><pre id="environment-manifest"></pre></details>
+          <p class="mode-truth"><strong>真实边界：</strong><code>buildPlant</code> 生成真实网格、材质与边界统计。当前版本保留可复现 Recipe 和透明代理图；GLB 序列化、碰撞体与 LOD 属于下一阶段。</p>
+        </section>
+        <section id="scene-mode" class="mode-panel scene-mode" role="tabpanel" aria-label="场景需求编排" hidden>
+          <header class="mode-hero scene-hero">
+            <div><p class="eyebrow">SCENE DEMAND → SOURCE MATERIAL PLAN</p><h2>从用户的场景需要出发，匹配并生成一组真实源素材</h2></div>
+            <span class="mode-count">NO RUNTIME LLM · EXPLAINABLE</span>
+          </header>
+          <div class="scene-orchestrator">
+            <form id="scene-form" class="mode-controls scene-controls" novalidate>
+              <label><span>场景预设</span><select id="scene-preset"></select></label>
+              <label><span>场景标题</span><input id="scene-title" type="text" maxlength="60"></label>
+              <label><span>叙事目的（保留为创作上下文）</span><textarea id="scene-purpose" rows="4" maxlength="220"></textarea></label>
+              <div class="field-pair"><label><span>场景类型</span><select id="scene-type"></select></label><label><span>情绪</span><select id="scene-mood"></select></label></div>
+              <div class="field-pair"><label><span>环境</span><select id="scene-biome"></select></label><label><span>交互</span><select id="scene-interaction"></select></label></div>
+              <div class="field-pair"><label><span>角色</span><select id="scene-actor"></select></label><label><span>Scene Seed</span><input id="scene-seed" type="number" min="1" max="2147483647" value="605203"></label></div>
+              <p id="scene-error" class="form-error" role="alert" hidden></p>
+              <button class="primary" type="submit">匹配并生成源素材组</button>
+              <button id="scene-export" class="export" type="button" disabled>导出 5 PNG + Scene Manifest</button>
+              <p id="scene-status" class="mono-stat" role="status" aria-live="polite">等待首次场景编排。</p>
+              <p class="mode-truth"><strong>匹配边界：</strong>自由文本只作为创作上下文保留。实际匹配由可见字段与版本化规则完成，因此可解释、可复现，不假装调用大模型理解语义。</p>
+            </form>
+
+            <section class="scene-output" aria-live="polite">
+              <header class="scene-summary"><div><p class="eyebrow">GENERATED MATERIAL PLAN</p><h3 id="scene-output-title">等待场景需求</h3></div><code id="scene-fingerprint">—</code></header>
+
+              <div class="scene-character-strip" aria-label="三种角色源输出">
+                <figure><div class="scene-asset-frame"><img id="scene-drawn-preview" alt="场景匹配的 Drawn 角色素材"></div><figcaption><strong>Drawn 2D</strong><span>透明角色素材</span></figcaption></figure>
+                <figure><div class="scene-asset-frame"><img id="scene-voxel-preview" alt="场景匹配的 Voxel 角色代理图"></div><figcaption><strong>Voxel 3D</strong><span>程序化几何代理图</span></figcaption></figure>
+                <figure><div class="scene-asset-frame"><img id="scene-gloss-preview" alt="场景匹配的 Gloss 角色代理图"></div><figcaption><strong>Gloss 3D</strong><span>程序化几何代理图</span></figcaption></figure>
+              </div>
+
+              <div class="scene-material-grid">
+                <article class="scene-material-card"><header><span>ITEM · SOURCE 2D</span><strong id="scene-item-label">等待匹配</strong></header><div class="scene-asset-frame scene-asset-frame--large"><img id="scene-item-preview" alt="场景匹配的透明道具素材"></div><p id="scene-item-note"></p></article>
+                <article class="scene-material-card"><header><span>ENVIRONMENT · PROCEDURAL 3D</span><strong id="scene-environment-label">等待匹配</strong></header><div class="scene-asset-frame scene-asset-frame--large"><img id="scene-environment-preview" alt="场景匹配的程序化环境对象代理图"></div><p id="scene-environment-note"></p></article>
+                <article class="scene-material-card scene-style-card"><header><span>STYLE · LIVE SOURCE PROOF</span><strong id="scene-style-label">等待匹配</strong></header><iframe id="scene-style-frame" title="场景匹配的源库风格样张" loading="eager"></iframe></article>
+              </div>
+            </section>
+          </div>
+
+          <section class="scene-explanations" aria-labelledby="scene-explanations-title"><header><p class="eyebrow">WHY THESE MATERIALS</p><h3 id="scene-explanations-title">匹配依据与能力边界</h3></header><div id="scene-explanation-list"></div></section>
+          <details class="manifest-proof" open><summary>场景素材计划 Manifest</summary><pre id="scene-manifest"></pre></details>
+          <p class="mode-truth"><strong>使用意义：</strong>这一层不替代场景制作。它把用户需求稳定地翻译成源库可生产的角色、风格、道具和环境素材，为后续关卡、叙事、UI 或内容生产提供同源输入。</p>
+        </section>
+        <section id="usage-mode" class="mode-panel usage-mode" role="tabpanel" aria-label="素材使用场景验证" hidden>
+          <header class="mode-hero usage-hero"><div><p class="eyebrow">SOURCE ASSET → REAL CONSUMER</p><h2>同一组素材，在三个产品场景里应该怎样被真正使用</h2></div><span class="mode-count">3 USAGE PROOFS · 1 SOURCE PLAN</span></header>
+
+          <div class="usage-toolbar">
+            <label><span>使用哪一组场景素材</span><select id="usage-scene-preset"></select></label>
+            <button id="usage-refresh" class="primary" type="button">刷新三类使用演示</button>
+            <p id="usage-plan-status" class="mono-stat" role="status" aria-live="polite">等待素材计划。</p>
+          </div>
+
+          <nav class="usage-tabs" role="tablist" aria-label="使用场景类型">
+            <button type="button" role="tab" aria-selected="true" aria-controls="usage-narrative" data-usage-proof="narrative"><span>01</span><strong>叙事对话</strong><small>Drawn + Item</small></button>
+            <button type="button" role="tab" aria-selected="false" aria-controls="usage-collection" data-usage-proof="collection"><span>02</span><strong>收藏 / 奖励</strong><small>Gloss + Item</small></button>
+            <button type="button" role="tab" aria-selected="false" aria-controls="usage-world" data-usage-proof="world"><span>03</span><strong>3D 世界放置</strong><small>Voxel + Plant + HUD</small></button>
+          </nav>
+
+          <div class="usage-workspace">
+            <section class="usage-proof" id="usage-narrative" role="tabpanel" data-usage-panel="narrative">
+              <div class="story-consumer">
+                <div class="story-atmosphere"><span id="usage-story-style">SOURCE STYLE</span></div>
+                <div class="story-portrait"><img id="usage-story-character" alt="叙事对话中的 Drawn 角色素材"></div>
+                <article class="story-dialogue"><p class="eyebrow">QUEST DIALOGUE · 2D CONSUMER</p><h3 id="usage-story-title">等待场景</h3><p id="usage-story-copy"></p><div class="story-objective"><img id="usage-story-item" alt="对话任务中的道具图标"><div><span>任务物件</span><strong id="usage-story-item-label">等待道具</strong></div></div><button type="button">接受任务</button></article>
+              </div>
+            </section>
+
+            <section class="usage-proof" id="usage-collection" role="tabpanel" data-usage-panel="collection" hidden>
+              <div class="collection-consumer">
+                <div class="collection-figure"><span>COLLECTIBLE FIGURE · PROXY</span><img id="usage-collection-character" alt="收藏界面中的 Gloss 角色代理图"></div>
+                <article class="collection-detail"><p class="eyebrow">REWARD / COLLECTION UI</p><h3 id="usage-collection-title">等待收藏条目</h3><p id="usage-collection-copy"></p><div class="collection-reward"><img id="usage-collection-item" alt="收藏奖励中的源道具素材"><div><span>关联奖励</span><strong id="usage-collection-item-label">等待道具</strong></div></div><dl id="usage-collection-ledger"></dl><button type="button">加入收藏</button></article>
+              </div>
+            </section>
+
+            <section class="usage-proof" id="usage-world" role="tabpanel" data-usage-panel="world" hidden>
+              <div class="world-consumer">
+                <div id="usage-world-stage" class="usage-world-stage" data-canvas-label="Voxel 角色与程序化植物的真实 Three.js 世界放置">
+                  <div class="usage-world-hud"><span>QUEST ITEM · 2D HUD</span><img id="usage-world-item" alt="3D 世界中的 2D 道具 HUD"><strong id="usage-world-item-label">等待道具</strong></div>
+                  <div id="usage-world-fallback" class="usage-world-fallback" hidden><strong>实时 3D 已关闭</strong><p>角色与植物 Recipe 仍可检查；道具继续作为 2D HUD，不会变成伪 3D 碰撞物。</p></div>
+                </div>
+                <footer class="world-consumer-stats"><div><span>LIVE PLACEMENT</span><strong id="usage-world-title">等待世界放置</strong></div><code id="usage-world-stats">—</code></footer>
+              </div>
+            </section>
+
+            <aside class="usage-context" aria-live="polite"><p class="eyebrow">WHY THIS REPRESENTATION</p><h3 id="usage-context-title">叙事对话</h3><dl><div><dt>使用者</dt><dd id="usage-context-user"></dd></div><div><dt>实际素材</dt><dd id="usage-context-assets"></dd></div><div><dt>产品价值</dt><dd id="usage-context-value"></dd></div><div><dt>继续扩展</dt><dd id="usage-context-next"></dd></div></dl><p id="usage-context-boundary" class="mode-truth"></p></aside>
+          </div>
+
+          <section class="usage-comparison" aria-labelledby="usage-comparison-title"><header><p class="eyebrow">WHAT THIS PROVES</p><h3 id="usage-comparison-title">不是把同一张图到处复用，而是按消费者选择正确表现形式</h3></header><div id="usage-comparison-grid"></div></section>
+
+          <section class="demand-board" aria-labelledby="demand-board-title">
+            <header class="demand-board-head">
+              <div><p class="eyebrow">SCENE-DRIVEN ASSET COVERAGE</p><h3 id="demand-board-title">从“看效果”进入“判断下一步生产什么”</h3><p>需求随上方使用场景同步。这里区分源库可直接生产、本层确定性生成，以及确实需要新资产管线的缺口。</p></div>
+              <div class="coverage-meter" aria-live="polite"><strong id="demand-coverage-percent">0%</strong><span id="demand-coverage-label">等待素材计划</span><div aria-hidden="true"><i id="demand-coverage-bar"></i></div></div>
+            </header>
+            <div class="demand-controls">
+              <div class="demand-filters" role="group" aria-label="筛选素材需求">
+                <button type="button" data-demand-filter="all" aria-pressed="true">全部需求</button>
+                <button type="button" data-demand-filter="ready" aria-pressed="false">当前可用</button>
+                <button type="button" data-demand-filter="gap" aria-pressed="false">能力缺口</button>
+              </div>
+              <p id="demand-board-status" role="status" aria-live="polite">选择一个使用场景查看素材覆盖。</p>
+            </div>
+            <div class="demand-table-wrap">
+              <table class="demand-table">
+                <thead><tr><th>素材需求</th><th>产品消费者</th><th>真实表示</th><th>来源</th><th>状态</th><th>缺口与补产方向</th></tr></thead>
+                <tbody id="demand-table-body"></tbody>
+              </table>
+            </div>
+            <aside class="demand-directive"><span>NEXT EXTENSION</span><strong id="demand-next-title">等待判断</strong><p id="demand-next-copy">需求板会优先指出当前消费者最值得补齐的源库能力，而不是笼统地要求生成更多图片。</p></aside>
+          </section>
+        </section>
+      </section>
+    </main>
+
+    <script type="module" src="./lab.js"></script>
+  </body>
+</html>
+
+
+
+
+
+

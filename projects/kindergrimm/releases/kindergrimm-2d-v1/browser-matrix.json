@@ -1,0 +1,40 @@
+{
+  "schemaVersion": "kindergrimm-browser-matrix/1.0",
+  "capturedAt": "2026-08-24T14:00:00.000Z",
+  "surfaces": [
+    {
+      "id": "production-studio",
+      "paths": [
+        "evidence/m4-production-studio-desktop.png",
+        "evidence/m4-production-studio-mobile.png",
+        "evidence/m4-production-studio-webgl-off.png"
+      ],
+      "assertions": [
+        "Original/Decorator/Core comparison",
+        "6/6 gates",
+        "4-file RC CRC pass",
+        "390 no overflow",
+        "keyboard journey",
+        "reduced-motion",
+        "WebGL-off semantic workflow"
+      ]
+    },
+    {
+      "id": "runtime-sdk",
+      "paths": [
+        "evidence/m5-runtime-sdk-desktop.png",
+        "evidence/m5-runtime-sdk-mobile.png",
+        "evidence/m5-runtime-sdk-webgl-off.png"
+      ],
+      "assertions": [
+        "three modes preserve 8 identities",
+        "184 authored / 0 upstream planes",
+        "186 draw calls",
+        "warm rebuild 177ms",
+        "390 no overflow",
+        "keyboard actor state",
+        "WebGL-off roster/session/cache"
+      ]
+    }
+  ]
+}

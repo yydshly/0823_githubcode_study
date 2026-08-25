@@ -1,0 +1,124 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "kindergrimm-release-candidate/0.1",
+  "title": "Kindergrimm Release Candidate",
+  "type": "object",
+  "required": ["schemaVersion", "id", "version", "createdAt", "studio", "candidate", "review", "gates", "bundle", "provenance", "fingerprint"],
+  "properties": {
+    "schemaVersion": { "const": "kindergrimm-release-candidate/0.1" },
+    "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "version": { "type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$" },
+    "createdAt": { "type": "string", "format": "date-time" },
+    "studio": {
+      "type": "object",
+      "required": ["name", "version"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "version": { "type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$" }
+      },
+      "additionalProperties": false
+    },
+    "candidate": {
+      "type": "object",
+      "required": ["contentPack", "renderer", "input", "slot", "assetFingerprints", "visualFingerprints"],
+      "properties": {
+        "contentPack": { "$ref": "#/$defs/contractRef" },
+        "renderer": { "$ref": "#/$defs/contractRef" },
+        "input": {
+          "type": "object",
+          "required": ["seed", "count"],
+          "properties": {
+            "seed": { "type": "integer", "minimum": 0 },
+            "count": { "type": "integer", "minimum": 1, "maximum": 24 }
+          },
+          "additionalProperties": true
+        },
+        "slot": { "type": "integer", "minimum": 0 },
+        "assetFingerprints": { "$ref": "#/$defs/fingerprintList" },
+        "visualFingerprints": { "$ref": "#/$defs/fingerprintList" }
+      },
+      "additionalProperties": false
+    },
+    "review": {
+      "type": "object",
+      "required": ["decision", "notes", "reviewedAt"],
+      "properties": {
+        "decision": { "const": "approved" },
+        "notes": { "type": "string" },
+        "reviewedAt": { "type": "string", "format": "date-time" }
+      },
+      "additionalProperties": false
+    },
+    "gates": {
+      "type": "array",
+      "minItems": 6,
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "required": ["id", "status", "evidence"],
+        "properties": {
+          "id": { "enum": ["g1-contract", "g2-asset", "g3-visual", "g4-portability", "g5-runtime", "g6-budget"] },
+          "status": { "const": "pass" },
+          "evidence": { "type": "string", "minLength": 1 }
+        },
+        "additionalProperties": false
+      }
+    },
+    "bundle": {
+      "type": "object",
+      "required": ["representation", "files", "fingerprint"],
+      "properties": {
+        "representation": { "const": "stored-zip" },
+        "files": {
+          "type": "array",
+          "minItems": 3,
+          "items": {
+            "type": "object",
+            "required": ["path", "role", "bytes", "crc32"],
+            "properties": {
+              "path": { "type": "string", "minLength": 1 },
+              "role": { "type": "string", "minLength": 1 },
+              "bytes": { "type": "integer", "minimum": 0 },
+              "crc32": { "type": "string", "pattern": "^[0-9a-f]{8}$" }
+            },
+            "additionalProperties": false
+          }
+        },
+        "fingerprint": { "type": "string", "pattern": "^[0-9a-f]{8}$" }
+      },
+      "additionalProperties": false
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["source", "upstreamCommit", "license", "runtimeLlmCalls", "cloudApiCalls"],
+      "properties": {
+        "source": { "type": "string", "minLength": 1 },
+        "upstreamCommit": { "type": "string", "minLength": 1 },
+        "license": { "type": "string", "minLength": 1 },
+        "runtimeLlmCalls": { "type": "integer", "minimum": 0 },
+        "cloudApiCalls": { "type": "integer", "minimum": 0 }
+      },
+      "additionalProperties": true
+    },
+    "fingerprint": { "type": "string", "pattern": "^[0-9a-f]{8}$" }
+  },
+  "$defs": {
+    "contractRef": {
+      "type": "object",
+      "required": ["id", "version", "fingerprint"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+        "version": { "type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$" },
+        "fingerprint": { "type": "string", "pattern": "^[0-9a-f]{8}$" }
+      },
+      "additionalProperties": false
+    },
+    "fingerprintList": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 24,
+      "items": { "type": "string", "pattern": "^[0-9a-f]{8}$" }
+    }
+  },
+  "additionalProperties": false
+}

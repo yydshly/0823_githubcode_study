@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Kindergrimm 全能力展示：程序化手绘角色、体素角色、Gloss 角色、物品、植物、群像与三个可玩游戏。">
+    <title>Kindergrimm · 程序化角色与游戏美术研究</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../project.css">
+    <link rel="stylesheet" href="../kindergrimm.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#content">跳到正文</a>
+    <header class="site-nav">
+      <a class="brand" href="../index.html">0823 / CODE STUDY</a>
+      <nav aria-label="项目导航">
+        <a href="https://yydshly.github.io/0823_githubcode_study/projects/kindergrimm/research-atlas/" title="GitHub Pages 在线演示">源库能力谱系</a>
+        <a href="https://yydshly.github.io/0823_githubcode_study/projects/kindergrimm/asset-lab/" title="GitHub Pages 在线演示">跨形态素材实验室</a>
+        <a href="#program">架构推进</a>
+        <a href="#demos">全量演示</a>
+        <a href="https://yydshly.github.io/0823_githubcode_study/projects/kindergrimm/scene-studio/" title="GitHub Pages 在线演示">场景工作台</a>
+        <a href="https://yydshly.github.io/0823_githubcode_study/projects/kindergrimm/story-demo/" title="GitHub Pages 在线演示">故事演示</a>
+        <a href="https://yydshly.github.io/0823_githubcode_study/projects/kindergrimm/asset-catalog/" title="GitHub Pages 在线演示">素材目录</a>
+        <a href="https://yydshly.github.io/0823_githubcode_study/projects/kindergrimm/production-studio/" title="GitHub Pages 在线演示；导出能力在本地运行时更完整">生产工作台</a>
+        <a href="https://yydshly.github.io/0823_githubcode_study/projects/kindergrimm/npc-factory/?pack=moonharbor-inkcut-2d" title="GitHub Pages 在线演示；导出能力在本地运行时更完整">V2 多风格</a>
+        <a href="https://yydshly.github.io/0823_githubcode_study/projects/kindergrimm/npc-factory/" title="GitHub Pages 在线演示；导出能力在本地运行时更完整">NPC 工厂</a>
+        <a href="https://yydshly.github.io/0823_githubcode_study/projects/kindergrimm/npc-scenarios/?seed=240824" title="GitHub Pages 在线演示；导出能力在本地运行时更完整">运行场景</a>
+        <a href="#evidence">实测证据</a>
+        <a href="#architecture">工作原理</a>
+        <a href="https://github.com/albertobeiz/kindergrimm">上游源码 ↗</a>
+      </nav>
+    </header>
+
+    <main id="content" class="project-main kg-main">
+      <section class="project-hero">
+        <div class="kg-hero-grid">
+          <div class="kg-hero-copy">
+            <p class="eyebrow">PROCEDURAL CONTENT · SOURCE-FIRST RESEARCH</p>
+            <h1>一种 Recipe，<br><span>穿过 2D、3D 与游戏。</span></h1>
+            <p class="project-lead">Kindergrimm 用 JSON Recipe、部件规则和种子生成角色，不依赖运行时文生图模型。最新上游原生覆盖手绘角色、13 类物品、九种历史风格、Voxel / Gloss / Object 3D、动画、群像和三个游戏；我们的研究先固定这些事实，再判断真正增量。</p>
+            <div class="kg-actions">
+              <a href="https://yydshly.github.io/0823_githubcode_study/projects/kindergrimm/research-atlas/">先看源库能力谱系</a>
+              <a href="https://yydshly.github.io/0823_githubcode_study/projects/kindergrimm/asset-lab/?mode=usage">查看六模式 Asset Lab 与场景需求板</a>
+              <a href="#program">查看宏观目标</a>
+              <a href="#demos">查看 18 个源库页面与研究演示</a>
+              <a href="https://yydshly.github.io/0823_githubcode_study/projects/kindergrimm/scene-studio/" title="GitHub Pages 在线演示">从场景意图开始</a>
+              <a href="https://yydshly.github.io/0823_githubcode_study/projects/kindergrimm/story-demo/" title="GitHub Pages 在线演示">体验《风暴前的回信》</a>
+              <a href="https://yydshly.github.io/0823_githubcode_study/projects/kindergrimm/asset-catalog/" title="GitHub Pages 在线演示">打开素材目录</a>
+              <a href="https://yydshly.github.io/0823_githubcode_study/projects/kindergrimm/production-studio/" title="GitHub Pages 在线演示；导出能力在本地运行时更完整">打开生产工作台</a>
+              <a href="https://yydshly.github.io/0823_githubcode_study/projects/kindergrimm/npc-factory/?pack=moonharbor-inkcut-2d" title="GitHub Pages 在线演示；导出能力在本地运行时更完整">查看 Inkcut Renderer</a>
+              <a href="https://yydshly.github.io/0823_githubcode_study/projects/kindergrimm/npc-factory/" title="GitHub Pages 在线演示；导出能力在本地运行时更完整">打开 NPC 工厂</a>
+              <a href="https://yydshly.github.io/0823_githubcode_study/projects/kindergrimm/npc-scenarios/?seed=240824" title="GitHub Pages 在线演示；导出能力在本地运行时更完整">查看 NPC 场景</a>
+              <a href="https://kindergrimm.vercel.app/editor">打开在线编辑器</a>
+              <a href="https://github.com/yydshly/0823_githubcode_study/tree/main/projects/kindergrimm">研究文件</a>
+            </div>
+            <p class="kg-local-runtime-note">
+              <strong>LOCAL HTTP REQUIRED</strong>
+              <span>Production Studio、NPC 工厂和运行场景依赖 ES Modules / Three.js。若入口打不开，请先在仓库根目录运行 <code>.\projects\kindergrimm\scripts\npc-factory.ps1</code>，再打开本地入口。</span>
+            </p>
+          </div>
+          <figure class="kg-hero-figure">
+            <img src="../assets/kindergrimm/photo.jpg" alt="由一个种子生成的 Gloss 班级合影">
+            <figcaption><span>ONE SEED / ONE CLASS PORTRAIT</span><span>REAL LOCAL CAPTURE</span></figcaption>
+          </figure>
+        </div>
+        <div class="metric-grid" aria-label="项目盘点摘要">
+          <div><strong>18</strong><span>HTML PAGES</span></div>
+          <div><strong>18</strong><span>DEMO ROUTES</span></div>
+          <div><strong>4</strong><span>GENERATOR BACKENDS</span></div>
+          <div><strong>3</strong><span>PLAYABLE GAMES</span></div>
+        </div>
+      </section>
+
+      <section id="program" class="research-section kg-program">
+        <div class="section-kicker">00 / PROGRAM PORTFOLIO</div>
+        <div class="section-content">
+          <div class="kg-program-head">
+            <div>
+              <p class="eyebrow">NORTH STAR · DETERMINISTIC GAME ASSET PLATFORM</p>
+              <h2>先固定源库能力，再建设真正增量。</h2>
+              <p class="section-intro">最新上游已经拥有完整物品、九风格和三类 3D 表现。历史交付继续保留，但必须重新标记为上游原生、机制复用、我们的增量、平行重评或应用证明；后续优先解决版本互操作、跨 Backend 身份、导出发布与回归审查。</p>
+            </div>
+            <dl class="kg-program-status" aria-label="Program 当前状态">
+              <div><dt>PROGRAM</dt><dd>SOURCE-FIRST AUDIT · EXTENSION ACTIVE</dd></div>
+              <div><dt>CURRENT</dt><dd>SOURCE RE-AUDIT · 5857b1e1</dd></div>
+              <div><dt>CLASSIFICATION</dt><dd>ORIGINAL · EXTENSION · REASSESS</dd></div>
+              <div><dt>ROUTE</dt><dd>SOURCE → MECHANISM → EXTENSION → PROOF</dd></div>
+            </dl>
+          </div>
+
+          <ol class="kg-architecture-flow" aria-label="目标架构六层">
+            <li><span>01</span><strong>Product Frontends</strong><p>研究站、Pack Authoring、NPC Factory 与 Review Console。</p></li>
+            <li><span>02</span><strong>Domain Contracts</strong><p>Recipe、Pack、Manifest、迁移、稳定 ID 与错误模型。</p></li>
+            <li><span>03</span><strong>Generation Core</strong><p>Seed streams、约束、部件图与确定性指纹。</p></li>
+            <li><span>04</span><strong>Renderer Backends</strong><p>源库 Drawn / Voxel / Gloss / Object 与经审查的扩展 Renderer。</p></li>
+            <li><span>05</span><strong>Packaging &amp; Runtime</strong><p>PNG、Sheet、ZIP、缓存、Scene Adapter 与游戏 hooks。</p></li>
+            <li><span>06</span><strong>Review &amp; Release</strong><p>50 个 golden recipes、性能、可访问性、来源与发布 Gate。</p></li>
+          </ol>
+
+          <div class="kg-roadmap" aria-label="Program 里程碑">
+            <article class="kg-milestone is-done"><span>DONE</span><strong>M0 · Evidence</strong><p>14 路由、能力矩阵和 v0.6 生产/消费证据。</p></article>
+            <article class="kg-milestone is-done"><span>DONE</span><strong>M1 · Architecture</strong><p>North Star、分层、依赖、阶段和审查门槛。</p></article>
+            <article class="kg-milestone is-done"><span>DONE</span><strong>M2 · Contract Core</strong><p>5 schemas、纯 validator、4 fixtures 与稳定 issue 已接入运行时。</p></article>
+            <article class="kg-milestone is-done"><span>DONE</span><strong>M3 · Independent 2D</strong><p>17 类 Core 部件、50 golden recipes、0 上游可见平面与完整生产/消费证据。</p></article>
+            <article class="kg-milestone is-done"><span>DONE</span><strong>M4 · Production UI</strong><p>创作、比较、审查、6/6 Gate 与 4-file Release Candidate 已通过。</p></article>
+            <article class="kg-milestone is-done"><span>DONE</span><strong>M5 · Runtime SDK</strong><p>同一 SDK、三场景稳定身份、缓存、state hooks 与事务性导入。</p></article>
+            <article class="kg-milestone is-done"><span>DONE</span><strong>M6 · Release</strong><p>7 schemas、G0–G7、7-file inventory 与 v1 fingerprint。</p></article>
+            <article class="kg-milestone is-done"><span>DONE</span><strong>V2-M0 · Pack Family</strong><p>Moonharbor 第二 Pack、registry 驱动入口、合同与运行时消费。</p></article>
+            <article class="kg-milestone is-done"><span>DONE</span><strong>V2-M1 · Structural Style</strong><p>Inkcut 独立 Renderer、19 features、50 golden、四路 Studio 与三场景消费。</p></article>
+            <article class="kg-milestone is-done"><span>REASSESS</span><strong>V2-M2 · Parallel Style Experiment</strong><p>工程交付保留；最新上游已有九个 Style Backend，本成果不再计为源库净新增。</p></article>
+            <article class="kg-milestone is-done"><span>REASSESS</span><strong>V2-M3 · Parallel Asset Experiment</strong><p>合同与 ZIP/CRC 保留；上游已原生拥有 13 Item Family 和三种 Host。</p></article>
+            <article class="kg-milestone is-active"><span>ACTIVE</span><strong>Source Compatibility · Cross-backend Identity</strong><p>围绕最新上游建立版本互操作、身份映射和真实增量路线。</p></article>
+          </div>
+
+          <div class="kg-program-actions">
+            <a href="https://yydshly.github.io/0823_githubcode_study/projects/kindergrimm/research-atlas/">打开 Source-first Research Atlas</a>
+            <a href="https://yydshly.github.io/0823_githubcode_study/projects/kindergrimm/asset-lab/?mode=usage">打开六模式源素材实验室与场景需求板</a>
+            <a href="../../projects/kindergrimm/PROGRAM.md">阅读完整 Program v1</a>
+            <a href="../../projects/kindergrimm/PROGRAM-V2.md">阅读 Program v2</a>
+            <a href="https://yydshly.github.io/0823_githubcode_study/projects/kindergrimm/npc-factory/?pack=moonharbor-core-2d">打开 Moonharbor Family Pack</a>
+            <a href="https://yydshly.github.io/0823_githubcode_study/projects/kindergrimm/npc-factory/?pack=moonharbor-inkcut-2d">打开 Inkcut Renderer</a>
+            <a href="https://yydshly.github.io/0823_githubcode_study/projects/kindergrimm/npc-factory/?pack=sunpatch-felt-2d">打开 Sunpatch Felt 与四输出</a>
+            <a href="https://yydshly.github.io/0823_githubcode_study/projects/kindergrimm/story-demo/">体验 V2-M3 Story Proof</a>
+            <a href="https://yydshly.github.io/0823_githubcode_study/projects/kindergrimm/asset-catalog/">打开 V2-M3 Material Catalog</a>
+            <a href="https://yydshly.github.io/0823_githubcode_study/projects/kindergrimm/production-studio/">打开五路线 / 四输出 Studio</a>
+            <a href="https://yydshly.github.io/0823_githubcode_study/projects/kindergrimm/npc-factory/" title="GitHub Pages 在线演示；导出能力在本地运行时更完整">打开当前生产基线</a>
+            <a href="#evidence">查看已通过证据</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="demos" class="research-section">
+        <div class="section-kicker">01 / 全量演示</div>
+        <div class="section-content">
+          <h2>从一支铅笔，到三个可玩的世界。</h2>
+          <p class="section-intro">下列画面均来自固定上游提交的本地真实运行截图。点击卡片可进入上游在线演示；本地研究副本提供完全相同的 14 个路由。</p>
+          <div class="kg-gallery">
+            <a class="kg-card" href="https://kindergrimm.vercel.app/orla"><img src="../assets/kindergrimm/orla.jpg" alt="Class Photo 五人组合评分"><div class="kg-card-copy"><small>GAME 01</small><h3>Class Photo</h3><p>从十名儿童中选五名，像扑克一样识别眼睛、物种、媒介和配对组合并计分。</p><em>已实测：110 × 4 = 440 ↗</em></div></a>
+            <a class="kg-card" href="https://kindergrimm.vercel.app/game"><img src="../assets/kindergrimm/game.jpg" alt="Kindergrimm 暗场装备奖励"><div class="kg-card-copy"><small>GAME 02</small><h3>The Dark Floor</h3><p>光照决定可见性；小队集体移动、自动交战，并从程序化装备 draft 中成长。</p><em>已实测：移动 → 战斗 → 奖励 ↗</em></div></a>
+            <a class="kg-card" href="https://kindergrimm.vercel.app/marbles"><img src="../assets/kindergrimm/marbles.jpg" alt="Marbles 弹珠在远端自动战斗"><div class="kg-card-copy"><small>GAME 03</small><h3>Marbles</h3><p>向后拖拽蓄力，弹珠滚过敌群；停止后自动战斗，包含波次、Boss、升级与生成式音频。</p><em>已实测：拖拽发射与自动战斗 ↗</em></div></a>
+            <a class="kg-card" href="https://kindergrimm.vercel.app/editor"><img src="../assets/kindergrimm/editor.jpg" alt="手绘纸片角色编辑器"><div class="kg-card-copy"><small>DRAWN 2D</small><h3>角色编辑器</h3><p>种子、物种、媒介、颜色、20 个部件、锁定/重掷、7 个姿势和 5 个表情。</p><em>完整 recipe 可复制和应用 ↗</em></div></a>
+            <a class="kg-card" href="https://kindergrimm.vercel.app/crowd"><img src="../assets/kindergrimm/crowd.jpg" alt="35 个手绘活角色群像"><div class="kg-card-copy"><small>DRAWN 2D</small><h3>35 人群像</h3><p>一页展示组合多样性；角色独立眨眼、呼吸、凝视、说话和做出微表情。</p><em>7 × 5 LIVE CHARACTERS ↗</em></div></a>
+            <a class="kg-card" href="https://kindergrimm.vercel.app/items"><img src="../assets/kindergrimm/items.jpg" alt="程序化物品接触表"><div class="kg-card-copy"><small>ITEM SYSTEM</small><h3>Toy Shop</h3><p>13 个物品族横跨四个品阶；同一参数同时决定画面、名字和游戏数值。</p><em>13 FAMILIES × 4 RANKS ↗</em></div></a>
+            <a class="kg-card" href="https://kindergrimm.vercel.app/how"><img src="../assets/kindergrimm/how.jpg" alt="生成器原理教学页"><div class="kg-card-copy"><small>LIVE EXPLAINER</small><h3>How It Works</h3><p>11 个现场步骤解释 pencil、shape、material、layout、parts、boil、pose 与 seed。</p><em>从笔触到会眨眼的角色 ↗</em></div></a>
+            <a class="kg-card" href="https://kindergrimm.vercel.app/voxel"><img src="../assets/kindergrimm/voxel.jpg" alt="可旋转体素角色实验室"><div class="kg-card-copy"><small>VOXEL 3D</small><h3>Voxel Lab</h3><p>相同的 recipe 思想改为 cell carving；支持调色板、表情、部件编辑与自由环绕。</p><em>示例：5,198 VOXELS ↗</em></div></a>
+            <a class="kg-card" href="https://kindergrimm.vercel.app/voxelcrowd"><img src="../assets/kindergrimm/voxelcrowd.jpg" alt="月夜平台上的 20 个体素角色"><div class="kg-card-copy"><small>VOXEL 3D</small><h3>Voxel Crowd</h3><p>20 个实体角色逐步装配，在月夜平台上接受真实灯光、阴影和环绕灯笼。</p><em>约 81K–83K TRIANGLES ↗</em></div></a>
+            <a class="kg-card" href="https://kindergrimm.vercel.app/gloss"><img src="../assets/kindergrimm/gloss.jpg" alt="实体 Q 版角色实验室"><div class="kg-card-copy"><small>GLOSS 3D</small><h3>Gloss Lab</h3><p>实体几何、四种体型、九类 casting、十四套色板、十一种材质与面部生命系统。</p><em>示例：61K VERTICES ↗</em></div></a>
+            <a class="kg-card" href="https://kindergrimm.vercel.app/glosscrowd"><img src="../assets/kindergrimm/glosscrowd.jpg" alt="35 个实体 Q 版角色群像"><div class="kg-card-copy"><small>GLOSS 3D</small><h3>Gloss Sheet</h3><p>35 个角色观察房间并产生反应，用于审查物种、材质、表情和轮廓覆盖。</p><em>约 6.35M–6.68M VERTICES ↗</em></div></a>
+            <a class="kg-card" href="https://kindergrimm.vercel.app/photo"><img src="../assets/kindergrimm/photo.jpg" alt="程序化班级摄影棚合影"><div class="kg-card-copy"><small>COMPOSITION</small><h3>The Photo</h3><p>一个 seed 同时安排巨人、班级、花园、天气、摄影棚灯光和后处理构图。</p><em>ONE SEED / WHOLE SCENE ↗</em></div></a>
+            <a class="kg-card" href="https://kindergrimm.vercel.app/objects"><img src="../assets/kindergrimm/objects.jpg" alt="程序化植物对象实验室"><div class="kg-card-copy"><small>OBJECT 3D</small><h3>Objects Lab</h3><p>grass、plant、tree、flower 共享 mound、stem、leaves、bloom 四部件配方。</p><em>6 PALETTES / 3 FINISHES ↗</em></div></a>
+            <a class="kg-card" href="https://kindergrimm.vercel.app/pipes"><img src="../assets/kindergrimm/pipes.jpg" alt="三层活管线示意图"><div class="kg-card-copy"><small>EXPERIMENT</small><h3>Pipes</h3><p>三层管线自行绘制，角色沿线活动，镜头巡游八个角度并周期性对齐网格。</p><em>LIVING SCHEMATIC ↗</em></div></a>
+          </div>
+        </div>
+      </section>
+
+      <section id="evidence" class="research-section">
+        <div class="section-kicker">02 / 实测证据</div>
+        <div class="section-content">
+          <h2>不是“代码里写了”，而是实际操作到结果。</h2>
+          <table class="kg-proof">
+            <thead><tr><th>验证项</th><th>结果</th><th>结论</th></tr></thead>
+            <tbody>
+              <tr><td>全部路由</td><td>14/14 页面打开并截图</td><td>正常用户流程未捕获页面错误</td></tr>
+              <tr><td>确定性</td><td>固定 human + graphite + seed 后，两次 recipe hash 都为 3815752950</td><td>完整输入固定时可复现</td></tr>
+              <tr><td>部件锁定</td><td>换新 seed 后 skull 参数逐项相同</td><td>支持局部保留与其余部分重掷</td></tr>
+              <tr><td>游戏闭环</td><td>评分、战斗奖励、拖拽发射均完成</td><td>角色资源不仅展示，也真正参与规则</td></tr>
+              <tr><td>NPC 资产链 v0.6</td><td>12-part visual kit → Recipe / Visual fingerprint → ZIP / Manifest → 三种场景重建</td><td>五组十二种 Canvas 部件已进入生产、携带、防篡改与消费闭环；v0.5 精确迁移</td></tr>
+              <tr><td>Contract Core M2</td><td>5 schemas → pure validator → 4 fixtures → stable code/path issues</td><td>合同可脱离 Three.js/DOM 验证，再进入 generator 与 renderer 领域复验</td></tr>
+              <tr><td>Independent Core M3</td><td>17 features / 6 groups / 50 golden recipes / 23 authored planes per actor</td><td>完整可见角色不调用上游主体构建；12 资产生产、三场景消费、ZIP/CRC 与防篡改闭环通过</td></tr>
+              <tr><td>桌面 rAF 烟测</td><td>3 人游戏约 47 fps；35 人 gloss 群像约 6 fps</td><td>小队可用，大规模群像需要优化</td></tr>
+            </tbody>
+          </table>
+          <div class="kg-v05-pair" aria-label="Mosslight v0.6 十二部件视觉套件证据">
+            <figure><img src="../../projects/kindergrimm/evidence/v06-factory-desktop.png" alt="NPC 工厂中的 Mosslight v0.6 十二部件视觉套件"><figcaption><strong>FACTORY / 12 ASSETS</strong><span>12 parts、5 coverage groups、Visual FP 与 ZIP</span></figcaption></figure>
+            <figure><img src="../../projects/kindergrimm/evidence/v06-scene-desktop.png" alt="运行场景中的八个 Mosslight v0.6 角色"><figcaption><strong>RUNTIME / 8 ACTORS</strong><span>96 authored planes / 214 total / 430 calls</span></figcaption></figure>
+          </div>
+          <div class="kg-v05-pair" aria-label="Mosslight Core 2D 独立渲染器证据">
+            <figure><img src="../../projects/kindergrimm/evidence/m3-core-factory-desktop.png" alt="NPC 工厂中的 Mosslight Core 2D 独立角色批次"><figcaption><strong>CORE FACTORY / 12 ASSETS</strong><span>17 features · 6 groups · 23/23 authored · Pack a96d877a</span></figcaption></figure>
+            <figure><img src="../../projects/kindergrimm/evidence/m3-core-scene-desktop.png" alt="战斗场景中的八个 Mosslight Core 2D 独立角色"><figcaption><strong>CORE RUNTIME / 8 ACTORS</strong><span>184 authored / 0 upstream planes · 186–187 calls</span></figcaption></figure>
+          </div>
+          <div class="kg-v05-pair" aria-label="M4 Production Studio 交付证据">
+            <figure><img src="../../projects/kindergrimm/evidence/m4-production-studio-desktop.png" alt="Production Studio 桌面端三路比较、六项 Gate 与 Release Candidate"><figcaption><strong>PRODUCTION STUDIO / DESKTOP</strong><span>3 routes · 6/6 gates · 4-file RC · all CRC valid</span></figcaption></figure>
+            <figure><img src="../../projects/kindergrimm/evidence/m4-production-studio-mobile.png" alt="Production Studio 390 像素移动端完整生产流程"><figcaption><strong>PRODUCTION STUDIO / 390</strong><span>no horizontal overflow · full keyboard journey</span></figcaption></figure>
+          </div>
+          <div class="kg-v05-pair" aria-label="M5 Runtime SDK 交付证据">
+            <figure><img src="../../projects/kindergrimm/evidence/m5-runtime-sdk-desktop.png" alt="Runtime SDK 在 Council 场景消费八个稳定 Core 2D 角色"><figcaption><strong>RUNTIME SDK / THREE MODES</strong><span>8 stable identities · 184 authored · 186 calls · warm 177ms</span></figcaption></figure>
+            <figure><img src="../../projects/kindergrimm/evidence/m5-runtime-sdk-webgl-off.png" alt="Runtime SDK 在 WebGL 关闭时保留 roster、session 与 cache"><figcaption><strong>RUNTIME SDK / WEBGL-OFF</strong><span>8 roster · session/cache/modes · transactional rejection</span></figcaption></figure>
+          </div>
+          <div class="kg-mobile-pair">
+            <figure><img src="../assets/kindergrimm/mobile-game.jpg" alt="iPhone 竖屏 Kindergrimm"></figure>
+            <figure><img src="../assets/kindergrimm/mobile-marbles.jpg" alt="iPhone 横屏 Marbles"></figure>
+          </div>
+          <p class="kg-note">性能结果来自 Chromium、1440×900、DPR 1、Intel UHD / D3D11 的两秒短采样，只适合作为当前机器的相对证据。它不是跨设备正式 benchmark。</p>
+        </div>
+      </section>
+
+      <section id="architecture" class="research-section">
+        <div class="section-kicker">03 / 工作原理</div>
+        <div class="section-content">
+          <h2>稳定的 recipe，把外观、动画和规则连在一起。</h2>
+          <div class="principle-flow">
+            <div><span>01</span><strong>Recipe</strong><p>保存 seed、species、media、颜色和每个部件参数。</p></div>
+            <div><span>02</span><strong>Casting</strong><p>物种只改变随机概率，不复制整套绘图代码。</p></div>
+            <div><span>03</span><strong>Layout</strong><p>集中计算眼睛、身体、地面和共享锚点。</p></div>
+            <div><span>04</span><strong>Backend</strong><p>把部件变成笔触、cells、实体 specs 或植物几何。</p></div>
+          </div>
+          <div class="kg-band">
+            <article><span>VISUAL</span><strong>媒介统一风格</strong><p>形状只请求 tone / skin / edge，媒介决定铅笔、水彩、油画等具体技法。</p></article>
+            <article><span>MOTION</span><strong>状态 + 骨骼</strong><p>脸部预绘状态切换，身体使用 group/bone 变换与姿势交叉淡化。</p></article>
+            <article><span>GAMEPLAY</span><strong>数值就是画面</strong><p>剑长决定 reach，灯笼大小决定 light radius，外形与玩法共用参数。</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="research-section">
+        <div class="section-kicker">04 / 本地复现</div>
+        <div class="section-content">
+          <h2>上游保持纯净，研究层独立运行。</h2>
+          <pre class="kg-code"><code>git submodule update --init projects/kindergrimm/upstream
+.\projects\kindergrimm\scripts\demo.ps1 list
+.\projects\kindergrimm\scripts\demo.ps1 serve
+# open http://127.0.0.1:8137/
+
+.\projects\kindergrimm\scripts\npc-factory.ps1
+# open https://yydshly.github.io/0823_githubcode_study/projects/kindergrimm/npc-factory/
+# then export ZIP / Manifest and import JSON in npc-scenarios/</code></pre>
+          <p class="section-intro">当前固定提交为 <code>5857b1e1cae2713d6714ad7dd7f89626bb242f0f</code>。上游使用 Unlicense；我们的截图、能力矩阵、NPC 资产工厂、ZIP 与 Manifest 消费层均保存在子模块之外。</p>
+        </div>
+      </section>
+
+      <section class="next-banner">
+        <p class="eyebrow">FIRST RESEARCH ROUND COMPLETE · ARCHIVED ON DEMAND</p>
+        <h2>2D、3D 与游戏场景素材能力已经验证；后续由具体叙事触发。</h2>
+        <p>研究已经回答能力、原理、驱动方式、消费场景和扩展边界。Kindergrimm 可作为确定性的童话风格素材来源，但不是完整游戏或叙事引擎。没有明确故事、载体、镜头和动画深度之前，不再增加泛化 Demo；具体叙事确定后，再以一个基准故事建立同源素材、表情、动作与镜头时间轴。</p>
+        <div class="banner-links"><a href="https://yydshly.github.io/0823_githubcode_study/projects/kindergrimm/research-atlas/">Source-first Research Atlas</a><a href="https://yydshly.github.io/0823_githubcode_study/projects/kindergrimm/asset-lab/">Cross-backend Asset Lab</a><a href="../../projects/kindergrimm/analysis/research-closure-summary.md">研究收束总结</a><a href="../../projects/kindergrimm/PROGRAM-V2.md">Program v2</a><a href="https://yydshly.github.io/0823_githubcode_study/projects/kindergrimm/scene-studio/">Scene-driven Content Studio</a><a href="https://yydshly.github.io/0823_githubcode_study/projects/kindergrimm/story-demo/">《风暴前的回信》Story Proof</a><a href="https://yydshly.github.io/0823_githubcode_study/projects/kindergrimm/asset-catalog/">V2-M3 Material Catalog</a><a href="https://yydshly.github.io/0823_githubcode_study/projects/kindergrimm/npc-factory/?pack=sunpatch-felt-2d">Sunpatch Felt / 四输出</a><a href="https://yydshly.github.io/0823_githubcode_study/projects/kindergrimm/production-studio/">五路线 / 四输出 Studio</a><a href="../../projects/kindergrimm/analysis/v2-m3-completion-report.md">V2-M3 完成报告</a><a href="../../projects/kindergrimm/analysis/v2-m3-asset-capability-expansion-delivery-contract.md">V2-M3 交付契约</a><a href="../../projects/kindergrimm/releases/kindergrimm-2d-v1/release-manifest.json">v1 Release Manifest</a></div>
+      </section>
+    </main>
+    <footer>Source evidence → runtime evidence → bounded conclusion</footer>
+  </body>
+</html>
+
+
+
+
+

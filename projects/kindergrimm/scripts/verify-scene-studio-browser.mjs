@@ -1,0 +1,17 @@
+import fs from 'node:fs/promises';import path from 'node:path';import {fileURLToPath} from 'node:url';
+const project=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');const r=JSON.parse(await fs.readFile(path.join(project,'analysis','scene-studio-browser-review.json'),'utf8'));const checks=[];const check=(id,ok,evidence={})=>checks.push({id,ok:Boolean(ok),evidence});
+check('studio.idle-is-truthful',r.idle.state==='idle'&&r.idle.emptyVisible&&r.idle.contract===null&&r.idle.inputLength>20,r.idle);
+check('studio.flood-intent-loop',r.flood.snapshot.contract.scene.id==='trail-shrine'&&r.flood.snapshot.contract.narrativeGoal==='public-warning'&&r.flood.snapshot.audit.rendered&&r.flood.planItems===r.flood.snapshot.plan.items.length&&r.flood.hotspots===r.flood.snapshot.contract.interactions.length&&r.flood.downloadEnabled,r.flood);
+check('studio.capability-gap',r.gap.snapshot.plan.counts.capabilityGap===3&&r.gap.gapCards===3&&r.gap.backlogVisible&&r.gap.gapBadge==='GAP 3 · 未渲染'&&r.gap.snapshot.plan.items.filter(item=>item.status==='capability-gap').every(item=>item.provenance==='unresolved-no-asset-generated'),r.gap);
+check('studio.intent-revision',r.revised.contract.style.id==='sunpatch-felt-props'&&r.revised.contract.sourceText.includes('毛毡')&&r.revised.audit.styleFingerprint,r.revised);
+check('studio.desktop',r.flood.viewport===1440&&r.flood.scrollWidth===1440&&r.flood.sceneRect.width>500,r.flood);
+check('studio.tablet',r.tablet.viewport===1024&&r.tablet.scrollWidth===1024&&r.tablet.snapshot.contract.scene.id==='waystation-display'&&r.tablet.snapshot.contract.style.id==='moonharbor-inkcut-props',r.tablet);
+check('studio.mobile',r.mobile.viewport===390&&r.mobile.scrollWidth===390&&r.mobile.inputTop<r.mobile.sceneTop&&r.mobile.sceneTop<r.mobile.planTop&&r.mobile.snapshot.contract.style.id==='sunpatch-felt-props'&&r.mobile.compileVisible,r.mobile);
+check('studio.keyboard',r.keyboard.snapshot.contract.style.id==='sunpatch-felt-props'&&r.keyboard.snapshot.contract.mood==='urgent'&&r.keyboard.focusedBefore.tag==='BUTTON'&&r.keyboard.focusedBefore.outline==='3px'&&r.keyboard.revisionOutline==='3px',r.keyboard);
+check('studio.error-recovery',r.errorState.visible&&r.errorState.message.length>8&&r.errorState.focused==='scene-brief'&&r.errorState.state==='idle',r.errorState);
+check('studio.reduced-motion',r.reduced.matched&&Number.parseFloat(r.reduced.duration)<=.001,r.reduced);
+check('studio.canvas-off',r.canvasOff.snapshot.canvasAvailable===false&&!r.canvasOff.snapshot.audit.rendered&&r.canvasOff.fallbackVisible&&r.canvasOff.canvasHidden&&r.canvasOff.planItems>0&&r.canvasOff.downloadEnabled,r.canvasOff);
+check('studio.performance',r.flood.snapshot.elapsedMs<500&&r.gap.snapshot.elapsedMs<500,{flood:r.flood.snapshot.elapsedMs,gap:r.gap.snapshot.elapsedMs});
+check('studio.console',r.consoleErrors.length===0,r.consoleErrors);
+const evidence=await Promise.all(r.evidence.map(async relative=>{try{const stat=await fs.stat(path.join(project,relative));return{relative,bytes:stat.size,ok:stat.size>0};}catch(error){return{relative,ok:false,error:error.message};}}));check('studio.evidence',evidence.every(item=>item.ok),evidence);
+for(const item of checks)console.log(`${item.ok?'PASS':'FAIL'} ${item.id}`);const failures=checks.filter(item=>!item.ok);console.log(`SCENE STUDIO BROWSER ${checks.length-failures.length}/${checks.length}`);if(failures.length){console.log(JSON.stringify(failures,null,2));process.exitCode=1;}

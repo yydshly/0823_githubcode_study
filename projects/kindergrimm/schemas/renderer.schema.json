@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "kindergrimm-visual-renderer/0.1",
+  "title": "Kindergrimm Renderer Descriptor",
+  "type": "object",
+  "required": ["schemaVersion", "id", "version", "kind", "baseRenderer", "runtimeModule", "seedContract", "features", "palette", "fingerprint"],
+  "properties": {
+    "schemaVersion": { "const": "kindergrimm-visual-renderer/0.1" },
+    "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "version": { "type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$" },
+    "kind": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "baseRenderer": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "runtimeModule": { "type": "string", "minLength": 1 },
+    "seedContract": { "type": "string", "minLength": 1 },
+    "features": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" }
+    },
+    "coverage": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "array",
+        "minItems": 1,
+        "uniqueItems": true,
+        "items": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" }
+      }
+    },
+    "palette": { "type": "object", "minProperties": 1 },
+    "fingerprint": { "type": "string", "pattern": "^[0-9a-f]{8}$" }
+  },
+  "additionalProperties": false
+}

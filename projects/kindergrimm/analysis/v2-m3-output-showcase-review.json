@@ -1,0 +1,220 @@
+{
+  "schemaVersion": "kindergrimm-v2-m3-output-showcase-review/0.1",
+  "canonicalUrl": "http://127.0.0.1:8882/projects/kindergrimm/asset-catalog/",
+  "capturedAt": "2026-08-25T02:43:37.894Z",
+  "desktop": {
+    "viewport": 1440,
+    "scrollWidth": 1440,
+    "stageTop": 304,
+    "stageBottom": 621,
+    "imagesReady": true,
+    "fallbackHidden": true,
+    "recipes": 12,
+    "recipeUnique": 12,
+    "propVisuals": 36,
+    "propVisualUnique": 36,
+    "sceneRecipes": 12,
+    "sceneRecipeUnique": 12,
+    "sceneVisuals": 36,
+    "sceneVisualUnique": 36,
+    "styles": [
+      {
+        "id": "mosslight-prop-gouache",
+        "fingerprint": "da570369"
+      },
+      {
+        "id": "moonharbor-inkcut-props",
+        "fingerprint": "e008924b"
+      },
+      {
+        "id": "sunpatch-felt-props",
+        "fingerprint": "ccd34255"
+      }
+    ],
+    "showcase": [
+      {
+        "styleId": "mosslight-prop-gouache",
+        "recipeFingerprint": "9a27fcdd",
+        "visualFingerprint": "465e522d",
+        "rendered": true,
+        "embeddedProps": 3
+      },
+      {
+        "styleId": "moonharbor-inkcut-props",
+        "recipeFingerprint": "9a27fcdd",
+        "visualFingerprint": "bc67039d",
+        "rendered": true,
+        "embeddedProps": 3
+      },
+      {
+        "styleId": "sunpatch-felt-props",
+        "recipeFingerprint": "9a27fcdd",
+        "visualFingerprint": "e83b4b5a",
+        "rendered": true,
+        "embeddedProps": 3
+      }
+    ],
+    "outputFingerprints": {
+      "transparent-prop": "f1fb6586",
+      "inventory-icon": "23f9411b",
+      "catalog-card": "5b022824",
+      "prop-sheet": "e4b9bbfb"
+    },
+    "buildMs": 116,
+    "mouseResult": {
+      "selectedStyle": "moonharbor-inkcut-props",
+      "pressed": [
+        "false",
+        "true",
+        "false"
+      ],
+      "outputFingerprints": {
+        "transparent-prop": "ff5e5d76",
+        "inventory-icon": "e87827d3",
+        "catalog-card": "a90d9044",
+        "prop-sheet": "7a106fba"
+      },
+      "manifestStyles": [
+        "mosslight-prop-gouache",
+        "moonharbor-inkcut-props",
+        "sunpatch-felt-props"
+      ]
+    },
+    "currentBundle": {
+      "files": [
+        "manifest.json",
+        "style-grammars.json",
+        "scene-components.json",
+        "selected/prop.png",
+        "selected/icon.png",
+        "selected/card.png",
+        "batch/prop-sheet.png",
+        "scene/scene-component.png"
+      ],
+      "size": 794155,
+      "entries": [
+        {
+          "name": "manifest.json",
+          "size": 109459,
+          "compression": 0,
+          "crc32": "2dd1103a",
+          "crcValid": true
+        },
+        {
+          "name": "style-grammars.json",
+          "size": 2431,
+          "compression": 0,
+          "crc32": "ad27f33b",
+          "crcValid": true
+        },
+        {
+          "name": "scene-components.json",
+          "size": 10030,
+          "compression": 0,
+          "crc32": "bf3a4b84",
+          "crcValid": true
+        },
+        {
+          "name": "selected/prop.png",
+          "size": 54661,
+          "compression": 0,
+          "crc32": "7b262bc7",
+          "crcValid": true
+        },
+        {
+          "name": "selected/icon.png",
+          "size": 15743,
+          "compression": 0,
+          "crc32": "40c4741f",
+          "crcValid": true
+        },
+        {
+          "name": "selected/card.png",
+          "size": 55362,
+          "compression": 0,
+          "crc32": "43fda872",
+          "crcValid": true
+        },
+        {
+          "name": "batch/prop-sheet.png",
+          "size": 268824,
+          "compression": 0,
+          "crc32": "de19ca74",
+          "crcValid": true
+        },
+        {
+          "name": "scene/scene-component.png",
+          "size": 276717,
+          "compression": 0,
+          "crc32": "3115508f",
+          "crcValid": true
+        }
+      ],
+      "allCrcValid": true,
+      "outputFingerprints": {
+        "transparent-prop": "ff5e5d76",
+        "inventory-icon": "e87827d3",
+        "catalog-card": "a90d9044",
+        "prop-sheet": "7a106fba"
+      }
+    },
+    "keyboardResult": {
+      "selectedStyle": "mosslight-prop-gouache",
+      "activeStyle": "mosslight-prop-gouache",
+      "outlineWidth": "3px",
+      "outlineStyle": "solid"
+    }
+  },
+  "mobile": {
+    "viewport": 390,
+    "scrollWidth": 390,
+    "gridColumns": "330px",
+    "imagesReady": true,
+    "outputs": 4
+  },
+  "reducedMotion": {
+    "matched": true,
+    "showcaseRendered": true
+  },
+  "canvasOff": {
+    "canvas": false,
+    "showcase": [
+      {
+        "styleId": "mosslight-prop-gouache",
+        "recipeFingerprint": "9a27fcdd",
+        "visualFingerprint": "465e522d",
+        "rendered": false,
+        "embeddedProps": 0
+      },
+      {
+        "styleId": "moonharbor-inkcut-props",
+        "recipeFingerprint": "9a27fcdd",
+        "visualFingerprint": "bc67039d",
+        "rendered": false,
+        "embeddedProps": 0
+      },
+      {
+        "styleId": "sunpatch-felt-props",
+        "recipeFingerprint": "9a27fcdd",
+        "visualFingerprint": "e83b4b5a",
+        "rendered": false,
+        "embeddedProps": 0
+      }
+    ],
+    "imageSources": [
+      false,
+      false,
+      false
+    ],
+    "fallbacksVisible": true,
+    "manifestEnabled": true,
+    "bundleDisabled": true
+  },
+  "consoleErrors": [],
+  "evidence": [
+    "evidence/v2-m3-output-showcase-desktop.png",
+    "evidence/v2-m3-inkcut-selected-output.png",
+    "evidence/v2-m3-output-showcase-mobile.png",
+    "evidence/v2-m3-output-showcase-canvas-off.png"
+  ]
+}
