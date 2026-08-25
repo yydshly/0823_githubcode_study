@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Hands-On Large Language Models 中文学习工作台：12章代码地图、13个实践、跨章节能力地图与可迁移研究方法。">
+    <meta name="description" content="Hands-On Large Language Models 中文研究工作台：12章代码审计、13个实践、跨章节能力地图、研究总结与后期使用指南。">
     <title>Hands-On LLM · 中文学习工作台</title>
     <script>document.documentElement.classList.add('has-js')</script>
     <link rel="stylesheet" href="../styles.css">
@@ -33,10 +33,10 @@
           <p class="eyebrow">PROJECT 01 · BOOK + CODE + PRACTICE</p>
           <p class="book-name">Hands-On Large Language Models</p>
           <h1 id="page-title">把一本LLM书，变成<span>可操作的学习路线。</span></h1>
-          <p class="hero-lead">这里不是概念摘要，也不是产品能力展板。你可以先选章节，再看需要的模型、数据和运行条件，最后用一个可修改的实验检验自己是否真正理解。</p>
+          <p class="hero-lead">这是已经完成首轮整理的学习工作台，不是概念摘要或产品展板。你可以按问题选择章节，查看代码证据与边界，再用一个可修改的实验检验自己是否真正理解。</p>
           <div class="hero-actions">
-            <a class="button button-primary" href="#syllabus">选择学习章节</a>
-            <a class="button button-secondary" href="https://colab.research.google.com/github/HandsOnLLM/Hands-On-Large-Language-Models/blob/main/chapter01/Chapter%201%20-%20Introduction%20to%20Language%20Models.ipynb">在 Colab 打开第1章 ↗</a>
+            <a class="button button-primary" href="#overview">查看研究结论</a>
+            <a class="button button-secondary" href="#synthesis">使用能力总图</a>
           </div>
           <ul class="hero-meta" aria-label="书籍基本信息">
             <li><strong>作者</strong><span>Jay Alammar · Maarten Grootendorst</span></li>
@@ -46,14 +46,14 @@
         </div>
 
         <aside class="start-card" aria-labelledby="start-title">
-          <p class="card-label">推荐起点</p>
-          <h2 id="start-title">先用 Colab，先学第1—3章。</h2>
+          <p class="card-label">当前使用方式</p>
+          <h2 id="start-title">先选问题，再查证据，最后做一次实践。</h2>
           <ol>
-            <li><span>01</span><p><strong>无需本地安装</strong>上游主要在 Google Colab 测试。</p></li>
-            <li><span>02</span><p><strong>建议 T4 16GB</strong>这是上游给出的最稳定入门环境。</p></li>
-            <li><span>03</span><p><strong>先观察生成链路</strong>Tokenizer → logits → decoding → cache。</p></li>
+            <li><span>01</span><p><strong>按问题选章节</strong>先明确要理解生成、检索还是训练。</p></li>
+            <li><span>02</span><p><strong>区分结论层级</strong>代码审计、代理实践与原模型复现不能混为一谈。</p></li>
+            <li><span>03</span><p><strong>完成理解闭环</strong>预测 → 运行 → 修改 → 解释 → 迁移。</p></li>
           </ol>
-          <div class="start-status"><span aria-hidden="true"></span><p><strong>本库进度</strong>：12章代码与首轮实践完成；已有13个低成本练习。</p></div>
+          <div class="start-status"><span aria-hidden="true"></span><p><strong>当前状态</strong>：第一轮整理完成；后期可按同一逻辑增量使用。</p></div>
         </aside>
       </section>
 
@@ -76,6 +76,11 @@
           <div><span>COMPLETE</span><p>12章首轮研究已完成</p></div>
           <div><span>BOUNDARY</span><p>大型原模型仍需确认后复现</p></div>
         </div>
+        <article class="research-closure" aria-labelledby="closure-title">
+          <div class="closure-copy"><p class="card-label">RESEARCH HANDOFF</p><h3 id="closure-title">初步整理已完成，后期直接按这套逻辑使用。</h3><p>完成的是可持续使用的研究闭环，不是所有大型原模型的完整复现。以后新增章节实验或研究新仓库，都从可验证证据继续，不必重新猜“这个项目大概能做什么”。</p><a href="https://github.com/yydshly/0823_githubcode_study/blob/main/projects/hands-on-large-language-models/analysis/RESEARCH-SUMMARY.md">研究总结与后期使用指南 ↗</a></div>
+          <ul class="closure-points"><li><span>01</span><strong>先看身份</strong><small>教学代码库，不是成品AI应用</small></li><li><span>02</span><strong>再看证据</strong><small>12章代码审计 + 13个实践</small></li><li><span>03</span><strong>最后迁移</strong><small>五步判断链 + 六问检查表</small></li></ul>
+        </article>
+
 
         <div class="method-card">
           <div>
@@ -316,7 +321,7 @@
         <div class="resource-grid">
           <article class="resource-group"><span>阅读</span><h3>书籍与作者</h3><a href="https://www.oreilly.com/library/view/hands-on-large-language/9781098150952/">O’Reilly书籍页 ↗</a><a href="https://github.com/HandsOnLLM/Hands-On-Large-Language-Models#table-of-contents">官方目录与Colab ↗</a><p>Jay Alammar · Maarten Grootendorst</p></article>
           <article class="resource-group"><span>源码</span><h3>固定研究对象</h3><a href="https://github.com/HandsOnLLM/Hands-On-Large-Language-Models/tree/ea3390819997999a51983677b80b3aac4dc50ada">固定提交 ea339081 ↗</a><a href="https://github.com/HandsOnLLM/Hands-On-Large-Language-Models/blob/ea3390819997999a51983677b80b3aac4dc50ada/LICENSE">Apache-2.0许可证 ↗</a><p>外部模型和数据集许可证需分别核查。</p></article>
-          <article class="resource-group"><span>本库研究</span><h3>清单与实验</h3><a href="https://github.com/yydshly/0823_githubcode_study/blob/main/projects/hands-on-large-language-models/analysis/notebook-inventory.json">Notebook代码清单 ↗</a><a href="https://github.com/yydshly/0823_githubcode_study/tree/main/projects/hands-on-large-language-models/experiments/phase-02-classification">第4章分类实验 ↗</a><a href="https://github.com/yydshly/0823_githubcode_study/tree/main/projects/hands-on-large-language-models/experiments/phase-03-topic-modeling">第5章主题实验 ↗</a><a href="https://github.com/yydshly/0823_githubcode_study/tree/main/projects/hands-on-large-language-models/experiments/phase-04-prompt-engineering">第6章提示实验 ↗</a><a href="https://github.com/yydshly/0823_githubcode_study/tree/main/projects/hands-on-large-language-models/experiments/phase-05-tools">第7章工具实验 ↗</a><a href="https://github.com/yydshly/0823_githubcode_study/tree/main/projects/hands-on-large-language-models/experiments/phase-06-semantic-search">第8章语义搜索实验 ↗</a><a href="https://github.com/yydshly/0823_githubcode_study/tree/main/projects/hands-on-large-language-models/experiments/phase-07-multimodal">第9章多模态实验 ↗</a><a href="https://github.com/yydshly/0823_githubcode_study/tree/main/projects/hands-on-large-language-models/experiments/phase-08-embedding-training">第10章Embedding训练实验 ↗</a><a href="https://github.com/yydshly/0823_githubcode_study/tree/main/projects/hands-on-large-language-models/experiments/phase-09-finetuning-bert">第11章BERT微调实验 ↗</a><a href="https://github.com/yydshly/0823_githubcode_study/tree/main/projects/hands-on-large-language-models/experiments/phase-10-generation-finetuning">第12章生成微调实验 ↗</a><p>13个练习的机器结果、失败观察与证据边界均保留。</p></article>
+          <article class="resource-group"><span>本库研究</span><h3>总结、地图与证据</h3><a href="https://github.com/yydshly/0823_githubcode_study/blob/main/projects/hands-on-large-language-models/analysis/RESEARCH-SUMMARY.md">研究总结与使用指南 ↗</a><a href="https://github.com/yydshly/0823_githubcode_study/blob/main/projects/hands-on-large-language-models/analysis/CROSS-CHAPTER-CAPABILITY-MAP.md">跨章节能力地图 ↗</a><a href="https://github.com/yydshly/0823_githubcode_study/blob/main/projects/hands-on-large-language-models/analysis/notebook-inventory.json">Notebook代码清单 ↗</a><a href="https://github.com/yydshly/0823_githubcode_study/tree/main/projects/hands-on-large-language-models/experiments">全部13个实践证据 ↗</a><p>先读总结，需要核查时再进入能力地图、代码清单与逐章实验。</p></article>
         </div>
       </section>
     </main>

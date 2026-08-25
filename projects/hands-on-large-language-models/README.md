@@ -13,12 +13,18 @@
 | 开始日期 | 2026-08-23 |
 | 当前状态 | 第一轮章节研究完成：第 1—12 章共 13 个低成本实践已通过 |
 | 在线展示 | [能力研究页](https://yydshly.github.io/0823_githubcode_study/projects/hands-on-large-language-models.html) |
+| 研究收口 | [研究总结与后期使用指南](analysis/RESEARCH-SUMMARY.md) |
 
 ## 定位结论
 
 这个仓库不是一个可以直接部署的 AI 产品，也不是一个统一的大模型框架。它是 O'Reilly《Hands-On Large Language Models》的官方配套实验代码，以 12 个 Jupyter Notebook 覆盖从模型调用到微调的主要学习路径。
 
 它最适合作为“LLM 能力地图和实验基线”来研究，而不是直接改造成生产应用。
+
+## 后期怎么使用
+
+第一轮整理已经完成，后续不需要重新建立框架。先从网页按问题选择章节和实践，再沿着“数据 → 转换 → 目标 → 决策与指标 → 失败边界”解释证据；研究其他 AI 仓库时继续复用同一套六问检查表。完整的完成状态、证据等级、下载约定和后续路径见 [`analysis/RESEARCH-SUMMARY.md`](analysis/RESEARCH-SUMMARY.md)。
+
 
 ## 代码验证后的能力地图
 
@@ -214,6 +220,7 @@ rank控制更新容量与成本，不保证任务质量；DPO优化数据指定�
 
 ## 当前研究产物
 
+- [`analysis/RESEARCH-SUMMARY.md`](analysis/RESEARCH-SUMMARY.md)：结合研究过程与沟通结论形成的完成状态、后期使用方法、证据边界和下载约定。
 - [`ANALYSIS_METHOD.md`](ANALYSIS_METHOD.md)：整个子项目采用的分析步骤、证据标准和阶段门槛。
 - [`scripts/inventory_notebooks.py`](scripts/inventory_notebooks.py)：扫描 Notebook 代码单元的零依赖清单脚本。
 - [`analysis/notebook-inventory.json`](analysis/notebook-inventory.json)：固定版本的机器可读能力证据。
