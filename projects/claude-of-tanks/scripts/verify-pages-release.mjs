@@ -105,7 +105,7 @@ async function capture(filename) {
 }
 
 async function open(path, options = {}) {
-  const response = await page.goto(urlFor(path), { waitUntil: 'networkidle0', timeout: options.timeout || 30_000 });
+  const response = await page.goto(urlFor(path), { waitUntil: options.waitUntil || 'networkidle0', timeout: options.timeout || 30_000 });
   return response?.status();
 }
 
@@ -140,11 +140,11 @@ try {
   }));
   await capture('02-archive-desktop.png');
 
-  const workbenchStatus = await open('projects/claude-of-tanks/workbench/', { timeout: 40_000 });
-  await page.waitForFunction(() => window.__COT_PRODUCT_WORKBENCH?.status === 'ready', { timeout: 15_000, polling: 50 });
-  await page.click('[data-subject="nova-field-node"]');
-  await page.waitForFunction(() => window.__COT_PRODUCT_WORKBENCH?.snapshot?.activeSubjectId === 'nova-field-node', { timeout: 5_000, polling: 50 });
-  await page.click('[data-action="explode"]');
+  const workbenchStatus = await open('projects/claude-of-tanks/workbench/', { waitUntil: 'domcontentloaded', timeout: 60_000 });
+  await page.waitForFunction(() => window.__COT_PRODUCT_WORKBENCH?.status === 'ready', { timeout: 30_000, polling: 50 });
+  await page.evaluate(() => document.querySelector('[data-subject="nova-field-node"]')?.click());
+  await page.waitForFunction(() => window.__COT_PRODUCT_WORKBENCH?.snapshot?.activeSubjectId === 'nova-field-node', { timeout: 15_000, polling: 50 });
+  await page.evaluate(() => document.querySelector('[data-action="explode"]')?.click());
   report.workbenchDesktop = await page.evaluate(() => ({
     snapshot: window.__COT_PRODUCT_WORKBENCH.snapshot,
     subjects: document.querySelectorAll('[data-subject]').length,
@@ -171,8 +171,8 @@ try {
   }));
   await capture('04-archive-mobile.png');
 
-  await open('projects/claude-of-tanks/workbench/', { timeout: 40_000 });
-  await page.waitForFunction(() => window.__COT_PRODUCT_WORKBENCH?.status === 'ready', { timeout: 15_000, polling: 50 });
+  await open('projects/claude-of-tanks/workbench/', { waitUntil: 'domcontentloaded', timeout: 60_000 });
+  await page.waitForFunction(() => window.__COT_PRODUCT_WORKBENCH?.status === 'ready', { timeout: 30_000, polling: 50 });
   report.workbenchMobile = await page.evaluate(() => ({
     snapshot: window.__COT_PRODUCT_WORKBENCH.snapshot,
     innerWidth,

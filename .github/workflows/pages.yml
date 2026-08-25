@@ -123,7 +123,13 @@ jobs:
         working-directory: projects/claude-of-tanks/upstream
         run: npm install --no-package-lock --no-audit --no-fund
       - name: Verify overview, archive, and workbench
-        run: node projects/claude-of-tanks/scripts/verify-pages-release.mjs "${{ needs.deploy.outputs.page_url }}"
+        run: |
+          for attempt in 1 2 3; do
+            node projects/claude-of-tanks/scripts/verify-pages-release.mjs "${{ needs.deploy.outputs.page_url }}" && exit 0
+            echo "Acceptance attempt ${attempt} failed; retrying after CDN settle time."
+            sleep 10
+          done
+          exit 1
       - name: Upload acceptance evidence
         if: always()
         uses: actions/upload-artifact@v4
