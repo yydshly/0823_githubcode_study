@@ -11,7 +11,7 @@
 | 获取方式 | Git submodule：`upstream/` |
 | 许可证 | Apache-2.0；外部模型与数据集需分别核查许可证 |
 | 开始日期 | 2026-08-23 |
-| 当前状态 | 第一轮章节研究完成：第 1—12 章共 13 个低成本实践已通过 |
+| 当前状态 | 暂时归档：第一轮章节研究完成；后期按需学习与补充验证 |
 | 在线展示 | [能力研究页](https://yydshly.github.io/0823_githubcode_study/projects/hands-on-large-language-models.html) |
 | 研究收口 | [研究总结与后期使用指南](analysis/RESEARCH-SUMMARY.md) |
 
@@ -23,7 +23,7 @@
 
 ## 后期怎么使用
 
-第一轮整理已经完成，后续不需要重新建立框架。先从网页按问题选择章节和实践，再沿着“数据 → 转换 → 目标 → 决策与指标 → 失败边界”解释证据；研究其他 AI 仓库时继续复用同一套六问检查表。完整的完成状态、证据等级、下载约定和后续路径见 [`analysis/RESEARCH-SUMMARY.md`](analysis/RESEARCH-SUMMARY.md)。
+项目现已暂时归档，后期按需学习时不需要重新建立框架。先从网页按问题选择章节和实践，再沿着“数据 → 转换 → 目标 → 决策与指标 → 失败边界”解释证据；研究其他 AI 仓库时继续复用同一套六问检查表。完整的完成状态、证据等级、下载约定和后续路径见 [`analysis/RESEARCH-SUMMARY.md`](analysis/RESEARCH-SUMMARY.md)。
 
 
 ## 代码验证后的能力地图
