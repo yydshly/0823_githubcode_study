@@ -11,9 +11,9 @@
 | 开始日期 | 2026-08-24 |
 | 当前状态 | V1 已归档并独立部署；V2 参考驱动生成研究已建立独立入口 |
 | 原版本地入口 | `http://127.0.0.1:8143/upstream/` |
-| 公开工作台入口 | `/projects/kage/workbench.html`（本地确定性生成；模型专属构建需本机服务） |
-| V1 Pages 入口 | `/projects/kage/v1/` |
-| V2 Pages 入口 | `/projects/kage/v2/` |
+| 公开工作台入口 | [打开工作台](https://yydshly.github.io/0823_githubcode_study/projects/kage/workbench.html)（本地确定性生成；模型专属构建需本机服务） |
+| V1 Pages 入口 | [查看 V1 案例](https://yydshly.github.io/0823_githubcode_study/projects/kage/v1/) |
+| V2 Pages 入口 | [查看 V2 方向](https://yydshly.github.io/0823_githubcode_study/projects/kage/v2/) |
 
 ## 当前交付
 

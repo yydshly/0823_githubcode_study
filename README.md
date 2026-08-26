@@ -13,7 +13,7 @@
 | Kindergrimm | 确定性童话风格的 2D、程序化 3D 与游戏场景素材研究 | 暂时归档 | [研究记录](projects/kindergrimm/README.md) | [能力展示](https://yydshly.github.io/0823_githubcode_study/projects/kindergrimm.html) |
 | Claude of Tanks | Three.js 程序化 3D、战车运行时、独立产品工作台与复用边界 | 暂时归档 | [研究记录](projects/claude-of-tanks/README.md) | [能力总览](https://yydshly.github.io/0823_githubcode_study/projects/claude-of-tanks.html) · [阶段归档](https://yydshly.github.io/0823_githubcode_study/projects/claude-of-tanks-archive.html) |
 | OpenChatCut | Agent-native 本地视频剪辑、多轨音频、字幕、MG、导出与 MCP 自动化 | 暂时归档 | [研究记录](projects/openchatcut/README.md) | 暂未发布 |
-| Kage · Idea to Experience | 自然语言目标理解、素材生成与组织、Codex 专属页面构建、Three.js 交互叙事和视觉验收 | V1 已归档，V2 研究中 | [研究记录](projects/kage/README.md) | [项目入口](https://yydshly.github.io/0823_githubcode_study/projects/kage/) · [V1 案例](https://yydshly.github.io/0823_githubcode_study/projects/kage/v1/) · [V2 方向](https://yydshly.github.io/0823_githubcode_study/projects/kage/v2/) |
+| Kage · Idea to Experience | 自然语言目标理解、素材生成与组织、Codex 专属页面构建、Three.js 交互叙事和视觉验收 | V1 已归档，V2 研究中 | [研究记录](projects/kage/README.md) | [项目入口](https://yydshly.github.io/0823_githubcode_study/projects/kage/) · [公开工作台](https://yydshly.github.io/0823_githubcode_study/projects/kage/workbench.html) · [V1 案例](https://yydshly.github.io/0823_githubcode_study/projects/kage/v1/) · [V2 方向](https://yydshly.github.io/0823_githubcode_study/projects/kage/v2/) |
 | Reverse Skill | AI 安全 Skill 路由、工具平面、证据闭环、44 个 Skill 能力与逆向/安全知识地图 | 本阶段完成 | [研究记录](projects/reverse-skill/README.md) | [架构地图](https://yydshly.github.io/0823_githubcode_study/projects/reverse-skill.html) |
 | BabelDOC | 版式保真的 PDF 翻译能力与使用边界 | 按需使用 | [使用评估](projects/babeldoc/README.md) | 暂不发布 |
 | Nanobrowser | 浏览器 Agent 的状态建模、结构化动作、规划执行闭环与工程边界 | 轻量评估后归档 | [研究记录](projects/nanobrowser/README.md) | 暂不发布 |
@@ -26,6 +26,7 @@
 Kage 研究已经从“拆解一个 Three.js 作品”推进为一条可运行的创作链路：用户描述希望表达的对象、受众、氛围和变化，系统分析目标，按需生成或选择素材，再由 Codex 构建独立网页，并通过真实浏览器检查滚动、鼠标、移动端、素材使用和最终视觉结果。
 
 - **V1** 冻结当前完整能力与六个最终案例，同时公开三个工作台内置效果样例。
+- **公开工作台** 可直接输入想法并运行确定性生成与 Three.js 预览；Codex/MiniMax 专属构建需要本机服务。
 - **V2** 基于 V1 的稳定运行时继续开发，但拥有独立入口；重点用优秀参考、创意合同、素材职责和有上限的精修减少模型盲目探索。
 - 项目以最终网页效果为判断标准，不限制为基础几何、固定模板或单一 Three.js 表现形式。
 
