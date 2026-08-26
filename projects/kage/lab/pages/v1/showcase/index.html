@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-CN" data-motion="full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Kage V1 工作台内置 Three.js 效果样例。" />
+    <title>Kage V1 Workbench Showcase</title>
+    <style>
+      .archive-back {
+        position: fixed;
+        z-index: 10000;
+        right: 1rem;
+        bottom: 1rem;
+        padding: .7rem .9rem;
+        border: 1px solid rgb(255 255 255 / 24%);
+        border-radius: 999px;
+        color: #eff8f4;
+        background: rgb(4 10 12 / 72%);
+        backdrop-filter: blur(1rem);
+        font: 600 .64rem/1 system-ui, sans-serif;
+        letter-spacing: .1em;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body data-renderer="boot" data-quality="balanced">
+    <a class="skip-link" href="#story">跳到体验正文</a>
+    <canvas id="world-canvas" aria-hidden="true"></canvas>
+
+    <div id="fallback-plate" aria-hidden="true">
+      <div class="fallback-grid"></div>
+      <div class="fallback-orbit fallback-orbit-a"></div>
+      <div class="fallback-orbit fallback-orbit-b"></div>
+      <div class="fallback-core"></div>
+      <div class="fallback-beam"></div>
+    </div>
+
+    <header class="topbar">
+      <a class="brand" href="#story" aria-label="Signal Experience Lab 首页">
+        <span class="brand-mark"></span>
+        <span>SIGNAL / LAB</span>
+      </a>
+      <nav id="chapter-nav" class="chapter-nav" aria-label="体验节点导航"></nav>
+      <button id="controls-toggle" class="controls-toggle" type="button" aria-expanded="false" aria-controls="lab-controls">
+        导演参数
+      </button>
+    </header>
+
+    <aside id="lab-controls" class="lab-controls" aria-label="实验室参数"></aside>
+    <main id="story" tabindex="-1"></main>
+    <a class="archive-back" href="../">返回 V1 总览</a>
+
+    <div id="runtime-status" class="sr-only" role="status" aria-live="polite"></div>
+    <pre id="debug-panel" class="debug-panel" hidden></pre>
+    <noscript><div class="noscript-note">启用 JavaScript 后可体验完整 Three.js 场景。</div></noscript>
+    <script type="module" src="../../../src/main-v2.ts"></script>
+  </body>
+</html>

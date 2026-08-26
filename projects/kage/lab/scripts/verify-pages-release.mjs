@@ -44,6 +44,12 @@ await open('./', async (url) => {
 await open('v1/', async (url) => {
   const count = await page.locator('.case-card').count()
   if (count !== caseIds.length) failures.push('expected 6 V1 cards, found ' + count + ': ' + url)
+  const showcaseCount = await page.locator('.showcase-card').count()
+  if (showcaseCount !== 3) failures.push('expected 3 workbench samples, found ' + showcaseCount + ': ' + url)
+  const unloadedImages = await page.locator('.showcase-card img, .case-card img').evaluateAll((images) =>
+    images.filter((image) => !(image instanceof HTMLImageElement) || image.naturalWidth === 0).length,
+  )
+  if (unloadedImages) failures.push('V1 contains ' + unloadedImages + ' unloaded preview images: ' + url)
 })
 
 await open('v2/', async (url) => {
@@ -51,6 +57,16 @@ await open('v2/', async (url) => {
     failures.push('missing V2 heading: ' + url)
   }
 })
+
+for (const experience of ['resonance-flagship', 'tidal-archive', 'chromatic-tide']) {
+  await open('v1/showcase/?experience=' + experience + '&quality=high&motion=full', async (url) => {
+    const activeExperience = await page.locator('body').getAttribute('data-experience')
+    const canvasCount = await page.locator('canvas').count()
+    if (activeExperience !== experience || !canvasCount) {
+      failures.push('workbench sample did not start as ' + experience + ': ' + url)
+    }
+  })
+}
 
 for (const id of caseIds) {
   await open('v1/case.html?id=' + id + '&quality=high&motion=full', async (url) => {
@@ -60,6 +76,15 @@ for (const id of caseIds) {
   })
 }
 
+await page.setViewportSize({ width: 390, height: 844 })
+await open('v1/', async (url) => {
+  const overflow = await page.evaluate(() => document.documentElement.scrollWidth > document.documentElement.clientWidth)
+  if (overflow) failures.push('mobile V1 has horizontal overflow: ' + url)
+  if ((await page.locator('.showcase-card').count()) !== 3 || (await page.locator('.case-card').count()) !== 6) {
+    failures.push('mobile V1 is missing entries: ' + url)
+  }
+})
+
 await browser.close()
 
 if (failures.length) {
@@ -68,4 +93,3 @@ if (failures.length) {
 }
 
 console.log('Kage Pages acceptance passed.')
-
