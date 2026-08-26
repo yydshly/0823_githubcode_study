@@ -14,4 +14,5 @@
 - [Reverse Skill](reverse-skill/README.md)：AI 安全 Skill 路由、工具平面、证据闭环、完整能力目录与逆向/网络安全知识地图。**架构研究阶段已完成。**
 - [GR00T Whole-Body Control](gr00t-whole-body-control/README.md)：人形机器人全身运动控制、训练、遥操作与 VLA 执行层。**已理解其定位和边界，当前无直接落地价值，轻量评估后归档。**
 - [Apache Superset](apache-superset/README.md)：数据库之上的 BI、查询管理、权限治理和仪表盘展示平台。**已完成定位理解，当前无明确使用价值，轻量评估后归档。**
+- [Calibre-Web](calibre-web/README.md)：Calibre 书库之上的 Web 管理、在线阅读与设备分发层。**不提供书籍正文数据源，当前无明确书库需求，轻量评估后归档。**
 

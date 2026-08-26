@@ -18,6 +18,7 @@
 | Nanobrowser | 浏览器 Agent 的状态建模、结构化动作、规划执行闭环与工程边界 | 轻量评估后归档 | [研究记录](projects/nanobrowser/README.md) | 暂不发布 |
 | GR00T Whole-Body Control | 人形机器人全身运动控制、训练、遥操作与 VLA 执行层 | 轻量评估后归档 | [研究记录](projects/gr00t-whole-body-control/README.md) | 暂不发布 |
 | Apache Superset | 数据库之上的 BI、查询管理、权限治理与仪表盘展示平台 | 轻量评估后归档 | [使用评估](projects/apache-superset/README.md) | 暂不发布 |
+| Calibre-Web | Calibre 书库之上的 Web 管理、在线阅读与设备分发层；不提供书籍正文数据源 | 轻量评估后归档 | [使用评估](projects/calibre-web/README.md) | 暂不发布 |
 
 ## 仓库结构
 
