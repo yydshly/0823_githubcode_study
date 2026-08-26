@@ -12,6 +12,7 @@
 | HyperFrames Launches | HeyGen 发布视频案例、HTML 网页离线渲染与 Remotion 路线对比 | 暂时归档 | [研究记录](projects/hyperframes-launches/README.md) | [能力展示](https://yydshly.github.io/0823_githubcode_study/projects/hyperframes-launches.html) |
 | Kindergrimm | 确定性童话风格的 2D、程序化 3D 与游戏场景素材研究 | 暂时归档 | [研究记录](projects/kindergrimm/README.md) | [能力展示](https://yydshly.github.io/0823_githubcode_study/projects/kindergrimm.html) |
 | Claude of Tanks | Three.js 程序化 3D、战车运行时、独立产品工作台与复用边界 | 暂时归档 | [研究记录](projects/claude-of-tanks/README.md) | [能力总览](https://yydshly.github.io/0823_githubcode_study/projects/claude-of-tanks.html) · [阶段归档](https://yydshly.github.io/0823_githubcode_study/projects/claude-of-tanks-archive.html) |
+| OpenChatCut | Agent-native 本地视频剪辑、多轨音频、字幕、MG、导出与 MCP 自动化 | 暂时归档 | [研究记录](projects/openchatcut/README.md) | 暂未发布 |
 | Reverse Skill | AI 安全 Skill 路由、工具平面、证据闭环、44 个 Skill 能力与逆向/安全知识地图 | 本阶段完成 | [研究记录](projects/reverse-skill/README.md) | [架构地图](https://yydshly.github.io/0823_githubcode_study/projects/reverse-skill.html) |
 
 ## 仓库结构

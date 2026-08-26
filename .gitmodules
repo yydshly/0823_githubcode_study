@@ -11,3 +11,6 @@
 [submodule "projects/claude-of-tanks/upstream"]
 	path = projects/claude-of-tanks/upstream
 	url = https://github.com/Kevin-Liu-01/Claude-of-Tanks.git
+[submodule "projects/openchatcut/upstream"]
+	path = projects/openchatcut/upstream
+	url = https://github.com/0xsline/OpenChatCut.git

@@ -10,5 +10,6 @@
 - [HyperFrames Launches](hyperframes-launches/README.md)：HeyGen 发布视频案例、素材与代码编排、HTML 网页离线渲染及 Remotion 路线对比。**暂时归档，后期按需启用。**
 - [Kindergrimm](kindergrimm/README.md)：确定性童话风格的 2D、程序化 3D 与游戏场景素材研究。**第一轮研究完成，具体叙事确定后按需重启。**
 - [Claude of Tanks](claude-of-tanks/README.md)：Three.js 程序化 3D、战车运行时、独立产品工作台与复用边界研究。**Phase 01 暂时归档。**
+- [OpenChatCut](openchatcut/README.md)：本地优先多轨剪辑、音频/字幕/MG、可交付导出与外部 Agent MCP 自动化研究。**已了解，暂时归档；后期出现明确剪辑需求时按需启用。**
 - [Reverse Skill](reverse-skill/README.md)：AI 安全 Skill 路由、工具平面、证据闭环、完整能力目录与逆向/网络安全知识地图。**架构研究阶段已完成。**
 
