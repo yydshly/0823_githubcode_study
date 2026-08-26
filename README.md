@@ -16,6 +16,7 @@
 | Reverse Skill | AI 安全 Skill 路由、工具平面、证据闭环、44 个 Skill 能力与逆向/安全知识地图 | 本阶段完成 | [研究记录](projects/reverse-skill/README.md) | [架构地图](https://yydshly.github.io/0823_githubcode_study/projects/reverse-skill.html) |
 | BabelDOC | 版式保真的 PDF 翻译能力与使用边界 | 按需使用 | [使用评估](projects/babeldoc/README.md) | 暂不发布 |
 | Nanobrowser | 浏览器 Agent 的状态建模、结构化动作、规划执行闭环与工程边界 | 轻量评估后归档 | [研究记录](projects/nanobrowser/README.md) | 暂不发布 |
+| GR00T Whole-Body Control | 人形机器人全身运动控制、训练、遥操作与 VLA 执行层 | 轻量评估后归档 | [研究记录](projects/gr00t-whole-body-control/README.md) | 暂不发布 |
 
 ## 仓库结构
 
