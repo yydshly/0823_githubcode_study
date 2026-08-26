@@ -9,7 +9,7 @@
   <body>
     <a class="wb-skip" href="#brief">跳到创意描述</a>
     <header class="wb-topbar">
-      <a class="wb-brand" href="./" aria-label="返回 Signal Experience Lab">
+      <a id="workbench-home-link" class="wb-brand" href="./" aria-label="返回 Kage 项目入口">
         <span class="wb-brand-mark" aria-hidden="true"></span>
         <span>IDEA / EXPERIENCE</span>
       </a>
@@ -17,7 +17,7 @@
         <span class="wb-provider-dot" aria-hidden="true"></span>
         <span id="provider-label">正在检查创意能力…</span>
       </div>
-      <a class="wb-gallery-link" href="./cases.html">研究样例</a>
+      <a id="workbench-gallery-link" class="wb-gallery-link" href="./cases.html">V1 案例</a>
     </header>
 
     <nav class="wb-flow" aria-label="内部创作流程" aria-hidden="true">
@@ -93,6 +93,7 @@
         </div>
         <p id="workbench-status" class="wb-status" role="status" aria-live="polite"></p>
         <div id="workbench-error" class="wb-error" role="alert" hidden></div>
+        <p id="public-workbench-note" class="wb-public-mode" hidden>线上工作台可运行确定性本地生成与真实 Three.js 预览。Codex、MiniMax、MiMo 和 OpenAI 专属构建需要本机服务与私有配置，因此不会在公开页面伪装为可用。</p>
 
         <details id="advanced-analysis" class="wb-advanced">
           <summary>为什么得到这个结果？</summary>

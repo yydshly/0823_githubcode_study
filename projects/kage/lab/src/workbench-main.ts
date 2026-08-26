@@ -49,6 +49,8 @@ const showcaseExperiences = {
   }
 } as const;
 type ShowcaseId = keyof typeof showcaseExperiences;
+const isPublishedWorkbench = import.meta.env.BASE_URL !== '/';
+const runtimeBase = isPublishedWorkbench ? './v1/showcase/' : './';
 
 type CreatorStep = 1 | 2 | 3 | 4 | 5;
 
@@ -136,6 +138,9 @@ const manifestJson = required<HTMLElement>('#manifest-json');
 const providerBadge = required<HTMLElement>('#provider-badge');
 const artifactTitle = required<HTMLElement>('#manifest-title');
 const providerLabel = required<HTMLElement>('#provider-label');
+const workbenchHomeLink = required<HTMLAnchorElement>('#workbench-home-link');
+const workbenchGalleryLink = required<HTMLAnchorElement>('#workbench-gallery-link');
+const publicWorkbenchNote = required<HTMLElement>('#public-workbench-note');
 let activeInterpreter: BriefInterpreter = new BaselineBriefInterpreter();
 let state: WorkbenchSnapshot['state'] = 'idle';
 let run: CreativeRun | null = null;
@@ -169,6 +174,11 @@ providerSelect.value = readProvider(params.get('provider'));
 updateCount();
 updateProviderHelp();
 setCreatorStep(1);
+if (isPublishedWorkbench) {
+  workbenchHomeLink.href = './';
+  workbenchGalleryLink.href = './v1/';
+  publicWorkbenchNote.hidden = false;
+}
 window.__creativeLab = { snapshot: createSnapshot, prepareAssets: prepareSelectedAssets };
 
 briefInput.addEventListener('input', () => { generationSeed = 17; updateCount(); setCreatorStep(1); });
@@ -252,9 +262,10 @@ candidateGrid.innerHTML = '<div class="wb-empty"><p>正在建立第一个候选�
 void initialize();
 
 async function initialize(): Promise<void> {
-  const availability = await fetchProviderStatus();
+  const availability = isPublishedWorkbench ? null : await fetchProviderStatus();
   providerAvailability = availability;
   renderAvailability(availability);
+  updateProviderHelp();
   const recovered = generationJobId ? await readGenerationJob(generationJobId) : null;
   const bootstrap = decideWorkbenchBootstrap({
     autorun: params.get('autorun') === '1',
@@ -485,7 +496,7 @@ function selectCandidate(candidate: CreativeCandidate, showInStage = true, advan
     if (button) button.textContent = active ? '已选择' : '选择这个方向';
   });
   const savedId = persistGeneratedExperience(candidate.manifest);
-  const url = new URL('./', location.href); url.searchParams.set('generated', savedId);
+  const url = new URL(runtimeBase, location.href); url.searchParams.set('generated', savedId);
   if (candidate.direction.structure === 'branching') url.searchParams.set('choice', 'evidence');
   previewLink.href = url.href;
   const assetUsePolicy = decideImageAssetUse(candidate.effectSpec);
@@ -774,7 +785,7 @@ function createSnapshot(): WorkbenchSnapshot {
 }
 function showShowcase(id: ShowcaseId): void {
   const showcase = showcaseExperiences[id];
-  const fullUrl = new URL(showcase.url, location.href);
+  const fullUrl = new URL(showcase.url, new URL(runtimeBase, location.href));
   const embedUrl = new URL(fullUrl);
   embedUrl.searchParams.set('embed', '1');
   stageStatus.textContent = 'LOADING LIVE EXPERIENCE…';

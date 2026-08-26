@@ -36,6 +36,7 @@ export default defineConfig({
     emptyOutDir: true,
     rollupOptions: {
       input: {
+        'workbench': resolve(import.meta.dirname, 'workbench.html'),
         'pages/v1/index': resolve(import.meta.dirname, 'pages/v1/index.html'),
         'pages/v1/case': resolve(import.meta.dirname, 'pages/v1/case.html'),
         'pages/v1/showcase/index': resolve(import.meta.dirname, 'pages/v1/showcase/index.html'),

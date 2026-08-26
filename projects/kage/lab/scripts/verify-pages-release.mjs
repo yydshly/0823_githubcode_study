@@ -39,6 +39,8 @@ await open('./', async (url) => {
   if (!(await page.getByRole('heading', { name: /说出想法/ }).count())) {
     failures.push('missing project heading: ' + url)
   }
+  const workbenchHref = await page.getByRole('link', { name: '打开工作台' }).getAttribute('href')
+  if (!workbenchHref?.endsWith('./workbench.html')) failures.push('missing project workbench entry: ' + url)
 })
 
 await open('v1/', async (url) => {
@@ -50,6 +52,42 @@ await open('v1/', async (url) => {
     images.filter((image) => !(image instanceof HTMLImageElement) || image.naturalWidth === 0).length,
   )
   if (unloadedImages) failures.push('V1 contains ' + unloadedImages + ' unloaded preview images: ' + url)
+  const workbenchHref = await page.getByRole('link', { name: '打开工作台' }).getAttribute('href')
+  if (!workbenchHref?.endsWith('../workbench.html')) failures.push('missing V1 workbench entry: ' + url)
+})
+
+await open('workbench.html', async (url) => {
+  await page.waitForFunction(() => window.__creativeLab?.snapshot().state === 'ready', null, { timeout: 20_000 })
+  if (!(await page.getByRole('heading', { name: '说出你想看到的网页' }).count())) {
+    failures.push('missing public workbench heading: ' + url)
+  }
+  if ((await page.locator('#provider').inputValue()) !== 'local') {
+    failures.push('public workbench did not select local provider: ' + url)
+  }
+  const enabledRemoteProviders = await page.locator('#provider option:not([value="local"]):not(:disabled)').count()
+  if (enabledRemoteProviders) failures.push('public workbench exposes unavailable remote providers: ' + url)
+  if (!(await page.locator('#public-workbench-note').isVisible())) {
+    failures.push('public workbench boundary note is not visible: ' + url)
+  }
+
+  const previousRunId = await page.evaluate(() => window.__creativeLab?.snapshot().runId)
+  await page.locator('#brief').fill('为雨夜阅读者设计一段安静、克制、随滚动逐渐亮起的空间叙事。')
+  await page.locator('#generate').click()
+  await page.waitForFunction((prior) => {
+    const snapshot = window.__creativeLab?.snapshot()
+    return snapshot?.state === 'ready' && snapshot.runId && snapshot.runId !== prior
+  }, previousRunId, { timeout: 20_000 })
+  const generatedFrame = await page.locator('#creative-stage-frame').getAttribute('src')
+  if (!generatedFrame?.includes('/v1/showcase/') || !generatedFrame.includes('generated=')) {
+    failures.push('public workbench did not load its generated result in the V1 runtime: ' + url)
+  }
+
+  const sampleLinks = page.locator('.wb-sample-link')
+  if ((await sampleLinks.count()) !== 2) failures.push('public workbench is missing its two primary sample links: ' + url)
+  const sampleHref = await sampleLinks.first().getAttribute('href')
+  if (!sampleHref?.includes('/v1/showcase/') || !sampleHref.includes('experience=resonance-flagship')) {
+    failures.push('public workbench sample uses the wrong runtime route: ' + url)
+  }
 })
 
 await open('v2/', async (url) => {
@@ -82,6 +120,15 @@ await open('v1/', async (url) => {
   if (overflow) failures.push('mobile V1 has horizontal overflow: ' + url)
   if ((await page.locator('.showcase-card').count()) !== 3 || (await page.locator('.case-card').count()) !== 6) {
     failures.push('mobile V1 is missing entries: ' + url)
+  }
+})
+
+await open('workbench.html', async (url) => {
+  await page.waitForFunction(() => window.__creativeLab?.snapshot().state === 'ready', null, { timeout: 20_000 })
+  const overflow = await page.evaluate(() => document.documentElement.scrollWidth > document.documentElement.clientWidth)
+  if (overflow) failures.push('mobile workbench has horizontal overflow: ' + url)
+  if (!(await page.locator('#generate').isVisible()) || !(await page.locator('#public-workbench-note').isVisible())) {
+    failures.push('mobile workbench is missing its primary action or public boundary: ' + url)
   }
 })
 

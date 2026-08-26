@@ -31,7 +31,11 @@ export function renderProviderProvenance(badge: HTMLElement, label: HTMLElement,
 
 export function renderProviderAvailability(select: HTMLSelectElement, badge: HTMLElement, label: HTMLElement, value: ProviderStatusResponse | null): void {
   if (!value) {
-    label.textContent = 'STATIC MODE · LOCAL FALLBACK';
+    select.querySelectorAll<HTMLOptionElement>('option').forEach((option) => {
+      option.disabled = option.value !== 'local';
+    });
+    select.value = 'local';
+    label.textContent = 'PUBLIC WORKBENCH · LOCAL MODE';
     badge.dataset.mode = 'local';
     return;
   }

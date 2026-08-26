@@ -71,6 +71,7 @@ jobs:
           cp -a projects/claude-of-tanks/.pages-dist/workbench/assets _site/projects/claude-of-tanks/workbench/
           mkdir -p _site/projects/kage
           cp projects/kage/index.html projects/kage/README.md _site/projects/kage/
+          cp projects/kage/lab/.pages-dist/workbench.html _site/projects/kage/workbench.html
           cp -a projects/kage/lab/.pages-dist/pages/v1 _site/projects/kage/v1
           cp -a projects/kage/lab/.pages-dist/pages/v2 _site/projects/kage/v2
           cp -a projects/kage/lab/.pages-dist/assets _site/projects/kage/assets
@@ -173,7 +174,7 @@ jobs:
       - name: Install Chromium
         working-directory: projects/kage/lab
         run: npx playwright install --with-deps chromium
-      - name: Verify project, version demos, and six archived cases
+      - name: Verify project, public workbench, version demos, and six archived cases
         working-directory: projects/kage/lab
         run: |
           for attempt in 1 2 3; do

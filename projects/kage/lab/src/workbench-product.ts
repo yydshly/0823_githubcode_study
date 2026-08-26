@@ -352,6 +352,7 @@ function upgradeReferenceLibrary(): void {
     { id: 'resonance-flagship', label: '资产驱动产品电影' },
     { id: 'tidal-archive', label: '潮汐记忆叙事空间' }
   ];
+  const runtimeBase = import.meta.env.BASE_URL !== '/' ? './v1/showcase/' : './';
   const buttons = [...switcher.querySelectorAll<HTMLButtonElement>('.wb-showcase-option')];
   buttons.forEach((button, index) => {
     const sample = samples[index];
@@ -361,7 +362,11 @@ function upgradeReferenceLibrary(): void {
     }
     const link = document.createElement('a');
     link.className = `${button.className} wb-sample-link`;
-    link.href = `./?experience=${sample.id}&quality=high&motion=full`;
+    const sampleUrl = new URL(runtimeBase, location.href);
+    sampleUrl.searchParams.set('experience', sample.id);
+    sampleUrl.searchParams.set('quality', 'high');
+    sampleUrl.searchParams.set('motion', 'full');
+    link.href = sampleUrl.href;
     link.target = '_blank';
     link.rel = 'noopener';
     link.setAttribute('aria-label', `单独打开${sample.label}样例`);

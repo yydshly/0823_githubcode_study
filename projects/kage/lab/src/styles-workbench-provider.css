@@ -34,6 +34,19 @@
   color: #68777d;
 }
 
+.wb-public-mode {
+  margin: 0.8rem 0 0;
+  padding: 0.75rem 0.85rem;
+  border: 1px solid color-mix(in srgb, var(--wb-soft) 28%, transparent);
+  border-radius: 0.7rem;
+  color: var(--wb-muted);
+  background: color-mix(in srgb, var(--wb-soft) 6%, transparent);
+  font-size: 0.65rem;
+  line-height: 1.55;
+}
+
+.wb-public-mode[hidden] { display: none; }
+
 @media (max-width: 440px) {
   .wb-settings {
     grid-template-columns: 1fr;

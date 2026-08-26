@@ -12,8 +12,10 @@ a { color: inherit; text-decoration: none; }
 main { width: min(1400px, calc(100% - 3rem)); margin: auto; }
 .hero { min-height: 84vh; display: grid; grid-template-rows: auto 1fr auto; padding: 2rem 0 3rem; }
 nav { display: flex; justify-content: space-between; font-size: .72rem; letter-spacing: .14em; }
-nav a:last-child { color: #9db3aa; }
+nav a { color: #9db3aa; }
 .brand { font-weight: 700; }
+.nav-actions { display: flex; gap: 1.2rem; align-items: center; }
+.nav-actions .workbench-link { color: #8df1c4; }
 .hero-copy { align-self: center; max-width: 1080px; padding: 5rem 0; }
 .eyebrow, .section-heading p { color: #8df1c4; font: 600 .68rem/1.4 ui-monospace, monospace; letter-spacing: .18em; }
 h1 { max-width: 1000px; margin: 1.2rem 0 1.8rem; font-size: clamp(3.8rem, 9vw, 9rem); line-height: .84; letter-spacing: -.075em; font-weight: 520; }
@@ -67,4 +69,5 @@ footer a { color: #8df1c4; }
   .showcase-card, .showcase-card a { min-height: 520px; }
   .case-card { min-height: 540px; }
   footer { flex-direction: column; }
+  .nav-actions { gap: .7rem; letter-spacing: .06em; }
 }
