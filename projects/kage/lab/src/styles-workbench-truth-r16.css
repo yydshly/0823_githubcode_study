@@ -1,0 +1,103 @@
+/* R16: the live preview fills its stage and exposes the real generation chain. */
+.wb-creative-stage {
+  scroll-margin-top: 5.5rem;
+}
+
+.wb-stage-frame {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.wb-generation-trace {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: .55rem;
+  margin: -.25rem 0 .85rem;
+}
+
+.wb-generation-trace[hidden] {
+  display: none;
+}
+
+.wb-generation-trace > div {
+  min-width: 0;
+  padding: .7rem .75rem;
+  border: 1px solid rgb(154 240 208 / 13%);
+  border-radius: .7rem;
+  background: rgb(6 15 21 / 72%);
+}
+
+.wb-generation-trace span,
+.wb-generation-trace strong,
+.wb-generation-trace small {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.wb-generation-trace span {
+  margin-bottom: .35rem;
+  color: var(--wb-muted);
+  font: 600 .5rem/1.2 var(--wb-mono, monospace);
+  letter-spacing: .09em;
+}
+
+.wb-generation-trace strong {
+  color: var(--wb-text);
+  font-size: .7rem;
+  white-space: nowrap;
+}
+
+.wb-generation-trace small {
+  margin-top: .25rem;
+  color: rgb(174 197 201 / 72%);
+  font-size: .56rem;
+  line-height: 1.4;
+}
+
+.wb-generation-trace[data-production="blocked"] > div:nth-child(3) {
+  border-color: rgb(217 195 140 / 26%);
+}
+
+.wb-generation-trace[data-production="blocked"] > div:nth-child(3) strong {
+  color: var(--wb-soft);
+}
+
+@media (max-width: 1100px) {
+  .wb-generation-trace {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .wb-creative-stage {
+    scroll-margin-top: 4.75rem;
+  }
+
+  .wb-generation-trace {
+    grid-template-columns: 1fr;
+    gap: .4rem;
+    margin-top: 0;
+  }
+
+  .wb-generation-trace > div {
+    display: grid;
+    grid-template-columns: 5rem minmax(0, 1fr);
+    column-gap: .7rem;
+    align-items: center;
+    padding: .58rem .65rem;
+  }
+
+  .wb-generation-trace span,
+  .wb-generation-trace strong,
+  .wb-generation-trace small {
+    margin: 0;
+  }
+
+  .wb-generation-trace small {
+    grid-column: 2;
+  }
+}

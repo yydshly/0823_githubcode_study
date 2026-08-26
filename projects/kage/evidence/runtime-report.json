@@ -1,0 +1,379 @@
+{
+  "generatedAt": "2026-08-23T20:43:59.740Z",
+  "baseUrl": "http://127.0.0.1:8143/upstream/",
+  "browserExecutable": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+  "scenarios": [
+    {
+      "name": "desktop-hero",
+      "url": "http://127.0.0.1:8143/upstream/?shot=0",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "status": 200,
+      "state": {
+        "title": "Kage — Where stillness reveals the unseen",
+        "bodyTextLength": 2641,
+        "fallback": false,
+        "locked": false,
+        "reducedMotion": false,
+        "coarsePointer": false,
+        "scrollY": 0,
+        "hash": "",
+        "activeSection": 0,
+        "camera": [
+          0,
+          4.058,
+          13.756
+        ],
+        "canvas": {
+          "width": 1440,
+          "height": 900
+        },
+        "webgl2": true,
+        "renderInfo": {
+          "calls": 1,
+          "triangles": 2,
+          "points": 0,
+          "lines": 0,
+          "pixelRatio": 1,
+          "shadows": true
+        },
+        "postProcessing": true,
+        "rainEnabled": true,
+        "leafInstances": 260,
+        "clothCanvases": 3,
+        "clothActiveCards": 3,
+        "chapters": 6,
+        "navLinks": 4,
+        "errorOverlay": false
+      },
+      "frameSample": {
+        "frames": 90,
+        "elapsedMs": 11649.599999964237,
+        "fps": 7.725587144646707
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "name": "desktop-gardens-cloth",
+      "url": "http://127.0.0.1:8143/upstream/?shot=2",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "status": 200,
+      "state": {
+        "title": "Kage — Where stillness reveals the unseen",
+        "bodyTextLength": 2604,
+        "fallback": false,
+        "locked": false,
+        "reducedMotion": false,
+        "coarsePointer": false,
+        "scrollY": 1850,
+        "hash": "",
+        "activeSection": 2,
+        "camera": [
+          1.159,
+          3.59,
+          2.354
+        ],
+        "canvas": {
+          "width": 1440,
+          "height": 900
+        },
+        "webgl2": true,
+        "renderInfo": {
+          "calls": 1,
+          "triangles": 2,
+          "points": 0,
+          "lines": 0,
+          "pixelRatio": 1,
+          "shadows": true
+        },
+        "postProcessing": true,
+        "rainEnabled": true,
+        "leafInstances": 260,
+        "clothCanvases": 3,
+        "clothActiveCards": 3,
+        "chapters": 6,
+        "navLinks": 4,
+        "errorOverlay": false
+      },
+      "frameSample": {
+        "frames": 90,
+        "elapsedMs": 4918.200000047684,
+        "fps": 18.299377820976662
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "name": "desktop-navigation",
+      "url": "http://127.0.0.1:8143/upstream/",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "status": 200,
+      "state": {
+        "title": "Kage — Where stillness reveals the unseen",
+        "bodyTextLength": 2604,
+        "fallback": false,
+        "locked": false,
+        "reducedMotion": false,
+        "coarsePointer": false,
+        "scrollY": 2764,
+        "hash": "",
+        "activeSection": 2.838,
+        "camera": [
+          5.295,
+          2.126,
+          -2.138
+        ],
+        "canvas": {
+          "width": 1440,
+          "height": 900
+        },
+        "webgl2": true,
+        "renderInfo": {
+          "calls": 1,
+          "triangles": 2,
+          "points": 0,
+          "lines": 0,
+          "pixelRatio": 1,
+          "shadows": true
+        },
+        "postProcessing": true,
+        "rainEnabled": true,
+        "leafInstances": 260,
+        "clothCanvases": 3,
+        "clothActiveCards": 3,
+        "chapters": 6,
+        "navLinks": 4,
+        "errorOverlay": false
+      },
+      "frameSample": {
+        "frames": 60,
+        "elapsedMs": 2866.7999999523163,
+        "fps": 20.929259104575827
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "name": "mobile-low-quality",
+      "url": "http://127.0.0.1:8143/upstream/?shot=1&q=low",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "status": 200,
+      "state": {
+        "title": "Kage — Where stillness reveals the unseen",
+        "bodyTextLength": 2550,
+        "fallback": false,
+        "locked": false,
+        "reducedMotion": false,
+        "coarsePointer": true,
+        "scrollY": 978,
+        "hash": "",
+        "activeSection": 1,
+        "camera": [
+          -7.689,
+          2.451,
+          19.466
+        ],
+        "canvas": {
+          "width": 390,
+          "height": 844
+        },
+        "webgl2": true,
+        "renderInfo": {
+          "calls": 1,
+          "triangles": 2,
+          "points": 0,
+          "lines": 0,
+          "pixelRatio": 1,
+          "shadows": false
+        },
+        "postProcessing": true,
+        "rainEnabled": false,
+        "leafInstances": 110,
+        "clothCanvases": 0,
+        "clothActiveCards": 0,
+        "chapters": 6,
+        "navLinks": 4,
+        "errorOverlay": false
+      },
+      "frameSample": {
+        "frames": 60,
+        "elapsedMs": 1039.800000011921,
+        "fps": 57.703404500204
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "name": "reduced-motion",
+      "url": "http://127.0.0.1:8143/upstream/?shot=3",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "status": 200,
+      "state": {
+        "title": "Kage — Where stillness reveals the unseen",
+        "bodyTextLength": 2604,
+        "fallback": false,
+        "locked": false,
+        "reducedMotion": true,
+        "coarsePointer": false,
+        "scrollY": 2665,
+        "hash": "",
+        "activeSection": 3,
+        "camera": [
+          5.264,
+          2.081,
+          -3.263
+        ],
+        "canvas": {
+          "width": 1280,
+          "height": 800
+        },
+        "webgl2": true,
+        "renderInfo": {
+          "calls": 1,
+          "triangles": 2,
+          "points": 0,
+          "lines": 0,
+          "pixelRatio": 1,
+          "shadows": true
+        },
+        "postProcessing": true,
+        "rainEnabled": true,
+        "leafInstances": 260,
+        "clothCanvases": 3,
+        "clothActiveCards": 3,
+        "chapters": 6,
+        "navLinks": 4,
+        "errorOverlay": false
+      },
+      "frameSample": {
+        "frames": 30,
+        "elapsedMs": 1254.3999999761581,
+        "fps": 23.91581632698517
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "name": "no-webgl-fallback",
+      "url": "http://127.0.0.1:8143/upstream/?nogl=1",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "status": 200,
+      "state": {
+        "title": "Kage — Where stillness reveals the unseen",
+        "bodyTextLength": 2644,
+        "fallback": true,
+        "locked": false,
+        "reducedMotion": false,
+        "coarsePointer": false,
+        "scrollY": 0,
+        "hash": "",
+        "activeSection": null,
+        "camera": null,
+        "canvas": {
+          "width": 0,
+          "height": 0
+        },
+        "webgl2": null,
+        "renderInfo": null,
+        "postProcessing": false,
+        "rainEnabled": false,
+        "leafInstances": 0,
+        "clothCanvases": 0,
+        "clothActiveCards": 0,
+        "chapters": 6,
+        "navLinks": 4,
+        "errorOverlay": false
+      },
+      "frameSample": null,
+      "consoleErrors": [
+        "[kage] job \"Pouring the ground\" failed Error: webgl disabled\n    at initGL (http://127.0.0.1:8143/upstream/?nogl=1:2278:55)\n    at Array.<anonymous> (http://127.0.0.1:8143/upstream/?nogl=1:4705:34)\n    at step (http://127.0.0.1:8143/upstream/?nogl=1:4765:19)"
+      ],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "name": "post-disabled",
+      "url": "http://127.0.0.1:8143/upstream/?shot=2&post=0",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "status": 200,
+      "state": {
+        "title": "Kage — Where stillness reveals the unseen",
+        "bodyTextLength": 2641,
+        "fallback": false,
+        "locked": false,
+        "reducedMotion": false,
+        "coarsePointer": false,
+        "scrollY": 1710,
+        "hash": "",
+        "activeSection": 2,
+        "camera": [
+          1.212,
+          3.596,
+          2.354
+        ],
+        "canvas": {
+          "width": 1280,
+          "height": 800
+        },
+        "webgl2": true,
+        "renderInfo": {
+          "calls": 187,
+          "triangles": 60734,
+          "points": 650,
+          "lines": 900,
+          "pixelRatio": 1,
+          "shadows": true
+        },
+        "postProcessing": false,
+        "rainEnabled": true,
+        "leafInstances": 260,
+        "clothCanvases": 3,
+        "clothActiveCards": 3,
+        "chapters": 6,
+        "navLinks": 4,
+        "errorOverlay": false
+      },
+      "frameSample": {
+        "frames": 30,
+        "elapsedMs": 1412.699999988079,
+        "fps": 21.235931195762124
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    }
+  ],
+  "summary": {
+    "passedHttp": true,
+    "meaningfulContent": true,
+    "noErrorOverlay": true,
+    "noConsoleErrors": false,
+    "noFailedRequests": true
+  }
+}

@@ -1,0 +1,199 @@
+.chapter-nav {
+  min-width: 0;
+  overflow-x: auto;
+  justify-content: safe center;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+}
+
+.chapter-nav::-webkit-scrollbar {
+  display: none;
+}
+
+.chapter-nav-link {
+  flex: 0 0 auto;
+}
+
+@media (max-width: 760px) {
+  .chapter-nav {
+    justify-content: flex-start;
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+  }
+
+  .chapter-nav-link {
+    min-width: 3.25rem;
+    text-align: center;
+    scroll-snap-align: center;
+  }
+}
+
+.controls-workbench {
+  display: inline-flex;
+  width: fit-content;
+  color: var(--signal-cyan, #5ce1e6);
+  font-size: 0.76rem;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+}
+
+.controls-workbench:hover {
+  text-decoration: underline;
+}
+
+/* Flagship: asset-led cinematic product page. Other experiences retain the lab skin. */
+body[data-experience="resonance-flagship"] {
+  background: #05090d;
+}
+
+body[data-experience="resonance-flagship"]::before {
+  position: fixed;
+  z-index: 1;
+  inset: 0;
+  content: "";
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgb(3 8 11 / 68%) 0%, rgb(3 8 11 / 17%) 43%, transparent 68%),
+    linear-gradient(0deg, rgb(3 8 11 / 70%) 0%, transparent 31%);
+}
+
+body[data-experience="resonance-flagship"] .topbar {
+  min-height: 5rem;
+  border-bottom-color: rgb(255 255 255 / 7%);
+  background: linear-gradient(to bottom, rgb(2 7 10 / 76%), transparent);
+  backdrop-filter: blur(0.4rem);
+}
+
+body[data-experience="resonance-flagship"] .brand-mark {
+  border-radius: 0;
+  rotate: 45deg;
+  box-shadow: 0 0 1.5rem rgb(125 223 242 / 52%);
+}
+
+body[data-experience="resonance-flagship"] .story-intro {
+  min-height: 100vh;
+  padding-bottom: 12vh;
+}
+
+body[data-experience="resonance-flagship"] .story-title {
+  max-width: 7ch;
+  font-size: clamp(4.8rem, 12vw, 11rem);
+  font-weight: 360;
+  letter-spacing: -0.09em;
+  line-height: 0.82;
+  text-shadow: 0 0 5rem rgb(0 0 0 / 80%);
+}
+
+body[data-experience="resonance-flagship"] .story-summary {
+  max-width: 30rem;
+  color: rgb(220 237 239 / 68%);
+}
+
+body[data-experience="resonance-flagship"] .chapter {
+  position: relative;
+  z-index: 2;
+}
+
+body[data-experience="resonance-flagship"] .chapter-card {
+  width: min(31rem, 88vw);
+  padding: clamp(1.4rem, 2.4vw, 2.2rem) 0 clamp(1.4rem, 2.4vw, 2.2rem) clamp(1.3rem, 2.4vw, 2.1rem);
+  border: 0;
+  border-left: 1px solid rgb(125 223 242 / 34%);
+  border-radius: 0;
+  background: linear-gradient(90deg, rgb(4 10 14 / 76%), rgb(4 10 14 / 24%) 72%, transparent);
+  box-shadow: none;
+  backdrop-filter: blur(0.35rem);
+  opacity: 0.24;
+  transform: translateY(2rem);
+}
+
+body[data-experience="resonance-flagship"] .chapter-right .chapter-card {
+  padding-right: clamp(1.3rem, 2.4vw, 2.1rem);
+  border-right: 1px solid rgb(125 223 242 / 28%);
+  border-left: 0;
+  background: linear-gradient(270deg, rgb(4 10 14 / 76%), rgb(4 10 14 / 24%) 72%, transparent);
+}
+
+body[data-experience="resonance-flagship"] .chapter-center .chapter-card {
+  padding-right: clamp(1.3rem, 2.4vw, 2.1rem);
+  border-right: 1px solid rgb(125 223 242 / 24%);
+  text-shadow: 0 0 2rem #05090d;
+}
+
+body[data-experience="resonance-flagship"] .chapter.is-active .chapter-card {
+  border-color: rgb(125 223 242 / 64%);
+  opacity: 1;
+  transform: translateY(0);
+}
+
+body[data-experience="resonance-flagship"] .chapter-title {
+  font-size: clamp(2.7rem, 5.6vw, 5.6rem);
+  font-weight: 360;
+  line-height: 0.95;
+}
+
+body[data-experience="resonance-flagship"] .chapter-copy {
+  max-width: 27rem;
+  color: rgb(226 239 241 / 75%);
+}
+
+body[data-experience="resonance-flagship"] .chapter-overlay {
+  border-top-color: rgb(255 255 255 / 12%);
+}
+
+body[data-experience="resonance-flagship"] #fallback-plate {
+  background-image:
+    linear-gradient(90deg, rgb(3 8 11 / 72%), transparent 58%),
+    linear-gradient(0deg, rgb(3 8 11 / 68%), transparent 42%),
+    var(--fallback-hero-image, none);
+  background-position: center;
+  background-size: cover;
+}
+
+body[data-experience="resonance-flagship"] #fallback-plate > * {
+  display: none;
+}
+
+body[data-experience="resonance-flagship"] .story-footer {
+  position: relative;
+  z-index: 2;
+  min-height: 82vh;
+  text-shadow: 0 0 1.5rem #05090d;
+}
+
+@media (max-width: 760px) {
+  body[data-experience="resonance-flagship"]::before {
+    background: linear-gradient(0deg, rgb(3 8 11 / 72%) 0%, transparent 55%);
+  }
+
+  body[data-experience="resonance-flagship"] .topbar {
+    backdrop-filter: none;
+    background: linear-gradient(to bottom, rgb(2 7 10 / 92%), rgb(2 7 10 / 44%));
+  }
+
+  body[data-experience="resonance-flagship"] .chapter-nav {
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    background: rgb(2 7 10 / 88%);
+    backdrop-filter: blur(1rem);
+  }
+
+  body[data-experience="resonance-flagship"] .story-intro {
+    align-content: end;
+    padding-bottom: 16vh;
+  }
+
+  body[data-experience="resonance-flagship"] .story-title {
+    font-size: clamp(4.5rem, 23vw, 7rem);
+  }
+
+  body[data-experience="resonance-flagship"] .chapter-card,
+  body[data-experience="resonance-flagship"] .chapter-right .chapter-card {
+    width: 100%;
+    padding-right: 1.3rem;
+    background: linear-gradient(90deg, rgb(4 10 14 / 88%), rgb(4 10 14 / 46%) 76%, transparent);
+    border-right: 0;
+    border-left: 1px solid rgb(125 223 242 / 44%);
+  }
+}

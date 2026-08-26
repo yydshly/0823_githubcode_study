@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Kage：从自然语言想法到专属 Three.js 网页体验的 V1 归档与 V2 研究。" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='22' fill='none' stroke='%2379e7c4' stroke-width='5'/%3E%3Ccircle cx='32' cy='32' r='6' fill='%23f0c88d'/%3E%3C/svg%3E" />
+    <title>Kage Research Hub</title>
+    <style>
+      :root { color-scheme: dark; font-family: Inter, system-ui, sans-serif; background: #071018; color: #edf8f2; }
+      * { box-sizing: border-box; }
+      body { margin: 0; min-height: 100vh; background: radial-gradient(circle at 76% 10%, #18383b, transparent 32rem), #071018; }
+      main { width: min(1120px, calc(100% - 2rem)); margin: auto; padding: 7rem 0; }
+      .eyebrow { color: #79e7c4; font-size: .72rem; letter-spacing: .18em; }
+      h1 { max-width: 900px; margin: 1rem 0; font-size: clamp(3.2rem, 8vw, 7rem); font-weight: 520; letter-spacing: -.07em; line-height: .92; }
+      .lead { max-width: 720px; color: #a9c1bd; font-size: 1.05rem; line-height: 1.7; }
+      .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-top: 3.5rem; }
+      article { min-height: 290px; padding: 2rem; border: 1px solid #ffffff1d; border-radius: 1rem; background: #0b1d28cc; }
+      article.extension { background: linear-gradient(145deg, #113033dd, #0b1d28dd); border-color: #79e7c455; }
+      .tag { color: #79e7c4; font-size: .68rem; letter-spacing: .14em; }
+      h2 { margin: 1rem 0 .7rem; font-size: clamp(1.8rem, 4vw, 3.2rem); font-weight: 520; letter-spacing: -.04em; }
+      article p { color: #a9c1bd; line-height: 1.65; }
+      .actions { display: flex; flex-wrap: wrap; gap: .7rem; margin-top: 1.5rem; }
+      a.button { padding: .72rem 1rem; border: 1px solid #ffffff30; border-radius: 999px; color: inherit; text-decoration: none; }
+      a.button.primary { color: #071018; border-color: #79e7c4; background: #79e7c4; }
+      .docs { margin-top: 3rem; color: #a9c1bd; }
+      .docs a { color: #edf8f2; }
+      @media (max-width: 720px) { main { padding: 5rem 0; } .grid { grid-template-columns: 1fr; } article { min-height: 0; } }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p class="eyebrow">IDEA → ASSET → THREE.JS EXPERIENCE</p>
+      <h1>说出想法，构建可以进入的网页。</h1>
+      <p class="lead">V1 已冻结为可运行的生成基线与六个精选案例；V2 继承稳定运行时，以优秀参考、创意合同和有边界的视觉验收提升首次结果并缩短生成时间。两个版本独立演示、互不覆盖。</p>
+      <div class="grid">
+        <article>
+          <span class="tag">V1 / ARCHIVED</span>
+          <h2>想法到网页</h2>
+          <p>保留真实的意图理解、素材生产、Codex 专属页面构建、Three.js 运行、视觉精修与六个最终案例。</p>
+          <div class="actions">
+            <a class="button primary" href="./v1/">打开 V1 演示</a>
+            <a class="button" href="./v1/case.html?id=dedicated-r36-delivery-final">最佳案例</a>
+          </div>
+        </article>
+        <article class="extension">
+          <span class="tag">V2 / INDEPENDENT</span>
+          <h2>参考驱动生成</h2>
+          <p>继承 V1 的稳定能力，但为模型补充优秀案例证据、素材职责、创意合同、验收标准与精修时限。</p>
+          <div class="actions">
+            <a class="button primary" href="./v2/">打开 V2 演示</a>
+            <a class="button" href="./v1/">返回 V1</a>
+          </div>
+        </article>
+      </div>
+      <p class="docs">研究入口：<a href="./README.md">项目 README</a> · <a href="./lab/docs/releases/V1-IDEA-TO-EXPERIENCE-BASELINE.md">V1 归档</a> · <a href="./lab/docs/releases/V1-PERFORMANCE-AND-GAPS.md">V1 问题与耗时</a> · <a href="./lab/docs/V2-REFERENCE-GUIDED-CREATIVE-CONTRACT.md">V2 方案</a></p>
+    </main>
+  </body>
+</html>

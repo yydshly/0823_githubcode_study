@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Kage V1：从自然语言想法到 Three.js 网页体验的可运行归档。" />
+    <title>Kage V1 · Idea to Experience</title>
+    <link rel="stylesheet" href="./v1.css" />
+  </head>
+  <body>
+    <main>
+      <header class="hero">
+        <nav>
+          <a class="brand" href="../">KAGE / V1 ARCHIVE</a>
+          <a href="../../">项目入口</a>
+        </nav>
+        <div class="hero-copy">
+          <p class="eyebrow">IDEA → ASSET → THREE.JS EXPERIENCE</p>
+          <h1>把一个想法，变成可以进入的网页。</h1>
+          <p class="lead">这是 V1 的冻结演示。六个案例都来自真实生成与精修结果，而不是临时占位 Demo。每个案例保留自己的素材、排版、镜头和交互语言。</p>
+        </div>
+        <dl class="proof">
+          <div><dt>CURATED</dt><dd>6 个最终案例</dd></div>
+          <div><dt>RUNTIME</dt><dd>Three.js + DOM</dd></div>
+          <div><dt>STATUS</dt><dd>V1 已归档</dd></div>
+        </dl>
+      </header>
+
+      <section class="catalog" aria-labelledby="cases-title">
+        <div class="section-heading">
+          <p>SELECTED OUTPUTS</p>
+          <h2 id="cases-title">只留下每个目标的最佳结果</h2>
+        </div>
+        <div id="case-grid" class="case-grid" aria-live="polite"></div>
+      </section>
+
+      <footer>
+        <p>V1 保持可复现；下一阶段以参考证据和创意合同减少盲目探索。</p>
+        <a href="../v2/">查看独立 V2 研究入口 →</a>
+      </footer>
+    </main>
+    <script type="module" src="./v1.ts"></script>
+  </body>
+</html>
+

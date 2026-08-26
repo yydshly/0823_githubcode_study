@@ -1,0 +1,122 @@
+{
+  "receipt": {
+    "id": "dedicated-r36-delivery-final",
+    "provider": "codex",
+    "model": "delivery-polish-r36",
+    "status": "compiled",
+    "previewUrl": "/generated-runs/dedicated-r36-delivery-final/",
+    "generatedAt": "2026-08-26T05:25:44.686Z",
+    "files": 4,
+    "assets": 4,
+    "sourceBytes": 18402,
+    "hasShaders": false,
+    "compileMs": 567,
+    "attempts": 1,
+    "directory": "generated/runs/dedicated-r36-delivery-final"
+  },
+  "request": {
+    "brief": "为一座只在夜间开放的生物材料温室设计沉浸式发布网页，面向建筑师和材料研究者。首屏是一枚悬浮的半透明种子，滚动时内部纤维逐步聚合成可呼吸的建筑表皮，最终形成宁静、可信且可预约参观的完整空间。不要紫色科技风，不要中央海报式图片。",
+    "seed": 17,
+    "quality": "balanced",
+    "runId": "run-1n4ifm0",
+    "selectedId": "generated-1fr7dw2-blueprint-1oix2eq-nocturnal-biomaterial-greenhouse-blueprint",
+    "reference": {
+      "title": "夜生表皮｜温室发布页",
+      "summary": "从悬浮种子进入纤维组织，最终抵达夜间开放的生物材料温室中庭，并完成夜访预约。",
+      "scenePlugin": "composed-world",
+      "productionStatus": "ready",
+      "theme": {
+        "deep": "#0b1713",
+        "surface": "#20352c",
+        "text": "#edf0e8",
+        "muted": "#a7b3a8",
+        "accent": "#d6a85d",
+        "accentSoft": "#6f8b74"
+      },
+      "assets": [
+        {
+          "id": "biomaterial-night-greenhouse-v1",
+          "uri": "/creative-assets/biomaterial-night-greenhouse-v1.png",
+          "bundlePath": "assets/biomaterial-night-greenhouse-v1.png",
+          "kind": "environment",
+          "source": "chatgpt-generated",
+          "role": "full-bleed nocturnal greenhouse environment and biomaterial seed anchor",
+          "description": "宽幅夜间生物材料温室环境，用于全屏融合、景深分层与滚动表皮形成。",
+          "payloadBytes": 2041016
+        },
+        {
+          "id": "biomaterial-seed-pod-plate-v1",
+          "uri": "/creative-assets/biomaterial-seed-pod-plate-v1.png",
+          "bundlePath": "assets/biomaterial-seed-pod-plate-v1.png",
+          "kind": "image",
+          "source": "chatgpt-generated",
+          "role": "dominant foreground seed-pod subject; grows into the greenhouse skin through scroll",
+          "description": "由中间生成结果保留并生产化的发光纤维种荚，黑底用于 screen 合成和柔边遮罩。",
+          "payloadBytes": 1778131
+        },
+        {
+          "id": "biomaterial-mature-greenhouse-v1",
+          "uri": "/creative-assets/biomaterial-mature-greenhouse-v1.png",
+          "bundlePath": "assets/biomaterial-mature-greenhouse-v1.png",
+          "kind": "environment",
+          "source": "chatgpt-generated",
+          "role": "final-stage full-bleed mature greenhouse interior",
+          "description": "种荚纤维完成聚合后的可进入夜间生物材料温室全景，用于终点空间收束。",
+          "payloadBytes": 3200183
+        },
+        {
+          "id": "biomaterial-fiber-transition-v1",
+          "uri": "/creative-assets/biomaterial-fiber-transition-v1.png",
+          "bundlePath": "assets/biomaterial-fiber-transition-v1.png",
+          "kind": "environment",
+          "source": "chatgpt-generated",
+          "role": "middle-stage full-bleed seed-to-canopy transformation",
+          "description": "种荚内部纤维连续展开为承重肋与半成形穹顶的中间环境，用于核心滚动转化。",
+          "payloadBytes": 3106141
+        }
+      ]
+    }
+  },
+  "usedAssets": [
+    {
+      "id": "biomaterial-night-greenhouse-v1",
+      "uri": "/creative-assets/biomaterial-night-greenhouse-v1.png",
+      "bundlePath": "assets/biomaterial-night-greenhouse-v1.png",
+      "kind": "environment",
+      "source": "chatgpt-generated",
+      "role": "full-bleed nocturnal greenhouse environment and biomaterial seed anchor",
+      "description": "宽幅夜间生物材料温室环境，用于全屏融合、景深分层与滚动表皮形成。",
+      "payloadBytes": 2041016
+    },
+    {
+      "id": "biomaterial-seed-pod-plate-v1",
+      "uri": "/creative-assets/biomaterial-seed-pod-plate-v1.png",
+      "bundlePath": "assets/biomaterial-seed-pod-plate-v1.png",
+      "kind": "image",
+      "source": "chatgpt-generated",
+      "role": "dominant foreground seed-pod subject; grows into the greenhouse skin through scroll",
+      "description": "由中间生成结果保留并生产化的发光纤维种荚，黑底用于 screen 合成和柔边遮罩。",
+      "payloadBytes": 1778131
+    },
+    {
+      "id": "biomaterial-mature-greenhouse-v1",
+      "uri": "/creative-assets/biomaterial-mature-greenhouse-v1.png",
+      "bundlePath": "assets/biomaterial-mature-greenhouse-v1.png",
+      "kind": "environment",
+      "source": "chatgpt-generated",
+      "role": "final-stage full-bleed mature greenhouse interior",
+      "description": "种荚纤维完成聚合后的可进入夜间生物材料温室全景，用于终点空间收束。",
+      "payloadBytes": 3200183
+    },
+    {
+      "id": "biomaterial-fiber-transition-v1",
+      "uri": "/creative-assets/biomaterial-fiber-transition-v1.png",
+      "bundlePath": "assets/biomaterial-fiber-transition-v1.png",
+      "kind": "environment",
+      "source": "chatgpt-generated",
+      "role": "middle-stage full-bleed seed-to-canopy transformation",
+      "description": "种荚内部纤维连续展开为承重肋与半成形穹顶的中间环境，用于核心滚动转化。",
+      "payloadBytes": 3106141
+    }
+  ]
+}

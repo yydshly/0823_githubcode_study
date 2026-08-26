@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "id": "job-d91cc0c37a0dc01e",
+  "fingerprint": "692ba5ee8cb576584293f060",
+  "brief": "为一台放在窗边、记录清晨雨声的桌面产品设计沉浸式网页。始终展示同一台雨声记录器：开场让雨滴落在透明声学膜上；滚动中段通过膜片振动、同心声波和内部暖光表现雨声正在进入共振腔；结尾所有运动安静下来，记录灯亮起，并明确收束为“保存这一刻的声音”。页面自然、真实、克制，不要科技霓虹，不要拆成不相关零件，不要更换主体。",
+  "provider": "codex",
+  "executionOwner": "server",
+  "selectedProvider": "codex",
+  "quality": "high",
+  "seed": 69,
+  "status": "complete",
+  "stage": "complete",
+  "message": "专属网页已经可运行；自动视觉验收未完成，已保留当前版本供查看：专属代码模型调用超过 90 秒。",
+  "model": "gpt-5.6-sol",
+  "runId": "run-mm6t20",
+  "selectedId": "generated-1u1kiy2-blueprint-a3fscd-rainfall-resonance-blueprint",
+  "assetRoute": "catalog",
+  "assetCount": 1,
+  "sourceRunId": "dedicated-1b9f0b05107b",
+  "bestRunId": "dedicated-1b9f0b05107b",
+  "bestPreviewUrl": "/generated-runs/dedicated-1b9f0b05107b/",
+  "sourceReceipt": {
+    "id": "dedicated-1b9f0b05107b",
+    "provider": "codex",
+    "model": "gpt-5.6-sol",
+    "status": "compiled",
+    "previewUrl": "/generated-runs/dedicated-1b9f0b05107b/",
+    "generatedAt": "2026-08-26T16:16:28.155Z",
+    "files": 4,
+    "assets": 1,
+    "sourceBytes": 17336,
+    "hasShaders": false,
+    "compileMs": 949,
+    "attempts": 2,
+    "directory": "generated/runs/dedicated-1b9f0b05107b"
+  },
+  "bestReceipt": {
+    "id": "dedicated-1b9f0b05107b",
+    "provider": "codex",
+    "model": "gpt-5.6-sol",
+    "status": "compiled",
+    "previewUrl": "/generated-runs/dedicated-1b9f0b05107b/",
+    "generatedAt": "2026-08-26T16:16:28.155Z",
+    "files": 4,
+    "assets": 1,
+    "sourceBytes": 17336,
+    "hasShaders": false,
+    "compileMs": 949,
+    "attempts": 2,
+    "directory": "generated/runs/dedicated-1b9f0b05107b"
+  },
+  "decision": "kept",
+  "sourceScore": null,
+  "finalScore": null,
+  "error": null,
+  "retryableStage": null,
+  "createdAt": "2026-08-26T16:12:13.609Z",
+  "updatedAt": "2026-08-26T16:18:22.495Z",
+  "finishedAt": "2026-08-26T16:18:22.495Z",
+  "history": [
+    {
+      "stage": "planning",
+      "at": "2026-08-26T16:12:13.609Z",
+      "message": "任务已建立，正在理解目标并形成最佳网页方向。"
+    },
+    {
+      "stage": "planning",
+      "at": "2026-08-26T16:12:13.698Z",
+      "message": "服务端正在用模型理解目标、页面结构与视觉变化；关闭工作台不会中断任务。"
+    },
+    {
+      "stage": "assets",
+      "at": "2026-08-26T16:12:13.793Z",
+      "message": "最佳方向已经确定，正在选择项目素材；只有明确缺少时才会调用 MiniMax。"
+    },
+    {
+      "stage": "assets",
+      "at": "2026-08-26T16:12:13.837Z",
+      "message": "已匹配 1 个项目优选素材，跳过 MiniMax。"
+    },
+    {
+      "stage": "authoring",
+      "at": "2026-08-26T16:12:13.864Z",
+      "message": "已确认 1 个有来源素材，Codex 正在构建专属网页。"
+    },
+    {
+      "stage": "reviewing",
+      "at": "2026-08-26T16:16:28.356Z",
+      "message": "专属网页已编译，正在检查首屏、中段、末段与手机状态。"
+    },
+    {
+      "stage": "refining",
+      "at": "2026-08-26T16:16:28.399Z",
+      "message": "正在依据真实浏览器截图决定保留原版或执行最多一次视觉精修。"
+    },
+    {
+      "stage": "complete",
+      "at": "2026-08-26T16:18:22.495Z",
+      "message": "专属网页已经可运行；自动视觉验收未完成，已保留当前版本供查看：专属代码模型调用超过 90 秒。"
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "directUrl": "http://127.0.0.1:8143/generated-runs/dedicated-ba4e9d10caaa/?quality=balanced&motion=full",
+  "elapsedSeconds": 159,
+  "receipt": {
+    "state": "CODEX · GPT-5.6-SOL",
+    "note": "dedicated-ba4e9d10caaa · attempt 1",
+    "files": "4 FILES · 1 ASSETS",
+    "compile": "672ms",
+    "security": "SANDBOXED",
+    "runtime": "THREE + SHADER"
+  },
+  "opening": {
+    "title": "dedicated-ba4e9d10caaa",
+    "heading": "Wear theUnfixed.",
+    "canvasCount": 2,
+    "imageCount": 0,
+    "ready": "true",
+    "scrollY": 0,
+    "scrollHeight": 2911,
+    "viewportHeight": 900,
+    "overflow": 0
+  },
+  "middle": {
+    "title": "dedicated-ba4e9d10caaa",
+    "heading": "Wear theUnfixed.",
+    "canvasCount": 2,
+    "imageCount": 0,
+    "ready": "true",
+    "scrollY": 1006,
+    "scrollHeight": 2911,
+    "viewportHeight": 900,
+    "overflow": 0
+  },
+  "ending": {
+    "title": "dedicated-ba4e9d10caaa",
+    "heading": "Wear theUnfixed.",
+    "canvasCount": 2,
+    "imageCount": 0,
+    "ready": "true",
+    "scrollY": 2011,
+    "scrollHeight": 2911,
+    "viewportHeight": 900,
+    "overflow": 0
+  },
+  "mobile": {
+    "title": "dedicated-ba4e9d10caaa",
+    "heading": "Wear theUnfixed.",
+    "canvasCount": 2,
+    "imageCount": 0,
+    "ready": "true",
+    "scrollY": 0,
+    "scrollHeight": 2737,
+    "viewportHeight": 844,
+    "overflow": 0
+  },
+  "scrollChanged": true,
+  "errors": [],
+  "captures": [
+    "workbench-ready.png",
+    "workbench-compiled.png",
+    "desktop-opening.png",
+    "desktop-middle-pointer.png",
+    "desktop-ending.png",
+    "mobile-reduced.png"
+  ]
+}

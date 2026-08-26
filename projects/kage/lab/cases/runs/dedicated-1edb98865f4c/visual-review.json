@@ -1,0 +1,118 @@
+{
+  "evidence": {
+    "schemaVersion": 1,
+    "runId": "dedicated-1edb98865f4c",
+    "capturedAt": "2026-08-26T11:12:56.574Z",
+    "frames": [
+      {
+        "id": "opening",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "quality": "high",
+        "reducedMotion": false,
+        "ready": true,
+        "canvasCount": 1,
+        "progress": 0,
+        "scrollY": 0,
+        "scrollHeight": 2880,
+        "overflow": 0,
+        "heading": "听见创作真正的形状",
+        "headingVisible": true,
+        "visibleTextCount": 5,
+        "collisionCount": 0,
+        "maxOverlapRatio": 0,
+        "blockingCollisionCount": 0,
+        "editorialOverlapCount": 0,
+        "maxBlockingOverlapRatio": 0
+      },
+      {
+        "id": "middle",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "quality": "high",
+        "reducedMotion": false,
+        "ready": true,
+        "canvasCount": 1,
+        "progress": 0.4398989898989899,
+        "scrollY": 871,
+        "scrollHeight": 2880,
+        "overflow": 0,
+        "heading": "听见创作真正的形状",
+        "headingVisible": false,
+        "visibleTextCount": 6,
+        "collisionCount": 0,
+        "maxOverlapRatio": 0,
+        "blockingCollisionCount": 0,
+        "editorialOverlapCount": 0,
+        "maxBlockingOverlapRatio": 0
+      },
+      {
+        "id": "final",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "quality": "high",
+        "reducedMotion": false,
+        "ready": true,
+        "canvasCount": 1,
+        "progress": 1,
+        "scrollY": 1980,
+        "scrollHeight": 2880,
+        "overflow": 0,
+        "heading": "听见创作真正的形状",
+        "headingVisible": false,
+        "visibleTextCount": 4,
+        "collisionCount": 0,
+        "maxOverlapRatio": 0,
+        "blockingCollisionCount": 0,
+        "editorialOverlapCount": 0,
+        "maxBlockingOverlapRatio": 0
+      },
+      {
+        "id": "mobile",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "quality": "low",
+        "reducedMotion": true,
+        "ready": true,
+        "canvasCount": 1,
+        "progress": 0,
+        "scrollY": 0,
+        "scrollHeight": 2886,
+        "overflow": 0,
+        "heading": "听见创作真正的形状",
+        "headingVisible": true,
+        "visibleTextCount": 4,
+        "collisionCount": 0,
+        "maxOverlapRatio": 0,
+        "blockingCollisionCount": 0,
+        "editorialOverlapCount": 0,
+        "maxBlockingOverlapRatio": 0
+      }
+    ],
+    "browserErrors": []
+  },
+  "assessment": {
+    "schemaVersion": 1,
+    "verdict": "pass",
+    "score": 100,
+    "summary": "结构质量门通过；仍需结合截图判断构图、材质、层级与创意完成度。",
+    "findings": [],
+    "observations": []
+  },
+  "visualAcceptance": {
+    "schemaVersion": 1,
+    "verdict": "pass",
+    "score": 92,
+    "assetRole": "dominant",
+    "summary": "候选已达到最终成品标准。冷银声学设备在桌面全程构成唯一可信主体，并与文案、同心声场结构形成统一画面；首屏建立情绪，中段通过主体位移、尺度变化和能力指标完成解释，末段以清晰标题与高对比 CTA 收束。素材透明边缘自然，未见矩形贴图边、占位几何或明显拉伸割裂。390px 移动端虽采用大幅偏置裁切，但标题仍是明确焦点，设备保留足够辨识度且正文、CTA 可读。",
+    "findings": []
+  }
+}

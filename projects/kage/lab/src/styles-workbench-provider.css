@@ -1,0 +1,41 @@
+.wb-settings {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 0.75rem;
+}
+
+.wb-setting {
+  display: grid;
+  gap: 0.45rem;
+  min-width: 0;
+}
+
+.wb-setting > span {
+  color: var(--wb-muted);
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+}
+
+.wb-setting select {
+  width: 100%;
+}
+
+.wb-provider[data-mode="remote"] .wb-provider-dot {
+  background: var(--wb-accent);
+  box-shadow: 0 0 14px color-mix(in srgb, var(--wb-accent) 65%, transparent);
+}
+
+.wb-provider[data-mode="local"] .wb-provider-dot {
+  background: var(--wb-soft);
+  box-shadow: none;
+}
+
+#provider option:disabled {
+  color: #68777d;
+}
+
+@media (max-width: 440px) {
+  .wb-settings {
+    grid-template-columns: 1fr;
+  }
+}

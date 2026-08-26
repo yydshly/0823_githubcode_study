@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-08-26T17:06:52.139Z",
+  "cases": [
+    {
+      "id": "dedicated-ba4e9d10caaa-depth-field",
+      "title": "先锋时装 · 模型精修完整作品",
+      "brief": "为一个先锋时装品牌设计梦幻流体光幕、柔和但有张力的编辑感沉浸式网页，面向年轻创意人群。",
+      "model": "gpt-5.6-sol",
+      "stage": "featured",
+      "note": "从模型生成素材出发，依次处理主体割裂、透明边缘、全屏场融合与 2.5D 景深；只展示最终 depth-field 版本。",
+      "tags": [
+        "model-generated",
+        "fashion",
+        "alpha-cutout",
+        "borderless-field",
+        "layered-depth"
+      ],
+      "generatedAt": "2026-08-25T12:50:29.513Z",
+      "archivedAt": "2026-08-25T18:43:11.291Z",
+      "previewUrl": "/cases/dedicated-ba4e9d10caaa-depth-field/"
+    },
+    {
+      "id": "dedicated-r36-delivery-final",
+      "title": "夜生表皮温室 · 完整资产叙事最终版",
+      "brief": "为一座只在夜间开放的生物材料温室设计沉浸式发布网页，面向建筑师和材料研究者。首屏是一枚悬浮的半透明种子，滚动时内部纤维逐步聚合成可呼吸的建筑表皮，最终形成宁静、可信且可预约参观的完整空间。不要紫色科技风，不要中央海报式图片。",
+      "model": "delivery-polish-r36",
+      "stage": "featured",
+      "note": "种荚、纤维转化和成熟温室由独立模型素材承担关键阶段，Three.js 负责滚动连续性与空间微动；通过机械与独立视觉双重验收。",
+      "tags": [
+        "Three.js",
+        "模型生成素材",
+        "资产叙事",
+        "滚动转化",
+        "独立视觉验收"
+      ],
+      "generatedAt": "2026-08-26T05:25:44.686Z",
+      "archivedAt": "2026-08-26T05:26:23.064Z",
+      "previewUrl": "/cases/dedicated-r36-delivery-final/"
+    },
+    {
+      "id": "dedicated-896cfb7e6657",
+      "title": "云上观测站｜连续空间叙事",
+      "brief": "为一座漂浮在云层中的未来天文观测站设计沉浸式网页。滚动时从云海接近观测站，穿过引桥进入透明穹顶，最终看到由望远镜锚定的星图数据在空间中展开。画面安静、真实、具有电影感；不用常见紫色科技风，不把素材做成矩形海报。三张连续素材分别是开场外景、中段穹顶内部、结尾空间星图，必须全屏融合并由 Three.js 光场、景深、粒子和镜头运动把它们连接为一次连续体验。",
+      "model": "gpt-5.6-terra",
+      "stage": "refined",
+      "parentId": "dedicated-0f538c770255",
+      "note": "ChatGPT 直接生成三段连续电影级素材；Codex 围绕外景接近、穹顶进入、星图展开构建专属 Three.js 网页。修复了画布流定位、纹理乘法压暗、低画质空白、移动端溢出与末段焦点竞争。最终版本通过桌面首屏/中段/末段及390px移动端浏览器验证。",
+      "tags": [
+        "天文观测站",
+        "云海",
+        "透明穹顶",
+        "星图",
+        "Three.js",
+        "ChatGPT素材",
+        "Codex构建"
+      ],
+      "generatedAt": "2026-08-26T08:24:22.730Z",
+      "archivedAt": "2026-08-26T08:28:19.622Z",
+      "previewUrl": "/cases/dedicated-896cfb7e6657/"
+    },
+    {
+      "id": "dedicated-1edb98865f4c",
+      "title": "智能声音产品 · Codex 5.6-sol 最终精修版",
+      "brief": "为一款面向独立创作者的智能声音产品，设计清冷、克制但有未来感的发布网页；先建立情绪，再解释核心能力，最后留下明确行动。",
+      "model": "gpt-5.6-sol",
+      "stage": "featured",
+      "parentId": "dedicated-ed4b7348709a",
+      "note": "当前 brief 通过工作台主按钮真实生成：5.6-terra 理解目标，复用 ChatGPT 透明声学主体，Codex 5.6-sol 生成独立 DOM + Three.js bundle；四状态机械验收 100，独立视觉验收 92。首版末段与低画质移动端主体弱化，精修版修复素材加载、终局层级和移动端构图，仅保留本版为同一目标最佳案例。",
+      "tags": [
+        "智能声音",
+        "ChatGPT素材",
+        "Codex 5.6-sol",
+        "Three.js",
+        "滚动叙事",
+        "视觉精修",
+        "移动端"
+      ],
+      "generatedAt": "2026-08-26T11:12:42.346Z",
+      "archivedAt": "2026-08-26T11:17:45.719Z",
+      "previewUrl": "/cases/dedicated-1edb98865f4c/"
+    },
+    {
+      "id": "dedicated-8574ee46ab16",
+      "title": "梦境记录 · 醒来后的房间",
+      "brief": "为一款帮助人记录梦境的产品设计网页。开场像刚刚醒来的模糊房间，滚动时记忆碎片逐渐形成可探索空间，最后收束为“记录今晚的梦”。安静、真实，不要常见科技风。",
+      "model": "gpt-5.6-sol",
+      "stage": "refined",
+      "parentId": "dedicated-3c73e294dce9",
+      "note": "最终精修版本：ChatGPT 连续素材锁定同一卧室、机位与晨光；Codex 5.6-sol 构建 DOM 全屏环境交叉渐变与单一羽化 Three.js 记忆回声层。真实浏览器已验证 0%、50%、100% 与移动端，三张素材均 200，无脚本错误和横向溢出。",
+      "tags": [
+        "梦境记录",
+        "连续空间",
+        "Three.js",
+        "滚动叙事",
+        "ChatGPT素材",
+        "Codex 5.6-sol"
+      ],
+      "generatedAt": "2026-08-26T12:29:31.406Z",
+      "archivedAt": "2026-08-26T12:53:22.831Z",
+      "previewUrl": "/cases/dedicated-8574ee46ab16/"
+    },
+    {
+      "id": "dedicated-1b9f0b05107b",
+      "title": "让清晨的雨，被轻轻听见",
+      "brief": "为一台放在窗边、记录清晨雨声的桌面产品设计沉浸式网页。始终展示同一台雨声记录器：开场让雨滴落在透明声学膜上；滚动中段通过膜片振动、同心声波和内部暖光表现雨声正在进入共振腔；结尾所有运动安静下来，记录灯亮起，并明确收束为“保存这一刻的声音”。页面自然、真实、克制，不要科技霓虹，不要拆成不相关零件，不要更换主体。",
+      "model": "gpt-5.6-sol",
+      "stage": "refined",
+      "note": "最终归档版：ChatGPT 生成透明雨声记录器主体与全屏雨窗环境，Three.js 负责雨滴、共振、柔光、指针与滚动镜头；已消除 Canvas 遮挡、方形辉光和终点文案冲突，并完成桌面首屏、中段、终点及 390px 手机四状态浏览器验收。",
+      "tags": [
+        "asset-driven",
+        "rain-window",
+        "product-story",
+        "threejs",
+        "scroll-director",
+        "chatgpt-assets"
+      ],
+      "generatedAt": "2026-08-26T16:16:28.155Z",
+      "archivedAt": "2026-08-26T17:06:52.139Z",
+      "previewUrl": "/cases/dedicated-1b9f0b05107b/"
+    }
+  ]
+}

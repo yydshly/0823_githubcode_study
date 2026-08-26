@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "id": "job-03066e3b08b38b2d",
+  "fingerprint": "428c2cec2eb4ecc4987a4184",
+  "brief": "为建筑师和材料研究者设计一个夜间生物材料温室网页：从一枚发光种荚开始，纤维逐渐生长为可进入的建筑表皮，最后停留在成熟湿润的温室空间并引导预约参观。",
+  "provider": "codex",
+  "quality": "high",
+  "seed": 37,
+  "status": "failed",
+  "stage": "failed",
+  "message": "阶段执行失败，可从 planning 重试。",
+  "model": null,
+  "runId": null,
+  "selectedId": null,
+  "sourceRunId": null,
+  "bestRunId": null,
+  "bestPreviewUrl": null,
+  "sourceReceipt": null,
+  "bestReceipt": null,
+  "decision": null,
+  "sourceScore": null,
+  "finalScore": null,
+  "error": " \"param\": \"text.format.schema\" }, \"status\": 400 }",
+  "retryableStage": "planning",
+  "createdAt": "2026-08-26T06:07:11.203Z",
+  "updatedAt": "2026-08-26T06:07:22.064Z",
+  "finishedAt": "2026-08-26T06:07:22.064Z",
+  "history": [
+    {
+      "stage": "planning",
+      "at": "2026-08-26T06:07:11.203Z",
+      "message": "任务已建立，正在理解目标并形成最佳网页方向。"
+    },
+    {
+      "stage": "planning",
+      "at": "2026-08-26T06:07:11.250Z",
+      "message": "正在调用模型理解目标、页面结构和视觉方向。"
+    },
+    {
+      "stage": "failed",
+      "at": "2026-08-26T06:07:22.064Z",
+      "message": "阶段执行失败，可从 planning 重试。"
+    }
+  ]
+}

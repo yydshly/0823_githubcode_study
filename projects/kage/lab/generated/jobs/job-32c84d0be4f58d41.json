@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "id": "job-32c84d0be4f58d41",
+  "fingerprint": "428c2cec2eb4ecc4987a4184",
+  "brief": "为建筑师和材料研究者设计一个夜间生物材料温室网页：从一枚发光种荚开始，纤维逐渐生长为可进入的建筑表皮，最后停留在成熟湿润的温室空间并引导预约参观。",
+  "provider": "codex",
+  "quality": "high",
+  "seed": 37,
+  "status": "failed",
+  "stage": "failed",
+  "message": "阶段执行失败，可从 reviewing 重试。",
+  "model": "gpt-5.6-terra",
+  "runId": "run-jrsgiu",
+  "selectedId": "generated-1eaeyok-blueprint-12iy403-mycelial-greenhouse-experience",
+  "sourceRunId": "dedicated-6652074122e9",
+  "bestRunId": null,
+  "bestPreviewUrl": null,
+  "sourceReceipt": {
+    "id": "dedicated-6652074122e9",
+    "provider": "codex",
+    "model": "gpt-5.6-terra",
+    "status": "compiled",
+    "previewUrl": "/generated-runs/dedicated-6652074122e9/",
+    "generatedAt": "2026-08-26T06:12:55.760Z",
+    "files": 4,
+    "assets": 3,
+    "sourceBytes": 13028,
+    "hasShaders": false,
+    "compileMs": 836,
+    "attempts": 1,
+    "directory": "generated/runs/dedicated-6652074122e9"
+  },
+  "bestReceipt": null,
+  "decision": null,
+  "sourceScore": null,
+  "finalScore": null,
+  "error": "自动视觉精修两次构建或复验均未通过：最终视觉验收未通过：38 分—开场种荚形成了可信焦点，桌面与移动端文案也基本清晰；但中段过渡素材被压缩成顶部窄幅矩形，未呈现纤维向建筑骨架的主叙事，末段成熟温室环境完全缺席，导致体验从开场后退化为空背景，无法完成空间收束与预约行动画面。；中段纤维—建筑过渡素材仅作为顶部窄条出现，没有成为全幅环境，也未清楚展示纤维突破种荚并形成可辨认建筑骨架。；中段顶部素材以边界明确的水平矩形带结束，与下方大面积暗色背景明显割裂，具有贴图感。；滚动终点没有出现成熟、湿润且可进入的温室英雄环境，仅保留文案和空暗背景；叙事没有收束，所要求的尺度证明与最终行动画面均未建立。；必需的成熟温室素材未得到可见且有效的使用，未承担最终全幅环境角色。",
+  "retryableStage": "reviewing",
+  "createdAt": "2026-08-26T06:10:11.139Z",
+  "updatedAt": "2026-08-26T06:35:47.347Z",
+  "finishedAt": "2026-08-26T06:35:47.347Z",
+  "history": [
+    {
+      "stage": "planning",
+      "at": "2026-08-26T06:10:11.139Z",
+      "message": "任务已建立，正在理解目标并形成最佳网页方向。"
+    },
+    {
+      "stage": "planning",
+      "at": "2026-08-26T06:10:11.175Z",
+      "message": "正在调用模型理解目标、页面结构和视觉方向。"
+    },
+    {
+      "stage": "assets",
+      "at": "2026-08-26T06:11:18.936Z",
+      "message": "模型规划完成，正在判断素材来源与诚实回退路径。"
+    },
+    {
+      "stage": "assets",
+      "at": "2026-08-26T06:11:19.069Z",
+      "message": "最佳方向已经确定，正在检查素材来源与生成条件。"
+    },
+    {
+      "stage": "assets",
+      "at": "2026-08-26T06:11:19.118Z",
+      "message": "正在判断当前目标是否需要外部素材，并检查可用素材来源。"
+    },
+    {
+      "stage": "authoring",
+      "at": "2026-08-26T06:11:19.154Z",
+      "message": "Codex 正在编写本次目标专属的 Three.js 与 DOM 页面代码。"
+    },
+    {
+      "stage": "reviewing",
+      "at": "2026-08-26T06:12:55.917Z",
+      "message": "专属代码已编译，正在准备四个真实浏览器状态的视觉评审。"
+    },
+    {
+      "stage": "refining",
+      "at": "2026-08-26T06:29:11.594Z",
+      "message": "正在采集首屏、中段、末段和移动端，并由视觉模型选择最佳版本。"
+    },
+    {
+      "stage": "failed",
+      "at": "2026-08-26T06:35:47.347Z",
+      "message": "阶段执行失败，可从 reviewing 重试。"
+    }
+  ]
+}

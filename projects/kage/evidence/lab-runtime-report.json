@@ -1,0 +1,347 @@
+{
+  "generatedAt": "2026-08-23T21:17:43.575Z",
+  "baseUrl": "http://127.0.0.1:8143/lab/dist/",
+  "browserExecutable": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+  "scenarios": [
+    {
+      "name": "observatory-hero",
+      "url": "http://127.0.0.1:8143/lab/dist/?story=observatory&quality=balanced&chapter=0&debug=1",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "status": 200,
+      "state": {
+        "title": "信号观测站 — Signal Story Lab",
+        "bodyTextLength": 1356,
+        "renderer": "running",
+        "quality": "balanced",
+        "motion": "full",
+        "chapters": 4,
+        "navLinks": 4,
+        "activeChapters": 1,
+        "horizontalOverflow": 0,
+        "canvasOpacity": "1",
+        "fallbackOpacity": "0",
+        "debug": {
+          "lifecycle": "running",
+          "story": "observatory",
+          "chapter": 0,
+          "segment": {
+            "from": 0,
+            "to": 1,
+            "t": 0,
+            "progress": 0
+          },
+          "motion": "full",
+          "qualityPreference": "balanced",
+          "qualityEffective": "balanced",
+          "rendererPreference": "webgl",
+          "viewport": {
+            "width": 1440,
+            "height": 900,
+            "dpr": 1,
+            "portrait": false
+          },
+          "runtime": {
+            "lifecycle": "running",
+            "framesRendered": 53,
+            "drawCalls": 9,
+            "triangles": 8032,
+            "points": 220,
+            "dpr": 1,
+            "quality": "balanced",
+            "beacons": 32,
+            "particles": 220
+          }
+        }
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "name": "observatory-system",
+      "url": "http://127.0.0.1:8143/lab/dist/?story=observatory&quality=high&chapter=2&debug=1",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "status": 200,
+      "state": {
+        "title": "信号观测站 — Signal Story Lab",
+        "bodyTextLength": 1349,
+        "renderer": "running",
+        "quality": "high",
+        "motion": "full",
+        "chapters": 4,
+        "navLinks": 4,
+        "activeChapters": 1,
+        "horizontalOverflow": 0,
+        "canvasOpacity": "1",
+        "fallbackOpacity": "0",
+        "debug": {
+          "lifecycle": "running",
+          "story": "observatory",
+          "chapter": 2,
+          "segment": {
+            "from": 2,
+            "to": 3,
+            "t": 0,
+            "progress": 0.683
+          },
+          "motion": "full",
+          "qualityPreference": "high",
+          "qualityEffective": "high",
+          "rendererPreference": "webgl",
+          "viewport": {
+            "width": 1440,
+            "height": 900,
+            "dpr": 1,
+            "portrait": false
+          },
+          "runtime": {
+            "lifecycle": "running",
+            "framesRendered": 64,
+            "drawCalls": 9,
+            "triangles": 10720,
+            "points": 593,
+            "dpr": 1,
+            "quality": "high",
+            "beacons": 80,
+            "particles": 593
+          }
+        }
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "name": "archive-configuration",
+      "url": "http://127.0.0.1:8143/lab/dist/?story=archive&quality=balanced&chapter=1&debug=1",
+      "viewport": {
+        "width": 1365,
+        "height": 768
+      },
+      "status": 200,
+      "state": {
+        "title": "漂移档案库 — Signal Story Lab",
+        "bodyTextLength": 1293,
+        "renderer": "running",
+        "quality": "balanced",
+        "motion": "full",
+        "chapters": 4,
+        "navLinks": 4,
+        "activeChapters": 1,
+        "horizontalOverflow": 0,
+        "canvasOpacity": "1",
+        "fallbackOpacity": "0",
+        "debug": {
+          "lifecycle": "running",
+          "story": "archive",
+          "chapter": 1,
+          "segment": {
+            "from": 1,
+            "to": 2,
+            "t": 0,
+            "progress": 0.342
+          },
+          "motion": "full",
+          "qualityPreference": "balanced",
+          "qualityEffective": "balanced",
+          "rendererPreference": "webgl",
+          "viewport": {
+            "width": 1365,
+            "height": 768,
+            "dpr": 1,
+            "portrait": false
+          },
+          "runtime": {
+            "lifecycle": "running",
+            "framesRendered": 120,
+            "drawCalls": 9,
+            "triangles": 8760,
+            "points": 320,
+            "dpr": 1,
+            "quality": "balanced",
+            "beacons": 45,
+            "particles": 320
+          }
+        }
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "name": "mobile-low-quality",
+      "url": "http://127.0.0.1:8143/lab/dist/?story=explainer&quality=low&chapter=1&debug=1",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "status": 200,
+      "state": {
+        "title": "决策流形 — Signal Story Lab",
+        "bodyTextLength": 1253,
+        "renderer": "running",
+        "quality": "low",
+        "motion": "full",
+        "chapters": 4,
+        "navLinks": 4,
+        "activeChapters": 1,
+        "horizontalOverflow": 0,
+        "canvasOpacity": "1",
+        "fallbackOpacity": "0",
+        "debug": {
+          "lifecycle": "running",
+          "story": "explainer",
+          "chapter": 1,
+          "segment": {
+            "from": 0,
+            "to": 1,
+            "t": 1,
+            "progress": 0.342
+          },
+          "motion": "full",
+          "qualityPreference": "low",
+          "qualityEffective": "low",
+          "rendererPreference": "webgl",
+          "viewport": {
+            "width": 390,
+            "height": 844,
+            "dpr": 1,
+            "portrait": true
+          },
+          "runtime": {
+            "lifecycle": "running",
+            "framesRendered": 208,
+            "drawCalls": 8,
+            "triangles": 6772,
+            "points": 125,
+            "dpr": 1,
+            "quality": "low",
+            "beacons": 19,
+            "particles": 125
+          }
+        }
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "name": "reduced-motion",
+      "url": "http://127.0.0.1:8143/lab/dist/?story=observatory&motion=reduce&chapter=3&debug=1",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "status": 200,
+      "state": {
+        "title": "信号观测站 — Signal Story Lab",
+        "bodyTextLength": 1353,
+        "renderer": "running",
+        "quality": "balanced",
+        "motion": "reduce",
+        "chapters": 4,
+        "navLinks": 4,
+        "activeChapters": 1,
+        "horizontalOverflow": 0,
+        "canvasOpacity": "1",
+        "fallbackOpacity": "0",
+        "debug": {
+          "lifecycle": "running",
+          "story": "observatory",
+          "chapter": 3,
+          "segment": {
+            "from": 3,
+            "to": 3,
+            "t": 0,
+            "progress": 1
+          },
+          "motion": "reduce",
+          "qualityPreference": "auto",
+          "qualityEffective": "balanced",
+          "rendererPreference": "webgl",
+          "viewport": {
+            "width": 1280,
+            "height": 800,
+            "dpr": 1,
+            "portrait": false
+          },
+          "runtime": {
+            "lifecycle": "running",
+            "framesRendered": 2,
+            "drawCalls": 9,
+            "triangles": 9600,
+            "points": 432,
+            "dpr": 1,
+            "quality": "balanced",
+            "beacons": 60,
+            "particles": 432
+          }
+        }
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    },
+    {
+      "name": "semantic-fallback",
+      "url": "http://127.0.0.1:8143/lab/dist/?story=archive&renderer=none&chapter=2&debug=1",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "status": 200,
+      "state": {
+        "title": "漂移档案库 — Signal Story Lab",
+        "bodyTextLength": 721,
+        "renderer": "fallback",
+        "quality": "balanced",
+        "motion": "full",
+        "chapters": 4,
+        "navLinks": 4,
+        "activeChapters": 1,
+        "horizontalOverflow": 0,
+        "canvasOpacity": "0",
+        "fallbackOpacity": "1",
+        "debug": {
+          "lifecycle": "fallback",
+          "story": "archive",
+          "chapter": 2,
+          "segment": {
+            "from": 2,
+            "to": 3,
+            "t": 0,
+            "progress": 0.683
+          },
+          "motion": "full",
+          "qualityPreference": "auto",
+          "qualityEffective": "balanced",
+          "rendererPreference": "none",
+          "viewport": {
+            "width": 1280,
+            "height": 800,
+            "dpr": 1,
+            "portrait": false
+          },
+          "runtime": null
+        }
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": []
+    }
+  ],
+  "summary": {
+    "passedHttp": true,
+    "meaningfulContent": true,
+    "oneActiveChapter": true,
+    "noHorizontalOverflow": true,
+    "noConsoleErrors": true,
+    "noFailedRequests": true
+  }
+}

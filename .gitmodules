@@ -14,3 +14,6 @@
 [submodule "projects/openchatcut/upstream"]
 	path = projects/openchatcut/upstream
 	url = https://github.com/0xsline/OpenChatCut.git
+[submodule "projects/kage/upstream"]
+	path = projects/kage/upstream
+	url = https://github.com/MengTo/kage.git

@@ -1,0 +1,118 @@
+{
+  "evidence": {
+    "schemaVersion": 1,
+    "runId": "dedicated-r36-delivery-final",
+    "capturedAt": "2026-08-26T05:25:54.163Z",
+    "frames": [
+      {
+        "id": "opening",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "quality": "high",
+        "reducedMotion": false,
+        "ready": true,
+        "canvasCount": 1,
+        "progress": 0,
+        "scrollY": 0,
+        "scrollHeight": 1980,
+        "overflow": 0,
+        "heading": "夜生表皮，从一枚种子开始呼吸",
+        "headingVisible": true,
+        "visibleTextCount": 5,
+        "collisionCount": 0,
+        "maxOverlapRatio": 0,
+        "blockingCollisionCount": 0,
+        "editorialOverlapCount": 0,
+        "maxBlockingOverlapRatio": 0
+      },
+      {
+        "id": "middle",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "quality": "high",
+        "reducedMotion": false,
+        "ready": true,
+        "canvasCount": 1,
+        "progress": 0.4398148148148148,
+        "scrollY": 475,
+        "scrollHeight": 1980,
+        "overflow": 0,
+        "heading": "夜生表皮，从一枚种子开始呼吸",
+        "headingVisible": false,
+        "visibleTextCount": 3,
+        "collisionCount": 0,
+        "maxOverlapRatio": 0,
+        "blockingCollisionCount": 0,
+        "editorialOverlapCount": 0,
+        "maxBlockingOverlapRatio": 0
+      },
+      {
+        "id": "final",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "quality": "high",
+        "reducedMotion": false,
+        "ready": true,
+        "canvasCount": 1,
+        "progress": 1,
+        "scrollY": 1080,
+        "scrollHeight": 1980,
+        "overflow": 0,
+        "heading": "夜生表皮，从一枚种子开始呼吸",
+        "headingVisible": false,
+        "visibleTextCount": 5,
+        "collisionCount": 0,
+        "maxOverlapRatio": 0,
+        "blockingCollisionCount": 0,
+        "editorialOverlapCount": 0,
+        "maxBlockingOverlapRatio": 0
+      },
+      {
+        "id": "mobile",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "quality": "low",
+        "reducedMotion": true,
+        "ready": true,
+        "canvasCount": 1,
+        "progress": 0,
+        "scrollY": 0,
+        "scrollHeight": 1772,
+        "overflow": 0,
+        "heading": "夜生表皮，从一枚种子开始呼吸",
+        "headingVisible": true,
+        "visibleTextCount": 5,
+        "collisionCount": 0,
+        "maxOverlapRatio": 0,
+        "blockingCollisionCount": 0,
+        "editorialOverlapCount": 0,
+        "maxBlockingOverlapRatio": 0
+      }
+    ],
+    "browserErrors": []
+  },
+  "assessment": {
+    "schemaVersion": 1,
+    "verdict": "pass",
+    "score": 100,
+    "summary": "结构质量门通过；仍需结合截图判断构图、材质、层级与创意完成度。",
+    "findings": [],
+    "observations": []
+  },
+  "visualAcceptance": {
+    "schemaVersion": 1,
+    "verdict": "pass",
+    "score": 96,
+    "assetRole": "dominant",
+    "summary": "四个关键帧已达到最终成品标准：首屏以半透明种荚建立唯一可信焦点，并与左侧文案形成完整画面；中段纤维从种荚连续展开为承重肋与穹顶，叙事明确；末段成熟温室完成空间收束，文案与 CTA 清晰可读。获批素材均作为主视觉或全幅环境得到有效使用，未见明显贴图边缘、占位几何、拉伸失真或素材割裂。390px 移动端保留了清楚的种荚焦点和稳定的信息层级。",
+    "findings": []
+  }
+}

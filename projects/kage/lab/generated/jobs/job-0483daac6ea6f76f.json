@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "id": "job-0483daac6ea6f76f",
+  "fingerprint": "b798eff537069eb5005f6c9f",
+  "brief": "为一座漂浮在云层中的未来天文观测站设计沉浸式网页。滚动时从云海接近观测站，进入透明穹顶，最终看到星图数据在空间中展开。画面安静、真实、具有电影感，不要常见的紫色科技风。",
+  "provider": "codex",
+  "quality": "high",
+  "seed": 43,
+  "status": "blocked",
+  "stage": "blocked",
+  "message": "当前目标缺少必须的 environment 素材（cloud-observatory-world）；现有图片生成器不能产出这些资产，不能用占位效果替代。",
+  "model": "gpt-5.6-terra",
+  "runId": "run-af0jbj",
+  "selectedId": "generated-jdjdln-blueprint-1h2iaq1-cloudborne-observatory-blueprint",
+  "sourceRunId": null,
+  "bestRunId": null,
+  "bestPreviewUrl": null,
+  "sourceReceipt": null,
+  "bestReceipt": null,
+  "decision": null,
+  "sourceScore": null,
+  "finalScore": null,
+  "error": "当前目标缺少必须的 environment 素材（cloud-observatory-world）；现有图片生成器不能产出这些资产，不能用占位效果替代。",
+  "retryableStage": null,
+  "createdAt": "2026-08-26T07:09:43.116Z",
+  "updatedAt": "2026-08-26T07:11:04.881Z",
+  "finishedAt": "2026-08-26T07:11:04.881Z",
+  "history": [
+    {
+      "stage": "planning",
+      "at": "2026-08-26T07:09:43.116Z",
+      "message": "任务已建立，正在理解目标并形成最佳网页方向。"
+    },
+    {
+      "stage": "planning",
+      "at": "2026-08-26T07:09:43.203Z",
+      "message": "正在调用模型理解目标、页面结构和视觉方向。"
+    },
+    {
+      "stage": "assets",
+      "at": "2026-08-26T07:11:04.739Z",
+      "message": "模型规划完成，正在判断素材来源与诚实回退路径。"
+    },
+    {
+      "stage": "assets",
+      "at": "2026-08-26T07:11:04.798Z",
+      "message": "最佳方向已经确定，正在检查素材来源与生成条件。"
+    },
+    {
+      "stage": "assets",
+      "at": "2026-08-26T07:11:04.830Z",
+      "message": "正在判断当前目标是否需要外部素材，并检查可用素材来源。"
+    },
+    {
+      "stage": "blocked",
+      "at": "2026-08-26T07:11:04.881Z",
+      "message": "当前目标缺少必须的 environment 素材（cloud-observatory-world）；现有图片生成器不能产出这些资产，不能用占位效果替代。"
+    }
+  ]
+}

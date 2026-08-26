@@ -1,0 +1,100 @@
+{
+  "receipt": {
+    "id": "dedicated-1edb98865f4c",
+    "provider": "codex",
+    "model": "gpt-5.6-sol",
+    "status": "compiled",
+    "previewUrl": "/generated-runs/dedicated-1edb98865f4c/",
+    "generatedAt": "2026-08-26T11:12:42.346Z",
+    "files": 5,
+    "assets": 1,
+    "sourceBytes": 23392,
+    "hasShaders": false,
+    "compileMs": 757,
+    "attempts": 2,
+    "directory": "generated/runs/dedicated-1edb98865f4c"
+  },
+  "request": {
+    "brief": "为一款面向独立创作者的智能声音产品，设计清冷、克制但有未来感的发布网页；先建立情绪，再解释核心能力，最后留下明确行动。",
+    "seed": 61,
+    "quality": "high",
+    "runId": "run-ik7jvu",
+    "selectedId": "generated-2zwlh5-blueprint-iqhrqo-sonic-constellation-launch",
+    "reference": {
+      "title": "声场星图发布体验",
+      "summary": "一段从静默信号到可掌控声场的四章发布叙事，先让独立创作者感到被理解，再将智能声音能力化为看得见的结构，最终引导体验。",
+      "scenePlugin": "signal-world",
+      "productionStatus": "adapted",
+      "theme": {
+        "deep": "#08111f",
+        "surface": "#122033",
+        "text": "#edf5ff",
+        "muted": "#91a3b7",
+        "accent": "#73d8ff",
+        "accentSoft": "#315c78"
+      },
+      "assets": [
+        {
+          "id": "acoustic-resonance-instrument-v1",
+          "uri": "/creative-assets/acoustic-resonance-instrument-v1.png",
+          "bundlePath": "assets/acoustic-resonance-instrument-v1.png",
+          "kind": "image",
+          "source": "chatgpt-generated",
+          "role": "transparent acoustic product hero",
+          "description": "带真实 Alpha 的冷银声学设备主体，包含共振核心、透明声学膜和精密控制结构；适合作为声音产品首屏锚点、深度分层与滚动拆解主体。",
+          "payloadBytes": 2143595
+        }
+      ]
+    }
+  },
+  "usedAssets": [
+    {
+      "id": "acoustic-resonance-instrument-v1",
+      "uri": "/creative-assets/acoustic-resonance-instrument-v1.png",
+      "bundlePath": "assets/acoustic-resonance-instrument-v1.png",
+      "kind": "image",
+      "source": "chatgpt-generated",
+      "role": "transparent acoustic product hero",
+      "description": "带真实 Alpha 的冷银声学设备主体，包含共振核心、透明声学膜和精密控制结构；适合作为声音产品首屏锚点、深度分层与滚动拆解主体。",
+      "payloadBytes": 2143595
+    }
+  ],
+  "refinement": {
+    "status": "refined",
+    "parentId": "dedicated-ed4b7348709a",
+    "selectedId": "dedicated-1edb98865f4c",
+    "model": "gpt-5.6-sol",
+    "sourceAssessment": {
+      "schemaVersion": 1,
+      "verdict": "pass",
+      "score": 100,
+      "summary": "结构质量门通过；仍需结合截图判断构图、材质、层级与创意完成度。",
+      "findings": [],
+      "observations": []
+    },
+    "finalAssessment": {
+      "schemaVersion": 1,
+      "verdict": "pass",
+      "score": 100,
+      "summary": "结构质量门通过；仍需结合截图判断构图、材质、层级与创意完成度。",
+      "findings": [],
+      "observations": []
+    },
+    "visualAcceptance": {
+      "schemaVersion": 1,
+      "verdict": "pass",
+      "score": 92,
+      "assetRole": "dominant",
+      "summary": "候选已达到最终成品标准。冷银声学设备在桌面全程构成唯一可信主体，并与文案、同心声场结构形成统一画面；首屏建立情绪，中段通过主体位移、尺度变化和能力指标完成解释，末段以清晰标题与高对比 CTA 收束。素材透明边缘自然，未见矩形贴图边、占位几何或明显拉伸割裂。390px 移动端虽采用大幅偏置裁切，但标题仍是明确焦点，设备保留足够辨识度且正文、CTA 可读。",
+      "findings": []
+    },
+    "summary": "末段与移动端存在明确的素材层级缺陷：终局遮罩和产品位置使获批主体近乎消失；quality=low 又完全跳过产品贴图加载，移动端只能显示程序化圆环占位。修订保留现有叙事与风格，仅让获批产品在所有质量档加载，并在终局形成稳定、可见的产品—标题—CTA 聚合，同时维持完整滚动结构、降级回退与生命周期。",
+    "resolved": [
+      "quality=low 与 reducedMotion 移动端现在也会加载获批产品素材，不再默认呈现程序化圆环占位。",
+      "终局提高产品亮度并将其稳定放在文案左侧，减轻末段暗色遮罩，使主体继续承担最终视觉锚点。",
+      "移动端产品放大并上移到首屏文案附近，改善主体与文案相距过远的问题；贴图保持透明平面比例，不产生矩形边界。",
+      "保留 opening、middle、final 三段及约 200vh 的有效桌面滚动行程、WebGL 失败回退、quality=low、reducedMotion 和完整 dispose。"
+    ],
+    "remaining": []
+  }
+}

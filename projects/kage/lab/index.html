@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-CN" data-motion="full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="一个由体验图、时间轨道和 Three.js 插件驱动的原创网页实验室。" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='22' fill='none' stroke='%2379e7c4' stroke-width='5'/%3E%3Ccircle cx='32' cy='32' r='6' fill='%23f0c88d'/%3E%3C/svg%3E" />
+    <title>Signal Experience Lab</title>
+  </head>
+  <body data-renderer="boot" data-quality="balanced">
+    <a class="skip-link" href="#story">跳到体验正文</a>
+    <canvas id="world-canvas" aria-hidden="true"></canvas>
+
+    <div id="fallback-plate" aria-hidden="true">
+      <div class="fallback-grid"></div>
+      <div class="fallback-orbit fallback-orbit-a"></div>
+      <div class="fallback-orbit fallback-orbit-b"></div>
+      <div class="fallback-core"></div>
+      <div class="fallback-beam"></div>
+    </div>
+
+    <header class="topbar">
+      <a class="brand" href="#story" aria-label="Signal Experience Lab 首页">
+        <span class="brand-mark"></span>
+        <span>SIGNAL / LAB</span>
+      </a>
+      <nav id="chapter-nav" class="chapter-nav" aria-label="体验节点导航"></nav>
+      <button id="controls-toggle" class="controls-toggle" type="button" aria-expanded="false" aria-controls="lab-controls">
+        导演参数
+      </button>
+    </header>
+
+    <aside id="lab-controls" class="lab-controls" aria-label="实验室参数"></aside>
+    <main id="story" tabindex="-1"></main>
+
+    <div id="runtime-status" class="sr-only" role="status" aria-live="polite"></div>
+    <pre id="debug-panel" class="debug-panel" hidden></pre>
+
+    <noscript>
+      <div class="noscript-note">此页面的体验正文仍可在 HTML 中阅读；启用 JavaScript 后可体验流程切换和空间场景。</div>
+    </noscript>
+    <script type="module" src="/src/main-v2.ts"></script>
+  </body>
+</html>

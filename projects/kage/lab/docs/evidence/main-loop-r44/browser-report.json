@@ -1,0 +1,57 @@
+{
+  "runId": "dedicated-715b072fe2d4",
+  "jobId": "job-9921a75220e1d50d",
+  "browserErrors": [],
+  "frames": [
+    {
+      "name": "01-opening",
+      "width": 1440,
+      "height": 900,
+      "scrollY": 0,
+      "scrollHeight": 2934,
+      "overflow": 0,
+      "canvasCount": 1,
+      "heading": "晨雨，留在这里。",
+      "textLength": 230
+    },
+    {
+      "name": "02-middle",
+      "width": 1440,
+      "height": 900,
+      "scrollY": 976,
+      "scrollHeight": 2934,
+      "overflow": 0,
+      "canvasCount": 1,
+      "heading": "晨雨，留在这里。",
+      "textLength": 230
+    },
+    {
+      "name": "03-final",
+      "width": 1440,
+      "height": 900,
+      "scrollY": 2034,
+      "scrollHeight": 2934,
+      "overflow": 0,
+      "canvasCount": 1,
+      "heading": "晨雨，留在这里。",
+      "textLength": 230
+    },
+    {
+      "name": "04-mobile",
+      "width": 390,
+      "height": 844,
+      "scrollY": 0,
+      "scrollHeight": 2844,
+      "overflow": 0,
+      "canvasCount": 1,
+      "heading": "晨雨，留在这里。",
+      "textLength": 230
+    },
+    {
+      "name": "workbench-recovery",
+      "frameSrc": "http://127.0.0.1:8143/generated-runs/dedicated-715b072fe2d4/?quality=high&motion=full&embed=1",
+      "status": "已恢复最终最佳网页 dedicated-715b072fe2d4；案例只使用这个经过视觉评审的版本。",
+      "overflow": 0
+    }
+  ]
+}

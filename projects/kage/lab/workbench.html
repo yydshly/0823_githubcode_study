@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="描述一个想法，自动构建并呈现最佳 Three.js 网页体验。" />
+    <title>Idea to Experience — Signal Lab</title>
+  </head>
+  <body>
+    <a class="wb-skip" href="#brief">跳到创意描述</a>
+    <header class="wb-topbar">
+      <a class="wb-brand" href="./" aria-label="返回 Signal Experience Lab">
+        <span class="wb-brand-mark" aria-hidden="true"></span>
+        <span>IDEA / EXPERIENCE</span>
+      </a>
+      <div id="provider-badge" class="wb-provider" title="当前创意模型状态">
+        <span class="wb-provider-dot" aria-hidden="true"></span>
+        <span id="provider-label">正在检查创意能力…</span>
+      </div>
+      <a class="wb-gallery-link" href="./cases.html">研究样例</a>
+    </header>
+
+    <nav class="wb-flow" aria-label="内部创作流程" aria-hidden="true">
+      <ol>
+        <li data-creator-step="1" aria-current="step"><span>01</span>描述</li>
+        <li data-creator-step="2"><span>02</span>生成</li>
+        <li data-creator-step="3"><span>03</span>比较</li>
+        <li data-creator-step="4"><span>04</span>调整</li>
+        <li data-creator-step="5"><span>05</span>交付</li>
+      </ol>
+    </nav>
+
+    <main class="wb-shell">
+      <section class="wb-brief-panel" aria-labelledby="brief-title">
+        <p class="wb-eyebrow">IDEA → EXPERIENCE</p>
+        <h1 id="brief-title">说出你想看到的网页</h1>
+        <p class="wb-intro">描述对象、受众、情绪和希望发生的变化。无需指定 Three.js、模板或素材类型，系统会在内部完成选择。</p>
+
+        <label class="wb-label" for="brief">你的想法</label>
+        <textarea id="brief" rows="7" maxlength="600" aria-describedby="brief-help" placeholder="例如：为一款智能声音产品构建清冷、未来感的发布网页。先建立情绪，再解释能力，最后留下明确行动。"></textarea>
+        <div class="wb-textarea-meta">
+          <span id="brief-help">系统会保留你的原意，并用当前最佳可用能力完成构建。</span>
+          <span id="brief-count">0 / 600</span>
+        </div>
+
+        <details class="wb-prompt-help">
+          <summary>需要一个起点？</summary>
+          <div class="wb-examples" aria-label="示例描述">
+            <button type="button" data-example="product">技术产品</button>
+            <button type="button" data-example="fashion">时装色场</button>
+            <button type="button" data-example="museum">数字展陈</button>
+            <button type="button" data-example="capability">真实资产实验</button>
+          </div>
+        </details>
+
+        <details class="wb-control-details">
+          <summary>生成偏好</summary>
+          <div class="wb-settings">
+            <label class="wb-setting" for="provider">
+              <span>创意解释器</span>
+              <select id="provider">
+                <option value="auto">自动选择最佳可用模型</option>
+                <option value="codex">Codex（本机）</option>
+                <option value="minimax">MiniMax</option>
+                <option value="mimo">小米 MiMo</option>
+                <option value="openai">OpenAI Responses</option>
+                <option value="local">本地快速草案</option>
+              </select>
+            </label>
+            <label class="wb-setting" for="quality">
+              <span>预览质量</span>
+              <select id="quality">
+                <option value="high">高画质</option>
+                <option value="balanced" selected>自动平衡</option>
+                <option value="low">轻量预览</option>
+              </select>
+            </label>
+          </div>
+        </details>
+
+        <div class="wb-primary-actions">
+          <button id="generate" class="wb-generate" type="button"><span>生成并构建最佳网页</span><span aria-hidden="true">↗</span></button>
+          <div class="wb-secondary-actions">
+            <button id="variation" class="wb-reset" type="button">换一个方向</button>
+            <button id="reset" class="wb-reset" type="button">重新描述</button>
+          </div>
+        </div>
+        <div id="generation-progress" class="wb-generation-progress" aria-label="生成进度" hidden>
+          <span data-generation-phase="interpret">理解想法</span>
+          <span data-generation-phase="assets">选择素材</span>
+          <span data-generation-phase="build">Codex 构建</span>
+          <span data-generation-phase="review">浏览器验收</span>
+        </div>
+        <p id="workbench-status" class="wb-status" role="status" aria-live="polite"></p>
+        <div id="workbench-error" class="wb-error" role="alert" hidden></div>
+
+        <details id="advanced-analysis" class="wb-advanced">
+          <summary>为什么得到这个结果？</summary>
+          <section class="wb-evidence" aria-labelledby="evidence-title">
+            <div class="wb-section-heading"><p class="wb-eyebrow">INTERPRETATION</p><h2 id="evidence-title">目标理解</h2></div>
+            <div id="evidence-list" class="wb-evidence-list"></div>
+          </section>
+          <section class="wb-capability-review" aria-labelledby="capability-review-title">
+            <div class="wb-section-heading"><p class="wb-eyebrow">CAPABILITY BOUNDARY</p><h2 id="capability-review-title">能力边界</h2></div>
+            <p class="wb-capability-intro">缺口不会被伪装成已有能力。需要真实来源或更合适模型时，系统会明确说明。</p>
+            <div id="proposal-list" class="wb-proposal-list" aria-live="polite"></div>
+          </section>
+        </details>
+      </section>
+
+      <section class="wb-results" aria-labelledby="results-title">
+        <section id="outcome-route" class="wb-outcome-route" data-tone="neutral" aria-labelledby="outcome-route-title" aria-live="polite">
+          <div class="wb-outcome-route-head">
+            <span>本次交付路线</span>
+            <strong id="outcome-route-title">一次生成，交付一个最佳网页</strong>
+          </div>
+          <ol>
+            <li data-outcome-step="assets" data-state="waiting"><span>01</span><div><strong>素材智能选择</strong><small>项目优选 / 用户素材优先，MiniMax 仅作备用</small></div></li>
+            <li data-outcome-step="authoring" data-state="waiting"><span>02</span><div><strong>Codex 专属构建</strong><small>生成独立页面代码，不套固定模板</small></div></li>
+            <li data-outcome-step="reviewing" data-state="waiting"><span>03</span><div><strong>真实页面验收</strong><small>首屏 · 中段 · 末段 · 移动端</small></div></li>
+          </ol>
+          <p id="outcome-route-note">优选或用户素材优先；MiniMax 仅在适合时备用。</p>
+        </section>
+        <section class="wb-creative-stage" aria-labelledby="creative-stage-heading">
+          <div class="wb-stage-heading">
+            <div><p class="wb-eyebrow">LIVE RESULT</p><h2 id="creative-stage-heading">你的网页会在这里出现</h2></div>
+            <span id="creative-stage-status" class="wb-stage-status" aria-live="polite">WAITING FOR IDEA</span>
+          </div>
+          <div class="wb-stage-shell">
+            <div id="creative-stage-placeholder" class="wb-stage-placeholder">
+              <span aria-hidden="true"></span>
+              <strong>从一句想法开始</strong>
+              <p>生成后，这里直接呈现系统选择的最佳 Three.js 网页，而不是模板列表。</p>
+            </div>
+            <iframe id="creative-stage-frame" class="wb-stage-frame" title="实时 Three.js 创意网页预览" src="about:blank"></iframe>
+            <div class="wb-stage-caption">
+              <div><strong id="creative-stage-title">等待生成</strong><p id="creative-stage-description">模型、素材路线和场景能力会在内部按最终效果选择。</p></div>
+              <a id="creative-stage-open" class="wb-stage-open" href="./" aria-disabled="true">打开完整网页 ↗</a>
+            </div>
+          </div>
+          <details class="wb-reference-library">
+            <summary>查看能力基准（不会作为你的生成结果）</summary>
+            <div class="wb-showcase-switcher" aria-label="可运行创意方向">
+              <button class="wb-showcase-option" type="button" data-showcase="resonance-flagship" aria-pressed="false"><span>01</span><span><strong>资产驱动产品电影</strong><small>真实主视觉 + 深度 + 滚动导演</small></span></button>
+              <button class="wb-showcase-option" type="button" data-showcase="tidal-archive" aria-pressed="false"><span>02</span><span><strong>潮汐记忆叙事空间</strong><small>生成环境 + 档案关系 + 水体微光</small></span></button>
+              <button class="wb-showcase-option" type="button" data-showcase="chromatic-tide" aria-pressed="false"><span>03</span><span><strong>纯 Shader 编辑色场</strong><small>流体光幕 + 折射 + 无图片路线</small></span></button>
+            </div>
+          </details>
+        </section>
+
+        <section id="selection-detail" class="wb-selection" aria-labelledby="selection-title" hidden>
+          <div><p class="wb-eyebrow">BEST MATCH</p><h2 id="selection-title">当前最佳结果</h2></div>
+          <div id="selection-summary" class="wb-selection-summary"></div>
+          <div class="wb-selection-actions">
+            <a id="preview-link" class="wb-preview" href="./" aria-label="打开 Three.js 实际预览">打开完整网页 ↗</a>
+            <div class="wb-creator-adjust">
+              <label for="revision-instruction">哪里还不对？</label>
+              <input id="revision-instruction" maxlength="160" placeholder="例如：镜头更慢，让产品主体更明确" />
+              <p>可精确修改标题、颜色和节奏；使用模型时也可重新理解完整意见。</p>
+              <button id="apply-revision-button" type="button" aria-label="执行局部修订">按这句话修改</button>
+              <button id="revision-result-button" class="wb-evaluation-artifact" type="button" aria-label="检查修订差异" hidden>查看调整差异</button>
+            </div>
+            <details class="wb-engineering-actions">
+              <summary>查看内部质量、素材与工程产物</summary>
+              <button id="produce-assets-button" class="wb-produce-assets" type="button">按需生成并替换素材</button>
+              <button id="asset-production-button" class="wb-asset-report" type="button" hidden>检查素材生产结果</button>
+              <div class="wb-review-group" aria-label="离线质量门">
+                <span>OFFLINE QUALITY GATE</span>
+                <button id="evaluate-button" class="wb-evaluate" type="button">生成离线评审</button>
+                <button id="collect-evidence-button" class="wb-collect-evidence" type="button">采集真实运行证据</button>
+                <div class="wb-review-artifacts">
+                  <button id="blueprint-button" type="button">检查页面蓝图</button>
+                  <button id="evaluation-report-button" class="wb-evaluation-artifact" type="button" hidden>检查 EvaluationReport</button>
+                  <button id="revision-plan-button" class="wb-evaluation-artifact" type="button" hidden>检查 RevisionPlan</button>
+                  <button id="runtime-evidence-button" class="wb-evaluation-artifact" type="button" hidden>检查 RuntimeEvidence</button>
+                </div>
+              </div>
+              <div class="wb-artifact-actions">
+                <button id="manifest-button" type="button">检查 Manifest</button>
+                <button id="effect-spec-button" type="button">检查效果分析</button>
+                <button id="asset-plan-button" type="button">检查素材计划</button>
+                <button id="asset-policy-button" type="button">检查素材使用门禁</button>
+                <button id="production-plan-button" type="button">检查生产计划</button>
+              </div>
+            </details>
+          </div>
+        </section>
+
+        <details id="direction-analysis" class="wb-direction-analysis">
+          <summary><span>系统内部比较过的方向</span><span id="run-id" class="wb-run-id">等待生成</span></summary>
+          <div class="wb-results-heading">
+            <div><p class="wb-eyebrow">GENERATED DIRECTIONS</p><h2 id="results-title">候选不是产品步骤，只是可检查的生成依据</h2></div>
+          </div>
+          <div id="candidate-grid" class="wb-candidate-grid" aria-live="polite"></div>
+        </details>
+      </section>
+    </main>
+
+    <dialog id="manifest-dialog" class="wb-dialog" aria-labelledby="manifest-title">
+      <div class="wb-dialog-head">
+        <div><p class="wb-eyebrow">GENERATED ARTIFACT</p><h2 id="manifest-title">ExperienceManifest v2</h2></div>
+        <button id="manifest-close" type="button" aria-label="关闭生成产物">关闭</button>
+      </div>
+      <pre id="manifest-json" tabindex="0"></pre>
+    </dialog>
+
+    <script type="module" src="/src/workbench-main.ts"></script>
+    <script type="module" src="/src/workbench-product.ts"></script>
+  </body>
+</html>

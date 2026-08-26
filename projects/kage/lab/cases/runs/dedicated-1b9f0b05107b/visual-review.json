@@ -1,0 +1,110 @@
+{
+  "evidence": {
+    "schemaVersion": 1,
+    "runId": "dedicated-1b9f0b05107b",
+    "capturedAt": "2026-08-26T16:16:49.872Z",
+    "frames": [
+      {
+        "id": "opening",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "quality": "high",
+        "reducedMotion": false,
+        "ready": true,
+        "canvasCount": 1,
+        "progress": 0,
+        "scrollY": 0,
+        "scrollHeight": 2700,
+        "overflow": 0,
+        "heading": "让清晨的雨，被轻轻听见",
+        "headingVisible": true,
+        "visibleTextCount": 4,
+        "collisionCount": 0,
+        "maxOverlapRatio": 0,
+        "blockingCollisionCount": 0,
+        "editorialOverlapCount": 0,
+        "maxBlockingOverlapRatio": 0
+      },
+      {
+        "id": "middle",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "quality": "high",
+        "reducedMotion": false,
+        "ready": true,
+        "canvasCount": 1,
+        "progress": 0.44,
+        "scrollY": 792,
+        "scrollHeight": 2700,
+        "overflow": 0,
+        "heading": "让清晨的雨，被轻轻听见",
+        "headingVisible": false,
+        "visibleTextCount": 3,
+        "collisionCount": 0,
+        "maxOverlapRatio": 0,
+        "blockingCollisionCount": 0,
+        "editorialOverlapCount": 0,
+        "maxBlockingOverlapRatio": 0
+      },
+      {
+        "id": "final",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "quality": "high",
+        "reducedMotion": false,
+        "ready": true,
+        "canvasCount": 1,
+        "progress": 1,
+        "scrollY": 1800,
+        "scrollHeight": 2700,
+        "overflow": 0,
+        "heading": "让清晨的雨，被轻轻听见",
+        "headingVisible": false,
+        "visibleTextCount": 5,
+        "collisionCount": 0,
+        "maxOverlapRatio": 0,
+        "blockingCollisionCount": 0,
+        "editorialOverlapCount": 0,
+        "maxBlockingOverlapRatio": 0
+      },
+      {
+        "id": "mobile",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "quality": "low",
+        "reducedMotion": true,
+        "ready": true,
+        "canvasCount": 1,
+        "progress": 0,
+        "scrollY": 0,
+        "scrollHeight": 2701,
+        "overflow": 0,
+        "heading": "让清晨的雨，被轻轻听见",
+        "headingVisible": true,
+        "visibleTextCount": 4,
+        "collisionCount": 0,
+        "maxOverlapRatio": 0,
+        "blockingCollisionCount": 0,
+        "editorialOverlapCount": 0,
+        "maxBlockingOverlapRatio": 0
+      }
+    ],
+    "browserErrors": []
+  },
+  "assessment": {
+    "schemaVersion": 1,
+    "verdict": "pass",
+    "score": 100,
+    "summary": "结构质量门通过；仍需结合截图判断构图、材质、层级与创意完成度。",
+    "findings": [],
+    "observations": []
+  }
+}

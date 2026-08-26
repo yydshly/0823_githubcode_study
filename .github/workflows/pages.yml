@@ -7,6 +7,7 @@ on:
       - "docs/**"
       - "projects/kindergrimm/**"
       - "projects/claude-of-tanks/**"
+      - "projects/kage/**"
       - ".github/workflows/pages.yml"
   workflow_dispatch:
 
@@ -51,6 +52,12 @@ jobs:
         run: npm install --no-package-lock --no-audit --no-fund
       - name: Build standalone Three.js product workbench
         run: projects/claude-of-tanks/upstream/node_modules/.bin/vite build --config projects/claude-of-tanks/scripts/vite-pages-workbench.config.mjs
+      - name: Install Kage archive dependencies
+        working-directory: projects/kage/lab
+        run: npm ci
+      - name: Build independent Kage V1 and V2 demos
+        working-directory: projects/kage/lab
+        run: npm run build:pages
       - name: Assemble Pages site
         run: |
           mkdir -p _site/projects/kindergrimm
@@ -62,6 +69,15 @@ jobs:
           mkdir -p _site/projects/claude-of-tanks/workbench
           cp projects/claude-of-tanks/.pages-dist/workbench/product-workbench-pages.html _site/projects/claude-of-tanks/workbench/index.html
           cp -a projects/claude-of-tanks/.pages-dist/workbench/assets _site/projects/claude-of-tanks/workbench/
+          mkdir -p _site/projects/kage
+          cp projects/kage/index.html projects/kage/README.md _site/projects/kage/
+          cp -a projects/kage/lab/.pages-dist/pages/v1 _site/projects/kage/v1
+          cp -a projects/kage/lab/.pages-dist/pages/v2 _site/projects/kage/v2
+          cp -a projects/kage/lab/.pages-dist/assets _site/projects/kage/assets
+          cp -a projects/kage/lab/public/creative-assets _site/projects/kage/creative-assets
+          mkdir -p _site/projects/kage/lab/docs/releases
+          cp projects/kage/lab/docs/V2-REFERENCE-GUIDED-CREATIVE-CONTRACT.md _site/projects/kage/lab/docs/
+          cp projects/kage/lab/docs/releases/V1-*.md _site/projects/kage/lab/docs/releases/
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Upload site
@@ -137,3 +153,32 @@ jobs:
           name: claude-of-tanks-pages-acceptance
           path: projects/claude-of-tanks/evidence/pages-release/
           if-no-files-found: error
+
+  kage-acceptance:
+    name: Verify Kage V1 and V2 Pages
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: projects/kage/lab/package-lock.json
+      - name: Install Kage verification dependencies
+        working-directory: projects/kage/lab
+        run: npm ci
+      - name: Install Chromium
+        working-directory: projects/kage/lab
+        run: npx playwright install --with-deps chromium
+      - name: Verify project, version demos, and six archived cases
+        working-directory: projects/kage/lab
+        run: |
+          for attempt in 1 2 3; do
+            node scripts/verify-pages-release.mjs "${{ needs.deploy.outputs.page_url }}" && exit 0
+            echo "Kage acceptance attempt ${attempt} failed; retrying after CDN settle time."
+            sleep 10
+          done
+          exit 1

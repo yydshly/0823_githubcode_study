@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "id": "dedicated-896cfb7e6657",
+  "runId": "direct-observatory-r38",
+  "effectSpecId": "observatory-cinematic-sequence-v1",
+  "kind": "dedicated-module",
+  "entry": "src/experience.ts",
+  "files": [
+    {
+      "path": "src/director.ts",
+      "language": "typescript",
+      "content": "export interface DirectedState {\n  approach: number;\n  interior: number;\n  atlas: number;\n  cameraX: number;\n  cameraY: number;\n  focus: number;\n  telescopeTurn: number;\n}\n\nconst saturate = (value: number): number => Math.min(1, Math.max(0, value));\nconst smooth = (from: number, to: number, value: number): number => {\n  const t = saturate((value - from) / (to - from));\n  return t * t * (3 - 2 * t);\n};\n\nexport const directObservatory = (progress: number, pointerX: number, pointerY: number, elapsed: number, reducedMotion: boolean): DirectedState => {\n  const approach = 1 - smooth(0.28, 0.51, progress);\n  const interior = smooth(0.34, 0.62, progress) * (1 - smooth(0.68, 0.86, progress) * 0.22);\n  const atlas = smooth(0.66, 0.9, progress);\n  const stillness = reducedMotion ? 0 : Math.sin(elapsed * 0.16) * 0.012;\n  return {\n    approach,\n    interior,\n    atlas,\n    cameraX: pointerX * 0.055 + stillness,\n    cameraY: pointerY * 0.035,\n    focus: 0.25 + atlas * 0.75,\n    telescopeTurn: reducedMotion ? atlas * 0.13 : atlas * 0.13 + Math.sin(elapsed * 0.12) * 0.018\n  };\n};\n"
+    },
+    {
+      "path": "src/scene.ts",
+      "language": "typescript",
+      "content": "import * as THREE from 'three';\nimport type { DirectedState } from './director';\n\ninterface Layer {\n  mesh: THREE.Mesh<THREE.PlaneGeometry, THREE.MeshBasicMaterial>;\n  texture: THREE.Texture | null;\n}\n\nexport interface ObservatoryScene {\n  resize(width: number, height: number, dpr: number): void;\n  render(state: DirectedState): void;\n  dispose(): void;\n}\n\nconst makeLayer = (): Layer => {\n  const material = new THREE.MeshBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0, depthWrite: false });\n  return { mesh: new THREE.Mesh(new THREE.PlaneGeometry(2, 2), material), texture: null };\n};\n\nconst coverLayer = (layer: Layer, width: number, height: number): void => {\n  if (!layer.texture || !layer.texture.image) return;\n  const image = layer.texture.image as { width: number; height: number };\n  if (image.width <= 0 || image.height <= 0) return;\n  const viewportAspect = width / height;\n  const imageAspect = image.width / image.height;\n  if (viewportAspect > imageAspect) layer.mesh.scale.set(1, viewportAspect / imageAspect, 1);\n  else layer.mesh.scale.set(imageAspect / viewportAspect, 1, 1);\n};\n\nexport const createObservatoryScene = (canvas: HTMLCanvasElement, quality: 'low' | 'balanced' | 'high'): ObservatoryScene => {\n  const renderer = new THREE.WebGLRenderer({ canvas, antialias: quality !== 'low', alpha: false, powerPreference: 'high-performance' });\n  renderer.setClearColor(0x07111c, 1);\n  renderer.outputColorSpace = THREE.SRGBColorSpace;\n  const scene = new THREE.Scene();\n  const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0.1, 20);\n  camera.position.z = 3;\n  const opening = makeLayer();\n  const dome = makeLayer();\n  const atlas = makeLayer();\n  opening.mesh.position.z = 0;\n  dome.mesh.position.z = 0.03;\n  atlas.mesh.position.z = 0.06;\n  scene.add(opening.mesh, dome.mesh, atlas.mesh);\n\n  const fieldCount = quality === 'high' ? 220 : quality === 'balanced' ? 130 : 64;\n  const positions = new Float32Array(fieldCount * 3);\n  for (let i = 0; i < fieldCount; i += 1) {\n    const a = i * 0.61803398875 * Math.PI * 2;\n    const r = 0.15 + ((i * 37) % fieldCount) / fieldCount * 1.16;\n    positions[i * 3] = Math.cos(a) * r;\n    positions[i * 3 + 1] = Math.sin(a) * r * 0.62;\n    positions[i * 3 + 2] = 0;\n  }\n  const starsGeometry = new THREE.BufferGeometry();\n  starsGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));\n  const starsMaterial = new THREE.PointsMaterial({ color: 0xd9e8ed, size: quality === 'low' ? 0.009 : 0.012, transparent: true, opacity: 0, depthWrite: false });\n  const stars = new THREE.Points(starsGeometry, starsMaterial);\n  stars.position.z = 0.1;\n  scene.add(stars);\n\n  const loader = new THREE.TextureLoader();\n  loader.setCrossOrigin('anonymous');\n  const load = (path: string, layer: Layer): void => {\n    loader.load(path, (texture: THREE.Texture) => {\n      texture.colorSpace = THREE.SRGBColorSpace;\n      texture.minFilter = THREE.LinearFilter;\n      texture.magFilter = THREE.LinearFilter;\n      layer.texture = texture;\n      layer.mesh.material.color.set(0xffffff);\n      layer.mesh.material.map = texture;\n      layer.mesh.material.needsUpdate = true;\n    }, undefined, () => { layer.mesh.material.color.set(0x173246); });\n  };\n  load('/creative-assets/observatory-approach-v1.png', opening);\n  load('/creative-assets/observatory-dome-interior-v1.png', dome);\n  load('/creative-assets/observatory-star-atlas-v1.png', atlas);\n\n  let viewWidth = 1;\n  let viewHeight = 1;\n  return {\n    resize(width: number, height: number, dpr: number): void {\n      viewWidth = Math.max(1, width);\n      viewHeight = Math.max(1, height);\n      renderer.setPixelRatio(Math.min(dpr, quality === 'high' ? 2 : 1.5));\n      renderer.setSize(viewWidth, viewHeight, false);\n      coverLayer(opening, viewWidth, viewHeight);\n      coverLayer(dome, viewWidth, viewHeight);\n      coverLayer(atlas, viewWidth, viewHeight);\n    },\n    render(state: DirectedState): void {\n      const midpoint = Math.min(1, state.interior / 0.78);\n      opening.mesh.material.opacity = state.approach;\n      dome.mesh.material.opacity = midpoint * (1 - state.atlas * 0.45);\n      atlas.mesh.material.opacity = state.atlas;\n      starsMaterial.opacity = state.atlas * 0.9;\n      stars.rotation.z = state.telescopeTurn;\n      stars.position.x = state.cameraX;\n      stars.position.y = state.cameraY;\n      opening.mesh.position.x = state.cameraX * -0.18;\n      dome.mesh.position.x = state.cameraX * -0.08;\n      atlas.mesh.position.x = state.cameraX * 0.04;\n      renderer.render(scene, camera);\n    },\n    dispose(): void {\n      scene.remove(opening.mesh, dome.mesh, atlas.mesh, stars);\n      [opening, dome, atlas].forEach((layer: Layer) => {\n        layer.mesh.geometry.dispose();\n        layer.mesh.material.dispose();\n        if (layer.texture) layer.texture.dispose();\n      });\n      starsGeometry.dispose();\n      starsMaterial.dispose();\n      renderer.dispose();\n    }\n  };\n};\n"
+    },
+    {
+      "path": "src/experience.ts",
+      "language": "typescript",
+      "content": "import { defineExperience, startExperience } from '@signal-lab/experience-sdk';\nimport { createObservatoryScene, type ObservatoryScene } from './scene';\nimport { directObservatory } from './director';\n\nlet scene: ObservatoryScene | null = null;\nlet shell: HTMLElement | null = null;\n\nconst mount = (context: { container: HTMLElement; canvas: HTMLCanvasElement; quality: 'low' | 'balanced' | 'high'; reducedMotion: boolean; viewport: { width: number; height: number; dpr: number } }): void => {\n  shell = document.createElement('main');\n  shell.className = 'observatory-page';\n  shell.innerHTML = '<section class=\"hero\"><p class=\"eyebrow\">AERIA / 07:12</p><h1>云上观测站</h1><p class=\"lede\">沿着引桥进入晨光中的透明穹顶，让同一台望远镜把云海之外的坐标慢慢显影。</p><a class=\"cta\" href=\"#atlas\">开始观测 <span aria-hidden=\"true\">↓</span></a></section><section class=\"waypoint\"><p>穿过玻璃边缘</p><h2>把地平线留在身后</h2></section><section class=\"waypoint atlas-copy\" id=\"atlas\"><p>已锁定 / STAR ATLAS</p><h2>星图不是屏幕上的数据，<br>而是穹顶中的方向。</h2><a class=\"cta cta-light\" href=\"#top\">返回黎明 <span aria-hidden=\"true\">↑</span></a></section>';\n  shell.id = 'top';\n  context.container.appendChild(shell);\n  scene = createObservatoryScene(context.canvas, context.quality);\n  scene.resize(context.viewport.width, context.viewport.height, context.viewport.dpr);\n};\n\nconst update = (frame: { elapsed: number; delta: number; progress: number; pointer: { x: number; y: number }; viewport: { width: number; height: number; dpr: number }; reducedMotion: boolean }): void => {\n  if (!scene) return;\n  const state = directObservatory(frame.progress, frame.pointer.x, frame.pointer.y, frame.elapsed, frame.reducedMotion);\n  scene.render(state);\n};\n\nconst resize = (viewport: { width: number; height: number; dpr: number }): void => {\n  if (scene) scene.resize(viewport.width, viewport.height, viewport.dpr);\n};\n\nconst dispose = (): void => {\n  if (scene) scene.dispose();\n  scene = null;\n  if (shell) shell.remove();\n  shell = null;\n};\n\nstartExperience(defineExperience({ mount, update, resize, dispose }));\n"
+    },
+    {
+      "path": "src/page.css",
+      "language": "css",
+      "content": "*{box-sizing:border-box}html{scroll-behavior:smooth;max-width:100%;overflow-x:hidden}body{margin:0;max-width:100%;overflow-x:hidden;background:#07111c;color:#edf4f7;font-family:Arial,\"PingFang SC\",\"Microsoft YaHei\",sans-serif}#app{position:relative;z-index:1;min-height:300vh;max-width:100%;overflow-x:hidden}@supports(overflow:clip){html,body,#app{overflow-x:clip}}#generated-canvas,.generated-canvas,canvas.generated-canvas{position:fixed!important;inset:0!important;width:100vw!important;height:100vh!important;z-index:0!important;pointer-events:none!important;display:block!important}.observatory-page{position:relative;z-index:1;min-height:300vh;pointer-events:none}.hero,.waypoint{width:min(100% - 40px,500px);margin-left:clamp(28px,10vw,160px);margin-right:auto;pointer-events:auto}.hero{min-height:100vh;padding:clamp(34px,8vh,92px) 0 36px;display:flex;flex-direction:column;justify-content:flex-end}.hero::before,.waypoint::before{content:\"\";position:absolute;inset-block:-24px;left:max(-30px,-10vw);right:-30px;z-index:-1;background:linear-gradient(90deg,rgba(7,17,28,.48),rgba(7,17,28,.12) 72%,transparent);pointer-events:none}.hero{position:relative}.eyebrow,.waypoint p{margin:0 0 14px;color:#d6aa70;font-size:12px;letter-spacing:.18em}.hero h1{max-width:6ch;margin:0;font-size:clamp(42px,8vw,88px);line-height:.98;letter-spacing:-.07em;font-weight:500}.lede{max-width:36ch;margin:24px 0 26px;color:rgba(237,244,247,.84);font-size:clamp(15px,1.4vw,18px);line-height:1.65}.cta{align-self:flex-start;display:inline-flex;gap:14px;padding:12px 0;border-bottom:1px solid #d6aa70;color:#f5e1be;text-decoration:none;font-size:14px;letter-spacing:.08em}.waypoint{position:relative;min-height:100vh;padding-top:28vh}.waypoint h2{max-width:13ch;margin:0;font-size:clamp(30px,5vw,60px);font-weight:400;line-height:1.13;letter-spacing:-.045em}.atlas-copy{width:min(100% - 40px,460px);min-height:100vh;padding-top:58vh;margin-left:clamp(28px,10vw,160px);margin-right:auto}.atlas-copy::before{right:max(-30px,-10vw);background:radial-gradient(ellipse 105% 92% at 0 100%,rgba(7,17,28,.54),rgba(7,17,28,.24) 54%,transparent 84%)}.cta-light{border-color:#edf4f7;color:#edf4f7;margin-top:24px}@media(max-width:600px){#app,.observatory-page{min-height:300vh}.hero,.waypoint{width:min(100% - 32px,500px);margin-left:16px;margin-right:auto}.hero::before,.waypoint::before{left:-16px;right:-16px}.hero{padding-top:48px;padding-bottom:30px}.hero h1{font-size:clamp(40px,14vw,60px);max-width:5ch}.lede{margin-top:18px}.waypoint{padding-top:30vh}.atlas-copy{padding-top:46vh}.waypoint h2{font-size:clamp(28px,9vw,44px)}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}"
+    }
+  ],
+  "assets": [
+    {
+      "id": "observatory-cloud-approach-v1",
+      "path": "assets/observatory-approach-v1.png",
+      "kind": "environment",
+      "source": "generated",
+      "required": true
+    },
+    {
+      "id": "observatory-dome-interior-v1",
+      "path": "assets/observatory-dome-interior-v1.png",
+      "kind": "environment",
+      "source": "generated",
+      "required": true
+    },
+    {
+      "id": "observatory-star-atlas-v1",
+      "path": "assets/observatory-star-atlas-v1.png",
+      "kind": "environment",
+      "source": "generated",
+      "required": true
+    }
+  ],
+  "contract": {
+    "sdkVersion": 1,
+    "imports": [
+      "three",
+      "@signal-lab/experience-sdk"
+    ],
+    "lifecycle": [
+      "mount",
+      "update",
+      "resize",
+      "dispose"
+    ],
+    "network": "disabled",
+    "deterministicTimeline": true
+  }
+}

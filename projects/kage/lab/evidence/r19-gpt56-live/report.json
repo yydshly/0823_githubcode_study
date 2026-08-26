@@ -1,0 +1,46 @@
+{
+  "model": "CODEX · GPT-5.6-SOL",
+  "directUrl": "http://127.0.0.1:8143/generated-runs/dedicated-315a239d71bf/?quality=balanced&motion=full",
+  "elapsedSeconds": 296,
+  "receipt": {
+    "state": "CODEX · GPT-5.6-SOL",
+    "note": "dedicated-315a239d71bf · attempt 2",
+    "files": "4 FILES",
+    "compile": "485ms",
+    "security": "SANDBOXED",
+    "runtime": "THREE + SHADER"
+  },
+  "opening": {
+    "title": "dedicated-315a239d71bf",
+    "heading": "DREAMIN MOTION",
+    "canvasCount": 1,
+    "ready": "true",
+    "scrollY": 0,
+    "scrollHeight": 2716,
+    "viewportHeight": 900,
+    "overflow": 0
+  },
+  "ending": {
+    "title": "dedicated-315a239d71bf",
+    "heading": "DREAMIN MOTION",
+    "canvasCount": 1,
+    "ready": "true",
+    "scrollY": 1816,
+    "scrollHeight": 2716,
+    "viewportHeight": 900,
+    "overflow": 0
+  },
+  "mobile": {
+    "title": "dedicated-315a239d71bf",
+    "heading": "DREAMIN MOTION",
+    "canvasCount": 1,
+    "ready": "true",
+    "scrollY": 0,
+    "scrollHeight": 2548,
+    "viewportHeight": 844,
+    "overflow": 0
+  },
+  "scrollChanged": true,
+  "headingChanged": false,
+  "errors": []
+}

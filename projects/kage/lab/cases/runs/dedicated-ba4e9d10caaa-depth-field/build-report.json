@@ -1,0 +1,128 @@
+{
+  "receipt": {
+    "id": "dedicated-ba4e9d10caaa-depth-field",
+    "provider": "codex",
+    "model": "gpt-5.6-sol",
+    "status": "compiled",
+    "previewUrl": "/generated-runs/dedicated-ba4e9d10caaa-depth-field/",
+    "generatedAt": "2026-08-25T12:50:29.513Z",
+    "files": 4,
+    "assets": 2,
+    "sourceBytes": 38718,
+    "hasShaders": true,
+    "compileMs": 672,
+    "attempts": 1,
+    "directory": "generated/runs/dedicated-ba4e9d10caaa-depth-field"
+  },
+  "request": {
+    "brief": "为一个先锋时装品牌设计梦幻流体光幕、柔和但有张力的编辑感沉浸式网页，面向年轻创意人群。",
+    "seed": 17,
+    "quality": "balanced",
+    "runId": "run-v1fedg",
+    "selectedId": "generated-pm5l1y-guided-journey",
+    "reference": {
+      "title": "为一个先锋时装品牌设计梦幻流体光幕、柔和但有… · 单镜凝视",
+      "summary": "把主体压缩为一次连续、可记忆的视觉变化。",
+      "scenePlugin": "signal-world",
+      "productionStatus": "adapted",
+      "theme": {
+        "deep": "#08131f",
+        "surface": "#102536",
+        "text": "#ecf8ef",
+        "muted": "#9ab3b5",
+        "accent": "#79e7c4",
+        "accentSoft": "#f0c88d"
+      },
+      "assets": [
+        {
+          "id": "fashion-fluid-couture-v1",
+          "uri": "/creative-assets/fashion-fluid-couture-v1.png",
+          "bundlePath": "assets/fashion-fluid-couture-v1.png",
+          "kind": "image",
+          "source": "chatgpt-generated",
+          "role": "hero material anchor",
+          "description": "紫黑空间中的半透明液态玻璃与欧根纱高定轮廓；适合作为时装首屏主体、纹理和景深锚点。",
+          "payloadBytes": 1851938
+        },
+        {
+          "id": "fashion-fluid-couture-cutout-v2",
+          "uri": "/creative-assets/fashion-fluid-couture-cutout-v2.png",
+          "bundlePath": "assets/fashion-fluid-couture-cutout-v2.png",
+          "kind": "image",
+          "source": "chatgpt-generated",
+          "role": "transparent hero subject",
+          "description": "带真实 Alpha 的紫蓝液态欧根纱高定雕塑前景主体",
+          "payloadBytes": 2277176
+        }
+      ]
+    }
+  },
+  "usedAssets": [
+    {
+      "id": "fashion-fluid-couture-v1",
+      "uri": "/creative-assets/fashion-fluid-couture-v1.png",
+      "bundlePath": "assets/fashion-fluid-couture-v1.png",
+      "kind": "image",
+      "source": "chatgpt-generated",
+      "role": "hero material anchor",
+      "description": "紫黑空间中的半透明液态玻璃与欧根纱高定轮廓；适合作为时装首屏主体、纹理和景深锚点。",
+      "payloadBytes": 1851938
+    },
+    {
+      "id": "fashion-fluid-couture-cutout-v2",
+      "uri": "/creative-assets/fashion-fluid-couture-cutout-v2.png",
+      "bundlePath": "assets/fashion-fluid-couture-cutout-v2.png",
+      "kind": "image",
+      "source": "chatgpt-generated",
+      "role": "transparent hero subject",
+      "description": "带真实 Alpha 的紫蓝液态欧根纱高定雕塑前景主体",
+      "payloadBytes": 2277176
+    }
+  ],
+  "variant": {
+    "kind": "layered-depth",
+    "parentId": "dedicated-ba4e9d10caaa",
+    "strategy": "asset-point-depth-field",
+    "pointSamples": 3456,
+    "depthSource": "subject luminance plus deterministic fiber phase",
+    "interaction": "pointer parallax, relief rotation and scroll release/recovery",
+    "qualityGate": "balanced-or-high with full motion",
+    "fallback": "baseline material for low quality or reduced motion"
+  },
+  "presentationStrategy": {
+    "preferred": "layered-depth",
+    "active": "layered-depth",
+    "evidence": [
+      "The source asset is a presentable transparent PNG rather than a freely inspectable GLB.",
+      "Soft alpha and luminance can produce honest 2.5D depth without claiming true model geometry."
+    ]
+  },
+  "verification": {
+    "build": "passed",
+    "desktop": {
+      "status": 200,
+      "openingReady": true,
+      "endingProgress": 0.999,
+      "overflow": 0
+    },
+    "mobileReduced": {
+      "status": 200,
+      "viewport": "390x844",
+      "overflow": 0
+    },
+    "browserErrors": 0,
+    "performanceObservation": {
+      "environment": "headless Chrome, 1440x900, 240 requestAnimationFrame samples",
+      "baseline": {
+        "meanMs": 19.22,
+        "medianMs": 20.8,
+        "p95Ms": 25
+      },
+      "depthField": {
+        "meanMs": 20.52,
+        "medianMs": 20.8,
+        "p95Ms": 25.1
+      }
+    }
+  }
+}

@@ -1,0 +1,128 @@
+/* R15: make the generation boundary truthful and keep runnable samples discoverable. */
+.wb-generation-source {
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  min-height: 1.75rem;
+  padding: 0 .65rem;
+  border: 1px solid rgb(154 240 208 / 22%);
+  border-radius: 999px;
+  color: var(--wb-accent);
+  background: rgb(4 13 18 / 72%);
+  font: 600 .58rem/1 var(--wb-mono, monospace);
+  letter-spacing: .08em;
+  white-space: nowrap;
+}
+
+.wb-generation-source::before {
+  width: .38rem;
+  height: .38rem;
+  border-radius: 50%;
+  content: '';
+  background: currentColor;
+  box-shadow: 0 0 .7rem currentColor;
+}
+
+body[data-product-state="generating"] .wb-generation-source::before {
+  animation: wb-product-pulse 1.4s ease-in-out infinite;
+}
+
+body[data-product-awaiting="true"] .wb-stage-caption,
+body[data-product-awaiting="true"] #selection-detail,
+body[data-product-awaiting="true"] #direction-analysis {
+  display: none !important;
+}
+
+body[data-product-awaiting="true"] .wb-stage-placeholder {
+  visibility: visible;
+  opacity: 1;
+}
+
+.wb-reference-library {
+  display: block !important;
+  margin-top: 1rem;
+  padding-top: .85rem;
+}
+
+.wb-reference-library > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  color: var(--wb-text);
+}
+
+.wb-reference-library > summary::before {
+  content: 'SECONDARY / RUNNABLE';
+  color: var(--wb-accent);
+  font-size: .52rem;
+  letter-spacing: .09em;
+}
+
+.wb-showcase-switcher {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .65rem;
+  padding-top: .3rem;
+}
+
+.wb-sample-link {
+  min-width: 0;
+  text-decoration: none;
+}
+
+.wb-sample-link span:last-child {
+  min-width: 0;
+}
+
+.wb-sample-link strong,
+.wb-sample-link small {
+  display: block;
+}
+
+.wb-sample-link::after {
+  margin-left: auto;
+  color: var(--wb-accent);
+  content: '↗';
+}
+
+@media (max-width: 720px) {
+  .wb-stage-heading {
+    align-items: flex-start;
+    gap: .65rem;
+  }
+
+  .wb-generation-source {
+    min-height: 1.55rem;
+    padding-inline: .5rem;
+    font-size: .5rem;
+  }
+
+  .wb-reference-library {
+    margin-top: .75rem;
+  }
+
+  .wb-reference-library > summary {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: .35rem;
+  }
+
+  .wb-reference-library > summary::after {
+    display: none;
+  }
+
+  .wb-showcase-switcher {
+    grid-template-columns: 1fr;
+  }
+
+  .wb-sample-link {
+    min-height: 4.4rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body[data-product-state="generating"] .wb-generation-source::before {
+    animation: none;
+  }
+}
