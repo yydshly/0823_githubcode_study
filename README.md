@@ -14,6 +14,7 @@
 | Claude of Tanks | Three.js 程序化 3D、战车运行时、独立产品工作台与复用边界 | 暂时归档 | [研究记录](projects/claude-of-tanks/README.md) | [能力总览](https://yydshly.github.io/0823_githubcode_study/projects/claude-of-tanks.html) · [阶段归档](https://yydshly.github.io/0823_githubcode_study/projects/claude-of-tanks-archive.html) |
 | OpenChatCut | Agent-native 本地视频剪辑、多轨音频、字幕、MG、导出与 MCP 自动化 | 暂时归档 | [研究记录](projects/openchatcut/README.md) | 暂未发布 |
 | Reverse Skill | AI 安全 Skill 路由、工具平面、证据闭环、44 个 Skill 能力与逆向/安全知识地图 | 本阶段完成 | [研究记录](projects/reverse-skill/README.md) | [架构地图](https://yydshly.github.io/0823_githubcode_study/projects/reverse-skill.html) |
+| BabelDOC | 版式保真的 PDF 翻译能力与使用边界 | 按需使用 | [使用评估](projects/babeldoc/README.md) | 暂不发布 |
 
 ## 仓库结构
 
