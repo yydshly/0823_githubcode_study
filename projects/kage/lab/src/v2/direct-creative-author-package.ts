@@ -27,6 +27,10 @@ import {
   visualAmbitionIntentLevelSchema
 } from './visual-ambition.ts';
 import { productDeliveryPlanSchema } from './product-delivery-readiness.ts';
+import {
+  createCreativeDirectorGuidance,
+  serializeCompactCreativeDirectorGuidance
+} from './creative-quality-guidance.ts';
 
 const safeId = z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/);
 const {
@@ -315,12 +319,13 @@ export function serializeDirectCreativeAuthorPackage(
   input: DirectCreativeAuthorPackage
 ): string {
   const authorPackage = directCreativeAuthorPackageSchema.parse(input);
+  const creativeDirectorGuidance = createCreativeDirectorGuidance(authorPackage);
   const selectionGuard = authorPackage.runSeed.creativeProtocolVersion >= 4
     ? 'V4+ 初始 runSeed.effectSelectionReceipt=null：必须先把三个候选和唯一选择写入 EffectQualitySelectionReceipt，并通过 bindDirectCreativeEffectSelection；绑定前严禁记录素材批次或构建。无合格候选或回执无效时，必须在 effect-selection 阶段显式停止。'
-    : '当前 V3 包保留紧凑效果选择规则；不得把相对自评当成最终浏览器证据。';
+    : 'V3选择自评不是最终浏览器证据';
   const productGuard = authorPackage.runSeed.creativeProtocolVersion === 5
     ? '这是 V5 产品交付运行：页面不能停在单个视觉演示。必须按 productDeliveryPlan 完成产品身份与价值、核心使用、可理解结果和后续路径；关键主视觉必须使用正式来源素材，或证明实时/程序化媒介本身就是产品功能。最终只有 attachProductDeliveryEvidence 绑定同一 bundle 并通过后，才可进入正式产品库。'
-    : '当前运行只具有研究归档资格，不得标记为经过 V5 产品交付门的正式产品。';
+    : '仅有研究归档资格，不得标记为 V5 正式产品。';
   return [
     '请在现有 Kage 项目中直接完成一个主题专属、可运行的最佳网页。',
     '以下数据包是唯一创作边界：只选择一个方向、只进行一次素材批次与一次完整构建；最多两次确定性修复和一次视觉精修。',
@@ -329,10 +334,11 @@ export function serializeDirectCreativeAuthorPackage(
     selectionGuard,
     productGuard,
     '最终体验高于技术目录；可以采用未列出的技术、合成方式或交互语法。',
-    'creativeFreedom 只把用户要求、真实性、可用性、证据身份与预算视为硬边界；案例和推断必须可放弃。按创意承诺验收，不按技术声望、数量或是否动态验收。',
+    'creativeFreedom：硬边界只含用户要求、真实性、可用性、证据与预算；案例和推断必须可放弃，按创意承诺验收。',
     'resourceOrchestration 从产品能力、GitHub 机制、模型素材、项目能力与原创代码中选最少充分组合；不强制来源或技术。',
     '核对 revision、许可、真实性与回退。模型素材限一批；禁止静默换库、换模型或重复生成。',
     '不要建立后台模型调用，不要扩展供应商，不要把案例复制成模板；融合 references 的正向原理，并以最终浏览器效果为准。',
+    '创意指导是建议：按感受、主题证据与行动选择，技术数量与技术声望不计分；不套案例，终稿只看浏览器。',
     'mediumDecision.preferred 与 creativeDirection.leadMedium 是资源规划中的主导媒介，不是唯一可用媒介。它不是创意边界，也不是技术白名单。支持手段只能强化同一视觉锚点，不得堆砌能力。alternative 是首选明确失败后的一次有界降级，不是第二创意方向，也不能触发第二批素材。',
     'creativeDirection.sourcePolicy=open-best-fit 表示素材来源默认开放：可以选择最适合的真实、已有、生成或程序化素材；只有 creativeDirection.hardConstraints 可以禁止当前任务的媒介或风格，案例风险与历史惯性不得升级为全局禁令。',
     'required image-sequence 的全部连续状态属于同一素材职责与同一素材批次；不得把各状态拆成多批，也不得用泛化单张环境图替代状态主体。',
@@ -341,6 +347,8 @@ export function serializeDirectCreativeAuthorPackage(
     'story.structure.mode=spatial-inspection 时，必须让同一通过门禁的动画模型保持主体身份，从模型 animations 核验真实命名剪辑，并让动作选择、镜头、空间证据、语义说明和结果共享同一状态；缺失模型或剪辑时诚实阻断，不得伪造动作。',
     `阶段超过 ${Math.round(authorPackage.timing.statusReportAfterMs / 1000)} 秒时报告可见进度；达到 ${Math.round(authorPackage.timing.deadlineAfterMs / 60_000)} 分钟截止线后显式停止，不得静默重试。`,
     '完成后按 evidenceRequirements 验证最终 runId + bundleHash，并附加 content-fit-required 宏观结构判断；未通过质量门时诚实停止，不进入精选库。',
+    'CREATIVE_DIRECTOR_GUIDANCE_JSON',
+    serializeCompactCreativeDirectorGuidance(creativeDirectorGuidance),
     'DIRECT_CREATIVE_AUTHOR_PACKAGE_JSON',
     JSON.stringify(authorPackage)
   ].join('\n');
