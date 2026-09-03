@@ -4,8 +4,10 @@ import {
   externalCapabilitySourceProfileSchema,
   getThreeUiResearchBridgeSummary,
   mechanismPilotCandidateSchema,
+  mechanismPilotResultSchema,
   observedReferenceStudySchema,
   threeUiMechanismPilotCandidates,
+  threeUiMechanismPilotResults,
   threeUiObservedReferences,
   threeUiSourceProfile
 } from '../src/v2/threeui-capability-research.ts';
@@ -49,13 +51,17 @@ describe('R166 ThreeUI capability research bridge', () => {
     const promotedIds = new Set(positiveReferenceLibrary.map((reference) => reference.id));
     expect(threeUiObservedReferences.some((reference) => promotedIds.has(reference.id))).toBe(false);
     expect(threeUiMechanismPilotCandidates.some((candidate) => promotedIds.has(candidate.id))).toBe(false);
+    expect(threeUiMechanismPilotResults).toHaveLength(1);
+    expect(() => mechanismPilotResultSchema.parse(threeUiMechanismPilotResults[0])).not.toThrow();
+    expect(threeUiMechanismPilotResults[0]?.authoringEligibility).toBe('research-only-until-product-proof');
     expect(getThreeUiResearchBridgeSummary()).toEqual({
       sourceId: 'threeui-community',
       observedReferences: 1,
       mechanismPilotCandidates: 3,
+      runtimeValidatedPilots: 1,
       promotedReferences: 0,
       runtimeDependenciesAdded: 0,
-      status: 'research-bridge-ready'
+      status: 'first-mechanism-runtime-validated'
     });
   });
 });

@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="zh-CN" data-ready="false" data-renderer="loading" data-preset="signal">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="KAGE V2 ThreeUI Liquid Form 有界机制验证：确认主题化互动场、参数因果与生产生命周期。" />
+    <title>KAGE V2 · Liquid Form Mechanism Pilot</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header class="masthead">
+      <a href="../../" aria-label="返回 KAGE V2">KAGE / V2</a>
+      <p>MECHANISM PILOT · NOT A DESIGN TEMPLATE</p>
+      <span>THREEUI / COMMUNITY / E3</span>
+    </header>
+
+    <main>
+      <section class="stage" aria-labelledby="pilot-title">
+        <div class="render-field" data-render-field>
+          <canvas data-liquid-canvas aria-hidden="true"></canvas>
+          <div class="fallback-field" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </div>
+          <div class="field-grid" aria-hidden="true"></div>
+          <p class="pointer-note">移动指针，让材质改变视线与高光。</p>
+        </div>
+
+        <article class="copy-block">
+          <p class="eyebrow">01 / 互动视觉场</p>
+          <h1 id="pilot-title">让材质<br />先回应。</h1>
+          <p class="lead">这里验证的不是银色球体，而是一个可迁移原则：视觉主体、用户输入与运行生命周期必须成为同一套系统。</p>
+          <dl class="runtime-proof" aria-live="polite">
+            <div><dt>RENDERER</dt><dd data-renderer-label>CHECKING</dd></div>
+            <div><dt>INPUT</dt><dd data-input-label>POINTER / READY</dd></div>
+            <div><dt>FRAME</dt><dd data-frame-label>00</dd></div>
+          </dl>
+        </article>
+
+        <aside class="control-panel" aria-label="Liquid Form 验证参数">
+          <div class="panel-heading">
+            <p>FIELD STATES</p>
+            <span data-status-label>INITIALIZING</span>
+          </div>
+
+          <div class="presets" role="group" aria-label="视觉状态">
+            <button type="button" data-preset-button="quiet">安静</button>
+            <button type="button" data-preset-button="signal" aria-pressed="true">信号</button>
+            <button type="button" data-preset-button="charged">充能</button>
+          </div>
+
+          <label>
+            <span>形变强度 <output data-output="morph">1.00</output></span>
+            <input data-control="morph" type="range" min="0.2" max="1.8" step="0.05" value="1" />
+          </label>
+          <label>
+            <span>表面密度 <output data-output="noiseScale">1.00</output></span>
+            <input data-control="noiseScale" type="range" min="0.45" max="1.8" step="0.05" value="1" />
+          </label>
+          <label>
+            <span>指针作用 <output data-output="mouseAmount">0.18</output></span>
+            <input data-control="mouseAmount" type="range" min="0" max="0.5" step="0.01" value="0.18" />
+          </label>
+
+          <button class="reset-button" type="button" data-reset>复位现场</button>
+        </aside>
+
+        <footer class="evidence-note">
+          <span>验证目标：互动场 / DPR / 可见性暂停 / 降级 / 销毁</span>
+          <a href="./THIRD-PARTY-NOTICE.md">来源与许可 ↗</a>
+        </footer>
+      </section>
+    </main>
+
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>

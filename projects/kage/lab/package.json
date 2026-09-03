@@ -12,6 +12,7 @@
     "test": "vitest run",
     "test:r165:p0": "vitest run tests/v2-direct-creative-orchestrator.test.ts tests/v2-creative-freedom-policy.test.ts tests/v2-direct-creative-author-package.test.ts tests/v2-direct-creative-protocol.test.ts",
     "test:r166:threeui": "vitest run tests/v2-r166-threeui-capability-research.test.ts tests/v2-creative-freedom-policy.test.ts tests/v2-external-excellence-research.test.ts",
+    "test:browser:r166:threeui": "playwright test e2e/v2-r166-threeui-liquid-form-pilot.spec.ts",
     "test:browser": "playwright test",
     "test:r137": "vitest run tests/v2-r137-fox-gait-contract.test.ts tests/v2-r137-fox-gait-evidence.test.ts",
     "test:browser:r137": "playwright test e2e/v2-r137-fox-gait-observatory-delivery.spec.ts",

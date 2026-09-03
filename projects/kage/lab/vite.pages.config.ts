@@ -54,6 +54,10 @@ export default defineConfig({
           import.meta.dirname,
           'pages/v2/prototypes/identity-evidence/index.html',
         ),
+        'pages/v2/prototypes/threeui-liquid-form/index': resolve(
+          import.meta.dirname,
+          'pages/v2/prototypes/threeui-liquid-form/index.html',
+        ),
         'pages/v2/deliveries/dream-record/index': resolve(
           import.meta.dirname,
           'pages/v2/deliveries/dream-record/index.html',

@@ -70,6 +70,26 @@ export const mechanismPilotCandidateSchema = z.object({
 
 export type MechanismPilotCandidate = z.infer<typeof mechanismPilotCandidateSchema>;
 
+export const mechanismPilotResultSchema = z.object({
+  candidateId: safeId,
+  status: z.literal('runtime-validated'),
+  evidenceLevel: z.literal('E4'),
+  sourceRevision: z.string().regex(/^[a-f0-9]{40}$/),
+  route: z.string().startsWith('/pages/'),
+  verifiedStates: z.array(z.enum([
+    'desktop-interactive',
+    'mobile-reduced-motion',
+    'webgl-fallback'
+  ])).length(3),
+  evidenceFiles: z.array(z.string().endsWith('.png')).length(3),
+  reusableConclusion: z.string().min(12),
+  authoringEligibility: z.literal('research-only-until-product-proof'),
+  promotionBlockers: z.array(z.string().min(12)).min(1).max(3),
+  verifiedAt: z.string().date()
+}).strict();
+
+export type MechanismPilotResult = z.infer<typeof mechanismPilotResultSchema>;
+
 export const threeUiSourceProfile: ExternalCapabilitySourceProfile = externalCapabilitySourceProfileSchema.parse({
   id: 'threeui-community',
   title: 'ThreeUI Community · 可追溯互动效果与完整页面目录',
@@ -214,13 +234,37 @@ export const threeUiMechanismPilotCandidates: readonly MechanismPilotCandidate[]
   }
 ].map((candidate) => mechanismPilotCandidateSchema.parse(candidate));
 
+export const threeUiMechanismPilotResults: readonly MechanismPilotResult[] = [
+  {
+    candidateId: 'threeui-liquid-form-pilot',
+    status: 'runtime-validated',
+    evidenceLevel: 'E4',
+    sourceRevision: '68802d5428071ada5c20db8094b1649e6bb770ed',
+    route: '/pages/v2/prototypes/threeui-liquid-form/',
+    verifiedStates: ['desktop-interactive', 'mobile-reduced-motion', 'webgl-fallback'],
+    evidenceFiles: [
+      'docs/v2-research/evidence/r166-threeui-liquid-form/01-desktop-interactive.png',
+      'docs/v2-research/evidence/r166-threeui-liquid-form/02-mobile-reduced.png',
+      'docs/v2-research/evidence/r166-threeui-liquid-form/03-webgl-fallback.png'
+    ],
+    reusableConclusion: '主题化视觉场可以在不增加 React 运行时依赖的前提下保留真实指针因果、受控帧率、移动端静态状态和可读降级。',
+    authoringEligibility: 'research-only-until-product-proof',
+    promotionBlockers: [
+      '尚未证明该机制能提升一次由用户想法驱动的完整产品网页，而不仅是形成醒目的局部视觉。',
+      '尚未完成与第二种、第三种表达机制的选择比较，不能把 WebGL 液态主体变成新的默认答案。'
+    ],
+    verifiedAt: '2026-09-03'
+  }
+].map((result) => mechanismPilotResultSchema.parse(result));
+
 export function getThreeUiResearchBridgeSummary() {
   return {
     sourceId: threeUiSourceProfile.id,
     observedReferences: threeUiObservedReferences.length,
     mechanismPilotCandidates: threeUiMechanismPilotCandidates.length,
+    runtimeValidatedPilots: threeUiMechanismPilotResults.length,
     promotedReferences: 0,
     runtimeDependenciesAdded: 0,
-    status: 'research-bridge-ready'
+    status: 'first-mechanism-runtime-validated'
   } as const;
 }
