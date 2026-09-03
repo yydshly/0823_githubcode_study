@@ -1,0 +1,317 @@
+{
+  "schemaVersion": 1,
+  "creativeProtocolVersion": 3,
+  "id": "direct-r136a-film-camera-repair-paths",
+  "goalPlayback": {
+    "originalBrief": "为第一次参加社区旧物修理日的人设计一个维修判断网页。开场是一台刚从储物间取出的旧胶片相机。访客先选择快门还能动作或已经卡住，进入不同路径：一条检查过片拨杆和测光窗，另一条检查电池仓和快门钮；两条路径都保留刚才的判断，最终汇入同一张维修判断卡，给出清洁、送修或妥善保存的初步建议。访客从对相机状态毫无头绪，走到看懂下一步该做什么，最终行动是保存今天的维修判断卡。画面像一本亲切的印刷故障手册与手绘机构图，让人清楚看见每个判断为什么导向下一步，也愿意真的把旧物修好。",
+    "subject": "社区旧物修理日中的旧胶片相机外部机构与维修判断路径",
+    "audience": "第一次参加社区旧物修理日、不了解机械相机的普通访客",
+    "desiredOutcome": "从不了解相机状态，走完一条可解释的外部检查路径，比较另一条路径，并保存安全的初步维修判断卡。",
+    "primaryAction": "保存今天的维修判断卡",
+    "hardConstraints": [
+      "页面只形成非专业初步判断，不代替维修师诊断",
+      "两条路径必须改变 SVG 部件几何、连接路径与结果内容，不能只换文案或颜色",
+      "不得指导拆机、继续强行按压快门或接触可疑电池残留",
+      "不依赖外部图片、模型、Canvas 或第二素材批次"
+    ],
+    "preferences": [
+      "暖白说明书纸、墨黑机构线、钴蓝和朱红套色形成亲切的印刷故障手册",
+      "大幅相机机构图贯穿 opening、branch、confluence 与 saved，而不是参数工作台或卡片矩阵",
+      "鼠标、触摸、键盘、reduced-motion 与 enhancement-off 都保留完整判断旅程"
+    ]
+  },
+  "selectedDirection": {
+    "id": "film-camera-mechanism-branching-manual",
+    "title": "旧胶片相机机构图 · 双路径维修判断手册",
+    "experienceForm": "branching-confluence",
+    "rationale": "同一张代码原生 SVG 相机机构图承载快门回应分叉、两处部件检查、可见几何后果和共同判断卡；正常文档流让理解对象、选择路径、比较与保存自然发生，不形成持久控制台。"
+  },
+  "referencePrinciples": [
+    {
+      "referenceId": "positive-community-repair-diagnostic",
+      "title": "社区风扇诊断台 · 同一对象上的检查判断",
+      "principle": "把检查步骤绑定到同一对象上的具体部件，让用户能看见每个判断为什么导向下一步。；让部件状态、检查顺序、安全说明和结果建议共享一个有限判断状态。；将结论标为初步判断，并把高风险操作留给专业人员或线下服务。",
+      "relevance": "用户 brief 命中“维修判断、旧物修理、故障手册、下一步该做什么”，并与 editorial-field 体验模式一致。",
+      "sourceUri": "../cases/dedicated-5694e0a3a022/"
+    },
+    {
+      "referenceId": "positive-color-relay-branching",
+      "title": "高彩城市接力 · 分支后果与共同汇合",
+      "principle": "让分支选择产生可见的结构后果，而不是只切换文案、颜色或激活状态。；为每条路径提供返回、重放与共同汇合，使选择既可比较又不会割裂主旅程。；用主题本身的路径、对象或空间关系组织分支构图，避免额外参数面板。",
+      "relevance": "用户 brief 命中“不同路径、两条路径、最终汇入”，并与 editorial-field 体验模式一致。",
+      "sourceUri": "../pages/v2/deliveries/color-relay-branching/"
+    }
+  ],
+  "assetPlan": {
+    "batchId": "assets-e38mbq",
+    "strategy": "none",
+    "rationale": "图表、关系或精确路径需要可验证坐标、语义和状态绑定，DOM/SVG/Canvas 2D 比生成图或装饰性 shader 更可靠。 当前首选不需要独立素材批次。",
+    "assets": []
+  },
+  "interactionRationale": {
+    "mode": "direct",
+    "audioApplicable": false,
+    "rationale": "鼠标、触摸与键盘选择快门状态并推进检查；同一状态同时改变 SVG 路径、拨杆、测光针、快门钮、仓门、叶片、检查历史和最终判断卡。"
+  },
+  "mediumDecision": {
+    "schemaVersion": 1,
+    "preferred": "code-native",
+    "confidence": 0.94,
+    "rationale": "图表、关系或精确路径需要可验证坐标、语义和状态绑定，DOM/SVG/Canvas 2D 比生成图或装饰性 shader 更可靠。",
+    "signals": [
+      {
+        "source": "user-hard",
+        "evidence": "开场是一台刚从储物间取出的旧胶片相机"
+      },
+      {
+        "source": "user-hard",
+        "evidence": "两条路径都保留刚才的判断，最终汇入同一张维修判断卡，给出清洁、送修或妥善保存的初步建议"
+      },
+      {
+        "source": "user-hard",
+        "evidence": "访客从对相机状态毫无头绪，走到看懂下一步该做什么，最终行动是保存今天的维修判断卡"
+      },
+      {
+        "source": "contract-evidence",
+        "evidence": "视觉职责为 subject，媒介指纹为 dom-led。"
+      }
+    ],
+    "assetResponsibilities": [],
+    "truthBoundary": "程序化图表和路径只能表达合同中的数据或明确标注的演示数据，不得制造虚假精度、地理事实或专业结论。",
+    "alternative": null
+  },
+  "visualAmbition": {
+    "schemaVersion": 1,
+    "intentLevel": "expressive",
+    "intentRationale": "视觉野心等级 expressive 来自主题、叙事变化与运行时职责：把维修判断组织为一次可选择、可重放并能汇合的动态编排：访客先确定参与对象，再选择路线，看见同一主体产生不同后果，最终完成“保存今天的维修判断卡”。。它只决定本次内容需要的表达强度，不继承历史案例的布局、风格或渲染器禁令。",
+    "heroMoment": {
+      "title": "维修判断 · 保存今天的维修判断卡",
+      "description": "开场以“全部参与对象从不同方向进入同一共享视觉场，核心主体、交接关系和最终行动目标建立清晰身份。”建立主体，并让后续变化服务于“从编辑式留白进入主体显现，最后形成有张力的整体构图。”。",
+      "themeConnection": "视觉锚点必须直接证明“维修判断”和“把维修判断组织为一次可选择、可重放并能汇合的动态编排：访客先确定参与对象，再选择路线，看见同一主体产生不同后果，最终完成“保存今天的维修判断卡”。”；即使隐藏标题，也能从对象、空间或数据关系辨认主题。；这一记忆点直接指向“保存今天的维修判断卡”。",
+      "appearsWithinSeconds": 8,
+      "observableRuntimeChange": {
+        "trigger": "用户执行“先选择参与对象，再从两条明确路线中选择其一；同一视觉主体、路线后果、路径历史与共同汇合行动由同一分支状态驱动。”",
+        "from": "全部参与对象从不同方向进入同一共享视觉场，核心主体、交接关系和最终行动目标建立清晰身份。",
+        "to": "两条路线汇合到同一结果与“保存今天的维修判断卡”，同时保留当前对象、所选路线及其可见后果。"
+      }
+    },
+    "rendering": {
+      "primary": "svg",
+      "supporting": [
+        "dom-css"
+      ],
+      "rationale": "以 svg 承担“在同一动态构图中持续表现“维修判断”的参与对象、核心主体、两条路线、关系变化与汇合队形。”的主要可见职责；语义内容和行动仍由 DOM 保底。媒介依据：图表、关系或精确路径需要可验证坐标、语义和状态绑定，DOM/SVG/Canvas 2D 比生成图或装饰性 shader 更可靠。"
+    },
+    "spatialDepth": {
+      "mode": "layered-2d",
+      "purpose": "以共享坐标、遮挡和有职责的图形层表达“从编辑式留白进入主体显现，最后形成有张力的整体构图。”，不把二维运动误报为体积空间。",
+      "cues": [
+        "scale",
+        "occlusion"
+      ]
+    },
+    "motionArc": {
+      "beats": [
+        {
+          "phase": "opening",
+          "driver": "time",
+          "visualState": "全部参与对象从不同方向进入同一共享视觉场，核心主体、交接关系和最终行动目标建立清晰身份。",
+          "thematicPurpose": "理解共享场与核心主体，再进入第一次选择。"
+        },
+        {
+          "phase": "exploration",
+          "driver": "direct-input",
+          "visualState": "两条内容明确的路线作为上下文决策出现；选择状态与核心主体、结果区域和返回入口共享同一数据源。",
+          "thematicPurpose": "选择其中一条路线，并可返回重选另一条。"
+        },
+        {
+          "phase": "resolution",
+          "driver": "direct-input",
+          "visualState": "两条路线汇合到同一结果与“保存今天的维修判断卡”，同时保留当前对象、所选路线及其可见后果。",
+          "thematicPurpose": "确认路径历史和最终构图后完成行动。"
+        }
+      ],
+      "runtimeAdvantage": "运行时让用户从“全部参与对象从不同方向进入同一共享视觉场，核心主体、交接关系和最终行动目标建立清晰身份。”抵达“两条路线汇合到同一结果与“保存今天的维修判断卡”，同时保留当前对象、所选路线及其可见后果。”；这种状态变化服务于主题，不能由一张静态截图等价替代。"
+    },
+    "interactionToScene": [
+      {
+        "input": "用户执行“先选择参与对象，再从两条明确路线中选择其一；同一视觉主体、路线后果、路径历史与共同汇合行动由同一分支状态驱动。”",
+        "sceneResponse": "用户选择或输入时，视觉锚点、可见证据与语义数值必须同步变化，不能只改变边框、颜色或说明文字。",
+        "productMeaning": "可见变化必须帮助用户理解“从编辑式留白进入主体显现，最后形成有张力的整体构图。”，并自然抵达“保存今天的维修判断卡”。"
+      }
+    ],
+    "assetCredibility": {
+      "level": "conceptual-coherent",
+      "strategy": "图表、关系或精确路径需要可验证坐标、语义和状态绑定，DOM/SVG/Canvas 2D 比生成图或装饰性 shader 更可靠。",
+      "disclosure": "程序化图表和路径只能表达合同中的数据或明确标注的演示数据，不得制造虚假精度、地理事实或专业结论。"
+    },
+    "fallbackPerformance": {
+      "targetFps": 60,
+      "maxDevicePixelRatio": 2.5,
+      "initialTransferBudgetMb": 7.63,
+      "mobileFallback": "equivalent",
+      "reducedMotionFallback": "key-states",
+      "rendererFailureFallback": "dom-content"
+    }
+  },
+  "attemptBudget": {
+    "limits": {
+      "directionSelections": 1,
+      "assetBatches": 1,
+      "builds": 1,
+      "deterministicRepairs": 2,
+      "visualRefinements": 1
+    },
+    "used": {
+      "directionSelections": 1,
+      "assetBatches": 1,
+      "builds": 1,
+      "deterministicRepairs": 1,
+      "visualRefinements": 1
+    }
+  },
+  "stageReports": [
+    {
+      "stage": "bounded-r136a-completion",
+      "elapsedMs": 0,
+      "status": "completed",
+      "summary": "一个方向、零外部素材、零生成调用与一次构建完成；使用一次确定性修复和一次视觉精修，桌面双路径、保存、390px reduced-motion 与 enhancement-off 浏览器检查均完成后停止。"
+    }
+  ],
+  "finalCandidate": {
+    "runId": "direct-r136a-film-camera-repair-paths",
+    "bundleHash": "f4c32fc7300996f0fac8c9afa82aeac0c8c01e721ff42cd1fb7c88d2a1838977"
+  },
+  "adaptiveEvidence": {
+    "schemaVersion": 1,
+    "runId": "direct-r136a-film-camera-repair-paths",
+    "bundleHash": "f4c32fc7300996f0fac8c9afa82aeac0c8c01e721ff42cd1fb7c88d2a1838977",
+    "profile": {
+      "schemaVersion": 1,
+      "interactionMode": "direct",
+      "audioApplicable": false,
+      "requiredCheckpoints": [
+        "opening",
+        "core",
+        "mobile",
+        "interaction"
+      ]
+    },
+    "checkpoints": [
+      {
+        "kind": "opening",
+        "runId": "direct-r136a-film-camera-repair-paths",
+        "bundleHash": "f4c32fc7300996f0fac8c9afa82aeac0c8c01e721ff42cd1fb7c88d2a1838977",
+        "passed": true,
+        "summary": "桌面开场在 704ms 内呈现可辨认的胶片相机、镜头、拨杆、测光窗、快门钮与电池仓机构图，且无横向溢出。"
+      },
+      {
+        "kind": "core",
+        "runId": "direct-r136a-film-camera-repair-paths",
+        "bundleHash": "f4c32fc7300996f0fac8c9afa82aeac0c8c01e721ff42cd1fb7c88d2a1838977",
+        "passed": true,
+        "summary": "快门还能动作与快门已经卡住两条路径产生不同 route/path hash、SVG 部件 transforms、连接几何与结果标题，并在同一判断卡汇合。"
+      },
+      {
+        "kind": "mobile",
+        "runId": "direct-r136a-film-camera-repair-paths",
+        "bundleHash": "f4c32fc7300996f0fac8c9afa82aeac0c8c01e721ff42cd1fb7c88d2a1838977",
+        "passed": true,
+        "summary": "390×844 reduced-motion 状态完整走到 saved，保留相机几何、判断内容与保存状态且没有横向溢出。"
+      },
+      {
+        "kind": "interaction",
+        "runId": "direct-r136a-film-camera-repair-paths",
+        "bundleHash": "f4c32fc7300996f0fac8c9afa82aeac0c8c01e721ff42cd1fb7c88d2a1838977",
+        "passed": true,
+        "summary": "鼠标路径、返回比较、第二路径和保存共享 routeHistory；enhancement-off 仍以 SVG/DOM 完成相同语义旅程。"
+      }
+    ],
+    "hardGates": {
+      "runtimeClean": true,
+      "criticalAssetsLoaded": true,
+      "primaryActionReachable": true,
+      "mobileComplete": true,
+      "truthfulClaims": true,
+      "interactionVerified": true,
+      "audioVerified": null
+    },
+    "visualQuality": {
+      "schemaVersion": 1,
+      "verdict": "pass",
+      "score": 93,
+      "dimensions": {
+        "goalClarity": 95,
+        "creativeDistinctiveness": 92,
+        "craftCohesion": 93,
+        "assetIntegration": 94,
+        "interactionValue": 93,
+        "mobileReadiness": 91
+      },
+      "summary": "暖纸、墨线、钴蓝与朱红套色把整页机构图、两条判断路径和保存行动统一成亲切的故障手册；代码原生 SVG 的部件位移与连接几何让每一步检查原因可见。",
+      "findings": [
+        {
+          "code": "non-professional-repair-boundary",
+          "severity": "minor",
+          "checkpoint": "core",
+          "message": "页面只提供不拆机的外部观察与初步建议；页眉、安全提示和结果文案持续说明不代替维修师诊断。"
+        }
+      ]
+    },
+    "macroStructureReview": {
+      "mode": "content-fit-gate",
+      "candidate": {
+        "runId": "direct-r136a-film-camera-repair-paths",
+        "layout": "branching-confluence",
+        "persistentControlPanel": false,
+        "visibleParameterControls": false,
+        "realtimeMetricCluster": false,
+        "primaryAction": "record-or-contribute"
+      },
+      "inertia": {
+        "mode": "advisory-only",
+        "detected": false,
+        "matchedRunIds": [],
+        "repeatedAxes": [],
+        "mustChange": false,
+        "recommendation": "未发现足以影响当前方向的宏观骨架惯性；继续由内容适配和最终效果决定页面形态。"
+      },
+      "persistentWorkbench": false,
+      "contentJustified": true,
+      "verdict": "pass",
+      "findingCode": null,
+      "summary": "当前候选不是持久参数工作台，无需为了近期案例差异而改变内容适配的宏观结构。"
+    }
+  },
+  "wowEvidence": {
+    "schemaVersion": 1,
+    "runId": "direct-r136a-film-camera-repair-paths",
+    "bundleHash": "f4c32fc7300996f0fac8c9afa82aeac0c8c01e721ff42cd1fb7c88d2a1838977",
+    "assessment": {
+      "schemaVersion": 1,
+      "intentLevel": "expressive",
+      "required": false,
+      "verdict": "not-required",
+      "score": 92,
+      "dimensions": {
+        "fiveSecondImpact": 94,
+        "runtimeAdvantage": 93,
+        "themeMemorability": 94,
+        "motionDepthMeaning": 91,
+        "assetIntegrationCredibility": 90,
+        "craftCohesion": 90
+      },
+      "observation": {
+        "heroMomentObserved": true,
+        "runtimeAdvantageOverStaticObserved": true,
+        "themeSpecificMemoryObserved": true,
+        "meaningfulMotionOrDepthObserved": true,
+        "credibleAssetIntegrationObserved": true,
+        "summary": "首屏用占据主要视觉层的旧胶片相机机构图、套色引线和维修手册纸张建立主题，不依赖照片、产品卡或参数面板。 两次真实路径选择改变同一 SVG 的连线路径、拨杆、测光针、快门钮、仓门、叶片与判断内容，静态手册图不能表达这种分支因果。 可复述记忆是先听一台旧相机如何回应，沿机构图检查两个部件，再把安全的下一步保存成维修判断卡。 拨杆旋转、测光针偏转、仓门位移、快门叶片收拢和跨机身连接线共同解释检查关系；运动承担判断语义而非装饰。 零外部素材；最终 bundle 内联 SVG 与 DOM/CSS 原生承担相机、部件、路径、编号和纸张视觉，状态与几何没有脱离场景。 暖白纸、墨黑线、钴蓝朱红套色、宋体标题、等宽编号、手绘机构线和克制动效形成统一的社区修理手册语言。 真实输入同时改变 routeId、检查历史、SVG 路径与部件 transforms、结果建议和 saved 状态，直接服务维修判断。 390px reduced-motion 保留相机机构图、离散几何终态、判断文字和保存完成态，没有横向溢出。 关闭可选增强后，SVG/DOM 的相机、卡住路径、两步检查、结果建议与保存状态全部保留，不引入替代素材。"
+      },
+      "findings": []
+    }
+  },
+  "verdict": "pass",
+  "stopReason": null
+}

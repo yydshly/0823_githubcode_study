@@ -1,0 +1,300 @@
+{
+  "schemaVersion": 1,
+  "creativeProtocolVersion": 3,
+  "id": "direct-r141-same-table-tonight",
+  "goalPlayback": {
+    "originalBrief": "为一个让异地家人约定同一时刻吃饭的项目设计网页。访客要理解如何发起一次“同桌时刻”，看见双方留下的一道菜和一句话，并邀请另一张餐桌加入。页面应让相隔很远的两张桌子感觉正在靠近，温暖、克制，不煽情。最终行动是“发起今晚的同桌时刻”。人物、地点与故事均为概念演示。",
+    "subject": "让相隔很远的两张家庭餐桌在同一晚餐时刻靠近",
+    "audience": "希望与异地家人发起一次共同晚餐的普通访客",
+    "desiredOutcome": "理解同桌时刻的发起方式，看见双方留下的一道菜和一句话，并邀请另一张餐桌加入。",
+    "primaryAction": "发起今晚的同桌时刻",
+    "hardConstraints": [
+      "人物、地点、菜品与故事只可作为概念演示，不得冒充真实家庭或服务记录",
+      "关键主素材必须真实加载并承担两张餐桌、距离和冷暖光线的主题职责",
+      "主要行动、手机旅程与素材失败降级必须可用且诚实"
+    ],
+    "preferences": [
+      "温暖、克制、生活化，不以煽情人物特写代替产品含义",
+      "让同一张宽幅素材中的两处餐桌随滚动从分离到相接",
+      "采用短篇编辑流，不建立持久参数工作台或无意义控制器"
+    ]
+  },
+  "selectedDirection": {
+    "id": "same-table-generated-editorial-join",
+    "title": "同桌时刻 · 两处生活空间沿桌沿靠近",
+    "experienceForm": "generated-panorama-editorial-flow",
+    "rationale": "一张主题专属宽幅生成图同时承载冷暖两处生活空间；原生滚动只改变同一素材两半的距离，并依次揭示菜与话，最终让行动在桌沿相接后成立。"
+  },
+  "referencePrinciples": [
+    {
+      "referenceId": "positive-moonlit-tidepool-panorama",
+      "title": "月光潮池夜巡 · 单一主图中的连续坐标",
+      "principle": "借用单一宽幅主素材统一空间坐标，并让多种输入改变同一位置状态的原理。",
+      "relevance": "异地双桌需要一个可连续靠近的共同坐标；只借连续性与等价输入，不复制潮池、夜色、热点数量或横向滚轮形式。",
+      "sourceUri": "../pages/v2/deliveries/moonlit-tidepool-panorama/"
+    }
+  ],
+  "assetPlan": {
+    "batchId": "r141-same-table-single-panorama",
+    "strategy": "generated",
+    "rationale": "唯一生成源图同时履行场景身份与深度职责；运行时的左右裁切来自同一文件，不产生第二素材批次。",
+    "assets": [
+      {
+        "id": "scene-environment",
+        "role": "唯一宽幅生成图承担两处真实生活感餐桌、冷暖光线、菜品和共同桌沿的主题身份。",
+        "source": "generated",
+        "required": true
+      },
+      {
+        "id": "scene-depth-field",
+        "role": "同一宽幅生成图中的窗景、前后遮挡、桌面透视和焦点承担可验证空间深度。",
+        "source": "generated",
+        "required": true
+      }
+    ]
+  },
+  "interactionRationale": {
+    "mode": "scroll",
+    "audioApplicable": false,
+    "rationale": "原生滚轮和离散阶段导航共享一个 progress，真实改变双桌间距、冷暖光场、双方留言和 CTA 解锁；互动直接解释“相隔很远但在这一刻靠近”。"
+  },
+  "mediumDecision": {
+    "schemaVersion": 1,
+    "preferred": "generated-image",
+    "confidence": 0.84,
+    "rationale": "主题依赖自然材质、虚构环境或氛围主视觉，而不承担真实产品、地点或数据证明；一张高质量生成图比通用代码图形更能建立视觉身份。",
+    "signals": [
+      {
+        "source": "user-hard",
+        "evidence": "最终行动是“发起今晚的同桌时刻”"
+      },
+      {
+        "source": "contract-evidence",
+        "evidence": "视觉锚点“以可分离、可辨认的完整轮廓表现“让异地家人约定同一时刻吃饭的项目”中的主要物件，使其能在同一环境中独立移动并改变空间结果。”需要由连续、主题专属的关键图像承担。"
+      }
+    ],
+    "assetResponsibilities": [
+      {
+        "id": "scene-environment",
+        "source": "generated-image",
+        "required": true,
+        "responsibility": "以一批内的高质量生成主视觉承担“让异地家人约定同一时刻吃饭的项目”的对象、环境、材质和构图身份。",
+        "visibleProof": "关键图像真实加载、进入最终 bundleHash，并在隐藏标题后仍能辨认当前主题。"
+      }
+    ],
+    "truthBoundary": "生成图只能承担概念、虚构环境或编辑视觉，不得冒充真实地点分布、事实数据、真实商品细节、品牌界面或专业结论。",
+    "alternative": {
+      "route": "code-native",
+      "trigger": "生成图超时、质量不达标、整合失败或素材请求不可用时",
+      "boundary": "只在首选媒介明确失败后保留完整语义内容、主要行动和诚实的降级说明；不得把回退当作第二个并行创意方向。"
+    }
+  },
+  "visualAmbition": {
+    "schemaVersion": 1,
+    "intentLevel": "expressive",
+    "intentRationale": "普通产品 brief 自主路由到主题专属生成素材与短篇编辑流；视觉冲击来自真实生活场景的冷暖对照和连续合拢，不强加 3D 或历史模板。",
+    "heroMoment": {
+      "title": "远方，也能同时开席",
+      "description": "首屏把冷蓝与暖琥珀两张空餐桌放在同一眼平线上，中间保留真实距离；标题和一行说明立即建立异地共餐主题。",
+      "themeConnection": "隐藏标题后，两张各自留有一道菜的空餐桌、同一时间与可拼合桌沿仍能辨认“异地同桌”。",
+      "appearsWithinSeconds": 2,
+      "observableRuntimeChange": {
+        "trigger": "用户原生滚动或选择远、近、同桌阶段",
+        "from": "两处生活空间分离，中间留有宽阔暗场",
+        "to": "桌沿合拢，双方的菜和一句话出现，邀请行动解锁"
+      }
+    },
+    "rendering": {
+      "primary": "raster-image",
+      "supporting": [
+        "canvas-2d",
+        "dom-css"
+      ],
+      "rationale": "唯一 1881×836 生成宽幅图承担对象、材质、透视和第一记忆；Canvas 只画克制的会合光线，DOM/CSS 只承担裁切、编辑排版、状态和行动。"
+    },
+    "spatialDepth": {
+      "mode": "layered-2d",
+      "purpose": "同一素材的窗景、桌沿、椅子遮挡与左右位移建立两个空间的距离，并在合拢时保留自然材质连续性。",
+      "cues": [
+        "occlusion",
+        "focus",
+        "perspective",
+        "lighting"
+      ]
+    },
+    "motionArc": {
+      "beats": [
+        {
+          "phase": "opening",
+          "driver": "none",
+          "visualState": "两张空餐桌分处冷暖两端，中间保持宽阔距离。",
+          "thematicPurpose": "先让访客感到异地与同一时刻。"
+        },
+        {
+          "phase": "exploration",
+          "driver": "scroll",
+          "visualState": "两半空间靠近，双方的一道菜和一句话依次出现。",
+          "thematicPurpose": "把共餐方法转化为可见因果。"
+        },
+        {
+          "phase": "resolution",
+          "driver": "scroll",
+          "visualState": "桌沿相接、会合光线稳定、邀请行动解锁。",
+          "thematicPurpose": "将情绪收束为发起今晚同桌时刻的明确行动。"
+        }
+      ],
+      "runtimeAdvantage": "静态图片只能展示两张桌子；运行时让距离、内容揭示与 CTA 解锁共享同一进度，用户亲自完成“靠近”。"
+    },
+    "interactionToScene": [
+      {
+        "input": "滚轮或阶段导航",
+        "sceneResponse": "同一宽幅主图的两半同步靠近，暗场缩小，双方留言出现，CTA 在同桌状态开放。",
+        "productMeaning": "两地不必变成同一生活，但可以约定同一时刻共同开席。"
+      }
+    ],
+    "assetCredibility": {
+      "level": "editorial-credible",
+      "strategy": "一次内置生图生成一张完整宽幅主视觉；两半运行图来自同一文件的机械裁切，代码不冒充关键生活素材。",
+      "disclosure": "人物、地点、菜品与故事均为概念演示，不对应真实家庭、地址或服务记录。"
+    },
+    "fallbackPerformance": {
+      "targetFps": 60,
+      "maxDevicePixelRatio": 2.5,
+      "initialTransferBudgetMb": 2.2,
+      "mobileFallback": "key-visual-with-content",
+      "reducedMotionFallback": "key-states",
+      "rendererFailureFallback": "dom-content"
+    }
+  },
+  "attemptBudget": {
+    "limits": {
+      "directionSelections": 1,
+      "assetBatches": 1,
+      "builds": 1,
+      "deterministicRepairs": 2,
+      "visualRefinements": 1
+    },
+    "used": {
+      "directionSelections": 1,
+      "assetBatches": 1,
+      "builds": 1,
+      "deterministicRepairs": 0,
+      "visualRefinements": 1
+    }
+  },
+  "stageReports": [
+    {
+      "stage": "bounded-r141-completion",
+      "elapsedMs": 0,
+      "status": "completed",
+      "summary": "一个普通 brief、一个方向、一次内置生图素材批次、一次构建和一次只移除人造接缝阴影的视觉精修已完成；五项自适应浏览器检查通过后停止。"
+    }
+  ],
+  "finalCandidate": {
+    "runId": "direct-r141-same-table-tonight",
+    "bundleHash": "7c0783b971046e4a3d1aea74c2eca6c29d8d883b3abffb710917b3d654277666"
+  },
+  "adaptiveEvidence": {
+    "schemaVersion": 1,
+    "runId": "direct-r141-same-table-tonight",
+    "bundleHash": "7c0783b971046e4a3d1aea74c2eca6c29d8d883b3abffb710917b3d654277666",
+    "profile": {
+      "schemaVersion": 1,
+      "interactionMode": "scroll",
+      "audioApplicable": false,
+      "requiredCheckpoints": [
+        "opening",
+        "core",
+        "mobile",
+        "scroll"
+      ]
+    },
+    "checkpoints": [
+      {
+        "kind": "opening",
+        "runId": "direct-r141-same-table-tonight",
+        "bundleHash": "7c0783b971046e4a3d1aea74c2eca6c29d8d883b3abffb710917b3d654277666",
+        "passed": true,
+        "summary": "桌面开场在 565ms 内加载同一张 1881×836 宽幅素材的两处裁切，主题成立且无横向溢出。"
+      },
+      {
+        "kind": "core",
+        "runId": "direct-r141-same-table-tonight",
+        "bundleHash": "7c0783b971046e4a3d1aea74c2eca6c29d8d883b3abffb710917b3d654277666",
+        "passed": true,
+        "summary": "桌沿合拢后双方的一道菜和一句话可读，CTA 完成邀请；素材失败时明确披露并保留底部行动。"
+      },
+      {
+        "kind": "mobile",
+        "runId": "direct-r141-same-table-tonight",
+        "bundleHash": "7c0783b971046e4a3d1aea74c2eca6c29d8d883b3abffb710917b3d654277666",
+        "passed": true,
+        "summary": "390×844 reduced-motion 通过三段离散导航完成同一旅程，CTA 在视口内且没有页面级横向溢出。"
+      },
+      {
+        "kind": "scroll",
+        "runId": "direct-r141-same-table-tonight",
+        "bundleHash": "7c0783b971046e4a3d1aea74c2eca6c29d8d883b3abffb710917b3d654277666",
+        "passed": true,
+        "summary": "真实 wheel 将 progress 推进到 nearing，暗场宽度缩小且两条留言出现；继续滚动抵达 together 并解锁邀请。"
+      }
+    ],
+    "hardGates": {
+      "runtimeClean": true,
+      "criticalAssetsLoaded": true,
+      "primaryActionReachable": true,
+      "mobileComplete": true,
+      "truthfulClaims": true,
+      "interactionVerified": true,
+      "audioVerified": null
+    },
+    "visualQuality": {
+      "schemaVersion": 1,
+      "verdict": "pass",
+      "score": 93,
+      "dimensions": {
+        "goalClarity": 94,
+        "creativeDistinctiveness": 92,
+        "craftCohesion": 93,
+        "assetIntegration": 95,
+        "interactionValue": 92,
+        "mobileReadiness": 91
+      },
+      "summary": "冷蓝与暖琥珀的两处真实生活场景、同一桌沿、空椅与一菜一话形成主题专属语言；滚动让空间距离、信息和行动同步收束，390px 与素材失败状态仍完整可用。",
+      "findings": [
+        {
+          "code": "conceptual-family-scenes",
+          "severity": "minor",
+          "checkpoint": "core",
+          "message": "两处家庭、菜品与留言均为概念演示；页面已在行动区明确披露，不把它们伪装成真实用户记录。"
+        }
+      ]
+    },
+    "macroStructureReview": {
+      "mode": "content-fit-gate",
+      "candidate": {
+        "runId": "direct-r141-same-table-tonight",
+        "layout": "editorial-flow",
+        "persistentControlPanel": false,
+        "visibleParameterControls": false,
+        "realtimeMetricCluster": false,
+        "primaryAction": "record-or-contribute"
+      },
+      "inertia": {
+        "mode": "advisory-only",
+        "detected": false,
+        "matchedRunIds": [],
+        "repeatedAxes": [],
+        "mustChange": false,
+        "recommendation": "未发现足以影响当前方向的宏观骨架惯性；继续由内容适配和最终效果决定页面形态。"
+      },
+      "persistentWorkbench": false,
+      "contentJustified": true,
+      "verdict": "pass",
+      "findingCode": null,
+      "summary": "当前候选不是持久参数工作台，无需为了近期案例差异而改变内容适配的宏观结构。"
+    }
+  },
+  "verdict": "pass",
+  "stopReason": null
+}

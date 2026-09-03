@@ -1,0 +1,476 @@
+{
+  "receipt": {
+    "id": "dedicated-76102bb2158c",
+    "provider": "codex",
+    "model": "gpt-5.6-sol",
+    "status": "compiled",
+    "previewUrl": "/generated-runs/dedicated-76102bb2158c/",
+    "generatedAt": "2026-08-28T05:55:35.519Z",
+    "files": 5,
+    "assets": 1,
+    "sourceBytes": 22478,
+    "hasShaders": true,
+    "compileMs": 877,
+    "attempts": 1,
+    "directory": "generated/runs/dedicated-76102bb2158c"
+  },
+  "request": {
+    "brief": "为一座城市逐渐消失的老电影院制作数字档案网页。开场是当代街景中仍亮着的最后一块老招牌；滚动时，不同时期的票根、立面与放映声沿同一街区的真实位置逐渐重叠，访客可以选择年代查看同一地点的变化，最后收束为“保存一段城市放映记忆”。画面像白天的城市档案与旧胶片册，温暖、克制、可阅读。不要标准地图界面、暗色电影海报、巨型标题、随机粒子或章节模板。",
+    "seed": 69,
+    "quality": "high",
+    "runId": "run-1ocajrs",
+    "selectedId": "generated-d6hlbi-blueprint-1uggj78-cinema-memory-street-blueprint",
+    "creativeContract": {
+      "schemaVersion": 2,
+      "id": "contract-2ijfwa",
+      "brief": "为一座城市逐渐消失的老电影院制作数字档案网页。开场是当代街景中仍亮着的最后一块老招牌；滚动时，不同时期的票根、立面与放映声沿同一街区的真实位置逐渐重叠，访客可以选择年代查看同一地点的变化，最后收束为“保存一段城市放映记忆”。画面像白天的城市档案与旧胶片册，温暖、克制、可阅读。不要标准地图界面、暗色电影海报、巨型标题、随机粒子或章节模板。",
+      "intent": {
+        "subject": "一座城市逐渐消失的老电影院",
+        "audience": "需要快速理解并感受该想法的网页访客",
+        "desiredFeeling": "真实、克制、温暖",
+        "narrativeChange": "，不同时期的票根、立面与放映声沿同一街区的真实位置逐渐重叠，访客可以选择年代查看同一地点的变化，最后收束为“保存一段城市放映记忆”",
+        "primaryAction": "保存一段城市放映记忆",
+        "negativeConstraints": [
+          "不要标准地图界面、暗色电影海报、巨型标题、随机粒子或章节模板"
+        ]
+      },
+      "referenceEvidence": [
+        {
+          "referenceId": "kage-paper-restoration",
+          "title": "纸张修复工坊 · 证据驱动的同一对象变化",
+          "sourceUrl": "../cases/dedicated-7c944e0c386f/",
+          "evidenceLevel": "runtime-verified",
+          "relevance": "命中 档案。 支持 editorial-field 体验模式。 来自已归档并经过浏览器验证的本地最终案例。",
+          "borrow": [
+            "同一页文献在近距离纤维、补纸与复读证据之间变化，过程证据比抽象氛围更重要。",
+            "滚动推进修复步骤，但每一步都必须能指出同一对象上的具体变化。",
+            "破损态与修复态素材共享纸页形状、光线和工作台坐标，Three.js 只解释纤维与裂缝。"
+          ],
+          "avoid": [
+            "不要用互不相关的旧纸图片，也不要让暖色氛围替代可读的修复证据。"
+          ]
+        },
+        {
+          "referenceId": "kage-dream-room",
+          "title": "梦境记录 · 同一房间的记忆形成",
+          "sourceUrl": "../cases/dedicated-8574ee46ab16/",
+          "evidenceLevel": "runtime-verified",
+          "relevance": "命中 记忆。 来自已归档并经过浏览器验证的本地最终案例。",
+          "borrow": [
+            "始终保持同一房间、机位与晨光，让模糊到清晰成为可信的记忆变化。",
+            "滚动控制环境清晰度、碎片聚合和空间深度，最终把注意力收束到记录行动。",
+            "连续环境素材承担真实空间，Three.js 只添加记忆回声、景深和过渡，不遮盖空间证据。"
+          ],
+          "avoid": [
+            "不要生成三个无关联梦境画面，也不要把安静主题变成霓虹科技界面。"
+          ]
+        },
+        {
+          "referenceId": "motionsites-interactive-discovery",
+          "title": "MotionSites · Interactive Discovery",
+          "sourceUrl": "https://motionsites.ai/?prompt=interactive-discovery",
+          "evidenceLevel": "catalog-metadata",
+          "relevance": "命中 选择。 支持 editorial-field 体验模式。 只作为外部目录方向信号，不当作实现已验证。",
+          "borrow": [
+            "目录证据表明它属于交互式 Hero，可作为“首屏即发生探索”的方向索引。",
+            "只借鉴交互发现的节奏命题；未取得完整提示词前不推断具体动画实现。",
+            "外部目录只提供方向信号，具体素材策略必须由当前 brief 和本地运行证据决定。"
+          ],
+          "avoid": [
+            "不要把目录缩略图或未知提示词当成已经验证的 Three.js 实现。"
+          ]
+        }
+      ],
+      "experience": {
+        "pattern": "editorial-field",
+        "thesis": "把一座城市逐渐消失的老电影院组织为可浏览、可选择、能用证据做决定的信息地图。",
+        "focalSubject": "一座城市逐渐消失的老电影院",
+        "continuityRule": "地点决策型主题优先使用真实地理底图；底图投影、站点经纬度、证据数据和选中路线必须共享同一数据源并保持一一对应。演示站点必须明确标注，不得伪装成真实公共设施。",
+        "typographyRole": "文字承担地点名称、证据数值和行动；地图与图册排版共同建立浏览方向。",
+        "beats": [
+          {
+            "id": "map-overview",
+            "position": 0,
+            "purpose": "establish",
+            "visibleState": "明亮地图建立街区、站点分布和当前选区。",
+            "userProgression": "横向浏览街区或直接选择站点。"
+          },
+          {
+            "id": "station-evidence",
+            "position": 0.55,
+            "purpose": "transform",
+            "visibleState": "当前站点的证据、距离和状态与地图标记同步更新。",
+            "userProgression": "比较信息后确认最合适的站点。"
+          },
+          {
+            "id": "nearest-action",
+            "position": 1,
+            "purpose": "resolve",
+            "visibleState": "地图收束到最优站点，并给出“保存一段城市放映记忆”。",
+            "userProgression": "打开路线或完成最终行动。"
+          }
+        ],
+        "pointerRole": "指针或触摸用于选择站点并同步更新证据，不承担装饰性跟随动画。",
+        "reducedMotion": "保留横向浏览和站点离散切换，取消惯性漂移与大幅视差。",
+        "finalMemoryPoint": "保存一段城市放映记忆"
+      },
+      "assets": [
+        {
+          "id": "map-evidence-field",
+          "role": "information",
+          "modality": "texture",
+          "required": false,
+          "minimumQuality": "L2-inspectable",
+          "sourcePriority": [
+            "licensed",
+            "curated-library",
+            "procedural"
+          ],
+          "visualResponsibility": "地点决策型主题优先使用带授权与署名的真实地理底图，并叠加真实地标、站点编码、当前位置和选中路线；若只能使用程序化回退，必须标注为示意地图并保留道路层级、街区或水系。随机线条或抽象曲线不能替代地图结构。",
+          "continuityRule": "底图投影、Canvas 标记和路线与 DOM 站点 ID、经纬度、距离、状态和证据字段必须共享同一数据源与同一坐标变换；演示数据必须显式披露。",
+          "integration": "seamless-field",
+          "visibleProof": "首屏无需说明即可识别真实区域与地标并看见地图署名；选择任一站点后，站点编码、高亮路线与水质、距离、开放状态同步变化。",
+          "fallback": "dom-only"
+        }
+      ],
+      "direction": {
+        "visualRole": "information",
+        "mechanisms": [
+          {
+            "id": "sticky-archive-stack",
+            "title": "滚动堆叠档案",
+            "evidenceLevel": "E4",
+            "job": "把并列对象组织成可追踪的层级，让每次滚动只引入一个新证据。",
+            "reason": "匹配信息证据职责。 支持 editorial-field 体验。 命中“档案”。",
+            "sourceCaseIds": [
+              "fabrica-sticky-stack"
+            ]
+          },
+          {
+            "id": "branded-media-mask",
+            "title": "品牌蒙版",
+            "evidenceLevel": "E4",
+            "job": "让品牌字形或有语义的轮廓成为媒体容器，并与证据内容共同构图。",
+            "reason": "匹配信息证据职责。 支持 editorial-field 体验。",
+            "sourceCaseIds": [
+              "harvest-masked-statistics"
+            ]
+          },
+          {
+            "id": "pointer-reveal",
+            "title": "指针揭示",
+            "evidenceLevel": "E3",
+            "job": "让输入行为承担发现、比较或检查含义，而不是只让装饰跟随坐标。",
+            "reason": "匹配信息证据职责。 支持 editorial-field 体验。 命中“选择”。",
+            "sourceCaseIds": [
+              "nike-pointer-spotlight"
+            ]
+          }
+        ],
+        "interaction": {
+          "primaryInput": "direct-navigation",
+          "semanticAction": "直接选择一条探索路径并保持位置反馈。",
+          "pointerRole": "primary",
+          "touchAlternative": "提供等价的点击热点、拖拽或分段导航，不依赖 hover。",
+          "keyboardAlternative": "所有镜头、热点或路径都可通过顺序焦点和 Enter 激活。"
+        },
+        "renderer": {
+          "baseLayer": "semantic-dom",
+          "route": "dom-canvas-hybrid",
+          "enhancement": "canvas-shader",
+          "reason": "局部材质融合、遮罩或程序化氛围可由 Canvas/Shader 完成，页面结构保留在 DOM。",
+          "threeJustification": "当前职责不要求可检查的三维几何或自由相机。",
+          "fallback": "关闭 Canvas 后显示同一主体静态构图和完整内容行动。"
+        },
+        "rejectedMechanisms": [
+          {
+            "id": "cinematic-3d-deconstruction",
+            "reason": "缺少真实可检查模型，不能伪造三维拆解。"
+          }
+        ],
+        "decisionSummary": "以信息证据承担主要视觉，用滚动堆叠档案、品牌蒙版、指针揭示组织变化；局部材质融合、遮罩或程序化氛围可由 Canvas/Shader 完成，页面结构保留在 DOM。"
+      },
+      "technical": {
+        "presentationStrategy": "dom-led",
+        "capabilitySelection": {
+          "selected": false,
+          "capabilityId": null,
+          "score": 24,
+          "reasons": [
+            "体验模式 editorial-field 不是该能力的优先路线。",
+            "目标命中 滚动、逐渐、变化、记忆 等连续叙事信号。",
+            "需要先建立连续媒体素材职责。"
+          ],
+          "blockers": [
+            "当前素材计划没有连续图片、视频或帧序列。"
+          ],
+          "contract": null
+        },
+        "articulatedSubject": {
+          "selected": false,
+          "capabilityId": null,
+          "score": 36,
+          "reasons": [
+            "主体没有明确的抽象或程序化构造语义。",
+            "没有需要部件承担的结构变化。",
+            "部件命中 片。",
+            "体验模式 editorial-field 支持单一主体连续变化。"
+          ],
+          "blockers": [],
+          "contract": null
+        },
+        "semanticInteraction": {
+          "selected": true,
+          "capabilityId": "semantic-responsive-interaction",
+          "score": 100,
+          "matchedSignals": [
+            "年代",
+            "变化",
+            "选择",
+            "档案",
+            "消失"
+          ],
+          "reasons": [
+            "目标命中“年代、变化、选择、档案、消失”等信息关系信号。",
+            "体验模式 editorial-field 且存在信息素材职责，交互可以改变理解。",
+            "现有导演决策已把 direct-navigation 定义为有语义的主要输入。"
+          ],
+          "blockers": [],
+          "evaluatedCapability": {
+            "id": "semantic-responsive-interaction",
+            "evidenceLevel": "E4",
+            "state": "validated",
+            "problem": "装饰性鼠标动效不能帮助用户理解内容，也无法稳定迁移到触摸、键盘和减少动态效果环境。",
+            "meaning": "滚动选择证据层，时间选择改变海岸形态和数字，指针只在局部揭示相对于基准年已经消失的土地。",
+            "inputs": [
+              "scroll",
+              "pointer",
+              "touch",
+              "keyboard"
+            ],
+            "outputs": [
+              "scene-shape",
+              "evidence-value",
+              "narrative-layer",
+              "selection-state"
+            ],
+            "baseInterface": "语义 DOM 始终提供年代按钮、损失数字、解释文字和当前状态，不依赖 WebGL 完成比较。",
+            "enhancedInterface": "WebGL 把年代选择映射为同一海岸场的连续形变，并让局部证据透镜显示相对损失范围。",
+            "reducedMotionRule": "减少动态效果时立即切换到目标年代和阶段，停止连续漂移，但保留所有数值和比较结果。",
+            "rejectionRules": [
+              "移除交互后信息理解完全不变时拒绝晋级。",
+              "触摸、键盘或无 WebGL 回退无法完成比较时拒绝晋级。"
+            ],
+            "evidence": [
+              {
+                "id": "coast-1984",
+                "year": 1984,
+                "label": "基准海岸",
+                "lossSquareKilometers": 0,
+                "retreatMeters": 0,
+                "relativeWaterCentimeters": 0,
+                "sceneMorph": 0,
+                "summary": "沙洲仍然连续，潮沟尚未切断内侧湿地。"
+              },
+              {
+                "id": "coast-2004",
+                "year": 2004,
+                "label": "潮沟扩张",
+                "lossSquareKilometers": 3.2,
+                "retreatMeters": 186,
+                "relativeWaterCentimeters": 8,
+                "sceneMorph": 0.5,
+                "summary": "外侧沙洲变薄，新的潮沟开始把湿地分成孤立片区。"
+              },
+              {
+                "id": "coast-2026",
+                "year": 2026,
+                "label": "临界断面",
+                "lossSquareKilometers": 8.7,
+                "retreatMeters": 421,
+                "relativeWaterCentimeters": 17,
+                "sceneMorph": 1,
+                "summary": "连续岸线已经断裂，曾经被遮蔽的社区直接面对风暴潮。"
+              }
+            ]
+          }
+        },
+        "identityEvidence": {
+          "selected": false,
+          "score": 18,
+          "reason": "拒绝：缺少同时指向身份与证据的明确目标。",
+          "rejectedBy": [],
+          "matchedSignals": [
+            "档案"
+          ],
+          "capabilityId": null
+        },
+        "placeGrounding": {
+          "selected": true,
+          "capabilityId": "place-grounded-experience",
+          "strategy": "place-narrative",
+          "score": 54,
+          "matchedSignals": [
+            "档案",
+            "消失",
+            "年代"
+          ],
+          "reasons": [
+            "目标命中“档案、消失、年代”等地域语义，地域应成为表达决策而不是装饰词。",
+            "地点承担历史与叙事连续性，可在真实关系上进行编辑式重构。"
+          ],
+          "requirements": {
+            "geography": "real-reinterpreted",
+            "map": "avoid",
+            "dataTruth": "真实地点、年代和档案事实必须可追溯；缺失部分只能作为明确标注的艺术化推演。",
+            "creativeFreedom": "允许把真实空间转化为档案层、时间切片或探索路径，不必复制标准地图界面。"
+          }
+        },
+        "styleDiversity": {
+          "fingerprint": {
+            "composition": "editorial-grid",
+            "palette": "daylight-neutral",
+            "motion": "state-switch",
+            "spatial": "data-field",
+            "typography": "quiet-small-scale",
+            "media": "dom-led"
+          },
+          "nearestCaseId": "dedicated-1b9f0b05107b",
+          "nearestDistance": 5,
+          "minimumDifferentAxes": 2,
+          "mustDifferOn": [
+            "composition",
+            "motion",
+            "spatial",
+            "typography"
+          ],
+          "avoidRepeating": [
+            "不要默认复用暗色全屏背景、中央主体和巨型标题的组合。",
+            "不要把滚动淡入、漂浮粒子和柔光当成所有主题的通用答案。",
+            "不得复刻最相近案例 dedicated-1b9f0b05107b 的整体构图和运动语法。"
+          ],
+          "rationale": "本方向与最相近案例 dedicated-1b9f0b05107b 在 5 个风格轴上不同；差异是生成约束，不是固定模板。"
+        },
+        "domResponsibilities": [
+          "承载可阅读内容、导航和最终行动。",
+          "在 WebGL 不可用时保留完整语义顺序。"
+        ],
+        "webglResponsibilities": [
+          "承载空间记忆、镜头关系和连续状态变化。",
+          "让素材融入环境并提供克制的交互反馈。"
+        ],
+        "targetFrameTimeMs": 16.7,
+        "maxInitialAssetBytes": 8000000,
+        "targetDevices": [
+          "desktop",
+          "mobile"
+        ]
+      },
+      "acceptance": [
+        {
+          "id": "intent-visible",
+          "priority": "blocker",
+          "assertion": "首屏和终点能够对应原始主体、情绪变化和最终行动。",
+          "evidence": "screenshot-ending"
+        },
+        {
+          "id": "opening-composed",
+          "priority": "high",
+          "assertion": "首屏存在明确主体和空间坐标，没有空黑屏、文字裁切或主体被遮挡。",
+          "evidence": "screenshot-opening"
+        },
+        {
+          "id": "middle-causal",
+          "priority": "high",
+          "assertion": "中段变化能够解释能力、转化或探索关系，而不只是装饰动画。",
+          "evidence": "screenshot-middle"
+        },
+        {
+          "id": "borderless-integration",
+          "priority": "high",
+          "assertion": "主体和环境没有棋盘格、矩形图片边界或不自然的发光方框。",
+          "evidence": "screenshot-middle"
+        },
+        {
+          "id": "mobile-readable",
+          "priority": "blocker",
+          "assertion": "390px 移动端无横向溢出，主体、正文和行动均可见。",
+          "evidence": "screenshot-mobile"
+        },
+        {
+          "id": "semantic-fallback",
+          "priority": "normal",
+          "assertion": "关闭 WebGL 或减少运动后仍保留完整内容顺序和行动。",
+          "evidence": "dom"
+        },
+        {
+          "id": "runtime-clean",
+          "priority": "blocker",
+          "assertion": "页面无阻断脚本错误，关键素材请求成功，滚动和指针输入可用。",
+          "evidence": "runtime"
+        }
+      ],
+      "executionLimits": {
+        "authoringPasses": 1,
+        "assetBatches": 1,
+        "refinementPasses": 2,
+        "stopAfterMinutes": 15,
+        "archivePolicy": "best-result-only"
+      }
+    },
+    "reference": {
+      "title": "最后亮着的招牌",
+      "summary": "一段沿同址街景展开的日光档案体验：从今天的最后招牌出发，让立面、票根和放映声逐年显影，最后邀请访客保存这段城市记忆。",
+      "scenePlugin": "composed-world",
+      "productionStatus": "blocked",
+      "theme": {
+        "deep": "#3f4a45",
+        "surface": "#f4eedf",
+        "text": "#26302c",
+        "muted": "#7b786e",
+        "accent": "#b85c38",
+        "accentSoft": "#dfc5a2"
+      },
+      "assets": [
+        {
+          "id": "cinema-memory-street-continuity-v1",
+          "uri": "/creative-assets/cinema-memory-street-continuity-v1.png",
+          "bundlePath": "assets/cinema-memory-street-continuity-v1.png",
+          "kind": "environment",
+          "source": "chatgpt-generated",
+          "role": "persistent same-camera cinema street archive across three eras",
+          "description": "同一座虚构社区影院、同一街角和同一机位的三段年代连续视觉；用于年代切换、档案叠化和最终记忆保存。它是艺术化档案演绎，不是特定城市或影院的真实历史证据，页面必须明确披露这一边界。",
+          "payloadBytes": 2689513,
+          "required": true,
+          "experience": {
+            "anchor": 0.5,
+            "function": "persistent",
+            "visualState": "同一影院建筑、招牌、门廊、街沿和相机位置始终对齐，三段年代状态通过柔和叠化而不是硬切卡片呈现。",
+            "continuity": "禁止替换建筑或机位；只能改变年代材质、胶片色彩、档案标注与局部街景细节，并始终标明为虚构场景的艺术化演绎。",
+            "integration": "full-bleed-environment"
+          }
+        }
+      ]
+    }
+  },
+  "usedAssets": [
+    {
+      "id": "cinema-memory-street-continuity-v1",
+      "uri": "/creative-assets/cinema-memory-street-continuity-v1.png",
+      "bundlePath": "assets/cinema-memory-street-continuity-v1.png",
+      "kind": "environment",
+      "source": "chatgpt-generated",
+      "role": "persistent same-camera cinema street archive across three eras",
+      "description": "同一座虚构社区影院、同一街角和同一机位的三段年代连续视觉；用于年代切换、档案叠化和最终记忆保存。它是艺术化档案演绎，不是特定城市或影院的真实历史证据，页面必须明确披露这一边界。",
+      "payloadBytes": 2689513,
+      "required": true,
+      "experience": {
+        "anchor": 0.5,
+        "function": "persistent",
+        "visualState": "同一影院建筑、招牌、门廊、街沿和相机位置始终对齐，三段年代状态通过柔和叠化而不是硬切卡片呈现。",
+        "continuity": "禁止替换建筑或机位；只能改变年代材质、胶片色彩、档案标注与局部街景细节，并始终标明为虚构场景的艺术化演绎。",
+        "integration": "full-bleed-environment"
+      }
+    }
+  ]
+}

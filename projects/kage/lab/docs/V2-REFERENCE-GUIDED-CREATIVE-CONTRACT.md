@@ -1,4 +1,6 @@
-# V2 — Reference-Guided Creative Contract
+# V2.0–V2.2 — Reference-Guided Creative Contract（历史）
+
+> 本文记录早期 V2.0–V2.2 的探索合同，不再代表当前产品协议。其固定参考数量、Three.js 偏好和失败后候选策略已被后续验证修正。当前唯一版本真相见 [V2.5 Direct Creative Baseline](releases/V2.5-DIRECT-CREATIVE-BASELINE.md)。
 
 V2 keeps the V1 objective—turn an idea into an excellent Three.js web experience—but narrows the model's search space with evidence and explicit decisions.
 
@@ -57,4 +59,3 @@ V2 may reuse V1's stable runtime SDK, schemas, compiler and asset storage. V2 ow
 ## Stop rule
 
 V2 is successful when it produces a clearly related, asset-complete and independently runnable experience within a bounded generation cycle. New capabilities are added only when a failed target demonstrates that they are necessary.
-

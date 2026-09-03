@@ -1,0 +1,454 @@
+{
+  "receipt": {
+    "id": "dedicated-7d00f0096507",
+    "provider": "codex",
+    "model": "gpt-5.6-sol",
+    "status": "compiled",
+    "previewUrl": "/generated-runs/dedicated-7d00f0096507/",
+    "generatedAt": "2026-08-28T07:46:35.415Z",
+    "files": 4,
+    "assets": 0,
+    "sourceBytes": 26628,
+    "hasShaders": false,
+    "compileMs": 559,
+    "attempts": 1,
+    "directory": "generated/runs/dedicated-7d00f0096507"
+  },
+  "request": {
+    "brief": "为社区公共图书馆设计一张“安静座位观察台”网页。页面像日光下的建筑平面图与纸质借阅卡，明亮、克制、可信。用户选择楼层和时段后，同步查看采光、噪声、座位可用率与插座状态，并在平面图中高亮对应区域，最终行动是“预约这个座位”。演示数据必须明确标注。不要暗色全屏、中央3D物体、巨型标题、粒子、玻璃科技风或电影式长滚动。",
+    "seed": 47,
+    "quality": "high",
+    "runId": "run-sq84gy",
+    "selectedId": "generated-1bzv1fd-blueprint-1591ver-library-seat-observatory-blueprint",
+    "creativeContract": {
+      "schemaVersion": 2,
+      "id": "contract-3mtvj4",
+      "brief": "为社区公共图书馆设计一张“安静座位观察台”网页。页面像日光下的建筑平面图与纸质借阅卡，明亮、克制、可信。用户选择楼层和时段后，同步查看采光、噪声、座位可用率与插座状态，并在平面图中高亮对应区域，最终行动是“预约这个座位”。演示数据必须明确标注。不要暗色全屏、中央3D物体、巨型标题、粒子、玻璃科技风或电影式长滚动。",
+      "intent": {
+        "subject": "社区公共图书馆",
+        "audience": "需要快速理解并感受该想法的网页访客",
+        "desiredFeeling": "安静、克制",
+        "narrativeChange": "从编辑式留白进入主体显现，最后形成有张力的整体构图。",
+        "primaryAction": "预约这个座位",
+        "negativeConstraints": [
+          "不要暗色全屏、中央3D物体、巨型标题、粒子、玻璃科技风或电影式长滚动"
+        ]
+      },
+      "referenceEvidence": [
+        {
+          "referenceId": "kage-dream-room",
+          "title": "梦境记录 · 同一房间的记忆形成",
+          "sourceUrl": "../cases/dedicated-8574ee46ab16/",
+          "evidenceLevel": "runtime-verified",
+          "relevance": "命中 安静。 来自已归档并经过浏览器验证的本地最终案例。",
+          "borrow": [
+            "始终保持同一房间、机位与晨光，让模糊到清晰成为可信的记忆变化。",
+            "滚动控制环境清晰度、碎片聚合和空间深度，最终把注意力收束到记录行动。",
+            "连续环境素材承担真实空间，Three.js 只添加记忆回声、景深和过渡，不遮盖空间证据。"
+          ],
+          "avoid": [
+            "不要生成三个无关联梦境画面，也不要把安静主题变成霓虹科技界面。"
+          ]
+        },
+        {
+          "referenceId": "kage-night-greenhouse",
+          "title": "夜生表皮温室 · 资产叙事",
+          "sourceUrl": "../cases/dedicated-r36-delivery-final/",
+          "evidenceLevel": "runtime-verified",
+          "relevance": "命中 建筑。 来自已归档并经过浏览器验证的本地最终案例。",
+          "borrow": [
+            "同一生物材料从种荚、纤维到建筑表皮持续转化，阶段不同但视觉血缘一致。",
+            "变化由滚动推进并保持单向因果关系，最终稳定为可理解的建筑空间。",
+            "多个模型素材分别承担关键状态，必须以共同材质、光向和轮廓维持连续性。"
+          ],
+          "avoid": [
+            "不要使用互不相关的漂亮图片，也不要让粒子装饰替代真正的状态变化。"
+          ]
+        },
+        {
+          "referenceId": "motionsites-interactive-discovery",
+          "title": "MotionSites · Interactive Discovery",
+          "sourceUrl": "https://motionsites.ai/?prompt=interactive-discovery",
+          "evidenceLevel": "catalog-metadata",
+          "relevance": "命中 选择。 支持 editorial-field 体验模式。 只作为外部目录方向信号，不当作实现已验证。",
+          "borrow": [
+            "目录证据表明它属于交互式 Hero，可作为“首屏即发生探索”的方向索引。",
+            "只借鉴交互发现的节奏命题；未取得完整提示词前不推断具体动画实现。",
+            "外部目录只提供方向信号，具体素材策略必须由当前 brief 和本地运行证据决定。"
+          ],
+          "avoid": [
+            "不要把目录缩略图或未知提示词当成已经验证的 Three.js 实现。"
+          ]
+        }
+      ],
+      "experience": {
+        "pattern": "editorial-field",
+        "thesis": "先把社区公共图书馆组织为清晰可读的编辑场，再按目标加入最小充分的视觉增强。",
+        "focalSubject": "社区公共图书馆",
+        "continuityRule": "内容结构、视觉锚点和行动保持稳定；只有用户能够理解的选择或状态变化才改变画面。",
+        "typographyRole": "DOM 承担完整信息层级、导航和行动；Canvas 或 Three.js 只补充主题所需的空间、材质或反馈。",
+        "beats": [
+          {
+            "id": "editorial-context",
+            "position": 0,
+            "purpose": "establish",
+            "visibleState": "建立主题、核心信息与唯一视觉锚点。",
+            "userProgression": "浏览内容或选择明确入口。"
+          },
+          {
+            "id": "editorial-action",
+            "position": 1,
+            "purpose": "resolve",
+            "visibleState": "证据和行动关系稳定，并给出“预约这个座位”。",
+            "userProgression": "完成页面的主要行动。"
+          }
+        ],
+        "pointerRole": "指针优先服务选择、检查和轻量反馈；没有明确语义时不创建跟随动画。",
+        "reducedMotion": "直接展示稳定主构图与离散状态，保留全部内容和行动。",
+        "finalMemoryPoint": "预约这个座位"
+      },
+      "assets": [],
+      "direction": {
+        "visualRole": "procedural-field",
+        "mechanisms": [
+          {
+            "id": "state-storyboard",
+            "title": "状态故事板",
+            "evidenceLevel": "E4",
+            "job": "用连续的视觉状态分配页面节奏，每个状态只承担一个叙事动词。",
+            "reason": "匹配程序化状态场职责。 命中“滚动”。",
+            "sourceCaseIds": [
+              "plety-media-storyboard",
+              "igloo-cinematic-deconstruction"
+            ]
+          },
+          {
+            "id": "branded-media-mask",
+            "title": "品牌蒙版",
+            "evidenceLevel": "E4",
+            "job": "让品牌字形或有语义的轮廓成为媒体容器，并与证据内容共同构图。",
+            "reason": "支持 editorial-field 体验。 命中“数据”。",
+            "sourceCaseIds": [
+              "harvest-masked-statistics"
+            ]
+          }
+        ],
+        "interaction": {
+          "primaryInput": "scroll",
+          "semanticAction": "滚动调整主体、证据和文字的编辑式焦点。",
+          "pointerRole": "secondary",
+          "touchAlternative": "触摸滚动保持同一状态顺序；取消只依赖悬停的内容。",
+          "keyboardAlternative": "提供跳转到关键状态的语义锚点，并保持自然文档阅读顺序。"
+        },
+        "renderer": {
+          "baseLayer": "semantic-dom",
+          "route": "dom-only",
+          "enhancement": "none",
+          "reason": "当前目标可以由语义内容、编辑式排版和离散状态完成。",
+          "threeJustification": "没有证据表明 WebGL 能增加必要理解。",
+          "fallback": "DOM 本身就是完整可用路径。"
+        },
+        "rejectedMechanisms": [
+          {
+            "id": "cinematic-3d-deconstruction",
+            "reason": "缺少真实可检查模型，不能伪造三维拆解。"
+          },
+          {
+            "id": "pointer-reveal",
+            "reason": "目标没有要求通过指针发现信息，鼠标仅保留轻量反馈。"
+          },
+          {
+            "id": "sticky-archive-stack",
+            "reason": "当前核心不是一组并列档案，不使用长堆叠拖慢叙事。"
+          }
+        ],
+        "decisionSummary": "以程序化状态场承担主要视觉，用状态故事板、品牌蒙版组织变化；当前目标可以由语义内容、编辑式排版和离散状态完成。"
+      },
+      "technical": {
+        "presentationStrategy": "dom-led",
+        "capabilitySelection": {
+          "selected": false,
+          "capabilityId": null,
+          "score": 12,
+          "reasons": [
+            "体验模式 editorial-field 不是该能力的优先路线。",
+            "目标命中 滚动、状态 等连续叙事信号。",
+            "需要先建立连续媒体素材职责。"
+          ],
+          "blockers": [
+            "当前素材计划没有连续图片、视频或帧序列。"
+          ],
+          "contract": null
+        },
+        "articulatedSubject": {
+          "selected": false,
+          "capabilityId": null,
+          "score": 36,
+          "reasons": [
+            "主体没有明确的抽象或程序化构造语义。",
+            "没有需要部件承担的结构变化。",
+            "部件命中 层。",
+            "体验模式 editorial-field 支持单一主体连续变化。"
+          ],
+          "blockers": [],
+          "contract": null
+        },
+        "semanticInteraction": {
+          "selected": false,
+          "capabilityId": null,
+          "score": 34,
+          "matchedSignals": [
+            "选择"
+          ],
+          "reasons": [
+            "目标命中“选择”等信息关系信号。",
+            "当前体验模式或素材职责不足以证明交互必须存在。",
+            "现有导演决策只需要滚动推进，不额外增加主要交互。"
+          ],
+          "blockers": [],
+          "evaluatedCapability": {
+            "id": "semantic-responsive-interaction",
+            "evidenceLevel": "E4",
+            "state": "validated",
+            "problem": "装饰性鼠标动效不能帮助用户理解内容，也无法稳定迁移到触摸、键盘和减少动态效果环境。",
+            "meaning": "滚动选择证据层，时间选择改变海岸形态和数字，指针只在局部揭示相对于基准年已经消失的土地。",
+            "inputs": [
+              "scroll",
+              "pointer",
+              "touch",
+              "keyboard"
+            ],
+            "outputs": [
+              "scene-shape",
+              "evidence-value",
+              "narrative-layer",
+              "selection-state"
+            ],
+            "baseInterface": "语义 DOM 始终提供年代按钮、损失数字、解释文字和当前状态，不依赖 WebGL 完成比较。",
+            "enhancedInterface": "WebGL 把年代选择映射为同一海岸场的连续形变，并让局部证据透镜显示相对损失范围。",
+            "reducedMotionRule": "减少动态效果时立即切换到目标年代和阶段，停止连续漂移，但保留所有数值和比较结果。",
+            "rejectionRules": [
+              "移除交互后信息理解完全不变时拒绝晋级。",
+              "触摸、键盘或无 WebGL 回退无法完成比较时拒绝晋级。"
+            ],
+            "evidence": [
+              {
+                "id": "coast-1984",
+                "year": 1984,
+                "label": "基准海岸",
+                "lossSquareKilometers": 0,
+                "retreatMeters": 0,
+                "relativeWaterCentimeters": 0,
+                "sceneMorph": 0,
+                "summary": "沙洲仍然连续，潮沟尚未切断内侧湿地。"
+              },
+              {
+                "id": "coast-2004",
+                "year": 2004,
+                "label": "潮沟扩张",
+                "lossSquareKilometers": 3.2,
+                "retreatMeters": 186,
+                "relativeWaterCentimeters": 8,
+                "sceneMorph": 0.5,
+                "summary": "外侧沙洲变薄，新的潮沟开始把湿地分成孤立片区。"
+              },
+              {
+                "id": "coast-2026",
+                "year": 2026,
+                "label": "临界断面",
+                "lossSquareKilometers": 8.7,
+                "retreatMeters": 421,
+                "relativeWaterCentimeters": 17,
+                "sceneMorph": 1,
+                "summary": "连续岸线已经断裂，曾经被遮蔽的社区直接面对风暴潮。"
+              }
+            ]
+          }
+        },
+        "identityEvidence": {
+          "selected": false,
+          "score": 18,
+          "reason": "拒绝：缺少同时指向身份与证据的明确目标。",
+          "rejectedBy": [],
+          "matchedSignals": [
+            "可信"
+          ],
+          "capabilityId": null
+        },
+        "placeGrounding": {
+          "selected": false,
+          "capabilityId": null,
+          "strategy": "none",
+          "score": 0,
+          "matchedSignals": [],
+          "reasons": [
+            "目标没有要求地点事实、空间关系或地域来源，不应为了视觉效果强行加入地图。",
+            "继续由主题、素材和交互目标选择最小充分技术路线。"
+          ],
+          "requirements": {
+            "geography": "not-applicable",
+            "map": "avoid",
+            "dataTruth": "不引入与目标无关的地点、地图或路线事实。",
+            "creativeFreedom": "围绕主体、受众、情绪变化和最终行动选择表达，不增加地域模板。"
+          }
+        },
+        "styleDiversity": {
+          "fingerprint": {
+            "composition": "typographic-canvas",
+            "palette": "daylight-neutral",
+            "motion": "state-switch",
+            "spatial": "data-field",
+            "typography": "mono-instrument",
+            "media": "canvas-2d"
+          },
+          "nearestCaseId": "dedicated-1b9f0b05107b",
+          "nearestDistance": 5,
+          "minimumDifferentAxes": 2,
+          "mustDifferOn": [
+            "composition",
+            "motion",
+            "spatial",
+            "typography"
+          ],
+          "avoidRepeating": [
+            "不要默认复用暗色全屏背景、中央主体和巨型标题的组合。",
+            "不要把滚动淡入、漂浮粒子和柔光当成所有主题的通用答案。",
+            "不得复刻最相近案例 dedicated-1b9f0b05107b 的整体构图和运动语法。"
+          ],
+          "rationale": "本方向与最相近案例 dedicated-1b9f0b05107b 在 5 个风格轴上不同；差异是生成约束，不是固定模板。"
+        },
+        "domResponsibilities": [
+          "承载可阅读内容、导航和最终行动。",
+          "在 WebGL 不可用时保留完整语义顺序。"
+        ],
+        "webglResponsibilities": [
+          "承载空间记忆、镜头关系和连续状态变化。",
+          "让素材融入环境并提供克制的交互反馈。"
+        ],
+        "targetFrameTimeMs": 16.7,
+        "maxInitialAssetBytes": 8000000,
+        "targetDevices": [
+          "desktop",
+          "mobile"
+        ]
+      },
+      "acceptance": [
+        {
+          "id": "intent-visible",
+          "priority": "blocker",
+          "assertion": "首屏和终点能够对应原始主体、情绪变化和最终行动。",
+          "evidence": "screenshot-ending"
+        },
+        {
+          "id": "opening-composed",
+          "priority": "high",
+          "assertion": "首屏存在明确主体和空间坐标，没有空黑屏、文字裁切或主体被遮挡。",
+          "evidence": "screenshot-opening"
+        },
+        {
+          "id": "middle-causal",
+          "priority": "high",
+          "assertion": "中段变化能够解释能力、转化或探索关系，而不只是装饰动画。",
+          "evidence": "screenshot-middle"
+        },
+        {
+          "id": "borderless-integration",
+          "priority": "high",
+          "assertion": "主体和环境没有棋盘格、矩形图片边界或不自然的发光方框。",
+          "evidence": "screenshot-middle"
+        },
+        {
+          "id": "mobile-readable",
+          "priority": "blocker",
+          "assertion": "390px 移动端无横向溢出，主体、正文和行动均可见。",
+          "evidence": "screenshot-mobile"
+        },
+        {
+          "id": "semantic-fallback",
+          "priority": "normal",
+          "assertion": "关闭 WebGL 或减少运动后仍保留完整内容顺序和行动。",
+          "evidence": "dom"
+        },
+        {
+          "id": "runtime-clean",
+          "priority": "blocker",
+          "assertion": "页面无阻断脚本错误，关键素材请求成功，滚动和指针输入可用。",
+          "evidence": "runtime"
+        }
+      ],
+      "executionLimits": {
+        "authoringPasses": 1,
+        "assetBatches": 1,
+        "refinementPasses": 1,
+        "stopAfterMinutes": 15,
+        "archivePolicy": "best-result-only"
+      }
+    },
+    "reference": {
+      "title": "安静座位观察台",
+      "summary": "一张以日光建筑平面与纸质借阅卡为视觉核心的短路径观察台：选择条件、比较区域、确认并预约座位。所有环境数值明确为演示数据。",
+      "scenePlugin": "composed-world",
+      "productionStatus": "blocked",
+      "theme": {
+        "deep": "#3f5664",
+        "surface": "#f7f1e4",
+        "text": "#24343d",
+        "muted": "#74818a",
+        "accent": "#d99a3d",
+        "accentSoft": "#f1d9a6"
+      },
+      "assets": []
+    }
+  },
+  "usedAssets": [],
+  "postGenerationCorrection": {
+    "schemaVersion": 1,
+    "correctedAt": "2026-08-28T08:29:34.4109468Z",
+    "reason": "首版契约没有识别“选择后同步更新”，误选 dom-only / scroll；首版实现又以不透明根背景覆盖 Canvas，并只提供选择边框闪烁。",
+    "finalDirection": {
+      "pattern": "editorial-field",
+      "rendererRoute": "dom-canvas-hybrid",
+      "primaryInput": "direct-navigation",
+      "semanticInteractionSelected": true,
+      "canvasRole": "程序化建筑平面、区域状态与高亮",
+      "domRole": "楼层/时段选择、环境指标、推荐、预约及无 WebGL 回退"
+    },
+    "quality": {
+      "mechanicalVerdict": "pass",
+      "mechanicalScore": 100,
+      "visualVerdict": "pass",
+      "visualScore": 92,
+      "refinementPasses": 1
+    },
+    "interaction": {
+      "initial": "2-1-3",
+      "changedByFloorAndTime": "3-2-0",
+      "changedByZone": "3-2-2",
+      "metricsChanged": true,
+      "recommendationChanged": true,
+      "finalCopyChanged": true,
+      "actionConfirmed": true,
+      "webglFallbackPassed": true
+    },
+    "evidence": [
+      ".artifacts/r27-library-seat/interaction-report.json",
+      ".artifacts/r27-library-seat/mechanical/visual-review.json",
+      "docs/v2-research/V2-END-TO-END-VALIDATION-R27.md"
+    ]
+  },
+  "userVisualReassessment": {
+    "status": "resolved",
+    "priorScore": 92,
+    "correctedInterimScore": 58,
+    "finalScore": 86,
+    "reason": "用户指出四块矩形、楼层拓扑和光场不足；撤回精选后重构为空间可信的三楼层建筑平面。",
+    "evidence": [
+      ".artifacts/r27-library-seat-refined/01-opening.jpg",
+      ".artifacts/r27-library-seat-refined/02-middle.jpg",
+      ".artifacts/r27-library-seat/05-selected-state.jpg",
+      ".artifacts/r27-library-seat-refined/03-final.jpg",
+      ".artifacts/r27-library-seat-refined/04-mobile.jpg",
+      ".artifacts/r27-library-seat/interaction-report.json"
+    ]
+  }
+}

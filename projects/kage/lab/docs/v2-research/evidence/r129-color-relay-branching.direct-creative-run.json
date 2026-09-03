@@ -1,0 +1,302 @@
+{
+  "schemaVersion": 1,
+  "creativeProtocolVersion": 2,
+  "id": "direct-r129-color-relay-branching",
+  "goalPlayback": {
+    "originalBrief": "为一场虚构的城市高彩接力演练设计动态网页。四支颜色队伍从屏幕四边进入同一交接区；访客选择一支队伍，再选择“提前交棒/压线交棒”路线，同一根接力棒沿不同轨迹移动，交接区重叠、节奏和最终队形产生可见差异，随后两条路线汇合到“保存这次交接方案”。画面明亮、高彩、沉浸式，像一张正在运行的运动图形海报，不要参数工作台、卡片目录、中央产品或长滚动。结果只作为视觉编排模拟，不冒充真实赛事成绩。",
+    "subject": "一场虚构的城市高彩接力演练",
+    "audience": "需要快速理解并感受该想法的网页访客",
+    "desiredOutcome": "在一张明亮高彩的运动图形海报中，选择同一队伍的两种交棒路线，看见轨迹、交接重叠与终点队形的真实差异，并保存虚构方案。",
+    "primaryAction": "保存这次交接方案",
+    "hardConstraints": [
+      "访客选择一支队伍，再选择“提前交棒/压线交棒”路线，同一根接力棒沿不同轨迹移动，交接区重叠、节奏和最终队形产生可见差异，随后两条路线汇合到“保存这次交接方案”",
+      "画面明亮、高彩、沉浸式，像一张正在运行的运动图形海报，不要参数工作台、卡片目录、中央产品或长滚动"
+    ],
+    "preferences": [
+      "跑道本身承担构图、导航与分支关系，不生成参数工作台或卡片目录",
+      "同一接力棒的两条路线必须有不同几何、节奏和终点队形",
+      "持续披露为虚构视觉模拟，不冒充真实赛事、成绩或训练建议"
+    ]
+  },
+  "selectedDirection": {
+    "id": "direction-1hld4dm",
+    "title": "高彩城市接力演练 · 分支汇合运动海报",
+    "experienceForm": "branching-confluence",
+    "rationale": "四条饱和色跑道从边缘汇入共享交接区，队伍选择和交棒策略直接改变同一 SVG 路径、接力棒节奏和跑者终点队形；两支路线在同一结果票据汇合并保留路径身份。"
+  },
+  "referencePrinciples": [
+    {
+      "referenceId": "motionsites-kinetic-layout",
+      "title": "MotionSites kinetic research · movement as layout",
+      "principle": "借用运动路径直接组织构图、阅读方向和第一视觉的原理。",
+      "relevance": "四条跑道同时承担页面骨架和选择入口；不复制任何案例的主题、文案或镜头。",
+      "sourceUrl": "https://motionsites.ai/"
+    },
+    {
+      "referenceId": "direct-r116-kinetic-score",
+      "title": "动作记谱台 · 输入与轨迹共享状态",
+      "principle": "借用真实输入、运动轨迹和结果解释由同一状态驱动的原理。",
+      "relevance": "策略按钮驱动路径、接力棒、交接重叠和队形；不复制工作台、滑杆或舞蹈题材。",
+      "sourceUri": "../pages/v2/deliveries/kinetic-score/"
+    },
+    {
+      "referenceId": "legacy-branching-runtime",
+      "title": "旧 branching runtime · choice edges and rejoin",
+      "principle": "借用显式选择、确定分支和共同汇合的已验证机制。",
+      "relevance": "R129 将机制重构为主题专属高彩运动舞台，并以最终浏览器证据重新验收。",
+      "sourceUri": "../src/experience/runtime.ts"
+    }
+  ],
+  "assetPlan": {
+    "batchId": "assets-r129-color-relay-branching",
+    "strategy": "programmatic",
+    "rationale": "唯一程序化素材批次由持续 SVG 跑道、接力棒、交接区和跑者队形承担关键语义；Canvas 仅增强速度尾迹，禁用后完整分支和行动仍成立。",
+    "assets": [
+      {
+        "id": "programmatic-color-relay-field",
+        "role": "四队持续跑道、共享交接区、两条可辨路径、同一接力棒和分支终点队形",
+        "source": "programmatic",
+        "required": true
+      }
+    ]
+  },
+  "interactionRationale": {
+    "mode": "direct",
+    "audioApplicable": false,
+    "rationale": "鼠标、触摸和键盘选择队伍与交棒策略；同一状态同时改变 SVG 几何、接力棒运动、交接区重叠、终点队形和保存语义。"
+  },
+  "visualAmbition": {
+    "schemaVersion": 1,
+    "intentLevel": "immersive",
+    "intentRationale": "视觉野心等级 immersive 来自用户明确的体验要求：把一场虚构的城市高彩接力演练组织为一次可选择、可重放并能汇合的动态编排：访客先确定参与对象，再选择路线，看见同一主体产生不同后果，最终完成“保存这次交接方案”。。它只决定本次内容需要的表达强度，不继承历史案例的布局、风格或渲染器禁令。",
+    "heroMoment": {
+      "title": "一场虚构的城市高彩接力演练 · 保存这次交接方案",
+      "description": "开场以“全部参与对象从不同方向进入同一共享视觉场，核心主体、交接关系和最终行动目标建立清晰身份。”建立主体，并让后续变化服务于“两条路线汇合到“保存这次交接方案””。",
+      "themeConnection": "视觉锚点必须直接证明“一场虚构的城市高彩接力演练”和“把一场虚构的城市高彩接力演练组织为一次可选择、可重放并能汇合的动态编排：访客先确定参与对象，再选择路线，看见同一主体产生不同后果，最终完成“保存这次交接方案”。”；即使隐藏标题，也能从对象、空间或数据关系辨认主题。；这一记忆点直接指向“保存这次交接方案”。",
+      "appearsWithinSeconds": 5,
+      "observableRuntimeChange": {
+        "trigger": "用户执行“先选择参与对象，再从两条明确路线中选择其一；同一视觉主体、路线后果、路径历史与共同汇合行动由同一分支状态驱动。”",
+        "from": "全部参与对象从不同方向进入同一共享视觉场，核心主体、交接关系和最终行动目标建立清晰身份。",
+        "to": "两条路线汇合到同一结果与“保存这次交接方案”，同时保留当前对象、所选路线及其可见后果。"
+      }
+    },
+    "rendering": {
+      "primary": "svg",
+      "supporting": [
+        "dom-css"
+      ],
+      "rationale": "以 svg 承担“在同一动态构图中持续表现“一场虚构的城市高彩接力演练”的参与对象、核心主体、两条路线、关系变化与汇合队形。”的主要可见职责；语义内容和行动仍由 DOM 保底。选择依据是 分支路径、参与对象、汇合关系与最终队形优先由语义 DOM 和内联 SVG 统一表达；Canvas 2D 只可作为可关闭的运动增强，不自动升级为 Shader。"
+    },
+    "spatialDepth": {
+      "mode": "layered-2d",
+      "purpose": "以共享坐标、遮挡和有职责的图形层表达“两条路线汇合到“保存这次交接方案””，不把二维运动误报为体积空间。",
+      "cues": [
+        "scale",
+        "occlusion"
+      ]
+    },
+    "motionArc": {
+      "beats": [
+        {
+          "phase": "opening",
+          "driver": "time",
+          "visualState": "全部参与对象从不同方向进入同一共享视觉场，核心主体、交接关系和最终行动目标建立清晰身份。",
+          "thematicPurpose": "理解共享场与核心主体，再进入第一次选择。"
+        },
+        {
+          "phase": "exploration",
+          "driver": "direct-input",
+          "visualState": "两条内容明确的路线作为上下文决策出现；选择状态与核心主体、结果区域和返回入口共享同一数据源。",
+          "thematicPurpose": "选择其中一条路线，并可返回重选另一条。"
+        },
+        {
+          "phase": "resolution",
+          "driver": "direct-input",
+          "visualState": "两条路线汇合到同一结果与“保存这次交接方案”，同时保留当前对象、所选路线及其可见后果。",
+          "thematicPurpose": "确认路径历史和最终构图后完成行动。"
+        }
+      ],
+      "runtimeAdvantage": "运行时让用户从“全部参与对象从不同方向进入同一共享视觉场，核心主体、交接关系和最终行动目标建立清晰身份。”抵达“两条路线汇合到同一结果与“保存这次交接方案”，同时保留当前对象、所选路线及其可见后果。”；这种状态变化服务于主题，不能由一张静态截图等价替代。"
+    },
+    "interactionToScene": [
+      {
+        "input": "用户执行“先选择参与对象，再从两条明确路线中选择其一；同一视觉主体、路线后果、路径历史与共同汇合行动由同一分支状态驱动。”",
+        "sceneResponse": "用户选择或输入时，视觉锚点、可见证据与语义数值必须同步变化，不能只改变边框、颜色或说明文字。",
+        "productMeaning": "可见变化必须帮助用户理解“两条路线汇合到“保存这次交接方案””，并自然抵达“保存这次交接方案”。"
+      }
+    ],
+    "assetCredibility": {
+      "level": "conceptual-coherent",
+      "strategy": "关键素材分别承担：在同一动态构图中持续表现“一场虚构的城市高彩接力演练”的参与对象、核心主体、两条路线、关系变化与汇合队形。。",
+      "disclosure": "程序化或生成内容按概念表达使用，不伪装为真实测量、地点或商品。"
+    },
+    "fallbackPerformance": {
+      "targetFps": 60,
+      "maxDevicePixelRatio": 2.5,
+      "initialTransferBudgetMb": 7.63,
+      "mobileFallback": "simplified-scene",
+      "reducedMotionFallback": "key-states",
+      "rendererFailureFallback": "dom-content"
+    }
+  },
+  "attemptBudget": {
+    "limits": {
+      "directionSelections": 1,
+      "assetBatches": 1,
+      "builds": 1,
+      "deterministicRepairs": 2,
+      "visualRefinements": 1
+    },
+    "used": {
+      "directionSelections": 1,
+      "assetBatches": 1,
+      "builds": 1,
+      "deterministicRepairs": 0,
+      "visualRefinements": 1
+    }
+  },
+  "stageReports": [
+    {
+      "stage": "bounded-completion",
+      "elapsedMs": 0,
+      "status": "completed",
+      "summary": "一个方向、一批程序化素材、一次构建和一次明确视觉精修后，最终 bundle 已通过桌面开场、同队双分支、390px reduced-motion 与强制 fallback；达到阶段完成条件并停止。"
+    }
+  ],
+  "finalCandidate": {
+    "runId": "direct-r129-color-relay-branching",
+    "bundleHash": "1ccc53197308a7f6411a1157774b65980284dab773c50c8189f7210195c7e2cc"
+  },
+  "adaptiveEvidence": {
+    "schemaVersion": 1,
+    "runId": "direct-r129-color-relay-branching",
+    "bundleHash": "1ccc53197308a7f6411a1157774b65980284dab773c50c8189f7210195c7e2cc",
+    "profile": {
+      "schemaVersion": 1,
+      "interactionMode": "direct",
+      "audioApplicable": false,
+      "requiredCheckpoints": [
+        "opening",
+        "core",
+        "mobile",
+        "interaction"
+      ]
+    },
+    "checkpoints": [
+      {
+        "kind": "opening",
+        "runId": "direct-r129-color-relay-branching",
+        "bundleHash": "1ccc53197308a7f6411a1157774b65980284dab773c50c8189f7210195c7e2cc",
+        "passed": true,
+        "summary": "桌面开场在 458ms 内呈现四队高彩跑道、共同交接区、主题和选择入口，无运行错误或调试残留。"
+      },
+      {
+        "kind": "core",
+        "runId": "direct-r129-color-relay-branching",
+        "bundleHash": "1ccc53197308a7f6411a1157774b65980284dab773c50c8189f7210195c7e2cc",
+        "passed": true,
+        "summary": "同一北岸青队的提前交棒与压线交棒拥有不同 SVG path、routeHash、交接重叠和四名跑者终点 transforms，并汇合到同一结果票据。"
+      },
+      {
+        "kind": "mobile",
+        "runId": "direct-r129-color-relay-branching",
+        "bundleHash": "1ccc53197308a7f6411a1157774b65980284dab773c50c8189f7210195c7e2cc",
+        "passed": true,
+        "summary": "390×844 reduced-motion 通过真实触摸完成队伍选择、分支与保存，无横向溢出；关键分支后果和行动仍可见。"
+      },
+      {
+        "kind": "interaction",
+        "runId": "direct-r129-color-relay-branching",
+        "bundleHash": "1ccc53197308a7f6411a1157774b65980284dab773c50c8189f7210195c7e2cc",
+        "passed": true,
+        "summary": "鼠标、触摸、键盘、返回策略、重放与保存共享真实分支状态；Canvas fallback 保留完整 SVG/DOM 路径和行动。"
+      }
+    ],
+    "hardGates": {
+      "runtimeClean": true,
+      "criticalAssetsLoaded": true,
+      "primaryActionReachable": true,
+      "mobileComplete": true,
+      "truthfulClaims": true,
+      "interactionVerified": true,
+      "audioVerified": null
+    },
+    "visualQuality": {
+      "schemaVersion": 1,
+      "verdict": "pass",
+      "score": 94,
+      "dimensions": {
+        "goalClarity": 95,
+        "creativeDistinctiveness": 95,
+        "craftCohesion": 93,
+        "assetIntegration": 94,
+        "interactionValue": 95,
+        "mobileReadiness": 91
+      },
+      "summary": "暖白印刷底、四支高饱和跑道、共享交接区、同一接力棒和两种终点队形形成主题专属运动海报语言；分支后果可见且直接服务交棒策略理解。",
+      "findings": [
+        {
+          "code": "visual-simulation-only",
+          "severity": "minor",
+          "checkpoint": "core",
+          "message": "路线、节奏和队形是视觉编排模拟，不代表真实赛事结果、成绩或训练建议；页面页眉持续披露。"
+        }
+      ]
+    },
+    "macroStructureReview": {
+      "mode": "content-fit-gate",
+      "candidate": {
+        "runId": "direct-r129-color-relay-branching",
+        "layout": "branching-confluence",
+        "persistentControlPanel": false,
+        "visibleParameterControls": false,
+        "realtimeMetricCluster": false,
+        "primaryAction": "save-configuration"
+      },
+      "inertia": {
+        "mode": "advisory-only",
+        "detected": false,
+        "matchedRunIds": [],
+        "repeatedAxes": [],
+        "mustChange": false,
+        "recommendation": "未发现足以影响当前方向的宏观骨架惯性；继续由内容适配和最终效果决定页面形态。"
+      },
+      "persistentWorkbench": false,
+      "contentJustified": true,
+      "verdict": "pass",
+      "findingCode": null,
+      "summary": "当前候选不是持久参数工作台，无需为了近期案例差异而改变内容适配的宏观结构。"
+    }
+  },
+  "wowEvidence": {
+    "schemaVersion": 1,
+    "runId": "direct-r129-color-relay-branching",
+    "bundleHash": "1ccc53197308a7f6411a1157774b65980284dab773c50c8189f7210195c7e2cc",
+    "assessment": {
+      "schemaVersion": 1,
+      "intentLevel": "immersive",
+      "required": true,
+      "verdict": "pass",
+      "score": 95,
+      "dimensions": {
+        "fiveSecondImpact": 95,
+        "runtimeAdvantage": 95,
+        "themeMemorability": 95,
+        "motionDepthMeaning": 94,
+        "assetIntegrationCredibility": 94,
+        "craftCohesion": 94
+      },
+      "observation": {
+        "heroMomentObserved": true,
+        "runtimeAdvantageOverStaticObserved": true,
+        "themeSpecificMemoryObserved": true,
+        "meaningfulMotionOrDepthObserved": true,
+        "credibleAssetIntegrationObserved": true,
+        "summary": "首屏直接以四条高彩跑道和共同交接区建立运动海报记忆点，入口与主视觉是同一组图形关系。 同一队伍的两次真实选择产生不同 SVG 路径、接力棒节奏、交接重叠和队形；静态图片无法表达分支因果。 可复述记忆是四条彩色跑道汇入一个交接区，再让同一根接力棒以弧线或折线形成两种终点队形。 路径运动、交接区伸缩与跑者阵形共同解释策略差异，动效承担产品语义而非装饰。 程序化 SVG 素材原生承担跑道、路径、交接和队形职责，Canvas 仅做可移除的尾迹增强。 压缩赛会字、印刷网点、硬边黑线、荧光青、珊瑚红、太阳黄与钴蓝形成统一且不落入近期工作台惯性的视觉语言。 真实输入改变所选队伍、分支几何、运动节奏、交接重叠、终点队形和保存完成态。 390px reduced-motion 用触摸完成分支与保存，关键文字、交接区和结果票据可读且无横向溢出。 强制禁用 Canvas 后，SVG 跑道、路线、队形、共同结果和保存行动全部保留。"
+      },
+      "findings": []
+    }
+  },
+  "verdict": "pass",
+  "stopReason": null
+}

@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "assetBatch": "r163-rainlight-street-v1",
+  "batchCount": 1,
+  "generator": "OpenAI built-in image generation",
+  "sourcePath": "D:/codex/home/generated_images/01a0304e-ca17-7101-be56-637db8b892b0/exec-78335c67-6e43-4aab-96db-1a7c7044dddf.png",
+  "projectPath": "pages/v2/deliveries/rainlight-walk-recorder/assets/rainlight-street-v1.png",
+  "useCase": "photorealistic-natural",
+  "prompt": "Cinematic but believable rain-washed East Asian neighborhood at blue hour from pedestrian eye level; one continuous curved walking corridor from close wet foreground to a warm amber doorway; premium editorial location photography, realistic 35mm film texture, cool cyan-blue ambient light and sparse tungsten reflections; wide panorama with interface negative space; no readable text, logos, UI, route overlay, cyberpunk, central hero person or watermark.",
+  "role": "Persistent spatial product scene for entry, walking progress, completion and saved result",
+  "status": "selected-first-batch"
+}

@@ -110,6 +110,51 @@
       </section>
 
       <section class="wb-results" aria-labelledby="results-title">
+        <section id="experience-quality" class="wb-experience-quality" data-state="running" aria-labelledby="experience-quality-title" aria-live="polite" hidden>
+          <div class="wb-experience-quality__head">
+            <div><span>CURRENT RESULT</span><strong id="experience-quality-title">当前生成结果</strong></div>
+            <b id="experience-quality-verdict" data-result-verdict>等待开始</b>
+          </div>
+          <p id="experience-quality-summary" class="wb-experience-quality__summary" data-result-summary>输入想法后，这里会直接说明当前做到哪一步，以及结果是否可以查看。</p>
+          <dl>
+            <div><dt>网页生成</dt><dd data-result-page>尚未开始</dd></div>
+            <div><dt>结构与交互</dt><dd id="experience-quality-structure" data-result-structure>等待检查</dd><small id="experience-quality-coverage" data-result-coverage>尚未开始</small></div>
+            <div><dt>视觉质量</dt><dd id="experience-quality-score" data-result-visual>等待检查</dd></div>
+            <div><dt>精修结论</dt><dd id="experience-quality-archive" data-result-refinement>尚未开始</dd></div>
+          </dl>
+          <div class="wb-experience-quality__footer">
+            <p><span>为什么停在这里</span><strong data-result-stop-reason>任务尚未开始。</strong></p>
+            <a class="wb-experience-quality__open" data-result-link href="./" aria-disabled="true" tabindex="-1">打开当前网页 ↗</a>
+          </div>
+          <details class="wb-experience-quality__issues" data-result-issue-details hidden>
+            <summary>查看待改问题</summary>
+            <ul id="experience-quality-issues" data-result-issues aria-label="需要修订的问题"></ul>
+          </details>
+        </section>
+        <section id="v2-contract-summary" class="wb-v2-contract" data-state="idle" aria-labelledby="v2-contract-title" aria-live="polite">
+          <div class="wb-v2-contract-head">
+            <span>V2 / OBJECTIVE GUARDRAIL</span>
+            <strong id="v2-contract-state">等待有效想法</strong>
+          </div>
+          <dl>
+            <div><dt>参考方向</dt><dd id="v2-contract-references">尚未选择</dd></div>
+            <div><dt>已选能力</dt><dd id="v2-contract-capabilities">尚未选择</dd></div>
+            <div><dt>实现路线</dt><dd id="v2-contract-renderer">尚未选择</dd></div>
+            <div><dt>执行边界</dt><dd id="v2-contract-limits">单候选 · 有限精修</dd></div>
+            <div><dt>创新方向</dt><dd id="v2-contract-style">等待目标</dd></div>
+          </dl>
+          <div class="wb-v2-rationale" aria-label="V2 决策依据">
+            <div><span>为什么参考</span><p id="v2-contract-reference-reasons">等待目标后解释</p></div>
+            <div><span>为什么选能力</span><p id="v2-contract-capability-reasons">等待目标后解释</p></div>
+            <div><span>本次如何验收</span><p id="v2-contract-review-modes">叙事状态 · 移动端减弱动效</p></div>
+            <div><span>如何避免重复</span><p id="v2-contract-style-difference">等待目标后比较历史案例</p></div>
+          </div>
+          <div class="wb-intent-boundary" aria-label="目标来源与系统边界">
+            <div><span>用户原始目标</span><p id="intent-origin">当前文本框输入 · 不允许系统静默改写</p></div>
+            <div><span>系统技术边界</span><p id="intent-system-boundary">质量优先 · 素材、DOM、Canvas 与 Three.js 按目标选择</p></div>
+          </div>
+          <p id="v2-contract-title">先用已验证经验缩小范围，再让模型在边界内创作最终网页。</p>
+        </section>
         <section id="outcome-route" class="wb-outcome-route" data-tone="neutral" aria-labelledby="outcome-route-title" aria-live="polite">
           <div class="wb-outcome-route-head">
             <span>本次交付路线</span>
@@ -118,9 +163,22 @@
           <ol>
             <li data-outcome-step="assets" data-state="waiting"><span>01</span><div><strong>素材智能选择</strong><small>项目优选 / 用户素材优先，MiniMax 仅作备用</small></div></li>
             <li data-outcome-step="authoring" data-state="waiting"><span>02</span><div><strong>Codex 专属构建</strong><small>生成独立页面代码，不套固定模板</small></div></li>
-            <li data-outcome-step="reviewing" data-state="waiting"><span>03</span><div><strong>真实页面验收</strong><small>首屏 · 中段 · 末段 · 移动端</small></div></li>
+            <li data-outcome-step="reviewing" data-state="waiting"><span>03</span><div><strong>真实页面验收</strong><small>按叙事节拍 · 移动端 · 按需交互/回退</small></div></li>
           </ol>
           <p id="outcome-route-note">优选或用户素材优先；MiniMax 仅在适合时备用。</p>
+        </section>
+        <section id="execution-trace" class="wb-execution-trace" data-state="running" aria-labelledby="execution-trace-title" aria-live="polite" hidden>
+          <div class="wb-execution-trace-head">
+            <div><span>ACTUAL EXECUTION</span><strong id="execution-trace-title">实际执行与耗时</strong></div>
+            <b data-execution-state>等待任务</b>
+          </div>
+          <ol>
+            <li data-execution-phase="planning" data-state="waiting"><span>01</span><div><strong>目标规划</strong><small data-execution-phase-state>等待</small></div><em data-execution-duration>—</em></li>
+            <li data-execution-phase="assets" data-state="waiting"><span>02</span><div><strong>素材准备</strong><small data-execution-phase-state>等待</small></div><em data-execution-duration>—</em></li>
+            <li data-execution-phase="authoring" data-state="waiting"><span>03</span><div><strong>Codex 构建</strong><small data-execution-phase-state>等待</small></div><em data-execution-duration>—</em></li>
+            <li data-execution-phase="reviewing" data-state="waiting"><span>04</span><div><strong>浏览器验收</strong><small data-execution-phase-state>等待</small></div><em data-execution-duration>—</em></li>
+          </ol>
+          <p data-execution-note>任务开始后显示真实阶段消息与耗时。</p>
         </section>
         <section class="wb-creative-stage" aria-labelledby="creative-stage-heading">
           <div class="wb-stage-heading">

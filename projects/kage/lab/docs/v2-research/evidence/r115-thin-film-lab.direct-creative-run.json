@@ -1,0 +1,321 @@
+{
+  "schemaVersion": 1,
+  "id": "direct-thin-film-lab-r114",
+  "goalPlayback": {
+    "originalBrief": "为 Kage V2 验证一个真正吸引眼球、具有动态和空间质感的优秀网页方向。主题必须未使用过，Three.js 或 Shader 只在确实增强主题表达时使用；最终结果要有真实互动、移动端和失败回退，并以最终生成效果为第一目标。",
+    "subject": "薄膜干涉实验室",
+    "audience": "希望把一句创意变成具有品牌记忆与实时互动网页的创作者",
+    "desiredOutcome": "在前五秒建立主题专属的视觉记忆，并让用户通过观察角、膜厚和张力理解综合色谱正在被自己调制",
+    "primaryAction": "保存这组模拟光谱",
+    "hardConstraints": [
+      "所有数值必须明确为视觉模拟而非实验测量",
+      "最终版本必须支持 390px、低动态和 WebGL 失败回退"
+    ],
+    "preferences": [
+      "明亮物理实验室而不是暗色科技模板",
+      "用持续 WebGL 场景与实时材质建立吸引力"
+    ]
+  },
+  "selectedDirection": {
+    "id": "aurora-film-material-instrument",
+    "title": "AURORA FILM · 薄膜干涉实验室",
+    "experienceForm": "明亮实验室中的电影化程序材质工具",
+    "rationale": "薄膜干涉本身可以诚实地由程序材质表达，不需要伪造真实商品模型；金属环、薄膜形成、干涉色、焦散和参数反馈共同构成一个主题专属的持续场景。"
+  },
+  "referencePrinciples": [
+    {
+      "referenceId": "positive-iris-articulated-reveal",
+      "title": "IRIS · 程序化关节主体展开",
+      "principle": "固定 WebGL 场景贯穿体验，并让结构、相机、材质和灯光共享一条可观察时间线。",
+      "relevance": "本页借鉴持续主体与统一时间线，不复制花瓣外形、黑金风格或其具体布局。",
+      "sourceUrl": "https://iamtechartist.github.io/Threejs-3D-Webpage/"
+    },
+    {
+      "referenceId": "sports-ai-subject-field",
+      "title": "Sports AI · 主体安全区与媒体标本场",
+      "principle": "让动态主体拥有清楚安全区，文字和行动服从主体构图而非默认居中。",
+      "relevance": "明亮留白与偏置环体使实时材质成为视觉锚点，同时保留可读 DOM。",
+      "sourceUri": "src/v2/local-exemplar-research.ts"
+    },
+    {
+      "referenceId": "positive-semantic-direct-interaction",
+      "title": "潮线证词 · 输入、画面与结果共享状态",
+      "principle": "一个有限状态同时驱动画面、数值与结果说明，人工输入能直接接管体验。",
+      "relevance": "滚轮、指针、膜厚和张力共同改变 Shader 与可见读数，避免装饰性跟随。",
+      "sourceUri": "pages/v2/prototypes/semantic-interaction/"
+    }
+  ],
+  "assetPlan": {
+    "batchId": "thin-film-programmatic-01",
+    "strategy": "programmatic",
+    "rationale": "本主题的可信主体就是可解释的光学视觉模拟；一次程序材质批次足以承担环体、薄膜和焦散，不需要外部图片或伪造商品模型。",
+    "assets": [
+      {
+        "id": "metal-ring-film-system",
+        "role": "持续存在的金属环与视角相关薄膜干涉 Shader",
+        "source": "programmatic",
+        "required": true
+      },
+      {
+        "id": "spectral-caustic-field",
+        "role": "与同一厚度和观察状态同步的受控综合色散光斑",
+        "source": "programmatic",
+        "required": true
+      }
+    ]
+  },
+  "interactionRationale": {
+    "mode": "mixed",
+    "audioApplicable": false,
+    "rationale": "滚轮负责连续膜厚时间线，指针负责观察与光照角，参数控件负责精确调制；声音不是薄膜视觉模拟承诺的核心能力。"
+  },
+  "visualAmbition": {
+    "schemaVersion": 1,
+    "intentLevel": "flagship",
+    "intentRationale": "本轮专门验证 V2 能否在产品清晰度之外产出具有五秒记忆点、实时深度与主题专属动态的旗舰页面。",
+    "heroMoment": {
+      "title": "一层光获得厚度",
+      "description": "金属环从偏置位置稳定进入，近乎透明的薄膜逐步形成并展开综合色带，最后由短促视角变化停在可操作完成态。",
+      "themeConnection": "成膜、干涉色与焦散都是薄膜光学主题本身，而不是附加在页面上的通用动画。",
+      "appearsWithinSeconds": 5,
+      "observableRuntimeChange": {
+        "trigger": "页面加载后的有界 Hero 时间线",
+        "from": "环体进入且膜面近乎不可见",
+        "to": "完整薄膜、干涉综合色谱与稳定可操作实验状态"
+      }
+    },
+    "rendering": {
+      "primary": "threejs-3d",
+      "supporting": [
+        "webgl-shader",
+        "dom-css"
+      ],
+      "rationale": "Three.js 承担真实空间、环体和视角，Shader 承担无法由静态图表达的干涉材质，DOM 保留说明、状态与操作。"
+    },
+    "spatialDepth": {
+      "mode": "scene-3d",
+      "purpose": "用环体透视、遮挡、光照和短镜头弧线证明膜面是存在于空间中的可观察对象。",
+      "cues": [
+        "scale",
+        "occlusion",
+        "lighting",
+        "perspective",
+        "camera-motion"
+      ]
+    },
+    "motionArc": {
+      "beats": [
+        {
+          "phase": "opening",
+          "driver": "time",
+          "visualState": "环体进入，膜面从透明边缘向完整圆面形成，综合色带逐步展开。",
+          "thematicPurpose": "让用户先看见光学薄膜的形成过程，而不是直接面对静态控制台。"
+        },
+        {
+          "phase": "exploration",
+          "driver": "hybrid",
+          "visualState": "滚轮、指针和参数共同改变膜厚、张力、观察角、干涉色与焦散。",
+          "thematicPurpose": "把输入变成对同一薄膜状态的因果调制。"
+        },
+        {
+          "phase": "resolution",
+          "driver": "direct-input",
+          "visualState": "完成态保持当前光谱，保存行动回放已选择的膜厚与张力。",
+          "thematicPurpose": "把视觉探索收束为一个可理解、可复述的模拟方案。"
+        }
+      ],
+      "runtimeAdvantage": "静态截图只能显示一个综合色谱；运行态能看见薄膜形成、观察角变化以及参数对色带与曲率的连续影响。"
+    },
+    "interactionToScene": [
+      {
+        "input": "移动指针或触摸",
+        "sceneResponse": "改变观察角、光照位置、膜面局部形变与综合色带分布。",
+        "productMeaning": "模拟用户从不同角度观察薄膜干涉色。"
+      },
+      {
+        "input": "滚轮",
+        "sceneResponse": "连续推进膜厚与张力时间线，并同步全部读数。",
+        "productMeaning": "用连续动作快速浏览一组可比较的薄膜状态。"
+      },
+      {
+        "input": "膜厚与张力控件",
+        "sceneResponse": "精确改变 Shader 周期、曲率幅度、综合色带与 DOM 光谱条。",
+        "productMeaning": "让用户主动调制并保存一组视觉模拟光谱。"
+      }
+    ],
+    "assetCredibility": {
+      "level": "conceptual-coherent",
+      "strategy": "用程序化金属环、薄膜 Shader 与同源焦散表达一个明确标注的视觉模拟，不借基础几何伪装真实商业产品。",
+      "disclosure": "页面持续显示“视觉模拟 · 非实验测量”，保存结果也不会被称为物理实验数据。"
+    },
+    "fallbackPerformance": {
+      "targetFps": 60,
+      "maxDevicePixelRatio": 2,
+      "initialTransferBudgetMb": 1.5,
+      "mobileFallback": "simplified-scene",
+      "reducedMotionFallback": "static-complete-state",
+      "rendererFailureFallback": "key-visual"
+    }
+  },
+  "attemptBudget": {
+    "limits": {
+      "directionSelections": 1,
+      "assetBatches": 1,
+      "builds": 1,
+      "deterministicRepairs": 2,
+      "visualRefinements": 1
+    },
+    "used": {
+      "directionSelections": 1,
+      "assetBatches": 1,
+      "builds": 1,
+      "deterministicRepairs": 2,
+      "visualRefinements": 1
+    }
+  },
+  "stageReports": [
+    {
+      "stage": "goal-direction-and-assets",
+      "elapsedMs": 14000,
+      "status": "completed",
+      "summary": "完成目标回放、唯一程序材质方向、三条正向参考原理和一次程序化素材批次决策。"
+    },
+    {
+      "stage": "single-build",
+      "elapsedMs": 51000,
+      "status": "completed",
+      "summary": "完成唯一页面构建，包含持续 WebGL、五秒 Hero、多输入联动与完整语义回退。"
+    },
+    {
+      "stage": "bounded-visual-refinement",
+      "elapsedMs": 17000,
+      "status": "completed",
+      "summary": "唯一视觉精修只增强膜面色带层次与处理回退提示显示，没有更换方向或素材批次。"
+    },
+    {
+      "stage": "deterministic-repair",
+      "elapsedMs": 11000,
+      "status": "completed",
+      "summary": "两次确定性修复分别消除 Shader 角向接缝，并让 motion=full 能显式覆盖测试机的系统低动态偏好；未改变构图与交互。"
+    },
+    {
+      "stage": "browser-evidence",
+      "elapsedMs": 19400,
+      "status": "completed",
+      "summary": "真实 Chrome 通过四项自适应验收，并用 Canvas 像素差证明输入实际改变最终视觉。"
+    }
+  ],
+  "finalCandidate": {
+    "runId": "direct-thin-film-lab-r114",
+    "bundleHash": "b1de4965ebe0c20fdd2b28be2200821c285fa798a7de2b87080a3df3ae8dfd67"
+  },
+  "adaptiveEvidence": {
+    "schemaVersion": 1,
+    "runId": "direct-thin-film-lab-r114",
+    "bundleHash": "b1de4965ebe0c20fdd2b28be2200821c285fa798a7de2b87080a3df3ae8dfd67",
+    "profile": {
+      "schemaVersion": 1,
+      "interactionMode": "mixed",
+      "audioApplicable": false,
+      "requiredCheckpoints": [
+        "opening",
+        "core",
+        "mobile",
+        "scroll",
+        "interaction"
+      ]
+    },
+    "checkpoints": [
+      {
+        "kind": "opening",
+        "runId": "direct-thin-film-lab-r114",
+        "bundleHash": "b1de4965ebe0c20fdd2b28be2200821c285fa798a7de2b87080a3df3ae8dfd67",
+        "passed": true,
+        "summary": "前五秒可观察环体进入、薄膜形成、综合色带展开与稳定完成态。"
+      },
+      {
+        "kind": "core",
+        "runId": "direct-thin-film-lab-r114",
+        "bundleHash": "b1de4965ebe0c20fdd2b28be2200821c285fa798a7de2b87080a3df3ae8dfd67",
+        "passed": true,
+        "summary": "持续金属环、薄膜 Shader、焦散、实时读数和保存行动构成同一完整实验场。"
+      },
+      {
+        "kind": "mobile",
+        "runId": "direct-thin-film-lab-r114",
+        "bundleHash": "b1de4965ebe0c20fdd2b28be2200821c285fa798a7de2b87080a3df3ae8dfd67",
+        "passed": true,
+        "summary": "390×844 的低质量与低动态模式保留完整场景、状态、两个控件和主要行动，无横向溢出。"
+      },
+      {
+        "kind": "scroll",
+        "runId": "direct-thin-film-lab-r114",
+        "bundleHash": "b1de4965ebe0c20fdd2b28be2200821c285fa798a7de2b87080a3df3ae8dfd67",
+        "passed": true,
+        "summary": "真实滚轮输入连续改变膜厚、张力、时间线、Shader 与可见读数。"
+      },
+      {
+        "kind": "interaction",
+        "runId": "direct-thin-film-lab-r114",
+        "bundleHash": "b1de4965ebe0c20fdd2b28be2200821c285fa798a7de2b87080a3df3ae8dfd67",
+        "passed": true,
+        "summary": "指针、参数滑块与键盘均改变共享状态；Canvas 操作前后像素差超过验收阈值。"
+      }
+    ],
+    "hardGates": {
+      "runtimeClean": true,
+      "criticalAssetsLoaded": true,
+      "primaryActionReachable": true,
+      "mobileComplete": true,
+      "truthfulClaims": true,
+      "interactionVerified": true,
+      "audioVerified": null
+    },
+    "visualQuality": {
+      "schemaVersion": 1,
+      "verdict": "pass",
+      "score": 91,
+      "dimensions": {
+        "goalClarity": 92,
+        "creativeDistinctiveness": 94,
+        "craftCohesion": 89,
+        "assetIntegration": 91,
+        "interactionValue": 93,
+        "mobileReadiness": 88
+      },
+      "summary": "明亮实验室、偏置金属环与实时干涉薄膜形成统一主题语言；运行变化明显强于静态截图，全部输入具有产品含义，移动和回退保持完整。",
+      "findings": []
+    }
+  },
+  "wowEvidence": {
+    "schemaVersion": 1,
+    "runId": "direct-thin-film-lab-r114",
+    "bundleHash": "b1de4965ebe0c20fdd2b28be2200821c285fa798a7de2b87080a3df3ae8dfd67",
+    "assessment": {
+      "schemaVersion": 1,
+      "intentLevel": "flagship",
+      "required": true,
+      "verdict": "pass",
+      "score": 92,
+      "dimensions": {
+        "fiveSecondImpact": 93,
+        "runtimeAdvantage": 95,
+        "themeMemorability": 92,
+        "motionDepthMeaning": 93,
+        "assetIntegrationCredibility": 89,
+        "craftCohesion": 89
+      },
+      "observation": {
+        "heroMomentObserved": true,
+        "runtimeAdvantageOverStaticObserved": true,
+        "themeSpecificMemoryObserved": true,
+        "meaningfulMotionOrDepthObserved": true,
+        "credibleAssetIntegrationObserved": true,
+        "summary": "真实浏览器观察到五秒成膜、空间环体、综合色带、焦散与多输入联动；主题无需标题仍可从物理结构和动态辨认，且所有模拟边界均被明确披露。"
+      },
+      "findings": []
+    }
+  },
+  "verdict": "pass",
+  "stopReason": null
+}

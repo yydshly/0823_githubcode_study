@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="zh-CN" data-eclipse-ready="false" data-eclipse-state="waiting" data-fallback="false" data-asset-fallback="false" data-saved="false">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#9fb7c6" />
+    <meta name="description" content="日食邮局：移动月影，让一封只在全食时显影的明信片出现。" />
+    <title>日食邮局 · 全食明信片</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body data-experience="eclipse-post-office">
+    <a class="skip-link" href="#save-postcard">跳到保存全食明信片</a>
+
+    <main id="eclipse-stage" aria-labelledby="eclipse-title">
+      <div class="scene" data-signal-visual-anchor>
+        <img
+          id="environment-image"
+          src="./assets/eclipse-post-office-salt-flat-v1.png"
+          width="1672"
+          height="941"
+          alt="盐湖上的黄铜与纸张邮局工作台，远处天空开阔"
+          draggable="false"
+          decoding="async"
+          fetchpriority="high"
+        />
+        <div class="asset-fallback" aria-hidden="true"></div>
+        <canvas id="corona-canvas" aria-hidden="true"></canvas>
+        <div class="eclipse-veil" aria-hidden="true"></div>
+        <div id="eclipse-orbit" class="eclipse-orbit" aria-hidden="true">
+          <div class="sun-disc"></div>
+          <div id="moon-disc" class="moon-disc"></div>
+          <div class="diamond-flare"></div>
+        </div>
+        <div class="horizon-shadow" aria-hidden="true"></div>
+      </div>
+
+      <div class="sticky-interface">
+        <header class="masthead">
+          <a class="identity" href="../../" aria-label="返回 V2 研究首页">
+            <span class="identity-seal" aria-hidden="true">☉</span>
+            <span>ECLIPSE POST</span>
+            <span class="identity-cn">日食邮局</span>
+          </a>
+          <p class="edition">SALT-LAKE EDITION · 00:04:12</p>
+          <p id="state-label" class="state-label">影子还在路上</p>
+        </header>
+
+        <section class="opening-copy">
+          <p class="eyebrow">A LETTER REVEALED BY TOTALITY</p>
+          <h1 id="eclipse-title">把一句话，<em>寄到光消失的时刻。</em></h1>
+          <p id="intro-copy">推动月影靠近日轮。天空、盐面和邮局会共享同一次变暗；只有光环闭合时，纸上的句子才会出现。</p>
+        </section>
+
+        <aside class="observation" aria-live="polite" data-signal-primary-result>
+          <span id="observation-index">01 / BEFORE SHADOW</span>
+          <strong id="observation-title">日光仍把每一粒盐照得分明。</strong>
+          <p id="observation-detail">滚动页面，或直接拖动天空中的月影。</p>
+        </aside>
+
+        <nav class="phase-nav" aria-label="日食阶段">
+          <button type="button" data-eclipse-target="0" aria-current="step"><span>01</span><b>候影</b></button>
+          <button type="button" data-eclipse-target="0.38"><span>02</span><b>初亏</b></button>
+          <button type="button" data-eclipse-target="0.72"><span>03</span><b>钻石环</b></button>
+          <button type="button" data-eclipse-target="1"><span>04</span><b>全食</b></button>
+        </nav>
+
+        <div class="orbit-control" data-signal-primary-control>
+          <label for="alignment-control">
+            <span>移动月影</span>
+            <output id="alignment-value" for="alignment-control">00</output>
+          </label>
+          <input id="alignment-control" type="range" min="0" max="100" value="0" step="1" aria-describedby="alignment-help" />
+          <p id="alignment-help">滚轮、拖动、触摸、方向键均控制同一条月影轨道。</p>
+        </div>
+
+        <section class="postcard" aria-labelledby="postcard-title">
+          <p class="postcard-kicker">TOTALITY POSTCARD · ONE MOMENT ONLY</p>
+          <h2 id="postcard-title">有些话，只在世界安静下来时显影。</h2>
+          <p class="postcard-message">“愿你在看不清方向的时候，也记得光并没有离开。”</p>
+          <div class="postcard-footer">
+            <p>艺术化日食体验<br />不代表真实天象预报</p>
+            <button id="save-postcard" type="button" disabled data-signal-primary-action>
+              <span>保存全食明信片</span><span aria-hidden="true">↗</span>
+            </button>
+          </div>
+          <p id="save-status" class="save-status" role="status" aria-live="polite"></p>
+        </section>
+
+        <p id="live-status" class="visually-hidden" role="status" aria-live="polite">日食邮局正在准备。</p>
+      </div>
+    </main>
+
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>

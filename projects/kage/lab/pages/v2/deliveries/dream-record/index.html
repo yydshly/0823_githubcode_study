@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#131412" />
+    <meta name="description" content="一款在梦境消失前记录片段的安静网页体验。" />
+    <title>还记得昨夜吗 · 梦境记录</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="journey" aria-label="梦境记录体验">
+      <section class="stage">
+        <div class="media-field" aria-hidden="true">
+          <figure class="media-layer" data-scene="awakening">
+            <img data-asset="dream-room-awakening-v1.png" alt="" decoding="async" fetchpriority="high" />
+          </figure>
+          <figure class="media-layer" data-scene="fragments">
+            <img data-asset="dream-memory-fragments-v1.png" alt="" decoding="async" />
+          </figure>
+          <figure class="media-layer" data-scene="record">
+            <img data-asset="dream-night-record-v1.png" alt="" decoding="async" />
+          </figure>
+          <div class="fallback-field"></div>
+          <div class="veil"></div>
+          <div class="grain"></div>
+        </div>
+
+        <header class="masthead">
+          <a class="brand" href="../../" aria-label="返回 Kage V2">
+            <span class="brand-orbit" aria-hidden="true"></span>
+            <span>SOMNIA / 梦簿</span>
+          </a>
+          <span class="chapter" data-chapter>醒来以后</span>
+          <span class="time">04:17</span>
+        </header>
+
+        <div class="story">
+          <article class="beat" data-beat="0">
+            <p class="eyebrow">梦还没有完全离开</p>
+            <h1>醒来以后，<br /><em>先别急着起身。</em></h1>
+            <p class="copy">让房间再模糊一会儿。光线、声音和没有说完的话，还停在原来的位置。</p>
+          </article>
+
+          <article class="beat beat--middle" data-beat="1">
+            <p class="eyebrow">记忆 / 正在成形</p>
+            <h2>沿着一块颜色，<br />走回昨夜。</h2>
+            <p class="copy">不必解释它。先留下窗纱、脚步和身体记得的温度，碎片会慢慢靠近。</p>
+          </article>
+
+          <article class="beat beat--final" data-beat="2">
+            <p class="eyebrow">留给清醒之后</p>
+            <h2>在它变淡以前，<br /><em>轻轻记下。</em></h2>
+            <button class="record-button" type="button" data-open-record>
+              记录今晚的梦 <span aria-hidden="true">↗</span>
+            </button>
+          </article>
+        </div>
+
+        <aside class="progress" aria-label="阅读进度">
+          <span data-index>01</span>
+          <span class="progress-line"><i></i></span>
+          <span>03</span>
+        </aside>
+
+        <footer class="footer-note">
+          <span>SCROLL TO REMEMBER</span>
+          <span class="footer-rule"></span>
+          <span data-state-label>房间尚未清晰</span>
+        </footer>
+      </section>
+      <div class="journey-end" aria-hidden="true"></div>
+    </main>
+
+    <dialog class="record-dialog" aria-labelledby="record-title">
+      <form class="record-form" data-record-form>
+        <header>
+          <div>
+            <p class="eyebrow">04:17 / 只保存在这台设备</p>
+            <h2 id="record-title">你还记得什么？</h2>
+          </div>
+          <button class="close-button" type="button" data-close-record aria-label="关闭记录窗口">×</button>
+        </header>
+        <label for="dream-draft">从一个画面、一种声音，或一个颜色开始。</label>
+        <textarea id="dream-draft" name="dream" maxlength="1200" placeholder="窗外像下过雨，我站在……"></textarea>
+        <div class="form-footer">
+          <p role="status" aria-live="polite" data-save-status>无需完整，也无需合理。</p>
+          <button class="save-button" type="submit">留在今晚 <span aria-hidden="true">→</span></button>
+        </div>
+      </form>
+    </dialog>
+
+    <noscript>即使不启用 JavaScript，你仍可以阅读页面；记录功能需要 JavaScript 才能保存在本机。</noscript>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>

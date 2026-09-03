@@ -1,5 +1,16 @@
 import { z } from 'zod';
-import { assetModalitySchema } from './effect-spec';
+import { assetModalitySchema } from './effect-spec.ts';
+import { assetSpatialFeaturesSchema } from './asset-plan.ts';
+import { stateAssetEvidenceSchema } from '../v2/state-asset-strategy.ts';
+
+export const userAssetExperienceSchema = z.object({
+  anchor: z.number().min(0).max(1),
+  function: z.enum(['establish', 'develop', 'transform', 'resolve', 'persistent']),
+  visualState: z.string().trim().min(8).max(180),
+  continuity: z.string().trim().min(8).max(180),
+  integration: z.enum(['alpha-subject', 'full-bleed-environment', 'seamless-field', 'spatial-object', 'native-media']),
+  stateEvidence: stateAssetEvidenceSchema.optional()
+}).strict();
 
 export const userAssetImportRequestSchema = z.object({
   schemaVersion: z.literal(1),
@@ -8,7 +19,8 @@ export const userAssetImportRequestSchema = z.object({
     .refine((value) => !/[\\/\0]/.test(value), '素材文件名不能包含路径字符。'),
   contentType: z.string().trim().min(3).max(100),
   dataBase64: z.string().min(8).max(27_000_000).regex(/^[A-Za-z0-9+/]+={0,2}$/),
-  role: z.string().trim().min(2).max(120).optional()
+  role: z.string().trim().min(2).max(120).optional(),
+  experience: userAssetExperienceSchema.optional()
 }).strict();
 
 export const importedUserAssetSchema = z.object({
@@ -25,7 +37,9 @@ export const importedUserAssetSchema = z.object({
   qualityLevel: z.literal('L2-inspectable'),
   publishable: z.literal(false),
   license: z.null(),
-  evidence: z.array(z.string().min(2)).min(2)
+  evidence: z.array(z.string().min(2)).min(2),
+  features: assetSpatialFeaturesSchema.optional(),
+  experience: userAssetExperienceSchema.optional()
 }).strict();
 
 export type UserAssetImportRequest = z.infer<typeof userAssetImportRequestSchema>;

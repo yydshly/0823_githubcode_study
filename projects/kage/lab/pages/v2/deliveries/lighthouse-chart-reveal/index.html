@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="zh-CN" data-r160-ready="false" data-state="searching" data-canvas-fallback="false">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#102f34" />
+    <meta name="description" content="用显影灯寻找三枚虚构灯塔印记，并让返航航线重新浮出纸面。" />
+    <title>失踪灯塔海图显影</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <canvas id="caustics" aria-hidden="true"></canvas>
+    <div class="ambient-grain" aria-hidden="true"></div>
+
+    <main class="stage" aria-labelledby="page-title">
+      <header class="masthead">
+        <a class="brand" href="../../" aria-label="返回 V2 项目页">
+          <span class="brand-mark" aria-hidden="true"></span>
+          KAGE / FIELD ARCHIVE
+        </a>
+        <div class="archive-meta">
+          <span>CASE 160</span>
+          <span>FICTIONAL PRACTICE CHART</span>
+        </div>
+        <p class="status-readout" aria-live="polite"><strong id="found-count">0 / 3</strong> 印记显影</p>
+      </header>
+
+      <section class="intro" aria-describedby="page-summary">
+        <p class="eyebrow">盐蚀档案 · 1906 / 未寄出的返航线</p>
+        <h1 id="page-title">让失踪的灯塔<br /><em>重新发光。</em></h1>
+        <p id="page-summary">移动显影灯，让受潮纸纤维里的靛蓝印记浮现。光照到印记时，按下或点击固定坐标。</p>
+        <div class="keyboard-hint"><kbd>←</kbd><kbd>↑</kbd><kbd>↓</kbd><kbd>→</kbd><span>移动光束</span><kbd>Enter</kbd><span>确认</span></div>
+      </section>
+
+      <section class="chart-region" aria-label="虚构灯塔海图显影区">
+        <div class="chart-shell" id="chart-shell" tabindex="0" aria-label="移动指针或使用方向键寻找三枚灯塔印记">
+          <svg id="chart" class="chart" viewBox="0 0 1200 760" role="img" aria-labelledby="chart-title chart-desc">
+            <title id="chart-title">受潮的虚构海图</title>
+            <desc id="chart-desc">海图内有三枚等待显影的灯塔印记，找到后会连接成返航航线。</desc>
+            <defs>
+              <filter id="paper-noise" x="-15%" y="-15%" width="130%" height="130%">
+                <feTurbulence type="fractalNoise" baseFrequency="0.018 0.12" numOctaves="3" seed="19" result="noise" />
+                <feColorMatrix in="noise" type="saturate" values="0" result="gray" />
+                <feBlend in="SourceGraphic" in2="gray" mode="multiply" />
+              </filter>
+              <filter id="ink-bleed" x="-20%" y="-20%" width="140%" height="140%">
+                <feTurbulence type="fractalNoise" baseFrequency="0.012" numOctaves="2" seed="7" result="warp" />
+                <feDisplacementMap in="SourceGraphic" in2="warp" scale="4" />
+                <feGaussianBlur stdDeviation="0.35" />
+              </filter>
+              <filter id="salt-edge" x="-20%" y="-20%" width="140%" height="140%">
+                <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="4" seed="12" result="turb" />
+                <feDisplacementMap in="SourceGraphic" in2="turb" scale="13" />
+              </filter>
+              <radialGradient id="paper-light" cx="48%" cy="44%" r="72%">
+                <stop offset="0" stop-color="#f3edd8" />
+                <stop offset="0.62" stop-color="#d9d1b8" />
+                <stop offset="1" stop-color="#a6a28e" />
+              </radialGradient>
+              <pattern id="minor-grid" width="60" height="60" patternUnits="userSpaceOnUse">
+                <path d="M60 0H0V60" fill="none" stroke="#153f46" stroke-opacity=".16" stroke-width="1" />
+              </pattern>
+              <mask id="reveal-mask">
+                <rect width="1200" height="760" fill="black" />
+                <circle id="reveal-circle" cx="690" cy="350" r="158" fill="white" />
+              </mask>
+            </defs>
+
+            <path class="paper-shape" d="M51 35C267 9 483 39 696 25c182-12 332 6 455 35l17 612c-237 48-446 25-637 45-177 18-324-4-471-22C42 473 42 254 51 35Z" fill="url(#paper-light)" filter="url(#salt-edge)" />
+            <path class="tide-stain" d="M74 181c184-86 322 75 482 20 195-66 309-34 574 47-45 105-85 177-33 284-188 13-322-53-487 11-218 84-346-31-529-3-35-121-31-239-7-359Z" />
+            <path class="salt-bloom salt-bloom--one" d="M181 99c72 40 99 116 45 177s-19 112 31 151c-90 25-148-16-171-84-25-73 25-102 20-157-4-44 24-76 75-87Z" />
+            <path class="salt-bloom salt-bloom--two" d="M887 87c91-25 186 14 208 91 20 71-47 113-33 181 9 45 43 68 44 108-104-4-145-63-136-132 8-62-48-81-89-130-31-37-31-78 6-118Z" />
+            <rect x="57" y="31" width="1096" height="670" fill="url(#minor-grid)" opacity=".75" />
+
+            <g class="chart-ink" filter="url(#ink-bleed)">
+              <path d="M-5 284c109-56 156-25 225-74 67-49 76-122 183-138 71-11 109 23 156 69 49 48 115 83 184 74 83-10 127-68 208-65 102 3 166 83 260 109" />
+              <path d="M-4 371c91-21 159-4 222 34 79 47 144 58 223 17 79-42 113-116 201-121 75-4 122 46 197 65 106 27 193-13 379 38" />
+              <path d="M70 620c85-44 158-48 234-21 64 22 113 65 186 55 86-12 115-82 201-93 75-10 123 39 199 37 70-1 128-44 235-30" />
+              <path d="M374 180c37 49 35 98 10 144-31 55-28 96 8 141 43 54 86 77 76 159" />
+              <path d="M777 219c-28 38-24 76 8 111 36 40 38 78 13 122-23 40-56 73-41 129" />
+              <g class="contours">
+                <ellipse cx="311" cy="278" rx="129" ry="76" />
+                <ellipse cx="311" cy="278" rx="96" ry="53" />
+                <ellipse cx="311" cy="278" rx="61" ry="31" />
+                <ellipse cx="858" cy="450" rx="160" ry="91" />
+                <ellipse cx="858" cy="450" rx="121" ry="65" />
+                <ellipse cx="858" cy="450" rx="75" ry="38" />
+              </g>
+              <text x="86" y="657">ARCHIVE SECTOR · N–17</text>
+              <text x="864" y="111">SALT MERIDIAN</text>
+              <text x="575" y="687">NOT FOR NAVIGATION</text>
+              <path class="compass" d="M1030 568l24-56 22 57-23 54-23-55Zm23-56v111m-56-55h111" />
+            </g>
+
+            <g class="hidden-archive" mask="url(#reveal-mask)">
+              <path class="hidden-current" d="M106 526c188-28 265 31 374-62 92-79 124-222 268-231 130-9 188 119 342 75" />
+              <path class="hidden-note" d="M182 141c115 63 155 147 117 250M841 169c42 54 60 112 45 174M511 580c66-57 149-81 244-63" />
+              <text x="116" y="118">THREE LIGHTS / ONE RETURN</text>
+              <text x="878" y="647">THE WATER REMEMBERS</text>
+              <g class="beacon beacon--a" data-beacon="a" data-x="265" data-y="500" tabindex="-1" aria-label="北湾灯塔印记">
+                <circle r="42" /><path d="M0-31v62M-18 25h36M-12-2h24M-9-31h18l9 56h-36l9-56Z" /><text y="64">A · NORTH COVE</text>
+              </g>
+              <g class="beacon beacon--b" data-beacon="b" data-x="610" data-y="335" tabindex="-1" aria-label="裂隙灯塔印记">
+                <circle r="42" /><path d="M0-31v62M-18 25h36M-12-2h24M-9-31h18l9 56h-36l9-56Z" /><text y="64">B · RIFT LIGHT</text>
+              </g>
+              <g class="beacon beacon--c" data-beacon="c" data-x="930" data-y="255" tabindex="-1" aria-label="东岬灯塔印记">
+                <circle r="42" /><path d="M0-31v62M-18 25h36M-12-2h24M-9-31h18l9 56h-36l9-56Z" /><text y="64">C · EAST CAPE</text>
+              </g>
+            </g>
+
+            <path id="return-route" class="return-route" d="M265 500C370 455 475 425 610 335S818 277 930 255" pathLength="1" />
+            <g class="fixed-beacons" aria-hidden="true">
+              <circle data-fixed="a" cx="265" cy="500" r="17" /><circle data-fixed="b" cx="610" cy="335" r="17" /><circle data-fixed="c" cx="930" cy="255" r="17" />
+            </g>
+          </svg>
+
+          <div class="lamp" id="lamp" aria-hidden="true"><span></span></div>
+          <div class="scan-note" id="scan-note" role="status" aria-live="polite">移动显影灯，寻找第一枚靛蓝印记</div>
+        </div>
+      </section>
+
+      <aside class="discovery-panel" aria-label="显影进度">
+        <p>显影波长 <strong id="wavelength-label">暖白 / 520nm</strong></p>
+        <div class="wavelengths" role="group" aria-label="选择显影光">
+          <button type="button" class="wavelength is-active" data-wave="warm" aria-pressed="true">暖白</button>
+          <button type="button" class="wavelength" data-wave="cyan" aria-pressed="false">青光</button>
+          <button type="button" class="wavelength" data-wave="violet" aria-pressed="false">紫外</button>
+        </div>
+        <ol class="beacon-list">
+          <li data-list-beacon="a"><span>A</span><strong>北湾</strong><em>等待显影</em></li>
+          <li data-list-beacon="b"><span>B</span><strong>裂隙</strong><em>等待显影</em></li>
+          <li data-list-beacon="c"><span>C</span><strong>东岬</strong><em>等待显影</em></li>
+        </ol>
+      </aside>
+
+      <section class="completion" id="completion" aria-hidden="true">
+        <p class="eyebrow">RETURN LINE / RESTORED</p>
+        <h2>三束光，<br />拼回一条返航线。</h2>
+        <p>这是一份虚构的交互练习档案，不对应真实地点、坐标或航海记录。</p>
+        <button id="save-route" type="button">保存这次显影 <span>↗</span></button>
+      </section>
+
+      <footer class="truth-note">FICTIONAL ARCHIVE · NOT FOR NAVIGATION · SVG / CANVAS RUNTIME</footer>
+    </main>
+
+    <noscript>需要启用 JavaScript 才能移动显影灯；海图与说明仍可阅读。</noscript>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>

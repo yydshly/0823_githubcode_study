@@ -1,0 +1,271 @@
+{
+  "schemaVersion": 1,
+  "id": "direct-1uton5v",
+  "goalPlayback": {
+    "originalBrief": "为对纺织工艺好奇的年轻访客设计一座明亮的「经纬光场」空间提花织机网页。开场让这台旗舰 Three.js 纤维构造装置从空纱架逐层展开经纱、综丝、梭子和卷布轴；点击、触摸、键盘或拉动梭子，每推进一梭，三组部件错峰升降，彩色纬纱累计织成可辨认的晨鸟纹样，织造行数、纹样说明与前后对比同步变化。最终行动为“保存我的织纹”。使用暖白日光、朱砂、靛蓝、姜黄与真实纤维质感；保持一个持续空间舞台，不使用滑杆工作台、固定三屏、暗色科技、随机粒子或只改文字不改织物。明确这是空间织造教学演示，不代表真实织机参数。",
+    "subject": "明亮的「经纬光场」空间提花织机",
+    "audience": "对纺织工艺好奇的年轻访客",
+    "desiredOutcome": "从初始材质逐步形成完整主体，并在最终形态稳定停留。",
+    "primaryAction": "保存我的织纹",
+    "hardConstraints": [
+      "开场让这台旗舰 Three.js 纤维构造装置从空纱架逐层展开经纱、综丝、梭子和卷布轴",
+      "最终行动为“保存我的织纹”"
+    ],
+    "preferences": [
+      "真实",
+      "建议从 direct-workbench 出发，并将 split-stage、daylight-neutral、direct-manipulation、single-hero、quiet-small-scale、procedural-3d 作为候选视觉方向；可为更好的主题表达调整或放弃。"
+    ]
+  },
+  "selectedDirection": {
+    "id": "direction-15mq650",
+    "title": "明亮的「经纬光场」空间提花织机 · 专属创意方向",
+    "experienceForm": "direct-workbench",
+    "rationale": "以程序化关节主体承担主要视觉，用主体标本场、状态故事板、关节主体揭示组织变化；滚动统一驱动部件、相机、材质、灯光和后期。"
+  },
+  "referencePrinciples": [
+    {
+      "referenceId": "positive-night-greenhouse-continuity",
+      "title": "夜生表皮温室 · 同源状态连续转化",
+      "principle": "为同一主体规划少量可比较的关键状态，并保持身份、尺度和光照连续。；让每次滚动变化都解释主体如何形成，而不是轮播互不相关的漂亮画面。",
+      "relevance": "用户 brief 命中“纤维”，并与 material-transformation 体验模式一致。",
+      "sourceUri": "../cases/dedicated-r36-delivery-final/"
+    },
+    {
+      "referenceId": "positive-semantic-direct-interaction",
+      "title": "潮线证词 · 输入、画面与结果共享状态",
+      "principle": "让一个因果状态同时驱动画面、数值与结果文案，避免三套互不相干的反馈。；提供可见的演示入口和人工接管，使用户能先理解效果再主动探索。",
+      "relevance": "用户 brief 命中“前后对比”，并与 material-transformation 体验模式一致。",
+      "sourceUri": "../pages/v2/prototypes/semantic-interaction/"
+    },
+    {
+      "referenceId": "positive-iris-articulated-reveal",
+      "title": "IRIS · 程序化关节主体展开",
+      "principle": "当构造过程本身就是主题时，用少量部件组和统一时间轴表达组装或解构。；让相机与材质变化辅助结构阅读，并为低性能设备保留静态可理解状态。",
+      "relevance": "用户 brief 命中“逐层展开”，并与 material-transformation 体验模式一致。",
+      "sourceUrl": "https://iamtechartist.github.io/Threejs-3D-Webpage/"
+    }
+  ],
+  "assetPlan": {
+    "batchId": "assets-177c4g",
+    "strategy": "programmatic",
+    "rationale": "只允许这一批素材决策；关键素材必须在最终页面实际承担声明的视觉职责。",
+    "assets": [
+      {
+        "id": "articulated-subject",
+        "role": "以可辨认部件关系构建“明亮的「经纬光场」空间提花织机”的唯一英雄主体。",
+        "source": "programmatic",
+        "required": true
+      }
+    ]
+  },
+  "interactionRationale": {
+    "mode": "direct",
+    "audioApplicable": false,
+    "rationale": "以direct-control组织direct-instrument中的“滚动让同一主体的材质和形态连续形成。”，并让变化服务于主要行动。"
+  },
+  "visualAmbition": {
+    "schemaVersion": 1,
+    "intentLevel": "immersive",
+    "intentRationale": "视觉野心等级 immersive 来自用户明确的体验要求：把明亮的「经纬光场」空间提花织机组织为可直接操作的持续工作区；每次输入都必须在同一主体或关系场中产生可理解的因果结果。。它只决定本次内容需要的表达强度，不继承历史案例的布局、风格或渲染器禁令。",
+    "heroMoment": {
+      "title": "明亮的「经纬光场」空间提花织机 · 保存我的织纹",
+      "description": "开场以“同一可操作主体、初始关系、控制与结果建立清晰工作区。”建立主体，并让后续变化服务于“从初始材质逐步形成完整主体，并在最终形态稳定停留。”。",
+      "themeConnection": "视觉锚点必须直接证明“明亮的「经纬光场」空间提花织机”和“把明亮的「经纬光场」空间提花织机组织为可直接操作的持续工作区；每次输入都必须在同一主体或关系场中产生可理解的因果结果。”；即使隐藏标题，也能从对象、空间或数据关系辨认主题。；这一记忆点直接指向“保存我的织纹”。",
+      "appearsWithinSeconds": 5,
+      "observableRuntimeChange": {
+        "trigger": "用户滚动推进体验",
+        "from": "同一可操作主体、初始关系、控制与结果建立清晰工作区。",
+        "to": "当前状态、结果摘要与“保存我的织纹”保持可见，最终行动已准备。"
+      }
+    },
+    "rendering": {
+      "primary": "threejs-3d",
+      "supporting": [
+        "dom-css"
+      ],
+      "rationale": "以 threejs-3d 承担“以可辨认部件关系构建“明亮的「经纬光场」空间提花织机”的唯一英雄主体。”的主要可见职责；语义内容和行动仍由 DOM 保底。选择依据是 部件拓扑、错峰展开和相机关系需要真实三维层级；DOM 继续承担内容与行动。"
+    },
+    "spatialDepth": {
+      "mode": "scene-3d",
+      "purpose": "用可检查空间关系证明“把明亮的「经纬光场」空间提花织机组织为可直接操作的持续工作区；每次输入都必须在同一主体或关系场中产生可理解的因果结果。”，而不是把三维当作装饰。",
+      "cues": [
+        "perspective",
+        "occlusion",
+        "lighting",
+        "camera-motion"
+      ]
+    },
+    "motionArc": {
+      "beats": [
+        {
+          "phase": "opening",
+          "driver": "time",
+          "visualState": "同一可操作主体、初始关系、控制与结果建立清晰工作区。",
+          "thematicPurpose": "确认对象和初始状态，开始第一次直接操作。"
+        },
+        {
+          "phase": "exploration",
+          "driver": "scroll",
+          "visualState": "直接输入同步改变同一主体或对象关系、可见反馈与业务结果。",
+          "thematicPurpose": "拖动、选择或调整对象，并核对画面与结果是否一致。"
+        },
+        {
+          "phase": "resolution",
+          "driver": "scroll",
+          "visualState": "当前状态、结果摘要与“保存我的织纹”保持可见，最终行动已准备。",
+          "thematicPurpose": "核对当前结果后完成最终行动。"
+        }
+      ],
+      "runtimeAdvantage": "运行时让用户从“同一可操作主体、初始关系、控制与结果建立清晰工作区。”抵达“当前状态、结果摘要与“保存我的织纹”保持可见，最终行动已准备。”；这种状态变化服务于主题，不能由一张静态截图等价替代。"
+    },
+    "interactionToScene": [
+      {
+        "input": "用户滚动推进体验",
+        "sceneResponse": "视觉锚点沿体验节点连续承担建立、变化与“保存我的织纹”收束，不得在中段被无关装饰替换。",
+        "productMeaning": "可见变化必须帮助用户理解“从初始材质逐步形成完整主体，并在最终形态稳定停留。”，并自然抵达“保存我的织纹”。"
+      }
+    ],
+    "assetCredibility": {
+      "level": "conceptual-coherent",
+      "strategy": "关键素材分别承担：以可辨认部件关系构建“明亮的「经纬光场」空间提花织机”的唯一英雄主体。。",
+      "disclosure": "程序化或生成内容按概念表达使用，不伪装为真实测量、地点或商品。"
+    },
+    "fallbackPerformance": {
+      "targetFps": 60,
+      "maxDevicePixelRatio": 2,
+      "initialTransferBudgetMb": 7.63,
+      "mobileFallback": "simplified-scene",
+      "reducedMotionFallback": "key-states",
+      "rendererFailureFallback": "key-visual"
+    }
+  },
+  "attemptBudget": {
+    "limits": {
+      "directionSelections": 1,
+      "assetBatches": 1,
+      "builds": 1,
+      "deterministicRepairs": 2,
+      "visualRefinements": 1
+    },
+    "used": {
+      "directionSelections": 1,
+      "assetBatches": 1,
+      "builds": 1,
+      "deterministicRepairs": 1,
+      "visualRefinements": 0
+    }
+  },
+  "stageReports": [],
+  "finalCandidate": {
+    "runId": "direct-1uton5v",
+    "bundleHash": "d399249270d7965666d19f9f6287593ce03324dce54e66206c7ad40940ce91d0"
+  },
+  "adaptiveEvidence": {
+    "schemaVersion": 1,
+    "runId": "direct-1uton5v",
+    "bundleHash": "d399249270d7965666d19f9f6287593ce03324dce54e66206c7ad40940ce91d0",
+    "profile": {
+      "schemaVersion": 1,
+      "interactionMode": "direct",
+      "audioApplicable": false,
+      "requiredCheckpoints": [
+        "opening",
+        "core",
+        "mobile",
+        "interaction"
+      ]
+    },
+    "checkpoints": [
+      {
+        "kind": "opening",
+        "runId": "direct-1uton5v",
+        "bundleHash": "d399249270d7965666d19f9f6287593ce03324dce54e66206c7ad40940ce91d0",
+        "passed": true,
+        "summary": "桌面高质量模式在 2489ms 内展开完整 Three.js 空间提花织机，暖白舞台和全部关键部件可见且无运行错误。"
+      },
+      {
+        "kind": "core",
+        "runId": "direct-1uton5v",
+        "bundleHash": "d399249270d7965666d19f9f6287593ce03324dce54e66206c7ad40940ce91d0",
+        "passed": true,
+        "summary": "一个持续空间舞台承载经纱、综丝、梭子、卷布轴与逐梭形成的晨鸟纹，没有退化为滑杆工作台、固定三屏或纯文字切换。"
+      },
+      {
+        "kind": "mobile",
+        "runId": "direct-1uton5v",
+        "bundleHash": "d399249270d7965666d19f9f6287593ce03324dce54e66206c7ad40940ce91d0",
+        "passed": true,
+        "summary": "390×844 reduced-motion 模式无横向溢出；低质量场景与强制 fallback 都保留完整织造、说明和保存旅程。"
+      },
+      {
+        "kind": "interaction",
+        "runId": "direct-1uton5v",
+        "bundleHash": "d399249270d7965666d19f9f6287593ce03324dce54e66206c7ad40940ce91d0",
+        "passed": true,
+        "summary": "真实点击、键盘和画布梭子拖动依次推进同一织物，行数、纹样说明、前后对比和可见纬纱同步变化。"
+      }
+    ],
+    "hardGates": {
+      "runtimeClean": true,
+      "criticalAssetsLoaded": true,
+      "primaryActionReachable": true,
+      "mobileComplete": true,
+      "truthfulClaims": true,
+      "interactionVerified": true,
+      "audioVerified": null
+    },
+    "visualQuality": {
+      "schemaVersion": 1,
+      "verdict": "pass",
+      "score": 93,
+      "dimensions": {
+        "goalClarity": 94,
+        "creativeDistinctiveness": 95,
+        "craftCohesion": 92,
+        "assetIntegration": 90,
+        "interactionValue": 96,
+        "mobileReadiness": 91
+      },
+      "summary": "明亮空间提花织机、逐梭累积的晨鸟纹与三种同源输入形成主题专属因果；桌面、移动端、减弱动效和渲染回退均保留完整任务。",
+      "findings": [
+        {
+          "code": "conceptual-machine-fidelity",
+          "severity": "minor",
+          "checkpoint": "core",
+          "message": "织机是强调空间教学与晨鸟纹形成过程的程序化概念装置；页面明确不把它声明为真实织机参数或机械仿真。"
+        }
+      ]
+    }
+  },
+  "wowEvidence": {
+    "schemaVersion": 1,
+    "runId": "direct-1uton5v",
+    "bundleHash": "d399249270d7965666d19f9f6287593ce03324dce54e66206c7ad40940ce91d0",
+    "assessment": {
+      "schemaVersion": 1,
+      "intentLevel": "immersive",
+      "required": true,
+      "verdict": "pass",
+      "score": 94,
+      "dimensions": {
+        "fiveSecondImpact": 94,
+        "runtimeAdvantage": 96,
+        "themeMemorability": 95,
+        "motionDepthMeaning": 94,
+        "assetIntegrationCredibility": 90,
+        "craftCohesion": 92
+      },
+      "observation": {
+        "heroMomentObserved": true,
+        "runtimeAdvantageOverStaticObserved": true,
+        "themeSpecificMemoryObserved": true,
+        "meaningfulMotionOrDepthObserved": true,
+        "credibleAssetIntegrationObserved": true,
+        "summary": "桌面高质量模式在 2489ms 内从空场逐层展开经纱、综丝、梭子与卷布轴，形成完整可辨认的明亮空间提花织机。 真实点击、键盘与画布梭子拖动依次推进三梭；织物像素哈希、纬纱数量、织造行数和晨鸟纹样同步改变。 可复述记忆是暖白日光中的提花织机逐梭把朱砂、靛蓝与姜黄纬纱织成完整晨鸟纹。 梭子横穿、三组综丝错峰升降、经纬纱深度和卷布轴累计共同解释织造过程，而非装饰性运动。 程序化关节织机完整承担经纱、综丝、梭子、纬纱和卷布轴的可见职责；页面如实标明这是空间教学演示而非真实参数。 暖白舞台、纤维质感、朱砂靛蓝姜黄配色、编辑排版与织造状态形成统一且明亮的主题语言。 点击推进晨光底纬，键盘推进靛蓝翼根，画布拖动推进朱砂鸟喙；三种输入都改变同一织物主体与语义状态。 390×844 reduced-motion 低质量模式无横向溢出，织机、织造步骤与“保存我的织纹”行动完整可达并已验证保存。 强制渲染器 fallback 仍保留提花织机、完整晨鸟纹、逐行揭示内容和已保存的最终行动。"
+      },
+      "findings": []
+    }
+  },
+  "verdict": "pass",
+  "stopReason": null
+}

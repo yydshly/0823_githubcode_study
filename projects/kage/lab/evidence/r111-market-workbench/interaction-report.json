@@ -1,0 +1,28 @@
+{
+  "runId": "dedicated-ff076d4a2347",
+  "before": {
+    "receipt": "采购单一人份 · 当季优先预算小计¥0先把摊位上的食材编进你的两顿饭。",
+    "button": "生成本周采购单 →",
+    "tomatoClass": "food tomato  ",
+    "activeServings": "一人份"
+  },
+  "afterDrop": {
+    "receipt": "采购单一人份 · 当季优先1番茄1 份预算小计¥9先买 番茄，4天内最好吃。",
+    "button": "生成本周采购单 →",
+    "tomatoClass": "food tomato placed weekday selected",
+    "activeServings": "一人份"
+  },
+  "afterServings": {
+    "receipt": "采购单三人份 · 当季优先1番茄3 份预算小计¥27先买 番茄，4天内最好吃。",
+    "button": "生成本周采购单 →",
+    "tomatoClass": "food tomato placed weekday selected",
+    "activeServings": "三人份"
+  },
+  "afterAction": {
+    "receipt": "采购单三人份 · 当季优先1番茄3 份预算小计¥27先买 番茄，4天内最好吃。",
+    "button": "采购单已准备好 ✓",
+    "tomatoClass": "food tomato placed weekday selected",
+    "activeServings": "三人份"
+  },
+  "errors": []
+}

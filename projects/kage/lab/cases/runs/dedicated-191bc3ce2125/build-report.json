@@ -1,0 +1,486 @@
+{
+  "receipt": {
+    "id": "dedicated-191bc3ce2125",
+    "provider": "codex",
+    "model": "gpt-5.6-sol",
+    "status": "compiled",
+    "previewUrl": "/generated-runs/dedicated-191bc3ce2125/",
+    "generatedAt": "2026-08-27T13:33:48.879Z",
+    "files": 5,
+    "assets": 1,
+    "sourceBytes": 19513,
+    "hasShaders": false,
+    "compileMs": 505,
+    "attempts": 1,
+    "directory": "generated/runs/dedicated-191bc3ce2125"
+  },
+  "request": {
+    "brief": "为一款帮助城市居民读懂夜间风的窗边气象装置设计沉浸式网页。开场是一枚月白陶瓷与氧化铜制成的无叶风谱仪，细纤维带在安静房间里几乎静止；滚动时视角穿过窗缝，纤维随不同风速弯曲，温湿度与风向证据沿真实气流轨迹出现，最终回到窗边，收束为“读取今夜的风”。面向关注居住环境与自然节律的人；画面安静、物理真实、偏月白、铜褐和雾灰，不要蓝紫科技风、玻璃仪表盘、随机粒子或章节海报切换。",
+    "seed": 71,
+    "quality": "high",
+    "runId": "run-7ytw5",
+    "selectedId": "generated-1om89ao-blueprint-jfhskx-night-wind-window-reading-blueprint",
+    "creativeContract": {
+      "schemaVersion": 2,
+      "id": "contract-1kidr18",
+      "brief": "为一款帮助城市居民读懂夜间风的窗边气象装置设计沉浸式网页。开场是一枚月白陶瓷与氧化铜制成的无叶风谱仪，细纤维带在安静房间里几乎静止；滚动时视角穿过窗缝，纤维随不同风速弯曲，温湿度与风向证据沿真实气流轨迹出现，最终回到窗边，收束为“读取今夜的风”。面向关注居住环境与自然节律的人；画面安静、物理真实、偏月白、铜褐和雾灰，不要蓝紫科技风、玻璃仪表盘、随机粒子或章节海报切换。",
+      "intent": {
+        "subject": "一款帮助城市居民读懂夜间风的窗边气象装置",
+        "audience": "关注居住环境与自然节律的人",
+        "desiredFeeling": "安静、真实、自然",
+        "narrativeChange": "视角穿过窗缝，纤维随不同风速弯曲，温湿度与风向证据沿真实气流轨迹出现，最终回到窗边，收束为“读取今夜的风”",
+        "primaryAction": "读取今夜的风",
+        "negativeConstraints": [
+          "画面安静、物理真实、偏月白、铜褐和雾灰，不要蓝紫科技风、玻璃仪表盘、随机粒子或章节海报切换"
+        ]
+      },
+      "referenceEvidence": [
+        {
+          "referenceId": "kage-dream-room",
+          "title": "梦境记录 · 同一房间的记忆形成",
+          "sourceUrl": "../cases/dedicated-8574ee46ab16/",
+          "evidenceLevel": "runtime-verified",
+          "relevance": "命中 房间、安静。 支持 environmental-memory 体验模式。 来自已归档并经过浏览器验证的本地最终案例。",
+          "borrow": [
+            "始终保持同一房间、机位与晨光，让模糊到清晰成为可信的记忆变化。",
+            "滚动控制环境清晰度、碎片聚合和空间深度，最终把注意力收束到记录行动。",
+            "连续环境素材承担真实空间，Three.js 只添加记忆回声、景深和过渡，不遮盖空间证据。"
+          ],
+          "avoid": [
+            "不要生成三个无关联梦境画面，也不要把安静主题变成霓虹科技界面。"
+          ]
+        },
+        {
+          "referenceId": "kage-night-greenhouse",
+          "title": "夜生表皮温室 · 资产叙事",
+          "sourceUrl": "../cases/dedicated-r36-delivery-final/",
+          "evidenceLevel": "runtime-verified",
+          "relevance": "命中 纤维。 来自已归档并经过浏览器验证的本地最终案例。",
+          "borrow": [
+            "同一生物材料从种荚、纤维到建筑表皮持续转化，阶段不同但视觉血缘一致。",
+            "变化由滚动推进并保持单向因果关系，最终稳定为可理解的建筑空间。",
+            "多个模型素材分别承担关键状态，必须以共同材质、光向和轮廓维持连续性。"
+          ],
+          "avoid": [
+            "不要使用互不相关的漂亮图片，也不要让粒子装饰替代真正的状态变化。"
+          ]
+        },
+        {
+          "referenceId": "motionsites-scroll-landing",
+          "title": "MotionSites · Scroll Landing Page",
+          "sourceUrl": "https://motionsites.ai/?prompt=scroll-landing",
+          "evidenceLevel": "catalog-metadata",
+          "relevance": "命中 滚动。 只作为外部目录方向信号，不当作实现已验证。",
+          "borrow": [
+            "目录将其标记为 Interactive，可作为滚动承担连续变化的方向索引。",
+            "参考滚动作为统一时间轴，而不是为每个区块堆叠互不相关的入场动画。",
+            "素材必须绑定滚动状态和视觉职责，不能只作为区块背景轮播。"
+          ],
+          "avoid": [
+            "不要复制固定区块数量，也不要把普通淡入误认为沉浸式叙事。"
+          ]
+        }
+      ],
+      "experience": {
+        "pattern": "environmental-memory",
+        "thesis": "让一款帮助城市居民读懂夜间风的窗边气象装置从朦胧环境中逐步形成可理解、可停留的记忆空间。",
+        "focalSubject": "一款帮助城市居民读懂夜间风的窗边气象装置",
+        "continuityRule": "所有关键状态必须保持同一地点、主体、光向和可追踪空间坐标。",
+        "typographyRole": "文字以低密度注释和最终行动出现，不切断环境连续性。",
+        "beats": [
+          {
+            "id": "waking-haze",
+            "position": 0,
+            "purpose": "establish",
+            "visibleState": "同一环境处于刚醒来的低对比和浅景深状态。",
+            "userProgression": "滚动开始恢复空间坐标。"
+          },
+          {
+            "id": "memory-forms",
+            "position": 0.52,
+            "purpose": "transform",
+            "visibleState": "可辨认碎片在同一空间中聚合，主体关系逐渐明确。",
+            "userProgression": "继续滚动提高连续性和空间可探索感。"
+          },
+          {
+            "id": "quiet-record",
+            "position": 1,
+            "purpose": "resolve",
+            "visibleState": "环境安静稳定，视觉焦点收束到“读取今夜的风”。",
+            "userProgression": "停止主要运动并留下清晰行动。"
+          }
+        ],
+        "pointerRole": "指针只产生轻微视差和局部清晰度变化，不改变叙事方向。",
+        "reducedMotion": "使用同一空间的三个稳定清晰度状态和交叉淡化，取消连续位移。",
+        "finalMemoryPoint": "读取今夜的风"
+      },
+      "assets": [
+        {
+          "id": "continuity-environment",
+          "role": "environment",
+          "modality": "image-sequence",
+          "required": true,
+          "minimumQuality": "L3-presentable",
+          "sourcePriority": [
+            "user-supplied",
+            "curated-library",
+            "primary-image-model",
+            "minimax-fallback"
+          ],
+          "visualResponsibility": "提供同一真实空间从朦胧到清晰的连续环境证据。",
+          "continuityRule": "序列必须共享地点、机位、主体位置、光向和时间感。",
+          "integration": "full-bleed-environment",
+          "visibleProof": "opening、middle、ending 截图均能识别为同一空间的连续变化。",
+          "fallback": "static-image"
+        }
+      ],
+      "direction": {
+        "visualRole": "environment",
+        "mechanisms": [
+          {
+            "id": "environmental-aperture",
+            "title": "环境窗口",
+            "evidenceLevel": "E4",
+            "job": "让核心环境直接成为视口，而不是被装进一个装饰性图片框。",
+            "reason": "匹配环境职责。 支持 environmental-memory 体验。 命中“房间、环境”。",
+            "sourceCaseIds": [
+              "airlines-environmental-aperture"
+            ]
+          },
+          {
+            "id": "state-storyboard",
+            "title": "状态故事板",
+            "evidenceLevel": "E4",
+            "job": "用连续的视觉状态分配页面节奏，每个状态只承担一个叙事动词。",
+            "reason": "匹配环境职责。 支持 environmental-memory 体验。 命中“滚动”。",
+            "sourceCaseIds": [
+              "plety-media-storyboard",
+              "igloo-cinematic-deconstruction"
+            ]
+          }
+        ],
+        "interaction": {
+          "primaryInput": "scroll",
+          "semanticAction": "滚动让同一环境从朦胧恢复到可停留的记忆。",
+          "pointerRole": "secondary",
+          "touchAlternative": "触摸滚动保持同一状态顺序；取消只依赖悬停的内容。",
+          "keyboardAlternative": "提供跳转到关键状态的语义锚点，并保持自然文档阅读顺序。"
+        },
+        "renderer": {
+          "baseLayer": "semantic-dom",
+          "route": "dom-media-hybrid",
+          "enhancement": "media",
+          "reason": "连续媒体已能承担环境或状态变化，不额外引入完整 Three.js 场景。",
+          "threeJustification": "没有必须由真实三维深度、相机或模型状态解决的职责。",
+          "fallback": "使用稳定关键帧和交叉淡化保留相同叙事顺序。"
+        },
+        "rejectedMechanisms": [
+          {
+            "id": "cinematic-3d-deconstruction",
+            "reason": "缺少真实可检查模型，不能伪造三维拆解。"
+          },
+          {
+            "id": "pointer-reveal",
+            "reason": "目标没有要求通过指针发现信息，鼠标仅保留轻量反馈。"
+          },
+          {
+            "id": "sticky-archive-stack",
+            "reason": "当前核心不是一组并列档案，不使用长堆叠拖慢叙事。"
+          }
+        ],
+        "decisionSummary": "以环境承担主要视觉，用环境窗口、状态故事板组织变化；连续媒体已能承担环境或状态变化，不额外引入完整 Three.js 场景。"
+      },
+      "technical": {
+        "presentationStrategy": "media-scroll-scrub",
+        "capabilitySelection": {
+          "selected": true,
+          "capabilityId": "media-scroll-scrub",
+          "score": 71,
+          "reasons": [
+            "体验模式 environmental-memory 适合固定媒体滚动时间轴。",
+            "目标命中 滚动 等连续叙事信号。",
+            "素材计划提供了可映射到滚动状态的连续媒体。"
+          ],
+          "blockers": [],
+          "contract": {
+            "id": "media-scroll-scrub",
+            "title": "连续媒体滚动叙事",
+            "evidenceLevel": "runtime-verified",
+            "prototypeUrl": "./prototypes/scroll-scrub-media/",
+            "sourceEvidence": [
+              "https://motionsites.ai/lesson/build-scroll-animated-website-with-ai",
+              "../../docs/v2-research/MOTIONSITES-R02-SCROLL-SCRUB-PROTOTYPE.md"
+            ],
+            "applicablePatterns": [
+              "continuous-scroll",
+              "environmental-memory",
+              "product-atmosphere"
+            ],
+            "positiveSignals": [
+              "滚动",
+              "连续",
+              "逐渐",
+              "形成",
+              "变化",
+              "记忆",
+              "梦境",
+              "情绪",
+              "状态",
+              "scroll",
+              "sequence",
+              "memory",
+              "transition"
+            ],
+            "blockerSignals": [
+              "glb",
+              "gltf",
+              "拆解",
+              "自由旋转",
+              "配置器",
+              "第一人称",
+              "碰撞",
+              "真实三维检查",
+              "orbit",
+              "configurator",
+              "first-person"
+            ],
+            "assetContract": {
+              "acceptedModalities": [
+                "image-sequence",
+                "video",
+                "canvas-frame-sequence"
+              ],
+              "minimumStates": 3,
+              "maximumStates": 6,
+              "continuityRules": [
+                "连续状态必须共享主体、场所或可追踪的空间坐标。",
+                "机位、光向和视觉重心不能在相邻状态中无理由跳变。",
+                "素材必须延伸到视口边缘，不允许出现矩形海报边界。"
+              ],
+              "variationRules": [
+                "每个阶段至少有一个服务叙事动词的可读状态变化。",
+                "首尾状态必须分别为标题安全区和最终行动保留空间。"
+              ],
+              "maximumInitialBytes": 2500000,
+              "maximumTotalBytes": 6000000
+            },
+            "runtimeContract": {
+              "layout": "fixed-full-bleed-media",
+              "driver": "scroll-progress",
+              "renderer": "dom-css-webgl-optional",
+              "smoothingFactor": 0.12,
+              "contentLayer": "semantic-dom",
+              "reducedMotion": "stable-states-crossfade"
+            },
+            "acceptanceEvidence": [
+              "asset-request",
+              "screenshot-opening",
+              "screenshot-middle",
+              "screenshot-ending",
+              "screenshot-mobile",
+              "runtime"
+            ]
+          }
+        },
+        "semanticInteraction": {
+          "selected": false,
+          "capabilityId": null,
+          "score": 9,
+          "matchedSignals": [
+            "证据"
+          ],
+          "reasons": [
+            "目标命中“证据”等信息关系信号。",
+            "当前体验模式或素材职责不足以证明交互必须存在。",
+            "现有导演决策只需要滚动推进，不额外增加主要交互。"
+          ],
+          "blockers": [],
+          "evaluatedCapability": {
+            "id": "semantic-responsive-interaction",
+            "evidenceLevel": "E4",
+            "state": "validated",
+            "problem": "装饰性鼠标动效不能帮助用户理解内容，也无法稳定迁移到触摸、键盘和减少动态效果环境。",
+            "meaning": "滚动选择证据层，时间选择改变海岸形态和数字，指针只在局部揭示相对于基准年已经消失的土地。",
+            "inputs": [
+              "scroll",
+              "pointer",
+              "touch",
+              "keyboard"
+            ],
+            "outputs": [
+              "scene-shape",
+              "evidence-value",
+              "narrative-layer",
+              "selection-state"
+            ],
+            "baseInterface": "语义 DOM 始终提供年代按钮、损失数字、解释文字和当前状态，不依赖 WebGL 完成比较。",
+            "enhancedInterface": "WebGL 把年代选择映射为同一海岸场的连续形变，并让局部证据透镜显示相对损失范围。",
+            "reducedMotionRule": "减少动态效果时立即切换到目标年代和阶段，停止连续漂移，但保留所有数值和比较结果。",
+            "rejectionRules": [
+              "移除交互后信息理解完全不变时拒绝晋级。",
+              "触摸、键盘或无 WebGL 回退无法完成比较时拒绝晋级。"
+            ],
+            "evidence": [
+              {
+                "id": "coast-1984",
+                "year": 1984,
+                "label": "基准海岸",
+                "lossSquareKilometers": 0,
+                "retreatMeters": 0,
+                "relativeWaterCentimeters": 0,
+                "sceneMorph": 0,
+                "summary": "沙洲仍然连续，潮沟尚未切断内侧湿地。"
+              },
+              {
+                "id": "coast-2004",
+                "year": 2004,
+                "label": "潮沟扩张",
+                "lossSquareKilometers": 3.2,
+                "retreatMeters": 186,
+                "relativeWaterCentimeters": 8,
+                "sceneMorph": 0.5,
+                "summary": "外侧沙洲变薄，新的潮沟开始把湿地分成孤立片区。"
+              },
+              {
+                "id": "coast-2026",
+                "year": 2026,
+                "label": "临界断面",
+                "lossSquareKilometers": 8.7,
+                "retreatMeters": 421,
+                "relativeWaterCentimeters": 17,
+                "sceneMorph": 1,
+                "summary": "连续岸线已经断裂，曾经被遮蔽的社区直接面对风暴潮。"
+              }
+            ]
+          }
+        },
+        "identityEvidence": {
+          "selected": false,
+          "score": 18,
+          "reason": "拒绝：缺少同时指向身份与证据的明确目标。",
+          "rejectedBy": [],
+          "matchedSignals": [
+            "证据"
+          ],
+          "capabilityId": null
+        },
+        "domResponsibilities": [
+          "承载可阅读内容、导航和最终行动。",
+          "在 WebGL 不可用时保留完整语义顺序。"
+        ],
+        "webglResponsibilities": [
+          "承载空间记忆、镜头关系和连续状态变化。",
+          "让素材融入环境并提供克制的交互反馈。"
+        ],
+        "targetFrameTimeMs": 16.7,
+        "maxInitialAssetBytes": 8000000,
+        "targetDevices": [
+          "desktop",
+          "mobile"
+        ]
+      },
+      "acceptance": [
+        {
+          "id": "intent-visible",
+          "priority": "blocker",
+          "assertion": "首屏和终点能够对应原始主体、情绪变化和最终行动。",
+          "evidence": "screenshot-ending"
+        },
+        {
+          "id": "asset-visible",
+          "priority": "blocker",
+          "assertion": "所有 required 素材都已成功请求，并在声明状态承担可辨认的视觉职责。",
+          "evidence": "asset-request"
+        },
+        {
+          "id": "opening-composed",
+          "priority": "high",
+          "assertion": "首屏存在明确主体和空间坐标，没有空黑屏、文字裁切或主体被遮挡。",
+          "evidence": "screenshot-opening"
+        },
+        {
+          "id": "middle-causal",
+          "priority": "high",
+          "assertion": "中段变化能够解释能力、转化或探索关系，而不只是装饰动画。",
+          "evidence": "screenshot-middle"
+        },
+        {
+          "id": "borderless-integration",
+          "priority": "high",
+          "assertion": "主体和环境没有棋盘格、矩形图片边界或不自然的发光方框。",
+          "evidence": "screenshot-middle"
+        },
+        {
+          "id": "mobile-readable",
+          "priority": "blocker",
+          "assertion": "390px 移动端无横向溢出，主体、正文和行动均可见。",
+          "evidence": "screenshot-mobile"
+        },
+        {
+          "id": "semantic-fallback",
+          "priority": "normal",
+          "assertion": "关闭 WebGL 或减少运动后仍保留完整内容顺序和行动。",
+          "evidence": "dom"
+        },
+        {
+          "id": "runtime-clean",
+          "priority": "blocker",
+          "assertion": "页面无阻断脚本错误，关键素材请求成功，滚动和指针输入可用。",
+          "evidence": "runtime"
+        }
+      ],
+      "executionLimits": {
+        "authoringPasses": 1,
+        "assetBatches": 1,
+        "refinementPasses": 2,
+        "stopAfterMinutes": 15,
+        "archivePolicy": "best-result-only"
+      }
+    },
+    "reference": {
+      "title": "读取今夜的风",
+      "summary": "从静止的窗边风谱仪出发，穿过窗缝看见夜风如何弯曲纤维并携带环境证据，最后回到器物前完成一次安静的读取。",
+      "scenePlugin": "signal-world",
+      "productionStatus": "blocked",
+      "theme": {
+        "deep": "#272623",
+        "surface": "#8f9089",
+        "text": "#f2f0e8",
+        "muted": "#b8b6ad",
+        "accent": "#8a5a3c",
+        "accentSoft": "#a7a18e"
+      },
+      "assets": [
+        {
+          "id": "asset-0b3e5b604a848896",
+          "uri": "/creative-assets/r16-night-wind-instrument-v1.png",
+          "bundlePath": "assets/asset-0b3e5b604a848896.png",
+          "kind": "image",
+          "source": "user-provided",
+          "role": "environment: 提供同一真实空间从朦胧到清晰的连续环境证据。",
+          "description": "已通过文件签名与本地可寻址检查；绑定到任务后仍需接受最终浏览器视觉验收。 序列必须共享地点、机位、主体位置、光向和时间感。",
+          "payloadBytes": 1601221,
+          "required": true
+        }
+      ]
+    }
+  },
+  "usedAssets": [
+    {
+      "id": "asset-0b3e5b604a848896",
+      "uri": "/creative-assets/r16-night-wind-instrument-v1.png",
+      "bundlePath": "assets/asset-0b3e5b604a848896.png",
+      "kind": "image",
+      "source": "user-provided",
+      "role": "environment: 提供同一真实空间从朦胧到清晰的连续环境证据。",
+      "description": "已通过文件签名与本地可寻址检查；绑定到任务后仍需接受最终浏览器视觉验收。 序列必须共享地点、机位、主体位置、光向和时间感。",
+      "payloadBytes": 1601221,
+      "required": true
+    }
+  ],
+  "manualRefinement": {
+    "at": "2026-08-27T13:40:48.627Z",
+    "reason": "Browser evidence showed the WebGL canvas occupying document flow; fixed full-viewport canvas layering and integrated the final CTA into the environment.",
+    "evidencePath": ".artifacts/r16-refined-review/report.json"
+  }
+}

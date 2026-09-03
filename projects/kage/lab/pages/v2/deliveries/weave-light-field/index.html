@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f4ecdb" />
+    <meta
+      name="description"
+      content="经纬光场：在明亮的实时 3D 空间中推进梭子，让经纱、综丝与彩色纬纱共同织出晨鸟纹样。"
+    />
+    <title>经纬光场 · Weave Light Field</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#weave-actions">跳到织造操作</a>
+
+    <div id="app" class="experience-shell" data-phase="opening">
+      <div class="daylight-field" aria-hidden="true"><i></i><i></i><i></i></div>
+      <canvas class="weave-canvas" data-signal-visual-anchor aria-hidden="true"></canvas>
+
+      <svg class="fallback-loom" viewBox="0 0 900 650" aria-hidden="true">
+        <defs>
+          <linearGradient id="fallback-wood" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#d9ad69" />
+            <stop offset=".48" stop-color="#ac7442" />
+            <stop offset="1" stop-color="#7d4c2c" />
+          </linearGradient>
+          <linearGradient id="fallback-metal" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#6e7772" />
+            <stop offset=".5" stop-color="#d7dbcf" />
+            <stop offset="1" stop-color="#6d746d" />
+          </linearGradient>
+          <pattern id="fallback-warp" width="13" height="12" patternUnits="userSpaceOnUse">
+            <rect width="13" height="12" fill="#f1dfbd" />
+            <path d="M2 0V12 M8 0V12" stroke="#fff8e9" stroke-width="2" />
+            <path d="M0 3H13 M0 9H13" stroke="#c89f67" stroke-opacity=".34" stroke-width="1" />
+          </pattern>
+          <clipPath id="fallback-cloth-clip">
+            <rect data-fallback-reveal x="176" y="486" width="548" height="0" />
+          </clipPath>
+          <filter id="fallback-shadow" x="-30%" y="-30%" width="160%" height="180%">
+            <feDropShadow dx="0" dy="15" stdDeviation="12" flood-color="#6d4f2e" flood-opacity=".18" />
+          </filter>
+        </defs>
+
+        <ellipse cx="450" cy="565" rx="360" ry="48" fill="#a77e53" opacity=".13" />
+        <g class="fallback-frame" filter="url(#fallback-shadow)">
+          <rect x="100" y="78" width="30" height="470" rx="12" fill="url(#fallback-wood)" />
+          <rect x="770" y="78" width="30" height="470" rx="12" fill="url(#fallback-wood)" />
+          <rect x="92" y="68" width="716" height="30" rx="12" fill="url(#fallback-wood)" />
+          <rect x="92" y="530" width="716" height="30" rx="12" fill="url(#fallback-wood)" />
+          <rect x="134" y="110" width="632" height="50" rx="25" fill="url(#fallback-metal)" />
+          <rect x="134" y="485" width="632" height="50" rx="25" fill="url(#fallback-metal)" />
+        </g>
+
+        <g class="fallback-warps" opacity=".82">
+          <path d="M176 135V510 M195 135V510 M214 135V510 M233 135V510 M252 135V510 M271 135V510 M290 135V510 M309 135V510 M328 135V510 M347 135V510 M366 135V510 M385 135V510 M404 135V510 M423 135V510 M442 135V510 M461 135V510 M480 135V510 M499 135V510 M518 135V510 M537 135V510 M556 135V510 M575 135V510 M594 135V510 M613 135V510 M632 135V510 M651 135V510 M670 135V510 M689 135V510 M708 135V510"
+            stroke="#f9ecd1" stroke-width="3" />
+        </g>
+
+        <g class="fallback-heddles">
+          <g data-fallback-heddle="0"><rect x="150" y="219" width="600" height="14" rx="7" fill="#8e9a90" /><path d="M202 227V318 M286 227V318 M370 227V318 M454 227V318 M538 227V318 M622 227V318 M706 227V318" stroke="#748078" stroke-width="3" /></g>
+          <g data-fallback-heddle="1"><rect x="150" y="253" width="600" height="14" rx="7" fill="#bd834c" /><path d="M174 261V342 M258 261V342 M342 261V342 M426 261V342 M510 261V342 M594 261V342 M678 261V342" stroke="#a86d3c" stroke-width="3" /></g>
+          <g data-fallback-heddle="2"><rect x="150" y="287" width="600" height="14" rx="7" fill="#3f5575" /><path d="M188 295V366 M272 295V366 M356 295V366 M440 295V366 M524 295V366 M608 295V366 M692 295V366" stroke="#324664" stroke-width="3" /></g>
+        </g>
+
+        <g class="fallback-cloth" clip-path="url(#fallback-cloth-clip)">
+          <rect x="176" y="238" width="548" height="248" rx="4" fill="url(#fallback-warp)" />
+          <circle cx="643" cy="291" r="51" fill="#dfb448" opacity=".96" />
+          <path d="M315 386 C365 267 479 241 577 306 C516 302 468 326 442 368 C408 420 352 421 315 386Z" fill="#214a73" />
+          <path d="M409 362 C421 277 494 232 584 253 C529 275 498 316 486 374Z" fill="#315f8f" />
+          <path d="M479 370 C538 327 602 334 643 371 C608 382 583 402 562 432Z" fill="#d89e31" />
+          <path d="M638 365 L701 383 L643 401Z" fill="#d94f35" />
+          <circle cx="625" cy="365" r="6" fill="#fff7de" /><circle cx="627" cy="365" r="2.5" fill="#203c51" />
+          <path d="M339 392 L273 431 L358 421 M367 405 L322 461 L397 430" fill="none" stroke="#bd3d2f" stroke-width="16" stroke-linecap="round" />
+          <g opacity=".28" stroke="#fff9e7" stroke-width="2"><path d="M176 270H724 M176 306H724 M176 342H724 M176 378H724 M176 414H724 M176 450H724" /></g>
+        </g>
+
+        <g data-fallback-shuttle class="fallback-shuttle" transform="translate(0 0)">
+          <path d="M128 376 C156 349 227 349 255 376 C227 403 156 403 128 376Z" fill="#d95737" />
+          <rect x="165" y="366" width="53" height="20" rx="10" fill="#f3c34f" />
+        </g>
+      </svg>
+
+      <header class="site-header">
+        <a class="brand" href="../../" aria-label="返回 Kage V2">
+          <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span>WEAVE LIGHT FIELD</span>
+        </a>
+        <p class="edition">SPATIAL JACQUARD / 023</p>
+        <p class="truth-label"><span aria-hidden="true"></span>空间织造教学演示 · 非真实织机参数</p>
+      </header>
+
+      <main class="stage-copy" aria-labelledby="page-title">
+        <section class="hero-copy">
+          <p class="eyebrow">让光沿着经纬，慢慢有了羽翼。</p>
+          <h1 id="page-title">经纬光场</h1>
+          <p class="lede">推进同一枚梭子，看三组综丝错峰抬落；六梭之后，朱砂、靛蓝与姜黄会在同一片织面上汇成晨鸟。</p>
+        </section>
+
+        <aside class="progress-ticket" data-signal-result aria-label="当前织造结果">
+          <div class="ticket-head">
+            <span data-row-count>00 / 06</span>
+            <span data-phase-label>装置正在展开</span>
+          </div>
+          <div class="ticket-pattern">
+            <p>当前纹样</p>
+            <strong data-pattern-name>空纱架</strong>
+            <span data-pattern-description>经纱、综丝与卷布轴正在进入日光。</span>
+          </div>
+          <div class="compare-line">
+            <span>空经</span><i><b data-progress-fill></b></i><span>晨鸟</span>
+          </div>
+        </aside>
+
+        <section id="weave-actions" class="action-rail" aria-label="织造操作">
+          <div class="rail-status">
+            <span>WEFT / ROW</span>
+            <strong data-rail-count>0 梭</strong>
+            <p data-rail-hint>装置稳定后，点击场景或推进第一梭。</p>
+          </div>
+          <div class="step-pips" data-step-pips aria-label="六梭织造进度">
+            <i></i><i></i><i></i><i></i><i></i><i></i>
+          </div>
+          <button class="advance-button" type="button" data-advance data-signal-primary-control>
+            <span>推进一梭</span><small>SPACE / →</small>
+          </button>
+          <button class="save-button" type="button" data-save data-signal-action disabled>
+            <span>保存我的织纹</span><span aria-hidden="true">↗</span>
+          </button>
+          <button class="reset-button" type="button" data-reset aria-label="重新织造">重置</button>
+        </section>
+
+        <p class="interaction-hint">CLICK / SHUTTLE&nbsp;&nbsp; DRAG / THROW&nbsp;&nbsp; SPACE / WEAVE</p>
+        <div class="runtime-fallback" data-fallback-message role="status" hidden>
+          <strong>已切换到基础织造视图</strong>
+          <span>六梭纹样、键盘操作与保存行动仍然完整可用。</span>
+        </div>
+        <p class="sr-status" data-live-status role="status" aria-live="polite">经纬装置正在日光中展开。</p>
+      </main>
+    </div>
+
+    <noscript>此页面需要 JavaScript 才能推进织造；这是空间织造教学演示，不代表真实织机参数。</noscript>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>

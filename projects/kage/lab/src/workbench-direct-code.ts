@@ -4,7 +4,9 @@ import { selectProjectCreativeAssets, type ProjectCreativeAsset } from './genera
 import { importedUserAssetSchema, type ImportedUserAsset } from './generation/asset-intake';
 import { loadGeneratedExperience } from './generation/generated-store';
 import type { AssetPreparationOutcome } from './workbench-main';
+import { assetAcceptValue, assetRequestLabel, createCodexImageGenerationTasks, type WorkbenchAssetRecoveryRequest } from './workbench-asset-recovery';
 import type { OutcomeAssetRoute, OutcomeRouteInput } from './workbench-outcome-route';
+import { renderWorkbenchJobTelemetry, renderWorkbenchResultStatus } from './workbench-job-telemetry.ts';
 
 interface DirectSnapshot {
   state: 'idle' | 'generating' | 'ready' | 'error';
@@ -57,18 +59,63 @@ interface DirectRefinementResult {
 
 interface GenerationJobView {
   id: string;
-  status: 'running' | 'complete' | 'blocked' | 'failed';
+  status: 'running' | 'review-required' | 'complete' | 'blocked' | 'failed';
   executionOwner?: 'client' | 'server';
   stage: string;
   message: string;
   brief: string;
   sourceReceipt: DirectReceipt | null;
   bestReceipt: DirectReceipt | null;
+  bestPreviewUrl: string | null;
   bestRunId: string | null;
   sourceScore: number | null;
   finalScore: number | null;
   error: string | null;
   retryableStage: string | null;
+  createdAt: string;
+  updatedAt: string;
+  finishedAt: string | null;
+  phaseDurationsMs: { planning: number; assets: number; authoring: number; reviewing: number } | null;
+  history: Array<{ stage: string; at: string; message: string }>;
+  assetGate: {
+    decision: 'ready' | 'needs-codex-assets';
+    summary: string;
+    requests: Array<{
+      requirementId: string;
+      role: string;
+      modality: string;
+      minimumQuality: string;
+      recommendedSource?: 'chatgpt-imagegen' | 'user-or-licensed';
+      responsibility: string;
+      continuity: string;
+      proof: string;
+      reason?: string;
+    }>;
+  } | null;
+  assetCompletion: {
+    completionId: string;
+    requirementIds: string[];
+    status: 'requested' | 'resumed' | 'exhausted';
+    submissionId: string | null;
+    attempts: number;
+  } | null;
+  deliveryQuality: {
+    targetAssetQuality: string;
+    achievedAssetQuality: string;
+    status: 'provisional' | 'prototype-only' | 'final-eligible';
+    finalEligible: boolean;
+    summary: string;
+    experience?: {
+      status: 'pending' | 'pass' | 'revise' | 'blocked';
+      score: number | null;
+      structureMode: string | null;
+      expectedStateCount: number;
+      reviewedStateCount: number;
+      archiveEligible: boolean;
+      summary: string;
+      issues: string[];
+    } | null;
+  } | null;
 }
 
 interface DirectRevisionResult {
@@ -91,6 +138,9 @@ const qualitySelect = required<HTMLSelectElement>('#quality');
 const previewLink = required<HTMLAnchorElement>('#preview-link');
 const stageFrame = required<HTMLIFrameElement>('#creative-stage-frame');
 const stageShell = required<HTMLElement>('.wb-stage-shell');
+const stagePlaceholder = required<HTMLElement>('#creative-stage-placeholder');
+const stagePlaceholderTitle = required<HTMLElement>('#creative-stage-placeholder strong');
+const stagePlaceholderCopy = required<HTMLElement>('#creative-stage-placeholder p');
 const stageTitle = required<HTMLElement>('#creative-stage-title');
 const stageDescription = required<HTMLElement>('#creative-stage-description');
 const stageStatus = required<HTMLElement>('#creative-stage-status');
@@ -98,6 +148,8 @@ const stageOpen = required<HTMLAnchorElement>('#creative-stage-open');
 const status = required<HTMLElement>('#workbench-status');
 const revisionInput = required<HTMLInputElement>('#revision-instruction');
 const revisionButton = required<HTMLButtonElement>('#apply-revision-button');
+const executionTrace = required<HTMLElement>('#execution-trace');
+const experienceQuality = required<HTMLElement>('#experience-quality');
 
 const buildButton = document.createElement('button');
 buildButton.id = 'build-dedicated-experience';
@@ -131,6 +183,7 @@ let sourceSelectedId: string | null = null;
 let activeReceipt: DirectReceipt | null = null;
 let refinementState: 'idle' | 'reviewing' | 'ready' | 'failed' = 'idle';
 let phaseTimer = 0;
+let previewLoadTimer = 0;
 
 let revisionState: 'idle' | 'revising' | 'ready' | 'failed' = 'idle';
 let activeAssetRoute: OutcomeAssetRoute = 'pending';
@@ -138,10 +191,22 @@ let autoBuildRequested = false;
 let autoBuildSawGeneration = false;
 let activeJobId: string | null = /^job-[a-f0-9]{16}$/.test(new URLSearchParams(location.search).get('job') || '') ? new URLSearchParams(location.search).get('job') : null;
 let jobPollInFlight = false;
+let terminalJobId: string | null = null;
 let resumedRefinementJobId: string | null = null;
+let activeAssetGate: GenerationJobView['assetGate'] = null;
+let activeAssetCompletion: GenerationJobView['assetCompletion'] = null;
 buildButton.addEventListener('click', () => void buildDedicatedExperience());
 refineButton.addEventListener('click', () => void refineDedicatedPreview());
 assetIntake.button.addEventListener('click', () => void importSelectedAsset());
+assetIntake.copyButton.addEventListener('click', () => void copySelectedAssetTask());
+assetIntake.select.addEventListener('change', () => {
+  const request = selectedAssetRequest();
+  if (request) assetIntake.input.accept = assetAcceptValue(request);
+  assetIntake.input.value = '';
+  assetIntake.result.textContent = request ? `当前将素材绑定到：${assetRequestLabel(request)}。` : '';
+});
+stageFrame.addEventListener('load', () => verifyDedicatedFrame());
+stageFrame.addEventListener('error', () => showDedicatedFrameFallback('内嵌预览加载失败；完整网页仍可单独打开。'));
 window.addEventListener('creative-lab:selection-ready', (event) => {
   if (!(event instanceof CustomEvent) || event.detail?.autoBuild !== true) return;
   autoBuildRequested = true;
@@ -162,7 +227,7 @@ revisionButton.addEventListener('click', (event) => {
 
 const statePoll = window.setInterval(syncState, 180);
 const jobPoll = window.setInterval(() => void recoverGenerationJob(), 1000);
-addEventListener('pagehide', () => { clearInterval(statePoll); clearInterval(jobPoll); clearPhaseTimer(); }, { once: true });
+addEventListener('pagehide', () => { clearInterval(statePoll); clearInterval(jobPoll); clearPhaseTimer(); clearPreviewLoadTimer(); }, { once: true });
 void detectCodex().then(() => recoverGenerationJob());
 syncState();
 
@@ -184,7 +249,10 @@ async function detectCodex(): Promise<void> {
 
 function syncState(): void {
   const snapshot = (window as DirectWindow).__creativeLab?.snapshot();
-  if (snapshot?.jobId) activeJobId = snapshot.jobId;
+  if (snapshot?.jobId) {
+    if (snapshot.jobId !== activeJobId) terminalJobId = null;
+    activeJobId = snapshot.jobId;
+  }
   if (autoBuildRequested && snapshot?.state === 'generating') autoBuildSawGeneration = true;
   const selectionChanged = Boolean(
     snapshot?.runId
@@ -330,14 +398,14 @@ async function refineDedicatedPreview(automatic = false): Promise<void> {
   refineButton.textContent = '正在截图并视觉精修…';
   renderReviewingReceipt(current);
   status.textContent = automatic
-    ? '专属代码已编译；正在自动采集四个真实页面状态并选择最佳版本。'
-    : '正在采集首屏、中段、末段与移动端四个真实状态；Codex 将基于截图决定保留或生成独立修订版。';
+    ? '专属代码已编译；正在按叙事合同采集真实页面状态并选择最佳版本。'
+    : '正在采集叙事节拍、移动端与合同要求的特殊状态；Codex 将基于截图决定保留或生成独立修订版。';
   reportPipeline({
     stage: 'reviewing',
     assetRoute: activeAssetRoute,
     assetCount: current.assets,
     model: current.model,
-    message: '正在检查首屏、中段、末段与移动端，并在原版和独立修订版之间选择更好的一个。'
+    message: '正在检查叙事节拍、移动端与合同要求的特殊状态，并在原版和独立修订版之间选择更好的一个。'
   });
   syncState();
   if (automatic) refineButton.hidden = true;
@@ -405,29 +473,48 @@ async function recoverGenerationJob(): Promise<void> {
   const snapshot = (window as DirectWindow).__creativeLab?.snapshot();
   const jobId = snapshot?.jobId || activeJobId;
   if (!jobId) return;
+  if (jobId === terminalJobId) return;
   jobPollInFlight = true;
   try {
     const response = await fetch(`/api/creative/jobs/${jobId}`, { headers: { Accept: 'application/json' } });
-    if (!response.ok) return;
+    if (!response.ok) {
+      if (response.status === 404 || response.status === 410) {
+        terminalJobId = jobId;
+        status.textContent = '原任务记录已不存在，工作台已停止查询；当前想法仍保留，可按需新建一次任务。';
+      }
+      return;
+    }
     const body = await response.json() as { job?: GenerationJobView };
     const job = body.job;
     if (!job) return;
     activeJobId = job.id;
-    if (job.status === 'complete' && job.bestReceipt && activeReceipt?.id !== job.bestReceipt.id) {
+    terminalJobId = job.status === 'running' ? null : job.id;
+    dispatchGenerationJobUpdate(job);
+    renderWorkbenchJobTelemetry(executionTrace, job);
+    renderWorkbenchResultStatus(experienceQuality, {
+      ...job,
+      bestPreviewUrl: job.bestPreviewUrl || job.bestReceipt?.previewUrl || null,
+      sourcePreviewUrl: job.sourceReceipt?.previewUrl || null,
+    });
+    const recoverablePreview = job.status === 'complete' || job.status === 'review-required' || (job.status === 'failed' && Boolean(job.bestReceipt));
+    if (recoverablePreview && job.bestReceipt && activeReceipt?.id !== job.bestReceipt.id) {
+      activeAssetGate = null;
+      activeAssetCompletion = null;
+      hideAssetIntake();
       activeReceipt = job.bestReceipt;
       buildState = 'compiled';
       refinementState = 'ready';
       stageShell.dataset.pipelineState = 'complete';
       stageShell.dataset.finalRunId = job.bestReceipt.id;
       renderCompiledReceipt(job.bestReceipt);
-      const visuallyAccepted = job.finalScore !== null;
+      const visuallyAccepted = job.status === 'complete' && job.finalScore !== null && job.deliveryQuality?.finalEligible !== false;
       showRecoveredPreview(job.bestReceipt, job.brief, visuallyAccepted);
       status.textContent = visuallyAccepted
-        ? `已恢复最终最佳网页 ${job.bestReceipt.id}；案例只使用这个经过视觉评审的版本。`
-        : `已恢复可运行网页 ${job.bestReceipt.id}；${job.message}`;
+        ? `已恢复最终最佳网页 ${job.bestReceipt.id}；案例只使用这个经过视觉与素材交付双重验收的版本。`
+        : `已恢复可运行网页 ${job.bestReceipt.id}；${job.message}${job.deliveryQuality ? `（素材 ${job.deliveryQuality.achievedAssetQuality} / 目标 ${job.deliveryQuality.targetAssetQuality}）` : ''}`;
       activeAssetRoute = job.bestReceipt.assets > 0 ? 'catalog' : 'procedural';
       reportPipeline({
-        stage: visuallyAccepted ? 'complete' : 'reviewing',
+        stage: visuallyAccepted ? 'complete' : 'review-required',
         assetRoute: activeAssetRoute,
         assetCount: job.bestReceipt.assets,
         model: job.bestReceipt.model,
@@ -437,6 +524,9 @@ async function recoverGenerationJob(): Promise<void> {
       return;
     }
     if (job.status === 'running') {
+      activeAssetGate = null;
+      activeAssetCompletion = null;
+      hideAssetIntake();
       if (buildState === 'idle') {
         receipt.root.hidden = false;
         receipt.root.dataset.state = 'reviewing';
@@ -460,13 +550,22 @@ async function recoverGenerationJob(): Promise<void> {
       return;
     }
     if (job.status === 'blocked') {
+      activeAssetGate = job.assetGate;
+      activeAssetCompletion = job.assetCompletion;
       renderAssetBlocked(job.error || job.message);
+      syncAssetIntakeRequests(job.assetGate);
+      const request = selectedAssetRequest();
+      if (request) {
+        assetIntake.message.textContent = `${request.role} · ${request.modality} · ${request.minimumQuality}：${request.responsibility}`;
+      }
       status.textContent = `任务停在真实素材门禁：${job.message}`;
       activeAssetRoute = 'blocked';
       reportPipeline({ stage: 'blocked', assetRoute: 'blocked', message: job.message });
     } else if (job.status === 'failed') {
       renderFailedReceipt(job.error || job.message);
-      status.textContent = `任务可从 ${job.retryableStage || '当前阶段'} 重试；已完成结果不会丢失。`;
+      status.textContent = job.retryableStage
+        ? `任务可从 ${job.retryableStage} 执行一次显式恢复；已完成结果不会丢失。`
+        : `任务已经停止且不会自动重试：${job.message}`;
       reportPipeline({ stage: 'failed', assetRoute: activeAssetRoute, message: job.error || job.message });
     }
   } finally {
@@ -480,11 +579,10 @@ function showRecoveredPreview(next: DirectReceipt, brief: string, visuallyAccept
   fullUrl.searchParams.set('motion', matchMedia('(prefers-reduced-motion: reduce)').matches ? 'reduce' : 'full');
   const frameUrl = new URL(fullUrl);
   frameUrl.searchParams.set('embed', '1');
-  stageFrame.setAttribute('sandbox', 'allow-scripts');
-  stageFrame.src = frameUrl.href;
+  loadDedicatedFrame(frameUrl);
   stageTitle.textContent = visuallyAccepted ? '最终最佳网页 · 已恢复' : '可运行网页 · 待视觉确认';
   stageDescription.textContent = visuallyAccepted
-    ? `${brief.slice(0, 90)} · ${next.model} · 四状态视觉评审后选中。`
+    ? `${brief.slice(0, 90)} · ${next.model} · 自适应视觉评审后选中。`
     : `${brief.slice(0, 90)} · ${next.model} · 已编译并通过结构检查，视觉结论待确认。`;
   stageOpen.href = fullUrl.href;
   previewLink.href = fullUrl.href;
@@ -575,8 +673,7 @@ function showDedicatedPreview(next: DirectReceipt, manifest: ExperienceManifest)
   fullUrl.searchParams.set('motion', matchMedia('(prefers-reduced-motion: reduce)').matches ? 'reduce' : 'full');
   const frameUrl = new URL(fullUrl);
   frameUrl.searchParams.set('embed', '1');
-  stageFrame.setAttribute('sandbox', 'allow-scripts');
-  stageFrame.src = frameUrl.href;
+  loadDedicatedFrame(frameUrl);
   stageTitle.textContent = `${manifest.title} · 专属代码版`;
   stageDescription.textContent = `${next.files} 个模型生成文件，${next.assets} 个已证明来源的素材，${formatBytes(next.sourceBytes)}，本地 TypeScript 编译通过。`;
   stageOpen.href = fullUrl.href;
@@ -585,6 +682,7 @@ function showDedicatedPreview(next: DirectReceipt, manifest: ExperienceManifest)
 }
 
 function resetDirectPreviewSecurity(): void {
+  clearPreviewLoadTimer();
   stageFrame.removeAttribute('sandbox');
   activeReceipt = null;
   buildState = 'idle';
@@ -593,6 +691,56 @@ function resetDirectPreviewSecurity(): void {
   refineButton.textContent = '自动视觉精修';
   revisionState = 'idle';
   activeAssetRoute = 'pending';
+}
+
+function loadDedicatedFrame(url: URL): void {
+  clearPreviewLoadTimer();
+  // Generated bundles are statically denied network, storage and parent/top access;
+  // allow-same-origin is required for Chromium to composite the real page instead of a black frame.
+  stageFrame.setAttribute('sandbox', 'allow-scripts allow-same-origin');
+  stageFrame.classList.remove('is-ready');
+  stageShell.dataset.previewState = 'loading';
+  stagePlaceholder.classList.remove('is-hidden');
+  stagePlaceholderTitle.textContent = '正在载入已生成网页';
+  stagePlaceholderCopy.textContent = '页面已经构建完成，正在把真实结果载入工作台预览。';
+  stageFrame.src = url.href;
+  previewLoadTimer = window.setTimeout(() => {
+    if (stageShell.dataset.previewState !== 'ready') showDedicatedFrameFallback('内嵌预览超过 8 秒未完成；完整网页仍可单独打开。');
+  }, 8_000);
+}
+
+function verifyDedicatedFrame(): void {
+  if (stageFrame.src === 'about:blank') return;
+  clearPreviewLoadTimer();
+  const doc = stageFrame.contentDocument;
+  const app = doc?.querySelector('#app');
+  const hasMountedOutput = Boolean(app && !app.querySelector('.generated-loading') && app.children.length > 0);
+  if (!hasMountedOutput) {
+    showDedicatedFrameFallback('内嵌页面没有形成可见结果；完整网页仍可单独打开。');
+    return;
+  }
+  stageShell.dataset.previewState = 'ready';
+  stagePlaceholder.classList.add('is-hidden');
+  stageFrame.classList.add('is-ready');
+  stageOpen.removeAttribute('aria-disabled');
+  stageStatus.textContent = 'PREVIEW READY';
+}
+
+function showDedicatedFrameFallback(message: string): void {
+  clearPreviewLoadTimer();
+  stageShell.dataset.previewState = 'failed';
+  stageFrame.classList.remove('is-ready');
+  stagePlaceholder.classList.remove('is-hidden');
+  stagePlaceholderTitle.textContent = '工作台预览未显示';
+  stagePlaceholderCopy.textContent = message;
+  stageStatus.textContent = 'OPEN FULL PAGE';
+  if (stageOpen.href) stageOpen.removeAttribute('aria-disabled');
+}
+
+function clearPreviewLoadTimer(): void {
+  if (!previewLoadTimer) return;
+  window.clearTimeout(previewLoadTimer);
+  previewLoadTimer = 0;
 }
 
 function reportPipeline(detail: OutcomeRouteInput): void {
@@ -647,9 +795,9 @@ function renderReviewingReceipt(current: DirectReceipt): void {
   receipt.root.hidden = false;
   receipt.root.dataset.state = 'reviewing';
   receipt.state.textContent = 'VISUAL REVIEW';
-  receipt.note.textContent = `${current.id} · four browser states`;
-  receipt.files.textContent = '4 FRAMES';
-  receipt.filesNote.textContent = 'opening · middle · final · mobile';
+  receipt.note.textContent = `${current.id} · contract-driven browser states`;
+  receipt.files.textContent = 'ADAPTIVE REVIEW';
+  receipt.filesNote.textContent = 'story beats · mobile · conditional capability';
   receipt.compile.textContent = 'EVIDENCE FIRST';
   receipt.compileNote.textContent = 'overflow · collision · progress';
   receipt.security.textContent = 'LOCAL ONLY';
@@ -707,8 +855,10 @@ function renderAssetBlocked(message: string): void {
 
 function createAssetIntake(): {
   root: HTMLElement;
+  select: HTMLSelectElement;
   input: HTMLInputElement;
   button: HTMLButtonElement;
+  copyButton: HTMLButtonElement;
   message: HTMLElement;
   result: HTMLElement;
 } {
@@ -719,21 +869,89 @@ function createAssetIntake(): {
     <div>
       <span>REAL ASSET INTAKE</span>
       <strong>为当前想法补充真实素材</strong>
+      <small>每次最多处理两项图片职责；登记后只复检并恢复同一 Job 一次。</small>
       <p data-asset-intake-message></p>
     </div>
+    <label class="wb-asset-intake__request">
+      <span>选择要补齐的素材职责</span>
+      <select aria-label="选择素材职责"></select>
+    </label>
     <label>
       <span>PNG / JPEG / GLB / MP3 / WAV / MP4 / WebM · 最大 20 MB</span>
       <input type="file" accept=".png,.jpg,.jpeg,.glb,.mp3,.wav,.mp4,.webm" />
     </label>
-    <button type="button">登记素材</button>
+    <div class="wb-asset-intake__actions">
+      <button type="button" data-copy-asset-task>复制给 Codex</button>
+      <button type="button" data-import-asset>登记素材并继续</button>
+    </div>
     <p data-asset-intake-result role="status" aria-live="polite"></p>`;
   return {
     root,
+    select: requiredWithin<HTMLSelectElement>(root, 'select'),
     input: requiredWithin<HTMLInputElement>(root, 'input[type="file"]'),
-    button: requiredWithin<HTMLButtonElement>(root, 'button'),
+    button: requiredWithin<HTMLButtonElement>(root, '[data-import-asset]'),
+    copyButton: requiredWithin<HTMLButtonElement>(root, '[data-copy-asset-task]'),
     message: requiredWithin(root, '[data-asset-intake-message]'),
     result: requiredWithin(root, '[data-asset-intake-result]')
   };
+}
+
+function syncAssetIntakeRequests(gate: GenerationJobView['assetGate']): void {
+  const previous = assetIntake.select.value;
+  assetIntake.select.replaceChildren(...(gate?.requests || []).map((request, index) => {
+    const option = document.createElement('option');
+    option.value = String(index);
+    option.textContent = assetRequestLabel(request);
+    return option;
+  }));
+  if (previous && [...assetIntake.select.options].some((option) => option.value === previous)) {
+    assetIntake.select.value = previous;
+  }
+  const request = selectedAssetRequest();
+  assetIntake.select.disabled = !request || (gate?.requests.length || 0) < 2;
+  assetIntake.copyButton.disabled = !request;
+  assetIntake.button.disabled = !request;
+  if (request) {
+    assetIntake.input.accept = assetAcceptValue(request);
+    assetIntake.message.textContent = `${assetRequestLabel(request)}：${request.responsibility}`;
+  }
+}
+
+function selectedAssetRequest(): WorkbenchAssetRecoveryRequest | null {
+  const requests = activeAssetGate?.requests || [];
+  const index = Number(assetIntake.select.value || 0);
+  return requests[index] || requests[0] || null;
+}
+
+async function copySelectedAssetTask(): Promise<void> {
+  const request = selectedAssetRequest();
+  if (!request) {
+    assetIntake.result.textContent = '当前没有等待补齐的素材职责。';
+    return;
+  }
+  if (!activeJobId || !activeAssetCompletion?.completionId) {
+    assetIntake.result.textContent = '当前任务缺少 Job 或素材完成合同身份；刷新一次后再复制，不会新建任务。';
+    return;
+  }
+  const task = createCodexImageGenerationTasks(
+    activeJobId,
+    activeAssetCompletion.completionId,
+    briefInput.value,
+    [request]
+  )[0];
+  if (!task) {
+    assetIntake.result.textContent = '当前职责不是图片生成任务；请上传用户提供或具有明确许可的对应文件。';
+    return;
+  }
+  assetIntake.copyButton.disabled = true;
+  try {
+    await writeClipboard(task.prompt);
+    assetIntake.result.textContent = `已复制 ${assetRequestLabel(request)} 的 Codex 图片任务；带素材与审阅回执返回后，同一 Job 会继续且不会创建新 Job。`;
+  } catch (error) {
+    assetIntake.result.textContent = error instanceof Error ? error.message : String(error);
+  } finally {
+    assetIntake.copyButton.disabled = false;
+  }
 }
 
 async function importSelectedAsset(): Promise<void> {
@@ -758,14 +976,60 @@ async function importSelectedAsset(): Promise<void> {
         brief: briefInput.value.trim(),
         fileName: file.name,
         contentType: file.type || 'application/octet-stream',
-        dataBase64: await fileToBase64(file)
+        dataBase64: await fileToBase64(file),
+        ...(selectedAssetRequest()?.responsibility
+          ? { role: selectedAssetRequest()!.responsibility.slice(0, 120) }
+          : {})
       })
     });
     const body = await response.json() as { asset?: unknown; error?: string };
     if (!response.ok || !body.asset) throw new Error(body.error || `素材接口返回 ${response.status}`);
     const asset = importedUserAssetSchema.parse(body.asset);
     rememberUserAsset(briefInput.value, asset);
-    assetIntake.result.textContent = `${asset.kind} 已登记：${formatBytes(asset.payloadBytes)} · L2 可检查 · 发布权利待复核。`;
+    const request = selectedAssetRequest();
+    if (activeJobId && request) {
+      if (!activeAssetCompletion || activeAssetCompletion.status !== 'requested') {
+        assetIntake.result.textContent = `${asset.id} 已完成像素/结构早检，但当前任务没有可用的一次性素材完成合同；没有触发新的任务或恢复循环。`;
+        return;
+      }
+      if (request.minimumQuality !== 'L2-inspectable') {
+        assetIntake.result.textContent = `${asset.id} 已登记为 L2 候选。当前职责要求 ${request.minimumQuality}；请让 Codex 使用 completionId ${activeAssetCompletion.completionId} 连同审阅回执一次性提交，本页面不会把普通上传直接提升为 L3/L4。`;
+        return;
+      }
+      if (activeAssetCompletion.requirementIds.length !== 1) {
+        assetIntake.result.textContent = `${asset.id} 已登记。本轮合同包含 ${activeAssetCompletion.requirementIds.length} 项职责，必须由 Codex 一次性提交完整批次；当前上传不会提前消耗唯一恢复次数。`;
+        return;
+      }
+      const resumeResponse = await fetch(`/api/creative/jobs/${activeJobId}/assets`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          completionId: activeAssetCompletion.completionId,
+          submissionId: createSubmissionId(),
+          attachments: [{ assetId: asset.id, requirementId: request.requirementId }]
+        })
+      });
+      const resumeBody = await resumeResponse.json() as { job?: GenerationJobView; error?: string };
+      if (!resumeResponse.ok || !resumeBody.job) throw new Error(resumeBody.error || `任务恢复接口返回 ${resumeResponse.status}`);
+      dispatchGenerationJobUpdate(resumeBody.job);
+      activeAssetGate = resumeBody.job.assetGate;
+      activeAssetCompletion = resumeBody.job.assetCompletion;
+      if (resumeBody.job.status === 'running') {
+        terminalJobId = null;
+        activeJobId = resumeBody.job.id;
+        hideAssetIntake();
+        assetIntake.result.textContent = '';
+        status.textContent = '素材候选已绑定并通过本次复检；没有创建新 Job 或重新理解目标，正在从 Codex 编码阶段继续。';
+      } else {
+        syncAssetIntakeRequests(resumeBody.job.assetGate);
+        const remaining = selectedAssetRequest();
+        assetIntake.result.textContent = remaining
+          ? `当前素材已登记；仍需补充 ${remaining.role} · ${remaining.modality}。`
+          : resumeBody.job.message;
+      }
+      return;
+    }
+    assetIntake.result.textContent = `${asset.kind} 已登记为 L2 可检查候选：${formatBytes(asset.payloadBytes)}。它尚未达到 L3/L4，需通过质量复检后才能恢复构建。`;
     buildButton.hidden = false;
     buildButton.textContent = '使用已登记素材继续构建';
     status.textContent = '素材已就绪。再次点击构建，Codex 会把它作为当前目标的真实素材，而不是占位效果。';
@@ -773,12 +1037,39 @@ async function importSelectedAsset(): Promise<void> {
     assetIntake.result.textContent = error instanceof Error ? error.message : String(error);
   } finally {
     assetIntake.button.disabled = false;
-    assetIntake.button.textContent = '登记素材';
+    assetIntake.button.textContent = '登记素材并继续';
   }
 }
 
 function hideAssetIntake(): void {
   assetIntake.root.hidden = true;
+}
+
+function createSubmissionId(): string {
+  const bytes = new Uint8Array(8);
+  crypto.getRandomValues(bytes);
+  return `submission-${[...bytes].map((value) => value.toString(16).padStart(2, '0')).join('')}`;
+}
+
+function dispatchGenerationJobUpdate(job: GenerationJobView): void {
+  window.dispatchEvent(new CustomEvent('creative-lab:generation-job-updated', { detail: { job } }));
+}
+
+async function writeClipboard(value: string): Promise<void> {
+  if (navigator.clipboard?.writeText) {
+    await navigator.clipboard.writeText(value);
+    return;
+  }
+  const area = document.createElement('textarea');
+  area.value = value;
+  area.setAttribute('readonly', '');
+  area.style.position = 'fixed';
+  area.style.opacity = '0';
+  document.body.append(area);
+  area.select();
+  const copied = document.execCommand('copy');
+  area.remove();
+  if (!copied) throw new Error('浏览器没有允许复制；请手动选择素材需求文本。');
 }
 
 function fileToBase64(file: File): Promise<string> {

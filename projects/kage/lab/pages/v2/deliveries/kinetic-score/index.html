@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f3eddf" />
+    <meta name="description" content="KINETIC SCORE 动作记谱台：用滚轮、指针与键盘编辑一段动作短句的视觉模拟。" />
+    <title>KINETIC SCORE · 动作记谱台</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#score-controls">跳到动作控制</a>
+    <main class="score-stage" data-stage>
+      <canvas class="trail-canvas" aria-hidden="true"></canvas>
+      <svg class="fallback-score" viewBox="0 0 1000 700" role="img" aria-labelledby="fallback-title fallback-desc">
+        <title id="fallback-title">动作短句的基础视觉记谱</title>
+        <desc id="fallback-desc">四个动作节点沿橙、蓝和黑色轨迹连接，当前节点由较大的圆点标记。</desc>
+        <path class="fallback-path fallback-path-a" d="M80 570 C250 520 280 170 500 340 S760 610 930 150" />
+        <path class="fallback-path fallback-path-b" d="M90 620 C280 560 300 230 520 390 S740 650 910 210" />
+        <g class="fallback-nodes"><circle cx="120" cy="554" r="15"/><circle cx="377" cy="252" r="14"/><circle cx="650" cy="484" r="14"/><circle cx="902" cy="178" r="14"/></g>
+      </svg>
+
+      <header class="topbar">
+        <a href="../../" class="brand" aria-label="返回 Kage V2"><b>KS</b><span>KINETIC SCORE</span></a>
+        <p>PHRASE LAB / 04 BEATS</p>
+        <p class="truth-label"><i></i>动作编排视觉模拟</p>
+      </header>
+
+      <section class="title-block" aria-labelledby="page-title">
+        <p>给身体一条<br />可以修改的句法。</p>
+        <h1 id="page-title"><span>动作</span><span>记谱台</span></h1>
+      </section>
+
+      <section class="phrase-map" aria-label="四拍动作短句">
+        <div class="phrase-line" aria-hidden="true"></div>
+        <button type="button" class="beat is-active" data-beat="0" aria-pressed="true"><b>01</b><span>压低</span><i>GROUND</i></button>
+        <button type="button" class="beat" data-beat="1" aria-pressed="false"><b>02</b><span>转身</span><i>TURN</i></button>
+        <button type="button" class="beat" data-beat="2" aria-pressed="false"><b>03</b><span>悬停</span><i>SUSPEND</i></button>
+        <button type="button" class="beat" data-beat="3" aria-pressed="false"><b>04</b><span>抵达</span><i>ARRIVE</i></button>
+      </section>
+
+      <aside class="active-note" aria-live="polite" aria-atomic="true">
+        <p><span data-active-number>01</span> / ACTIVE BEAT</p>
+        <h2 data-active-name>压低</h2>
+        <p data-active-instruction>重心向左脚掌落下，让肩线延迟半拍。</p>
+        <dl>
+          <div><dt>方向</dt><dd data-direction>−18°</dd></div>
+          <div><dt>能量</dt><dd data-energy>46%</dd></div>
+          <div><dt>时值</dt><dd data-duration>1.2拍</dd></div>
+        </dl>
+      </aside>
+
+      <section id="score-controls" class="control-dock" aria-labelledby="controls-title">
+        <div class="dock-title"><p id="controls-title">EDIT MOVEMENT</p><p data-input-hint>滚轮选拍 · 指针改变方向</p></div>
+        <label><span>动作能量 <output for="energy" data-energy-output>46%</output></span><input id="energy" type="range" min="10" max="100" value="46" /></label>
+        <label><span>动作时值 <output for="duration" data-duration-output>1.2拍</output></span><input id="duration" type="range" min="6" max="24" value="12" /></label>
+        <button type="button" class="save-phrase" data-save><span>保存这段动作短句</span><span>↗</span></button>
+        <p class="save-status" data-save-status role="status">参数是编舞草图，不代表动作捕捉或生理测量。</p>
+      </section>
+
+      <p class="edge-caption">← POINTER BENDS THE ACTIVE PHRASE →</p>
+      <div class="fallback-message" data-fallback-message hidden><strong>基础记谱模式</strong><span>动态画布不可用，动作编辑仍可继续。</span></div>
+    </main>
+    <noscript>请启用 JavaScript 以编辑动作短句；页面数值仅为视觉模拟。</noscript>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>

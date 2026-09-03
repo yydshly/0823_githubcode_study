@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#eee9df" />
+    <meta name="description" content="AURORA FILM 薄膜干涉实验室：一件可由指针、滚轮与参数共同调制的视觉模拟作品。" />
+    <title>AURORA FILM · 薄膜干涉实验室</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#controls">跳到模拟控制</a>
+    <div id="app" class="experience-shell">
+      <canvas class="film-canvas" aria-hidden="true"></canvas>
+      <div class="fallback-stage" aria-hidden="true">
+        <div class="fallback-caustic"></div>
+        <div class="fallback-ring"><div class="fallback-film"></div></div>
+      </div>
+
+      <header class="site-header">
+        <a class="brand" href="../../" aria-label="返回 Kage V2">
+          <span class="brand-glyph" aria-hidden="true"></span>
+          <span>AURORA FILM</span>
+        </a>
+        <p>OPTICAL STUDY / 014</p>
+        <p class="simulation-flag"><span></span>视觉模拟 · 非实验测量</p>
+      </header>
+
+      <main class="stage-copy" aria-labelledby="page-title">
+        <div class="hero-copy">
+          <p class="eyebrow">让一层光，获得厚度。</p>
+          <h1 id="page-title"><span>薄膜</span><i>正在形成</i></h1>
+          <p class="lede">移动视角，观察光如何沿曲面分色；滚动或调节参数，让同一层膜呈现不同的综合色谱。</p>
+        </div>
+
+        <aside class="reading" aria-label="当前视觉模拟状态">
+          <p class="reading-title">LIVE SPECTRUM</p>
+          <div class="spectrum-strip" aria-hidden="true"><span></span></div>
+          <dl>
+            <div><dt>膜厚刻度</dt><dd><strong data-thickness-readout>62</strong><span>/ 100</span></dd></div>
+            <div><dt>表面张力</dt><dd><strong data-tension-readout>74</strong><span>%</span></dd></div>
+            <div><dt>观察角</dt><dd><strong data-angle-readout>00</strong><span>°</span></dd></div>
+          </dl>
+        </aside>
+
+        <section id="controls" class="control-panel" aria-labelledby="control-title">
+          <div class="control-heading">
+            <p id="control-title">调制一层光</p>
+            <p data-hero-state>正在形成薄膜…</p>
+          </div>
+          <label>
+            <span>膜厚刻度 <output for="thickness" data-thickness-output>62</output></span>
+            <input id="thickness" name="thickness" type="range" min="12" max="96" value="62" step="1" />
+          </label>
+          <label>
+            <span>表面张力 <output for="tension" data-tension-output>74%</output></span>
+            <input id="tension" name="tension" type="range" min="20" max="100" value="74" step="1" />
+          </label>
+          <button type="button" class="save-button" data-save>
+            <span>保存这组模拟光谱</span><span aria-hidden="true">↗</span>
+          </button>
+          <p class="save-status" data-save-status role="status" aria-live="polite">参数仅用于视觉表现，不代表物理测量结果。</p>
+        </section>
+      </main>
+
+      <div class="stage-index" aria-hidden="true"><span>01</span><i></i><span>04</span></div>
+      <p class="interaction-hint">滚动调制 · 指针改变观察角</p>
+      <div class="runtime-fallback" role="status" hidden>
+        <strong>已切换到基础视觉模拟</strong>
+        <span>参数、说明与保存操作仍然可用。</span>
+      </div>
+    </div>
+
+    <noscript>此页面需要 JavaScript 才能运行互动模拟；视觉内容不代表实验数据。</noscript>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>

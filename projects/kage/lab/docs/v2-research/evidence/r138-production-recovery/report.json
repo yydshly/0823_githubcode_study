@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 1,
+  "stage": "r138-production-static-recovery",
+  "capturedAt": "2026-09-01T05:39:25.989Z",
+  "baseUrl": "http://127.0.0.1:8147/0823_githubcode_study/projects/kage",
+  "source": ".pages-dist",
+  "complete": true,
+  "captures": [
+    "01-production-home-v3.png",
+    "02-production-fox-runtime.png",
+    "03-production-mobile-fox.png"
+  ],
+  "observations": [
+    {
+      "checkpoint": "desktop-home",
+      "url": "http://127.0.0.1:8147/0823_githubcode_study/projects/kage/pages/v2/?revision=r138-production",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "issues": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "requestFailures": [],
+        "responseErrors": []
+      },
+      "loadMs": 1678,
+      "v3Entries": [
+        {
+          "id": "stormglass-archive",
+          "route": "./deliveries/stormglass-archive/",
+          "runId": "direct-r134-stormglass-archive"
+        },
+        {
+          "id": "prism-seed-theatre",
+          "route": "./deliveries/prism-seed-theatre/",
+          "runId": "direct-r135-prism-seed-theatre"
+        },
+        {
+          "id": "film-camera-repair-paths",
+          "route": "./deliveries/film-camera-repair-paths/",
+          "runId": "direct-r136a-film-camera-repair-paths"
+        },
+        {
+          "id": "west-bund-meeting-points",
+          "route": "./deliveries/west-bund-meeting-points/",
+          "runId": "direct-r136b-west-bund-meeting-points"
+        },
+        {
+          "id": "fox-gait-observatory",
+          "route": "./deliveries/fox-gait-observatory/",
+          "runId": "direct-r137-fox-gait-observatory"
+        }
+      ],
+      "foxThumbnail": {
+        "src": "http://127.0.0.1:8147/0823_githubcode_study/projects/kage/assets/fox-gait-observatory-Afy3G2S4.png",
+        "naturalWidth": 1440,
+        "naturalHeight": 900,
+        "status": 200,
+        "bytes": 899123
+      }
+    },
+    {
+      "checkpoint": "desktop-fox-runtime",
+      "url": "http://127.0.0.1:8147/0823_githubcode_study/projects/kage/pages/v2/deliveries/fox-gait-observatory/?quality=high&motion=full&revision=r138-production",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "issues": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "requestFailures": [],
+        "responseErrors": []
+      },
+      "readyMs": 1850,
+      "model": {
+        "url": "http://127.0.0.1:8147/0823_githubcode_study/projects/kage/assets/Fox-CslrZzG2.glb",
+        "status": 200,
+        "bytes": 162852
+      },
+      "state": {
+        "activeGait": "run",
+        "clip": "Run",
+        "modelLoaded": true,
+        "saved": true,
+        "storedValue": "run"
+      },
+      "horizontalOverflow": 0
+    },
+    {
+      "checkpoint": "mobile-home-and-fox",
+      "url": "http://127.0.0.1:8147/0823_githubcode_study/projects/kage/pages/v2/deliveries/fox-gait-observatory/?quality=high&motion=reduce&revision=r138-production-mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "issues": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "requestFailures": [],
+        "responseErrors": []
+      },
+      "home": {
+        "url": "http://127.0.0.1:8147/0823_githubcode_study/projects/kage/pages/v2/?revision=r138-production-mobile",
+        "horizontalOverflow": 0,
+        "v3EntryCount": 5
+      },
+      "fox": {
+        "url": "http://127.0.0.1:8147/0823_githubcode_study/projects/kage/pages/v2/deliveries/fox-gait-observatory/?quality=high&motion=reduce&revision=r138-production-mobile",
+        "horizontalOverflow": 0,
+        "controlBoxes": [
+          {
+            "left": 12.796875,
+            "right": 134.265625,
+            "width": 121.46875
+          },
+          {
+            "left": 134.265625,
+            "right": 255.734375,
+            "width": 121.46875
+          },
+          {
+            "left": 255.734375,
+            "right": 377.203125,
+            "width": 121.46875
+          }
+        ],
+        "state": {
+          "activeGait": "run",
+          "clip": "Run",
+          "modelLoaded": true
+        }
+      }
+    }
+  ]
+}

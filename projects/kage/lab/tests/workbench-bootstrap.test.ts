@@ -23,6 +23,13 @@ describe('workbench bootstrap policy', () => {
     });
   });
 
+  it('restores a generated page that is waiting for visual sign-off without rerunning the model', () => {
+    expect(decideWorkbenchBootstrap({ autorun: false, provider: 'codex', jobId: 'job-0123456789abcdef', recovered: { status: 'review-required', stage: 'review-required' } })).toEqual({
+      runModel: true,
+      resumeJobId: 'job-0123456789abcdef'
+    });
+  });
+
   it('never autoruns the local baseline', () => {
     expect(decideWorkbenchBootstrap({ autorun: true, provider: 'local', jobId: null, recovered: null }).runModel).toBe(false);
   });

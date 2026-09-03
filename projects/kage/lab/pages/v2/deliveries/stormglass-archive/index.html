@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="zh-CN" data-stormglass-ready="false" data-stormglass-state="dormant" data-fallback="false">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#101419" />
+    <meta name="description" content="滚动穿过一片风暴玻璃，让雷雨余光沿裂隙汇聚，保存一张艺术化闪电拓片。" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>雷雨余光档案馆 · 风暴玻璃 07</title>
+  </head>
+  <body data-experience="stormglass-archive">
+    <a class="skip-link" href="#gathering">跳到余光汇聚</a>
+
+    <main id="stormglass-stage">
+      <canvas id="stormglass-canvas" data-signal-visual-anchor aria-label="随滚动变化的程序化风暴玻璃与闪电裂隙"></canvas>
+
+      <svg id="stormglass-fallback" class="stormglass-fallback" viewBox="0 0 900 1200" role="img" aria-label="风暴玻璃中的闪电拓片回退图" hidden>
+        <defs>
+          <radialGradient id="sg-cloud" cx="52%" cy="46%" r="72%">
+            <stop offset="0" stop-color="#4e5963" stop-opacity=".72" />
+            <stop offset=".52" stop-color="#1b2229" stop-opacity=".9" />
+            <stop offset="1" stop-color="#080b0f" />
+          </radialGradient>
+          <linearGradient id="sg-glass" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#dce8ed" stop-opacity=".22" />
+            <stop offset=".48" stop-color="#6d7e89" stop-opacity=".12" />
+            <stop offset="1" stop-color="#d8f4ff" stop-opacity=".27" />
+          </linearGradient>
+          <filter id="sg-glow" x="-80%" y="-80%" width="260%" height="260%">
+            <feGaussianBlur stdDeviation="8" result="blur" />
+            <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+          </filter>
+        </defs>
+        <rect width="900" height="1200" fill="url(#sg-cloud)" />
+        <path d="M286 168 C214 286 206 454 236 646 C260 805 322 970 448 1040 C576 984 652 812 676 620 C700 431 668 276 606 172 C512 120 382 118 286 168Z" fill="url(#sg-glass)" stroke="#c8d4d9" stroke-opacity=".34" stroke-width="3" />
+        <g fill="none" stroke="#eaf9ff" stroke-linecap="round" filter="url(#sg-glow)">
+          <path d="M462 238 L424 332 L474 381 L421 480 L456 534 L398 624 L442 690 L384 798 L418 912" stroke-width="7" />
+          <path d="M430 329 L350 382 L318 470 M421 480 L515 528 L566 610 M398 624 L316 688 L288 782 M442 690 L532 746 L586 834" stroke-width="3" opacity=".88" />
+        </g>
+        <g fill="#eaf9ff" opacity=".78">
+          <circle cx="462" cy="238" r="6" /><circle cx="350" cy="382" r="4" /><circle cx="566" cy="610" r="5" /><circle cx="288" cy="782" r="4" />
+        </g>
+      </svg>
+
+      <div class="cloud-grain" aria-hidden="true"></div>
+
+      <header class="archive-header">
+        <a class="archive-mark" href="#dormant" aria-label="回到开场">
+          <span aria-hidden="true">⟐</span>
+          <strong>余光档案馆</strong>
+        </a>
+        <p>STORMGLASS / SPECIMEN 07</p>
+        <span class="truth-label">艺术化模拟 · 非气象测量</span>
+      </header>
+
+      <nav class="phase-rail" aria-label="闪电拓片阶段">
+        <a href="#dormant" data-scene-link="dormant" aria-current="step"><i>01</i><span>静置</span></a>
+        <a href="#gathering" data-scene-link="gathering"><i>02</i><span>汇聚</span></a>
+        <a href="#branching" data-scene-link="branching"><i>03</i><span>分叉</span></a>
+        <a href="#imprinted" data-scene-link="imprinted"><i>04</i><span>成像</span></a>
+      </nav>
+
+      <div class="progress-rule" aria-hidden="true"><i id="progress-fill"></i></div>
+
+      <div class="chapters">
+        <section id="dormant" class="chapter chapter--opening" data-scene="dormant" aria-current="step">
+          <div class="chapter-copy chapter-copy--opening">
+            <p class="eyebrow">AFTERLIGHT ARCHIVE · 00:17</p>
+            <h1>雷声走远后，<br /><em>玻璃还记得光。</em></h1>
+            <p class="lede">一片悬浮的风暴玻璃保存着尚未散去的电荷。向下滚动，让余光自己找到裂隙。</p>
+            <a class="scroll-cue" href="#gathering"><span>沿裂隙进入</span><i aria-hidden="true">↓</i></a>
+          </div>
+        </section>
+
+        <section id="gathering" class="chapter chapter--gathering" data-scene="gathering">
+          <div class="chapter-copy chapter-copy--edge">
+            <p class="eyebrow">01 / RESIDUAL CHARGE</p>
+            <h2>余光开始寻找<br />最细的入口。</h2>
+            <p>微弱电荷从玻璃边缘靠近同一条内部断面。它们不是数据点，而是这次雷雨留下的视觉记忆。</p>
+            <dl class="state-reading" aria-label="当前模拟状态">
+              <div><dt>聚集</dt><dd id="charge-reading">08%</dd></div>
+              <div><dt>相位</dt><dd>汇聚前</dd></div>
+            </dl>
+          </div>
+        </section>
+
+        <section id="branching" class="chapter chapter--branching" data-scene="branching">
+          <div class="chapter-copy chapter-copy--opposite">
+            <p class="eyebrow">02 / BRANCHING TRACE</p>
+            <h2>裂隙先分叉，<br />闪电才显形。</h2>
+            <p>滚动继续推进同一块玻璃。亮度沿既有断面生长，局部折射把冷灰云层压进一道电白纹路。</p>
+            <dl class="state-reading" aria-label="当前模拟状态">
+              <div><dt>裂隙</dt><dd id="crack-reading">03%</dd></div>
+              <div><dt>介质</dt><dd>风暴玻璃</dd></div>
+            </dl>
+          </div>
+        </section>
+
+        <section id="imprinted" class="chapter chapter--final" data-scene="imprinted">
+          <div class="chapter-copy chapter-copy--final" data-signal-result>
+            <p class="eyebrow">03 / AFTERIMAGE COMPLETE</p>
+            <h2>这次闪电，<br /><em>已经留下拓片。</em></h2>
+            <p>电荷停止追逐，裂隙成为一张只属于本次滚动的余光图。保存只发生在当前页面，不上传任何数据。</p>
+            <button id="save-imprint" type="button" data-signal-primary-action>
+              <span>保存这次闪电拓片</span><i aria-hidden="true">↘</i>
+            </button>
+            <p id="save-status" class="save-status" role="status" aria-live="polite"></p>
+          </div>
+        </section>
+      </div>
+
+      <p id="live-status" class="sr-only" aria-live="polite"></p>
+      <footer class="archive-footer">
+        <span>SCROLL / ↑ ↓</span>
+        <span>WEBGL AFTERLIGHT STUDY</span>
+      </footer>
+    </main>
+
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>

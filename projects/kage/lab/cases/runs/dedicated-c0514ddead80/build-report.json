@@ -1,0 +1,454 @@
+{
+  "receipt": {
+    "id": "dedicated-c0514ddead80",
+    "provider": "codex",
+    "model": "deterministic-local-geography-refinement",
+    "status": "compiled",
+    "previewUrl": "/generated-runs/dedicated-c0514ddead80/",
+    "generatedAt": "2026-08-28T03:55:07.861Z",
+    "files": 4,
+    "assets": 1,
+    "sourceBytes": 41708,
+    "hasShaders": true,
+    "compileMs": 588,
+    "attempts": 1,
+    "directory": "generated/runs/dedicated-c0514ddead80"
+  },
+  "request": {
+    "brief": "为城市公共饮水点设计一张明亮的交互导览网页。页面像日光下的市政图册与折叠地图，横向浏览不同街区，选择站点时同步更新水质证据、步行距离和开放状态，最终行动为“找到最近的饮水点”。不要暗色全屏、中央产品、巨型标题、随机粒子或电影式长滚动。",
+    "seed": 31,
+    "quality": "high",
+    "runId": "run-eq2z1w",
+    "selectedId": "generated-1te534-blueprint-72a0rl-sunlit-civic-atlas-blueprint",
+    "creativeContract": {
+      "schemaVersion": 2,
+      "id": "contract-15jh4nx",
+      "brief": "为城市公共饮水点设计一张明亮的交互导览网页。页面像日光下的市政图册与折叠地图，横向浏览不同街区，选择站点时同步更新水质证据、步行距离和开放状态，最终行动为“找到最近的饮水点”。不要暗色全屏、中央产品、巨型标题、随机粒子或电影式长滚动。",
+      "intent": {
+        "subject": "城市公共饮水点",
+        "audience": "需要快速理解并感受该想法的网页访客",
+        "desiredFeeling": "清晰、可信并具有独特记忆点",
+        "narrativeChange": "从编辑式留白进入主体显现，最后形成有张力的整体构图。",
+        "primaryAction": "找到最近的饮水点",
+        "negativeConstraints": [
+          "不要暗色全屏、中央产品、巨型标题、随机粒子或电影式长滚动"
+        ]
+      },
+      "referenceEvidence": [
+        {
+          "referenceId": "kage-paper-restoration",
+          "title": "纸张修复工坊 · 证据驱动的同一对象变化",
+          "sourceUrl": "../cases/dedicated-7c944e0c386f/",
+          "evidenceLevel": "runtime-verified",
+          "relevance": "支持 editorial-field 体验模式。 来自已归档并经过浏览器验证的本地最终案例。",
+          "borrow": [
+            "同一页文献在近距离纤维、补纸与复读证据之间变化，过程证据比抽象氛围更重要。",
+            "滚动推进修复步骤，但每一步都必须能指出同一对象上的具体变化。",
+            "破损态与修复态素材共享纸页形状、光线和工作台坐标，Three.js 只解释纤维与裂缝。"
+          ],
+          "avoid": [
+            "不要用互不相关的旧纸图片，也不要让暖色氛围替代可读的修复证据。"
+          ]
+        },
+        {
+          "referenceId": "kage-fashion-depth-field",
+          "title": "先锋时装 · 全屏材质场",
+          "sourceUrl": "../cases/dedicated-ba4e9d10caaa-depth-field/",
+          "evidenceLevel": "runtime-verified",
+          "relevance": "支持 editorial-field 体验模式。 来自已归档并经过浏览器验证的本地最终案例。",
+          "borrow": [
+            "透明主体位于全屏材质场中，文字、主体和背景共同构成一个连续画面。",
+            "滚动改变材质、景深和主体显现程度，避免把主体当成独立海报移动。",
+            "透明主体素材承担识别与材质细节，Three.js 只增强融合、景深和连续运动。"
+          ],
+          "avoid": [
+            "不要恢复矩形主图边框，也不要用巨型文字遮挡主体的识别区域。"
+          ]
+        },
+        {
+          "referenceId": "motionsites-interactive-discovery",
+          "title": "MotionSites · Interactive Discovery",
+          "sourceUrl": "https://motionsites.ai/?prompt=interactive-discovery",
+          "evidenceLevel": "catalog-metadata",
+          "relevance": "命中 交互、选择。 支持 editorial-field 体验模式。 只作为外部目录方向信号，不当作实现已验证。",
+          "borrow": [
+            "目录证据表明它属于交互式 Hero，可作为“首屏即发生探索”的方向索引。",
+            "只借鉴交互发现的节奏命题；未取得完整提示词前不推断具体动画实现。",
+            "外部目录只提供方向信号，具体素材策略必须由当前 brief 和本地运行证据决定。"
+          ],
+          "avoid": [
+            "不要把目录缩略图或未知提示词当成已经验证的 Three.js 实现。"
+          ]
+        }
+      ],
+      "experience": {
+        "pattern": "editorial-field",
+        "thesis": "把城市公共饮水点组织为可浏览、可选择、能用证据做决定的信息地图。",
+        "focalSubject": "城市公共饮水点",
+        "continuityRule": "地图坐标、站点身份和证据数据必须保持一一对应；选择状态只能更新同一站点的可信信息。",
+        "typographyRole": "文字承担地点名称、证据数值和行动；地图与图册排版共同建立浏览方向。",
+        "beats": [
+          {
+            "id": "map-overview",
+            "position": 0,
+            "purpose": "establish",
+            "visibleState": "明亮地图建立街区、站点分布和当前选区。",
+            "userProgression": "横向浏览街区或直接选择站点。"
+          },
+          {
+            "id": "station-evidence",
+            "position": 0.55,
+            "purpose": "transform",
+            "visibleState": "当前站点的证据、距离和状态与地图标记同步更新。",
+            "userProgression": "比较信息后确认最合适的站点。"
+          },
+          {
+            "id": "nearest-action",
+            "position": 1,
+            "purpose": "resolve",
+            "visibleState": "地图收束到最优站点，并给出“找到最近的饮水点”。",
+            "userProgression": "打开路线或完成最终行动。"
+          }
+        ],
+        "pointerRole": "指针或触摸用于选择站点并同步更新证据，不承担装饰性跟随动画。",
+        "reducedMotion": "保留横向浏览和站点离散切换，取消惯性漂移与大幅视差。",
+        "finalMemoryPoint": "找到最近的饮水点"
+      },
+      "assets": [
+        {
+          "id": "map-evidence-field",
+          "role": "information",
+          "modality": "procedural",
+          "required": false,
+          "minimumQuality": "L2-inspectable",
+          "sourcePriority": [
+            "procedural"
+          ],
+          "visualResponsibility": "绘制街区关系、站点位置和选择状态，所有数值由 DOM 提供可读证据。",
+          "continuityRule": "Canvas 标记与 DOM 站点 ID、距离、状态和证据字段必须共享同一数据源。",
+          "integration": "native-procedural",
+          "visibleProof": "选择任一站点后，地图高亮与水质、距离、开放状态同步变化。",
+          "fallback": "dom-only"
+        }
+      ],
+      "direction": {
+        "visualRole": "information",
+        "mechanisms": [
+          {
+            "id": "sticky-archive-stack",
+            "title": "滚动堆叠档案",
+            "evidenceLevel": "E4",
+            "job": "把并列对象组织成可追踪的层级，让每次滚动只引入一个新证据。",
+            "reason": "匹配信息证据职责。 支持 editorial-field 体验。",
+            "sourceCaseIds": [
+              "fabrica-sticky-stack"
+            ]
+          },
+          {
+            "id": "branded-media-mask",
+            "title": "品牌蒙版",
+            "evidenceLevel": "E4",
+            "job": "让品牌字形或有语义的轮廓成为媒体容器，并与证据内容共同构图。",
+            "reason": "匹配信息证据职责。 支持 editorial-field 体验。",
+            "sourceCaseIds": [
+              "harvest-masked-statistics"
+            ]
+          },
+          {
+            "id": "pointer-reveal",
+            "title": "指针揭示",
+            "evidenceLevel": "E3",
+            "job": "让输入行为承担发现、比较或检查含义，而不是只让装饰跟随坐标。",
+            "reason": "匹配信息证据职责。 支持 editorial-field 体验。 命中“选择”。",
+            "sourceCaseIds": [
+              "nike-pointer-spotlight"
+            ]
+          }
+        ],
+        "interaction": {
+          "primaryInput": "scroll",
+          "semanticAction": "滚动调整主体、证据和文字的编辑式焦点。",
+          "pointerRole": "secondary",
+          "touchAlternative": "触摸滚动保持同一状态顺序；取消只依赖悬停的内容。",
+          "keyboardAlternative": "提供跳转到关键状态的语义锚点，并保持自然文档阅读顺序。"
+        },
+        "renderer": {
+          "baseLayer": "semantic-dom",
+          "route": "dom-canvas-hybrid",
+          "enhancement": "canvas-shader",
+          "reason": "局部材质融合、遮罩或程序化氛围可由 Canvas/Shader 完成，页面结构保留在 DOM。",
+          "threeJustification": "当前职责不要求可检查的三维几何或自由相机。",
+          "fallback": "关闭 Canvas 后显示同一主体静态构图和完整内容行动。"
+        },
+        "rejectedMechanisms": [
+          {
+            "id": "cinematic-3d-deconstruction",
+            "reason": "缺少真实可检查模型，不能伪造三维拆解。"
+          },
+          {
+            "id": "pointer-reveal",
+            "reason": "目标没有要求通过指针发现信息，鼠标仅保留轻量反馈。"
+          }
+        ],
+        "decisionSummary": "以信息证据承担主要视觉，用滚动堆叠档案、品牌蒙版、指针揭示组织变化；局部材质融合、遮罩或程序化氛围可由 Canvas/Shader 完成，页面结构保留在 DOM。"
+      },
+      "technical": {
+        "presentationStrategy": "dom-led",
+        "capabilitySelection": {
+          "selected": false,
+          "capabilityId": null,
+          "score": 12,
+          "reasons": [
+            "体验模式 editorial-field 不是该能力的优先路线。",
+            "目标命中 滚动、状态 等连续叙事信号。",
+            "需要先建立连续媒体素材职责。"
+          ],
+          "blockers": [
+            "当前素材计划没有连续图片、视频或帧序列。"
+          ],
+          "contract": null
+        },
+        "articulatedSubject": {
+          "selected": false,
+          "capabilityId": null,
+          "score": 40,
+          "reasons": [
+            "主体没有明确的抽象或程序化构造语义。",
+            "变化命中 折叠。",
+            "没有可建立拓扑关系的部件描述。",
+            "体验模式 editorial-field 支持单一主体连续变化。"
+          ],
+          "blockers": [],
+          "contract": null
+        },
+        "semanticInteraction": {
+          "selected": true,
+          "capabilityId": "semantic-responsive-interaction",
+          "score": 63,
+          "matchedSignals": [
+            "证据",
+            "选择"
+          ],
+          "reasons": [
+            "目标命中“证据、选择”等信息关系信号。",
+            "体验模式 editorial-field 且存在信息素材职责，交互可以改变理解。",
+            "现有导演决策只需要滚动推进，不额外增加主要交互。"
+          ],
+          "blockers": [],
+          "evaluatedCapability": {
+            "id": "semantic-responsive-interaction",
+            "evidenceLevel": "E4",
+            "state": "validated",
+            "problem": "装饰性鼠标动效不能帮助用户理解内容，也无法稳定迁移到触摸、键盘和减少动态效果环境。",
+            "meaning": "滚动选择证据层，时间选择改变海岸形态和数字，指针只在局部揭示相对于基准年已经消失的土地。",
+            "inputs": [
+              "scroll",
+              "pointer",
+              "touch",
+              "keyboard"
+            ],
+            "outputs": [
+              "scene-shape",
+              "evidence-value",
+              "narrative-layer",
+              "selection-state"
+            ],
+            "baseInterface": "语义 DOM 始终提供年代按钮、损失数字、解释文字和当前状态，不依赖 WebGL 完成比较。",
+            "enhancedInterface": "WebGL 把年代选择映射为同一海岸场的连续形变，并让局部证据透镜显示相对损失范围。",
+            "reducedMotionRule": "减少动态效果时立即切换到目标年代和阶段，停止连续漂移，但保留所有数值和比较结果。",
+            "rejectionRules": [
+              "移除交互后信息理解完全不变时拒绝晋级。",
+              "触摸、键盘或无 WebGL 回退无法完成比较时拒绝晋级。"
+            ],
+            "evidence": [
+              {
+                "id": "coast-1984",
+                "year": 1984,
+                "label": "基准海岸",
+                "lossSquareKilometers": 0,
+                "retreatMeters": 0,
+                "relativeWaterCentimeters": 0,
+                "sceneMorph": 0,
+                "summary": "沙洲仍然连续，潮沟尚未切断内侧湿地。"
+              },
+              {
+                "id": "coast-2004",
+                "year": 2004,
+                "label": "潮沟扩张",
+                "lossSquareKilometers": 3.2,
+                "retreatMeters": 186,
+                "relativeWaterCentimeters": 8,
+                "sceneMorph": 0.5,
+                "summary": "外侧沙洲变薄，新的潮沟开始把湿地分成孤立片区。"
+              },
+              {
+                "id": "coast-2026",
+                "year": 2026,
+                "label": "临界断面",
+                "lossSquareKilometers": 8.7,
+                "retreatMeters": 421,
+                "relativeWaterCentimeters": 17,
+                "sceneMorph": 1,
+                "summary": "连续岸线已经断裂，曾经被遮蔽的社区直接面对风暴潮。"
+              }
+            ]
+          }
+        },
+        "identityEvidence": {
+          "selected": false,
+          "score": 18,
+          "reason": "拒绝：缺少同时指向身份与证据的明确目标。",
+          "rejectedBy": [],
+          "matchedSignals": [
+            "证据"
+          ],
+          "capabilityId": null
+        },
+        "styleDiversity": {
+          "fingerprint": {
+            "composition": "spatial-map",
+            "palette": "daylight-neutral",
+            "motion": "state-switch",
+            "spatial": "data-field",
+            "typography": "image-led-minimal",
+            "media": "canvas-2d"
+          },
+          "nearestCaseId": "dedicated-1b9f0b05107b",
+          "nearestDistance": 5,
+          "minimumDifferentAxes": 2,
+          "mustDifferOn": [
+            "composition",
+            "motion",
+            "spatial",
+            "typography"
+          ],
+          "avoidRepeating": [
+            "不要默认复用暗色全屏背景、中央主体和巨型标题的组合。",
+            "不要把滚动淡入、漂浮粒子和柔光当成所有主题的通用答案。",
+            "不得复刻最相近案例 dedicated-1b9f0b05107b 的整体构图和运动语法。"
+          ],
+          "rationale": "本方向与最相近案例 dedicated-1b9f0b05107b 在 5 个风格轴上不同；差异是生成约束，不是固定模板。"
+        },
+        "domResponsibilities": [
+          "承载可阅读内容、导航和最终行动。",
+          "在 WebGL 不可用时保留完整语义顺序。"
+        ],
+        "webglResponsibilities": [
+          "承载空间记忆、镜头关系和连续状态变化。",
+          "让素材融入环境并提供克制的交互反馈。"
+        ],
+        "targetFrameTimeMs": 16.7,
+        "maxInitialAssetBytes": 8000000,
+        "targetDevices": [
+          "desktop",
+          "mobile"
+        ]
+      },
+      "acceptance": [
+        {
+          "id": "intent-visible",
+          "priority": "blocker",
+          "assertion": "首屏和终点能够对应原始主体、情绪变化和最终行动。",
+          "evidence": "screenshot-ending"
+        },
+        {
+          "id": "opening-composed",
+          "priority": "high",
+          "assertion": "首屏存在明确主体和空间坐标，没有空黑屏、文字裁切或主体被遮挡。",
+          "evidence": "screenshot-opening"
+        },
+        {
+          "id": "middle-causal",
+          "priority": "high",
+          "assertion": "中段变化能够解释能力、转化或探索关系，而不只是装饰动画。",
+          "evidence": "screenshot-middle"
+        },
+        {
+          "id": "borderless-integration",
+          "priority": "high",
+          "assertion": "主体和环境没有棋盘格、矩形图片边界或不自然的发光方框。",
+          "evidence": "screenshot-middle"
+        },
+        {
+          "id": "mobile-readable",
+          "priority": "blocker",
+          "assertion": "390px 移动端无横向溢出，主体、正文和行动均可见。",
+          "evidence": "screenshot-mobile"
+        },
+        {
+          "id": "semantic-fallback",
+          "priority": "normal",
+          "assertion": "关闭 WebGL 或减少运动后仍保留完整内容顺序和行动。",
+          "evidence": "dom"
+        },
+        {
+          "id": "runtime-clean",
+          "priority": "blocker",
+          "assertion": "页面无阻断脚本错误，关键素材请求成功，滚动和指针输入可用。",
+          "evidence": "runtime"
+        }
+      ],
+      "executionLimits": {
+        "authoringPasses": 1,
+        "assetBatches": 1,
+        "refinementPasses": 2,
+        "stopAfterMinutes": 15,
+        "archivePolicy": "best-result-only"
+      }
+    },
+    "reference": {
+      "title": "日光饮水图册",
+      "summary": "在横向折叠市政地图中浏览街区，选择饮水点即可核对水质、距离与开放状态，并发起最近站点导航。",
+      "scenePlugin": "composed-world",
+      "productionStatus": "blocked",
+      "theme": {
+        "deep": "#1e5f88",
+        "surface": "#f7f1df",
+        "text": "#173044",
+        "muted": "#6e7d7a",
+        "accent": "#1389c9",
+        "accentSoft": "#bfe8ee"
+      },
+      "assets": [
+        {
+          "id": "xuhui-west-bund-osm-map-v1",
+          "uri": "/creative-assets/xuhui-west-bund-osm-map-v1.jpg",
+          "bundlePath": "assets/xuhui-west-bund-osm-map-v1.jpg",
+          "kind": "image",
+          "source": "licensed",
+          "role": "真实地理底图",
+          "description": "基于 OpenStreetMap 数据的小范围徐汇滨江静态地图，运行时不发起外部网络请求。",
+          "payloadBytes": 124206,
+          "required": true,
+          "experience": {
+            "anchor": 0,
+            "function": "persistent",
+            "visualState": "在所有滚动状态中提供真实道路、黄浦江岸线与文化地标关系。",
+            "continuity": "与站点经纬度和示意步行路线共享 Web Mercator 投影。",
+            "integration": "full-bleed-environment"
+          }
+        }
+      ]
+    }
+  },
+  "usedAssets": [
+    {
+      "id": "xuhui-west-bund-osm-map-v1",
+      "uri": "/creative-assets/xuhui-west-bund-osm-map-v1.jpg",
+      "bundlePath": "assets/xuhui-west-bund-osm-map-v1.jpg",
+      "kind": "image",
+      "source": "licensed",
+      "role": "真实地理底图",
+      "description": "基于 OpenStreetMap 数据的小范围徐汇滨江静态地图，运行时不发起外部网络请求。",
+      "payloadBytes": 124206,
+      "required": true,
+      "experience": {
+        "anchor": 0,
+        "function": "persistent",
+        "visualState": "在所有滚动状态中提供真实道路、黄浦江岸线与文化地标关系。",
+        "continuity": "与站点经纬度和示意步行路线共享 Web Mercator 投影。",
+        "integration": "full-bleed-environment"
+      }
+    }
+  ]
+}

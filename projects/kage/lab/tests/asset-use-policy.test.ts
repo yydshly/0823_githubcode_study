@@ -73,7 +73,7 @@ describe('goal-benefit asset use policy', () => {
     expect(producibleImageRequirements(effectSpec)).toEqual([]);
   });
 
-  it('allows a fictional full-bleed environment plate to be produced by an image adapter', async () => {
+  it('does not call an L2-only adapter for a required cinematic environment', async () => {
     const effectSpec = await effectWith({
       id: 'cloud-observatory-world', role: 'environment', modality: 'environment',
       purpose: '提供虚构云海与未来观测站的连续电影化环境画面。', required: true,
@@ -84,8 +84,13 @@ describe('goal-benefit asset use policy', () => {
       }
     });
     expect(decideImageAssetUse(effectSpec)).toMatchObject({
+      decision: 'source-required', approvedRequirementIds: []
+    });
+    expect(decideImageAssetUse(effectSpec).items[0]).toMatchObject({ action: 'require-source' });
+    expect(decideImageAssetUse(effectSpec).items[0]?.reason).toContain('注定被门禁拒绝');
+    expect(producibleImageRequirements(effectSpec)).toEqual([]);
+    expect(decideImageAssetUse(effectSpec, 'L4-cinematic')).toMatchObject({
       decision: 'approved', approvedRequirementIds: ['cloud-observatory-world']
     });
-    expect(producibleImageRequirements(effectSpec).map((item) => item.id)).toEqual(['cloud-observatory-world']);
   });
 });

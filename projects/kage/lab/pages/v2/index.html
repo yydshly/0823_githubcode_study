@@ -3,82 +3,688 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Kage V2：以优秀案例证据和创意合同约束模型生成。" />
-    <title>Kage V2 · Reference-Guided Generation</title>
+    <meta name="description" content="Kage V2.5 / V3：把自然语言想法转换为有参考依据、媒介职责清晰、执行有界并可验证的创意网页。" />
+    <title>Kage V2.5 / V3 · Effect-first Creative Composer</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2317211d'/%3E%3Cpath d='M8 7v18M24 7 11 16l13 9' fill='none' stroke='%23d4f6df' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
     <link rel="stylesheet" href="./v2.css" />
   </head>
   <body>
+    <header class="site-nav">
+      <a class="brand" href="./"><span></span>KAGE / V2</a>
+      <p>EFFECT-FIRST / RESEARCH-GROUNDED EXPERIENCE</p>
+      <nav aria-label="项目导航"><a href="#composer-title">直接创作</a><a href="#formal-products">正式产品</a><a href="#verified-examples">12 项能力研究</a><a href="./research/">研究与依据</a><a href="../../workbench.html">兼容实验工作台</a><a href="../v1/">V1 归档</a></nav>
+    </header>
+
     <main>
-      <nav>
-        <a class="brand" href="./">KAGE / V2</a>
-        <div><a href="../v1/">V1 归档</a><a href="../../">项目入口</a></div>
-      </nav>
-
-      <section class="hero">
+      <section class="intro">
         <div>
-          <p class="eyebrow">REFERENCE-GUIDED CREATIVE CONTRACT</p>
-          <h1>不是让模型<br />无限发挥。</h1>
+          <p class="eyebrow">V2.5 BASELINE · R159 ASSET PROOF / R160 MASK PROOF</p>
+          <h1>让创意有方向，<br /><em>仍然保持自由。</em></h1>
         </div>
-        <div class="statement">
-          <p>V2 从 V1 的运行时和案例经验出发，把“什么是好”变成模型可以执行、系统可以验收的创意合同。</p>
-          <span>独立演示 · V2.0 FOUNDATION</span>
-        </div>
-      </section>
-
-      <section class="flow" aria-labelledby="flow-title">
-        <div class="flow-head">
-          <p>FROM IDEA TO EVIDENCE</p>
-          <h2 id="flow-title">同一个目标，更少盲目探索。</h2>
-        </div>
-        <div class="rail" id="rail">
-          <article data-index="01">
-            <span>01 / INTENT</span>
-            <h3>先说清楚变化</h3>
-            <p>对象、受众、情绪、叙事变化和最终行动，构成不能被丢失的原始目标。</p>
-          </article>
-          <article data-index="02">
-            <span>02 / EVIDENCE</span>
-            <h3>用优秀案例给方向</h3>
-            <p>只提取相关案例的构图、层次、动效和素材逻辑，不把案例退化成固定模板。</p>
-          </article>
-          <article data-index="03">
-            <span>03 / CONTRACT</span>
-            <h3>限定关键选择</h3>
-            <p>焦点、空间、素材职责、滚动节奏、交互和性能预算在编写代码前明确。</p>
-          </article>
-          <article data-index="04">
-            <span>04 / BUILD</span>
-            <h3>生成一个可运行结果</h3>
-            <p>Codex 继承完整合同构建独立网页；生成素材必须在最终画面承担声明的角色。</p>
-          </article>
-          <article data-index="05">
-            <span>05 / ACCEPT</span>
-            <h3>有边界地精修</h3>
-            <p>结构检查先行，视觉检查只处理最高优先级缺陷；通过后归档唯一最佳结果。</p>
-          </article>
+        <div class="intro-copy">
+          <p>描述你希望看见的网页。V2.5 先选择相关运行证据，明确素材、构图、体验变化、结构依据和验收条件，再导出一个可直接交给 Codex 的有界创作包。</p>
+          <ul><li>不是模板选择器</li><li>不是无限自由发挥</li><li>产品能力、GitHub 机制与模型素材按效果选择</li><li>每个目标只保留一个最佳结果</li></ul>
         </div>
       </section>
 
-      <section class="comparison">
-        <article>
-          <span>V1 / 已证明</span>
-          <h2>想法能够成为专属 Three.js 网页。</h2>
-          <p>具备意图理解、素材规划与生成、代码编写、运行验证、视觉精修和案例归档的完整链路。</p>
-          <a href="../v1/">查看六个冻结案例 →</a>
-        </article>
-        <article class="next">
-          <span>V2 / 当前目标</span>
-          <h2>让第一次生成更接近优秀结果。</h2>
-          <p>把参考知识、资产职责和验收条件贯穿到作者模型，降低 2–10 分钟的无目标返工。</p>
-          <div class="status"><i></i> V2.0 合同基础进行中</div>
-        </article>
+      <section class="composer" aria-labelledby="composer-title">
+        <aside class="brief-panel">
+          <div class="section-label"><span>01</span><p>IDEA / INPUT</p></div>
+          <h2 id="composer-title">说出你想看到的变化</h2>
+          <label for="brief-input">目标描述</label>
+          <textarea id="brief-input" maxlength="900">为一款帮助人记录梦境的产品设计网页。开场像刚刚醒来的模糊房间，滚动时记忆碎片逐渐形成可探索空间，最后收束为“记录今晚的梦”。安静、真实，不要常见科技风。</textarea>
+          <div class="examples" aria-label="示例目标">
+            <button type="button" data-example="dream">梦境记录</button>
+            <button type="button" data-example="product">声音产品</button>
+            <button type="button" data-example="exhibit">海洋展陈</button>
+            <button type="button" data-example="material">生物材料</button>
+            <button type="button" data-example="articulated">潮汐罗盘</button>
+          </div>
+          <button class="primary" id="plan-button" type="button">生成 V3 创意契约 <span>→</span></button>
+          <p class="truth-note">这里不会静默启动后台任务，也不会在页面里伪装已经生成成品。生成契约后，主动作会复制同一份 protocol v3 有界包，由当前 Codex 直接在项目中构建。</p>
+        </aside>
+
+        <section class="contract-panel" aria-live="polite">
+          <div class="contract-head">
+            <div class="section-label"><span>02</span><p>CREATIVE / CONTRACT</p></div>
+            <div class="contract-actions">
+              <span id="contract-status">LOCAL · READY</span>
+              <button type="button" id="copy-button">复制给 Codex 的有界包</button>
+            </div>
+          </div>
+
+          <div class="contract-hero">
+            <p id="contract-pattern">ENVIRONMENTAL MEMORY</p>
+            <h2 id="contract-thesis"></h2>
+            <div><span>最终记忆点</span><strong id="contract-memory"></strong></div>
+          </div>
+
+          <article class="effect-quality-card" id="effect-quality-selection" data-state="ready">
+            <header>
+              <div><span>EFFECT QUALITY SELECTION / R151</span><strong>先比较体验，再获得执行许可</strong></div>
+              <small id="effect-selection-position"></small>
+            </header>
+            <div class="effect-quality-grid">
+              <div><span>CANDIDATES</span><strong id="effect-selection-count"></strong><small>不是三次构建</small></div>
+              <div><span>COMPARE BY</span><strong id="effect-selection-axes"></strong><small>相对选择，不冒充最终验收</small></div>
+              <div><span>NO BONUS</span><strong id="effect-selection-no-bonus"></strong><small>手段服从体验</small></div>
+              <div><span>STOP BOUNDARY</span><strong id="effect-selection-stop"></strong><small>不选择“最不差”继续消耗</small></div>
+            </div>
+            <p id="effect-selection-goal"></p>
+            <div class="effect-run-guard" id="effect-selection-run-guard" data-run-state="pending">
+              <span>RUN PERMISSION</span>
+              <strong id="effect-selection-run-state">PENDING RECEIPT</strong>
+              <small id="effect-selection-run-note">当前不能进入素材或构建；有效最高候选绑定后才放行。</small>
+            </div>
+          </article>
+
+          <div class="contract-launch" id="contract-launch" data-state="ready">
+            <div>
+              <span>03 · BOUNDED BUILD</span>
+              <strong>直接交给 Codex，构建一个最佳网页</strong>
+              <p id="build-structure">当前合同已绑定；修改想法后需重新生成。</p>
+            </div>
+            <button id="build-button" type="button" aria-label="复制 V5 产品创作包并交给当前 Codex">复制产品创作包并交给 Codex <span>→</span></button>
+          </div>
+
+          <article class="direct-package-card" id="direct-package" data-state="ready">
+            <header>
+              <div><span>DIRECT CODEX PACKAGE / PROTOCOL V5</span><strong>首稿前已经决定什么</strong></div>
+              <small id="direct-package-id"></small>
+            </header>
+            <div class="direct-package-grid">
+              <div>
+                <span>VISUAL AMBITION</span>
+                <strong id="direct-ambition"></strong>
+                <small id="direct-hero"></small>
+              </div>
+              <div>
+                <span>PRIMARY MEDIUM</span>
+                <strong id="direct-medium" data-medium-route=""></strong>
+                <small id="direct-medium-alternative"></small>
+              </div>
+              <div>
+                <span>SCENE / MEDIA</span>
+                <strong id="direct-rendering"></strong>
+                <small id="direct-motion"></small>
+              </div>
+              <div>
+                <span>BOUNDED RUN</span>
+                <strong id="direct-budget"></strong>
+                <small id="direct-deadline"></small>
+              </div>
+              <div>
+                <span>PRODUCT JOURNEY</span>
+                <strong id="direct-product-journey"></strong>
+                <small id="direct-product-assets"></small>
+              </div>
+            </div>
+            <p id="direct-package-note">复制按钮会交付同一合同的紧凑作者输入、初始 run、产品旅程、结构依据、验收检查点与停止条件；研究全文继续留档，不占用创作上下文。</p>
+          </article>
+
+          <div class="capability-strip" id="capability-strip">
+            <div><span>MEDIA PRESENTATION CAPABILITY</span><strong id="capability-name"></strong></div>
+            <p id="capability-reason"></p>
+            <a id="capability-demo" href="./prototypes/scroll-scrub-media/">查看运行证据 ↗</a>
+          </div>
+
+          <article class="semantic-capability" id="semantic-capability" data-selected="false">
+            <header>
+              <div><span>INTERACTION CAPABILITY / E4</span><strong id="semantic-capability-name"></strong></div>
+              <a href="./prototypes/semantic-interaction/">查看“潮线证词”证据 ↗</a>
+            </header>
+            <p id="semantic-capability-reason"></p>
+            <div class="semantic-contract">
+              <div><span>INPUT / 输入</span><strong id="semantic-inputs"></strong></div>
+              <div><span>OUTPUT / 结果</span><strong id="semantic-outputs"></strong></div>
+              <div><span>FALLBACK / 降级</span><strong id="semantic-fallback"></strong></div>
+            </div>
+          </article>
+
+          <article class="semantic-capability" id="identity-capability" data-selected="false">
+            <header>
+              <div><span>IDENTITY CAPABILITY / E4</span><strong id="identity-capability-name"></strong></div>
+              <a href="./prototypes/identity-evidence/">查看“身份与证据”运行证据 ↗</a>
+            </header>
+            <p id="identity-capability-reason"></p>
+            <div class="semantic-contract">
+              <div><span>INPUT / 输入</span><strong id="identity-inputs"></strong></div>
+              <div><span>OUTPUT / 结果</span><strong id="identity-outputs"></strong></div>
+              <div><span>FALLBACK / 降级</span><strong id="identity-fallback"></strong></div>
+            </div>
+          </article>
+
+          <article class="semantic-capability" id="articulated-capability" data-selected="false">
+            <header>
+              <div><span>PROCEDURAL 3D CAPABILITY / E4</span><strong id="articulated-capability-name"></strong></div>
+              <a href="./research/#github-study-title">查看 IRIS 研究证据 ↗</a>
+            </header>
+            <p id="articulated-capability-reason"></p>
+            <div class="semantic-contract">
+              <div><span>TOPOLOGY / 部件</span><strong id="articulated-topology"></strong></div>
+              <div><span>TIMELINE / 时间线</span><strong id="articulated-timeline"></strong></div>
+              <div><span>FALLBACK / 降级</span><strong id="articulated-fallback"></strong></div>
+            </div>
+          </article>
+
+          <article class="semantic-capability" id="audio-feedback-capability" data-selected="false">
+            <header>
+              <div><span>PRODUCT SEMANTIC FEEDBACK / E4</span><strong id="audio-feedback-capability-name"></strong></div>
+              <a href="../../cases/dedicated-b4d381a24320/">查看“云杉音板调校台”证据 ↗</a>
+            </header>
+            <p id="audio-feedback-capability-reason"></p>
+            <div class="semantic-contract">
+              <div><span>ROUTE / 路线</span><strong id="audio-feedback-route"></strong></div>
+              <div><span>STATE / 状态</span><strong id="audio-feedback-state"></strong></div>
+              <div><span>FALLBACK / 降级</span><strong id="audio-feedback-fallback"></strong></div>
+            </div>
+          </article>
+
+          <article class="direction-card">
+            <header><span>DESIGN DIRECTION</span><small>素材角色 → 机制组合 → 输入含义 → 技术路线</small></header>
+            <div class="direction-overview">
+              <div><span>PRIMARY VISUAL ROLE</span><strong id="direction-role"></strong></div>
+              <div><span>RENDER ROUTE</span><strong id="direction-route"></strong></div>
+              <p id="direction-summary"></p>
+            </div>
+            <div class="mechanism-list" id="mechanism-list"></div>
+            <div class="direction-details">
+              <div>
+                <span>INTERACTION AS MESSAGE</span>
+                <strong id="interaction-input"></strong>
+                <p id="interaction-meaning"></p>
+              </div>
+              <div>
+                <span>WHY THIS RENDERER</span>
+                <strong id="renderer-enhancement"></strong>
+                <p id="renderer-reason"></p>
+              </div>
+              <div>
+                <span>FALLBACK</span>
+                <strong>READABLE BASE</strong>
+                <p id="renderer-fallback"></p>
+              </div>
+            </div>
+          </article>
+
+          <article class="style-diversity-card">
+            <header><span>STYLE DIVERSITY / ANTI-REPETITION</span><small>不是模板，而是本次作品的差异坐标</small></header>
+            <div id="style-fingerprint" class="style-fingerprint"></div>
+            <p id="style-difference"></p>
+            <small id="style-avoid"></small>
+          </article>
+
+          <div class="contract-grid">
+            <article class="intent-card">
+              <header><span>INTENT</span><small>目标不可丢失</small></header>
+              <dl id="intent-list"></dl>
+            </article>
+            <article class="evidence-card">
+              <header><span>REFERENCE EVIDENCE</span><small>最多三条相关证据</small></header>
+              <div id="reference-list"></div>
+            </article>
+          </div>
+
+          <article class="timeline-card">
+            <header><span>EXPERIENCE GRAPH</span><small>体验状态，不是固定页面章节</small></header>
+            <div id="beat-list" class="beat-list"></div>
+          </article>
+
+          <div class="contract-grid lower">
+            <article class="asset-card">
+              <header><span>ASSET RESPONSIBILITY</span><small>素材必须在最终画面工作</small></header>
+              <div id="asset-list"></div>
+            </article>
+            <article class="acceptance-card">
+              <header><span>ACCEPTANCE / LIMITS</span><small>有限构建，明确停止</small></header>
+              <ul id="acceptance-list"></ul>
+              <div class="limits" id="limit-list"></div>
+            </article>
+          </div>
+        </section>
       </section>
 
-      <footer>
-        <p>V2 与 V1 使用独立入口和发布产物；V1 不会被后续实验覆盖。</p>
-      </footer>
+      <section class="direction-atlas" id="direction-atlas" aria-labelledby="direction-atlas-title">
+        <header class="direction-atlas-head">
+          <div><p class="eyebrow">CREATIVE / EXPANSION</p><h2 id="direction-atlas-title">扩展的不是模板数量，<br />是可组合的表达空间。</h2></div>
+          <p>每个方向都复用已验证能力，同时改变构图、色彩、运动、空间、字体或媒介。只有真正运行并通过浏览器验收后，才会从“方向实验”进入案例库。</p>
+        </header>
+        <div id="creative-direction-grid" class="creative-direction-grid"></div>
+      </section>
+
+      <section class="verified-examples" id="verified-examples" aria-labelledby="verified-examples-title">
+        <header class="verified-examples-head">
+          <div>
+            <p class="eyebrow">CAPABILITY RESEARCH / RUNNABLE / BOUNDED 12</p>
+            <h2 id="verified-examples-title">这是能力研究证据，<br />不是正式产品精选。</h2>
+          </div>
+          <p>首页固定读取 12 项有限研究参考，不再把所有历史实验向下堆积。它们证明素材、3D、声音、滚动、蒙版或交互机制可以运行，但只有额外通过完整产品旅程门的结果，才有资格进入正式产品库。</p>
+        </header>
+
+        <div class="verified-example-grid">
+          <a class="verified-example-card verified-example-card--delivery" href="./deliveries/dream-record/" data-example-id="dream-record">
+            <figure>
+              <img src="./assets/verified-examples/dream-record.jpg" alt="梦境记录网页的模糊房间开场" loading="lazy" width="1440" height="900" />
+              <figcaption><span>DELIVERY / R01</span><strong>完整成品</strong></figcaption>
+            </figure>
+            <div class="verified-example-copy">
+              <span>01 · ENVIRONMENTAL MEMORY</span>
+              <h3>梦境记录</h3>
+              <p>从模糊房间、记忆碎片到“记录今晚的梦”，验证参考约束、素材组织、滚动叙事与最终行动可以形成一个完整网页。</p>
+              <footer><strong>证明：想法可以落成单一结果</strong><span>打开成品 ↗</span></footer>
+            </div>
+          </a>
+
+          <a class="verified-example-card verified-example-card--delivery" href="../../cases/dedicated-7c944e0c386f/" data-example-id="paper-restoration">
+            <figure>
+              <img src="./assets/verified-examples/paper-restoration.jpg" alt="纸张修复工坊网页中同一页破损文献的全屏开场" loading="lazy" width="1440" height="900" />
+              <figcaption><span>DELIVERY / R12</span><strong>受约束生成</strong></figcaption>
+            </figure>
+            <div class="verified-example-copy">
+              <span>02 · SAME-SUBJECT CONTINUITY</span>
+              <h3>纸张修复工坊</h3>
+              <p>全新主题从一句想法进入 V2 合同、素材筛选、Codex 构建与四状态验收。MiniMax 候选因主体不连续被淘汰，最终只保留同一页文献的破损与修复过程。</p>
+              <footer><strong>证明：约束能够提高结果确定性</strong><span>打开成品 ↗</span></footer>
+            </div>
+          </a>
+
+          <a class="verified-example-card" href="./prototypes/scroll-scrub-media/" data-example-id="scroll-scrub-media">
+            <figure>
+              <img src="./assets/verified-examples/scroll-scrub-media.jpg" alt="连续媒体滚动原型的中间变化状态" loading="lazy" width="960" height="600" />
+              <figcaption><span>CAPABILITY / E4</span><strong>运行原型</strong></figcaption>
+            </figure>
+            <div class="verified-example-copy">
+              <span>03 · SCROLL SCRUB MEDIA</span>
+              <h3>连续媒体滚动</h3>
+              <p>滚动位置驱动连续视觉状态，让开场、变化与收束属于同一段体验，而不是三张互不关联的页面图片。</p>
+              <footer><strong>证明：滚动可以承担时间叙事</strong><span>打开原型 ↗</span></footer>
+            </div>
+          </a>
+
+          <a class="verified-example-card" href="./prototypes/semantic-interaction/?demo=1" data-example-id="semantic-interaction">
+            <figure>
+              <img src="./assets/verified-examples/semantic-interaction.jpg" alt="潮线证词原型拖动到 1994 年的连续证据状态" loading="lazy" width="1440" height="900" />
+              <figcaption><span>CAPABILITY / E4</span><strong>运行原型</strong></figcaption>
+            </figure>
+            <div class="verified-example-copy">
+              <span>04 · INTERACTION AS INFORMATION</span>
+              <h3>潮线证词</h3>
+              <p>同一时间参数同步驱动海岸形态、年份和证据数值，支持播放、拖动、触摸、键盘与无 WebGL 回退。</p>
+              <footer><strong>证明：交互可以改变理解</strong><span>自动演示 ↗</span></footer>
+            </div>
+          </a>
+
+          <a class="verified-example-card" href="./prototypes/identity-evidence/" data-example-id="identity-evidence">
+            <figure>
+              <img src="./assets/verified-examples/identity-evidence.jpg" alt="身份与证据原型的材料表现状态" loading="lazy" width="1440" height="900" />
+              <figcaption><span>CAPABILITY / E4</span><strong>运行原型</strong></figcaption>
+            </figure>
+            <div class="verified-example-copy">
+              <span>05 · IDENTITY THROUGH EVIDENCE</span>
+              <h3>身份与证据</h3>
+              <p>把来源、形成过程与最终表现组织为同一品牌叙事，素材、证据字段和行动同步变化，图片失败时仍保持完整阅读。</p>
+              <footer><strong>证明：身份可以由证据建立</strong><span>打开原型 ↗</span></footer>
+            </div>
+          </a>
+
+          <a class="verified-example-card verified-example-card--delivery" href="../../cases/dedicated-b4d381a24320/" data-example-id="soundboard-audio-feedback">
+            <figure>
+              <img src="../../creative-assets/r94-luthier-soundboard-final-cover.jpg" alt="云杉音板调校台的工坊工作区" loading="lazy" width="1440" height="900" />
+              <figcaption><span>DELIVERY / R96</span><strong>精选最终版</strong></figcaption>
+            </figure>
+            <div class="verified-example-copy">
+              <span>06 · PRODUCT SEMANTIC AUDIO</span>
+              <h3>云杉音板调校台</h3>
+              <p>同一音板的视觉状态、参数证据与 Web Audio A/B 敲击共同变化，证明声音产品不能只用图片、波形或数字代替可听结果。</p>
+              <footer><strong>证明：产品语义决定反馈媒介</strong><span>打开成品 ↗</span></footer>
+            </div>
+          </a>
+
+          <a class="verified-example-card verified-example-card--delivery" href="./deliveries/sign-language-season/" data-example-id="sign-language-season">
+            <figure>
+              <img src="./assets/verified-examples/sign-language-season.jpg" alt="手语剧场演出季中明亮编辑画布与同步动作记谱的最终状态" loading="lazy" width="1440" height="900" />
+              <figcaption><span>DELIVERY / R113</span><strong>有界直接创作</strong></figcaption>
+            </figure>
+            <div class="verified-example-copy">
+              <span>07 · EDITORIAL CAUSAL INTERACTION</span>
+              <h3>手势之间</h3>
+              <p>全新主题不依赖暗色、中央产品或三屏模板；一次场次选择同步改变动作谱、字幕、舞台路径、无障碍信息与演示行动。</p>
+              <footer><strong>证明：编辑型页面可以保持专属因果</strong><span>打开成品 ↗</span></footer>
+            </div>
+          </a>
+
+          <a class="verified-example-card verified-example-card--delivery" href="./deliveries/thin-film-lab/" data-example-id="thin-film-lab">
+            <figure>
+              <img src="./assets/verified-examples/thin-film-lab.jpg" alt="薄膜干涉实验室中实时形成的环形薄膜综合色谱" loading="lazy" width="1440" height="900" />
+              <figcaption><span>DELIVERY / R114</span><strong>WebGL 旗舰验证</strong></figcaption>
+            </figure>
+            <div class="verified-example-copy">
+              <span>08 · REALTIME MATERIAL INSTRUMENT</span>
+              <h3>薄膜干涉实验室</h3>
+              <p>5 秒成膜 Hero、金属环、干涉 Shader 与焦散保持在同一空间；滚轮、指针、参数和键盘真实改变综合色谱，并提供低动态与 WebGL 回退。</p>
+              <footer><strong>证明：视觉吸引力与产品因果可以同时验收</strong><span>打开成品 ↗</span></footer>
+            </div>
+          </a>
+
+          <a class="verified-example-card verified-example-card--delivery" href="./deliveries/kinetic-score/" data-example-id="kinetic-score">
+            <figure>
+              <img src="./assets/verified-examples/kinetic-score.jpg" alt="动作记谱台中可编辑的彩色运动轨迹、节拍节点与参数面板" loading="lazy" width="1440" height="900" />
+              <figcaption><span>DELIVERY / R116</span><strong>跨主题旗舰验证</strong></figcaption>
+            </figure>
+            <div class="verified-example-copy">
+              <span>09 · KINETIC SCORE INSTRUMENT</span>
+              <h3>动作记谱台</h3>
+              <p>明亮图纸、轮廓排版、Canvas 运动轨迹与 SVG 回退形成同一动作语言；滚轮、指针、键盘和参数真实改写同一段舞蹈短句。</p>
+              <footer><strong>证明：旗舰动态不依赖固定媒介或模板</strong><span>打开成品 ↗</span></footer>
+            </div>
+          </a>
+
+          <a class="verified-example-card verified-example-card--delivery" href="./deliveries/wind-kite-lab/" data-example-id="wind-kite-lab">
+            <figure>
+              <img src="./assets/verified-examples/wind-kite-lab.jpg" alt="风筝风场校准台中升起的双色手工纸鸢、近海天光与实时调校面板" loading="lazy" width="1440" height="900" />
+              <figcaption><span>DELIVERY / R118</span><strong>3D 直接创作闭环</strong></figcaption>
+            </figure>
+            <div class="verified-example-copy">
+              <span>10 · SPATIAL FLIGHT INSTRUMENT</span>
+              <h3>风筝风场校准台</h3>
+              <p>明亮近海天空、实时 3D 纸鸢、纸面与竹骨形成同一空间；风速、缰绳、高度、滚轮和侧风共同改变姿态、尾带、风流与概念结果。</p>
+              <footer><strong>证明：参考约束可以产出主题专属旗舰互动</strong><span>打开成品 ↗</span></footer>
+            </div>
+          </a>
+
+          <a class="verified-example-card verified-example-card--delivery" href="./deliveries/after-rain-archive/" data-example-id="after-rain-archive">
+            <figure>
+              <img src="./assets/verified-examples/after-rain-archive.jpg" alt="雨后气味档案以全幅档案室影像与编辑排版建立的开场" loading="lazy" width="1440" height="900" />
+              <figcaption><span>DELIVERY / R119</span><strong>页面形态去惯性</strong></figcaption>
+            </figure>
+            <div class="verified-example-copy">
+              <span>11 · EDITORIAL SCROLL NARRATIVE</span>
+              <h3>雨后气味档案</h3>
+              <p>全幅档案环境、非均匀编辑章节、滚动叙事与局部气味痕迹组成会呼吸的实验杂志；没有持久参数面板、实时指标簇或保存配置式行动。</p>
+              <footer><strong>证明：动态创意不等于参数工作台</strong><span>打开成品 ↗</span></footer>
+            </div>
+          </a>
+
+          <a class="verified-example-card verified-example-card--delivery" href="./deliveries/paper-butterfly-garden/" data-example-id="paper-butterfly-garden">
+            <figure>
+              <img src="./assets/verified-examples/paper-butterfly-garden.jpg" alt="纸蝶日光游园中六只彩色纸蝶在明亮屋顶温室形成空间队列" loading="lazy" width="1440" height="900" />
+              <figcaption><span>DELIVERY / R120</span><strong>空间对象场验证</strong></figcaption>
+            </figure>
+            <div class="verified-example-copy">
+              <span>12 · PLAYFUL SPATIAL OBJECT FIELD</span>
+              <h3>纸蝶日光游园</h3>
+              <p>明亮温室、六只程序化 3D 纸蝶、指针编队、对象选择与加入巡游在一个持续场景中联动；移动端与 WebGL 回退保留完整旅程。</p>
+              <footer><strong>证明：空间探索不必退化为参数工作台</strong><span>打开成品 ↗</span></footer>
+            </div>
+          </a>
+
+          <a class="verified-example-card verified-example-card--delivery" href="./deliveries/weave-light-field/" data-example-id="weave-light-field">
+            <figure>
+              <img src="./assets/verified-examples/weave-light-field.jpg" alt="经纬光场中程序化经纱、综丝、梭子与累计纬纱形成明亮织造舞台" loading="lazy" width="1440" height="900" />
+              <figcaption><span>DELIVERY / R123</span><strong>织造空间互动</strong></figcaption>
+            </figure>
+            <div class="verified-example-copy">
+              <span>13 · WEAVE LIGHT FIELD</span>
+              <h3>经纬光场</h3>
+              <p>程序化 3D 经纱、综丝、梭子与累计纬纱在同一明亮空间舞台联动；点击、触摸、键盘和保存织纹共享状态。</p>
+              <footer><strong>证明：织造过程可以成为共享状态的空间体验</strong><span>打开成品 ↗</span></footer>
+            </div>
+          </a>
+
+          <a class="verified-example-card verified-example-card--delivery" href="./deliveries/ice-core-letters/" data-example-id="ice-core-letters" data-v25-archive-id="ice-core-letters" data-run-id="direct-r125-ice-core-letters" data-bundle-hash="de2fe28ea88ca9d6c238947c634ccbe92f11793422c31f448c2c310d0a94f031">
+            <figure>
+              <img src="./assets/verified-examples/ice-core-letters.png" alt="冰芯来信以冰川裂隙、半透明三维冰芯与纵向年代旅程形成的开场" loading="lazy" width="1440" height="900" />
+              <figcaption><span>DELIVERY / R125</span><strong>非工作台空间旅程</strong></figcaption>
+            </figure>
+            <div class="verified-example-copy">
+              <span>14 · LETTERS HELD IN ICE</span>
+              <h3>冰芯来信</h3>
+              <p>全幅冰川环境与持续 Three.js 冰芯沿滚动进入气泡、火山灰和花粉层；章节证据、移动端、减弱动效、回退与最终写信行动共享同一旅程。</p>
+              <footer><strong>证明：非工作台结构仍可保持 3D、动态与明确行动</strong><span>打开成品 ↗</span></footer>
+            </div>
+          </a>
+
+          <a class="verified-example-card verified-example-card--delivery" href="./deliveries/roof-water-route/" data-example-id="roof-water-route" data-v25-archive-id="roof-water-route" data-run-id="direct-r127-roof-water-route" data-bundle-hash="c41783ee2c07301fd996e92dd300618c9c019a93f74c358c8a0f36c8cb6effce">
+            <figure>
+              <img src="./assets/verified-examples/roof-water-route.png" alt="一滴水的屋顶路线以明亮住宅剖面、天沟、水箱与花园形成持续三维水路旅程" loading="lazy" width="1440" height="900" />
+              <figcaption><span>DELIVERY / R127</span><strong>明亮 3D 因果旅程</strong></figcaption>
+            </figure>
+            <div class="verified-example-copy">
+              <span>15 · ROOF WATER ROUTE</span>
+              <h3>一滴水的屋顶路线</h3>
+              <p>同一住宅剖面持续承载屋顶、天沟、落水管、蓄水箱与花园；滚动同步驱动雨量、水路、镜头、蓄水和植物响应，并保留移动端、减弱动效与回退行动。</p>
+              <footer><strong>证明：内容适配可以产出明亮、非工作台的持续 3D 因果旅程</strong><span>打开成品 ↗</span></footer>
+            </div>
+          </a>
+
+          <a class="verified-example-card verified-example-card--delivery" href="./deliveries/night-reflective-catalog/" data-example-id="night-reflective-catalog" data-v25-archive-id="night-reflective-catalog" data-run-id="direct-r128-night-reflective-catalog" data-bundle-hash="ef0ae71482af63a997095d6398b03f806833a418593d1ac46b8d0e709faca379">
+            <figure>
+              <img src="./assets/verified-examples/night-reflective-catalog.png" alt="夜行反光材料样本馆以八种材料、共享光束与双样本对比形成的动态目录开场" loading="lazy" width="1440" height="900" />
+              <figcaption><span>DELIVERY / R128</span><strong>动态目录结构验证</strong></figcaption>
+            </figure>
+            <div class="verified-example-copy">
+              <span>16 · NIGHT REFLECTIVE CATALOG</span>
+              <h3>夜行反光材料样本馆</h3>
+              <p>八件程序化材料以非均匀目录并列出现；真实指针、触摸与键盘共享光束状态，筛选、二选比较、收藏、390px、减少动效与纯 CSS 回退保持同一身份。</p>
+              <footer><strong>证明：直接创作可以摆脱 3D 长滚动与工作台惯性，按内容生成动态目录</strong><span>打开成品 ↗</span></footer>
+            </div>
+          </a>
+
+          <a class="verified-example-card verified-example-card--delivery" href="./deliveries/color-relay-branching/" data-example-id="color-relay-branching" data-v25-archive-id="color-relay-branching" data-run-id="direct-r129-color-relay-branching" data-bundle-hash="1ccc53197308a7f6411a1157774b65980284dab773c50c8189f7210195c7e2cc">
+            <figure>
+              <img src="./assets/verified-examples/color-relay-branching.png" alt="高彩城市接力演练以四条队伍路线、共享接力区与两种交棒策略形成的分支开场" loading="lazy" width="1440" height="900" />
+              <figcaption><span>DELIVERY / R129</span><strong>分支汇流结构验证</strong></figcaption>
+            </figure>
+            <div class="verified-example-copy">
+              <span>17 · COLOR RELAY BRANCHING</span>
+              <h3>高彩城市接力演练</h3>
+              <p>四支队伍共享明亮运动场；选择队伍后，“提前交棒”与“压线交棒”驱动不同路线、重叠节奏和终点队形，最终汇流到同一保存行动。</p>
+              <footer><strong>证明：直接创作可以生成可选择、可比较且最终汇流的内容结构</strong><span>打开成品 ↗</span></footer>
+            </div>
+          </a>
+
+          <a class="verified-example-card verified-example-card--delivery" href="./deliveries/forest-sound-route/" data-example-id="forest-sound-route" data-v25-archive-id="forest-sound-route" data-run-id="direct-r131-forest-sound-route" data-bundle-hash="2a8112069032c41fa4ecdc12fc90e981fa0adf14be73e9a53ca1dd22cb4b0906">
+            <figure>
+              <img src="./assets/verified-examples/forest-sound-route.png" alt="声音藏在哪里以明亮森林剖面、四个空间声源、波纹与聆听路线形成的互动完成状态" loading="lazy" width="1440" height="900" />
+              <figcaption><span>DELIVERY / R131</span><strong>声音与对象场验证</strong></figcaption>
+            </figure>
+            <div class="verified-example-copy">
+              <span>18 · FOREST SOUND ROUTE</span>
+              <h3>声音藏在哪里</h3>
+              <p>叶片、树洞、溪石与昆虫保持在同一幅明亮森林剖面中；真实 WAV、空间波纹、观察提示和收集顺序共享状态，三个声源形成可保存路线。</p>
+              <footer><strong>证明：声音产品可以让可听反馈、空间位置和最终行动形成真实因果</strong><span>打开成品 ↗</span></footer>
+            </div>
+          </a>
+
+          <a class="verified-example-card verified-example-card--delivery" href="./deliveries/moonlit-tidepool-panorama/" data-example-id="moonlit-tidepool-panorama" data-v25-archive-id="moonlit-tidepool-panorama" data-run-id="direct-r132-moonlit-tidepool-panorama" data-bundle-hash="afd279d0604da135c9b764feb3f987ee086f67525685a56f040bf9e293a43026">
+            <figure>
+              <img src="./assets/verified-examples/moonlit-tidepool-panorama.png" alt="月光潮池夜巡图卷以生成式连续潮池全景、三个生态站点与横向巡游形成的开场" loading="lazy" width="1440" height="900" />
+              <figcaption><span>DELIVERY / R132</span><strong>生成主视觉与横向全景验证</strong></figcaption>
+            </figure>
+            <div class="verified-example-copy">
+              <span>19 · MOONLIT TIDEPOOL PANORAMA</span>
+              <h3>月光潮池夜巡图卷</h3>
+              <p>单张生成式宽幅潮池主图持续承担湿岩、海葵浅池与蟹洞的真实材质和空间身份；滚轮、拖拽、触摸、键盘和按钮共享横向位置，三站观察最终形成可保存路线。</p>
+              <footer><strong>证明：图像模型可以承担视觉记忆，代码专注互动因果与可靠回退</strong><span>打开成品 ↗</span></footer>
+            </div>
+          </a>
+
+          <a class="verified-example-card verified-example-card--delivery" href="./deliveries/stormglass-archive/" data-example-id="stormglass-archive" data-v3-archive-id="stormglass-archive" data-run-id="direct-r134-stormglass-archive" data-bundle-hash="b518d1bcaeb0c4f4cba2267e29716337e1b1d07e09d1ab9006a704dace474591" data-medium-route="webgl-procedural">
+            <figure>
+              <img src="./assets/verified-examples/stormglass-archive.png" alt="雷雨余光档案馆中电荷沿悬浮风暴玻璃裂隙汇聚的 WebGL 分叉状态" loading="lazy" width="1440" height="900" />
+              <figcaption><span>DELIVERY / R134 / V3</span><strong>程序化 WebGL 媒介验证</strong></figcaption>
+            </figure>
+            <div class="verified-example-copy">
+              <span>20 · STORMGLASS ARCHIVE</span>
+              <h3>雷雨余光档案馆</h3>
+              <p>同一片悬浮风暴玻璃贯穿四个语义阶段；真实滚轮同时驱动电荷、体积裂隙、玻璃折射与相机深度，最终凝成并保存一张艺术化闪电拓片。</p>
+              <footer><strong>证明：媒介决策可以选择程序化 WebGL，并用最终身份验证真实视觉因果</strong><span>打开成品 ↗</span></footer>
+            </div>
+          </a>
+
+          <a class="verified-example-card verified-example-card--delivery" href="./deliveries/prism-seed-theatre/" data-example-id="prism-seed-theatre" data-v3-archive-id="prism-seed-theatre" data-run-id="direct-r135-prism-seed-theatre" data-bundle-hash="d4ebe575019203c7335541c30d22e750be9d64ddf1663e127740f1f55ac6f739" data-medium-route="generated-image">
+            <figure>
+              <img src="./assets/verified-examples/prism-seed-theatre.png" alt="棱镜种子剧场中高质量温室主视觉、半透明种荚与可互动日光光谱形成的开场" loading="lazy" width="1440" height="900" />
+              <figcaption><span>DELIVERY / R135 / V3</span><strong>生成主视觉与动态增强验证</strong></figcaption>
+            </figure>
+            <div class="verified-example-copy">
+              <span>21 · PRISM SEED THEATRE</span>
+              <h3>棱镜种子剧场</h3>
+              <p>普通想法没有指定技术；系统自主让唯一高质量生成主图承担温室、种荚、材质与第一记忆点，再用滚轮、指针和轻量 WebGL 折射把静态素材变成可保存的日光标本。</p>
+              <footer><strong>证明：最优素材可以成为主角，代码只增强空间、动态和产品因果</strong><span>打开成品 ↗</span></footer>
+            </div>
+          </a>
+
+          <a class="verified-example-card verified-example-card--delivery" href="./deliveries/film-camera-repair-paths/" data-example-id="film-camera-repair-paths" data-v3-archive-id="film-camera-repair-paths" data-run-id="direct-r136a-film-camera-repair-paths" data-bundle-hash="f4c32fc7300996f0fac8c9afa82aeac0c8c01e721ff42cd1fb7c88d2a1838977" data-medium-route="code-native">
+            <figure>
+              <img src="./assets/verified-examples/film-camera-repair-paths.png" alt="旧胶片相机维修判断以印刷故障手册、可变机构剖面和双路径汇流形成的互动开场" loading="lazy" width="1440" height="900" />
+              <figcaption><span>DELIVERY / R136A / V3</span><strong>代码原生 SVG 分支汇流验证</strong></figcaption>
+            </figure>
+            <div class="verified-example-copy">
+              <span>22 · FILM CAMERA REPAIR PATHS</span>
+              <h3>旧胶片相机维修判断</h3>
+              <p>从“快门会动／卡住”进入两条可重放的检查路线；同一台相机的拨杆、测光针、快门叶片和电池仓真实改变，最终汇合为可保存、不过度承诺的维修判断卡。</p>
+              <footer><strong>证明：没有外部素材时，主题专属 SVG 机构与真实分支因果也能形成鲜明页面</strong><span>打开成品 ↗</span></footer>
+            </div>
+          </a>
+
+          <a class="verified-example-card verified-example-card--delivery" href="./deliveries/west-bund-meeting-points/" data-example-id="west-bund-meeting-points" data-v3-archive-id="west-bund-meeting-points" data-run-id="direct-r136b-west-bund-meeting-points" data-bundle-hash="8112989e87b0046a51b3b4420a12555d160b7590b3adf929d79105a3998037e3" data-medium-route="grounded-real-media">
+            <figure>
+              <img src="./assets/verified-examples/west-bund-meeting-points.png" alt="西岸集合点图卷以真实徐汇滨江地图、四个文化地标与可保存集合点卡形成的明亮开场" loading="lazy" width="1440" height="900" />
+              <figcaption><span>DELIVERY / R136B / V3</span><strong>真实媒体与横向图卷验证</strong></figcaption>
+            </figure>
+            <div class="verified-example-copy">
+              <span>23 · WEST BUND MEETING POINTS</span>
+              <h3>西岸集合点图卷</h3>
+              <p>带 OpenStreetMap 署名的真实徐汇滨江地图持续承担地理基底；滚轮、拖拽、触摸、键盘和按钮共享同一横向位置，地点事实、演示路线与集合卡同步并可保存。</p>
+              <footer><strong>证明：真实授权素材可以主导视觉，代码负责可信边界、横向穿行与产品行动</strong><span>打开成品 ↗</span></footer>
+            </div>
+          </a>
+
+          <a class="verified-example-card verified-example-card--delivery" href="./deliveries/fox-gait-observatory/" data-example-id="fox-gait-observatory" data-v3-archive-id="fox-gait-observatory" data-run-id="direct-r137-fox-gait-observatory" data-bundle-hash="7b234dd7c3d49d642a974b7e6797fb47d14967f9a9f34b6d1c93664b1c9f83e6" data-medium-route="threejs-spatial">
+            <figure>
+              <img src="./assets/verified-examples/fox-gait-observatory.png" alt="狐步三拍以可追溯的 Khronos Fox GLB、清晨雪场和三套真实动作剪辑形成的明亮空间开场" loading="lazy" width="1440" height="900" />
+              <figcaption><span>DELIVERY / R137 / V3</span><strong>真实 GLB 与空间动作验证</strong></figcaption>
+            </figure>
+            <div class="verified-example-copy">
+              <span>24 · FOX GAIT OBSERVATORY</span>
+              <h3>狐步三拍</h3>
+              <p>可追溯的 Khronos Fox GLB 始终承担唯一空间主体；选择侦察、行走或奔跑会真实切换 Survey、Walk、Run 动画，镜头、足迹节奏与观察说明同步变化并可保存。</p>
+              <footer><strong>证明：真实动画模型可以主导视觉与因果，Three.js 负责空间观察而不是制造替代素材</strong><span>打开成品 ↗</span></footer>
+            </div>
+          </a>
+
+          <a class="verified-example-card verified-example-card--delivery" href="./deliveries/ten-second-callsign-decode/" data-example-id="ten-second-callsign-decode" data-v3-archive-id="ten-second-callsign-decode" data-run-id="direct-r139-ten-second-callsign-decode" data-bundle-hash="bb1cbb3a06ea697d4f5dd2f00761ac5c9e445d31bd7e173f6f8c7cb76ab833d6" data-medium-route="code-native">
+            <figure>
+              <img src="./assets/verified-examples/ten-second-callsign-decode.png" alt="十秒呼号解码以纸白、信号橙和墨黑排版呈现点划谱面与真实试听行动的明亮开场" loading="lazy" width="1440" height="900" />
+              <figcaption><span>DELIVERY / R139 / V3</span><strong>真实 Web Audio 与编辑排版验证</strong></figcaption>
+            </figure>
+            <div class="verified-example-copy">
+              <span>25 · TEN-SECOND CALLSIGN DECODE</span>
+              <h3>十秒呼号解码</h3>
+              <p>一条虚构呼号以点划谱面与十秒合成音调同步展开；点击或空格会真实触发 Web Audio，试听、解码、校验与保存共享同一状态，页面保持会发声的现代排版身份。</p>
+              <footer><strong>证明：内容适配可以选择明亮编辑流，并让声音成为产品因果而不是装饰</strong><span>打开成品 ↗</span></footer>
+            </div>
+          </a>
+
+          <a class="verified-example-card verified-example-card--delivery" href="./deliveries/folded-light-studio/" data-example-id="folded-light-studio" data-v3-archive-id="folded-light-studio" data-run-id="direct-r140-folded-light-studio" data-bundle-hash="752235b5c5303e616318a484f632bcd7f037d0841bc28469f15b433527f37f24" data-medium-route="generated-image">
+            <figure>
+              <img src="./assets/verified-examples/folded-light-studio.png" alt="折光成形以完全展开并透出暖光的再生纸纤维灯、工业杂志排版和预约完成态构成产品舞台" loading="lazy" width="1440" height="900" />
+              <figcaption><span>DELIVERY / R140 / V3</span><strong>生成状态序列与产品展开验证</strong></figcaption>
+            </figure>
+            <div class="verified-example-copy">
+              <span>26 · FOLDED LIGHT STUDIO</span>
+              <h3>折光成形</h3>
+              <p>同一盏再生纸纤维灯以四张连续状态素材保持产品身份；滚轮、拖动、方向键和阶段导航共享展开进度，纸纤维透光与桌面光影同步变化，最终完成“预约看样”。</p>
+              <footer><strong>证明：生成素材可以承担连续产品状态，代码负责可信的形变因果与多输入体验</strong><span>打开成品 ↗</span></footer>
+            </div>
+          </a>
+
+          <a class="verified-example-card verified-example-card--delivery" href="./deliveries/same-table-tonight/" data-example-id="same-table-tonight" data-v3-archive-id="same-table-tonight" data-run-id="direct-r141-same-table-tonight" data-bundle-hash="7c0783b971046e4a3d1aea74c2eca6c29d8d883b3abffb710917b3d654277666" data-medium-route="generated-image">
+            <figure>
+              <img src="./assets/verified-examples/same-table-tonight.png" alt="同桌时刻中相隔两地的两张餐桌在滚动后靠拢并完成邀请的温暖完成态" loading="lazy" width="1440" height="900" />
+              <figcaption><span>DELIVERY / R141 / V3</span><strong>生成全景与滚动因果验证</strong></figcaption>
+            </figure>
+            <div class="verified-example-copy">
+              <span>27 · SAME TABLE TONIGHT</span>
+              <h3>同桌时刻</h3>
+              <p>普通 brief 没有指定媒介、布局或互动；系统自主选择 generated-image + editorial-flow，让同一张双桌全景在滚动中真实收拢间距，最终完成“发起今晚的同桌时刻”。</p>
+              <footer><strong>证明：普通想法可自主路由到合适媒介与结构，滚动承担产品因果而非装饰</strong><span>打开成品 ↗</span></footer>
+            </div>
+          </a>
+
+          <a class="verified-example-card verified-example-card--delivery" href="./deliveries/modular-room-sound/" data-example-id="modular-room-sound" data-v3-archive-id="modular-room-sound" data-run-id="direct-r142-modular-room-sound" data-bundle-hash="d652cca11f053aeb4879c33cd9f1a003e248b523a245f73e48bb872a0a0ff4a0" data-medium-route="threejs-spatial">
+            <figure>
+              <img src="./assets/verified-examples/modular-room-sound.png" alt="声音顺着房间展开中珊瑚红可分体音响以真实三维装配关系合并展示的明亮开场" loading="lazy" width="1440" height="900" />
+              <figcaption><span>DELIVERY / R142 / V3</span><strong>概念产品装配与空间因果验证</strong></figcaption>
+            </figure>
+            <div class="verified-example-copy">
+              <span>28 · MODULAR ROOM SOUND</span>
+              <h3>声音顺着房间展开</h3>
+              <p>普通音响 brief 没有指定 3D 技术；系统因横置、左右分体、壁挂、剖视声路与部件拓扑责任自主选择 Three.js，同一套概念音响在滚轮和直接操作下保持真实装配关系并提供差异化试听。</p>
+              <footer><strong>证明：三维媒介由产品空间责任触发，而不是由风格词或模板惯性触发</strong><span>打开成品 ↗</span></footer>
+            </div>
+          </a>
+
+          <a class="verified-example-card verified-example-card--delivery" href="./deliveries/fridge-tonight/" data-example-id="fridge-tonight" data-v3-archive-id="fridge-tonight" data-run-id="direct-r143-fridge-tonight" data-bundle-hash="c91dbd26982c8d8eddf7007c8ed1cf4fd162dd7cd92e568197774542221828b1" data-medium-route="code-native">
+            <figure>
+              <img src="./assets/verified-examples/fridge-tonight.png" alt="冰箱今晚以明亮冰箱门、带日期的食材磁贴和厨房杂志排版构成可直接选择晚餐食材的开场" loading="lazy" width="1440" height="2296" style="object-position: 50% 8%;" />
+              <figcaption><span>DELIVERY / R143 / V3</span><strong>编辑交互与非三维媒介选择验证</strong></figcaption>
+            </figure>
+            <div class="verified-example-copy">
+              <span>29 · FRIDGE TONIGHT</span>
+              <h3>冰箱今晚</h3>
+              <p>一个普通生活工具 brief 被自主路由到 code-native + editorial-flow：选择或撤回食材时，新鲜度时间带、今晚菜单、待补清单和保存行动由同一状态同步重排；无需 3D、画布或外部素材也能形成主题专属的厨房杂志体验。</p>
+              <footer><strong>证明：没有空间拓扑职责时，系统会主动选择更合适的 DOM、CSS 与 SVG 表达</strong><span>打开成品 ↗</span></footer>
+            </div>
+          </a>
+
+          <a class="verified-example-card verified-example-card--delivery" href="./deliveries/eclipse-post-office/" data-example-id="eclipse-post-office" data-v3-archive-id="eclipse-post-office" data-run-id="direct-r149-eclipse-post-office" data-bundle-hash="8b33a2fbb920fbf3a62c325b8fd809edad21201c64c8583f9b5a16009f5d4ea8" data-medium-route="generated-image">
+            <figure>
+              <img src="./assets/verified-examples/eclipse-post-office.png" alt="日食邮局在盐湖与黄铜纸张环境中进入全食，月影、日冕与显影明信片形成同一场连续体验" loading="lazy" width="1672" height="941" />
+              <figcaption><span>DELIVERY / R149 / V3</span><strong>开放资源编排端到端验证</strong></figcaption>
+            </figure>
+            <div class="verified-example-copy">
+              <span>30 · ECLIPSE POST OFFICE</span>
+              <h3>日食邮局</h3>
+              <p>一张生成环境图负责盐湖、纸张与黄铜的真实质感，Canvas、CSS 与语义 DOM 负责实时月影、日冕、明暗和明信片显影；滚轮、拖动、键盘与保存行动共享同一状态，没有为了展示技术而强塞 GitHub、3D 或第二批素材。</p>
+              <footer><strong>证明：开放资源协议会选择最少充分组合，并以最终效果与真实因果完成归档</strong><span>打开成品 ↗</span></footer>
+            </div>
+          </a>
+
+        </div>
+      </section>
+
+      <section class="formal-products" id="formal-products" aria-labelledby="formal-products-title">
+        <header class="verified-examples-head">
+          <div>
+            <p class="eyebrow">V5 FORMAL PRODUCT / FINAL BUNDLE BOUND</p>
+            <h2 id="formal-products-title">研究已经进入产品，<br />不是再增加一个演示。</h2>
+          </div>
+          <p>这里仅展示通过产品身份、核心使用、结果、后续路径、正式素材、390px 与最终 bundle 绑定的页面。能力研究仍保留在上方，但不会自动进入这里。</p>
+        </header>
+        <div class="formal-product-grid" aria-live="polite"></div>
+      </section>
+
+      <section class="next-stage" id="project-status">
+        <div>
+          <p class="eyebrow">V2.6 CREATIVE FREEDOM / R164</p>
+          <h2>第一目标已锁定：<br />从想法到优秀、可验证的创意网页。</h2>
+          <p class="stage-summary">现有运行时、素材、3D、声音、互动、案例路由与有界执行继续保留。R164 没有增加风格限制，而是明确保护创意自由：案例与推断可放弃，技术目录可突破，最终按本次体验承诺验收。R163 证明产品闭环可复用，但不再被当作动态创意旗舰的充分证明。</p>
+          <a class="delivery-link" href="./deliveries/rainlight-walk-recorder/">打开 V5 复用验证产品 <span>↗</span></a>
+        </div>
+        <ol>
+          <li><span>目标</span>想法 → 主题专属、优秀且可验证的创意网页</li>
+          <li><span>研究能力</span>正向参考、媒介选择、有界执行、最终身份绑定，以及编辑、真实地图、3D、生成主视觉、程序化 WebGL 与声音因果</li>
+          <li><span>执行</span>一个方向 / 一批素材 / 一次构建 / 有限修复</li>
+          <li><span>正式产品门</span>产品身份与价值 / 核心使用 / 有效结果 / 后续路径 / 正式素材或运行时原生媒介依据</li>
+          <li><span>当前结果</span>产品闭环与创意验收已拆开：R162/R163 保留产品证据，R164 负责防止流程完整掩盖创意承诺不足</li>
+          <li><span>下一阶段</span>让下一次直接创作先声明开放的创意承诺，再把最终浏览器观察绑定回同一 bundle；不预设 3D、静态或任何技术答案</li>
+        </ol>
+      </section>
     </main>
+
+    <footer><p>Kage 保留研究能力库与既有页面；R164 已把创意自由和承诺相对验收接入 V5，兼容工作台仍不会自动触发后台创作。</p></footer>
     <script type="module" src="./v2.ts"></script>
   </body>
 </html>
-

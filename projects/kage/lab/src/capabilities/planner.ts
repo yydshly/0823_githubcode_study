@@ -1,4 +1,4 @@
-import type { ExperienceForPlanning, BudgetProfile, CapabilityCatalog, CapabilityPlan, ExperienceCapabilityUsage, PlanContext } from './schema';
+import type { ExperienceForPlanning, BudgetProfile, CapabilityCatalog, CapabilityPlan, ExperienceCapabilityUsage, PlanContext } from './schema.ts';
 
 const budgetProfiles: Readonly<Record<PlanContext['quality'], BudgetProfile>> = {
   high: { quality: 'high', maxGpu: 12, maxCpu: 12, maxMemory: 12, maxDrawCalls: 36 },

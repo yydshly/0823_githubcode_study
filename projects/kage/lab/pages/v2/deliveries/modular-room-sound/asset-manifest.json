@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "deliveryId": "modular-room-sound",
+  "batchId": "r142-author-generated-speaker-rig",
+  "assetBatches": 1,
+  "assets": [
+    {
+      "id": "author-generated-modular-speaker-rig",
+      "path": "main.ts",
+      "kind": "model-3d",
+      "mimeType": "application/typescript",
+      "bytes": 63114,
+      "sha256": "030b59781140eb8966e377bb93131e6794e7331be062a76611e7b6fb66b8fb5b",
+      "quality": "L3-presentable",
+      "budgetTier": "A1",
+      "inspection": {
+        "root": "productRoot",
+        "poses": ["horizontal", "split", "wall"],
+        "namedParts": [
+          "leftModule",
+          "rightModule",
+          "bridge",
+          "drivers",
+          "bassChamber",
+          "contacts",
+          "wallHooks",
+          "frontCover",
+          "soundRoute"
+        ],
+        "stateDriver": "shared pose interpolation plus cutaway",
+        "renderer": "Three.js WebGLRenderer"
+      },
+      "source": {
+        "type": "author-generated",
+        "provider": "Codex direct creative run",
+        "provenanceRecord": "pages/v2/deliveries/modular-room-sound/CONTRACT.md"
+      },
+      "license": {
+        "name": "Project-authored source; no external product asset"
+      },
+      "responsibility": "同一套概念音响的几何、材质、具名部件、三种装配姿态、剖视声路与空间检查主体。",
+      "runtimeBoundary": "这是精致概念产品与程序化声音预览，不是现实品牌、规格级工业模型、声学测量或安装建议；WebGL 失败时由同状态 SVG/DOM 诚实降级。"
+    }
+  ]
+}

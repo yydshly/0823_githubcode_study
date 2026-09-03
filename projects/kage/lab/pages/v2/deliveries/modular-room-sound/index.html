@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#f5f0e7" />
+    <meta
+      name="description"
+      content="ROOM / 02 模块化客厅音响概念体验：查看横置、分体、壁挂与内部声音通路。"
+    />
+    <title>ROOM / 02 · 模块化客厅声音</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23ef654e'/%3E%3Ccircle cx='23' cy='32' r='9' fill='%23f5f0e7'/%3E%3Ccircle cx='43' cy='32' r='9' fill='%23175cdb'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body
+    data-playing="false"
+    data-audio-state="idle"
+    data-saved="false"
+    data-booked="false"
+    data-fallback="false"
+    data-reduced-motion="false"
+    data-quality="balanced"
+    data-scene-ready="false"
+    data-context-lost="false"
+  >
+    <a class="skip-link" href="#sound-story">跳到声音家具故事</a>
+
+    <div id="app" class="sound-film">
+      <div class="scene-stage" aria-label="ROOM / 02 模块化音响空间舞台">
+        <canvas
+          id="scene-canvas"
+          class="sound-canvas"
+          data-scene-canvas
+          aria-hidden="true"
+        ></canvas>
+
+        <div
+          id="scene-fallback"
+          class="scene-fallback"
+          data-scene-fallback
+          data-fallback
+          role="img"
+          aria-labelledby="fallback-title fallback-description"
+        >
+          <span id="fallback-title" class="sr-only">模块化音响当前装配状态</span>
+          <span id="fallback-description" class="sr-only">
+            同一对珊瑚橙音响模块可横置、分体或壁挂；开启剖视后可看到扬声单元、低音腔、触点、挂扣与钴蓝声音通路。
+          </span>
+          <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <defs>
+              <linearGradient id="room-wall" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#fffdf7" />
+                <stop offset="0.58" stop-color="#f6f0e5" />
+                <stop offset="1" stop-color="#e8dfd2" />
+              </linearGradient>
+              <linearGradient id="coral-shell" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#ff876d" />
+                <stop offset="0.56" stop-color="#ef654e" />
+                <stop offset="1" stop-color="#c7473a" />
+              </linearGradient>
+              <linearGradient id="metal" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0" stop-color="#8c8d89" />
+                <stop offset="0.5" stop-color="#e2e0da" />
+                <stop offset="1" stop-color="#8b8b87" />
+              </linearGradient>
+              <pattern id="grille" width="8" height="8" patternUnits="userSpaceOnUse">
+                <rect width="8" height="8" fill="#d85546" />
+                <circle cx="2" cy="2" r="1.15" fill="#8f302e" opacity="0.72" />
+                <circle cx="6" cy="6" r="1.15" fill="#8f302e" opacity="0.72" />
+              </pattern>
+              <filter id="soft-shadow" x="-30%" y="-50%" width="160%" height="220%">
+                <feGaussianBlur stdDeviation="18" />
+              </filter>
+              <filter id="route-glow" x="-50%" y="-50%" width="200%" height="200%">
+                <feGaussianBlur stdDeviation="5" result="blur" />
+                <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+              </filter>
+            </defs>
+
+            <g class="fallback-room">
+              <rect width="1440" height="900" fill="url(#room-wall)" />
+              <path d="M0 635H1440V900H0Z" fill="#ded4c7" />
+              <path d="M0 635H1440" stroke="#cbbfb2" stroke-width="2" />
+              <path d="M1130 0H1440V420H1228Z" fill="#fffaf0" opacity="0.82" />
+              <path d="M1162 0H1210L1010 635H884Z" fill="#ffe0a0" opacity="0.22" />
+              <path d="M1260 0H1322L1208 635H1078Z" fill="#ffd47a" opacity="0.14" />
+              <path d="M230 635v-168h206v168" fill="none" stroke="#cbbfb2" stroke-width="10" />
+              <path d="M262 467v-54h142v54" fill="none" stroke="#b9ada0" stroke-width="8" />
+              <ellipse cx="962" cy="672" rx="330" ry="52" fill="#7d5a4b" opacity="0.17" filter="url(#soft-shadow)" />
+            </g>
+
+            <g class="fallback-product">
+              <g class="fallback-wall-hardware">
+                <g class="fallback-hook fallback-hook--left">
+                  <path d="M784 287h76v48h-20v-25h-36v25h-20z" fill="url(#metal)" />
+                  <circle cx="799" cy="300" r="5" fill="#62635f" />
+                  <circle cx="845" cy="300" r="5" fill="#62635f" />
+                </g>
+                <g class="fallback-hook fallback-hook--right">
+                  <path d="M1032 287h76v48h-20v-25h-36v25h-20z" fill="url(#metal)" />
+                  <circle cx="1047" cy="300" r="5" fill="#62635f" />
+                  <circle cx="1093" cy="300" r="5" fill="#62635f" />
+                </g>
+              </g>
+
+              <g class="fallback-bridge">
+                <rect x="900" y="431" width="90" height="132" rx="26" fill="url(#metal)" />
+                <path d="M914 454h62M914 540h62" stroke="#757671" stroke-width="2" opacity="0.55" />
+                <circle cx="922" cy="497" r="5" fill="#175cdb" />
+                <circle cx="968" cy="497" r="5" fill="#175cdb" />
+              </g>
+
+              <g class="fallback-module fallback-module--left">
+                <rect class="fallback-shell" x="702" y="342" width="218" height="310" rx="68" fill="url(#coral-shell)" />
+                <g class="fallback-internals">
+                  <rect x="731" y="372" width="160" height="250" rx="48" fill="#7d302e" opacity="0.9" />
+                  <ellipse cx="810" cy="460" rx="57" ry="57" fill="#23282b" stroke="#bfc2bf" stroke-width="9" />
+                  <ellipse cx="810" cy="460" rx="23" ry="23" fill="#175cdb" opacity="0.84" />
+                  <ellipse cx="810" cy="560" rx="40" ry="34" fill="#292d30" stroke="#a6a7a3" stroke-width="7" />
+                  <rect x="756" y="594" width="108" height="14" rx="7" fill="#f5c46d" opacity="0.72" />
+                </g>
+                <g class="fallback-cover fallback-cover--left">
+                  <rect x="714" y="354" width="194" height="286" rx="58" fill="url(#grille)" stroke="#ff9a83" stroke-width="3" />
+                  <path d="M762 619h96" stroke="#ffc0b1" stroke-width="3" opacity="0.54" />
+                </g>
+                <g class="fallback-contacts fallback-contacts--left">
+                  <circle cx="914" cy="482" r="6" fill="#f8cf74" />
+                  <circle cx="914" cy="511" r="6" fill="#f8cf74" />
+                </g>
+              </g>
+
+              <g class="fallback-module fallback-module--right">
+                <rect class="fallback-shell" x="970" y="342" width="218" height="310" rx="68" fill="url(#coral-shell)" />
+                <g class="fallback-internals">
+                  <rect x="999" y="372" width="160" height="250" rx="48" fill="#7d302e" opacity="0.9" />
+                  <ellipse cx="1079" cy="460" rx="57" ry="57" fill="#23282b" stroke="#bfc2bf" stroke-width="9" />
+                  <ellipse cx="1079" cy="460" rx="23" ry="23" fill="#175cdb" opacity="0.84" />
+                  <ellipse cx="1079" cy="560" rx="40" ry="34" fill="#292d30" stroke="#a6a7a3" stroke-width="7" />
+                  <rect x="1025" y="594" width="108" height="14" rx="7" fill="#f5c46d" opacity="0.72" />
+                </g>
+                <g class="fallback-cover fallback-cover--right">
+                  <rect x="982" y="354" width="194" height="286" rx="58" fill="url(#grille)" stroke="#ff9a83" stroke-width="3" />
+                  <path d="M1030 619h96" stroke="#ffc0b1" stroke-width="3" opacity="0.54" />
+                </g>
+                <g class="fallback-contacts fallback-contacts--right">
+                  <circle cx="976" cy="482" r="6" fill="#f8cf74" />
+                  <circle cx="976" cy="511" r="6" fill="#f8cf74" />
+                </g>
+              </g>
+
+              <g class="fallback-routes" fill="none" stroke="#175cdb" stroke-linecap="round" filter="url(#route-glow)">
+                <path class="fallback-route fallback-route--left" d="M810 458C760 404 744 524 810 562C850 585 874 545 878 505" />
+                <path class="fallback-route fallback-route--bridge" d="M878 505C914 488 974 488 1012 505" />
+                <path class="fallback-route fallback-route--right" d="M1012 505C1017 545 1040 585 1079 562C1145 524 1128 404 1079 458" />
+              </g>
+            </g>
+
+            <g class="fallback-state-labels">
+              <g class="fallback-label fallback-label--horizontal">
+                <circle cx="1210" cy="710" r="5" fill="#ef654e" />
+                <text x="1227" y="716">横置组合</text>
+              </g>
+              <g class="fallback-label fallback-label--split">
+                <circle cx="1210" cy="710" r="5" fill="#175cdb" />
+                <text x="1227" y="716">左右分体</text>
+              </g>
+              <g class="fallback-label fallback-label--wall">
+                <circle cx="1210" cy="710" r="5" fill="#ef654e" />
+                <text x="1227" y="716">双点壁挂</text>
+              </g>
+            </g>
+          </svg>
+          <p class="fallback-notice">
+            <span>空间画面以结构图继续</span>
+            <small>三种装配、剖视、试听与保存预约仍然可用</small>
+          </p>
+        </div>
+
+        <div class="scene-chrome" aria-hidden="true">
+          <span class="sun-disc"></span>
+          <span class="room-rule room-rule--one"></span>
+          <span class="room-rule room-rule--two"></span>
+          <span class="acoustic-orbit acoustic-orbit--one"></span>
+          <span class="acoustic-orbit acoustic-orbit--two"></span>
+        </div>
+      </div>
+
+      <header class="site-header" aria-label="体验导航">
+        <a class="brand" href="#opening" aria-label="ROOM / 02，回到开场">
+          <span class="brand-glyph" aria-hidden="true"><i></i><i></i></span>
+          <span class="brand-copy"><strong>ROOM / 02</strong><small>MODULAR SOUND OBJECT</small></span>
+        </a>
+        <p class="scene-readout">
+          <span class="readout-dot" aria-hidden="true"></span>
+          <span data-mode-status>横置组合</span>
+        </p>
+        <a class="header-action" href="#listen">试听当前组合 <span aria-hidden="true">↘</span></a>
+      </header>
+
+      <div class="story-meter" aria-hidden="true">
+        <span class="story-meter__index">00</span>
+        <span class="story-meter__line"><i data-progress></i></span>
+        <span>100</span>
+      </div>
+
+      <p class="orbit-hint" aria-hidden="true">
+        <span class="orbit-icon"><i></i></span>
+        拖拽环绕 · 滚轮靠近
+      </p>
+
+      <main id="sound-story" class="story">
+        <section
+          id="opening"
+          class="chapter chapter--opening"
+          data-chapter="opening"
+          data-chapter-mode="horizontal"
+          aria-labelledby="page-title"
+        >
+          <div class="chapter-copy opening-copy">
+            <p class="eyebrow"><span>01</span> 一件声音家具</p>
+            <h1 id="page-title">声音，<br />顺着房间展开。</h1>
+            <p class="lede">
+              两枚声学模块与一段金属桥，先成为窗下的一件家具；需要时，再沿着生活的方向分开。
+            </p>
+            <div class="opening-actions">
+              <button class="mode-button mode-button--primary" type="button" data-mode="horizontal" aria-pressed="true">
+                <span class="mode-button__mark" aria-hidden="true"><i></i><i></i></span>
+                <span><small>初始姿态</small>合成一体</span>
+              </button>
+              <a class="text-link" href="#split">看它拆开 <span aria-hidden="true">↓</span></a>
+            </div>
+          </div>
+
+          <aside class="opening-note" aria-label="概念产品说明">
+            <span class="note-rule" aria-hidden="true"></span>
+            <p>01—03</p>
+            <strong>一棵装配树<br />三种居住姿态</strong>
+            <small>概念设计演示，不代表真实品牌与声学参数。</small>
+          </aside>
+
+          <p class="scroll-cue" aria-hidden="true"><span>SCROLL</span><i></i>沿声音通路向下</p>
+        </section>
+
+        <section
+          id="split"
+          class="chapter chapter--split"
+          data-chapter="split"
+          data-chapter-mode="split"
+          aria-labelledby="split-title"
+        >
+          <div class="chapter-copy copy-card copy-card--right">
+            <p class="eyebrow"><span>02</span> 分体不是复制</p>
+            <h2 id="split-title">让左右声道，<br />各自找到位置。</h2>
+            <p>
+              金属桥退场，隐藏触点出现。两个模块仍属于同一棵装配树，只把彼此之间的距离交给房间。
+            </p>
+            <button class="mode-button" type="button" data-mode="split" aria-pressed="false">
+              <span class="mode-button__mark mode-button__mark--split" aria-hidden="true"><i></i><i></i></span>
+              <span><small>装配 02</small>左右分体</span>
+              <b aria-hidden="true">↔</b>
+            </button>
+            <dl class="micro-spec">
+              <div><dt>连接</dt><dd>桥接触点分离</dd></div>
+              <div><dt>关系</dt><dd>模块保持同源</dd></div>
+            </dl>
+          </div>
+        </section>
+
+        <section
+          id="inside"
+          class="chapter chapter--inside"
+          data-chapter="inside"
+          data-chapter-mode="horizontal"
+          data-chapter-cutaway="true"
+          aria-labelledby="inside-title"
+        >
+          <div class="chapter-copy copy-card copy-card--left copy-card--cutaway">
+            <p class="eyebrow eyebrow--blue"><span>03</span> 声音不是表面纹样</p>
+            <h2 id="inside-title">移开前盖，<br />看见声音怎么走。</h2>
+            <p>
+              剖视只移开织物前盖。扬声单元、低音腔、桥接触点与钴蓝声路仍保留真实前后关系。
+            </p>
+            <button class="cutaway-button" type="button" data-cutaway aria-pressed="false">
+              <span class="cutaway-icon" aria-hidden="true"><i></i><i></i></span>
+              <span><small>结构检查</small><b>开启剖视</b></span>
+              <span class="button-state" aria-hidden="true">OFF</span>
+            </button>
+            <ol class="route-key" aria-label="剖视中可检查的结构">
+              <li><i></i><span>高频单元</span></li>
+              <li><i></i><span>低音腔体</span></li>
+              <li><i></i><span>桥接触点</span></li>
+              <li><i></i><span>墙面挂扣</span></li>
+            </ol>
+          </div>
+        </section>
+
+        <section
+          id="wall"
+          class="chapter chapter--wall"
+          data-chapter="wall"
+          data-chapter-mode="wall"
+          aria-labelledby="wall-title"
+        >
+          <div class="chapter-copy copy-card copy-card--right copy-card--wall">
+            <p class="eyebrow"><span>04</span> 墙面成为第三种底座</p>
+            <h2 id="wall-title">抬离地面，<br />仍然是一对。</h2>
+            <p>
+              两枚挂扣从背部进入视线，模块转向墙面并保持水平。这里展示连接逻辑，不是安装指导。
+            </p>
+            <button class="mode-button" type="button" data-mode="wall" aria-pressed="false">
+              <span class="mode-button__mark mode-button__mark--wall" aria-hidden="true"><i></i><i></i></span>
+              <span><small>装配 03</small>双点壁挂</span>
+              <b aria-hidden="true">↗</b>
+            </button>
+            <p class="truth-chip"><span aria-hidden="true">!</span> 壁挂结构仅为概念呈现，请勿作为实际安装建议。</p>
+          </div>
+        </section>
+
+        <section
+          id="listen"
+          class="chapter chapter--listen"
+          data-chapter="listen"
+          data-chapter-mode="split"
+          data-chapter-listen="true"
+          aria-labelledby="listen-title"
+        >
+          <div class="chapter-copy listen-card">
+            <div class="listen-heading">
+              <p class="eyebrow eyebrow--blue"><span>05</span> 当前组合试听</p>
+              <h2 id="listen-title">先听一小段，<br />再决定放在哪里。</h2>
+            </div>
+            <div class="listen-action">
+              <button class="listen-button" type="button" data-listen aria-pressed="false">
+                <span class="listen-disc" aria-hidden="true"><i></i></span>
+                <span><small>用户手势启动</small><b>试听空间脉冲</b></span>
+                <span class="listen-time" aria-hidden="true">00:08</span>
+              </button>
+              <p class="audio-status" data-audio-status role="status" aria-live="polite">
+                试听是合成音色概念，不是扬声器录音或真实房间测量。
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section
+          id="keep"
+          class="chapter chapter--keep"
+          data-chapter="keep"
+          data-chapter-mode="horizontal"
+          aria-labelledby="keep-title"
+        >
+          <div class="closing-panel">
+            <div class="closing-copy">
+              <p class="eyebrow"><span>06</span> 把组合带回真实房间</p>
+              <h2 id="keep-title">保存此刻，<br />预约一次现场试听。</h2>
+              <p>
+                我们只保存这次概念体验中的装配选择。现场试听会重新从真实空间、摆位与使用习惯开始。
+              </p>
+            </div>
+            <div class="closing-actions">
+              <div class="action-block">
+                <button class="save-button" type="button" data-save>
+                  <span>保存当前组合</span><span aria-hidden="true">＋</span>
+                </button>
+                <p data-save-status role="status" aria-live="polite">尚未保存这次组合。</p>
+              </div>
+              <div class="action-block action-block--book">
+                <button class="book-button" type="button" data-book>
+                  <span><small>概念预约</small>预约客厅试听</span><span aria-hidden="true">↗</span>
+                </button>
+                <p data-book-status role="status" aria-live="polite">预约不会提交真实订单或个人资料。</p>
+              </div>
+            </div>
+            <footer class="film-footer">
+              <span>ROOM / 02</span>
+              <p>Modular sound object · Spatial concept study</p>
+              <span>R142 / 2026</span>
+            </footer>
+          </div>
+        </section>
+      </main>
+
+      <div class="live-region sr-only" data-live-status role="status" aria-live="polite" aria-atomic="true">
+        横置组合已就绪。
+      </div>
+    </div>
+
+    <noscript>
+      <div class="noscript-note">
+        JavaScript 未启用。上方结构图仍可说明横置、分体、壁挂与内部声路；交互试听、保存和预约需要启用 JavaScript。
+      </div>
+    </noscript>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Signal Lab 的两个 Three.js 能力基准与五个模型生成、浏览器精修的完整作品。" />
+    <meta name="description" content="Signal Lab 的 Three.js 能力基准与模型生成、浏览器精修的当前最优作品。" />
     <title>精选研究样例 — Signal Lab</title>
   </head>
   <body>
@@ -15,13 +15,26 @@
     <main>
       <section class="case-hero">
         <p>ABILITY + MODEL EVIDENCE</p>
-        <h1>两个能力基准，<br />五个完整作品。</h1>
+        <h1>能力基准，<br />与当前最优作品。</h1>
         <div>
-          <p>两个能力基准说明已有的 Three.js 技术边界；五个完整作品分别保留一个目标的当前最优结果，展示模型如何解析想法、生成专属素材、构建网页并根据真实浏览器证据持续精修。</p>
+          <p>能力基准说明已有的 Three.js 技术边界；每个完整作品只保留同一目标的当前最优结果，展示模型如何解析想法、生成专属素材、构建网页并根据真实浏览器证据持续精修。</p>
           <span id="case-count">正在读取案例…</span>
         </div>
       </section>
       <section id="case-grid" class="case-grid" aria-live="polite"></section>
+      <section class="experience-archive" aria-labelledby="experience-archive-title">
+        <div class="experience-archive__head">
+          <div>
+            <p>ATMOSPHERE + MULTIMODAL MEMORY</p>
+            <h2 id="experience-archive-title">意境研究档案</h2>
+          </div>
+          <div>
+            <p>这里保留已经在真实浏览器中验证过的意境、3D、声音与生成素材研究。它们是后续创作的正向参考，不等同于精选成品，也不会扩张稳定案例库。</p>
+            <span id="experience-archive-count">正在读取档案…</span>
+          </div>
+        </div>
+        <div id="experience-archive-grid" class="experience-archive__grid" aria-live="polite"></div>
+      </section>
     </main>
     <script type="module" src="/src/cases-main.ts"></script>
   </body>

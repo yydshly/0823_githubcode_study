@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="zh-CN" data-ready="false" data-fallback="false" data-saved="false">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f4f0e5" />
+    <meta
+      name="description"
+      content="在一张带 OpenStreetMap 署名的真实徐汇滨江地图上，选择西岸美术馆、油罐艺术中心、龙美术馆或星美术馆，并保存集合点卡。"
+    />
+    <link rel="preload" as="image" href="./assets/xuhui-west-bund-osm-map-v1.jpg" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>西岸集合点图卷</title>
+  </head>
+  <body data-experience="west-bund-meeting-points">
+    <a class="skip-link" href="#meeting-card">跳到集合点卡</a>
+
+    <main id="panorama-stage" aria-label="西岸集合点横向图卷">
+      <header class="masthead">
+        <a class="brand" href="#panorama-stage" aria-label="西岸集合点图卷首页">
+          <span class="brand__seal" aria-hidden="true">岸</span>
+          <span><b>西岸集合点图卷</b><small>WEST BUND · MEETING FOLDOUT</small></span>
+        </a>
+        <p class="masthead__truth">真实地理基底 · 集合建议为产品演示</p>
+        <div class="position-count" aria-live="polite">
+          <span>当前位置</span>
+          <strong><b id="position-number">01</b> / 04</strong>
+        </div>
+      </header>
+
+      <div class="stage-shell">
+        <section class="map-column" aria-labelledby="page-title">
+          <div class="title-block">
+            <p>SHANGHAI · XUHUI RIVERSIDE · 31.17°N</p>
+            <h1 id="page-title">和朋友，<br /><em>在西岸碰头。</em></h1>
+            <span>滚轮、拖拽、触摸或左右键穿行同一张地图</span>
+          </div>
+
+          <figure id="map-sheet" class="map-sheet">
+            <div class="map-sheet__folio" aria-hidden="true">徐汇滨江 / WEEKEND 04</div>
+            <div id="map-media" class="map-media">
+              <img
+                id="map-image"
+                src="./assets/xuhui-west-bund-osm-map-v1.jpg"
+                alt="上海徐汇滨江 OpenStreetMap 静态地图，显示黄浦江两岸道路和文化地标关系"
+                width="960"
+                height="576"
+                draggable="false"
+              />
+
+              <svg class="route-overlay" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                <polyline id="demo-route-shadow" class="route-shadow" points="47.541,79.822 48.816,81.595 49.963,86.598" />
+                <polyline id="demo-route" class="route-active" points="47.541,79.822 48.816,81.595 49.963,86.598" />
+              </svg>
+
+              <span class="route-origin" style="--point-x:47.541%;--point-y:79.822%">
+                <i aria-hidden="true"></i><b>示意起点</b>
+              </span>
+
+              <button
+                class="map-pin"
+                type="button"
+                data-landmark-id="west-bund-museum"
+                style="--point-x:49.963%;--point-y:86.598%"
+                aria-label="选择西岸美术馆，龙腾大道 2600 号"
+                aria-pressed="true"
+              ><span class="map-pin__symbol"><i aria-hidden="true"></i></span><b>01</b></button>
+              <button
+                class="map-pin"
+                type="button"
+                data-landmark-id="tank-shanghai"
+                style="--point-x:50.046%;--point-y:97.322%"
+                aria-label="选择油罐艺术中心，龙腾大道 2380 号"
+                aria-pressed="false"
+              ><span class="map-pin__symbol"><i aria-hidden="true"></i></span><b>02</b></button>
+              <button
+                class="map-pin"
+                type="button"
+                data-landmark-id="long-museum"
+                style="--point-x:51.533%;--point-y:28.697%"
+                aria-label="选择龙美术馆，龙腾大道 3398 号"
+                aria-pressed="false"
+              ><span class="map-pin__symbol"><i aria-hidden="true"></i></span><b>03</b></button>
+              <button
+                class="map-pin"
+                type="button"
+                data-landmark-id="start-museum"
+                style="--point-x:61.580%;--point-y:15.219%"
+                aria-label="选择星美术馆，瑞宁路 111 号"
+                aria-pressed="false"
+              ><span class="map-pin__symbol"><i aria-hidden="true"></i></span><b>04</b></button>
+
+              <div id="map-callout" class="map-callout" data-edge="south" aria-hidden="true">
+                <span id="callout-index">01</span>
+                <strong id="callout-name">西岸美术馆</strong>
+                <small id="callout-address">龙腾大道 2600 号</small>
+              </div>
+
+              <div id="map-fallback" class="map-fallback" role="group" aria-label="地图图片不可用时的真实地标名单">
+                <p><strong>地图图片暂不可用</strong><span>没有用示意图替代真实地理。仍可从下列既有事实中选择并保存集合点卡。</span></p>
+                <ol>
+                  <li><button type="button" data-fallback-id="west-bund-museum"><b>01 西岸美术馆</b><span>龙腾大道 2600 号</span><small>121.4593301, 31.1695893</small></button></li>
+                  <li><button type="button" data-fallback-id="tank-shanghai"><b>02 油罐艺术中心</b><span>龙腾大道 2380 号</span><small>121.4593761, 31.1665647</small></button></li>
+                  <li><button type="button" data-fallback-id="long-museum"><b>03 龙美术馆</b><span>龙腾大道 3398 号</span><small>121.4601929, 31.1859164</small></button></li>
+                  <li><button type="button" data-fallback-id="start-museum"><b>04 星美术馆</b><span>瑞宁路 111 号</span><small>121.4657116, 31.1897166</small></button></li>
+                </ol>
+              </div>
+            </div>
+            <figcaption>
+              <span><i class="legend-pin" aria-hidden="true"></i>当前地标</span>
+              <span><i class="legend-route" aria-hidden="true"></i>产品演示路线</span>
+              <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer">© OpenStreetMap contributors</a>
+            </figcaption>
+          </figure>
+        </section>
+
+        <article id="meeting-card" class="meeting-card" aria-live="polite">
+          <div class="meeting-card__topline">
+            <span>集合点卡 / <b id="card-index">01</b></span>
+            <span class="fact-badge">真实地标</span>
+          </div>
+          <p class="meeting-card__district" id="card-district">龙华街道</p>
+          <h2 id="card-name">西岸美术馆</h2>
+          <dl class="fact-list">
+            <div><dt>地址</dt><dd id="card-address">龙腾大道 2600 号</dd></div>
+            <div><dt>坐标</dt><dd id="card-coordinates">121.4593301, 31.1695893</dd></div>
+          </dl>
+          <section class="demo-note" aria-label="产品演示集合建议">
+            <p><span>产品演示</span> 集合建议</p>
+            <strong id="card-suggestion">把“西岸美术馆”与本卡坐标发给同行者，抵达后请以现场指引相互确认。</strong>
+            <small>橙红虚线仅演示从示意起点到所选地标的产品反馈；不代表可通行路线、实时路况或实时开放状态。</small>
+          </section>
+          <div class="meeting-card__actions">
+            <button id="prev-landmark" type="button" aria-label="上一站" disabled><span aria-hidden="true">←</span> 上一站</button>
+            <button id="next-landmark" type="button">下一站 <span aria-hidden="true">→</span></button>
+          </div>
+          <button id="save-meeting-card" class="save-button" type="button">
+            <span>保存集合点卡</span><i aria-hidden="true">＋</i>
+          </button>
+          <p id="save-status" class="save-status" role="status"></p>
+        </article>
+      </div>
+
+      <section
+        id="panorama-viewport"
+        class="panorama-viewport"
+        tabindex="0"
+        aria-label="横向集合点图卷。使用滚轮、拖拽、触摸、左右方向键或上一站和下一站按钮改变同一位置。"
+      >
+        <div id="panorama-track" class="panorama-track" aria-hidden="true">
+          <div class="panorama-axis"></div>
+          <div class="rail-stop" data-rail-index="0"><i>01</i><span>西岸美术馆</span></div>
+          <div class="rail-stop" data-rail-index="1"><i>02</i><span>油罐艺术中心</span></div>
+          <div class="rail-stop" data-rail-index="2"><i>03</i><span>龙美术馆</span></div>
+          <div class="rail-stop" data-rail-index="3"><i>04</i><span>星美术馆</span></div>
+        </div>
+      </section>
+
+      <p class="input-hint"><span aria-hidden="true">↔</span> 横向穿行 · 所有输入共享同一位置</p>
+    </main>
+
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>

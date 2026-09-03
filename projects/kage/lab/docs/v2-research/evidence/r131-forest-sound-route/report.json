@@ -1,0 +1,209 @@
+{
+  "schemaVersion": 1,
+  "stage": "r131-forest-sound-route-runtime-observations",
+  "capturedAt": "2026-08-31T14:41:58.739Z",
+  "identityBinding": "runId+bundleHash",
+  "runId": "direct-r131-forest-sound-route",
+  "bundleHash": "2a8112069032c41fa4ecdc12fc90e981fa0adf14be73e9a53ca1dd22cb4b0906",
+  "route": "/pages/v2/deliveries/forest-sound-route/",
+  "revision": "r131-proof",
+  "complete": true,
+  "captures": [
+    "01-desktop-opening.png",
+    "02-desktop-first-sound.png",
+    "03-desktop-route-saved.png",
+    "04-mobile-reduced.png",
+    "05-audio-unavailable.png"
+  ],
+  "observations": [
+    {
+      "checkpoint": "desktop-opening",
+      "readyAtMs": 1173,
+      "issues": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "requestFailures": [],
+        "responseErrors": []
+      },
+      "state": {
+        "ready": true,
+        "phase": "discover",
+        "activeSound": null,
+        "collected": [],
+        "routeReady": false,
+        "saved": false,
+        "audioState": "idle",
+        "audioSource": null,
+        "muted": false,
+        "volume": 0.65,
+        "reducedMotion": false,
+        "horizontalOverflow": false,
+        "assetCount": 4,
+        "visualRevision": "r131-proof"
+      }
+    },
+    {
+      "checkpoint": "desktop-interaction-audio",
+      "issues": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "requestFailures": [],
+        "responseErrors": []
+      },
+      "samples": [
+        {
+          "ready": true,
+          "phase": "listening",
+          "activeSound": "leaf",
+          "collected": [
+            "leaf"
+          ],
+          "routeReady": false,
+          "saved": false,
+          "audioState": "playing",
+          "audioSource": "http://127.0.0.1:8143/pages/v2/deliveries/forest-sound-route/assets/leaf-canopy.wav",
+          "muted": false,
+          "volume": 0.65,
+          "reducedMotion": false,
+          "horizontalOverflow": false,
+          "assetCount": 4,
+          "visualRevision": "r131-proof",
+          "routePath": "M 50.2 22 a .8 .8 0 1 0 1.6 0 a .8 .8 0 1 0 -1.6 0",
+          "hotspotPressed": true
+        },
+        {
+          "ready": true,
+          "phase": "listening",
+          "activeSound": "hollow",
+          "collected": [
+            "leaf",
+            "hollow"
+          ],
+          "routeReady": false,
+          "saved": false,
+          "audioState": "playing",
+          "audioSource": "http://127.0.0.1:8143/pages/v2/deliveries/forest-sound-route/assets/tree-hollow.wav",
+          "muted": false,
+          "volume": 0.65,
+          "reducedMotion": false,
+          "horizontalOverflow": false,
+          "assetCount": 4,
+          "visualRevision": "r131-proof",
+          "routePath": "M 51 22 C 57.5 22, 57.5 43, 64 43",
+          "hotspotPressed": true
+        },
+        {
+          "ready": true,
+          "phase": "route-ready",
+          "activeSound": "creek",
+          "collected": [
+            "leaf",
+            "hollow",
+            "creek"
+          ],
+          "routeReady": true,
+          "saved": false,
+          "audioState": "playing",
+          "audioSource": "http://127.0.0.1:8143/pages/v2/deliveries/forest-sound-route/assets/creek-stone.wav",
+          "muted": false,
+          "volume": 0.65,
+          "reducedMotion": false,
+          "horizontalOverflow": false,
+          "assetCount": 4,
+          "visualRevision": "r131-proof",
+          "routePath": "M 51 22 C 57.5 22, 57.5 43, 64 43 C 50.5 43, 50.5 77, 37 77",
+          "hotspotPressed": true
+        }
+      ],
+      "state": {
+        "ready": true,
+        "phase": "saved",
+        "activeSound": "creek",
+        "collected": [
+          "leaf",
+          "hollow",
+          "creek"
+        ],
+        "routeReady": true,
+        "saved": true,
+        "audioState": "playing",
+        "audioSource": "http://127.0.0.1:8143/pages/v2/deliveries/forest-sound-route/assets/creek-stone.wav",
+        "muted": false,
+        "volume": 0.65,
+        "reducedMotion": false,
+        "horizontalOverflow": false,
+        "assetCount": 4,
+        "visualRevision": "r131-proof",
+        "routePath": "M 51 22 C 57.5 22, 57.5 43, 64 43 C 50.5 43, 50.5 77, 37 77"
+      },
+      "comparison": {
+        "distinctAudioSources": true,
+        "distinctVisualStates": true,
+        "audioActuallyPlaying": true
+      }
+    },
+    {
+      "checkpoint": "mobile-reduced",
+      "issues": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "requestFailures": [],
+        "responseErrors": []
+      },
+      "state": {
+        "ready": true,
+        "phase": "saved",
+        "activeSound": "creek",
+        "collected": [
+          "insect",
+          "leaf",
+          "creek"
+        ],
+        "routeReady": true,
+        "saved": true,
+        "audioState": "playing",
+        "audioSource": "http://127.0.0.1:8143/pages/v2/deliveries/forest-sound-route/assets/creek-stone.wav",
+        "muted": false,
+        "volume": 0.65,
+        "reducedMotion": true,
+        "horizontalOverflow": false,
+        "assetCount": 4,
+        "visualRevision": "r131-proof"
+      },
+      "viewport": {
+        "width": 390,
+        "height": 844
+      }
+    },
+    {
+      "checkpoint": "audio-unavailable-fallback",
+      "issues": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "requestFailures": [],
+        "responseErrors": []
+      },
+      "state": {
+        "ready": true,
+        "phase": "saved",
+        "activeSound": "insect",
+        "collected": [
+          "leaf",
+          "hollow",
+          "insect"
+        ],
+        "routeReady": true,
+        "saved": true,
+        "audioState": "unavailable",
+        "audioSource": "http://127.0.0.1:8143/pages/v2/deliveries/forest-sound-route/assets/meadow-insect.wav",
+        "muted": false,
+        "volume": 0.65,
+        "reducedMotion": true,
+        "horizontalOverflow": false,
+        "assetCount": 4,
+        "visualRevision": "r131-proof",
+        "routePath": "M 51 22 C 57.5 22, 57.5 43, 64 43 C 58 43, 58 58, 52 58"
+      }
+    }
+  ]
+}

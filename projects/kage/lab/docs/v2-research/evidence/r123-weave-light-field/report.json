@@ -1,0 +1,261 @@
+{
+  "schemaVersion": 1,
+  "stage": "r123-weave-light-field-runtime-observations",
+  "capturedAt": "2026-08-31T10:30:47.837Z",
+  "identityBinding": "pending-source-freeze",
+  "route": "/pages/v2/deliveries/weave-light-field/",
+  "revision": "r123-proof",
+  "captures": [
+    "01-desktop-opening.png",
+    "02-desktop-progress.png",
+    "03-desktop-saved.png",
+    "04-mobile-reduced.png",
+    "05-fallback-saved.png"
+  ],
+  "observations": [
+    {
+      "checkpoint": "desktop-opening",
+      "url": "http://127.0.0.1:8143/pages/v2/deliveries/weave-light-field/?quality=high&motion=full&revision=r123-proof",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "issues": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "requestFailures": [],
+        "responseErrors": []
+      },
+      "openingCompletedAtMs": 2646,
+      "state": {
+        "ready": true,
+        "phase": "weaving",
+        "step": 0,
+        "row": 0,
+        "wovenRows": 0,
+        "maxRows": 6,
+        "completed": false,
+        "saved": false,
+        "pattern": "空纱架",
+        "heroProgress": 1,
+        "openingProgress": 1,
+        "clothProgress": 0,
+        "shuttlePosition": -1,
+        "heddleOffsets": [
+          -0.09,
+          0,
+          0.09
+        ],
+        "warpCount": 54,
+        "visibleWeftCords": 0,
+        "frames": 88,
+        "drawCalls": 43,
+        "triangles": 22066,
+        "fallback": false,
+        "reducedMotion": false,
+        "horizontalOverflow": false,
+        "quality": "high",
+        "revision": "r123-proof"
+      }
+    },
+    {
+      "checkpoint": "desktop-causal-interaction",
+      "url": "http://127.0.0.1:8143/pages/v2/deliveries/weave-light-field/?quality=high&motion=reduce&revision=r123-proof",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "issues": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "requestFailures": [],
+        "responseErrors": []
+      },
+      "visualHashBefore": "7ec9b3ff0718f17cf2aa2b47f82598c856ccadafc9230596763d753822964abe",
+      "visualHashAfter": "292d008a670998fcfa08db6d57d6012aca6afa8cf84efe9aac8a38127650a2a2",
+      "state": {
+        "ready": true,
+        "phase": "weaving",
+        "step": 3,
+        "row": 3,
+        "wovenRows": 3,
+        "maxRows": 6,
+        "completed": false,
+        "saved": false,
+        "pattern": "朱砂鸟喙",
+        "heroProgress": 1,
+        "openingProgress": 1,
+        "clothProgress": 0.5,
+        "shuttlePosition": 1,
+        "heddleOffsets": [
+          -0.09,
+          0,
+          0.09
+        ],
+        "warpCount": 54,
+        "visibleWeftCords": 9,
+        "frames": 54,
+        "drawCalls": 52,
+        "triangles": 22354,
+        "fallback": false,
+        "reducedMotion": true,
+        "horizontalOverflow": false,
+        "quality": "high",
+        "revision": "r123-proof"
+      },
+      "semantic": {
+        "click": {
+          "step": 1,
+          "pattern": "晨光底纬"
+        },
+        "keyboard": {
+          "step": 2,
+          "pattern": "靛蓝翼根"
+        },
+        "drag": {
+          "step": 3,
+          "pattern": "朱砂鸟喙"
+        }
+      }
+    },
+    {
+      "checkpoint": "desktop-complete-and-save",
+      "url": "http://127.0.0.1:8143/pages/v2/deliveries/weave-light-field/?quality=high&motion=reduce&revision=r123-proof",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "issues": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "requestFailures": [],
+        "responseErrors": []
+      },
+      "state": {
+        "ready": true,
+        "phase": "saved",
+        "step": 6,
+        "row": 6,
+        "wovenRows": 6,
+        "maxRows": 6,
+        "completed": true,
+        "saved": true,
+        "pattern": "晨鸟纹完整",
+        "heroProgress": 1,
+        "openingProgress": 1,
+        "clothProgress": 1,
+        "shuttlePosition": -1,
+        "heddleOffsets": [
+          -0.09,
+          0,
+          0.09
+        ],
+        "warpCount": 54,
+        "visibleWeftCords": 18,
+        "frames": 54,
+        "drawCalls": 61,
+        "triangles": 22642,
+        "fallback": false,
+        "reducedMotion": true,
+        "horizontalOverflow": false,
+        "quality": "high",
+        "revision": "r123-proof"
+      }
+    },
+    {
+      "checkpoint": "mobile-reduced",
+      "url": "http://127.0.0.1:8143/pages/v2/deliveries/weave-light-field/?quality=low&motion=reduce&revision=r123-proof",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "issues": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "requestFailures": [],
+        "responseErrors": []
+      },
+      "state": {
+        "ready": true,
+        "phase": "weaving",
+        "step": 0,
+        "row": 0,
+        "wovenRows": 0,
+        "maxRows": 6,
+        "completed": false,
+        "saved": false,
+        "pattern": "空纱架",
+        "heroProgress": 1,
+        "openingProgress": 1,
+        "clothProgress": 0,
+        "shuttlePosition": -1,
+        "heddleOffsets": [
+          -0.09,
+          0,
+          0.09
+        ],
+        "warpCount": 32,
+        "visibleWeftCords": 0,
+        "frames": 17,
+        "drawCalls": 26,
+        "triangles": 5314,
+        "fallback": false,
+        "reducedMotion": true,
+        "horizontalOverflow": false,
+        "quality": "low",
+        "revision": "r123-proof"
+      },
+      "semantic": {
+        "completedAndSaved": true
+      }
+    },
+    {
+      "checkpoint": "forced-fallback",
+      "url": "http://127.0.0.1:8143/pages/v2/deliveries/weave-light-field/?quality=low&motion=reduce&fallback=1&revision=r123-proof",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "issues": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "requestFailures": [],
+        "responseErrors": []
+      },
+      "state": {
+        "ready": true,
+        "phase": "saved",
+        "step": 6,
+        "row": 6,
+        "wovenRows": 6,
+        "maxRows": 6,
+        "completed": true,
+        "saved": true,
+        "pattern": "晨鸟纹完整",
+        "heroProgress": 1,
+        "openingProgress": 1,
+        "clothProgress": 1,
+        "shuttlePosition": -1,
+        "heddleOffsets": [
+          -0.09,
+          0,
+          0.09
+        ],
+        "warpCount": 32,
+        "visibleWeftCords": 18,
+        "frames": 0,
+        "drawCalls": 0,
+        "triangles": 0,
+        "fallback": true,
+        "reducedMotion": true,
+        "horizontalOverflow": false,
+        "quality": "low",
+        "revision": "r123-proof"
+      },
+      "semantic": {
+        "revealBefore": 0,
+        "revealAfter": 248
+      }
+    }
+  ]
+}

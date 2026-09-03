@@ -1,0 +1,403 @@
+{
+  "schemaVersion": 1,
+  "stage": "r137-fox-gait-observatory-runtime-observations",
+  "capturedAt": "2026-09-01T04:41:43.649Z",
+  "identityBinding": "runId+bundleHash",
+  "runId": "direct-r137-fox-gait-observatory",
+  "bundleHash": "7b234dd7c3d49d642a974b7e6797fb47d14967f9a9f34b6d1c93664b1c9f83e6",
+  "bundleFiles": [
+    "index.html",
+    "style.css",
+    "main.ts",
+    "asset-manifest.json",
+    "MODEL-CREDITS.md",
+    "CONTRACT.md",
+    "assets/Fox.glb"
+  ],
+  "route": "/pages/v2/deliveries/fox-gait-observatory/",
+  "revision": "r137-proof",
+  "complete": true,
+  "captures": [
+    "01-desktop-opening.png",
+    "02-desktop-gait-inputs.png",
+    "03-desktop-orbit-saved.png",
+    "04-mobile-reduced.png",
+    "05-fallback-complete.png"
+  ],
+  "observations": [
+    {
+      "checkpoint": "desktop-opening",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "issues": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "requestFailures": [],
+        "responseErrors": []
+      },
+      "heroVisibleAtMs": 231,
+      "readyAtMs": 10010,
+      "state": {
+        "activeGait": "survey",
+        "clip": "Survey",
+        "modelLoaded": true,
+        "sceneReady": true,
+        "fallback": false,
+        "saved": false,
+        "reducedMotion": false,
+        "horizontalOverflow": 0,
+        "canvasVisible": true,
+        "activeButton": "survey",
+        "title": "先让耳朵抵达。",
+        "description": "身体几乎停住，头部和耳朵先扫描周围。观察重心如何留在四足之间。",
+        "trailRhythm": "短距 · 停驻",
+        "status": "赤狐三维模型已载入。可选择侦察、行走或奔跑，并拖拽环绕观察。"
+      },
+      "modelResponses": [
+        {
+          "url": "http://127.0.0.1:8143/pages/v2/deliveries/fox-gait-observatory/assets/Fox.glb",
+          "status": 200,
+          "bytes": 162852
+        }
+      ]
+    },
+    {
+      "checkpoint": "desktop-gait-inputs",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "issues": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "requestFailures": [],
+        "responseErrors": []
+      },
+      "heroVisibleAtMs": 231,
+      "gaits": {
+        "survey": {
+          "activeGait": "survey",
+          "clip": "Survey",
+          "modelLoaded": true,
+          "sceneReady": true,
+          "fallback": false,
+          "saved": false,
+          "reducedMotion": false,
+          "horizontalOverflow": 0,
+          "canvasVisible": true,
+          "activeButton": "survey",
+          "title": "先让耳朵抵达。",
+          "description": "身体几乎停住，头部和耳朵先扫描周围。观察重心如何留在四足之间。",
+          "trailRhythm": "短距 · 停驻",
+          "status": "赤狐三维模型已载入。可选择侦察、行走或奔跑，并拖拽环绕观察。"
+        },
+        "walk": {
+          "activeGait": "walk",
+          "clip": "Walk",
+          "modelLoaded": true,
+          "sceneReady": true,
+          "fallback": false,
+          "saved": false,
+          "reducedMotion": false,
+          "horizontalOverflow": 0,
+          "canvasVisible": true,
+          "activeButton": "walk",
+          "title": "让路径变得可读。",
+          "description": "步伐稳定交替，背线保持平衡。沿侧面观察前后足如何接续同一条移动方向。",
+          "trailRhythm": "等距 · 交替",
+          "status": "已切换到行走，正在播放 Walk 模型动画。"
+        },
+        "run": {
+          "activeGait": "run",
+          "clip": "Run",
+          "modelLoaded": true,
+          "sceneReady": true,
+          "fallback": false,
+          "saved": false,
+          "reducedMotion": false,
+          "horizontalOverflow": 0,
+          "canvasVisible": true,
+          "activeButton": "run",
+          "title": "把身体交给前方。",
+          "description": "步幅被拉开，躯干明显伸缩。靠近地面观察足迹间隔如何随动作循环一起放大。",
+          "trailRhythm": "长距 · 伸展",
+          "status": "已切换到奔跑，正在播放 Run 模型动画。"
+        },
+        "arrowWalk": {
+          "activeGait": "walk",
+          "clip": "Walk",
+          "modelLoaded": true,
+          "sceneReady": true,
+          "fallback": false,
+          "saved": false,
+          "reducedMotion": false,
+          "horizontalOverflow": 0,
+          "canvasVisible": true,
+          "activeButton": "walk",
+          "title": "让路径变得可读。",
+          "description": "步伐稳定交替，背线保持平衡。沿侧面观察前后足如何接续同一条移动方向。",
+          "trailRhythm": "等距 · 交替",
+          "status": "已切换到行走，正在播放 Walk 模型动画。"
+        },
+        "keyboardSurvey": {
+          "activeGait": "survey",
+          "clip": "Survey",
+          "modelLoaded": true,
+          "sceneReady": true,
+          "fallback": false,
+          "saved": false,
+          "reducedMotion": false,
+          "horizontalOverflow": 0,
+          "canvasVisible": true,
+          "activeButton": "survey",
+          "title": "先让耳朵抵达。",
+          "description": "身体几乎停住，头部和耳朵先扫描周围。观察重心如何留在四足之间。",
+          "trailRhythm": "短距 · 停驻",
+          "status": "已切换到侦察，正在播放 Survey 模型动画。"
+        }
+      },
+      "state": {
+        "activeGait": "survey",
+        "clip": "Survey",
+        "modelLoaded": true,
+        "sceneReady": true,
+        "fallback": false,
+        "saved": false,
+        "reducedMotion": false,
+        "horizontalOverflow": 0,
+        "canvasVisible": true,
+        "activeButton": "survey",
+        "title": "先让耳朵抵达。",
+        "description": "身体几乎停住，头部和耳朵先扫描周围。观察重心如何留在四足之间。",
+        "trailRhythm": "短距 · 停驻",
+        "status": "已切换到侦察，正在播放 Survey 模型动画。"
+      }
+    },
+    {
+      "checkpoint": "desktop-orbit-saved",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "issues": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "requestFailures": [],
+        "responseErrors": []
+      },
+      "heroVisibleAtMs": 219,
+      "reloadHeroVisibleAtMs": 615,
+      "orbitCanvasHashes": {
+        "before": "b936b83cc36b0d30561a93fb9d92a7e86dd48644139e3e15b4d06545a10305ec",
+        "after": "530fc6067da883adeff5739840b66b6440fee70e7a06d87ada14cb4eb46d0e71"
+      },
+      "wheelCanvasHashes": {
+        "before": "530fc6067da883adeff5739840b66b6440fee70e7a06d87ada14cb4eb46d0e71",
+        "after": "7a1252c79f2a5728f167d94ea56869574591fc7bc06bf70eb9851a4a48970316"
+      },
+      "persistence": {
+        "storageKey": "r137-fox-gait-observation-card",
+        "valueBeforeReload": "run",
+        "valueAfterReload": "run",
+        "beforeReload": {
+          "activeGait": "run",
+          "clip": "Run",
+          "modelLoaded": true,
+          "sceneReady": true,
+          "fallback": false,
+          "saved": true,
+          "reducedMotion": true,
+          "horizontalOverflow": 0,
+          "canvasVisible": true,
+          "activeButton": "run",
+          "title": "把身体交给前方。",
+          "description": "步幅被拉开，躯干明显伸缩。靠近地面观察足迹间隔如何随动作循环一起放大。",
+          "trailRhythm": "长距 · 伸展",
+          "status": "已保存奔跑观察卡。"
+        },
+        "afterReload": {
+          "activeGait": "run",
+          "clip": "Run",
+          "modelLoaded": true,
+          "sceneReady": true,
+          "fallback": false,
+          "saved": true,
+          "reducedMotion": true,
+          "horizontalOverflow": 0,
+          "canvasVisible": true,
+          "activeButton": "run",
+          "title": "把身体交给前方。",
+          "description": "步幅被拉开，躯干明显伸缩。靠近地面观察足迹间隔如何随动作循环一起放大。",
+          "trailRhythm": "长距 · 伸展",
+          "status": "赤狐三维模型已载入。可选择侦察、行走或奔跑，并拖拽环绕观察。"
+        }
+      },
+      "state": {
+        "activeGait": "run",
+        "clip": "Run",
+        "modelLoaded": true,
+        "sceneReady": true,
+        "fallback": false,
+        "saved": true,
+        "reducedMotion": true,
+        "horizontalOverflow": 0,
+        "canvasVisible": true,
+        "activeButton": "run",
+        "title": "把身体交给前方。",
+        "description": "步幅被拉开，躯干明显伸缩。靠近地面观察足迹间隔如何随动作循环一起放大。",
+        "trailRhythm": "长距 · 伸展",
+        "status": "赤狐三维模型已载入。可选择侦察、行走或奔跑，并拖拽环绕观察。"
+      }
+    },
+    {
+      "checkpoint": "mobile-reduced",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "issues": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "requestFailures": [],
+        "responseErrors": []
+      },
+      "heroVisibleAtMs": 208,
+      "inputs": {
+        "walk": {
+          "activeGait": "walk",
+          "clip": "Walk",
+          "modelLoaded": true,
+          "sceneReady": true,
+          "fallback": false,
+          "saved": false,
+          "reducedMotion": true,
+          "horizontalOverflow": 0,
+          "canvasVisible": true,
+          "activeButton": "walk",
+          "title": "让路径变得可读。",
+          "description": "步伐稳定交替，背线保持平衡。沿侧面观察前后足如何接续同一条移动方向。",
+          "trailRhythm": "等距 · 交替",
+          "status": "已切换到行走，正在播放 Walk 模型动画。"
+        },
+        "run": {
+          "activeGait": "run",
+          "clip": "Run",
+          "modelLoaded": true,
+          "sceneReady": true,
+          "fallback": false,
+          "saved": false,
+          "reducedMotion": true,
+          "horizontalOverflow": 0,
+          "canvasVisible": true,
+          "activeButton": "run",
+          "title": "把身体交给前方。",
+          "description": "步幅被拉开，躯干明显伸缩。靠近地面观察足迹间隔如何随动作循环一起放大。",
+          "trailRhythm": "长距 · 伸展",
+          "status": "已切换到奔跑，正在播放 Run 模型动画。"
+        }
+      },
+      "buttonBoxes": [
+        {
+          "left": 12.796875,
+          "right": 134.265625,
+          "top": 715.640625,
+          "bottom": 767.640625
+        },
+        {
+          "left": 134.265625,
+          "right": 255.734375,
+          "top": 715.640625,
+          "bottom": 767.640625
+        },
+        {
+          "left": 255.734375,
+          "right": 377.203125,
+          "top": 715.640625,
+          "bottom": 767.640625
+        }
+      ],
+      "state": {
+        "activeGait": "run",
+        "clip": "Run",
+        "modelLoaded": true,
+        "sceneReady": true,
+        "fallback": false,
+        "saved": false,
+        "reducedMotion": true,
+        "horizontalOverflow": 0,
+        "canvasVisible": true,
+        "activeButton": "run",
+        "title": "把身体交给前方。",
+        "description": "步幅被拉开，躯干明显伸缩。靠近地面观察足迹间隔如何随动作循环一起放大。",
+        "trailRhythm": "长距 · 伸展",
+        "status": "已切换到奔跑，正在播放 Run 模型动画。"
+      }
+    },
+    {
+      "checkpoint": "fallback-complete",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "issues": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "requestFailures": [],
+        "responseErrors": []
+      },
+      "inputs": {
+        "walk": {
+          "activeGait": "walk",
+          "clip": "Walk",
+          "modelLoaded": false,
+          "sceneReady": false,
+          "fallback": true,
+          "saved": false,
+          "reducedMotion": false,
+          "horizontalOverflow": 0,
+          "canvasVisible": false,
+          "activeButton": "walk",
+          "title": "让路径变得可读。",
+          "description": "步伐稳定交替，背线保持平衡。沿侧面观察前后足如何接续同一条移动方向。",
+          "trailRhythm": "等距 · 交替",
+          "status": "已切换到行走，正在播放 Walk 模型动画。"
+        },
+        "run": {
+          "activeGait": "run",
+          "clip": "Run",
+          "modelLoaded": false,
+          "sceneReady": false,
+          "fallback": true,
+          "saved": false,
+          "reducedMotion": false,
+          "horizontalOverflow": 0,
+          "canvasVisible": false,
+          "activeButton": "run",
+          "title": "把身体交给前方。",
+          "description": "步幅被拉开，躯干明显伸缩。靠近地面观察足迹间隔如何随动作循环一起放大。",
+          "trailRhythm": "长距 · 伸展",
+          "status": "已切换到奔跑，正在播放 Run 模型动画。"
+        }
+      },
+      "modelRequests": [],
+      "state": {
+        "activeGait": "run",
+        "clip": "Run",
+        "modelLoaded": false,
+        "sceneReady": false,
+        "fallback": true,
+        "saved": true,
+        "reducedMotion": false,
+        "horizontalOverflow": 0,
+        "canvasVisible": false,
+        "activeButton": "run",
+        "title": "把身体交给前方。",
+        "description": "步幅被拉开，躯干明显伸缩。靠近地面观察足迹间隔如何随动作循环一起放大。",
+        "trailRhythm": "长距 · 伸展",
+        "status": "已保存奔跑观察卡。"
+      }
+    }
+  ]
+}

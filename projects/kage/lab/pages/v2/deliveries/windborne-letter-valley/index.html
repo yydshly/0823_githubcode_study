@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="zh-CN" data-state="waiting">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="风把一封信送过山谷——一段由滚轮、风向与纸张共同完成的沉浸式投递旅程。" />
+    <title>风把信送过山谷 · Kage R159</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#journey">跳到投递旅程</a>
+
+    <header class="masthead">
+      <a class="wordmark" href="../../" aria-label="返回 Kage V2">KAGE / POST No. 159</a>
+      <div class="weather" aria-label="山谷气象">
+        <span>雨后</span><strong id="wind-label">西南风 08</strong><span>能见度 24 km</span>
+      </div>
+      <button class="sound-toggle" id="sound-toggle" type="button" aria-pressed="false">
+        <span aria-hidden="true"></span> 听见风
+      </button>
+    </header>
+
+    <div class="scene" id="scene" aria-hidden="true">
+      <img class="valley-image" id="valley-image" src="./assets/valley-after-rain-v1.png" alt="" />
+      <div class="fallback-landscape"></div>
+      <div class="atmosphere atmosphere--far"></div>
+      <div class="atmosphere atmosphere--near"></div>
+      <canvas id="wind-field"></canvas>
+      <div class="destination" id="destination"><span></span><i></i></div>
+    </div>
+
+    <div class="letter-flight" id="letter-flight" aria-hidden="true">
+      <div class="letter-shadow"></div>
+      <article class="letter-paper">
+        <div class="paper-front">
+          <p>给山那边的你</p>
+          <span>风停下来以前，<br />请记得抬头。</span>
+          <i>08 / 23</i>
+        </div>
+        <div class="paper-fold paper-fold--left"></div>
+        <div class="paper-fold paper-fold--right"></div>
+      </article>
+    </div>
+
+    <aside class="route-status" aria-label="投递进度">
+      <div class="route-index"><span id="stage-index">01</span><i></i><span>04</span></div>
+      <div>
+        <small id="stage-kicker">RIDGE / 起风</small>
+        <strong id="stage-title">让纸先记住风向</strong>
+      </div>
+      <p><span id="distance-value">3.8</span> km</p>
+    </aside>
+
+    <main id="journey">
+      <section class="chapter chapter--opening" data-stage="waiting">
+        <div class="chapter-copy">
+          <p class="eyebrow">A LETTER ACROSS THE VALLEY</p>
+          <h1>风把信<br /><em>送过山谷。</em></h1>
+          <p class="lede">不是点击下一页。向下滚动，让一张纸真的离开手心、穿过湿润山风，抵达远处仍亮着灯的屋子。</p>
+          <button class="begin-button" id="begin-button" type="button">把信托给风 <span>↓</span></button>
+        </div>
+        <p class="scroll-note"><span></span>滚动决定距离 · 指针改变侧风</p>
+      </section>
+
+      <section class="chapter chapter--lift" data-stage="lifted">
+        <div class="chapter-note">
+          <span>01 / LIFT</span>
+          <h2>草坡把第一阵风<br />递给了纸。</h2>
+          <p>纸面抬起时，折痕不再是损伤，而是让它抓住空气的翼。</p>
+        </div>
+      </section>
+
+      <section class="chapter chapter--cross" data-stage="crossing">
+        <div class="chapter-note">
+          <span>02 / CROSSING</span>
+          <h2>峡谷很深，<br />风路却是连续的。</h2>
+          <p>移动指针，侧风会轻轻改变信纸的高度；滚轮仍然决定它走了多远。</p>
+        </div>
+      </section>
+
+      <section class="chapter chapter--arrive" data-stage="arriving">
+        <div class="chapter-note">
+          <span>03 / ARRIVAL</span>
+          <h2>灯光不是装饰，<br />它是目的地。</h2>
+          <p>当纸张靠近山脊，它会缩进真实距离，风线也逐渐收束到那一点暖光。</p>
+        </div>
+      </section>
+
+      <section class="chapter chapter--deliver" data-stage="delivered">
+        <div class="delivery-card" id="delivery-card">
+          <p class="eyebrow">04 / DELIVERED</p>
+          <h2>山那边，<br />有人收到了风。</h2>
+          <p>这不是一项真实邮政服务，而是一段关于距离与心意的网页实验。</p>
+          <button id="deliver-button" type="button">留下这次投递 <span>↗</span></button>
+          <small id="delivery-note" role="status" aria-live="polite">等待信纸抵达山屋</small>
+        </div>
+      </section>
+    </main>
+
+    <div class="mobile-progress" aria-hidden="true"><span id="mobile-progress-bar"></span></div>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>

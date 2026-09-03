@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "stage": "r149-eclipse-post-office-runtime-observations",
+  "identityBinding": "runId+asset-bound-bundleHash",
+  "runId": "direct-r149-eclipse-post-office",
+  "bundleHash": "8b33a2fbb920fbf3a62c325b8fd809edad21201c64c8583f9b5a16009f5d4ea8",
+  "bundleFiles": [
+    "index.html",
+    "style.css",
+    "main.ts",
+    "asset-manifest.json",
+    "assets/eclipse-post-office-salt-flat-v1.png"
+  ],
+  "revision": "r149-final",
+  "complete": true,
+  "observations": {
+    "desktop": {
+      "opening": {
+        "ready": true,
+        "state": "waiting",
+        "alignment": 0,
+        "totality": 0,
+        "imageLoaded": true,
+        "canvasFrames": 1048,
+        "coronaStrength": 0,
+        "fallback": false,
+        "assetFallback": false,
+        "reducedMotion": false,
+        "saved": false,
+        "horizontalOverflow": 0,
+        "revision": "r149-final"
+      },
+      "afterWheel": {
+        "ready": true,
+        "state": "approach",
+        "alignment": 0.431,
+        "totality": 0.309,
+        "imageLoaded": true,
+        "canvasFrames": 1225,
+        "coronaStrength": 0,
+        "fallback": false,
+        "assetFallback": false,
+        "reducedMotion": false,
+        "saved": false,
+        "horizontalOverflow": 0,
+        "revision": "r149-final"
+      },
+      "totality": {
+        "ready": true,
+        "state": "totality",
+        "alignment": 0.99,
+        "totality": 1,
+        "imageLoaded": true,
+        "canvasFrames": 1321,
+        "coronaStrength": 1,
+        "fallback": false,
+        "assetFallback": false,
+        "reducedMotion": false,
+        "saved": false,
+        "horizontalOverflow": 0,
+        "revision": "r149-final"
+      },
+      "saved": {
+        "ready": true,
+        "state": "saved",
+        "alignment": 0.99,
+        "totality": 1,
+        "imageLoaded": true,
+        "canvasFrames": 1445,
+        "coronaStrength": 1,
+        "fallback": false,
+        "assetFallback": false,
+        "reducedMotion": false,
+        "saved": true,
+        "horizontalOverflow": 0,
+        "revision": "r149-final"
+      },
+      "meanPixelDelta": 88.69096296296296,
+      "pageErrors": [],
+      "consoleErrors": []
+    },
+    "mobile": {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "snapshot": {
+        "ready": true,
+        "state": "saved",
+        "alignment": 1,
+        "totality": 1,
+        "imageLoaded": true,
+        "canvasFrames": 1196,
+        "coronaStrength": 1,
+        "fallback": false,
+        "assetFallback": false,
+        "reducedMotion": false,
+        "saved": true,
+        "horizontalOverflow": 0,
+        "revision": "r149-final"
+      }
+    },
+    "fallback": {
+      "snapshot": {
+        "ready": true,
+        "state": "saved",
+        "alignment": 1,
+        "totality": 1,
+        "imageLoaded": false,
+        "canvasFrames": 0,
+        "coronaStrength": 1,
+        "fallback": true,
+        "assetFallback": true,
+        "reducedMotion": true,
+        "saved": true,
+        "horizontalOverflow": 0,
+        "revision": "r149-final"
+      }
+    }
+  }
+}

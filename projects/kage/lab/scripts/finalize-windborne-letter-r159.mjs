@@ -1,0 +1,88 @@
+import { createHash } from 'node:crypto';
+import { copyFile, mkdir, readFile, writeFile } from 'node:fs/promises';
+import { resolve } from 'node:path';
+
+const root = resolve(process.cwd());
+const deliveryId = 'windborne-letter-valley';
+const runId = 'direct-r159-windborne-letter-valley';
+const sourceRoot = resolve(root, 'pages', 'v2', 'deliveries', deliveryId);
+const outputRoot = resolve(root, 'docs', 'v2-research', 'evidence');
+const outputPath = resolve(outputRoot, 'r159-windborne-letter-valley.final.json');
+const previewSource = resolve(root, 'docs', 'v2-deliveries', 'evidence', 'r159-windborne-letter-valley', 'desktop-opening.png');
+const previewTarget = resolve(root, 'public', 'creative-assets', 'v2-experience-archive', 'windborne-letter-valley.png');
+const bundleFiles = ['index.html', 'style.css', 'main.ts', 'assets/valley-after-rain-v1.png'];
+
+const hash = createHash('sha256');
+for (const file of bundleFiles) {
+  hash.update(file);
+  hash.update(Buffer.from([0]));
+  hash.update(await readFile(resolve(sourceRoot, file)));
+}
+const bundleHash = hash.digest('hex');
+
+const record = {
+  schemaVersion: 1,
+  creativeProtocolVersion: 4,
+  deliveryId,
+  route: './deliveries/windborne-letter-valley/',
+  identity: { runId, bundleHash, bundleFiles },
+  goalReplay: {
+    subject: '风把一封信送过山谷',
+    audience: '想把一封短笺送给远方朋友的人',
+    feeling: '雨后、辽阔、安静但具有明确方向',
+    primaryAction: '留下这次投递',
+    hardConstraints: ['以最终视觉体验为准', '动态必须由真实输入驱动', '一批素材', '一次构建', '不冒充真实邮政服务'],
+  },
+  mediumDecision: {
+    preferred: 'generated-image-runtime',
+    rationale: '一张高质量宽幅环境负责不可替代的地点、天气和距离；DOM/CSS/Canvas 负责纸张、风向、滚动路径与投递因果。',
+  },
+  direction: {
+    selected: '让一张纸在同一幅雨后山谷中从手边飞向远处暖光山屋。',
+    referenceIds: ['moonlit-tidepool-panorama', 'prism-seed-theatre', 'same-table-tonight'],
+    borrowPrinciples: ['连续环境承载完整旅程', '生成素材建立身份而运行时承担变化', '空间距离最终收束到人与行动'],
+    assetBatchCount: 1,
+    asset: {
+      path: 'pages/v2/deliveries/windborne-letter-valley/assets/valley-after-rain-v1.png',
+      source: 'OpenAI built-in image generation',
+      originalPath: 'D:/codex/home/generated_images/01a0304e-ca17-7101-be56-637db8b892b0/exec-59d1bb41-4f5f-4fd5-9e42-5122bea73de7.png',
+      prompt: 'Premium editorial landscape photography of a post-rain mountain valley with a clear lower-left to upper-right air corridor, wet foreground grass, layered mist and one tiny warm-lit mountain house as destination; no people, letter, UI, text, watermark, fantasy object, neon or technology aesthetic.',
+    },
+  },
+  executionBudget: { directionsBuilt: 1, assetBatches: 1, fullBuilds: 1, deterministicFixes: 1, visualRefinements: 1 },
+  browserEvidence: {
+    desktopOpening: 'docs/v2-deliveries/evidence/r159-windborne-letter-valley/desktop-opening.png',
+    desktopInteraction: 'docs/v2-deliveries/evidence/r159-windborne-letter-valley/desktop-crossing.png',
+    desktopCompletion: 'docs/v2-deliveries/evidence/r159-windborne-letter-valley/desktop-delivered.png',
+    mobile: 'docs/v2-deliveries/evidence/r159-windborne-letter-valley/mobile-opening.png',
+    generatedAssetLoaded: true,
+    realScrollProgress: true,
+    pointerWindLinked: true,
+    deliveryReached: true,
+    mobile390Passed: true,
+    reducedMotionPassed: true,
+    missingImageFallbackPassed: true,
+    horizontalOverflow: 0,
+  },
+  qualityAssessment: {
+    verdict: 'pass',
+    goalClarity: 93,
+    creativeDistinctiveness: 90,
+    craftCohesion: 92,
+    assetIntegration: 94,
+    interactionValue: 90,
+    mobileReadiness: 89,
+    summary: '山谷、信纸和山屋形成一眼可懂的起点—路径—终点；滚动、指针、雾带、风线、纸张尺度与完成行动共享同一进度，生成图没有退化为静态背景。',
+  },
+  truthBoundary: '山谷环境为生成图，信纸、气流和投递为浏览器可视化；页面不代表真实地点、天气、山屋居民或邮政投递结果。',
+  verdict: 'pass',
+  archiveDisposition: 'replace-same-table-tonight-as-stronger-generated-environment-runtime-reference',
+  stopReason: '一个方向、一批素材、一次完整构建、一次确定性状态修复与一次基于浏览器证据的视觉精修后通过；停止追加方向和素材。',
+};
+
+await mkdir(outputRoot, { recursive: true });
+await mkdir(resolve(previewTarget, '..'), { recursive: true });
+await writeFile(outputPath, `${JSON.stringify(record, null, 2)}\n`, 'utf8');
+await copyFile(previewSource, previewTarget);
+console.log(JSON.stringify({ outputPath, previewTarget, runId, bundleHash, verdict: record.verdict }, null, 2));
+

@@ -1,0 +1,296 @@
+{
+  "schemaVersion": 1,
+  "id": "direct-1b52abp",
+  "goalPlayback": {
+    "originalBrief": "为城市风筝学习者设计一座明亮的风场校准台。开场让一只手工纸鸢在近海天空中升起；调整风速、缰绳偏置和飞行高度时，同一只风筝的迎角、弯曲、尾带与风流轨迹同步改变，并给出稳定性和牵引力的演示结果。最后行动为“保存这组飞行方案”。需要具有吸引眼球的实时 3D 效果，但不要暗色科技界面；数值必须明确是概念模拟，不伪装成真实气象结论。",
+    "subject": "WIND ATLAS 风筝风场校准台",
+    "audience": "希望直观看懂风、缰绳与风筝结构关系的城市风筝学习者",
+    "desiredOutcome": "在五秒内看见同一只手工纸鸢升起，并通过真实输入理解风速、缰绳偏置和高度如何共同改变飞行姿态与概念结果",
+    "primaryAction": "保存这组飞行方案",
+    "hardConstraints": [
+      "所有稳定性、牵引力和飞行状态必须明确为概念模拟，不伪装成真实气象或安全结论",
+      "最终版本必须支持键盘、390px、低动态和 WebGL 失败回退"
+    ],
+    "preferences": [
+      "明亮近海天光、矿物蓝与朱砂红，不使用暗色科技界面",
+      "用持续 Three.js 纸鸢、尾带和风流建立主题专属的空间记忆"
+    ]
+  },
+  "selectedDirection": {
+    "id": "daylight-kite-wind-calibration",
+    "title": "WIND ATLAS · 风筝风场校准台",
+    "experienceForm": "明亮近海天空中的实时 3D 飞行校准工具",
+    "rationale": "风筝的纸面、竹骨、缰绳、尾带和迎风姿态都能由一个持续场景诚实表达；三项参数、滚轮和指针共同驱动同一飞行状态，而不是把数字贴在静态背景上。"
+  },
+  "referencePrinciples": [
+    {
+      "referenceId": "positive-iris-articulated-reveal",
+      "title": "IRIS · 程序化关节主体展开",
+      "principle": "让持续 WebGL 主体、相机、材质和环境共享一条可观察时间线。",
+      "relevance": "本页借鉴持续主体与统一时间线来呈现纸鸢升起和稳定过程，不复制其花瓣结构、黑色背景或排版。",
+      "sourceUrl": "https://iamtechartist.github.io/Threejs-3D-Webpage/"
+    },
+    {
+      "referenceId": "positive-semantic-direct-interaction",
+      "title": "潮线证词 · 输入、画面与结果共享状态",
+      "principle": "有限共享状态应同时驱动画面、数值和结果说明，人工输入可以直接接管体验。",
+      "relevance": "风速、缰绳、高度、滚轮和指针共享同一飞行状态，并同步改变纸鸢姿态、风流、稳定性、牵引力与保存结果。",
+      "sourceUri": "src/v2/reference-intelligence.ts"
+    },
+    {
+      "referenceId": "sports-ai-subject-field",
+      "title": "Sports AI · 主体安全区与媒体标本场",
+      "principle": "为动态主体建立清楚安全区，使控制和文字服从主体构图。",
+      "relevance": "纸鸢持续占据左侧天空尺度，右侧校准板保持可读且不遮挡主体；仅借鉴空间关系，不复制具体视觉。",
+      "sourceUri": "src/v2/local-exemplar-research.ts"
+    }
+  ],
+  "assetPlan": {
+    "batchId": "wind-kite-programmatic-01",
+    "strategy": "programmatic",
+    "rationale": "一次程序化批次同时承担同一只纸鸢的纸面、竹骨、缰绳、尾带、风流、云层和语义回退；不需要外部商品模型，也不宣称真实气象精度。",
+    "assets": [
+      {
+        "id": "paper-kite-flight-system",
+        "role": "持续存在的纸鸢结构、迎角、弯曲、缰绳和尾带动态",
+        "source": "programmatic",
+        "required": true
+      },
+      {
+        "id": "daylight-wind-field",
+        "role": "与风速、偏置和高度共享状态的近海天光、云层与风流轨迹",
+        "source": "programmatic",
+        "required": true
+      },
+      {
+        "id": "kite-semantic-fallback",
+        "role": "WebGL 不可用时保留纸鸢主题、三项参数、概念结果和保存行动",
+        "source": "programmatic",
+        "required": true
+      }
+    ]
+  },
+  "interactionRationale": {
+    "mode": "mixed",
+    "audioApplicable": false,
+    "rationale": "三个范围控件负责精确校准，滚轮微调风速，指针制造短时侧风；全部输入改变同一纸鸢场景与语义结果。声音不是本轮飞行校准产品承诺的核心能力。"
+  },
+  "visualAmbition": {
+    "schemaVersion": 1,
+    "intentLevel": "flagship",
+    "intentRationale": "本轮真实消费 R117 作者包，要求五秒内建立可辨认的手工纸鸢、近海天空与实时风场记忆，并以运行态因果明显超越静态背景图。",
+    "heroMoment": {
+      "title": "一只纸鸢在风里找到平衡",
+      "description": "纸张暖白与朱砂红的手工纸鸢从近海天光中升起，竹骨、缰绳、尾带和风流逐步进入稳定飞行状态。",
+      "themeConnection": "升起、迎风弯曲、尾带响应和风流都是风筝校准主题本身，而不是叠加在通用天空上的装饰动画。",
+      "appearsWithinSeconds": 5,
+      "observableRuntimeChange": {
+        "trigger": "页面进入后的 3.2 秒有界 Hero 时间线",
+        "from": "纸鸢低位进入、尾带与风流尚未稳定",
+        "to": "完整纸鸢结构、稳定迎角、动态尾带和可操作风场"
+      }
+    },
+    "rendering": {
+      "primary": "threejs-3d",
+      "supporting": [
+        "dom-css",
+        "svg"
+      ],
+      "rationale": "Three.js 承担纸鸢结构、透视、天空尺度与实时风场，DOM 承担参数、结果和保存行动，SVG/CSS 保留同主题失败回退。"
+    },
+    "spatialDepth": {
+      "mode": "scene-3d",
+      "purpose": "用透视、云层视差、纸面遮挡、竹骨高光和风流接近/远离证明纸鸢存在于可观察空间中。",
+      "cues": [
+        "scale",
+        "occlusion",
+        "lighting",
+        "perspective",
+        "parallax"
+      ]
+    },
+    "motionArc": {
+      "beats": [
+        {
+          "phase": "opening",
+          "driver": "time",
+          "visualState": "纸鸢从低位升起，纸面、竹骨、尾带和风流在 3.2 秒内进入稳定构图。",
+          "thematicPurpose": "先让用户看见风筝正在借风找到平衡，而不是直接面对参数面板。"
+        },
+        {
+          "phase": "exploration",
+          "driver": "hybrid",
+          "visualState": "三个范围控件、滚轮和指针同步改变迎角、滚转、弯曲、尾带、风流、稳定性和概念牵引力。",
+          "thematicPurpose": "把风、结构和飞行结果组织为同一可理解的因果系统。"
+        },
+        {
+          "phase": "resolution",
+          "driver": "direct-input",
+          "visualState": "保存行动保持当前纸鸢姿态，并回放风速、偏置、高度和概念稳定性。",
+          "thematicPurpose": "把空间探索收束为一组可复述的飞行方案。"
+        }
+      ],
+      "runtimeAdvantage": "静态截图只能显示一个飞行姿态；运行态能证明风速、缰绳、高度、滚轮侧风与指针阵风如何连续改变同一只纸鸢及其结果。"
+    },
+    "interactionToScene": [
+      {
+        "input": "风速、缰绳偏置和飞行高度控件",
+        "sceneResponse": "同步改变纸鸢迎角、滚转、升力、纸面弯曲、缰绳下垂、尾带和 DOM 结果。",
+        "productMeaning": "让学习者比较三个核心校准变量如何共同影响飞行状态。"
+      },
+      {
+        "input": "滚轮",
+        "sceneResponse": "连续微调风速，并同步改变风流速度、纸鸢受力姿态和可见结果。",
+        "productMeaning": "允许用户在不离开场景的情况下快速寻找风速平衡点。"
+      },
+      {
+        "input": "在天空中横向移动指针或触摸",
+        "sceneResponse": "制造短时侧风，改变滚转、偏航、纸面弯曲、尾带摆动与风流方向。",
+        "productMeaning": "让用户观察阵风如何打破并恢复纸鸢稳定。"
+      }
+    ],
+    "assetCredibility": {
+      "level": "conceptual-coherent",
+      "strategy": "纸面、竹骨、尾带、风流、天空、DOM 校准板和 SVG/CSS 回退共享同一明亮手工飞行语言；程序化纸鸢被明确限定为概念工艺对象。",
+      "disclosure": "页面持续说明稳定性、牵引力和保存结果属于飞行视觉概念模拟，不是气象测量或安全建议。"
+    },
+    "fallbackPerformance": {
+      "targetFps": 60,
+      "maxDevicePixelRatio": 2,
+      "initialTransferBudgetMb": 2,
+      "mobileFallback": "simplified-scene",
+      "reducedMotionFallback": "static-complete-state",
+      "rendererFailureFallback": "alternate-media"
+    }
+  },
+  "attemptBudget": {
+    "limits": {
+      "directionSelections": 1,
+      "assetBatches": 1,
+      "builds": 1,
+      "deterministicRepairs": 2,
+      "visualRefinements": 1
+    },
+    "used": {
+      "directionSelections": 1,
+      "assetBatches": 1,
+      "builds": 1,
+      "deterministicRepairs": 0,
+      "visualRefinements": 1
+    }
+  },
+  "stageReports": [],
+  "finalCandidate": {
+    "runId": "direct-1b52abp",
+    "bundleHash": "48b0f7afa06039ccbe1fd4c627ad3312150b47acdbfdce8d7ba435a9ec086fb3"
+  },
+  "adaptiveEvidence": {
+    "schemaVersion": 1,
+    "runId": "direct-1b52abp",
+    "bundleHash": "48b0f7afa06039ccbe1fd4c627ad3312150b47acdbfdce8d7ba435a9ec086fb3",
+    "profile": {
+      "schemaVersion": 1,
+      "interactionMode": "mixed",
+      "audioApplicable": false,
+      "requiredCheckpoints": [
+        "opening",
+        "core",
+        "mobile",
+        "scroll",
+        "interaction"
+      ]
+    },
+    "checkpoints": [
+      {
+        "kind": "opening",
+        "runId": "direct-1b52abp",
+        "bundleHash": "48b0f7afa06039ccbe1fd4c627ad3312150b47acdbfdce8d7ba435a9ec086fb3",
+        "passed": true,
+        "summary": "桌面高质量模式在 3.2 秒进入 settled，持续 Three.js 纸鸢、天空、尾带和风流可见，且无运行错误。"
+      },
+      {
+        "kind": "core",
+        "runId": "direct-1b52abp",
+        "bundleHash": "48b0f7afa06039ccbe1fd4c627ad3312150b47acdbfdce8d7ba435a9ec086fb3",
+        "passed": true,
+        "summary": "纸面、竹骨、缰绳、尾带、近海天光、校准控件、概念结果和保存行动构成同一持续风筝校准场。"
+      },
+      {
+        "kind": "mobile",
+        "runId": "direct-1b52abp",
+        "bundleHash": "48b0f7afa06039ccbe1fd4c627ad3312150b47acdbfdce8d7ba435a9ec086fb3",
+        "passed": true,
+        "summary": "390×844 reduced-motion 状态无横向溢出，三个控件、键盘微调和保存行动均可达。"
+      },
+      {
+        "kind": "scroll",
+        "runId": "direct-1b52abp",
+        "bundleHash": "48b0f7afa06039ccbe1fd4c627ad3312150b47acdbfdce8d7ba435a9ec086fb3",
+        "passed": true,
+        "summary": "真实滚轮输入改变风速，并同步改变风流、纸鸢受力姿态、共享状态和语义结果。"
+      },
+      {
+        "kind": "interaction",
+        "runId": "direct-1b52abp",
+        "bundleHash": "48b0f7afa06039ccbe1fd4c627ad3312150b47acdbfdce8d7ba435a9ec086fb3",
+        "passed": true,
+        "summary": "三个 range、指针、滚轮、键盘与保存共享同一飞行状态；操作前后 Canvas 像素差超过 0.8%，稳定性和牵引力同步变化。"
+      }
+    ],
+    "hardGates": {
+      "runtimeClean": true,
+      "criticalAssetsLoaded": true,
+      "primaryActionReachable": true,
+      "mobileComplete": true,
+      "truthfulClaims": true,
+      "interactionVerified": true,
+      "audioVerified": null
+    },
+    "visualQuality": {
+      "schemaVersion": 1,
+      "verdict": "pass",
+      "score": 93,
+      "dimensions": {
+        "goalClarity": 94,
+        "creativeDistinctiveness": 95,
+        "craftCohesion": 91,
+        "assetIntegration": 91,
+        "interactionValue": 94,
+        "mobileReadiness": 91
+      },
+      "summary": "明亮近海天空、可辨认手工纸鸢、持续 Three.js 风场和紧凑校准板形成统一主题语言；三项参数、滚轮与指针具有真实产品因果，移动和失败回退保持完整任务。",
+      "findings": []
+    }
+  },
+  "wowEvidence": {
+    "schemaVersion": 1,
+    "runId": "direct-1b52abp",
+    "bundleHash": "48b0f7afa06039ccbe1fd4c627ad3312150b47acdbfdce8d7ba435a9ec086fb3",
+    "assessment": {
+      "schemaVersion": 1,
+      "intentLevel": "flagship",
+      "required": true,
+      "verdict": "pass",
+      "score": 93,
+      "dimensions": {
+        "fiveSecondImpact": 94,
+        "runtimeAdvantage": 95,
+        "themeMemorability": 94,
+        "motionDepthMeaning": 94,
+        "assetIntegrationCredibility": 92,
+        "craftCohesion": 91
+      },
+      "observation": {
+        "heroMomentObserved": true,
+        "runtimeAdvantageOverStaticObserved": true,
+        "themeSpecificMemoryObserved": true,
+        "meaningfulMotionOrDepthObserved": true,
+        "credibleAssetIntegrationObserved": true,
+        "summary": "Hero 在 3200ms 内完成，纸鸢由低位升起并稳定在明亮近海风场。 Canvas 前后像素差超过 0.8%，真实输入同步改变共享状态、三维姿态和语义结果。 可复述记忆是一只朱砂红与纸白的手工纸鸢在近海天光中借风找到平衡。 透视、云层视差、纸面弯曲、尾带和风流共同解释风筝受力。 纸面、竹骨、缰绳、尾带、风流和校准板自然组成同一飞行工具。 色彩、空间、排版、材质、动态与控制共同服从明亮风场主题。 三个 range、滚轮和指针同时改变状态、纸鸢画面、稳定性与牵引力。 390px reduced-motion 无横向溢出，三个控件和保存行动可达。 强制 fallback 后保留同一纸鸢主题、三个控件、概念结果和保存行动。"
+      },
+      "findings": []
+    }
+  },
+  "verdict": "pass",
+  "stopReason": null
+}

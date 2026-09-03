@@ -1,6 +1,6 @@
 # Signal Experience Lab
 
-项目宏观目标是：**用户描述一个期望的想法，系统以最终呈现质量为准，按需分析效果、生成或组织素材，并构建新的、可运行且可继续修改的 Three.js 网页体验**。Kage 只提供早期研究线索；固定 Demo、基础图形目录和单一模板都不是产品输出。
+项目宏观目标是：**用户描述一个期望的想法，系统以最终呈现质量为准，按需分析效果、生成或组织素材，并构建新的、可运行且具有完整产品旅程的优秀网页**。3D、图片、声音、视频、Canvas、蒙版和排版都是开放手段；固定 Demo、基础图形目录和单一效果都不是产品输出。
 
 本实验室只继承配置化叙事、滚动导演、DOM/WebGL 分层、质量档、减弱动效与语义回退等行为需求，不导入或复制上游代码、图片、字体和视觉母题。
 当前“描述 → 当前结果可见 → 条件式素材门禁 → Codex 专属网页 → 浏览器精修”的收口与真实验证见 [Core creation loop return R29](docs/CORE-CREATION-LOOP-R29.md)。
@@ -9,9 +9,52 @@
 
 ## 版本状态
 
+- **R164 已把“创意不能被规则压掉”固化为项目能力**：硬边界只保留用户要求、真实性、可用性、证据身份与有界预算；案例和推断可放弃，媒介字段允许未登记的新技术。最终质量改为核对本次创意承诺，静态表达不因缺少动态扣分，只有承诺动态却没有真实变化才会失败。见 [R164 creative freedom and promise gate](docs/v2-research/V2-R164-CREATIVE-FREEDOM-PROMISE-GATE.md)。
+- **R161 已把“能力演示”和“正式产品”分开**：V5 新增产品身份与价值、进入、核心使用、有效结果、后续路径以及正式素材/运行时原生媒介依据。R160 的蒙版、输入与移动端研究通过，但没有完整产品旅程，因此只保留为研究参考，不再标记为正式产品案例。见 [R161 product delivery reset](docs/v2-research/V2-R161-PRODUCT-DELIVERY-RESET.md) 与 [R160 capability record](docs/v2-deliveries/R160-LIGHTHOUSE-CHART-REVEAL-CONTRACT.md)。
+- **R159 已完成一次“生成素材不是静态背景”的直接创作证明**：全新“风把信送过山谷”只生成一张雨后山谷环境，并让 DOM/CSS/Canvas 信纸、风向、雾带、景深、距离和投递行动共享滚动状态；桌面开场/中段/完成、390px、reduced-motion 与素材失败回退均通过，最终身份绑定后替换精选库中较弱案例，总量仍为 12。见 [R159 windborne letter contract](docs/v2-deliveries/R159-WINDBORNE-LETTER-VALLEY-CONTRACT.md)。
+- **R156 已把三项外部优秀机制接入真实创作输入**：r3f-scroll-rig 的 DOM/WebGL 分责、Codrops 的单一材质进度、Butterchurn 的可解释音频信号均以固定源码 revision + 本地运行证据晋级为正向参考包；只有 brief 明确相关时才进入作者合同，外观、preset 与技术栈不会成为模板。`referenceReadyCount` 从 0 收敛为 3，本批次停止继续扩展。见 [R156 external reference promotion](docs/v2-research/V2-R156-EXTERNAL-REFERENCE-PROMOTION.md)。
+- **R155 已完成一次效果优先真实闭环**：全新“海底光缆听诊台”没有生成无职责背景图，而是以透明三维光缆作为持续产品主体；滚轮、指针、故障形变、回波脉冲、阶段化 Web Audio 与保存共享同一状态。一次构建和一次视觉精修后，桌面、390px、reduced-motion 与 WebGL 回退均通过；精选库以该结果替换较弱的旧 3D 声音样例。见 [R155 sea fiber scope](docs/v2-deliveries/R155-SEA-FIBER-SCOPE-CONTRACT.md)。
+- **R154 已恢复“效果优先于模板差异”**：模板相似现在只触发复核提示，不能单独淘汰候选；最高目标适配方向可以继续进入唯一素材批次与构建。主题可互换、静态等价、素材错位、行动脱节与真实性风险仍是阻断问题。见 [R154 effect over template policy](docs/v2-research/V2-R154-EFFECT-OVER-TEMPLATE-POLICY.md)。
+- **R153 已纠正连续案例的宏观骨架重复**：浏览器对比确认 R145、R149、R152 都落入“全屏生成图 + 大标题叠加 + 底部阶段轨道”。雷暴案例现已在不增加素材和全局风格禁令的前提下，重构为明亮气象乐谱、局部倾斜云体窗口与垂直阶段轴；既有滚轮、风切、声音和保存因果保持不变。见 [R153 thunderhead score sheet](docs/v2-deliveries/R153-THUNDERHEAD-SCORE-SHEET-CONTRACT.md)。
+- **V2 V4 首个效果优先成品（历史首版）**：R152“雷暴合唱谱”验证了生成素材、Canvas、Web Audio 与有界执行，但其宏观构图后来被用户浏览器对比判定为与 R145/R149 重复，当前精选已由 R153 替换。见 [R152 thunderhead score history](docs/v2-deliveries/R152-THUNDERHEAD-SCORE-CONTRACT.md)。
+- **V2 选择回执运行守卫已接入**：R151 新增版本化 V4 `DirectCreativeRun`。当前 V2 作者包以 `effectSelectionReceipt = null` 开始，未绑定有效的最高目标适配候选时不能进入素材或构建；三个候选全部失败或选择错误会在 `effect-selection` 阶段显式停止。V1–V3 重建入口与冻结身份保持不变。见 [R151 selection receipt run guard](docs/v2-research/V2-R151-SELECTION-RECEIPT-RUN-GUARD.md)。
+- **V2 效果质量选择门已接入**：R150 把“内部比较三个方向”升级为可检查的目标相对选择协议；候选必须在体验形态、标志性现象和运行时因果上真正不同，技术数量、3D、声音、视频、模型或来源不计分，全部候选触发拒绝信号时在素材前停止。选择回执不替代最终浏览器质量证据；完整六维门保留在项目，Codex 作者包只携带紧凑执行规则。见 [R150 effect quality selection](docs/v2-research/V2-R150-EFFECT-QUALITY-SELECTION-GATE.md)。
+- **V2 开放资源协议已完成首个端到端验证**：R149“日食邮局”在一次生图批次、一次构建、两次确定性修复和一次视觉精修内完成；生成环境图承担材质与空间，Canvas/CSS/DOM 承担实时日食因果，桌面、390px、滚轮、拖动、键盘、保存及双回退均通过，最终结果以 `runId + bundleHash` 进入 V3 精选库。见 [R149 eclipse post office](docs/v2-deliveries/R149-ECLIPSE-POST-OFFICE.md)。
+- **V2 开放资源编排已接入**：R148 在最佳效果命题确定后，允许 Codex 从已有产品能力、固定 GitHub 机制、模型生成素材、项目能力与原创代码中选择最少充分组合；不设来源、供应商或技术白名单，同时保留 revision、许可、真实性、质量、回退、唯一素材批次与一次构建边界。见 [R148 effect-led resource orchestration](docs/v2-research/V2-R148-EFFECT-LED-RESOURCE-ORCHESTRATION.md)。
+- **V2 外部优秀体验研究基准已建立**：R147 在后续创作前先登记 6 类外部产品研究与 6 个固定 revision 的开源实现，明确区分完整体验、聚焦视觉实验和机制基础设施。当前全部仅为 E3/source-reviewed，`referenceReadyCount=0`；只有通过本地运行、许可、适用性、移动端、减少动态与回退检查后才可晋级 `ReferenceEvidencePack`，不会自动成为模板或注入作者输入。见 [R147 external excellence canon](docs/v2-research/V2-R147-EXTERNAL-EXCELLENCE-CANON.md)。
+- **V2 效果优先开放创作协议已接入**：Codex 在素材与编码前先比较三个大胆且真正不同的体验命题，再只执行一个；主导媒介降为资源、真实性与回退锚点，现有 3D、声音、视频、蒙版或能力目录不再构成技术白名单，未列出的表达方式同样允许。运行预算仍保持一次素材批次、一次构建、最多两次确定性修复和一次视觉精修，见 [R146 effect-first open expression](docs/v2-research/V2-R146-EFFECT-FIRST-OPEN-EXPRESSION.md)。
+- **V2.5 直接创作基线已冻结**：公共主动作导出 `DirectCreativeAuthorPackage` protocol v3，不静默启动后台任务；后续新精选必须通过版本化归档断言、内容结构依据、最终 `runId + bundleHash`、权威媒介一致性和适用的 WowGate。R125“冰芯来信”仍是 V2.5 冻结锚点，见 [V2.5 direct creative baseline](docs/releases/V2.5-DIRECT-CREATIVE-BASELINE.md)。
 - **V1 已归档**：完整能力、耗时基线与六个最终案例保持可复现，见 [V1 baseline](docs/releases/V1-IDEA-TO-EXPERIENCE-BASELINE.md)。
 - **V1 已独立部署**：静态演示源码位于 `pages/v1/`，不依赖本地 API 即可运行六个归档 bundle。
-- **V2 独立推进**：V2 复用稳定 runtime/schema，但使用独立入口和创意合同，见 [V2 reference-guided contract](docs/V2-REFERENCE-GUIDED-CREATIVE-CONTRACT.md)。
+- **V2 独立推进**：V2 复用稳定 runtime/schema，但使用独立入口和创意合同；V2.0–V2.2 的旧合同仅保留为历史演进证据，见 [historical reference-guided contract](docs/V2-REFERENCE-GUIDED-CREATIVE-CONTRACT.md)。
+- **V2 直接创作产品化层已完成**：用户和通用质量门是唯一硬约束；案例与风格推断只提供可解释的正向建议。相关案例可为 0–3 个，执行固定为一个方向、一次素材批次、一次构建、最多两次确定性修复和一次视觉精修，最终证据绑定 `runId + bundleHash` 并按体验自适应。见 [R112 direct creative productization](docs/v2-research/V2-R112-DIRECT-CREATIVE-PRODUCTIZATION.md)。
+- **V2 新主题阶段验证已通过**：全新“手势之间”以明亮编辑画布和真实同步选择跳出历史模板，桌面、390px、键盘、减少动态与最终 bundle 证据均通过；同一目标只归档这一版。见 [R113 sign-language season validation](docs/v2-research/V2-R113-SIGN-LANGUAGE-SEASON-VALIDATION.md)。
+- **V2 视觉旗舰门禁已完成首次验证**：全新“薄膜干涉实验室”使用持续 WebGL 场景、5 秒成膜 Hero、视角相关干涉 Shader 与真实多输入联动；最终 bundle 同时通过自适应质量门和身份绑定 WowGate 后才进入精选。见 [R115 thin-film flagship validation](docs/v2-research/V2-R115-THIN-FILM-FLAGSHIP-VALIDATION.md)。
+- **V3 入口与静态生产恢复基线已完成**：R134–R137 的五条媒介路线仍保持最终身份；R138 进一步让 Composer 显示权威主媒介与唯一降级条件，并在 `.pages-dist` 中验证 V2 首页、五个 V3 入口、R137 GLB、交互、保存和 390px 状态。下一阶段只使用一个全新 brief 做产品回归，不增加第六个媒介样例，见 [R138 program status](docs/v2-research/V2-PROGRAM-STATUS-R138.md)。
+- **V2 参考研究首批完成**：已将 MotionSites 34 / 462 条公开案例建成证据清单，并沉淀 13 个原理和四个创意组合，见 [R05 first-batch synthesis](docs/v2-research/MOTIONSITES-R05-FIRST-BATCH-SYNTHESIS.md)；本地入口为 `/pages/v2/research/`。
+- **V2 本地案例研究完成**：已核验 Downloads 中 52 个 HTML，分离展示范例、技术实验和排除项，见 [R06 local exemplars](docs/v2-research/LOCAL-EXEMPLARS-R06.md)。
+- **V2 视觉决策层已接入**：brief 现在会先确定素材角色、机制组合、交互含义、最小充分渲染器和回退，再进入 Codex 构建，见 [R07 decision layer](docs/v2-research/V2-DECISION-LAYER-R07.md)。
+- **V2 工作台主闭环已接入**：现有服务器任务会先形成并持久化 V2 Creative Contract，再把完整约束交给 Codex；工作台可见参考方向、能力选择、实现路线和停止边界，见 [R11 workbench main loop](docs/v2-research/R11-WORKBENCH-MAIN-LOOP-CONTRACT.md)。
+- **V2 主体素材改为质量优先路由**：模型素材、项目素材与程序化 Three.js 都是候选手段；可辨认实体若退化为基础几何拼接只能保留为原型，不能进入最终案例，见 [R58 quality-first subject routing](docs/v2-research/V2-QUALITY-FIRST-SUBJECT-ROUTING-R58.md)。
+- **V2 用户意图与实验约束已隔离**：任务持久化不可变的用户原始想法、提交来源和显式用户限制；系统偏好与测试条件不再污染创意 brief，工作台会直接显示来源边界，见 [R59 intent provenance](docs/v2-research/V2-INTENT-PROVENANCE-R59.md)。
+- **V2 已验证素材主导权门禁**：新榫卯主题证明高质量素材仍可能被低质量程序化几何压过；该结果被正确拒绝归档，并已把媒体主导路线、来源保真和交付摘要修正沉淀为系统规则，见 [R60 media dominance validation](docs/v2-research/V2-MEDIA-DOMINANCE-VALIDATION-R60.md)。
+- **V2 已完成一次有停止边界的媒体主导复验**：同一榫卯目标只生成一个新候选、复用已有素材且不重新生图；真实素材主导权通过，但独立视觉判断为 82 分，因咬合因果不足与移动端重叠保持 `review-required`，没有错误归档或无限修补。门禁、路线感知预检和精修状态修正见 [R61 revalidation](docs/v2-research/V2-MEDIA-DOMINANCE-REVALIDATION-R61.md)。
+- **V2 状态资产路由已接入**：装配、拆解、咬合和形变类想法会在 Codex 编码前选择连续媒体、分层主体或可检查模型；单张静态图只能承担环境，不再冒充过程，并且同一门禁会阻止不合格结果进入最终案例。见 [R62 state asset routing](docs/v2-research/V2-STATE-ASSET-ROUTING-R62.md)。
+- **V2 主体状态差异门禁已接入**：状态型物理目标必须显式声明持续视觉主体，并由浏览器证明语义状态之间的主体差异；普通图片、画布、文案、箭头、裁切或镜头变化不能冒充实体变化。缺少证据会在独立模型验收前快速停止。见 [R63 subject delta gate](docs/v2-research/V2-SUBJECT-DELTA-GATE-R63.md)。
+- **V2 最终案例视觉修复已收口**：榫卯与折叠灯只保留经过汇总精修的最终版本，修复主体状态不匹配、批注残留、关键文字越界和灯具对比失衡，见 [R65 final visual repair](docs/v2-research/V2-FINAL-VISUAL-REPAIR-R65.md)。
+- **V2 Beta 素材恢复闭环已接入**：关键素材不足时可复制精确 Codex 素材任务或按职责上传本地文件，随后恢复同一 Job；刷新阻断任务不再错误显示本地草案。最终验收同时拒绝调试标记残留与连续主体裁切跳变，见 [R66 beta closure](docs/v2-research/V2-BETA-CLOSURE-R66.md)。
+- **V2 发酵状态素材验证已形成直接恢复结果**：R68 自动 authoring 仍按超时记录为失败；随后复用现有 bundle 接入三态素材、滚轮时间轴与移动端控制，并完成可部署归档。自动与人工恢复状态没有混写，见 [R69 direct recovery](docs/v2-research/V2-R69-DIRECT-RECOVERY-AND-CONSISTENCY.md)。
+- **V2 有界生成运行时已接入**：每个任务只有一次 authoring、一次候选恢复和一次视觉处理额度，并受五分钟全局截止时间约束；服务重启只恢复检查点，不重做模型规划，终态停止轮询，旧任务合同可兼容迁移。见 [R70 bounded runtime](docs/v2-research/V2-R70-BOUNDED-GENERATION-RUNTIME.md)。
+- **V2 当前项目真相与可提交基线已形成**：R71 清理确定性构建警告、把案例分为 5 个精选与 11 个研究结果、隔离新增运行时任务/证据文件，并明确仍未完成的能力与下一次单 brief 验收边界。见 [R71 current state](docs/v2-research/V2-CURRENT-STATE-R71.md)。
+- **V2 单 brief 有界验证已完成**：R72 用全新的合唱排练台主题在约 186 秒内形成唯一可运行候选并明确停止；R73 修正一次交互证据误判，机械复验 100，但独立视觉验收因交互差异和移动端任务路径不足只得 70，因此没有归档或循环精修。见 [R72 bounded validation](docs/v2-research/V2-R72-SINGLE-BRIEF-BOUNDED-VALIDATION.md)。
+- **V2 交互差异与移动端任务合同已接入**：R74 复用现有主体截图证据，要求主要参数或高层操作让 `data-signal-visual-anchor` 产生可辨认变化；直接交互页面的 390px 检查会实际操作控件，并验证“控件→结果→行动”完整路径。缺失或横向裁切会在视觉模型调用前停止，不新增候选或修复循环。见 [R74 interaction and mobile contract](docs/v2-research/V2-R74-INTERACTION-AND-MOBILE-CONTRACT.md)。
+- **V2 日晷单任务验证已明确停止并修正前置理解**：R75 在约 190 秒因唯一一次 Codex authoring 达到 120 秒硬上限而停止，没有候选或案例；同时发现“纸张”风格词把教学模拟误导为材质微电影。现已加入通用因果模拟工作区，并修复受众与最终行动提取。见 [R75 sundial validation](docs/v2-research/V2-R75-SUNDIAL-BOUNDED-VALIDATION.md)。
+- **V2 候鸟风洞单任务验证已拒绝并前置主体焦点合同**：R76 在约 166 秒形成唯一可运行候选，移动端“控件→结果→行动”路径通过，但候鸟被缩成图标、Canvas 主体差异仅约 0.4%，结构预检 54 分后停止且不归档。现已修复课堂语境误当主体的问题，并要求交互主体成为最大清晰焦点、使用参数极值自检明显变化。见 [R76 wind-tunnel validation](docs/v2-research/V2-R76-WIND-TUNNEL-BOUNDED-VALIDATION.md)。
+- **V2 候鸟风洞替代版已停止且修正语义结果误判**：R77 在约 200 秒形成同主题唯一替代候选，主体尺度明显改善，但第一个主要参数仍只造成约 0.2% 的 Canvas 差异，因此不替换、不归档、不生成第三份。浏览器证明结果数值实际同步变化，验收器现已读取合同规定的 `data-signal-primary-result`，消除错误判罚但保留弱视觉反馈拒绝。见 [R77 replacement validation](docs/v2-research/V2-R77-WIND-TUNNEL-REPLACEMENT.md)。
+- **V2 候鸟风洞已完成演示与滚轮驱动精修**：R78 没有再次调用模型，而是在 R77 页面上增加播放/暂停/重置、滚轮时间线和手动接管，并让候鸟姿态、翼面、气流、轨迹与数值同步变化。桌面、390px 手机、键盘与 reduced-motion 路径均已在真实 Chromium 中通过；本轮只完成交互精修，不自动晋升案例。见 [R78 wind-tunnel interaction](docs/v2-research/V2-R78-WIND-TUNNEL-INTERACTION.md)。
+- **V2 已把多源交互沉淀为按需能力并可自动验收**：R79 将 R78 验证过的演示、滚轮和直接控件统一状态写入 creative contract 与 Codex execution brief；只有 brief 明确请求自动演示和至少另一种驱动时才启用。视觉管线复用一个中间检查点，在约 2 秒内有界验证播放、滚轮、人工接管与 Canvas 联动，失败只返回原因、不循环修复。见 [R79 shared-state driver](docs/v2-research/V2-R79-SHARED-STATE-DRIVER.md)。
+- **V2 完整闭环已完成一次有界失败探测**：R80 用全新树冠降温主题验证端到端流程，修复了无候选时伪恢复、预算重置、渲染职责冲突和 manual driver 漏识别。两次 `gpt-5.6-sol` authoring 都在 120 秒且候选落盘前停止，因此没有归档空页面；下一步聚焦更快 authoring 模型或更小 authoring 合同，不再延长等待。见 [R80 bounded closed-loop probe](docs/v2-research/V2-R80-BOUNDED-CLOSED-LOOP-PROBE.md)。
+- **V2 模型职责已拆分并形成可运行树冠候选**：R81 让 `gpt-5.6-terra` 负责唯一首稿、`gpt-5.6-sol` 只负责证据驱动的一次精修。Terra 在约 90 秒内保存候选，同一候选经一次确定性 `balanced` 类型修复后通过编译并完成浏览器实测；页面交互有效，但遗漏共享状态观察标记，机械评分 76 并正确停在 `review-required`，未调用 Sol、未归档。见 [R81 model role split](docs/v2-research/V2-R81-MODEL-ROLE-SPLIT.md)。
 - **问题已冻结**：模型编写和开放式精修是主要耗时，详见 [V1 performance and gaps](docs/releases/V1-PERFORMANCE-AND-GAPS.md)。
 
 
@@ -19,7 +62,7 @@
 
 ```powershell
 npm.cmd install
-npm.cmd run dev -- --host 127.0.0.1 --port 8143
+npm.cmd run dev:8143
 ```
 
 生产构建、单元/边界测试和浏览器测试：
@@ -36,9 +79,19 @@ npm.cmd run test:browser
 
 主演示当前素材成熟度为 `L3-presentable`：足以承担网页主视觉，但不冒充可自由环绕的真实 3D 产品模型或 `L4` 近景资产。视觉契约与验收记录见 [Flagship refinement record](docs/FLAGSHIP-REFINEMENT.md)。
 
-**当前最终专属页面：**打开 /cases/dedicated-r36-delivery-final/?quality=high。该页面使用开场种荚、纤维转化和成熟温室三类不同职责的生成素材，由 Three.js 完成连续融合、微动和滚动导演；它同时通过机械门禁与独立 Codex 最终视觉验收。完整证据见 [Final visual acceptance R36](docs/FINAL-VISUAL-ACCEPTANCE-R36.md)。
+**V2.5 冻结锚点：**打开 `/pages/v2/deliveries/ice-core-letters/?quality=high&motion=full&revision=r125-final`。该页面以真实感冰川环境、持续 Three.js 冰芯和纵向层位旅程证明非工作台结构仍可保持 3D、动态与明确行动；最终身份、五类浏览器证据、内容结构判断和 WowGate 均绑定同一 bundle。完整证据见 [R125 ice-core letters](docs/v2-research/V2-R125-ICE-CORE-LETTERS.md)。
 
-**自然语言创意工作台：**打开 workbench.html。
+**V3 真实模型路线：**打开 `/pages/v2/deliveries/fox-gait-observatory/?quality=high&motion=full&revision=r137-proof`。同一只可追溯 Fox GLB 真实切换 Survey、Walk、Run，支持环绕、缩放、保存、移动端与诚实回退；完整证据见 [R137 Fox gait observatory](docs/v2-deliveries/R137-FOX-GAIT-OBSERVATORY.md)。
+
+**V2 正向参考闭环：**打开 `/pages/v2/deliveries/sonic-pressing-room/?quality=high&motion=full&revision=r157-final`。R156 晋升的“连续音频信号”和“单一材质因果”参考首次进入未知主题创作；系统识别出静态生图无法承担实时频段职责，改由 WebGL + Web Audio 把低、中、高频分别映射为沟槽、折光和边缘振动。一个方向、一次构建和一次视觉精修后，桌面、390px、滚动、播放、保存、WebGL/音频回退均通过并绑定最终 bundle。设计合同与证据见 [R157 sonic pressing room](docs/v2-deliveries/R157-SONIC-PRESSING-ROOM-CONTRACT.md)。
+
+**V2 跨主题决策稳定性：**R158 用编辑排版、真实地图、可检查模型、声音材质和虚构环境五类输入验证同一选择链，分别稳定落到 `code-native / grounded-real-media / threejs-spatial / webgl-procedural / generated-image`。同时补齐“声纹、频谱、低/中/高频”等自然语言识别；用户无需写技术术语，系统也不会为制造多样性添加全局风格禁令。见 [R158 selection stability](docs/v2-research/V2-R158-CREATIVE-SELECTION-STABILITY.md)。
+
+**V2.5 / V3 直接创作入口：**打开 `pages/v2/`，输入想法并生成创意契约，然后用主动作复制 protocol v3 有界包，直接交给当前 Codex 在项目中创作。
+
+**兼容实验工作台：**打开 `workbench.html`。它保留 V1、本地预览和后台实验链兼容性，但不再是 V2.5 直接创作的默认入口。
+
+- 输入想法后，页面会先显示 V2 目标约束摘要；点击“生成并构建最佳网页”才启动服务器任务。该任务只保留一个作者候选，MiniMax 仅在素材职责明确且目录没有可信素材时备用，浏览器自动精修最多一次。
 
 - 首屏现在是一个同源实时创意舞台，可直接切换三个完整网页：资产驱动的《声之形》、生成环境驱动的《潮汐记忆档案》和纯 Shader 的《流体色场》。它们采用不同的主体、空间隐喻、构图、素材策略与运动语言；技术推断和能力缺口已折叠为高级信息。
 

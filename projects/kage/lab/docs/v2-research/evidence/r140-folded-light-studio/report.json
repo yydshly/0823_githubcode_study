@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "stage": "r140-folded-light-runtime-observations",
+  "capturedAt": "2026-09-01T12:48:04.571Z",
+  "identityBinding": "runId+bundleHash",
+  "runId": "direct-r140-folded-light-studio",
+  "bundleHash": "09b371522eb8da943b27a50b5e60cf9ac86dd874c5ff6b94d2c94afe9a5987ca",
+  "route": "/pages/v2/deliveries/folded-light-studio/",
+  "revision": "r140-proof",
+  "bundleFiles": [
+    "index.html",
+    "style.css",
+    "main.ts",
+    "assets/folded-paper-lamp-atlas-v1.png",
+    "assets/state-01-folded.png",
+    "assets/state-02-third.png",
+    "assets/state-03-two-thirds.png",
+    "assets/state-04-open.png"
+  ],
+  "observations": [
+    {
+      "checkpoint": "desktop-opening",
+      "state": "folded",
+      "progress": "0.000",
+      "frameBackground": "url(\"http://127.0.0.1:8143/pages/v2/deliveries/folded-light-studio/assets/state-01-folded.png\")",
+      "frameBackgroundSize": "contain",
+      "bodyBackgroundImage": "none",
+      "lampWidth": 849.59375,
+      "viewportWidth": 1440,
+      "horizontalOverflow": false
+    },
+    {
+      "checkpoint": "desktop-causal-journey",
+      "afterWheel": 0.231,
+      "afterDrag": 0.575,
+      "midWeights": "0.000,0.216,0.784,0.000",
+      "finalWeights": "0.000,0.000,0.066,0.934",
+      "finalInput": "keyboard",
+      "booking": "confirmed"
+    },
+    {
+      "checkpoint": "mobile-reduced-open",
+      "progress": "1.000",
+      "state": "open",
+      "input": "stage-navigation",
+      "horizontalOverflow": false,
+      "trackButtons": 4
+    },
+    {
+      "checkpoint": "asset-fallback",
+      "state": "folded",
+      "assetStatus": "failed",
+      "fallbackVisible": true
+    }
+  ],
+  "complete": true
+}

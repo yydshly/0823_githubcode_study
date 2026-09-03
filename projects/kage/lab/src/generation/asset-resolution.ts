@@ -1,5 +1,5 @@
-import type { EffectSpec } from './effect-spec';
-import { decideImageAssetUse, isImageGeneratorCompatible } from './asset-use-policy';
+import type { EffectSpec } from './effect-spec.ts';
+import { decideImageAssetUse, isImageGeneratorCompatible } from './asset-use-policy.ts';
 
 export interface AssetResolutionPlan {
   route: 'catalog' | 'generate' | 'procedural' | 'blocked';
@@ -58,6 +58,16 @@ export function planAssetResolution(
     return { route: 'blocked', message: policy.summary };
   }
   if (!imageGeneratorAvailable) {
+    const approved = new Set(policy.approvedRequirementIds);
+    const requiredApprovedAsset = effectSpec.assetRequirements.some((requirement) => (
+      approved.has(requirement.id) && requirement.required
+    ));
+    if (!requiredApprovedAsset) {
+      return {
+        route: 'procedural',
+        message: `${policy.summary} 当前缺少图片生成适配器，但获批项均为可选质量参考；继续构建程序化候选，并保持最终视觉门禁。`
+      };
+    }
     return {
       route: 'blocked',
       message: `${policy.summary} 当前没有可用的图片生成适配器，不能用程序化占位物冒充目标主体。`

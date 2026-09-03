@@ -1,0 +1,658 @@
+{
+  "receipt": {
+    "id": "dedicated-mortise-final-r65",
+    "provider": "codex",
+    "model": "gpt-5.6-sol",
+    "status": "compiled",
+    "previewUrl": "/generated-runs/dedicated-mortise-final-r65/",
+    "generatedAt": "2026-08-29T05:27:16.807Z",
+    "files": 4,
+    "assets": 2,
+    "sourceBytes": 14729,
+    "hasShaders": false,
+    "compileMs": 898,
+    "attempts": 1,
+    "directory": "generated/runs/dedicated-mortise-final-r65"
+  },
+  "request": {
+    "brief": "为一款帮助普通人理解古建筑榫卯结构的互动学习产品设计网页。开场让访客看见一组真实、有岁月痕迹的木构件；探索时两个构件逐步对齐并咬合，随后展示受力路径与修复档案，最终行动是“预约一次线上拆解课”。画面使用温暖自然光、真实木材质感与克制的博物馆编辑感，避免暗色科技风，让结构原理和产品用途一眼可懂。",
+    "seed": 73,
+    "quality": "high",
+    "runId": "run-v9ho0x",
+    "selectedId": "generated-1uuzlk3-blueprint-1u0yhtk-joinery-memory-blueprint",
+    "creativeContract": {
+      "schemaVersion": 2,
+      "id": "contract-u289fi",
+      "brief": "为一款帮助普通人理解古建筑榫卯结构的互动学习产品设计网页。开场让访客看见一组真实、有岁月痕迹的木构件；探索时两个构件逐步对齐并咬合，随后展示受力路径与修复档案，最终行动是“预约一次线上拆解课”。画面使用温暖自然光、真实木材质感与克制的博物馆编辑感，避免暗色科技风，让结构原理和产品用途一眼可懂。",
+      "intent": {
+        "subject": "帮助普通人理解古建筑榫卯结构的互动学习产品",
+        "audience": "需要快速理解并感受该想法的网页访客",
+        "desiredFeeling": "真实、克制、温暖、自然",
+        "narrativeChange": "展示受力路径与修复档案，最终行动是“预约一次线上拆解课”",
+        "primaryAction": "预约一次线上拆解课",
+        "negativeConstraints": [
+          "画面使用温暖自然光、真实木材质感与克制的博物馆编辑感，避免暗色科技风，让结构原理和产品用途一眼可懂"
+        ]
+      },
+      "referenceEvidence": [
+        {
+          "referenceId": "kage-paper-restoration",
+          "title": "纸张修复工坊 · 证据驱动的同一对象变化",
+          "sourceUrl": "../cases/dedicated-7c944e0c386f/",
+          "evidenceLevel": "runtime-verified",
+          "relevance": "命中 修复、档案。 来自已归档并经过浏览器验证的本地最终案例。",
+          "borrow": [
+            "同一页文献在近距离纤维、补纸与复读证据之间变化，过程证据比抽象氛围更重要。",
+            "滚动推进修复步骤，但每一步都必须能指出同一对象上的具体变化。",
+            "破损态与修复态素材共享纸页形状、光线和工作台坐标，Three.js 只解释纤维与裂缝。"
+          ],
+          "avoid": [
+            "不要用互不相关的旧纸图片，也不要让暖色氛围替代可读的修复证据。"
+          ]
+        },
+        {
+          "referenceId": "kage-cloud-observatory",
+          "title": "云上观测站 · 连续空间旅程",
+          "sourceUrl": "../cases/dedicated-896cfb7e6657/",
+          "evidenceLevel": "runtime-verified",
+          "relevance": "命中 建筑。 支持 spatial-exploration 体验模式。 来自已归档并经过浏览器验证的本地最终案例。",
+          "borrow": [
+            "外景、入口与内部终点形成连续空间坐标，镜头推进负责解释位置关系。",
+            "滚动完成接近、穿越和展开，远景、中景与终局停留具有明确职责。",
+            "连续环境素材必须共享地点、机位逻辑、天气和色彩，不能只是三个独立概念图。"
+          ],
+          "avoid": [
+            "不要用持续前推代替空间叙事，也不要让每一屏更换无关联场所。"
+          ]
+        },
+        {
+          "referenceId": "motionsites-interactive-discovery",
+          "title": "MotionSites · Interactive Discovery",
+          "sourceUrl": "https://motionsites.ai/?prompt=interactive-discovery",
+          "evidenceLevel": "catalog-metadata",
+          "relevance": "命中 探索、路径、互动。 支持 spatial-exploration 体验模式。 只作为外部目录方向信号，不当作实现已验证。",
+          "borrow": [
+            "目录证据表明它属于交互式 Hero，可作为“首屏即发生探索”的方向索引。",
+            "只借鉴交互发现的节奏命题；未取得完整提示词前不推断具体动画实现。",
+            "外部目录只提供方向信号，具体素材策略必须由当前 brief 和本地运行证据决定。"
+          ],
+          "avoid": [
+            "不要把目录缩略图或未知提示词当成已经验证的 Three.js 实现。"
+          ]
+        }
+      ],
+      "experience": {
+        "pattern": "spatial-exploration",
+        "structure": {
+          "mode": "guided-sequence",
+          "segmentPolicy": "content-derived",
+          "layoutRule": "按真实空间关系组织入口、阈值、证据与结论；每个节点长度由探索任务决定。"
+        },
+        "thesis": "把帮助普通人理解古建筑榫卯结构的互动学习产品组织成一次有坐标、有证据、有终点的空间探索。",
+        "focalSubject": "帮助普通人理解古建筑榫卯结构的互动学习产品",
+        "continuityRule": "入口、内部与终点必须能从镜头方向和共享地标判断为空间连续关系。",
+        "typographyRole": "DOM 负责位置说明、证据和选择；不覆盖空间主路径。",
+        "beats": [
+          {
+            "id": "spatial-coordinate",
+            "position": 0,
+            "purpose": "establish",
+            "visibleState": "远景建立地点、尺度和入口方向。",
+            "userProgression": "滚动使镜头接近清晰地标。"
+          },
+          {
+            "id": "threshold",
+            "position": 0.3,
+            "purpose": "develop",
+            "visibleState": "穿过入口或边界，确认空间关系正在发生变化。",
+            "userProgression": "继续推进到核心证据区域。"
+          },
+          {
+            "id": "evidence-field",
+            "position": 0.68,
+            "purpose": "transform",
+            "visibleState": "档案、数据或主题证据在空间中形成可选择关系。",
+            "userProgression": "浏览或选择一条理解路径。"
+          },
+          {
+            "id": "shared-conclusion",
+            "position": 1,
+            "purpose": "resolve",
+            "visibleState": "空间在共同结论处稳定，并给出“预约一次线上拆解课”。",
+            "userProgression": "从探索返回明确行动。"
+          }
+        ],
+        "pointerRole": "指针只用于近距离检查、热点提示或轻微观察角变化。",
+        "reducedMotion": "保持入口、证据和终点三张稳定空间构图，通过导航直接切换。",
+        "finalMemoryPoint": "预约一次线上拆解课"
+      },
+      "visualAnchor": {
+        "subject": "持续表现同一“探索时两个构件”从初始状态到结构变化完成的可辨认过程。",
+        "relationshipToBrief": "视觉锚点必须直接证明“帮助普通人理解古建筑榫卯结构的互动学习产品”和“把帮助普通人理解古建筑榫卯结构的互动学习产品组织成一次有坐标、有证据、有终点的空间探索。”；即使隐藏标题，也能从对象、空间或数据关系辨认主题。",
+        "heroRole": "evidence-field",
+        "source": "grounded-data",
+        "interactionBinding": "视觉锚点沿体验节点连续承担建立、变化与“预约一次线上拆解课”收束，不得在中段被无关装饰替换。",
+        "fallback": "增强层不可用时，保留同一“帮助普通人理解古建筑榫卯结构的互动学习产品”的静态主题表示、完整语义内容和主要行动；不得回退为通用网格或空背景。"
+      },
+      "assets": [
+        {
+          "id": "spatial-environment",
+          "role": "environment",
+          "modality": "image-sequence",
+          "required": false,
+          "minimumQuality": "L3-presentable",
+          "sourcePriority": [
+            "user-supplied",
+            "curated-library",
+            "primary-image-model",
+            "minimax-fallback"
+          ],
+          "visualResponsibility": "建立入口、内部证据区和终点之间可辨认的空间连续性。",
+          "continuityRule": "关键地标、光线、尺度和观察方向必须在所有状态中保持一致。",
+          "integration": "full-bleed-environment",
+          "visibleProof": "三段截图能指出共享地标，并能解释镜头从哪里移动到哪里。",
+          "fallback": "static-image"
+        },
+        {
+          "id": "evidence-layer",
+          "role": "information",
+          "modality": "transparent-image",
+          "required": false,
+          "minimumQuality": "L2-inspectable",
+          "sourcePriority": [
+            "user-supplied",
+            "curated-library",
+            "procedural"
+          ],
+          "visualResponsibility": "提供档案、数据或路线的真实内容证据，而非装饰符号。",
+          "continuityRule": "证据层必须锚定在明确空间位置，并与 DOM 说明保持一一对应。",
+          "integration": "alpha-subject",
+          "visibleProof": "middle 截图中至少一个证据节点可读且不遮挡空间主线。",
+          "fallback": "dom-only"
+        },
+        {
+          "id": "state-subject",
+          "role": "subject",
+          "modality": "image-sequence",
+          "required": true,
+          "minimumQuality": "L3-presentable",
+          "sourcePriority": [
+            "user-supplied",
+            "curated-library",
+            "licensed",
+            "primary-image-model",
+            "minimax-fallback"
+          ],
+          "visualResponsibility": "持续表现同一“探索时两个构件”从初始状态到结构变化完成的可辨认过程。",
+          "continuityRule": "至少 3 个状态必须共享同一对象身份、尺度、观察关系与光线；可分部件不少于 2 组。",
+          "integration": "full-bleed-environment",
+          "visibleProof": "关键截图能够直接指出同一主体的初始、变化中和完成状态，不能只依赖裁切、箭头或说明文字。",
+          "fallback": "block"
+        }
+      ],
+      "direction": {
+        "visualRole": "subject",
+        "mechanisms": [
+          {
+            "id": "subject-specimen-field",
+            "title": "主体标本场",
+            "evidenceLevel": "E4",
+            "job": "围绕独立主体和安全区组织排版，让对象始终保持识别和呼吸空间。",
+            "reason": "匹配独立主体的主要视觉职责。 命中“产品、材质”。",
+            "sourceCaseIds": [
+              "sports-ai-subject-field"
+            ]
+          },
+          {
+            "id": "state-storyboard",
+            "title": "状态故事板",
+            "evidenceLevel": "E4",
+            "job": "用连续的视觉状态分配页面节奏，每个状态只承担一个叙事动词。",
+            "reason": "匹配独立主体的主要视觉职责。 支持 spatial-exploration 体验。 命中“拆解”。",
+            "sourceCaseIds": [
+              "plety-media-storyboard",
+              "igloo-cinematic-deconstruction"
+            ]
+          },
+          {
+            "id": "pointer-reveal",
+            "title": "指针揭示",
+            "evidenceLevel": "E3",
+            "job": "让输入行为承担发现、比较或检查含义，而不是只让装饰跟随坐标。",
+            "reason": "匹配独立主体的主要视觉职责。 支持 spatial-exploration 体验。 命中“探索”。",
+            "sourceCaseIds": [
+              "nike-pointer-spotlight"
+            ]
+          }
+        ],
+        "interaction": {
+          "primaryInput": "scroll",
+          "semanticAction": "滚动建立入口、证据区域和终点之间的空间关系。",
+          "pointerRole": "secondary",
+          "touchAlternative": "触摸滚动保持同一状态顺序；取消只依赖悬停的内容。",
+          "keyboardAlternative": "提供跳转到关键状态的语义锚点，并保持自然文档阅读顺序。"
+        },
+        "renderer": {
+          "baseLayer": "semantic-dom",
+          "route": "dom-media-hybrid",
+          "enhancement": "media",
+          "reason": "连续媒体已能承担环境或状态变化，不额外引入完整 Three.js 场景。",
+          "threeJustification": "没有必须由真实三维深度、相机或模型状态解决的职责。",
+          "fallback": "使用稳定关键帧和交叉淡化保留相同叙事顺序。"
+        },
+        "rejectedMechanisms": [
+          {
+            "id": "cinematic-3d-deconstruction",
+            "reason": "缺少真实可检查模型，不能伪造三维拆解。"
+          },
+          {
+            "id": "pointer-reveal",
+            "reason": "目标没有要求通过指针发现信息，鼠标仅保留轻量反馈。"
+          },
+          {
+            "id": "sticky-archive-stack",
+            "reason": "当前核心不是一组并列档案，不使用长堆叠拖慢叙事。"
+          }
+        ],
+        "decisionSummary": "以独立主体承担主要视觉，用主体标本场、状态故事板、指针揭示组织变化；连续媒体已能承担环境或状态变化，不额外引入完整 Three.js 场景。"
+      },
+      "technical": {
+        "presentationStrategy": "layered-depth",
+        "capabilitySelection": {
+          "selected": false,
+          "capabilityId": null,
+          "score": 0,
+          "reasons": [
+            "体验模式 spatial-exploration 不是该能力的优先路线。",
+            "目标没有明确命中连续叙事信号。",
+            "素材计划提供了可映射到滚动状态的连续媒体。"
+          ],
+          "blockers": [
+            "目标包含“拆解”，需要真实空间或模型交互路线。"
+          ],
+          "contract": null
+        },
+        "articulatedSubject": {
+          "selected": false,
+          "capabilityId": null,
+          "score": 0,
+          "reasons": [
+            "主体没有明确的抽象或程序化构造语义。",
+            "没有需要部件承担的结构变化。",
+            "没有可建立拓扑关系的部件描述。",
+            "体验模式 spatial-exploration 不优先使用该能力。"
+          ],
+          "blockers": [],
+          "contract": null
+        },
+        "stateAssetStrategy": {
+          "required": true,
+          "changeKind": "assembly",
+          "route": "continuous-media-or-layered-subject",
+          "acceptedModalities": [
+            "image-sequence",
+            "transparent-image",
+            "model-3d"
+          ],
+          "minimumDistinctStates": 3,
+          "minimumPartGroups": 2,
+          "failurePolicy": "block-authoring",
+          "reason": "目标要求同一实体产生可观察的结构变化；需要连续一致的多状态媒体、可分层主体或可检查模型，单张静态图只能承担环境和气氛。"
+        },
+        "semanticInteraction": {
+          "selected": false,
+          "capabilityId": null,
+          "score": 2,
+          "matchedSignals": [
+            "路径",
+            "探索",
+            "档案"
+          ],
+          "reasons": [
+            "目标命中“路径、探索、档案”等信息关系信号。",
+            "体验模式 spatial-exploration 且存在信息素材职责，交互可以改变理解。",
+            "现有导演决策只需要滚动推进，不额外增加主要交互。"
+          ],
+          "blockers": [
+            "目标包含“拆解”，应使用真实空间对象能力，不能套用当前证据比较原型。"
+          ],
+          "evaluatedCapability": {
+            "id": "semantic-responsive-interaction",
+            "evidenceLevel": "E4",
+            "state": "validated",
+            "problem": "装饰性鼠标动效不能帮助用户理解内容，也无法稳定迁移到触摸、键盘和减少动态效果环境。",
+            "meaning": "滚动选择证据层，时间选择改变海岸形态和数字，指针只在局部揭示相对于基准年已经消失的土地。",
+            "inputs": [
+              "scroll",
+              "pointer",
+              "touch",
+              "keyboard"
+            ],
+            "outputs": [
+              "scene-shape",
+              "evidence-value",
+              "narrative-layer",
+              "selection-state"
+            ],
+            "baseInterface": "语义 DOM 始终提供年代按钮、损失数字、解释文字和当前状态，不依赖 WebGL 完成比较。",
+            "enhancedInterface": "WebGL 把年代选择映射为同一海岸场的连续形变，并让局部证据透镜显示相对损失范围。",
+            "reducedMotionRule": "减少动态效果时立即切换到目标年代和阶段，停止连续漂移，但保留所有数值和比较结果。",
+            "rejectionRules": [
+              "移除交互后信息理解完全不变时拒绝晋级。",
+              "触摸、键盘或无 WebGL 回退无法完成比较时拒绝晋级。"
+            ],
+            "evidence": [
+              {
+                "id": "coast-1984",
+                "year": 1984,
+                "label": "基准海岸",
+                "lossSquareKilometers": 0,
+                "retreatMeters": 0,
+                "relativeWaterCentimeters": 0,
+                "sceneMorph": 0,
+                "summary": "沙洲仍然连续，潮沟尚未切断内侧湿地。"
+              },
+              {
+                "id": "coast-2004",
+                "year": 2004,
+                "label": "潮沟扩张",
+                "lossSquareKilometers": 3.2,
+                "retreatMeters": 186,
+                "relativeWaterCentimeters": 8,
+                "sceneMorph": 0.5,
+                "summary": "外侧沙洲变薄，新的潮沟开始把湿地分成孤立片区。"
+              },
+              {
+                "id": "coast-2026",
+                "year": 2026,
+                "label": "临界断面",
+                "lossSquareKilometers": 8.7,
+                "retreatMeters": 421,
+                "relativeWaterCentimeters": 17,
+                "sceneMorph": 1,
+                "summary": "连续岸线已经断裂，曾经被遮蔽的社区直接面对风暴潮。"
+              }
+            ]
+          }
+        },
+        "identityEvidence": {
+          "selected": false,
+          "score": 18,
+          "reason": "拒绝：缺少同时指向身份与证据的明确目标。",
+          "rejectedBy": [],
+          "matchedSignals": [
+            "档案"
+          ],
+          "capabilityId": null
+        },
+        "placeGrounding": {
+          "selected": true,
+          "capabilityId": "place-grounded-experience",
+          "strategy": "place-narrative",
+          "score": 34,
+          "matchedSignals": [
+            "档案"
+          ],
+          "reasons": [
+            "目标命中“档案”等地域语义，地域应成为表达决策而不是装饰词。",
+            "地点承担历史与叙事连续性，可在真实关系上进行编辑式重构。"
+          ],
+          "requirements": {
+            "geography": "real-reinterpreted",
+            "map": "optional",
+            "dataTruth": "真实地点、年代和档案事实必须可追溯；缺失部分只能作为明确标注的艺术化推演。",
+            "creativeFreedom": "允许把真实空间转化为档案层、时间切片或探索路径，不必复制标准地图界面。"
+          }
+        },
+        "styleDiversity": {
+          "fingerprint": {
+            "composition": "editorial-grid",
+            "palette": "warm-material",
+            "motion": "spatial-inspection",
+            "spatial": "data-field",
+            "typography": "quiet-small-scale",
+            "media": "image-sequence"
+          },
+          "nearestCaseId": "dedicated-7c944e0c386f",
+          "nearestDistance": 4,
+          "minimumDifferentAxes": 2,
+          "mustDifferOn": [
+            "composition",
+            "motion",
+            "spatial",
+            "typography"
+          ],
+          "avoidRepeating": [
+            "不要默认复用暗色全屏背景、中央主体和巨型标题的组合。",
+            "不要把滚动淡入、漂浮粒子和柔光当成所有主题的通用答案。",
+            "不得复刻最相近案例 dedicated-7c944e0c386f 的整体构图和运动语法。"
+          ],
+          "rationale": "本方向与最相近案例 dedicated-7c944e0c386f 在 4 个风格轴上不同；差异是生成约束，不是固定模板。"
+        },
+        "domResponsibilities": [
+          "承载可阅读内容、导航和最终行动。",
+          "在 WebGL 不可用时保留完整语义顺序。"
+        ],
+        "webglResponsibilities": [
+          "承载空间记忆、镜头关系和连续状态变化。",
+          "让素材融入环境并提供克制的交互反馈。"
+        ],
+        "targetFrameTimeMs": 16.7,
+        "maxInitialAssetBytes": 8000000,
+        "targetDevices": [
+          "desktop",
+          "mobile"
+        ]
+      },
+      "acceptance": [
+        {
+          "id": "intent-visible",
+          "priority": "blocker",
+          "assertion": "首屏和终点能够对应原始主体、情绪变化和最终行动；不了解行业背景的用户也能在约 10 秒内识别核心对象、可执行操作和操作后的业务结果。",
+          "evidence": "screenshot-ending"
+        },
+        {
+          "id": "visual-anchor-specific",
+          "priority": "blocker",
+          "assertion": "首屏存在与 brief 直接相关且无需依赖标题即可辨认的视觉锚点；纯色、通用网格、无主题依据的渐变、随机粒子或无关几何不能单独充当主视觉。",
+          "evidence": "screenshot-opening"
+        },
+        {
+          "id": "asset-visible",
+          "priority": "blocker",
+          "assertion": "所有 required 素材都已成功请求，并在声明状态承担可辨认的视觉职责。",
+          "evidence": "asset-request"
+        },
+        {
+          "id": "opening-composed",
+          "priority": "high",
+          "assertion": "首屏存在明确主体和空间坐标，没有空黑屏、文字裁切或主体被遮挡。",
+          "evidence": "screenshot-opening"
+        },
+        {
+          "id": "process-causal",
+          "priority": "high",
+          "assertion": "至少一个过程或交互状态能够解释能力、转化或探索关系，而不只是装饰动画；模式、Cue、预设、路线或方案等高层操作必须修改底层状态和主体画面。",
+          "evidence": "screenshot-beat"
+        },
+        {
+          "id": "semantic-state-consistent",
+          "priority": "high",
+          "assertion": "交互控件、可见数值、汇总值、结果解释和主体状态必须来自同一目标状态；专业指标或简化估算必须诚实标注并保持声明约束，不能作为虚假真实性装饰。",
+          "evidence": "runtime"
+        },
+        {
+          "id": "borderless-integration",
+          "priority": "high",
+          "assertion": "主体和环境没有棋盘格、矩形图片边界或不自然的发光方框。",
+          "evidence": "screenshot-beat"
+        },
+        {
+          "id": "mobile-readable",
+          "priority": "blocker",
+          "assertion": "390px 移动端无横向溢出，主体、正文和行动均可见。",
+          "evidence": "screenshot-mobile"
+        },
+        {
+          "id": "semantic-fallback",
+          "priority": "normal",
+          "assertion": "关闭 WebGL 或减少运动后仍保留完整内容顺序和行动。",
+          "evidence": "dom"
+        },
+        {
+          "id": "runtime-clean",
+          "priority": "blocker",
+          "assertion": "页面无阻断脚本错误，关键素材请求成功，滚动和指针输入可用。",
+          "evidence": "runtime"
+        }
+      ],
+      "executionLimits": {
+        "authoringPasses": 1,
+        "assetBatches": 1,
+        "refinementPasses": 1,
+        "stopAfterMinutes": 15,
+        "archivePolicy": "best-result-only"
+      }
+    },
+    "reference": {
+      "title": "榫卯的时间切面",
+      "summary": "一对带有岁月痕迹的木构件在自然光下被观察、装配、解释与考据，最后将理解转化为预约线上拆解课的行动。",
+      "scenePlugin": "composed-world",
+      "productionStatus": "ready",
+      "theme": {
+        "deep": "#4b3928",
+        "surface": "#f4efe5",
+        "text": "#2f2922",
+        "muted": "#82786b",
+        "accent": "#a84d32",
+        "accentSoft": "#dcc6ac"
+      },
+      "assets": [
+        {
+          "id": "mortise-tenon-museum-environment-v1",
+          "uri": "/creative-assets/r59-mortise-tenon-environment-v1.png",
+          "bundlePath": "assets/r59-mortise-tenon-environment-v1.png",
+          "kind": "environment",
+          "source": "chatgpt-generated",
+          "qualityLevel": "L3-presentable",
+          "role": "persistent mortise-and-tenon conservation studio environment",
+          "description": "同一组真实旧木构件在修复工作台上沿共同轴线等待咬合；榫头、卯眼、木纹、手工凿痕与暖色自然光均清楚可辨，可持续承担对齐、受力解释和修复档案的空间底图。",
+          "payloadBytes": 2285335,
+          "required": false,
+          "experience": {
+            "anchor": 0.45,
+            "function": "persistent",
+            "visualState": "两个带岁月痕迹的木构件保持同一机位与轴线，由分离逐步进入结构解释和咬合结果。",
+            "continuity": "榫头、卯眼、工作台、观察方向和左侧自然光全程不变，只改变裁切、焦点、相对距离与证据标注。",
+            "integration": "full-bleed-environment",
+            "stateEvidence": {
+              "mode": "static",
+              "distinctStates": 1,
+              "partGroups": 0,
+              "continuityKey": "mortise-tenon-studio-camera-v1",
+              "proof": "单张环境图只承担空间与光线，不承担装配状态证明。"
+            }
+          }
+        },
+        {
+          "id": "mortise-tenon-four-state-v1",
+          "uri": "/creative-assets/r62-mortise-tenon-four-state-v1.png",
+          "bundlePath": "assets/r62-mortise-tenon-four-state-v1.png",
+          "kind": "image",
+          "source": "chatgpt-generated",
+          "qualityLevel": "L3-presentable",
+          "role": "same-camera four-state mortise-and-tenon assembly subject",
+          "description": "同一组旧木榫卯在同一机位、工作台和自然光下呈现分离、对齐、半插入与完全咬合四个状态。",
+          "payloadBytes": 2292419,
+          "required": true,
+          "experience": {
+            "anchor": 0.48,
+            "function": "persistent",
+            "visualState": "滚动连续显示同一榫头由分离到完全进入同一卯眼的四个可辨状态。",
+            "continuity": "构件身份、机位、比例、木纹、工作台、背景和左侧自然光保持一致，只改变右侧榫头沿共同轴线的位置。",
+            "integration": "full-bleed-environment",
+            "stateEvidence": {
+              "mode": "sequence",
+              "distinctStates": 4,
+              "partGroups": 2,
+              "continuityKey": "mortise-tenon-studio-camera-v1",
+              "proof": "2×2 状态母图明确提供分离、对齐、半插入与完全咬合四帧，保持同一构件、机位、比例和光线。"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "mediaDominance": {
+    "schemaVersion": 1,
+    "decision": "ready",
+    "route": "dom-media-hybrid",
+    "highQualityAssetIds": [
+      "mortise-tenon-museum-environment-v1",
+      "mortise-tenon-four-state-v1"
+    ],
+    "subjectPrimitiveCount": 0,
+    "subjectPrimitiveScore": 0,
+    "constructors": {},
+    "summary": "媒体主导权门禁通过：L3/L4 素材保持主导，程序化几何没有达到主体重建阈值。"
+  },
+  "usedAssets": [
+    {
+      "id": "mortise-tenon-museum-environment-v1",
+      "uri": "/creative-assets/r59-mortise-tenon-environment-v1.png",
+      "bundlePath": "assets/r59-mortise-tenon-environment-v1.png",
+      "kind": "environment",
+      "source": "chatgpt-generated",
+      "qualityLevel": "L3-presentable",
+      "role": "persistent mortise-and-tenon conservation studio environment",
+      "description": "同一组真实旧木构件在修复工作台上沿共同轴线等待咬合；榫头、卯眼、木纹、手工凿痕与暖色自然光均清楚可辨，可持续承担对齐、受力解释和修复档案的空间底图。",
+      "payloadBytes": 2285335,
+      "required": false,
+      "experience": {
+        "anchor": 0.45,
+        "function": "persistent",
+        "visualState": "两个带岁月痕迹的木构件保持同一机位与轴线，由分离逐步进入结构解释和咬合结果。",
+        "continuity": "榫头、卯眼、工作台、观察方向和左侧自然光全程不变，只改变裁切、焦点、相对距离与证据标注。",
+        "integration": "full-bleed-environment",
+        "stateEvidence": {
+          "mode": "static",
+          "distinctStates": 1,
+          "partGroups": 0,
+          "continuityKey": "mortise-tenon-studio-camera-v1",
+          "proof": "单张环境图只承担空间与光线，不承担装配状态证明。"
+        }
+      }
+    },
+    {
+      "id": "mortise-tenon-four-state-v1",
+      "uri": "/creative-assets/r62-mortise-tenon-four-state-v1.png",
+      "bundlePath": "assets/r62-mortise-tenon-four-state-v1.png",
+      "kind": "image",
+      "source": "chatgpt-generated",
+      "qualityLevel": "L3-presentable",
+      "role": "same-camera four-state mortise-and-tenon assembly subject",
+      "description": "同一组旧木榫卯在同一机位、工作台和自然光下呈现分离、对齐、半插入与完全咬合四个状态。",
+      "payloadBytes": 2292419,
+      "required": true,
+      "experience": {
+        "anchor": 0.48,
+        "function": "persistent",
+        "visualState": "滚动连续显示同一榫头由分离到完全进入同一卯眼的四个可辨状态。",
+        "continuity": "构件身份、机位、比例、木纹、工作台、背景和左侧自然光保持一致，只改变右侧榫头沿共同轴线的位置。",
+        "integration": "full-bleed-environment",
+        "stateEvidence": {
+          "mode": "sequence",
+          "distinctStates": 4,
+          "partGroups": 2,
+          "continuityKey": "mortise-tenon-studio-camera-v1",
+          "proof": "2×2 状态母图明确提供分离、对齐、半插入与完全咬合四帧，保持同一构件、机位、比例和光线。"
+        }
+      }
+    }
+  ],
+  "r65Repair": {
+    "scope": "correct joint geometry, remove force overlay, repair safe layout",
+    "sourceRun": "dedicated-mortise-state-r62",
+    "status": "browser-verified"
+  }
+}

@@ -21,13 +21,13 @@ export interface WorkbenchBootstrapDecision {
  * of creating a second expensive model run.
  */
 export function decideWorkbenchBootstrap(input: WorkbenchBootstrapInput): WorkbenchBootstrapDecision {
-  const resumeRunning = Boolean(
+  const resumeExisting = Boolean(
     input.jobId
-    && input.recovered?.status === 'running'
+    && (input.recovered?.status === 'running' || input.recovered?.status === 'review-required' || input.recovered?.status === 'complete')
   );
   const firstAutorun = input.autorun && input.provider !== 'local' && !input.jobId;
   return {
-    runModel: firstAutorun || resumeRunning,
-    resumeJobId: resumeRunning ? input.jobId : null
+    runModel: firstAutorun || resumeExisting,
+    resumeJobId: resumeExisting ? input.jobId : null
   };
 }

@@ -21,7 +21,7 @@ export interface AssetUsePolicy {
 }
 
 const imageModalities = new Set<AssetRequirement['modality']>(['image', 'texture', 'sprite']);
-const evidenceTerms = /(?:wordmark|logo|brand|ui|screenshot|copy|pricing|diagram|字标|标志|品牌|界面|截图|文案|价格|图表)/i;
+const evidenceTerms = /(?:\b(?:wordmark|logo|brand|ui|screenshot|copy|pricing|diagram)\b|字标|标志|品牌|界面|截图|文案|价格|图表)/i;
 const qualityRank: Record<AssetRequirement['minimumQuality'], number> = {
   'L0-missing': 0, 'L1-placeholder': 1, 'L2-inspectable': 2,
   'L3-presentable': 3, 'L4-cinematic': 4, 'L5-production': 5
@@ -31,7 +31,10 @@ const qualityRank: Record<AssetRequirement['minimumQuality'], number> = {
  * Decides whether an image generator materially helps the declared goal.
  * Availability is intentionally absent: a configured provider must not change the creative decision.
  */
-export function decideImageAssetUse(effectSpec: EffectSpec): AssetUsePolicy {
+export function decideImageAssetUse(
+  effectSpec: EffectSpec,
+  maximumGeneratedQuality: AssetRequirement['minimumQuality'] = 'L2-inspectable'
+): AssetUsePolicy {
   const candidates = effectSpec.assetRequirements.filter(isImageGeneratorCompatible);
   const evaluated = candidates.map((requirement): AssetUsePolicyItem => {
     const layers = effectSpec.composition.layers.filter((layer) => layer.assetRequirementIds.includes(requirement.id));
@@ -49,6 +52,18 @@ export function decideImageAssetUse(effectSpec: EffectSpec): AssetUsePolicy {
         0,
         '该素材承担准确主体、品牌或信息证据；生成模型不能作为事实来源。',
         `使用真实来源后可支撑：${visibleOutcome}`
+      );
+    }
+    const generatorCannotMeetBlockingQuality = requirement.required
+      && requirement.fallback === 'block'
+      && qualityRank[requirement.minimumQuality] > qualityRank[maximumGeneratedQuality];
+    if (generatorCannotMeetBlockingQuality) {
+      return item(
+        requirement,
+        'require-source',
+        0,
+        `当前图片适配器最高只能形成 ${maximumGeneratedQuality} 候选，低于必需的 ${requirement.minimumQuality}；不启动一次注定被门禁拒绝的生成。`,
+        `由 ChatGPT / Codex 或真实授权素材承担：${visibleOutcome}`
       );
     }
     const score = benefitScore(requirement, layers.map((layer) => layer.role));

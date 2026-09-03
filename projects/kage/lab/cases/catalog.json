@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-08-26T17:06:52.139Z",
+  "updatedAt": "2026-08-31T06:25:36.210Z",
   "cases": [
     {
       "id": "dedicated-ba4e9d10caaa-depth-field",
@@ -18,7 +18,15 @@
       ],
       "generatedAt": "2026-08-25T12:50:29.513Z",
       "archivedAt": "2026-08-25T18:43:11.291Z",
-      "previewUrl": "/cases/dedicated-ba4e9d10caaa-depth-field/"
+      "previewUrl": "/cases/dedicated-ba4e9d10caaa-depth-field/",
+      "presentation": {
+        "assetUrl": "/creative-assets/fashion-fluid-couture-cutout-v2.png",
+        "kind": "subject",
+        "fit": "contain",
+        "position": "82% 50%",
+        "opacity": 0.92,
+        "tone": "radial-gradient(circle at 78% 35%, #493a66 0%, #191321 45%, #09080d 100%)"
+      }
     },
     {
       "id": "dedicated-r36-delivery-final",
@@ -36,28 +44,15 @@
       ],
       "generatedAt": "2026-08-26T05:25:44.686Z",
       "archivedAt": "2026-08-26T05:26:23.064Z",
-      "previewUrl": "/cases/dedicated-r36-delivery-final/"
-    },
-    {
-      "id": "dedicated-896cfb7e6657",
-      "title": "云上观测站｜连续空间叙事",
-      "brief": "为一座漂浮在云层中的未来天文观测站设计沉浸式网页。滚动时从云海接近观测站，穿过引桥进入透明穹顶，最终看到由望远镜锚定的星图数据在空间中展开。画面安静、真实、具有电影感；不用常见紫色科技风，不把素材做成矩形海报。三张连续素材分别是开场外景、中段穹顶内部、结尾空间星图，必须全屏融合并由 Three.js 光场、景深、粒子和镜头运动把它们连接为一次连续体验。",
-      "model": "gpt-5.6-terra",
-      "stage": "refined",
-      "parentId": "dedicated-0f538c770255",
-      "note": "ChatGPT 直接生成三段连续电影级素材；Codex 围绕外景接近、穹顶进入、星图展开构建专属 Three.js 网页。修复了画布流定位、纹理乘法压暗、低画质空白、移动端溢出与末段焦点竞争。最终版本通过桌面首屏/中段/末段及390px移动端浏览器验证。",
-      "tags": [
-        "天文观测站",
-        "云海",
-        "透明穹顶",
-        "星图",
-        "Three.js",
-        "ChatGPT素材",
-        "Codex构建"
-      ],
-      "generatedAt": "2026-08-26T08:24:22.730Z",
-      "archivedAt": "2026-08-26T08:28:19.622Z",
-      "previewUrl": "/cases/dedicated-896cfb7e6657/"
+      "previewUrl": "/cases/dedicated-r36-delivery-final/",
+      "presentation": {
+        "assetUrl": "/creative-assets/biomaterial-mature-greenhouse-v1.png",
+        "kind": "environment",
+        "fit": "cover",
+        "position": "64% 50%",
+        "opacity": 0.86,
+        "tone": "linear-gradient(135deg, #10231c 0%, #172b23 46%, #080e0c 100%)"
+      }
     },
     {
       "id": "dedicated-1edb98865f4c",
@@ -78,7 +73,15 @@
       ],
       "generatedAt": "2026-08-26T11:12:42.346Z",
       "archivedAt": "2026-08-26T11:17:45.719Z",
-      "previewUrl": "/cases/dedicated-1edb98865f4c/"
+      "previewUrl": "/cases/dedicated-1edb98865f4c/",
+      "presentation": {
+        "assetUrl": "/creative-assets/acoustic-resonance-instrument-v1.png",
+        "kind": "subject",
+        "fit": "contain",
+        "position": "81% 52%",
+        "opacity": 0.94,
+        "tone": "radial-gradient(circle at 79% 48%, #384c48 0%, #12201e 48%, #080d0c 100%)"
+      }
     },
     {
       "id": "dedicated-8574ee46ab16",
@@ -98,7 +101,68 @@
       ],
       "generatedAt": "2026-08-26T12:29:31.406Z",
       "archivedAt": "2026-08-26T12:53:22.831Z",
-      "previewUrl": "/cases/dedicated-8574ee46ab16/"
+      "previewUrl": "/cases/dedicated-8574ee46ab16/",
+      "presentation": {
+        "assetUrl": "/creative-assets/dream-room-awakening-v1.png",
+        "kind": "environment",
+        "fit": "cover",
+        "position": "64% 50%",
+        "opacity": 0.82,
+        "tone": "linear-gradient(135deg, #272624 0%, #626056 52%, #171715 100%)"
+      }
+    },
+    {
+      "id": "dedicated-7c944e0c386f",
+      "title": "纸张修复工坊 · 同一页文献的修复旅程",
+      "brief": "为一间纸本文献修复工坊设计沉浸式网页。开场是一张受潮、撕裂且墨迹模糊的旧纸页；滚动时沿同一张纸的纤维断面进入修复过程，依次看到纤维对齐、手工补纸和墨迹重新可读，最后纸页在安静的工作台光线中恢复完整，并收束为“提交一页待修复文献”。面向个人收藏者和小型档案机构；质感真实、克制、温暖，不要紫色科技风、随机粒子或玻璃仪表盘。",
+      "model": "gpt-5.6-sol",
+      "stage": "featured",
+      "note": "R12 受约束生成测试最终结果：MiniMax 候选因主体连续性不足被淘汰，使用 ChatGPT 连续素材与 Codex 5.6-sol 定向构建；通过桌面三状态和 390px 移动端验收。",
+      "tags": [
+        "v2",
+        "paper-restoration",
+        "continuity",
+        "scroll-narrative",
+        "chatgpt-assets",
+        "codex-5.6-sol"
+      ],
+      "generatedAt": "2026-08-27T10:21:51.906Z",
+      "archivedAt": "2026-08-27T10:47:48.443Z",
+      "previewUrl": "/cases/dedicated-7c944e0c386f/",
+      "presentation": {
+        "assetUrl": "/creative-assets/r12-paper-restoration/paper-damaged-v1.png",
+        "kind": "environment",
+        "fit": "cover",
+        "position": "53% 50%",
+        "opacity": 0.86,
+        "tone": "linear-gradient(135deg, #1a120c 0%, #4b3828 52%, #0d0906 100%)"
+      }
+    },
+    {
+      "id": "dedicated-ef118f0f4962",
+      "title": "气味标本室 · 先于语言回来的记忆",
+      "brief": "为一款帮助人保存气味记忆的产品设计沉浸式网页。开场是一只雾气凝结的玻璃记忆瓶；滚动时气味被分解为雨后泥土、旧书纸张和晒过的棉布三层空间，指针或触摸改变混合比例并同步更新记忆文字；最后三层重新汇成一只可保存的气味标本，行动为“封存这段记忆”。画面温暖、克制、真实，像自然历史博物馆与香水实验室的结合；不要霓虹科技风，不要用无意义粒子充当主体。",
+      "model": "gpt-5.6-sol + bounded-local-refinement",
+      "stage": "refined",
+      "note": "R20 受约束生成验证的唯一最终结果：真实素材为主体，滚动形成三层气味记忆，鼠标与触摸改变混合比例，最后完成封存。",
+      "tags": [
+        "V2",
+        "受约束生成",
+        "语义交互",
+        "滚动叙事",
+        "气味记忆"
+      ],
+      "generatedAt": "2026-08-27T16:02:38.035Z",
+      "archivedAt": "2026-08-27T16:03:19.77Z",
+      "previewUrl": "/cases/dedicated-ef118f0f4962/",
+      "presentation": {
+        "assetUrl": "/creative-assets/r20-scent-memory/scent-memory-environment-v1.png",
+        "kind": "environment",
+        "fit": "cover",
+        "position": "50% 50%",
+        "opacity": 0.94,
+        "tone": "#211a12"
+      }
     },
     {
       "id": "dedicated-1b9f0b05107b",
@@ -116,8 +180,374 @@
         "chatgpt-assets"
       ],
       "generatedAt": "2026-08-26T16:16:28.155Z",
-      "archivedAt": "2026-08-26T17:06:52.139Z",
-      "previewUrl": "/cases/dedicated-1b9f0b05107b/"
+      "archivedAt": "2026-08-27T16:07:01.961Z",
+      "previewUrl": "/cases/dedicated-1b9f0b05107b/",
+      "presentation": {
+        "assetUrl": "/creative-assets/rain-window-environment-v1.png",
+        "kind": "environment",
+        "fit": "cover",
+        "position": "58% 50%",
+        "opacity": 0.88,
+        "tone": "linear-gradient(135deg, #111b20 0%, #344650 52%, #0c1418 100%)"
+      }
+    },
+    {
+      "id": "dedicated-191bc3ce2125",
+      "title": "读取今夜的风 · 窗边风谱仪",
+      "brief": "为一款帮助城市居民读懂夜间风的窗边气象装置设计沉浸式网页。开场是一枚月白陶瓷与氧化铜制成的无叶风谱仪，细纤维带在安静房间里几乎静止；滚动时视角穿过窗缝，纤维随不同风速弯曲，温湿度与风向证据沿真实气流轨迹出现，最终回到窗边，收束为“读取今夜的风”。面向关注居住环境与自然节律的人；画面安静、物理真实、偏月白、铜褐和雾灰，不要蓝紫科技风、玻璃仪表盘、随机粒子或章节海报切换。",
+      "model": "gpt-5.6-sol",
+      "stage": "featured",
+      "note": "R16 受约束生成的独立方向：月白陶瓷与氧化铜风谱仪，以夜风驱动可读的物理响应；机械验收 100，独立视觉验收 92。",
+      "tags": [
+        "V2",
+        "夜风",
+        "物理响应",
+        "窗边装置",
+        "Three.js",
+        "受约束生成"
+      ],
+      "generatedAt": "2026-08-27T13:33:48.879Z",
+      "archivedAt": "2026-08-27T16:47:49.195Z",
+      "previewUrl": "/cases/dedicated-191bc3ce2125/",
+      "presentation": {
+        "assetUrl": "/creative-assets/r16-night-wind-instrument-v1.png",
+        "kind": "environment",
+        "fit": "cover",
+        "position": "50% 50%",
+        "opacity": 0.92,
+        "tone": "linear-gradient(135deg, #272623 0%, #55514a 52%, #171714 100%)"
+      }
+    },
+    {
+      "id": "dedicated-c0514ddead80",
+      "title": "徐汇滨江饮水图册 · 真实地域证据",
+      "brief": "为城市公共饮水点设计一张明亮的交互导览网页。页面像日光下的市政图册与折叠地图，横向浏览不同街区，选择站点时同步更新水质证据、步行距离和开放状态，最终行动为“找到最近的饮水点”。不要暗色全屏、中央产品、巨型标题、随机粒子或电影式长滚动。",
+      "model": "deterministic-local-geography-refinement",
+      "stage": "refined",
+      "note": "V2 地域表达研究最终候选：使用带署名的上海徐汇滨江真实地理底图与真实地标坐标，四个饮水站、水质、距离和开放状态均明确标注为产品演示数据；Three.js 负责同一投影下的站点、路线和选择反馈，不把随机线条冒充地图。",
+      "tags": [
+        "V2",
+        "真实地域证据",
+        "OpenStreetMap",
+        "Three.js",
+        "语义交互",
+        "演示数据"
+      ],
+      "generatedAt": "2026-08-28T03:55:07.861Z",
+      "archivedAt": "2026-08-28T05:24:20.828Z",
+      "previewUrl": "/cases/dedicated-c0514ddead80/",
+      "presentation": {
+        "assetUrl": "/creative-assets/xuhui-west-bund-osm-map-v1.jpg",
+        "kind": "environment",
+        "fit": "cover",
+        "position": "50% 50%",
+        "opacity": 0.9,
+        "tone": "linear-gradient(135deg, #e9dfc5 0%, #b9d9d8 54%, #e6c783 100%)"
+      }
+    },
+    {
+      "id": "dedicated-896cfb7e6657",
+      "title": "云上观测站｜连续空间叙事",
+      "brief": "为一座漂浮在云层中的未来天文观测站设计沉浸式网页。滚动时从云海接近观测站，穿过引桥进入透明穹顶，最终看到由望远镜锚定的星图数据在空间中展开。画面安静、真实、具有电影感；不用常见紫色科技风，不把素材做成矩形海报。三张连续素材分别是开场外景、中段穹顶内部、结尾空间星图，必须全屏融合并由 Three.js 光场、景深、粒子和镜头运动把它们连接为一次连续体验。",
+      "model": "gpt-5.6-terra",
+      "stage": "refined",
+      "parentId": "dedicated-0f538c770255",
+      "note": "ChatGPT 直接生成三段连续电影级素材；Codex 围绕外景接近、穹顶进入、星图展开构建专属 Three.js 网页。修复画布流定位、纹理乘法压暗、低画质空白、移动端溢出与末段焦点竞争。最终版本通过桌面首屏、中段、末段及 390px 移动端浏览器验证。",
+      "tags": [
+        "天文观测站",
+        "云海",
+        "透明穹顶",
+        "星图",
+        "Three.js",
+        "ChatGPT素材",
+        "Codex构建"
+      ],
+      "generatedAt": "2026-08-26T08:24:22.73Z",
+      "archivedAt": "2026-08-26T08:28:19.622Z",
+      "previewUrl": "/cases/dedicated-896cfb7e6657/",
+      "presentation": {
+        "assetUrl": "/creative-assets/observatory-approach-v1.png",
+        "kind": "environment",
+        "fit": "cover",
+        "position": "58% 50%",
+        "opacity": 0.88,
+        "tone": "linear-gradient(135deg, #60727b 0%, #b9c7c7 52%, #29353b 100%)"
+      }
+    },
+    {
+      "id": "dedicated-mortise-final-r65",
+      "title": "榫卯结构拆解 · 几何校正最终版",
+      "brief": "为一款帮助普通人理解古建筑榫卯结构的互动学习产品设计网页。开场让访客看见一组真实、有岁月痕迹的木构件；探索时两个构件逐步对齐并咬合，随后展示受力路径与修复档案，最终行动是“预约一次线上拆解课”。画面使用温暖自然光、真实木材质感与克制的博物馆编辑感，避免暗色科技风，让结构原理和产品用途一眼可懂。",
+      "model": "gpt-5.6-sol",
+      "stage": "refined",
+      "note": "修正榫头与卯眼尺寸和轴线，删除遗留受力箭头，以真实接触面解释装配，并完成桌面与移动端浏览器验收。",
+      "tags": [
+        "榫卯",
+        "状态素材",
+        "同一主体",
+        "滚动装配",
+        "视觉精修"
+      ],
+      "generatedAt": "2026-08-29T05:27:16.807Z",
+      "archivedAt": "2026-08-29T05:35:14.963Z",
+      "previewUrl": "/cases/dedicated-mortise-final-r65/",
+      "presentation": {
+        "assetUrl": "/creative-assets/r65-mortise-final-cover.jpg",
+        "kind": "environment",
+        "fit": "cover",
+        "position": "50% 50%",
+        "opacity": 0.96,
+        "tone": "linear-gradient(135deg, #c4aa86 0%, #6b4e35 56%, #2e2119 100%)"
+      }
+    },
+    {
+      "id": "dedicated-lantern-final-r65",
+      "title": "可折叠日光露营灯 · 状态叙事最终版",
+      "brief": "为一款可折叠日光露营灯设计明亮、可信的产品网页。始终展示同一盏灯，滚动时从扁平收纳、半展开、完全展开到温暖点亮；每一步都解释收纳体积、折叠结构和真实使用状态，最后行动是“为下一次露营点亮它”。页面像自然日光下的户外装备目录与产品实验记录，不要暗色科技风、紫色、随机粒子、巨大标题或固定三屏。素材、DOM、Canvas 和 Three.js 按最终效果选择。",
+      "model": "gpt-5.6-sol",
+      "stage": "refined",
+      "note": "把四状态素材按独立帧完整展示，修复巨大裁切、浅色主体对比、文字碰撞和末屏裁切。",
+      "tags": [
+        "产品叙事",
+        "四状态素材",
+        "明亮编辑",
+        "滚动展开",
+        "视觉精修"
+      ],
+      "generatedAt": "2026-08-29T05:27:16.818Z",
+      "archivedAt": "2026-08-29T05:35:15.177Z",
+      "previewUrl": "/cases/dedicated-lantern-final-r65/",
+      "presentation": {
+        "assetUrl": "/creative-assets/r65-lantern-final-cover.jpg",
+        "kind": "subject",
+        "fit": "cover",
+        "position": "50% 50%",
+        "opacity": 0.98,
+        "tone": "radial-gradient(circle at 35% 48%, #f2eadb 0%, #d4cbbb 58%, #a8a091 100%)"
+      }
+    },
+    {
+      "id": "dedicated-76102bb2158c",
+      "title": "城市放映记忆 · 同一街区年代档案",
+      "brief": "为一座城市逐渐消失的老电影院制作数字档案网页。开场是当代街景中仍亮着的最后一块老招牌；滚动时，不同时期的票根、立面与放映声沿同一街区的真实位置逐渐重叠，访客可以选择年代查看同一地点的变化，最后收束为“保存一段城市放映记忆”。画面像白天的城市档案与旧胶片册，温暖、克制、可阅读。不要标准地图界面、暗色电影海报、巨型标题、随机粒子或章节模板。",
+      "model": "gpt-5.6-sol",
+      "stage": "refined",
+      "note": "地域叙事研究样本：同一机位连续街景承载年代变化，票根、立面和声音证据围绕地点组织；作为研究案例保留，不进入精选首选。",
+      "tags": [
+        "城市档案",
+        "年代选择",
+        "同一地点",
+        "连续素材",
+        "研究案例"
+      ],
+      "generatedAt": "2026-08-28T05:55:35.519Z",
+      "archivedAt": "2026-08-28T05:55:35.519Z",
+      "previewUrl": "/cases/dedicated-76102bb2158c/",
+      "presentation": {
+        "assetUrl": "/creative-assets/cinema-memory-street-continuity-v1.png",
+        "kind": "environment",
+        "fit": "cover",
+        "position": "50% 50%",
+        "opacity": 0.9,
+        "tone": "linear-gradient(135deg, #d7c6a5 0%, #a98867 52%, #504339 100%)"
+      }
+    },
+    {
+      "id": "dedicated-5694e0a3a022",
+      "title": "社区风扇诊断台 · 明亮工具型界面",
+      "brief": "为社区维修工作坊设计一张明亮、实用的老式台式电风扇诊断网页。页面主体是一幅程序化剖面与彩色装配示意，不对应任何商业型号，也不需要真实商品图。访客选择“不转、异响、风力变弱”后，同步更新故障部件、检查顺序、安全提示和预计难度；横向查看诊断、拆解、测试三个工作阶段，最后行动为“预约一张维修桌”。画面像工业说明书、彩色装配图与社区公告，清晰、亲切、可操作。不要暗色全屏、中央产品海报、巨型标题、电影式长滚动、随机粒子或玻璃科技界面。",
+      "model": "gpt-5.6-sol",
+      "stage": "refined",
+      "note": "风格多样性研究样本：不依赖商品图，以明亮说明书、程序化装配和故障选择验证工具型网页方向；作为研究案例保留。",
+      "tags": [
+        "明亮工具页",
+        "程序化装配",
+        "故障诊断",
+        "语义交互",
+        "研究案例"
+      ],
+      "generatedAt": "2026-08-28T06:37:37.997Z",
+      "archivedAt": "2026-08-28T06:37:37.997Z",
+      "previewUrl": "/cases/dedicated-5694e0a3a022/",
+      "presentation": {
+        "assetUrl": "/creative-assets/r25-community-repair-workshop-cover-v1.jpg",
+        "kind": "environment",
+        "fit": "cover",
+        "position": "50% 50%",
+        "opacity": 0.94,
+        "tone": "linear-gradient(135deg, #fff5d9 0%, #e9d86d 50%, #55a7a0 100%)"
+      }
+    },
+    {
+      "id": "dedicated-woodblock-adaptive-r46",
+      "title": "和纸木版套印 · 五状态自适应叙事",
+      "brief": "为一家小型手工木版画工作室设计一页预约体验网页。访客从一张悬浮在木桌上、尚未落墨的和纸开始，滚动时依次看见木纹压痕、靛蓝首印、朱红套色和最终完整作品，并理解每一步如何形成同一张版画。页面安静、真实、日光充足，像当代工艺出版物；最终行动是“预约一次亲手套印”。结构由工序决定，不固定成三屏。",
+      "model": "gpt-5.6-sol+adaptive-r46",
+      "stage": "refined",
+      "note": "可公开的研究案例：同一张高质量和纸素材和同一画布贯穿五个非均匀工序状态，证明语义状态不等于固定页面数量。",
+      "tags": [
+        "木版套印",
+        "同一主体",
+        "五状态",
+        "自适应结构",
+        "研究案例"
+      ],
+      "generatedAt": "2026-08-28T12:54:31.304Z",
+      "archivedAt": "2026-08-28T12:54:31.304Z",
+      "previewUrl": "/cases/dedicated-woodblock-adaptive-r46/",
+      "presentation": {
+        "assetUrl": "/creative-assets/r31-woodblock/washi-final-print-v1.png",
+        "kind": "subject",
+        "fit": "contain",
+        "position": "50% 50%",
+        "opacity": 1,
+        "tone": "linear-gradient(135deg, #e8d7b8 0%, #b98c59 52%, #4b6274 100%)"
+      }
+    },
+    {
+      "id": "dedicated-53ab257bae4f",
+      "title": "发酵观察工作台 · 滚动推演版",
+      "brief": "为社区烘焙学习者设计一个明亮的发酵观察工作台。持续展示同一只透明发酵罐，用户调整室温、面团含水率和发酵时间时，罐内面团体积、气泡密度、表面张力与颜色同步变化，并用清楚文字解释当前状态；所有结果明确标注为教学估算，最终行动是“保存这份烘焙计划”。使用自然日光、麦粉白、亚麻、浅木与发酵琥珀色，不要暗色科技风、紫色霓虹、巨大标题、随机粒子或电影式长滚动。页面结构按这个产品需要决定，不固定三屏或四屏。",
+      "model": "gpt-5.6-sol",
+      "stage": "refined",
+      "parentId": "dedicated-9850596d220a",
+      "note": "同一透明发酵罐由鼠标滚轮或触控板连续驱动时间、主体、数值与教学建议；按钮和滑块保留为等价控制。",
+      "tags": [
+        "明亮界面",
+        "滚动推演",
+        "状态映射",
+        "素材驱动",
+        "教学工作台"
+      ],
+      "generatedAt": "2026-08-29T07:28:44.133Z",
+      "archivedAt": "2026-08-29T08:11:47.273Z",
+      "previewUrl": "/cases/dedicated-53ab257bae4f/",
+      "presentation": {
+        "assetUrl": "/creative-assets/r68-fermentation-jar-three-state-v1.png",
+        "kind": "subject",
+        "fit": "contain",
+        "position": "50% 50%",
+        "opacity": 1,
+        "tone": "linear-gradient(135deg, #f7f1e5, #e3d2bb)"
+      }
+    },
+    {
+      "id": "dedicated-tree-canopy-final-r82",
+      "title": "树冠降温观察站 · 真实环境联动最终版",
+      "brief": "为城市居民设计一座“树冠降温观察站”的明亮互动网页。持续展示同一段真实感街道树冠与路面剖面；自动演示从清晨到正午再到浇灌后的温度变化，鼠标滚轮驱动同一时间线，树冠密度和浇水量控件可随时接管并停止演示。界面同步显示树荫范围、路面温度和蒸腾说明，最后行动为“保存这次降温方案”。使用自然日光、植物绿、浅石灰和市政图册式排版，业务先于特效，不要暗色科技风、巨大标题、随机粒子或固定三屏。",
+      "model": "gpt-5.6-sol+direct-r82",
+      "stage": "refined",
+      "parentId": "dedicated-d436653c3b9a",
+      "note": "真实街道树冠素材承担主体识别，Three.js 只叠加树荫、热场与补水反馈；自动演示、真实滚轮和直接控件共享同一状态。桌面与 390px 移动端浏览器验收通过。",
+      "tags": [
+        "真实环境素材",
+        "Three.js",
+        "滚轮联动",
+        "直接控件",
+        "移动端",
+        "最终效果"
+      ],
+      "generatedAt": "2026-08-29T13:31:41.776Z",
+      "archivedAt": "2026-08-29T13:35:00.104Z",
+      "previewUrl": "/cases/dedicated-tree-canopy-final-r82/",
+      "presentation": {
+        "assetUrl": "/creative-assets/r82-tree-canopy/street-canopy-hero-v1.png",
+        "kind": "environment",
+        "fit": "cover",
+        "position": "56% 50%",
+        "opacity": 0.96,
+        "tone": "linear-gradient(135deg, #172418 0%, #5e744e 55%, #d9cead 100%)"
+      }
+    },
+    {
+      "id": "dedicated-beed36a85788",
+      "title": "晨露屋顶温室",
+      "brief": "为一座城市屋顶温室设计清晨观察网页。滚动时视角从结露玻璃外穿入温室，前景水滴、中景番茄藤和后景城市天际线产生真实视差；拖动湿度后，叶片凝露覆盖范围同步变化，最后保存今日温室记录。明亮自然，不要科技风。",
+      "model": "gpt-5.6-terra",
+      "stage": "refined",
+      "note": "V2 R84 分层场景验证：同源主图、真实 Alpha 中景、程序化露珠前景与深度场共同承担滚动视差；湿度控件和保存反馈已在桌面、手机与 reduced-motion 下验收。",
+      "tags": [
+        "layered-2d",
+        "parallax",
+        "humidity-state",
+        "responsive",
+        "asset-pack"
+      ],
+      "generatedAt": "2026-08-29T14:52:25.262Z",
+      "archivedAt": "2026-08-29T15:13:46.824Z",
+      "previewUrl": "/cases/dedicated-beed36a85788/",
+      "presentation": {
+        "assetUrl": "/creative-assets/r84-rooftop-greenhouse/greenhouse-master-v1.png",
+        "kind": "environment",
+        "fit": "cover",
+        "position": "50% 50%",
+        "opacity": 0.92,
+        "tone": "linear-gradient(135deg, #eef0df 0%, #cfd8c4 48%, #6f826c 100%)"
+      }
+    },
+    {
+      "id": "dedicated-b4d381a24320",
+      "title": "云杉音板调校台 · 视觉与声学因果联动",
+      "brief": "为手工制琴师设计一张暖白工坊天光下的音板调校网页。左右对比基准厚度与当前厚度，工作区持续展示同一块云杉音板；拖动厚度滑杆时，音板弯曲模态、节点纹路与局部挠度必须在同一主体上同步变化，频率数据与风险解释随之更新，最后行动是“保存本次调校方案”。所有结果明确标为教学模拟。界面像制琴师的测量记录与木工台，不要暗色科技风、巨大标题、随机粒子、发光声波、中央悬浮产品或固定三屏。",
+      "model": "gpt-5.6-terra",
+      "stage": "featured",
+      "parentId": "dedicated-b4d381a24320",
+      "note": "R96 精选最终版：同一块云杉音板在自然工坊天光下持续呈现；滚轮演示、滑杆人工接管、频率/局部挠度/风险解释、Web Audio A/B 敲击与连续对比共享同一因果状态。声音为明确标注的教学模拟，并提供静音、音量与无 AudioContext 降级。机械验收 100，独立 Codex 视觉验收 91。",
+      "tags": [
+        "真实生成素材",
+        "同一主体",
+        "滚轮联动",
+        "滑杆接管",
+        "Web Audio",
+        "A/B 声音对比",
+        "产品语义反馈",
+        "Canvas",
+        "移动端",
+        "教学模拟",
+        "最终效果"
+      ],
+      "generatedAt": "2026-08-29T21:05:27.854Z",
+      "archivedAt": "2026-08-29T22:12:12.231Z",
+      "previewUrl": "/cases/dedicated-b4d381a24320/",
+      "presentation": {
+        "assetUrl": "/creative-assets/r94-luthier-soundboard-final-cover.jpg",
+        "kind": "environment",
+        "fit": "cover",
+        "position": "50% 50%",
+        "opacity": 0.96,
+        "tone": "linear-gradient(135deg, #5d5141 0%, #cdbda1 52%, #f3ede2 100%)"
+      }
+    },
+    {
+      "id": "dedicated-braille-r121-repair",
+      "title": "六点光穹 · 盲文触觉星座练习场",
+      "brief": "为盲文初学者设计一座明亮的“六点光穹”触觉星座练习网页。首屏持续展示同一组六个具有实体高度和柔和投影的圆顶触点；选择 A、L、T 三个练习字母时，正确点位在同一阵列中升起或落下，连接光带、点位编号和简短说明同步变化。点击与键盘方向键都能切换同一状态，最后行动是“保存今日点阵练习”。明确说明这是视觉教学演示，不能替代真实触读训练。使用暖白、钴蓝、珊瑚红和柔和实体阴影；用程序化 DOM、Canvas 或 Three.js 构建主体，不需要外部照片。不要暗色科技界面、随机粒子、数据仪表盘、长滚动章节或只改文字不改主体。",
+      "model": "deterministic-r121-repair",
+      "stage": "featured",
+      "parentId": "dedicated-62215947bbff",
+      "note": "R121 Beta 主链路正式验收最终版：同一组六点圆顶随 A、L、T 选择同步改变触点高度、连接光带、点位编号与结果说明；桌面、390px、键盘及 reduced-motion 路径通过。机械验收 100，独立视觉验收 92；素材恢复不适用。",
+      "tags": [
+        "V2",
+        "Beta主链路",
+        "盲文教学",
+        "同一主体",
+        "语义交互",
+        "键盘",
+        "390px",
+        "reduced-motion",
+        "程序化DOM"
+      ],
+      "generatedAt": "2026-08-31T06:21:11.015Z",
+      "archivedAt": "2026-08-31T06:25:36.210Z",
+      "previewUrl": "/cases/dedicated-braille-r121-repair/",
+      "presentation": {
+        "assetUrl": "/creative-assets/r121-braille-light-dome/opening.jpg",
+        "kind": "environment",
+        "fit": "cover",
+        "position": "50% 50%",
+        "opacity": 1,
+        "tone": "linear-gradient(135deg, #f8f3e9 0%, #dfe5ee 54%, #ec6658 100%)"
+      }
     }
   ]
 }

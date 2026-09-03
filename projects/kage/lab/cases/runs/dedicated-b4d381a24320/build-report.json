@@ -1,0 +1,711 @@
+{
+  "receipt": {
+    "id": "dedicated-b4d381a24320",
+    "provider": "codex",
+    "model": "gpt-5.6-terra",
+    "status": "compiled",
+    "previewUrl": "/generated-runs/dedicated-b4d381a24320/",
+    "generatedAt": "2026-08-29T21:05:27.854Z",
+    "files": 4,
+    "assets": 1,
+    "sourceBytes": 10421,
+    "hasShaders": false,
+    "compileMs": 455,
+    "attempts": 1,
+    "directory": "generated/runs/dedicated-b4d381a24320"
+  },
+  "request": {
+    "brief": "为手工制琴师设计一张暖白工坊天光下的音板调校网页。左右对比基准厚度与当前厚度，工作区持续展示同一块云杉音板；拖动厚度滑杆时，音板弯曲模态、节点纹路与局部挠度必须在同一主体上同步变化，频率数据与风险解释随之更新，最后行动是“保存本次调校方案”。所有结果明确标为教学模拟。界面像制琴师的测量记录与木工台，不要暗色科技风、巨大标题、随机粒子、发光声波、中央悬浮产品或固定三屏。",
+    "seed": 92,
+    "quality": "high",
+    "runId": "run-i8jno2",
+    "selectedId": "generated-1q4oq03-focused-hero",
+    "creativeContract": {
+      "schemaVersion": 2,
+      "id": "contract-1tm2cya",
+      "brief": "为手工制琴师设计一张暖白工坊天光下的音板调校网页。左右对比基准厚度与当前厚度，工作区持续展示同一块云杉音板；拖动厚度滑杆时，音板弯曲模态、节点纹路与局部挠度必须在同一主体上同步变化，频率数据与风险解释随之更新，最后行动是“保存本次调校方案”。所有结果明确标为教学模拟。界面像制琴师的测量记录与木工台，不要暗色科技风、巨大标题、随机粒子、发光声波、中央悬浮产品或固定三屏。",
+      "intent": {
+        "subject": "暖白工坊天光下的音板调校",
+        "audience": "手工制琴师",
+        "desiredFeeling": "清晰、可信并具有独特记忆点",
+        "narrativeChange": "从编辑式留白进入主体显现，最后形成有张力的整体构图。",
+        "primaryAction": "保存本次调校方案",
+        "negativeConstraints": [
+          "界面像制琴师的测量记录与木工台，不要暗色科技风、巨大标题、随机粒子、发光声波、中央悬浮产品或固定三屏"
+        ]
+      },
+      "referenceEvidence": [
+        {
+          "referenceId": "kage-paper-restoration",
+          "title": "纸张修复工坊 · 证据驱动的同一对象变化",
+          "sourceUrl": "../cases/dedicated-7c944e0c386f/",
+          "evidenceLevel": "runtime-verified",
+          "relevance": "命中 手工。 支持 editorial-field 体验模式。 来自已归档并经过浏览器验证的本地最终案例。",
+          "borrow": [
+            "同一页文献在近距离纤维、补纸与复读证据之间变化，过程证据比抽象氛围更重要。",
+            "滚动推进修复步骤，但每一步都必须能指出同一对象上的具体变化。",
+            "破损态与修复态素材共享纸页形状、光线和工作台坐标，Three.js 只解释纤维与裂缝。"
+          ],
+          "avoid": [
+            "不要用互不相关的旧纸图片，也不要让暖色氛围替代可读的修复证据。"
+          ]
+        },
+        {
+          "referenceId": "kage-cloud-observatory",
+          "title": "云上观测站 · 连续空间旅程",
+          "sourceUrl": "../cases/dedicated-896cfb7e6657/",
+          "evidenceLevel": "runtime-verified",
+          "relevance": "命中 云。 来自已归档并经过浏览器验证的本地最终案例。",
+          "borrow": [
+            "外景、入口与内部终点形成连续空间坐标，镜头推进负责解释位置关系。",
+            "滚动完成接近、穿越和展开，远景、中景与终局停留具有明确职责。",
+            "连续环境素材必须共享地点、机位逻辑、天气和色彩，不能只是三个独立概念图。"
+          ],
+          "avoid": [
+            "不要用持续前推代替空间叙事，也不要让每一屏更换无关联场所。"
+          ]
+        },
+        {
+          "referenceId": "motionsites-interactive-discovery",
+          "title": "MotionSites · Interactive Discovery",
+          "sourceUrl": "https://motionsites.ai/?prompt=interactive-discovery",
+          "evidenceLevel": "catalog-metadata",
+          "relevance": "支持 editorial-field 体验模式。 只作为外部目录方向信号，不当作实现已验证。",
+          "borrow": [
+            "目录证据表明它属于交互式 Hero，可作为“首屏即发生探索”的方向索引。",
+            "只借鉴交互发现的节奏命题；未取得完整提示词前不推断具体动画实现。",
+            "外部目录只提供方向信号，具体素材策略必须由当前 brief 和本地运行证据决定。"
+          ],
+          "avoid": [
+            "不要把目录缩略图或未知提示词当成已经验证的 Three.js 实现。"
+          ]
+        }
+      ],
+      "experience": {
+        "pattern": "editorial-field",
+        "structure": {
+          "mode": "interactive-field",
+          "segmentPolicy": "content-derived",
+          "layoutRule": "同一主体、参数控制、可见结果、解释和最终行动保持在一个持续实验工作区；参数状态不是分页，也不按固定屏数展开。"
+        },
+        "thesis": "把暖白工坊天光下的音板调校变成可操作、可观察且诚实标注的模拟实验；每次输入都必须在同一主体或场景中形成可归因结果。",
+        "focalSubject": "暖白工坊天光下的音板调校",
+        "continuityRule": "始终保持同一主体、观察坐标与环境基线；只允许合同声明的参数、可见结果、解释和比较状态同步变化。",
+        "typographyRole": "DOM 承担参数、结果、模拟说明和最终行动；Canvas 或 Three.js 承担同一主体、空间关系和可见因果反馈。",
+        "beats": [
+          {
+            "id": "simulation-baseline",
+            "position": 0,
+            "purpose": "establish",
+            "visibleState": "同一主体、环境基线和初始参数建立可辨认的实验坐标。",
+            "userProgression": "确认对象和初始状态，开始调整主要参数。"
+          },
+          {
+            "id": "causal-response",
+            "position": 0.56,
+            "purpose": "transform",
+            "visibleState": "主要参数同步改变同一主体或场景、可见结果与解释，变化无需依赖数字也能辨认。",
+            "userProgression": "调整或比较状态，并核对画面与结果是否一致。"
+          },
+          {
+            "id": "observation-saved",
+            "position": 1,
+            "purpose": "resolve",
+            "visibleState": "当前模拟保持最终状态、结果摘要和诚实说明，并给出“保存本次调校方案”。",
+            "userProgression": "核对模拟结果后完成最终行动。"
+          }
+        ],
+        "pointerRole": "指针、触摸和键盘直接调整参数或比较状态；所有输入必须同步改变主体/场景、结果和解释，禁止装饰性跟随。",
+        "reducedMotion": "参数变化直接切换或短暂插值到目标状态，停止自动相机与持续漂移，但保留完整控制、结果、解释和行动。",
+        "finalMemoryPoint": "保存本次调校方案"
+      },
+      "visualAnchor": {
+        "subject": "持续表现同一“音板”从初始状态到结构变化完成的可辨认过程。",
+        "relationshipToBrief": "视觉锚点必须直接证明“暖白工坊天光下的音板调校”和“把暖白工坊天光下的音板调校变成可操作、可观察且诚实标注的模拟实验；每次输入都必须在同一主体或场景中形成可归因结果。”；即使隐藏标题，也能从对象、空间或数据关系辨认主题。",
+        "heroRole": "primary-subject",
+        "source": "hybrid",
+        "interactionBinding": "视觉锚点沿体验节点连续承担建立、变化与“保存本次调校方案”收束，不得在中段被无关装饰替换。",
+        "fallback": "增强层不可用时，保留同一“暖白工坊天光下的音板调校”的静态主题表示、完整语义内容和主要行动；不得回退为通用网格或空背景。"
+      },
+      "assets": [
+        {
+          "id": "causal-simulation-field",
+          "role": "subject",
+          "modality": "procedural",
+          "required": false,
+          "minimumQuality": "L3-presentable",
+          "sourcePriority": [
+            "procedural"
+          ],
+          "visualResponsibility": "构建无需标题即可辨认的暖白工坊天光下的音板调校，并让主要参数在同一主体或场景中形成明确可见结果。",
+          "continuityRule": "所有状态共享同一主体、观察坐标和环境基线；不得用换图、文案、箭头或随机装饰冒充状态变化。",
+          "integration": "native-procedural",
+          "visibleProof": "操作主要参数后，显式视觉锚点、结果值和解释同时变化；移动端可完成同一任务。",
+          "fallback": "procedural-atmosphere"
+        },
+        {
+          "id": "state-subject",
+          "role": "subject",
+          "modality": "image-sequence",
+          "required": true,
+          "minimumQuality": "L3-presentable",
+          "sourcePriority": [
+            "user-supplied",
+            "curated-library",
+            "licensed",
+            "primary-image-model",
+            "minimax-fallback"
+          ],
+          "visualResponsibility": "持续表现同一“音板”从初始状态到结构变化完成的可辨认过程。",
+          "continuityRule": "至少 3 个状态必须共享同一对象身份、尺度、观察关系与光线；可分部件不少于 1 组。",
+          "integration": "full-bleed-environment",
+          "visibleProof": "关键截图能够直接指出同一主体的初始、变化中和完成状态，不能只依赖裁切、箭头或说明文字。",
+          "fallback": "block"
+        }
+      ],
+      "direction": {
+        "visualRole": "subject",
+        "mechanisms": [
+          {
+            "id": "subject-specimen-field",
+            "title": "主体标本场",
+            "evidenceLevel": "E4",
+            "job": "围绕独立主体和安全区组织排版，让对象始终保持识别和呼吸空间。",
+            "reason": "匹配独立主体的主要视觉职责。 支持 editorial-field 体验。 命中“产品、主体”。",
+            "sourceCaseIds": [
+              "sports-ai-subject-field"
+            ]
+          },
+          {
+            "id": "state-storyboard",
+            "title": "状态故事板",
+            "evidenceLevel": "E4",
+            "job": "用连续的视觉状态分配页面节奏，每个状态只承担一个叙事动词。",
+            "reason": "匹配独立主体的主要视觉职责。 命中“变化、最后”。",
+            "sourceCaseIds": [
+              "plety-media-storyboard",
+              "igloo-cinematic-deconstruction"
+            ]
+          },
+          {
+            "id": "branded-media-mask",
+            "title": "品牌蒙版",
+            "evidenceLevel": "E4",
+            "job": "让品牌字形或有语义的轮廓成为媒体容器，并与证据内容共同构图。",
+            "reason": "匹配独立主体的主要视觉职责。 支持 editorial-field 体验。 命中“数据”。",
+            "sourceCaseIds": [
+              "harvest-masked-statistics"
+            ]
+          }
+        ],
+        "interaction": {
+          "primaryInput": "scroll",
+          "semanticAction": "滚动调整主体、证据和文字的编辑式焦点。",
+          "pointerRole": "secondary",
+          "touchAlternative": "触摸滚动保持同一状态顺序；取消只依赖悬停的内容。",
+          "keyboardAlternative": "提供跳转到关键状态的语义锚点，并保持自然文档阅读顺序。"
+        },
+        "renderer": {
+          "baseLayer": "semantic-dom",
+          "route": "dom-media-hybrid",
+          "enhancement": "media",
+          "reason": "连续媒体已能承担环境或状态变化，不额外引入完整 Three.js 场景。",
+          "threeJustification": "没有必须由真实三维深度、相机或模型状态解决的职责。",
+          "fallback": "使用稳定关键帧和交叉淡化保留相同叙事顺序。"
+        },
+        "rejectedMechanisms": [
+          {
+            "id": "cinematic-3d-deconstruction",
+            "reason": "缺少真实可检查模型，不能伪造三维拆解。"
+          },
+          {
+            "id": "pointer-reveal",
+            "reason": "目标没有要求通过指针发现信息，鼠标仅保留轻量反馈。"
+          },
+          {
+            "id": "sticky-archive-stack",
+            "reason": "当前核心不是一组并列档案，不使用长堆叠拖慢叙事。"
+          }
+        ],
+        "decisionSummary": "以独立主体承担主要视觉，用主体标本场、状态故事板、品牌蒙版组织变化；连续媒体已能承担环境或状态变化，不额外引入完整 Three.js 场景。"
+      },
+      "technical": {
+        "presentationStrategy": "procedural-field",
+        "capabilitySelection": {
+          "selected": false,
+          "capabilityId": null,
+          "score": 31,
+          "reasons": [
+            "体验模式 editorial-field 不是该能力的优先路线。",
+            "目标命中 变化 等连续叙事信号。",
+            "素材计划提供了可映射到滚动状态的连续媒体。"
+          ],
+          "blockers": [],
+          "contract": null
+        },
+        "articulatedSubject": {
+          "selected": false,
+          "capabilityId": null,
+          "score": 12,
+          "reasons": [
+            "主体没有明确的抽象或程序化构造语义。",
+            "没有需要部件承担的结构变化。",
+            "没有可建立拓扑关系的部件描述。",
+            "体验模式 editorial-field 支持单一主体连续变化。"
+          ],
+          "blockers": [],
+          "contract": null
+        },
+        "stateAssetStrategy": {
+          "required": true,
+          "changeKind": "structural-deformation",
+          "route": "continuous-media-or-layered-subject",
+          "acceptedModalities": [
+            "image-sequence",
+            "transparent-image",
+            "model-3d"
+          ],
+          "minimumDistinctStates": 3,
+          "minimumPartGroups": 1,
+          "failurePolicy": "block-authoring",
+          "reason": "目标要求同一实体产生可观察的结构变化；需要连续一致的多状态媒体、可分层主体或可检查模型，单张静态图只能承担环境和气氛。"
+        },
+        "sceneComposition": {
+          "schemaVersion": 1,
+          "route": "single-image-hybrid",
+          "required": false,
+          "requiredLayers": [
+            "environment"
+          ],
+          "minimumIndependentLayers": 1,
+          "stateBinding": "tint-and-camera",
+          "failurePolicy": "continue-with-declared-fallback",
+          "fallbackRoute": "dom-only",
+          "reason": "当前合同已由程序化场景承担主体状态；场景构成路由不再追加外部图片分层，避免覆盖既有 Three.js 能力。"
+        },
+        "semanticInteraction": {
+          "selected": false,
+          "capabilityId": null,
+          "score": 34,
+          "matchedSignals": [
+            "变化"
+          ],
+          "reasons": [
+            "目标命中“变化”等信息关系信号。",
+            "当前体验模式或素材职责不足以证明交互必须存在。",
+            "现有导演决策只需要滚动推进，不额外增加主要交互。"
+          ],
+          "blockers": [],
+          "evaluatedCapability": {
+            "id": "semantic-responsive-interaction",
+            "evidenceLevel": "E4",
+            "state": "validated",
+            "problem": "装饰性鼠标动效不能帮助用户理解内容，也无法稳定迁移到触摸、键盘和减少动态效果环境。",
+            "meaning": "滚动选择证据层，时间选择改变海岸形态和数字，指针只在局部揭示相对于基准年已经消失的土地。",
+            "inputs": [
+              "scroll",
+              "pointer",
+              "touch",
+              "keyboard"
+            ],
+            "outputs": [
+              "scene-shape",
+              "evidence-value",
+              "narrative-layer",
+              "selection-state"
+            ],
+            "baseInterface": "语义 DOM 始终提供年代按钮、损失数字、解释文字和当前状态，不依赖 WebGL 完成比较。",
+            "enhancedInterface": "WebGL 把年代选择映射为同一海岸场的连续形变，并让局部证据透镜显示相对损失范围。",
+            "reducedMotionRule": "减少动态效果时立即切换到目标年代和阶段，停止连续漂移，但保留所有数值和比较结果。",
+            "rejectionRules": [
+              "移除交互后信息理解完全不变时拒绝晋级。",
+              "触摸、键盘或无 WebGL 回退无法完成比较时拒绝晋级。"
+            ],
+            "evidence": [
+              {
+                "id": "coast-1984",
+                "year": 1984,
+                "label": "基准海岸",
+                "lossSquareKilometers": 0,
+                "retreatMeters": 0,
+                "relativeWaterCentimeters": 0,
+                "sceneMorph": 0,
+                "summary": "沙洲仍然连续，潮沟尚未切断内侧湿地。"
+              },
+              {
+                "id": "coast-2004",
+                "year": 2004,
+                "label": "潮沟扩张",
+                "lossSquareKilometers": 3.2,
+                "retreatMeters": 186,
+                "relativeWaterCentimeters": 8,
+                "sceneMorph": 0.5,
+                "summary": "外侧沙洲变薄，新的潮沟开始把湿地分成孤立片区。"
+              },
+              {
+                "id": "coast-2026",
+                "year": 2026,
+                "label": "临界断面",
+                "lossSquareKilometers": 8.7,
+                "retreatMeters": 421,
+                "relativeWaterCentimeters": 17,
+                "sceneMorph": 1,
+                "summary": "连续岸线已经断裂，曾经被遮蔽的社区直接面对风暴潮。"
+              }
+            ]
+          }
+        },
+        "interactionDriver": {
+          "selected": false,
+          "capabilityId": null,
+          "score": 48,
+          "requestedModes": [
+            "manual",
+            "scroll"
+          ],
+          "matchedSignals": [
+            "scroll",
+            "manual"
+          ],
+          "reasons": [
+            "目标同时请求 manual、scroll 驱动。",
+            "目标没有明确请求自动演示，禁止为了展示能力而自行加入。",
+            "没有语义交互职责时，多源输入仍不得退化为无意义镜头运动。"
+          ],
+          "blockers": [],
+          "authoringContract": null,
+          "evaluatedCapability": {
+            "id": "shared-state-interaction-driver",
+            "evidenceLevel": "E4",
+            "state": "validated",
+            "sourceCaseId": "wind-tunnel-r78",
+            "problem": "自动演示、滚轮进度和直接控件各自维护状态时，画面、数值和操作会互相打架，用户也无法判断当前由谁控制。",
+            "meaning": "多个明确请求的输入源只写入一个规范化状态；主体、场景、语义结果和进度显示从同一状态派生，第一次人工输入立即接管自动演示。",
+            "rejectionRules": [
+              "brief 只要求一种输入方式时不得加入额外演示或滚轮接管。",
+              "自动演示无法播放、暂停、重置或在人工输入后停止时拒绝使用。",
+              "状态只改变数字或说明文字而没有改变主体和场景时拒绝晋级。"
+            ]
+          }
+        },
+        "identityEvidence": {
+          "selected": false,
+          "score": 0,
+          "reason": "拒绝：缺少同时指向身份与证据的明确目标。",
+          "rejectedBy": [],
+          "matchedSignals": [],
+          "capabilityId": null
+        },
+        "placeGrounding": {
+          "selected": false,
+          "capabilityId": null,
+          "strategy": "none",
+          "score": 0,
+          "matchedSignals": [],
+          "reasons": [
+            "目标没有要求地点事实、空间关系或地域来源，不应为了视觉效果强行加入地图。",
+            "继续由主题、素材和交互目标选择最小充分技术路线。"
+          ],
+          "requirements": {
+            "geography": "not-applicable",
+            "map": "avoid",
+            "dataTruth": "不引入与目标无关的地点、地图或路线事实。",
+            "creativeFreedom": "围绕主体、受众、情绪变化和最终行动选择表达，不增加地域模板。"
+          }
+        },
+        "styleDiversity": {
+          "fingerprint": {
+            "composition": "split-stage",
+            "palette": "warm-material",
+            "motion": "direct-manipulation",
+            "spatial": "data-field",
+            "typography": "mono-instrument",
+            "media": "canvas-2d"
+          },
+          "nearestCaseId": "dedicated-7c944e0c386f",
+          "nearestDistance": 4,
+          "minimumDifferentAxes": 2,
+          "mustDifferOn": [
+            "motion",
+            "spatial",
+            "typography",
+            "media"
+          ],
+          "avoidRepeating": [
+            "不要默认复用暗色全屏背景、中央主体和巨型标题的组合。",
+            "不要把滚动淡入、漂浮粒子和柔光当成所有主题的通用答案。",
+            "不得复刻最相近案例 dedicated-7c944e0c386f 的整体构图和运动语法。"
+          ],
+          "rationale": "本方向与最相近案例 dedicated-7c944e0c386f 在 4 个风格轴上不同；差异是生成约束，不是固定模板。"
+        },
+        "domResponsibilities": [
+          "承载可阅读内容、导航和最终行动。",
+          "在 WebGL 不可用时保留完整语义顺序。"
+        ],
+        "webglResponsibilities": [
+          "承载空间记忆、镜头关系和连续状态变化。",
+          "让素材融入环境并提供克制的交互反馈。"
+        ],
+        "targetFrameTimeMs": 16.7,
+        "maxInitialAssetBytes": 8000000,
+        "targetDevices": [
+          "desktop",
+          "mobile"
+        ]
+      },
+      "acceptance": [
+        {
+          "id": "intent-visible",
+          "priority": "blocker",
+          "assertion": "首屏和终点能够对应原始主体、情绪变化和最终行动；不了解行业背景的用户也能在约 10 秒内识别核心对象、可执行操作和操作后的业务结果。",
+          "evidence": "screenshot-ending"
+        },
+        {
+          "id": "visual-anchor-specific",
+          "priority": "blocker",
+          "assertion": "首屏存在与 brief 直接相关且无需依赖标题即可辨认的视觉锚点；纯色、通用网格、无主题依据的渐变、随机粒子或无关几何不能单独充当主视觉。",
+          "evidence": "screenshot-opening"
+        },
+        {
+          "id": "asset-visible",
+          "priority": "blocker",
+          "assertion": "所有 required 素材都已成功请求，并在声明状态承担可辨认的视觉职责。",
+          "evidence": "asset-request"
+        },
+        {
+          "id": "opening-composed",
+          "priority": "high",
+          "assertion": "首屏存在明确主体和空间坐标，没有空黑屏、文字裁切或主体被遮挡。",
+          "evidence": "screenshot-opening"
+        },
+        {
+          "id": "process-causal",
+          "priority": "blocker",
+          "assertion": "主要输入、主要参数或高层操作必须通过同一目标状态依次驱动 data-signal-visual-anchor 中同一主体的可见变化、data-signal-primary-result 的业务结果与 data-signal-primary-action 的最终行动；真实滑杆、按钮或选择器还必须标记 data-signal-primary-control。文案、数字、active class、裁切跳变、镜头切换、整体缩放、透明度或模糊不能冒充因果变化。",
+          "evidence": "screenshot-beat"
+        },
+        {
+          "id": "semantic-state-consistent",
+          "priority": "high",
+          "assertion": "交互控件、可见数值、汇总值、结果解释和主体状态必须来自同一目标状态；专业指标或简化估算必须诚实标注并保持声明约束，不能作为虚假真实性装饰。",
+          "evidence": "runtime"
+        },
+        {
+          "id": "borderless-integration",
+          "priority": "high",
+          "assertion": "主体和环境没有棋盘格、矩形图片边界或不自然的发光方框。",
+          "evidence": "screenshot-beat"
+        },
+        {
+          "id": "mobile-readable",
+          "priority": "blocker",
+          "assertion": "390px 移动端无横向溢出；主体、正文和行动可见，并能沿纵向完成与桌面等价的主要控件→结果→最终行动路径，不能只保留桌面工作区的裁切局部。",
+          "evidence": "screenshot-mobile"
+        },
+        {
+          "id": "semantic-fallback",
+          "priority": "normal",
+          "assertion": "关闭 WebGL 或减少运动后仍保留完整内容顺序和行动。",
+          "evidence": "dom"
+        },
+        {
+          "id": "runtime-clean",
+          "priority": "blocker",
+          "assertion": "页面无阻断脚本错误，关键素材请求成功，滚动和指针输入可用。",
+          "evidence": "runtime"
+        }
+      ],
+      "executionLimits": {
+        "authoringPasses": 1,
+        "assetBatches": 1,
+        "refinementPasses": 1,
+        "stopAfterMinutes": 15,
+        "archivePolicy": "best-result-only"
+      }
+    },
+    "reference": {
+      "title": "为手工制琴师设计一张暖白工坊天光下的音板调校… · 单镜凝视",
+      "summary": "把主体压缩为一次连续、可记忆的视觉变化。",
+      "scenePlugin": "signal-world",
+      "productionStatus": "adapted",
+      "theme": {
+        "deep": "#08131f",
+        "surface": "#102536",
+        "text": "#ecf8ef",
+        "muted": "#9ab3b5",
+        "accent": "#79e7c4",
+        "accentSoft": "#f0c88d"
+      },
+      "assets": [
+        {
+          "id": "asset-22b7fff5e0a6259f",
+          "uri": "/creative-assets/r92-luthier-soundboard-state-atlas-v1.png",
+          "bundlePath": "assets/asset-22b7fff5e0a6259f.png",
+          "kind": "image",
+          "source": "chatgpt-generated",
+          "qualityLevel": "L3-presentable",
+          "role": "subject: 持续表现同一“音板”从初始状态到结构变化完成的可辨认过程。",
+          "description": "Codex codex-agent 已审阅：高质量暖白工坊三状态图集，持续展示同一块云杉音板的基准、节点纹路形成与调校完成状态。 至少 3 个状态必须共享同一对象身份、尺度、观察关系与光线；可分部件不少于 1 组。",
+          "payloadBytes": 2443354,
+          "features": {
+            "alpha": "none",
+            "depth": "none"
+          },
+          "required": true,
+          "experience": {
+            "anchor": 0.5,
+            "function": "persistent",
+            "visualState": "高质量暖白工坊三状态图集，持续展示同一块云杉音板的基准、节点纹路形成与调校完成状态。",
+            "continuity": "三格共享音板轮廓、纵向木纹、机位、比例、工作台孔位、工具与日光；仅节点粉末和细部调校证据变化。",
+            "integration": "full-bleed-environment",
+            "stateEvidence": {
+              "mode": "sequence",
+              "distinctStates": 3,
+              "partGroups": 1,
+              "continuityKey": "r92-spruce-soundboard-fixed-camera-v1",
+              "proof": "三格完整保留同一音板与工坊关系，可逐格核对轮廓、木纹和固定视角。"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "mediaDominance": {
+    "schemaVersion": 1,
+    "decision": "ready",
+    "route": "dom-media-hybrid",
+    "highQualityAssetIds": [
+      "asset-22b7fff5e0a6259f"
+    ],
+    "subjectPrimitiveCount": 0,
+    "subjectPrimitiveScore": 0,
+    "constructors": {},
+    "summary": "媒体主导权门禁通过：L3/L4 素材保持主导，程序化几何没有达到主体重建阈值。"
+  },
+  "usedAssets": [
+    {
+      "id": "asset-22b7fff5e0a6259f",
+      "uri": "/creative-assets/r92-luthier-soundboard-state-atlas-v1.png",
+      "bundlePath": "assets/asset-22b7fff5e0a6259f.png",
+      "kind": "image",
+      "source": "chatgpt-generated",
+      "qualityLevel": "L3-presentable",
+      "role": "subject: 持续表现同一“音板”从初始状态到结构变化完成的可辨认过程。",
+      "description": "Codex codex-agent 已审阅：高质量暖白工坊三状态图集，持续展示同一块云杉音板的基准、节点纹路形成与调校完成状态。 至少 3 个状态必须共享同一对象身份、尺度、观察关系与光线；可分部件不少于 1 组。",
+      "payloadBytes": 2443354,
+      "features": {
+        "alpha": "none",
+        "depth": "none"
+      },
+      "required": true,
+      "experience": {
+        "anchor": 0.5,
+        "function": "persistent",
+        "visualState": "高质量暖白工坊三状态图集，持续展示同一块云杉音板的基准、节点纹路形成与调校完成状态。",
+        "continuity": "三格共享音板轮廓、纵向木纹、机位、比例、工作台孔位、工具与日光；仅节点粉末和细部调校证据变化。",
+        "integration": "full-bleed-environment",
+        "stateEvidence": {
+          "mode": "sequence",
+          "distinctStates": 3,
+          "partGroups": 1,
+          "continuityKey": "r92-spruce-soundboard-fixed-camera-v1",
+          "proof": "三格完整保留同一音板与工坊关系，可逐格核对轮廓、木纹和固定视角。"
+        }
+      }
+    }
+  ],
+  "refinement": {
+    "status": "rejected",
+    "parentId": "dedicated-b4d381a24320",
+    "receipt": {
+      "id": "dedicated-b4d381a24320",
+      "provider": "codex",
+      "model": "gpt-5.6-terra",
+      "status": "compiled",
+      "previewUrl": "/generated-runs/dedicated-b4d381a24320/",
+      "generatedAt": "2026-08-29T21:05:27.854Z",
+      "files": 4,
+      "assets": 1,
+      "sourceBytes": 10421,
+      "hasShaders": false,
+      "compileMs": 455,
+      "attempts": 1,
+      "directory": "generated/runs/dedicated-b4d381a24320"
+    },
+    "sourceAssessment": {
+      "schemaVersion": 1,
+      "verdict": "pass",
+      "score": 100,
+      "summary": "结构质量门通过；仍需结合截图判断构图、材质、层级与创意完成度。",
+      "findings": [],
+      "observations": []
+    },
+    "finalAssessment": {
+      "schemaVersion": 1,
+      "verdict": "pass",
+      "score": 100,
+      "summary": "结构质量门通过；仍需结合截图判断构图、材质、层级与创意完成度。",
+      "findings": [],
+      "observations": []
+    },
+    "visualAcceptance": {
+      "schemaVersion": 1,
+      "verdict": "revise",
+      "score": 82,
+      "assetRole": "dominant",
+      "dimensions": {
+        "productIntent": 76,
+        "structureFit": 86,
+        "stateContinuity": 88,
+        "visualCohesion": 90,
+        "interactionCausality": 70,
+        "mobileReadiness": 84
+      },
+      "summary": "主体、工坊环境与状态连续性完成度高，移动端路径基本成立；但参数变化的可归因视觉证据偏弱，专业结果与教学模拟说明不够突出，且首屏巨大标题违背 brief 的克制方向。",
+      "findings": [
+        {
+          "code": "feedback-delta-weak",
+          "severity": "major",
+          "frameId": "beat-causal-response",
+          "message": "中段与终段的滑杆、厚度和频率读数基本不变，主体纹路变化过于细微；仅凭截图难以确认主要输入确实造成了结构状态与结果同步变化。"
+        },
+        {
+          "code": "interaction-causality-weak",
+          "severity": "major",
+          "frameId": "beat-causal-response",
+          "message": "可见状态差异主要依赖细线形态和文案/数值，缺少更明确的同一音板局部挠度、节点或厚度变化证据，因果链不够可信。"
+        },
+        {
+          "code": "business-loop-unclear",
+          "severity": "minor",
+          "frameId": "opening",
+          "message": "非行业用户可以识别音板和调校主题，但“用户调整后得到什么业务结果”主要藏在专业参数和小号说明中，教学模拟语义不够醒目。"
+        },
+        {
+          "code": "generic-style-drift",
+          "severity": "minor",
+          "frameId": "opening",
+          "message": "首屏使用非常巨大的标题并占据主要文字层级，与 brief 要求的制琴师测量记录、克制工作台感和避免巨大标题的方向不一致。"
+        },
+        {
+          "code": "mobile-composition-weak",
+          "severity": "minor",
+          "frameId": "mobile",
+          "message": "移动首屏标题覆盖主体并占用较大区域，控制器不在首个视口内；虽然后续移动状态可完成结果与保存行动，但首屏任务入口不够直接。"
+        }
+      ]
+    },
+    "summary": "独立视觉验收已完成；唯一精修未在时限内形成可验证结果，保留原页面并停止：专属代码模型调用超过 45 秒。",
+    "resolved": [],
+    "remaining": [
+      "中段与终段的滑杆、厚度和频率读数基本不变，主体纹路变化过于细微；仅凭截图难以确认主要输入确实造成了结构状态与结果同步变化。",
+      "可见状态差异主要依赖细线形态和文案/数值，缺少更明确的同一音板局部挠度、节点或厚度变化证据，因果链不够可信。",
+      "非行业用户可以识别音板和调校主题，但“用户调整后得到什么业务结果”主要藏在专业参数和小号说明中，教学模拟语义不够醒目。",
+      "首屏使用非常巨大的标题并占据主要文字层级，与 brief 要求的制琴师测量记录、克制工作台感和避免巨大标题的方向不一致。",
+      "移动首屏标题覆盖主体并占用较大区域，控制器不在首个视口内；虽然后续移动状态可完成结果与保存行动，但首屏任务入口不够直接。",
+      "唯一精修停止：专属代码模型调用超过 45 秒。"
+    ],
+    "selectedId": "dedicated-b4d381a24320",
+    "model": "gpt-5.6-sol"
+  }
+}

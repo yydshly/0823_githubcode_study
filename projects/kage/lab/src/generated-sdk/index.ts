@@ -1,4 +1,5 @@
 export type GeneratedQuality = 'high' | 'balanced' | 'low';
+export * from './three-runtime.ts';
 export interface GeneratedViewport { width: number; height: number; dpr: number; }
 export interface GeneratedMountContext {
   container: HTMLElement;
@@ -13,14 +14,36 @@ export interface GeneratedFrame {
   viewport: Readonly<GeneratedViewport>;
   reducedMotion: boolean;
 }
-export interface GeneratedExperience {
-  mount(context: GeneratedMountContext): void | Promise<void>;
+export interface GeneratedMountedLifecycle {
   update(frame: GeneratedFrame): void;
   resize(viewport: GeneratedViewport): void;
   dispose(): void;
 }
+export interface GeneratedExperience extends GeneratedMountedLifecycle {
+  mount(context: GeneratedMountContext):
+    | void
+    | GeneratedMountedLifecycle
+    | Promise<void | GeneratedMountedLifecycle>;
+}
 
 export function defineExperience(experience: GeneratedExperience): GeneratedExperience { return experience; }
+
+export function isGeneratedMountedLifecycle(value: unknown): value is GeneratedMountedLifecycle {
+  if (!value || typeof value !== 'object') return false;
+  const lifecycle = value as Partial<GeneratedMountedLifecycle>;
+  return typeof lifecycle.update === 'function'
+    && typeof lifecycle.resize === 'function'
+    && typeof lifecycle.dispose === 'function';
+}
+
+export function selectGeneratedLifecycle(
+  experience: GeneratedExperience,
+  mounted: void | GeneratedMountedLifecycle,
+): GeneratedMountedLifecycle {
+  if (mounted === undefined) return experience;
+  if (isGeneratedMountedLifecycle(mounted)) return mounted;
+  throw new TypeError('Generated experience mount must return void or a complete update/resize/dispose lifecycle.');
+}
 
 export function startExperience(experience: GeneratedExperience): void {
   const container = document.querySelector<HTMLElement>('#app');
@@ -36,6 +59,7 @@ export function startExperience(experience: GeneratedExperience): void {
   const pointer = { x: 0, y: 0, strength: 0 };
   const pointerTarget = { x: 0, y: 0, strength: 0 };
   let progress = 0; let progressTarget = 0; let frameId = 0; let disposed = false;
+  let lifecycle: GeneratedMountedLifecycle = experience;
   let last = performance.now(); const started = last;
   const viewport = (): GeneratedViewport => ({
     width: Math.max(1, innerWidth), height: Math.max(1, innerHeight),
@@ -53,7 +77,7 @@ export function startExperience(experience: GeneratedExperience): void {
     if (event.data?.type !== 'signal-lab:preview-progress') return;
     const next = Number(event.data.progress); if (Number.isFinite(next)) progressTarget = clamp(next);
   };
-  const onResize = (): void => experience.resize(viewport());
+  const onResize = (): void => lifecycle.resize(viewport());
   const tick = (now: number): void => {
     if (disposed) return;
     const delta = Math.min(.05, Math.max(0, (now - last) / 1000)); last = now;
@@ -63,23 +87,26 @@ export function startExperience(experience: GeneratedExperience): void {
     pointer.y += (pointerTarget.y - pointer.y) * smoothing;
     pointer.strength += (pointerTarget.strength - pointer.strength) * smoothing;
     document.body.dataset.generatedProgress = progress.toFixed(4);
-    experience.update({ elapsed: (now - started) / 1000, delta, progress, pointer, viewport: viewport(), reducedMotion });
+    document.body.dataset.generatedPointerStrength = pointer.strength.toFixed(4);
+    lifecycle.update({ elapsed: (now - started) / 1000, delta, progress, pointer, viewport: viewport(), reducedMotion });
     frameId = requestAnimationFrame(tick);
   };
   const dispose = (): void => {
     if (disposed) return; disposed = true; cancelAnimationFrame(frameId);
     delete document.body.dataset.generatedProgress;
-    removeEventListener('scroll', syncScroll); removeEventListener('resize', onResize); removeEventListener('pointermove', onPointerMove);
+    delete document.body.dataset.generatedPointerStrength;
+    removeEventListener('scroll', syncScroll); removeEventListener('resize', onResize); removeEventListener('pointermove', onPointerMove); removeEventListener('pointerdown', onPointerMove);
     document.documentElement.removeEventListener('pointerleave', onPointerLeave); removeEventListener('wheel', onWheel); removeEventListener('message', onMessage);
-    experience.dispose();
+    lifecycle.dispose();
   };
 
   const initialViewport = viewport();
-  Promise.resolve(experience.mount({ container, canvas, quality, reducedMotion, viewport: initialViewport })).then(() => {
+  Promise.resolve().then(() => experience.mount({ container, canvas, quality, reducedMotion, viewport: initialViewport })).then((mountedLifecycle) => {
+    lifecycle = selectGeneratedLifecycle(experience, mountedLifecycle);
     container.querySelector('.generated-loading')?.remove();
-    experience.resize(initialViewport); syncScroll();
+    lifecycle.resize(initialViewport); syncScroll();
     addEventListener('scroll', syncScroll, { passive: true }); addEventListener('resize', onResize, { passive: true });
-    addEventListener('pointermove', onPointerMove, { passive: true }); document.documentElement.addEventListener('pointerleave', onPointerLeave, { passive: true });
+    addEventListener('pointermove', onPointerMove, { passive: true }); addEventListener('pointerdown', onPointerMove, { passive: true }); document.documentElement.addEventListener('pointerleave', onPointerLeave, { passive: true });
     addEventListener('wheel', onWheel, { passive: true }); addEventListener('message', onMessage); addEventListener('pagehide', dispose, { once: true });
     frameId = requestAnimationFrame(tick); document.body.dataset.generatedReady = 'true';
   }).catch((error) => {

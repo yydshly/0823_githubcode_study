@@ -3,7 +3,12 @@ import { access, rm, writeFile } from 'node:fs/promises';
 import { join, relative, sep } from 'node:path';
 import type { GeneratedExperienceBundle } from '../src/generation/generated-experience-bundle.ts';
 
-export async function compileDedicatedSources(directory: string, projectRoot: string, bundle: GeneratedExperienceBundle): Promise<string[]> {
+export async function compileDedicatedSources(
+  directory: string,
+  projectRoot: string,
+  bundle: GeneratedExperienceBundle,
+  timeoutMs = 45_000,
+): Promise<string[]> {
   const configPath = join(directory, 'tsconfig.generated.json');
   const tscPath = join(projectRoot, 'node_modules', 'typescript', 'bin', 'tsc');
   await access(tscPath);
@@ -19,7 +24,7 @@ export async function compileDedicatedSources(directory: string, projectRoot: st
   };
   await writeFile(configPath, JSON.stringify(config, null, 2), 'utf8');
   try {
-    const result = await runCompiler(process.execPath, [tscPath, '--project', configPath, '--pretty', 'false'], projectRoot, 45_000);
+    const result = await runCompiler(process.execPath, [tscPath, '--project', configPath, '--pretty', 'false'], projectRoot, timeoutMs);
     await releaseWindowsFileHandles();
     if (result.code === 0) return [];
     return result.output.split(/\r?\n/).map((line) => line.trim()).filter(Boolean).slice(0, 12);

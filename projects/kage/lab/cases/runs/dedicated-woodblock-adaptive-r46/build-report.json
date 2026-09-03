@@ -1,0 +1,520 @@
+{
+  "receipt": {
+    "id": "dedicated-woodblock-adaptive-r46",
+    "provider": "codex",
+    "model": "gpt-5.6-sol+adaptive-r46",
+    "status": "compiled",
+    "previewUrl": "/generated-runs/dedicated-woodblock-adaptive-r46/",
+    "generatedAt": "2026-08-28T12:54:31.304Z",
+    "files": 4,
+    "assets": 1,
+    "sourceBytes": 20642,
+    "hasShaders": true,
+    "compileMs": 385,
+    "attempts": 1,
+    "directory": "generated/runs/dedicated-woodblock-adaptive-r46"
+  },
+  "request": {
+    "brief": "为一间日光木版套印工坊设计沉浸式预约网页。开场是一张悬浮在木桌上、尚未落墨的和纸；滚动时木版纹理、靛蓝墨层与朱红套色依次压下，纸张纤维、压痕和轻微错版逐步显现，最后形成一幅完整的海浪与飞鸟版画，并收束为“预约一次亲手套印”。画面明亮、温暖、手工、具有真实纸墨触感；不要暗色科技风、玻璃、粒子、中央产品转台或电影式长滚动。主体必须是同一张纸上连续发生的套印过程，不是三张图片切换。",
+    "seed": 73,
+    "quality": "high",
+    "runId": "run-qs3k38",
+    "selectedId": "generated-1ygwuu2-blueprint-bn5607-sunlit-woodblock-imprint-blueprint",
+    "creativeContract": {
+      "schemaVersion": 2,
+      "id": "contract-9ryc9z",
+      "brief": "为一间日光木版套印工坊设计沉浸式预约网页。开场是一张悬浮在木桌上、尚未落墨的和纸；滚动时木版纹理、靛蓝墨层与朱红套色依次压下，纸张纤维、压痕和轻微错版逐步显现，最后形成一幅完整的海浪与飞鸟版画，并收束为“预约一次亲手套印”。画面明亮、温暖、手工、具有真实纸墨触感；不要暗色科技风、玻璃、粒子、中央产品转台或电影式长滚动。主体必须是同一张纸上连续发生的套印过程，不是三张图片切换。",
+      "intent": {
+        "subject": "悬浮在木桌上、尚未落墨的和纸",
+        "audience": "需要快速理解并感受该想法的网页访客",
+        "desiredFeeling": "真实、温暖",
+        "narrativeChange": "木版纹理、靛蓝墨层与朱红套色依次压下，纸张纤维、压痕和轻微错版逐步显现，最后形成一幅完整的海浪与飞鸟版画，并收束为“预约一次亲手套印”",
+        "primaryAction": "预约一次亲手套印",
+        "negativeConstraints": [
+          "不要暗色科技风、玻璃、粒子、中央产品转台或电影式长滚动"
+        ]
+      },
+      "referenceEvidence": [
+        {
+          "referenceId": "kage-paper-restoration",
+          "title": "纸张修复工坊 · 证据驱动的同一对象变化",
+          "sourceUrl": "../cases/dedicated-7c944e0c386f/",
+          "evidenceLevel": "runtime-verified",
+          "relevance": "命中 纸张、纤维、手工。 支持 material-transformation 体验模式。 来自已归档并经过浏览器验证的本地最终案例。",
+          "borrow": [
+            "同一页文献在近距离纤维、补纸与复读证据之间变化，过程证据比抽象氛围更重要。",
+            "滚动推进修复步骤，但每一步都必须能指出同一对象上的具体变化。",
+            "破损态与修复态素材共享纸页形状、光线和工作台坐标，Three.js 只解释纤维与裂缝。"
+          ],
+          "avoid": [
+            "不要用互不相关的旧纸图片，也不要让暖色氛围替代可读的修复证据。"
+          ]
+        },
+        {
+          "referenceId": "kage-night-greenhouse",
+          "title": "夜生表皮温室 · 资产叙事",
+          "sourceUrl": "../cases/dedicated-r36-delivery-final/",
+          "evidenceLevel": "runtime-verified",
+          "relevance": "命中 纤维。 支持 material-transformation 体验模式。 来自已归档并经过浏览器验证的本地最终案例。",
+          "borrow": [
+            "同一生物材料从种荚、纤维到建筑表皮持续转化，阶段不同但视觉血缘一致。",
+            "变化由滚动推进并保持单向因果关系，最终稳定为可理解的建筑空间。",
+            "多个模型素材分别承担关键状态，必须以共同材质、光向和轮廓维持连续性。"
+          ],
+          "avoid": [
+            "不要使用互不相关的漂亮图片，也不要让粒子装饰替代真正的状态变化。"
+          ]
+        },
+        {
+          "referenceId": "motionsites-scroll-landing",
+          "title": "MotionSites · Scroll Landing Page",
+          "sourceUrl": "https://motionsites.ai/?prompt=scroll-landing",
+          "evidenceLevel": "catalog-metadata",
+          "relevance": "命中 滚动。 只作为外部目录方向信号，不当作实现已验证。",
+          "borrow": [
+            "目录将其标记为 Interactive，可作为滚动承担连续变化的方向索引。",
+            "参考滚动作为统一时间轴，而不是为每个区块堆叠互不相关的入场动画。",
+            "素材必须绑定滚动状态和视觉职责，不能只作为区块背景轮播。"
+          ],
+          "avoid": [
+            "不要复制固定区块数量，也不要把普通淡入误认为沉浸式叙事。"
+          ]
+        }
+      ],
+      "experience": {
+        "pattern": "material-transformation",
+        "structure": {
+          "mode": "continuous-canvas",
+          "segmentPolicy": "content-derived",
+          "layoutRule": "同一张纸和同一画布贯穿全部工序；五个状态是连续时间锚点，不对应五个页面。"
+        },
+        "thesis": "让悬浮在木桌上、尚未落墨的和纸通过材质和形态的连续变化显现，而不是更换无关联画面。",
+        "focalSubject": "悬浮在木桌上、尚未落墨的和纸",
+        "continuityRule": "主体轮廓、材质血缘和光色关系必须跨状态保持可识别。",
+        "typographyRole": "文字承担编辑节奏和少量语义锚点，始终给主体留出呼吸区域。",
+        "beats": [
+          {
+            "id": "paper-ready",
+            "position": 0,
+            "purpose": "establish",
+            "visibleState": "同一张未落墨的纸与工作台建立材质、尺度和光线。",
+            "userProgression": "靠近纸面并确认纤维与留白。"
+          },
+          {
+            "id": "pressure-trace",
+            "position": 0.2,
+            "purpose": "develop",
+            "visibleState": "木版压力在同一张纸上留下压痕和纤维变化。",
+            "userProgression": "继续推进第一次真实接触。"
+          },
+          {
+            "id": "indigo-layer",
+            "position": 0.46,
+            "purpose": "develop",
+            "visibleState": "靛蓝墨层沿同一套印坐标压入纸面。",
+            "userProgression": "观察墨色与纸纤维的吸收关系。"
+          },
+          {
+            "id": "vermilion-register",
+            "position": 0.72,
+            "purpose": "transform",
+            "visibleState": "朱红套色落下并保留轻微错版证据。",
+            "userProgression": "比较两层墨色和套准关系。"
+          },
+          {
+            "id": "finished-imprint",
+            "position": 1,
+            "purpose": "resolve",
+            "visibleState": "完整作品稳定显现，并收束到预约一次亲手套印。",
+            "userProgression": "停止主要运动，观察成品并完成行动。"
+          }
+        ],
+        "pointerRole": "指针只影响折射、表面光泽或微小形变，不能拖着主体追逐鼠标。",
+        "reducedMotion": "固定最终英雄构图，只保留低频材质呼吸和内容切换。",
+        "finalMemoryPoint": "预约一次亲手套印"
+      },
+      "visualAnchor": {
+        "subject": "在同一“悬浮在木桌上、尚未落墨的和纸”上程序化构建纹理、压痕、墨层或纤维变化。",
+        "relationshipToBrief": "视觉锚点必须直接证明“悬浮在木桌上、尚未落墨的和纸”和“让悬浮在木桌上、尚未落墨的和纸通过材质和形态的连续变化显现，而不是更换无关联画面。”；即使隐藏标题，也能从对象、空间或数据关系辨认主题。",
+        "heroRole": "primary-subject",
+        "source": "procedural",
+        "interactionBinding": "视觉锚点沿体验节点连续承担建立、变化与“预约一次亲手套印”收束，不得在中段被无关装饰替换。",
+        "fallback": "增强层不可用时，保留同一“悬浮在木桌上、尚未落墨的和纸”的静态主题表示、完整语义内容和主要行动；不得回退为通用网格或空背景。"
+      },
+      "assets": [
+        {
+          "id": "washi-final-print",
+          "role": "subject",
+          "modality": "transparent-image",
+          "required": true,
+          "minimumQuality": "L3-presentable",
+          "sourcePriority": [
+            "user-supplied",
+            "curated-library",
+            "primary-image-model",
+            "minimax-fallback"
+          ],
+          "visualResponsibility": "承担同一张和纸的真实纤维、完整海浪与飞鸟版画，以及全部工序的连续英雄识别。",
+          "continuityRule": "所有状态使用同一张纸和同一画面坐标，仅逐层显露压痕、靛蓝与朱红。",
+          "integration": "alpha-subject",
+          "visibleProof": "五个合同状态中的纸张边缘和纤维一致，最终状态显示完整版画。",
+          "fallback": "static-image"
+        }
+      ],
+      "direction": {
+        "visualRole": "subject",
+        "mechanisms": [
+          {
+            "id": "subject-specimen-field",
+            "title": "主体标本场",
+            "evidenceLevel": "E4",
+            "job": "围绕独立主体和安全区组织排版，让对象始终保持识别和呼吸空间。",
+            "reason": "匹配独立主体职责。 支持 material-transformation 体验。 命中“产品、主体”。",
+            "sourceCaseIds": [
+              "sports-ai-subject-field"
+            ]
+          },
+          {
+            "id": "state-storyboard",
+            "title": "状态故事板",
+            "evidenceLevel": "E4",
+            "job": "用连续的视觉状态分配页面节奏，每个状态只承担一个叙事动词。",
+            "reason": "匹配独立主体职责。 支持 material-transformation 体验。 命中“滚动、形成、最后”。",
+            "sourceCaseIds": [
+              "plety-media-storyboard",
+              "igloo-cinematic-deconstruction"
+            ]
+          },
+          {
+            "id": "product-microfilm",
+            "title": "产品微电影",
+            "evidenceLevel": "E3",
+            "job": "用一个短而可重播的英雄镜头证明产品状态和关键交互。",
+            "reason": "匹配独立主体职责。 支持 material-transformation 体验。 命中“产品”。",
+            "sourceCaseIds": [
+              "aether-product-microfilm"
+            ]
+          }
+        ],
+        "interaction": {
+          "primaryInput": "scroll",
+          "semanticAction": "滚动让同一主体的材质和形态连续形成。",
+          "pointerRole": "secondary",
+          "touchAlternative": "触摸滚动保持同一状态顺序；取消只依赖悬停的内容。",
+          "keyboardAlternative": "提供跳转到关键状态的语义锚点，并保持自然文档阅读顺序。"
+        },
+        "renderer": {
+          "baseLayer": "semantic-dom",
+          "route": "dom-canvas-hybrid",
+          "enhancement": "canvas-shader",
+          "reason": "局部材质融合、遮罩或程序化氛围可由 Canvas/Shader 完成，页面结构保留在 DOM。",
+          "threeJustification": "当前职责不要求可检查的三维几何或自由相机。",
+          "fallback": "关闭 Canvas 后显示同一主体静态构图和完整内容行动。"
+        },
+        "rejectedMechanisms": [
+          {
+            "id": "cinematic-3d-deconstruction",
+            "reason": "缺少真实可检查模型，不能伪造三维拆解。"
+          },
+          {
+            "id": "pointer-reveal",
+            "reason": "目标没有要求通过指针发现信息，鼠标仅保留轻量反馈。"
+          },
+          {
+            "id": "sticky-archive-stack",
+            "reason": "当前核心不是一组并列档案，不使用长堆叠拖慢叙事。"
+          }
+        ],
+        "decisionSummary": "以独立主体承担主要视觉，用主体标本场、状态故事板、产品微电影组织变化；局部材质融合、遮罩或程序化氛围可由 Canvas/Shader 完成，页面结构保留在 DOM。"
+      },
+      "technical": {
+        "presentationStrategy": "material-refraction",
+        "capabilitySelection": {
+          "selected": false,
+          "capabilityId": null,
+          "score": 18,
+          "reasons": [
+            "体验模式 material-transformation 不是该能力的优先路线。",
+            "目标命中 滚动、连续、形成 等连续叙事信号。",
+            "需要先建立连续媒体素材职责。"
+          ],
+          "blockers": [
+            "当前素材计划没有连续图片、视频或帧序列。"
+          ],
+          "contract": null
+        },
+        "articulatedSubject": {
+          "selected": false,
+          "capabilityId": null,
+          "score": 64,
+          "reasons": [
+            "主体没有明确的抽象或程序化构造语义。",
+            "变化命中 形成。",
+            "部件命中 层、片。",
+            "体验模式 material-transformation 支持单一主体连续变化。"
+          ],
+          "blockers": [],
+          "contract": null
+        },
+        "semanticInteraction": {
+          "selected": false,
+          "capabilityId": null,
+          "score": 0,
+          "matchedSignals": [],
+          "reasons": [
+            "目标没有明确要求通过操作理解比较、证据或关系。",
+            "当前体验模式或素材职责不足以证明交互必须存在。",
+            "现有导演决策只需要滚动推进，不额外增加主要交互。"
+          ],
+          "blockers": [],
+          "evaluatedCapability": {
+            "id": "semantic-responsive-interaction",
+            "evidenceLevel": "E4",
+            "state": "validated",
+            "problem": "装饰性鼠标动效不能帮助用户理解内容，也无法稳定迁移到触摸、键盘和减少动态效果环境。",
+            "meaning": "滚动选择证据层，时间选择改变海岸形态和数字，指针只在局部揭示相对于基准年已经消失的土地。",
+            "inputs": [
+              "scroll",
+              "pointer",
+              "touch",
+              "keyboard"
+            ],
+            "outputs": [
+              "scene-shape",
+              "evidence-value",
+              "narrative-layer",
+              "selection-state"
+            ],
+            "baseInterface": "语义 DOM 始终提供年代按钮、损失数字、解释文字和当前状态，不依赖 WebGL 完成比较。",
+            "enhancedInterface": "WebGL 把年代选择映射为同一海岸场的连续形变，并让局部证据透镜显示相对损失范围。",
+            "reducedMotionRule": "减少动态效果时立即切换到目标年代和阶段，停止连续漂移，但保留所有数值和比较结果。",
+            "rejectionRules": [
+              "移除交互后信息理解完全不变时拒绝晋级。",
+              "触摸、键盘或无 WebGL 回退无法完成比较时拒绝晋级。"
+            ],
+            "evidence": [
+              {
+                "id": "coast-1984",
+                "year": 1984,
+                "label": "基准海岸",
+                "lossSquareKilometers": 0,
+                "retreatMeters": 0,
+                "relativeWaterCentimeters": 0,
+                "sceneMorph": 0,
+                "summary": "沙洲仍然连续，潮沟尚未切断内侧湿地。"
+              },
+              {
+                "id": "coast-2004",
+                "year": 2004,
+                "label": "潮沟扩张",
+                "lossSquareKilometers": 3.2,
+                "retreatMeters": 186,
+                "relativeWaterCentimeters": 8,
+                "sceneMorph": 0.5,
+                "summary": "外侧沙洲变薄，新的潮沟开始把湿地分成孤立片区。"
+              },
+              {
+                "id": "coast-2026",
+                "year": 2026,
+                "label": "临界断面",
+                "lossSquareKilometers": 8.7,
+                "retreatMeters": 421,
+                "relativeWaterCentimeters": 17,
+                "sceneMorph": 1,
+                "summary": "连续岸线已经断裂，曾经被遮蔽的社区直接面对风暴潮。"
+              }
+            ]
+          }
+        },
+        "identityEvidence": {
+          "selected": false,
+          "score": 18,
+          "reason": "拒绝：缺少同时指向身份与证据的明确目标。",
+          "rejectedBy": [],
+          "matchedSignals": [
+            "过程"
+          ],
+          "capabilityId": null
+        },
+        "placeGrounding": {
+          "selected": false,
+          "capabilityId": null,
+          "strategy": "none",
+          "score": 0,
+          "matchedSignals": [],
+          "reasons": [
+            "目标没有要求地点事实、空间关系或地域来源，不应为了视觉效果强行加入地图。",
+            "继续由主题、素材和交互目标选择最小充分技术路线。"
+          ],
+          "requirements": {
+            "geography": "not-applicable",
+            "map": "avoid",
+            "dataTruth": "不引入与目标无关的地点、地图或路线事实。",
+            "creativeFreedom": "围绕主体、受众、情绪变化和最终行动选择表达，不增加地域模板。"
+          }
+        },
+        "styleDiversity": {
+          "fingerprint": {
+            "composition": "full-bleed-cinematic",
+            "palette": "daylight-neutral",
+            "motion": "state-switch",
+            "spatial": "single-hero",
+            "typography": "quiet-small-scale",
+            "media": "transparent-subject"
+          },
+          "nearestCaseId": "dedicated-1b9f0b05107b",
+          "nearestDistance": 2,
+          "minimumDifferentAxes": 2,
+          "mustDifferOn": [
+            "motion",
+            "typography"
+          ],
+          "avoidRepeating": [
+            "不要默认复用暗色全屏背景、中央主体和巨型标题的组合。",
+            "不要把滚动淡入、漂浮粒子和柔光当成所有主题的通用答案。",
+            "不得复刻最相近案例 dedicated-1b9f0b05107b 的整体构图和运动语法。"
+          ],
+          "rationale": "本方向与最相近案例 dedicated-1b9f0b05107b 在 2 个风格轴上不同；差异是生成约束，不是固定模板。"
+        },
+        "domResponsibilities": [
+          "承载可阅读内容、导航和最终行动。",
+          "在 WebGL 不可用时保留完整语义顺序。"
+        ],
+        "webglResponsibilities": [
+          "承载空间记忆、镜头关系和连续状态变化。",
+          "让素材融入环境并提供克制的交互反馈。"
+        ],
+        "targetFrameTimeMs": 16.7,
+        "maxInitialAssetBytes": 8000000,
+        "targetDevices": [
+          "desktop",
+          "mobile"
+        ]
+      },
+      "acceptance": [
+        {
+          "id": "intent-visible",
+          "priority": "blocker",
+          "assertion": "首屏和终点能够对应原始主体、情绪变化和最终行动。",
+          "evidence": "screenshot-ending"
+        },
+        {
+          "id": "visual-anchor-specific",
+          "priority": "blocker",
+          "assertion": "首屏存在与 brief 直接相关且无需依赖标题即可辨认的视觉锚点；纯色、通用网格、无主题依据的渐变、随机粒子或无关几何不能单独充当主视觉。",
+          "evidence": "screenshot-opening"
+        },
+        {
+          "id": "opening-composed",
+          "priority": "high",
+          "assertion": "首屏存在明确主体和空间坐标，没有空黑屏、文字裁切或主体被遮挡。",
+          "evidence": "screenshot-opening"
+        },
+        {
+          "id": "process-causal",
+          "priority": "high",
+          "assertion": "中段变化能够解释能力、转化或探索关系，而不只是装饰动画。",
+          "evidence": "screenshot-beat"
+        },
+        {
+          "id": "borderless-integration",
+          "priority": "high",
+          "assertion": "主体和环境没有棋盘格、矩形图片边界或不自然的发光方框。",
+          "evidence": "screenshot-beat"
+        },
+        {
+          "id": "mobile-readable",
+          "priority": "blocker",
+          "assertion": "390px 移动端无横向溢出，主体、正文和行动均可见。",
+          "evidence": "screenshot-mobile"
+        },
+        {
+          "id": "semantic-fallback",
+          "priority": "normal",
+          "assertion": "关闭 WebGL 或减少运动后仍保留完整内容顺序和行动。",
+          "evidence": "dom"
+        },
+        {
+          "id": "runtime-clean",
+          "priority": "blocker",
+          "assertion": "页面无阻断脚本错误，关键素材请求成功，滚动和指针输入可用。",
+          "evidence": "runtime"
+        }
+      ],
+      "executionLimits": {
+        "authoringPasses": 1,
+        "assetBatches": 1,
+        "refinementPasses": 1,
+        "stopAfterMinutes": 15,
+        "archivePolicy": "best-result-only"
+      }
+    },
+    "reference": {
+      "title": "日光套印预约页",
+      "summary": "在一张连续和纸上完成从留白、靛蓝首印、朱红错版到完整海浪飞鸟版画的短篇手工叙事，并自然收束到预约。",
+      "scenePlugin": "composed-world",
+      "productionStatus": "asset-grounded",
+      "theme": {
+        "deep": "#25374a",
+        "surface": "#d8a86b",
+        "text": "#2d271f",
+        "muted": "#74695b",
+        "accent": "#1f4f82",
+        "accentSoft": "#b94835"
+      },
+      "assets": [
+        {
+          "id": "washi-final-print-v1",
+          "uri": "/creative-assets/r31-woodblock/washi-final-print-v1.png",
+          "bundlePath": "assets/washi-final-print-v1.png",
+          "kind": "image",
+          "source": "chatgpt-generated",
+          "qualityLevel": "L3-presentable",
+          "role": "same-sheet final woodblock print hero texture",
+          "description": "透明背景的同一张手工和纸成品；五个产品状态只逐层显露压痕、靛蓝与朱红，不切换主体。",
+          "payloadBytes": 3594161,
+          "required": true,
+          "experience": {
+            "anchor": 0.72,
+            "function": "persistent",
+            "visualState": "同一张和纸从就位、压痕、靛蓝、朱红到完整作品连续完成。",
+            "continuity": "纸张轮廓、纤维、画面坐标和光向全程保持不变，只改变工序状态。",
+            "integration": "alpha-subject"
+          }
+        }
+      ]
+    }
+  },
+  "usedAssets": [
+    {
+      "id": "washi-final-print-v1",
+      "uri": "/creative-assets/r31-woodblock/washi-final-print-v1.png",
+      "bundlePath": "assets/washi-final-print-v1.png",
+      "kind": "image",
+      "source": "chatgpt-generated",
+      "qualityLevel": "L3-presentable",
+      "role": "same-sheet final woodblock print hero texture",
+      "description": "透明背景的同一张手工和纸成品；五个产品状态只逐层显露压痕、靛蓝与朱红，不切换主体。",
+      "payloadBytes": 3594161,
+      "required": true,
+      "experience": {
+        "anchor": 0.72,
+        "function": "persistent",
+        "visualState": "同一张和纸从就位、压痕、靛蓝、朱红到完整作品连续完成。",
+        "continuity": "纸张轮廓、纤维、画面坐标和光向全程保持不变，只改变工序状态。",
+        "integration": "alpha-subject"
+      }
+    }
+  ],
+  "revision": {
+    "parentId": "dedicated-woodblock-asset-r32",
+    "instruction": "按产品工序重构为五个连续状态，取消固定开场、中段、结尾三屏结构。",
+    "summary": "同一 Three.js 画布持续存在，五个状态按非均匀节奏驱动压痕、靛蓝、朱红与最终行动；DOM 节点不等于页面。",
+    "changedFiles": [
+      "src/experience.ts",
+      "src/director.ts",
+      "src/page.css"
+    ],
+    "model": "gpt-5.6-sol+adaptive-r46"
+  }
+}

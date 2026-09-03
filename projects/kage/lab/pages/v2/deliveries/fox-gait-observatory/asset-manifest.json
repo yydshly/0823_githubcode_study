@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "deliveryId": "fox-gait-observatory",
+  "batchId": "r137-fox-official-single-model",
+  "assetBatches": 1,
+  "assets": [
+    {
+      "id": "khronos-fox-glb",
+      "path": "assets/Fox.glb",
+      "kind": "model-3d",
+      "mimeType": "model/gltf-binary",
+      "bytes": 162852,
+      "sha256": "d97044e701822bac5a62696459b27d7b375aada5de8574ed4362edbba94771f7",
+      "quality": "L3-presentable",
+      "budgetTier": "A1",
+      "inspection": {
+        "scenes": 1,
+        "nodes": 26,
+        "meshes": 1,
+        "primitives": 1,
+        "materials": 1,
+        "textures": 1,
+        "images": 1,
+        "skins": 1,
+        "animations": ["Survey", "Walk", "Run"]
+      },
+      "source": {
+        "type": "licensed",
+        "provider": "KhronosGroup glTF-Sample-Assets",
+        "url": "https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/Fox",
+        "downloadUrl": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/Fox/glTF-Binary/Fox.glb",
+        "provenanceRecord": "Models/Fox/README.md and repository REUSE.toml"
+      },
+      "license": {
+        "spdx": "CC0-1.0 AND CC-BY-4.0",
+        "name": "CC0 1.0 Universal and Creative Commons Attribution 4.0 International",
+        "url": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "attribution": "Fox model: PixelMannen (CC0); rigging and animation: tomkranis (CC BY 4.0); glTF conversion: AsoboStudio and scurest (CC BY 4.0).",
+      "responsibility": "同一只可检查赤狐的几何、纹理、骨骼与 Survey / Walk / Run 三套动画，是页面空间记忆点与动作因果主体。",
+      "runtimeBoundary": "Three.js 只负责加载、灯光、镜头、地面和交互；不得用程序化狐狸或静态图片替代模型职责。"
+    }
+  ]
+}

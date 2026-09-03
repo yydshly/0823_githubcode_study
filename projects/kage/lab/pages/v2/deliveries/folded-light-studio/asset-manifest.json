@@ -1,0 +1,156 @@
+{
+  "schemaVersion": 1,
+  "deliveryId": "folded-light-studio",
+  "batchId": "r140-folded-paper-lamp-single-atlas",
+  "assetBatches": 1,
+  "generationCalls": 1,
+  "sourceAssetCount": 1,
+  "derivativeCount": 4,
+  "medium": {
+    "preferred": "generated-image",
+    "rendering": "raster-image"
+  },
+  "lineagePolicy": "One generated transparent atlas is the only source asset. The four state files are pixel-identical mechanical crops from that atlas and are not additional generation calls.",
+  "assets": [
+    {
+      "id": "folded-paper-lamp-atlas-v1",
+      "path": "assets/folded-paper-lamp-atlas-v1.png",
+      "role": "source-atlas",
+      "kind": "raster-image",
+      "mimeType": "image/png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1292826,
+      "sha256": "b0440f3c936ad4b3c121514d038d5dcfd5bfa732b7798fb129b1bc8788fe2fd6",
+      "alphaCoverage": 0.37593958,
+      "frameRect": {
+        "x": 0,
+        "y": 0,
+        "width": 1254,
+        "height": 1254
+      },
+      "sourceLineage": {
+        "type": "generated-source",
+        "provider": "built-in-imagegen",
+        "batchId": "r140-folded-paper-lamp-single-atlas",
+        "sourceAsset": null,
+        "sourceSha256": null,
+        "operation": "single-transparent-atlas-generation"
+      },
+      "responsibility": "承担同一再生纸灯的四个连续形态、纸纤维、金属铰点、灯座、透光和第一视觉记忆。",
+      "runtimeBoundary": "运行代码只做帧混合、灯光增强和语义状态同步，不重绘或替代纸灯主体。"
+    },
+    {
+      "id": "folded-paper-lamp-state-01-folded",
+      "path": "assets/state-01-folded.png",
+      "role": "mechanical-derivative",
+      "kind": "raster-image",
+      "mimeType": "image/png",
+      "width": 627,
+      "height": 627,
+      "bytes": 281000,
+      "sha256": "607bf55fed42548dbbf65fb1cb17fe1e60f85d72c89c7c99e40512838f4eaea5",
+      "alphaCoverage": 0.22312778,
+      "frameRect": {
+        "x": 0,
+        "y": 0,
+        "width": 627,
+        "height": 627
+      },
+      "sourceLineage": {
+        "type": "mechanical-derivative",
+        "provider": "local-pixel-crop",
+        "batchId": "r140-folded-paper-lamp-single-atlas",
+        "sourceAsset": "assets/folded-paper-lamp-atlas-v1.png",
+        "sourceSha256": "b0440f3c936ad4b3c121514d038d5dcfd5bfa732b7798fb129b1bc8788fe2fd6",
+        "operation": "pixel-identical-mechanical-crop"
+      },
+      "responsibility": "完全折叠的开场状态。",
+      "runtimeBoundary": "只可显示 atlas 左上 627×627 像素，不得独立生成或重绘。"
+    },
+    {
+      "id": "folded-paper-lamp-state-02-third",
+      "path": "assets/state-02-third.png",
+      "role": "mechanical-derivative",
+      "kind": "raster-image",
+      "mimeType": "image/png",
+      "width": 627,
+      "height": 627,
+      "bytes": 409832,
+      "sha256": "b76977887baa627666afed44b6a4435dcebe03681b4db6ddef51c899d9265d19",
+      "alphaCoverage": 0.34274246,
+      "frameRect": {
+        "x": 627,
+        "y": 0,
+        "width": 627,
+        "height": 627
+      },
+      "sourceLineage": {
+        "type": "mechanical-derivative",
+        "provider": "local-pixel-crop",
+        "batchId": "r140-folded-paper-lamp-single-atlas",
+        "sourceAsset": "assets/folded-paper-lamp-atlas-v1.png",
+        "sourceSha256": "b0440f3c936ad4b3c121514d038d5dcfd5bfa732b7798fb129b1bc8788fe2fd6",
+        "operation": "pixel-identical-mechanical-crop"
+      },
+      "responsibility": "展开三分之一的结构起势状态。",
+      "runtimeBoundary": "只可显示 atlas 右上 627×627 像素，不得独立生成或重绘。"
+    },
+    {
+      "id": "folded-paper-lamp-state-03-two-thirds",
+      "path": "assets/state-03-two-thirds.png",
+      "role": "mechanical-derivative",
+      "kind": "raster-image",
+      "mimeType": "image/png",
+      "width": 627,
+      "height": 627,
+      "bytes": 503566,
+      "sha256": "a32ac4b7a142a8dc0ea8478304ebe25582abdb462cfa5fcdce0600cb702a72cc",
+      "alphaCoverage": 0.43009546,
+      "frameRect": {
+        "x": 0,
+        "y": 627,
+        "width": 627,
+        "height": 627
+      },
+      "sourceLineage": {
+        "type": "mechanical-derivative",
+        "provider": "local-pixel-crop",
+        "batchId": "r140-folded-paper-lamp-single-atlas",
+        "sourceAsset": "assets/folded-paper-lamp-atlas-v1.png",
+        "sourceSha256": "b0440f3c936ad4b3c121514d038d5dcfd5bfa732b7798fb129b1bc8788fe2fd6",
+        "operation": "pixel-identical-mechanical-crop"
+      },
+      "responsibility": "展开三分之二、纸纤维明显透光的状态。",
+      "runtimeBoundary": "只可显示 atlas 左下 627×627 像素，不得独立生成或重绘。"
+    },
+    {
+      "id": "folded-paper-lamp-state-04-open",
+      "path": "assets/state-04-open.png",
+      "role": "mechanical-derivative",
+      "kind": "raster-image",
+      "mimeType": "image/png",
+      "width": 627,
+      "height": 627,
+      "bytes": 584742,
+      "sha256": "46a682223b38d837aa002b13ebdfa57135a59b69ecf56cd379bac2e662972fb1",
+      "alphaCoverage": 0.50779261,
+      "frameRect": {
+        "x": 627,
+        "y": 627,
+        "width": 627,
+        "height": 627
+      },
+      "sourceLineage": {
+        "type": "mechanical-derivative",
+        "provider": "local-pixel-crop",
+        "batchId": "r140-folded-paper-lamp-single-atlas",
+        "sourceAsset": "assets/folded-paper-lamp-atlas-v1.png",
+        "sourceSha256": "b0440f3c936ad4b3c121514d038d5dcfd5bfa732b7798fb129b1bc8788fe2fd6",
+        "operation": "pixel-identical-mechanical-crop"
+      },
+      "responsibility": "完全展开、预约入口解锁的成光状态。",
+      "runtimeBoundary": "只可显示 atlas 右下 627×627 像素，不得独立生成或重绘。"
+    }
+  ]
+}

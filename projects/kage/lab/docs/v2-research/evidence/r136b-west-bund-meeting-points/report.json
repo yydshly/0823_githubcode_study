@@ -1,0 +1,402 @@
+{
+  "schemaVersion": 1,
+  "stage": "r136b-west-bund-meeting-points-runtime-observations",
+  "capturedAt": "2026-09-01T02:55:14.038Z",
+  "identityBinding": "runId+bundleHash",
+  "runId": "direct-r136b-west-bund-meeting-points",
+  "bundleHash": "8112989e87b0046a51b3b4420a12555d160b7590b3adf929d79105a3998037e3",
+  "bundleFiles": [
+    "index.html",
+    "style.css",
+    "main.ts",
+    "asset-manifest.json",
+    "CONTRACT.md",
+    "assets/xuhui-west-bund-osm-map-v1.jpg"
+  ],
+  "route": "/pages/v2/deliveries/west-bund-meeting-points/",
+  "revision": "r136b-proof",
+  "complete": true,
+  "captures": [
+    "01-desktop-opening.png",
+    "02-desktop-inputs.png",
+    "03-desktop-selection-saved.png",
+    "04-mobile-reduced.png",
+    "05-fallback-complete.png"
+  ],
+  "observations": [
+    {
+      "checkpoint": "desktop-opening",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "issues": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "requestFailures": [],
+        "responseErrors": []
+      },
+      "readyAtMs": 410,
+      "state": {
+        "ready": true,
+        "activeLandmark": "west-bund-museum",
+        "activeName": "西岸美术馆",
+        "activeAddress": "龙腾大道 2600 号",
+        "coordinates": "121.4593301, 31.1695893",
+        "positionIndex": 0,
+        "position": 0,
+        "scrollLeft": 0,
+        "savedId": null,
+        "imageLoaded": true,
+        "fallback": false,
+        "reducedMotion": false,
+        "horizontalOverflow": false,
+        "assetUrl": "http://127.0.0.1:8143/pages/v2/deliveries/west-bund-meeting-points/assets/xuhui-west-bund-osm-map-v1.jpg",
+        "routeIsProductDemo": true,
+        "revision": "r136b-proof"
+      },
+      "image": {
+        "complete": true,
+        "naturalWidth": 960,
+        "naturalHeight": 576,
+        "currentSrc": "http://127.0.0.1:8143/pages/v2/deliveries/west-bund-meeting-points/assets/xuhui-west-bund-osm-map-v1.jpg"
+      },
+      "landmarks": [
+        {
+          "id": "west-bund-museum",
+          "label": "选择西岸美术馆，龙腾大道 2600 号"
+        },
+        {
+          "id": "tank-shanghai",
+          "label": "选择油罐艺术中心，龙腾大道 2380 号"
+        },
+        {
+          "id": "long-museum",
+          "label": "选择龙美术馆，龙腾大道 3398 号"
+        },
+        {
+          "id": "start-museum",
+          "label": "选择星美术馆，瑞宁路 111 号"
+        }
+      ],
+      "attribution": {
+        "text": "© OpenStreetMap contributors",
+        "href": "https://www.openstreetmap.org/copyright"
+      },
+      "panorama": {
+        "clientWidth": 1440,
+        "scrollWidth": 4032,
+        "maximum": 2592,
+        "scrollLeft": 0
+      },
+      "document": {
+        "clientWidth": 1440,
+        "scrollWidth": 1440,
+        "overflow": 0
+      }
+    },
+    {
+      "checkpoint": "desktop-inputs",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "issues": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "requestFailures": [],
+        "responseErrors": []
+      },
+      "inputs": {
+        "wheel": {
+          "before": {
+            "domScrollLeft": 0,
+            "runtimeScrollLeft": 0,
+            "activeLandmark": "west-bund-museum",
+            "activePin": "west-bund-museum",
+            "activeRailIndex": 0
+          },
+          "after": {
+            "domScrollLeft": 864,
+            "runtimeScrollLeft": 864,
+            "activeLandmark": "tank-shanghai",
+            "activePin": "tank-shanghai",
+            "activeRailIndex": 1
+          }
+        },
+        "drag": {
+          "before": {
+            "domScrollLeft": 1,
+            "runtimeScrollLeft": 1,
+            "activeLandmark": "west-bund-museum",
+            "activePin": "west-bund-museum",
+            "activeRailIndex": 0
+          },
+          "after": {
+            "domScrollLeft": 864,
+            "runtimeScrollLeft": 864,
+            "activeLandmark": "tank-shanghai",
+            "activePin": "tank-shanghai",
+            "activeRailIndex": 1
+          }
+        },
+        "arrowRight": {
+          "before": {
+            "domScrollLeft": 0,
+            "runtimeScrollLeft": 0,
+            "activeLandmark": "west-bund-museum",
+            "activePin": "west-bund-museum",
+            "activeRailIndex": 0
+          },
+          "after": {
+            "domScrollLeft": 862,
+            "runtimeScrollLeft": 862,
+            "activeLandmark": "tank-shanghai",
+            "activePin": "tank-shanghai",
+            "activeRailIndex": 1
+          }
+        },
+        "next": {
+          "before": {
+            "domScrollLeft": 864,
+            "runtimeScrollLeft": 864,
+            "activeLandmark": "tank-shanghai",
+            "activePin": "tank-shanghai",
+            "activeRailIndex": 1
+          },
+          "after": {
+            "domScrollLeft": 1727,
+            "runtimeScrollLeft": 1727,
+            "activeLandmark": "long-museum",
+            "activePin": "long-museum",
+            "activeRailIndex": 2
+          }
+        },
+        "previous": {
+          "before": {
+            "domScrollLeft": 1727,
+            "runtimeScrollLeft": 1727,
+            "activeLandmark": "long-museum",
+            "activePin": "long-museum",
+            "activeRailIndex": 2
+          },
+          "after": {
+            "domScrollLeft": 864,
+            "runtimeScrollLeft": 864,
+            "activeLandmark": "tank-shanghai",
+            "activePin": "tank-shanghai",
+            "activeRailIndex": 1
+          }
+        }
+      },
+      "sameController": true,
+      "state": {
+        "ready": true,
+        "activeLandmark": "tank-shanghai",
+        "activeName": "油罐艺术中心",
+        "activeAddress": "龙腾大道 2380 号",
+        "coordinates": "121.4593761, 31.1665647",
+        "positionIndex": 1,
+        "position": 0.3333,
+        "scrollLeft": 864,
+        "savedId": null,
+        "imageLoaded": true,
+        "fallback": false,
+        "reducedMotion": false,
+        "horizontalOverflow": false,
+        "assetUrl": "http://127.0.0.1:8143/pages/v2/deliveries/west-bund-meeting-points/assets/xuhui-west-bund-osm-map-v1.jpg",
+        "routeIsProductDemo": true,
+        "revision": "r136b-proof"
+      },
+      "document": {
+        "clientWidth": 1440,
+        "scrollWidth": 1440,
+        "overflow": 0
+      }
+    },
+    {
+      "checkpoint": "desktop-selection-saved",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "issues": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "requestFailures": [],
+        "responseErrors": []
+      },
+      "selection": {
+        "before": {
+          "route": "47.541,79.822 48.816,81.595 49.963,86.598"
+        },
+        "after": {
+          "state": {
+            "ready": true,
+            "activeLandmark": "long-museum",
+            "activeName": "龙美术馆",
+            "activeAddress": "龙腾大道 3398 号",
+            "coordinates": "121.4601929, 31.1859164",
+            "positionIndex": 2,
+            "position": 0.6667,
+            "scrollLeft": 1728,
+            "savedId": null,
+            "imageLoaded": true,
+            "fallback": false,
+            "reducedMotion": false,
+            "horizontalOverflow": false,
+            "assetUrl": "http://127.0.0.1:8143/pages/v2/deliveries/west-bund-meeting-points/assets/xuhui-west-bund-osm-map-v1.jpg",
+            "routeIsProductDemo": true,
+            "revision": "r136b-proof"
+          },
+          "card": {
+            "name": "龙美术馆",
+            "address": "龙腾大道 3398 号",
+            "coordinates": "121.4601929, 31.1859164"
+          },
+          "route": "47.541,79.822 49.362,66.702 49.908,44.360 51.533,28.697"
+        }
+      },
+      "persistence": {
+        "storageKey": "r136b-west-bund-saved-meeting-point",
+        "valueBeforeReload": "long-museum",
+        "valueAfterReload": "long-museum",
+        "stateAfterReload": {
+          "ready": true,
+          "activeLandmark": "long-museum",
+          "activeName": "龙美术馆",
+          "activeAddress": "龙腾大道 3398 号",
+          "coordinates": "121.4601929, 31.1859164",
+          "positionIndex": 2,
+          "position": 0.6667,
+          "scrollLeft": 1728,
+          "savedId": "long-museum",
+          "imageLoaded": true,
+          "fallback": false,
+          "reducedMotion": false,
+          "horizontalOverflow": false,
+          "assetUrl": "http://127.0.0.1:8143/pages/v2/deliveries/west-bund-meeting-points/assets/xuhui-west-bund-osm-map-v1.jpg",
+          "routeIsProductDemo": true,
+          "revision": "r136b-proof"
+        }
+      },
+      "document": {
+        "clientWidth": 1440,
+        "scrollWidth": 1440,
+        "overflow": 0
+      }
+    },
+    {
+      "checkpoint": "mobile-reduced",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "issues": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "requestFailures": [],
+        "responseErrors": []
+      },
+      "input": {
+        "kind": "touch-tap-next-button",
+        "before": {
+          "domScrollLeft": 0,
+          "runtimeScrollLeft": 0,
+          "activeLandmark": "west-bund-museum",
+          "activePin": "west-bund-museum",
+          "activeRailIndex": 0
+        },
+        "after": {
+          "domScrollLeft": 234,
+          "runtimeScrollLeft": 234,
+          "activeLandmark": "tank-shanghai",
+          "activePin": "tank-shanghai",
+          "activeRailIndex": 1
+        }
+      },
+      "storage": {
+        "key": "r136b-west-bund-saved-meeting-point",
+        "value": "tank-shanghai"
+      },
+      "state": {
+        "ready": true,
+        "activeLandmark": "tank-shanghai",
+        "activeName": "油罐艺术中心",
+        "activeAddress": "龙腾大道 2380 号",
+        "coordinates": "121.4593761, 31.1665647",
+        "positionIndex": 1,
+        "position": 0.3333,
+        "scrollLeft": 234,
+        "savedId": "tank-shanghai",
+        "imageLoaded": true,
+        "fallback": false,
+        "reducedMotion": true,
+        "horizontalOverflow": false,
+        "assetUrl": "http://127.0.0.1:8143/pages/v2/deliveries/west-bund-meeting-points/assets/xuhui-west-bund-osm-map-v1.jpg",
+        "routeIsProductDemo": true,
+        "revision": "r136b-proof"
+      },
+      "panorama": {
+        "clientWidth": 390,
+        "scrollWidth": 1092,
+        "maximum": 702,
+        "scrollLeft": 234
+      },
+      "document": {
+        "clientWidth": 390,
+        "scrollWidth": 390,
+        "overflow": 0
+      }
+    },
+    {
+      "checkpoint": "fallback-complete",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "issues": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "requestFailures": [],
+        "responseErrors": []
+      },
+      "honestFallback": {
+        "landmarkCount": 4,
+        "attribution": "© OpenStreetMap contributors",
+        "renderedMap": {
+          "backgroundImage": "none",
+          "visibleImages": 0,
+          "visibleSvgs": 0
+        }
+      },
+      "state": {
+        "ready": true,
+        "activeLandmark": "start-museum",
+        "activeName": "星美术馆",
+        "activeAddress": "瑞宁路 111 号",
+        "coordinates": "121.4657116, 31.1897166",
+        "positionIndex": 3,
+        "position": 1,
+        "scrollLeft": 2304,
+        "savedId": "start-museum",
+        "imageLoaded": false,
+        "fallback": true,
+        "reducedMotion": true,
+        "horizontalOverflow": false,
+        "assetUrl": "http://127.0.0.1:8143/pages/v2/deliveries/west-bund-meeting-points/assets/xuhui-west-bund-osm-map-v1.jpg",
+        "routeIsProductDemo": true,
+        "revision": "r136b-proof"
+      },
+      "storage": {
+        "key": "r136b-west-bund-saved-meeting-point",
+        "value": "start-museum"
+      },
+      "document": {
+        "clientWidth": 1280,
+        "scrollWidth": 1280,
+        "overflow": 0
+      }
+    }
+  ]
+}

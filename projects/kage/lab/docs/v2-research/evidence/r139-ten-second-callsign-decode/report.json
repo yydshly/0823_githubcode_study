@@ -1,0 +1,309 @@
+{
+  "schemaVersion": 1,
+  "stage": "r139-ten-second-callsign-runtime-observations",
+  "capturedAt": "2026-09-01T07:14:20.458Z",
+  "identityBinding": "runId+bundleHash",
+  "runId": "direct-r139-ten-second-callsign-decode",
+  "bundleHash": "bb1cbb3a06ea697d4f5dd2f00761ac5c9e445d31bd7e173f6f8c7cb76ab833d6",
+  "route": "/pages/v2/deliveries/ten-second-callsign-decode/",
+  "revision": "r139-proof",
+  "complete": true,
+  "bundleFiles": [
+    "index.html",
+    "style.css",
+    "main.ts",
+    "CONTRACT.md"
+  ],
+  "captures": [
+    "01-desktop-opening.png",
+    "02-desktop-decoding.png",
+    "03-desktop-saved.png",
+    "04-mobile-reduced-saved.png",
+    "05-audio-fallback-saved.png"
+  ],
+  "observations": [
+    {
+      "checkpoint": "desktop-opening",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "issues": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "requestFailures": [],
+        "responseErrors": []
+      },
+      "readyAtMs": 255,
+      "state": {
+        "ready": true,
+        "phase": "waiting",
+        "audioState": "locked",
+        "audioContextState": "not-created",
+        "audioFallback": false,
+        "playingScope": null,
+        "currentLetter": -1,
+        "currentElement": -1,
+        "revealed": [
+          false,
+          false,
+          false,
+          false
+        ],
+        "revealedCount": 0,
+        "checkStatus": "idle",
+        "saved": false,
+        "restored": false,
+        "muted": false,
+        "volume": 0.65,
+        "reducedMotion": false,
+        "horizontalOverflow": false,
+        "canonicalSequenceId": "demo-kage-v1",
+        "expectedDurationMs": 10000,
+        "scheduledToneCount": 0,
+        "completedPlaybackCount": 0,
+        "revision": "r139-proof"
+      },
+      "semantic": {
+        "segments": 4,
+        "images": 0,
+        "canvases": 0,
+        "answerTextInitiallyPresent": false
+      }
+    },
+    {
+      "checkpoint": "desktop-audio-decoding",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "issues": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "requestFailures": [],
+        "responseErrors": []
+      },
+      "semantic": {
+        "soundingState": {
+          "ready": true,
+          "phase": "sounding",
+          "audioState": "playing",
+          "audioContextState": "running",
+          "audioFallback": false,
+          "playingScope": "all",
+          "currentLetter": 0,
+          "currentElement": 0,
+          "revealed": [
+            false,
+            false,
+            false,
+            false
+          ],
+          "revealedCount": 0,
+          "checkStatus": "idle",
+          "saved": false,
+          "restored": false,
+          "muted": false,
+          "volume": 0.65,
+          "reducedMotion": false,
+          "horizontalOverflow": false,
+          "canonicalSequenceId": "demo-kage-v1",
+          "expectedDurationMs": 10000,
+          "scheduledToneCount": 9,
+          "completedPlaybackCount": 0,
+          "revision": "r139-proof"
+        },
+        "soundingSegments": 1
+      },
+      "state": {
+        "ready": true,
+        "phase": "decoding",
+        "audioState": "ready",
+        "audioContextState": "running",
+        "audioFallback": false,
+        "playingScope": null,
+        "currentLetter": -1,
+        "currentElement": -1,
+        "revealed": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "revealedCount": 4,
+        "checkStatus": "idle",
+        "saved": false,
+        "restored": false,
+        "muted": false,
+        "volume": 0.65,
+        "reducedMotion": false,
+        "horizontalOverflow": false,
+        "canonicalSequenceId": "demo-kage-v1",
+        "expectedDurationMs": 10000,
+        "scheduledToneCount": 9,
+        "completedPlaybackCount": 1,
+        "revision": "r139-proof"
+      }
+    },
+    {
+      "checkpoint": "desktop-checked-saved",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "issues": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "requestFailures": [],
+        "responseErrors": []
+      },
+      "semantic": {
+        "incorrectState": {
+          "ready": true,
+          "phase": "checked",
+          "audioState": "ready",
+          "audioContextState": "running",
+          "audioFallback": false,
+          "playingScope": null,
+          "currentLetter": -1,
+          "currentElement": -1,
+          "revealed": [
+            true,
+            true,
+            true,
+            true
+          ],
+          "revealedCount": 4,
+          "checkStatus": "incorrect",
+          "saved": false,
+          "restored": false,
+          "muted": false,
+          "volume": 0.65,
+          "reducedMotion": false,
+          "horizontalOverflow": false,
+          "canonicalSequenceId": "demo-kage-v1",
+          "expectedDurationMs": 10000,
+          "scheduledToneCount": 9,
+          "completedPlaybackCount": 1,
+          "revision": "r139-proof"
+        },
+        "completionVisibleAfterIncorrect": false,
+        "storageBeforeReload": "{\"version\":1,\"exerciseId\":\"demo-kage-v1\",\"savedAt\":\"2026-09-01T07:13:51.989Z\"}",
+        "storageAfterReload": "{\"version\":1,\"exerciseId\":\"demo-kage-v1\",\"savedAt\":\"2026-09-01T07:13:51.989Z\"}"
+      },
+      "state": {
+        "ready": true,
+        "phase": "saved",
+        "audioState": "locked",
+        "audioContextState": "not-created",
+        "audioFallback": false,
+        "playingScope": null,
+        "currentLetter": -1,
+        "currentElement": -1,
+        "revealed": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "revealedCount": 4,
+        "checkStatus": "correct",
+        "saved": true,
+        "restored": true,
+        "muted": false,
+        "volume": 0.65,
+        "reducedMotion": false,
+        "horizontalOverflow": false,
+        "canonicalSequenceId": "demo-kage-v1",
+        "expectedDurationMs": 10000,
+        "scheduledToneCount": 0,
+        "completedPlaybackCount": 0,
+        "revision": "r139-proof"
+      }
+    },
+    {
+      "checkpoint": "mobile-reduced-saved",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "issues": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "requestFailures": [],
+        "responseErrors": []
+      },
+      "state": {
+        "ready": true,
+        "phase": "saved",
+        "audioState": "ready",
+        "audioContextState": "running",
+        "audioFallback": false,
+        "playingScope": null,
+        "currentLetter": -1,
+        "currentElement": -1,
+        "revealed": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "revealedCount": 4,
+        "checkStatus": "correct",
+        "saved": true,
+        "restored": false,
+        "muted": false,
+        "volume": 0.65,
+        "reducedMotion": true,
+        "horizontalOverflow": false,
+        "canonicalSequenceId": "demo-kage-v1",
+        "expectedDurationMs": 10000,
+        "scheduledToneCount": 9,
+        "completedPlaybackCount": 1,
+        "revision": "r139-proof"
+      }
+    },
+    {
+      "checkpoint": "audio-fallback-saved",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "issues": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "requestFailures": [],
+        "responseErrors": []
+      },
+      "state": {
+        "ready": true,
+        "phase": "saved",
+        "audioState": "unavailable",
+        "audioContextState": "unavailable",
+        "audioFallback": true,
+        "playingScope": null,
+        "currentLetter": -1,
+        "currentElement": -1,
+        "revealed": [
+          true,
+          true,
+          true,
+          true
+        ],
+        "revealedCount": 4,
+        "checkStatus": "correct",
+        "saved": true,
+        "restored": false,
+        "muted": false,
+        "volume": 0.65,
+        "reducedMotion": true,
+        "horizontalOverflow": false,
+        "canonicalSequenceId": "demo-kage-v1",
+        "expectedDurationMs": 10000,
+        "scheduledToneCount": 0,
+        "completedPlaybackCount": 1,
+        "revision": "r139-proof"
+      }
+    }
+  ]
+}

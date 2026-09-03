@@ -1,0 +1,238 @@
+{
+  "schemaVersion": 1,
+  "stage": "r141-same-table-tonight-runtime-observations",
+  "capturedAt": "2026-09-01T13:56:21.461Z",
+  "identityBinding": "runId+bundleHash",
+  "runId": "direct-r141-same-table-tonight",
+  "bundleHash": "7c0783b971046e4a3d1aea74c2eca6c29d8d883b3abffb710917b3d654277666",
+  "route": "/pages/v2/deliveries/same-table-tonight/",
+  "revision": "r141-proof",
+  "complete": true,
+  "bundleFiles": [
+    "index.html",
+    "style.css",
+    "main.ts",
+    "CONTRACT.md",
+    "asset-manifest.json",
+    "assets/distant-dinner-panorama-v1.png"
+  ],
+  "captures": [
+    "01-desktop-opening.png",
+    "02-desktop-nearing.png",
+    "03-desktop-invited.png",
+    "04-mobile-reduced-invited.png",
+    "05-asset-fallback.png"
+  ],
+  "observations": [
+    {
+      "checkpoint": "desktop-opening",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "issues": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "requestFailures": [],
+        "responseErrors": []
+      },
+      "readyAtMs": 565,
+      "state": {
+        "state": "apart",
+        "progress": "0.000",
+        "input": "initial",
+        "asset": "ready",
+        "invitation": "pending",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "horizontalOverflow": false,
+        "stageTop": 0,
+        "canvas": {
+          "width": 1325,
+          "height": 576
+        }
+      },
+      "semantic": {
+        "imageCount": 2,
+        "uniqueImageSources": 1,
+        "naturalDimensions": [
+          {
+            "width": 1881,
+            "height": 836
+          },
+          {
+            "width": 1881,
+            "height": 836
+          }
+        ],
+        "sceneWidth": 1325,
+        "bodyBackgroundImage": "none"
+      }
+    },
+    {
+      "checkpoint": "desktop-wheel-nearing",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "issues": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "requestFailures": [],
+        "responseErrors": []
+      },
+      "state": {
+        "state": "nearing",
+        "progress": "0.541",
+        "input": "scroll",
+        "asset": "ready",
+        "invitation": "pending",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "horizontalOverflow": false,
+        "stageTop": 0,
+        "canvas": {
+          "width": 1325,
+          "height": 576
+        }
+      },
+      "semantic": {
+        "gapWidthBefore": 231.390625,
+        "gapWidthAfter": 106.859375,
+        "visibleTableNotes": 2
+      }
+    },
+    {
+      "checkpoint": "desktop-complete-invited",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "issues": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "requestFailures": [],
+        "responseErrors": []
+      },
+      "state": {
+        "state": "invited",
+        "progress": "1.000",
+        "input": "cta",
+        "asset": "ready",
+        "invitation": "sent",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "horizontalOverflow": false,
+        "stageTop": 0,
+        "canvas": {
+          "width": 1325,
+          "height": 576
+        }
+      },
+      "semantic": {
+        "inputAtCompletion": "scroll",
+        "mainCtaText": "发起今晚的同桌时刻\n↗",
+        "statusText": "邀请已留在桌上。对方加入后，两处灯光会在同一时刻亮起。"
+      }
+    },
+    {
+      "checkpoint": "mobile-reduced-invited",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "issues": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "requestFailures": [],
+        "responseErrors": []
+      },
+      "state": {
+        "state": "invited",
+        "progress": "1.000",
+        "input": "cta",
+        "asset": "ready",
+        "invitation": "sent",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "horizontalOverflow": false,
+        "stageTop": 0,
+        "canvas": {
+          "width": 390,
+          "height": 405
+        }
+      },
+      "semantic": {
+        "reducedMotion": true,
+        "stageButtons": 3,
+        "inviteButtonBox": {
+          "x": 40,
+          "y": 673.4375,
+          "width": 310,
+          "height": 52
+        }
+      }
+    },
+    {
+      "checkpoint": "asset-fallback",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "issues": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "requestFailures": [],
+        "responseErrors": []
+      },
+      "state": {
+        "state": "invited",
+        "progress": "1.000",
+        "input": "cta",
+        "asset": "failed",
+        "invitation": "sent",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "horizontalOverflow": false,
+        "stageTop": -1584,
+        "canvas": {
+          "width": 300,
+          "height": 150
+        }
+      },
+      "semantic": {
+        "fallbackState": {
+          "state": "apart",
+          "progress": "0.000",
+          "input": "initial",
+          "asset": "failed",
+          "invitation": "pending",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "horizontalOverflow": false,
+          "stageTop": 0,
+          "canvas": {
+            "width": 300,
+            "height": 150
+          }
+        },
+        "fallbackVisible": true,
+        "sceneVisibility": "hidden",
+        "footerActionCompleted": true,
+        "issuePolicy": "Only the explicit missing panorama request may fail in this forced-fallback checkpoint."
+      }
+    }
+  ]
+}

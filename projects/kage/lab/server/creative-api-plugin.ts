@@ -3,11 +3,14 @@ import type { Plugin } from 'vite';
 import { ZodError } from 'zod';
 import type { CreativeBrief, CreativeProviderId } from '../src/generation/schema.ts';
 import { assetProductionRequestSchema } from '../src/generation/asset-production.ts';
+import { assessDeliveryQuality } from '../src/generation/delivery-quality.ts';
+import { createVisualReviewPlan } from '../src/generation/visual-review-plan.ts';
 import { generateAssets, importUserAsset, readGeneratedAsset } from './asset-generator.ts';
-import { generateDedicatedExperience, readDedicatedRun, refineDedicatedExperience, reviseDedicatedExperience } from './dedicated-code-service.ts';
+import { assessDedicatedVisualAcceptance, auditDedicatedVisualEvidence, generateDedicatedExperience, readDedicatedRun, refineDedicatedExperience, reviseDedicatedExperience } from './dedicated-code-service.ts';
 import { archiveDedicatedCase, listCases, readCaseRun } from './case-library.ts';
-import { createGenerationJob, readGenerationJob, updateGenerationJob } from './generation-job-store.ts';
-import { ensureGenerationJobRunning } from './generation-job-runner.ts';
+import { createAssetCompletion, createGenerationJob, readGenerationJob, updateGenerationJob } from './generation-job-store.ts';
+import { ensureGenerationJobRunning, recoverGenerationJobCandidate, submitGenerationJobAssets } from './generation-job-runner.ts';
+import { generationJobPatchForRefinement } from './generation-job-refinement-status.ts';
 import { interpretWithProvider, providerStatus } from './provider-service.ts';
 
 const maxBodyBytes = 16_384;
@@ -61,16 +64,60 @@ export function creativeApiPlugin(environment: Readonly<Record<string, string | 
         return;
       }
       if (url.pathname.startsWith('/api/creative/jobs/')) {
-        const id = url.pathname.slice('/api/creative/jobs/'.length);
-        if (request.method === 'GET') {
-          const job = await readGenerationJob(id, environment);
+        const segments = url.pathname.slice('/api/creative/jobs/'.length).split('/').filter(Boolean);
+        const id = segments[0] || '';
+        if (request.method === 'POST' && segments.length === 2 && segments[1] === 'assets') {
+          const job = await submitGenerationJobAssets(
+            id,
+            await readBody(request),
+            { ...environment, SIGNAL_PREVIEW_ORIGIN: readLocalPreviewOrigin(request) }
+          );
+          send(response, 202, { job });
+          return;
+        }
+        if (request.method === 'POST' && segments.length === 2 && segments[1] === 'recover') {
+          const job = await recoverGenerationJobCandidate(
+            id,
+            { ...environment, SIGNAL_PREVIEW_ORIGIN: readLocalPreviewOrigin(request) }
+          );
+          send(response, 200, { job });
+          return;
+        }
+        if (request.method === 'GET' && segments.length === 1) {
+          let job = await readGenerationJob(id, environment);
           if (!job) { send(response, 404, { error: '生成任务不存在。' }); return; }
+          // Older blocked jobs predate the R88 completion contract. Mint the
+          // bounded identity once so the workbench never invents a client-side
+          // completion id and can resume the same persisted job safely.
+          if (job.status === 'blocked'
+            && job.assetGate?.decision === 'needs-codex-assets'
+            && !job.assetCompletion
+            && job.assetGate.requests.length) {
+            job = await updateGenerationJob(job.id, {
+              stage: 'blocked',
+              message: job.message,
+              assetCompletion: createAssetCompletion(
+                job.id,
+                job.assetGate.requests.map((item) => item.requirementId),
+              ),
+              error: job.error,
+            }, environment);
+          }
           if (job.status === 'running') void ensureGenerationJobRunning(job.id, { ...environment, SIGNAL_PREVIEW_ORIGIN: readLocalPreviewOrigin(request) });
           send(response, 200, { job });
           return;
         }
-        if (request.method === 'PATCH') {
-          send(response, 200, { job: await updateGenerationJob(id, await readBody(request), environment) });
+        if (request.method === 'PATCH' && segments.length === 1) {
+          const job = await readGenerationJob(id, environment);
+          if (!job) { send(response, 404, { error: '生成任务不存在。' }); return; }
+          if (job.executionOwner === 'server') {
+            send(response, 409, { error: '服务端生成任务的阶段、次数和截止时间只能由受控 runner 更新。' });
+            return;
+          }
+          // A resumable job patch can legitimately carry the complete V2 contract and
+          // source bundle checkpoint. Keep the bounded dedicated-body limit instead of
+          // the generic 16 KB API limit so recovery does not fail before validation.
+          send(response, 200, { job: await updateGenerationJob(id, await readBody(request, maxDedicatedBodyBytes), environment) });
           return;
         }
       }
@@ -118,7 +165,7 @@ export function creativeApiPlugin(environment: Readonly<Record<string, string | 
           const receipt = await generateDedicatedExperience(input, environment);
           if (jobId) await updateGenerationJob(jobId, {
             stage: 'reviewing',
-            message: '专属代码已编译，正在准备四个真实浏览器状态的视觉评审。',
+            message: '专属代码已编译，正在按产品结构准备真实浏览器状态评审。',
             sourceRunId: receipt.id,
             sourceReceipt: receipt,
             model: receipt.model
@@ -135,26 +182,65 @@ export function creativeApiPlugin(environment: Readonly<Record<string, string | 
         send(response, 200, { result });
         return;
       }
+      if (request.method === 'POST' && url.pathname === '/api/creative/code/audit') {
+        const previewOrigin = readLocalPreviewOrigin(request);
+        const result = await auditDedicatedVisualEvidence(
+          await readBody(request, maxDedicatedBodyBytes),
+          { ...environment, SIGNAL_PREVIEW_ORIGIN: previewOrigin }
+        );
+        send(response, 200, { result });
+        return;
+      }
+      if (request.method === 'POST' && url.pathname === '/api/creative/code/accept') {
+        const previewOrigin = readLocalPreviewOrigin(request);
+        const result = await assessDedicatedVisualAcceptance(
+          await readBody(request, maxDedicatedBodyBytes),
+          {
+            ...environment,
+            SIGNAL_PREVIEW_ORIGIN: previewOrigin,
+            CODEX_VISUAL_ACCEPTANCE_MODEL: environment.CODEX_VISUAL_ACCEPTANCE_MODEL || 'gpt-5.6-luna',
+            CODEX_VISUAL_ACCEPTANCE_REASONING_EFFORT: environment.CODEX_VISUAL_ACCEPTANCE_REASONING_EFFORT || 'low',
+            VISUAL_ACCEPTANCE_TIMEOUT_MS: environment.VISUAL_ACCEPTANCE_TIMEOUT_MS || '45000'
+          }
+        );
+        send(response, 200, { result });
+        return;
+      }
       if (request.method === 'POST' && url.pathname === '/api/creative/code/refine') {
         const previewOrigin = readLocalPreviewOrigin(request);
         const body = await readBody(request, maxDedicatedBodyBytes) as Record<string, unknown>;
         const jobId = readJobId(body.jobId);
         const { jobId: _jobId, ...input } = body;
         try {
-          if (jobId) await updateGenerationJob(jobId, { stage: 'refining', message: '正在采集首屏、中段、末段和移动端，并由视觉模型选择最佳版本。' }, environment);
+          if (jobId) await updateGenerationJob(jobId, { stage: 'refining', message: '正在按产品关键状态采集桌面、交互、移动端与必要降级证据，并选择最佳版本。' }, environment);
           const result = await refineDedicatedExperience(input, { ...environment, SIGNAL_PREVIEW_ORIGIN: previewOrigin });
-          if (jobId) await updateGenerationJob(jobId, {
-            stage: 'complete',
-            message: result.status === 'refined' ? '视觉精修完成，已选中新的最终最佳版本。' : result.status === 'kept' ? '视觉评审完成，当前版本即为最终最佳版本。' : '修订候选未通过门禁，已回退并选中原始最佳版本。',
-            sourceRunId: result.parentId,
-            bestRunId: result.receipt.id,
-            bestPreviewUrl: result.receipt.previewUrl,
-            bestReceipt: result.receipt,
-            decision: result.status,
-            sourceScore: result.sourceAssessment.score,
-            finalScore: result.finalAssessment.score,
-            model: result.receipt.model
-          }, environment);
+          if (jobId) {
+            const activeJob = await readGenerationJob(jobId, environment);
+            const contract = activeJob?.resumeBuild?.creativeContract;
+            const deliveryQuality = activeJob
+              ? assessDeliveryQuality(
+                activeJob.quality,
+                contract,
+                activeJob.resumeBuild?.reference.assets || [],
+                result.visualAcceptance,
+                {
+                  mechanical: result.finalAssessment,
+                  plan: createVisualReviewPlan(contract)
+                }
+              )
+              : undefined;
+            const outcome = generationJobPatchForRefinement(result, deliveryQuality);
+            await updateGenerationJob(jobId, {
+              ...outcome,
+              ...(deliveryQuality ? { deliveryQuality } : {}),
+              sourceRunId: result.parentId,
+              bestRunId: result.receipt.id,
+              bestPreviewUrl: result.receipt.previewUrl,
+              bestReceipt: result.receipt,
+              decision: result.status,
+              model: result.receipt.model
+            }, environment);
+          }
           send(response, 200, { result });
         } catch (error) {
           if (jobId) await failJob(jobId, 'reviewing', error, environment);
@@ -243,12 +329,14 @@ function readLocalPreviewOrigin(request: IncomingMessage): string {
   return parsed.origin;
 }
 
+export const generatedHostStyle = '#app{position:relative;min-height:100vh}#app>.generated-canvas{position:fixed!important;inset:0!important;width:100%!important;height:100%!important;display:block!important;z-index:0!important}#app>:not(.generated-canvas):not(.generated-loading){position:relative;z-index:1}';
+
 function generatedPage(entryUrl: string, cssUrl: string, title: string, embed: boolean): string {
   const safeTitle = escapeHtml(title);
   const safeEntry = escapeAttribute(entryUrl);
   const safeCss = escapeAttribute(cssUrl);
   const embedAttribute = embed ? 'true' : 'false';
-  return `<!doctype html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark"><title>${safeTitle}</title><link rel="stylesheet" href="${safeCss}"><style>body[data-signal-embed="true"]{overflow-x:hidden}body[data-signal-embed="true"] #app h1{width:min(100%,18ch)!important;max-width:88vw!important;font-size:clamp(2.6rem,6vw,5.5rem)!important;line-height:.94!important;overflow-wrap:anywhere;text-wrap:balance}@media(max-width:600px){body[data-signal-embed="true"] #app h1{font-size:clamp(2.25rem,10vw,4rem)!important;max-width:92vw!important}}</style></head><body data-signal-embed="${embedAttribute}"><main id="app"><section class="generated-loading"><strong>正在启动专属体验</strong><p>语义内容与 Three.js 场景正在挂载。</p></section></main><script type="module" src="${safeEntry}"></script></body></html>`;
+  return `<!doctype html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark"><title>${safeTitle}</title><link rel="stylesheet" href="${safeCss}"><style>${generatedHostStyle}body[data-signal-embed="true"]{overflow-x:hidden}body[data-signal-embed="true"] #app h1{width:min(100%,18ch)!important;max-width:88vw!important;font-size:clamp(2.6rem,6vw,5.5rem)!important;line-height:.94!important;overflow-wrap:anywhere;text-wrap:balance}@media(max-width:600px){body[data-signal-embed="true"] #app h1{font-size:clamp(2.25rem,10vw,4rem)!important;max-width:92vw!important}}</style></head><body data-signal-embed="${embedAttribute}"><main id="app"><section class="generated-loading"><strong>正在启动专属体验</strong><p>语义内容与 Three.js 场景正在挂载。</p></section></main><script type="module" src="${safeEntry}"></script></body></html>`;
 }
 
 function generatedNotFound(): string {

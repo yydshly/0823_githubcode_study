@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="zh-CN" data-press-ready="false" data-press-state="silent" data-audio="locked" data-fallback="false" data-saved="false">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#140b0e" />
+    <meta name="description" content="声纹压片室：把一段可听信号压进透明材质，观察低、中、高频留下不同痕迹。" />
+    <title>声纹压片室 · PRESS / 07</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body data-experience="sonic-pressing-room">
+    <a class="skip-link" href="#save-imprint">跳到保存声纹</a>
+
+    <main id="press-stage" aria-labelledby="press-title">
+      <div class="sticky-stage">
+        <div class="scene" aria-hidden="true">
+          <canvas id="press-canvas"></canvas>
+          <div class="disc-fallback"><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="press-light"></div>
+          <div class="grain"></div>
+        </div>
+
+        <div class="interface">
+          <header class="masthead">
+            <a class="identity" href="../../" aria-label="返回 V2 研究首页">
+              <span class="identity-mark" aria-hidden="true"></span>
+              <span>PRESS / 07</span>
+            </a>
+            <p>ONE SIGNAL · ONE SURFACE</p>
+            <button id="audio-toggle" type="button" aria-pressed="false" data-signal-audio-control>
+              <span class="audio-orbit" aria-hidden="true"><i></i></span>
+              <span id="audio-label">让唱片发声</span>
+            </button>
+          </header>
+
+          <section class="opening" aria-describedby="press-intro">
+            <p class="eyebrow">SONIC IMPRESSION / LIVE STUDY</p>
+            <h1 id="press-title"><span>把声音</span><em>压进光里。</em></h1>
+            <p id="press-intro">滚动让沟槽逐层显影。播放后，低频雕刻深度，中频改变折光，高频让边缘开始呼吸。</p>
+            <button class="opening-play" type="button" data-audio-proxy>开始一段声纹 <span>↗</span></button>
+          </section>
+
+          <aside class="spectrum" aria-label="实时声纹频段" aria-live="polite" data-signal-audio-feedback>
+            <div class="spectrum-head">
+              <p><span class="live-dot" aria-hidden="true"></span> LIVE IMPRESSION</p>
+              <strong id="state-index">00%</strong>
+            </div>
+            <div class="band" data-band="low">
+              <div><span>LOW</span><b>沟槽深度</b></div>
+              <i><span id="low-meter"></span></i>
+              <output id="low-value">0.00</output>
+            </div>
+            <div class="band" data-band="mid">
+              <div><span>MID</span><b>表面折光</b></div>
+              <i><span id="mid-meter"></span></i>
+              <output id="mid-value">0.00</output>
+            </div>
+            <div class="band" data-band="high">
+              <div><span>HIGH</span><b>边缘振动</b></div>
+              <i><span id="high-meter"></span></i>
+              <output id="high-value">0.00</output>
+            </div>
+            <p id="spectrum-note">声音尚未进入材质。滚动可以先观察空白压片。</p>
+          </aside>
+
+          <nav class="press-states" aria-label="压片阶段">
+            <button type="button" data-target="0" aria-current="step"><span>01</span><b>空白</b></button>
+            <button type="button" data-target="0.36"><span>02</span><b>落针</b></button>
+            <button type="button" data-target="0.68"><span>03</span><b>共振</b></button>
+            <button type="button" data-target="1"><span>04</span><b>留存</b></button>
+          </nav>
+
+          <div class="progress-rail" aria-hidden="true">
+            <span>UNPRESSED</span><i><b id="progress-fill"></b></i><span>IMPRINTED</span>
+          </div>
+
+          <section class="completion" aria-labelledby="completion-title">
+            <p class="eyebrow">IMPRINT READY / BROWSER STUDY</p>
+            <h2 id="completion-title">这一段声音，已经留下可见的纹路。</h2>
+            <p>这是浏览器中的声音可视化与材质模拟，不代表真实母带、实体唱片或声学测量结果。</p>
+            <button id="save-imprint" type="button" disabled><span>保存这一段声纹</span><span aria-hidden="true">↗</span></button>
+            <p id="save-status" role="status" aria-live="polite"></p>
+          </section>
+
+          <p class="gesture"><span>SCROLL TO PRESS</span><i></i><span>MOVE TO REFRACT</span></p>
+          <p id="live-status" class="visually-hidden" role="status" aria-live="polite">声纹压片室正在准备。</p>
+        </div>
+      </div>
+    </main>
+
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>

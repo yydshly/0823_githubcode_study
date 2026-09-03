@@ -1,0 +1,297 @@
+{
+  "schemaVersion": 1,
+  "creativeProtocolVersion": 2,
+  "id": "direct-r125-ice-core-letters",
+  "goalPlayback": {
+    "originalBrief": "为对气候记忆好奇的普通访客设计一封可以走进冰层的“冰芯来信”网页。开场看见峡谷中的透明冰芯，向下滚动依次穿过气泡、火山灰与花粉层，让同一环境和同一冰芯逐层显出时间痕迹，最后写一封给未来的信。使用真实感冰川环境图与程序化 Three.js 冰芯形成有深度的空间旅程，不做持久参数工作台。最终行动为“把这张纸夹进时间里”。页面明确说明这是一种冰芯阅读的概念演示，不把可见层位伪装成真实科学测量结果。",
+    "subject": "一封可以走进冰层的“冰芯来信”",
+    "audience": "对气候记忆好奇的普通访客",
+    "desiredOutcome": "沿同一冰芯从表层进入气泡、火山灰与花粉层，理解自然痕迹如何成为时间记忆，并以一封给未来的信收束。",
+    "primaryAction": "把这张纸夹进时间里",
+    "hardConstraints": [
+      "开场看见峡谷中的透明冰芯，向下滚动依次穿过气泡、火山灰与花粉层，让同一环境和同一冰芯逐层显出时间痕迹，最后写一封给未来的信",
+      "最终行动为“把这张纸夹进时间里”"
+    ],
+    "preferences": [
+      "真实、安静、自然冰材质",
+      "纵向空间旅程与内容自适应长度",
+      "不使用持久参数面板，不虚构科学测量数据"
+    ]
+  },
+  "selectedDirection": {
+    "id": "direction-1n7vx9z",
+    "title": "一封可以走进冰层的“冰芯来信” · 专属创意方向",
+    "experienceForm": "scroll-journey",
+    "rationale": "以同一冰川环境和同一冰芯构成向下的空间时间轴；滚动逐层显出气泡、火山灰与花粉，最后从观察自然痕迹收束到写给未来的行动。"
+  },
+  "referencePrinciples": [
+    {
+      "referenceId": "positive-dream-room-memory",
+      "title": "梦境记录 · 同一环境逐渐形成",
+      "principle": "借用“同一环境的可见状态变化承载记忆形成”的原理，让冰川地点、观察关系和冰芯身份在整个旅程中保持连续。",
+      "relevance": "冰芯同样是通过同一环境中的层位变化阅读记忆；只借连续环境与最终记录行动的因果，不复制梦境题材或房间布局。",
+      "sourceUri": "../cases/dedicated-8574ee46ab16/"
+    },
+    {
+      "referenceId": "positive-cloud-observatory-journey",
+      "title": "云上观测站 · 可定位的空间旅程",
+      "principle": "只借“开场定位、沿明确路线穿越、在可辨认终点停留”的空间路线机制，使滚动具有接近与抵达感。",
+      "relevance": "冰芯页面需要从峡谷开场沿垂直路线进入不同层位；不借观测站题材、建筑视觉或科技风格。",
+      "sourceUri": "../cases/dedicated-896cfb7e6657/"
+    }
+  ],
+  "assetPlan": {
+    "batchId": "assets-r125-ice-core-letters",
+    "strategy": "mixed",
+    "rationale": "唯一素材批次同时产出自然冰川环境图与程序化 Three.js 冰芯；环境承担地点和光线，冰芯承担层位、深度与滚动变化。",
+    "assets": [
+      {
+        "id": "glacier-crevasse-environment-v1",
+        "role": "提供可连续延展的冰川峡谷、自然光线与真实空间尺度",
+        "source": "generated",
+        "required": true
+      },
+      {
+        "id": "programmatic-ice-core",
+        "role": "以透明 Three.js 冰芯承载气泡、火山灰、花粉层与滚动驱动的相机深度",
+        "source": "programmatic",
+        "required": true
+      }
+    ]
+  },
+  "interactionRationale": {
+    "mode": "scroll",
+    "audioApplicable": false,
+    "rationale": "滚动沿同一冰芯的垂直层位推进相机、材质和证据说明，最后抵达写信与封存行动。"
+  },
+  "visualAmbition": {
+    "schemaVersion": 1,
+    "intentLevel": "immersive",
+    "intentRationale": "视觉野心等级 immersive 来自用户明确的体验要求：让一封可以走进冰层的“冰芯来信”从朦胧环境中逐步形成可理解、可停留的记忆空间。。它只决定本次内容需要的表达强度，不继承历史案例的布局、风格或渲染器禁令。",
+    "heroMoment": {
+      "title": "一封可以走进冰层的“冰芯来信” · 把这张纸夹进时间里",
+      "description": "开场以“同一环境处于刚醒来的低对比和浅景深状态。”建立主体，并让后续变化服务于“从朦胧环境恢复空间坐标，让碎片形成可停留的记忆。”。",
+      "themeConnection": "视觉锚点必须直接证明“一封可以走进冰层的“冰芯来信””和“让一封可以走进冰层的“冰芯来信”从朦胧环境中逐步形成可理解、可停留的记忆空间。”；即使隐藏标题，也能从对象、空间或数据关系辨认主题。；这一记忆点直接指向“把这张纸夹进时间里”。",
+      "appearsWithinSeconds": 5,
+      "observableRuntimeChange": {
+        "trigger": "用户滚动推进体验",
+        "from": "同一环境处于刚醒来的低对比和浅景深状态。",
+        "to": "环境安静稳定，视觉焦点收束到“把这张纸夹进时间里”。"
+      }
+    },
+    "rendering": {
+      "primary": "webgl-shader",
+      "supporting": [
+        "dom-css",
+        "image-sequence"
+      ],
+      "rationale": "以 webgl-shader 承担“以可分离、可辨认的完整轮廓表现“一封可以走进冰层的“冰芯来信””中的主要物件，使其能在同一环境中独立移动并改变空间结果。”的主要可见职责；语义内容和行动仍由 DOM 保底。选择依据是 独立环境、主体、前景与深度/状态层需要统一的遮挡、视差、景深和融合导演；DOM 继续承担内容和行动。"
+    },
+    "spatialDepth": {
+      "mode": "parallax",
+      "purpose": "让独立场景层共同表达“所有关键状态必须保持同一地点、主体、光向和可追踪空间坐标。”，避免关键主体沦为贴图。",
+      "cues": [
+        "scale",
+        "occlusion",
+        "parallax",
+        "focus"
+      ]
+    },
+    "motionArc": {
+      "beats": [
+        {
+          "phase": "opening",
+          "driver": "time",
+          "visualState": "同一环境处于刚醒来的低对比和浅景深状态。",
+          "thematicPurpose": "滚动开始恢复空间坐标。"
+        },
+        {
+          "phase": "exploration",
+          "driver": "scroll",
+          "visualState": "可辨认碎片在同一空间中出现，并保留可追踪的位置关系。",
+          "thematicPurpose": "继续滚动确认哪些碎片属于同一段记忆。"
+        },
+        {
+          "phase": "resolution",
+          "driver": "scroll",
+          "visualState": "环境安静稳定，视觉焦点收束到“把这张纸夹进时间里”。",
+          "thematicPurpose": "停止主要运动并留下清晰行动。"
+        }
+      ],
+      "runtimeAdvantage": "运行时让用户从“同一环境处于刚醒来的低对比和浅景深状态。”抵达“环境安静稳定，视觉焦点收束到“把这张纸夹进时间里”。”；这种状态变化服务于主题，不能由一张静态截图等价替代。"
+    },
+    "interactionToScene": [
+      {
+        "input": "用户滚动推进体验",
+        "sceneResponse": "视觉锚点沿体验节点连续承担建立、变化与“把这张纸夹进时间里”收束，不得在中段被无关装饰替换。",
+        "productMeaning": "可见变化必须帮助用户理解“从朦胧环境恢复空间坐标，让碎片形成可停留的记忆。”，并自然抵达“把这张纸夹进时间里”。"
+      }
+    ],
+    "assetCredibility": {
+      "level": "product-faithful",
+      "strategy": "关键素材分别承担：提供同一真实空间从朦胧到清晰的连续环境证据。；以可分离、可辨认的完整轮廓表现“一封可以走进冰层的“冰芯来信””中的主要物件，使其能在同一环境中独立移动并改变空间结果。；提供与工作区直接相关的栏杆、檐口或近景遮挡，建立可信的前后层次而不是装饰贴片。。",
+      "disclosure": "关键产品身份由可核验素材承担；没有产品依据时不伪装为真实商品。"
+    },
+    "fallbackPerformance": {
+      "targetFps": 60,
+      "maxDevicePixelRatio": 2,
+      "initialTransferBudgetMb": 7.63,
+      "mobileFallback": "simplified-scene",
+      "reducedMotionFallback": "key-states",
+      "rendererFailureFallback": "key-visual"
+    }
+  },
+  "attemptBudget": {
+    "limits": {
+      "directionSelections": 1,
+      "assetBatches": 1,
+      "builds": 1,
+      "deterministicRepairs": 2,
+      "visualRefinements": 1
+    },
+    "used": {
+      "directionSelections": 1,
+      "assetBatches": 1,
+      "builds": 1,
+      "deterministicRepairs": 0,
+      "visualRefinements": 1
+    }
+  },
+  "stageReports": [],
+  "finalCandidate": {
+    "runId": "direct-r125-ice-core-letters",
+    "bundleHash": "de2fe28ea88ca9d6c238947c634ccbe92f11793422c31f448c2c310d0a94f031"
+  },
+  "adaptiveEvidence": {
+    "schemaVersion": 1,
+    "runId": "direct-r125-ice-core-letters",
+    "bundleHash": "de2fe28ea88ca9d6c238947c634ccbe92f11793422c31f448c2c310d0a94f031",
+    "profile": {
+      "schemaVersion": 1,
+      "interactionMode": "scroll",
+      "audioApplicable": false,
+      "requiredCheckpoints": [
+        "opening",
+        "core",
+        "mobile",
+        "scroll"
+      ]
+    },
+    "checkpoints": [
+      {
+        "kind": "opening",
+        "runId": "direct-r125-ice-core-letters",
+        "bundleHash": "de2fe28ea88ca9d6c238947c634ccbe92f11793422c31f448c2c310d0a94f031",
+        "passed": true,
+        "summary": "桌面高质量开场在 1919ms 内加载冰川峡谷和透明冰芯，无页面、控制台、请求或响应错误。"
+      },
+      {
+        "kind": "core",
+        "runId": "direct-r125-ice-core-letters",
+        "bundleHash": "de2fe28ea88ca9d6c238947c634ccbe92f11793422c31f448c2c310d0a94f031",
+        "passed": true,
+        "summary": "同一冰芯在同一环境中连续承担气泡、火山灰与花粉层位，关键生成素材与程序化主体都实际可见。"
+      },
+      {
+        "kind": "mobile",
+        "runId": "direct-r125-ice-core-letters",
+        "bundleHash": "de2fe28ea88ca9d6c238947c634ccbe92f11793422c31f448c2c310d0a94f031",
+        "passed": true,
+        "summary": "390×844 reduced-motion 无横向溢出，语义内容和“把这张纸夹进时间里”行动可达。"
+      },
+      {
+        "kind": "scroll",
+        "runId": "direct-r125-ice-core-letters",
+        "bundleHash": "de2fe28ea88ca9d6c238947c634ccbe92f11793422c31f448c2c310d0a94f031",
+        "passed": true,
+        "summary": "滚动和段落导航真实改变激活层位、相机深度、材质状态与可见截图哈希，并在终点打开和封存信件。"
+      }
+    ],
+    "hardGates": {
+      "runtimeClean": true,
+      "criticalAssetsLoaded": true,
+      "primaryActionReachable": true,
+      "mobileComplete": true,
+      "truthfulClaims": true,
+      "interactionVerified": true,
+      "audioVerified": null
+    },
+    "visualQuality": {
+      "schemaVersion": 1,
+      "verdict": "pass",
+      "score": 91,
+      "dimensions": {
+        "goalClarity": 93,
+        "creativeDistinctiveness": 92,
+        "craftCohesion": 90,
+        "assetIntegration": 89,
+        "interactionValue": 91,
+        "mobileReadiness": 90
+      },
+      "summary": "真实感冰川环境、透明冰芯与档案纸张形成主题专属空间旅程；滚动把自然层位与写信行动连接起来，移动端和回退保留完整路径。",
+      "findings": [
+        {
+          "code": "conceptual-ice-core-fidelity",
+          "severity": "minor",
+          "checkpoint": "core",
+          "message": "可见冰芯是用于解释层位阅读的概念模型，不是具有真实年代、温度或化学数据的科学测量模型；页面已明确披露。"
+        }
+      ]
+    },
+    "macroStructureReview": {
+      "mode": "content-fit-gate",
+      "candidate": {
+        "runId": "direct-r125-ice-core-letters",
+        "layout": "spatial-journey",
+        "persistentControlPanel": false,
+        "visibleParameterControls": false,
+        "realtimeMetricCluster": false,
+        "primaryAction": "record-or-contribute"
+      },
+      "inertia": {
+        "mode": "advisory-only",
+        "detected": false,
+        "matchedRunIds": [],
+        "repeatedAxes": [],
+        "mustChange": false,
+        "recommendation": "未发现足以影响当前方向的宏观骨架惯性；继续由内容适配和最终效果决定页面形态。"
+      },
+      "persistentWorkbench": false,
+      "contentJustified": true,
+      "verdict": "pass",
+      "findingCode": null,
+      "summary": "当前候选不是持久参数工作台，无需为了近期案例差异而改变内容适配的宏观结构。"
+    }
+  },
+  "wowEvidence": {
+    "schemaVersion": 1,
+    "runId": "direct-r125-ice-core-letters",
+    "bundleHash": "de2fe28ea88ca9d6c238947c634ccbe92f11793422c31f448c2c310d0a94f031",
+    "assessment": {
+      "schemaVersion": 1,
+      "intentLevel": "immersive",
+      "required": true,
+      "verdict": "pass",
+      "score": 91,
+      "dimensions": {
+        "fiveSecondImpact": 92,
+        "runtimeAdvantage": 91,
+        "themeMemorability": 92,
+        "motionDepthMeaning": 91,
+        "assetIntegrationCredibility": 89,
+        "craftCohesion": 90
+      },
+      "observation": {
+        "heroMomentObserved": true,
+        "runtimeAdvantageOverStaticObserved": true,
+        "themeSpecificMemoryObserved": true,
+        "meaningfulMotionOrDepthObserved": true,
+        "credibleAssetIntegrationObserved": true,
+        "summary": "桌面开场在 1919ms 内同时呈现完整冰川峡谷与透明 Three.js 冰芯，主题、尺度和向下阅读方向立即可辨。 浏览器按顺序抵达气泡、火山灰和花粉层；状态、画布哈希与可见截图哈希均同步变化，证明滚动不是静态背景替换。 可复述记忆是沿一根透明冰芯下潜阅读三种自然痕迹，并把写给未来的话封存在当前层位。 滚动持续改变冰芯内部层位、相机深度和证据高亮，空间纵深直接解释时间向下累积。 生成的冰川峡谷承担真实环境尺度，程序化冰芯承担层位与动态职责；页面明确披露概念演示边界。 低饱和冰蓝环境、半透明冰芯、档案纸张与克制排版形成统一的“自然档案”语言。 滚动和键盘改变同一空间路线中的激活层位、冰芯材质与证据说明，并最终抵达写信行动。 390×844 reduced-motion 状态无横向溢出，End 键可抵达写信段落，主体、证据卡与主要行动保持可读。 强制 WebGL fallback 仍保留冰川环境、层位旅程、写信与本地封存结果。"
+      },
+      "findings": []
+    }
+  },
+  "verdict": "pass",
+  "stopReason": null
+}

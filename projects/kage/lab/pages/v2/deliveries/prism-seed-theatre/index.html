@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="zh-CN" data-prism-ready="false" data-prism-state="sealed" data-fallback="false">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#e9eadc" />
+    <meta name="description" content="棱镜种子剧场：移动日光，让一枚半透明种荚把光谱写进温室。" />
+    <title>棱镜种子剧场 · 今日折光标本</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body data-experience="prism-seed-theatre">
+    <a class="skip-link" href="#save-specimen">跳到保存折光标本</a>
+
+    <main id="prism-stage" aria-labelledby="prism-title">
+      <div class="scene-layer" aria-hidden="true">
+        <img
+          id="prism-source-image"
+          src="./assets/prism-seed-glasshouse-v1.png"
+          alt=""
+          width="1672"
+          height="941"
+          decoding="async"
+          fetchpriority="high"
+        />
+        <canvas id="prism-canvas"></canvas>
+        <div id="prism-css-spectrum" class="css-spectrum"></div>
+        <div class="light-haze"></div>
+      </div>
+
+      <div class="sticky-interface">
+        <header class="masthead">
+          <a class="identity" href="../../" aria-label="返回 V2 研究首页">
+            <span class="identity-mark" aria-hidden="true"></span>
+            <span>HELIOPHYTA</span>
+            <span class="identity-cn">日光标本室</span>
+          </a>
+          <p class="edition">FIELD EDITION · 01 / 04</p>
+          <p class="state-label" id="state-label">日光停在表皮</p>
+        </header>
+
+        <section class="opening-copy" aria-describedby="prism-intro">
+          <p class="eyebrow">A BOTANICAL LIGHT SPECIMEN</p>
+          <h1 id="prism-title"><span>让一枚种子</span><em>把日光展开。</em></h1>
+          <p id="prism-intro">沿着光走。种荚不会被拆解成参数，它只会在你靠近时，慢慢把温室里原本看不见的颜色交出来。</p>
+        </section>
+
+        <aside class="observation" aria-live="polite">
+          <p class="observation-index" id="observation-index">01 — SEALED</p>
+          <p class="observation-title" id="observation-title">光落下，但还没有穿过。</p>
+          <p class="observation-detail" id="observation-detail">移动指针改变日光方向，滚动让光线继续深入种荚。</p>
+        </aside>
+
+        <nav class="state-rail" aria-label="折光阶段">
+          <button type="button" data-prism-target="0" aria-current="step"><span>01</span><b>表皮</b></button>
+          <button type="button" data-prism-target="0.34"><span>02</span><b>透亮</b></button>
+          <button type="button" data-prism-target="0.68"><span>03</span><b>光谱</b></button>
+          <button type="button" data-prism-target="1"><span>04</span><b>标本</b></button>
+        </nav>
+
+        <div class="progress-readout" aria-hidden="true">
+          <span class="progress-line"><i id="progress-fill"></i></span>
+          <span id="progress-value">00</span>
+        </div>
+
+        <p class="gesture-cue"><span>SCROLL</span><i></i><span>MOVE THE LIGHT</span></p>
+
+        <section class="completion" aria-labelledby="completion-title">
+          <p class="eyebrow">SPECIMEN READY · DAYLIGHT 08:47</p>
+          <h2 id="completion-title">今天的光，已经有了形状。</h2>
+          <p>这是一件艺术化折光标本，不代表真实光谱测量。</p>
+          <button id="save-specimen" type="button" disabled>
+            <span>保存今日折光标本</span>
+            <span aria-hidden="true">↗</span>
+          </button>
+          <p id="save-status" class="save-status" role="status" aria-live="polite"></p>
+        </section>
+
+        <p id="live-status" class="visually-hidden" role="status" aria-live="polite">棱镜种子剧场正在准备。</p>
+      </div>
+    </main>
+
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>

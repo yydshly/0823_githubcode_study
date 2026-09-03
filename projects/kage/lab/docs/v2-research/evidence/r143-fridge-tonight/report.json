@@ -1,0 +1,342 @@
+{
+  "schemaVersion": 1,
+  "stage": "r143-fridge-tonight-runtime-observations",
+  "capturedAt": "2026-09-01T17:31:40.640Z",
+  "identityBinding": "runId+bundleHash",
+  "runId": "direct-r143-fridge-tonight",
+  "bundleHash": "c91dbd26982c8d8eddf7007c8ed1cf4fd162dd7cd92e568197774542221828b1",
+  "route": "/pages/v2/deliveries/fridge-tonight/",
+  "revision": "r143-proof",
+  "complete": true,
+  "bundleFiles": [
+    "index.html",
+    "style.css",
+    "main.ts",
+    "CONTRACT.md",
+    "asset-manifest.json"
+  ],
+  "captures": [
+    "01-desktop-opening.png",
+    "02-desktop-causal-result.png",
+    "03-desktop-saved.png",
+    "04-mobile-reduced-result.png",
+    "05-no-js-readable.png"
+  ],
+  "observations": [
+    {
+      "checkpoint": "desktop-opening",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "issues": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "requestFailures": [],
+        "responseErrors": []
+      },
+      "state": {
+        "ready": true,
+        "revision": "r143-proof",
+        "selected": [],
+        "selectedNames": [],
+        "selectionCount": 0,
+        "eligible": false,
+        "menuId": "none",
+        "menuTitle": "",
+        "missingItems": [],
+        "timelineMarks": 0,
+        "saved": false,
+        "renderer": "dom-css-inline-svg",
+        "reducedMotion": false,
+        "horizontalOverflow": false
+      },
+      "semantic": {
+        "ingredientButtons": 6,
+        "canvasCount": 0,
+        "webglContext": false,
+        "headline": "快过期，正好今晚。",
+        "visualAnchorBackground": "linear-gradient(94deg, rgba(0, 0, 0, 0) 49.84%, rgba(17, 22, 19, 0.043) 50%, rgba(0, 0, 0, 0) 50.16%), repeating-linear-gradient(0deg, rgba(25, 27, 24, 0.02) 0px, rgba(25, 27, 24, 0.02) 1px, rgba(0, 0, 0, 0) 1px, rgba(0, 0, 0, 0) 6px), linear-gradient(136deg, rgb(255, 254, 247) 0%, rgb(246, 245, 237) 54%, rgb(237, 238, 232) 100%)"
+      }
+    },
+    {
+      "checkpoint": "desktop-causal-selection-and-withdrawal",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "issues": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "requestFailures": [],
+        "responseErrors": []
+      },
+      "state": {
+        "ready": true,
+        "revision": "r143-proof",
+        "selected": [
+          "tomato",
+          "tofu"
+        ],
+        "selectedNames": [
+          "番茄",
+          "豆腐"
+        ],
+        "selectionCount": 2,
+        "eligible": true,
+        "menuId": "tomato-tofu-soup",
+        "menuTitle": "番茄豆腐暖汤",
+        "missingItems": [
+          "生姜",
+          "米饭"
+        ],
+        "timelineMarks": 2,
+        "saved": false,
+        "renderer": "dom-css-inline-svg",
+        "reducedMotion": false,
+        "horizontalOverflow": false
+      },
+      "semantic": {
+        "first": {
+          "ready": true,
+          "revision": "r143-proof",
+          "selected": [
+            "tomato",
+            "eggs"
+          ],
+          "selectedNames": [
+            "番茄",
+            "鸡蛋"
+          ],
+          "selectionCount": 2,
+          "eligible": true,
+          "menuId": "tomato-egg-rice",
+          "menuTitle": "番茄滑蛋盖饭",
+          "missingItems": [
+            "米饭",
+            "小葱"
+          ],
+          "timelineMarks": 2,
+          "saved": false,
+          "renderer": "dom-css-inline-svg",
+          "reducedMotion": false,
+          "horizontalOverflow": false
+        },
+        "withdrawn": {
+          "ready": true,
+          "revision": "r143-proof",
+          "selected": [
+            "tomato"
+          ],
+          "selectedNames": [
+            "番茄"
+          ],
+          "selectionCount": 1,
+          "eligible": false,
+          "menuId": "none",
+          "menuTitle": "",
+          "missingItems": [],
+          "timelineMarks": 1,
+          "saved": false,
+          "renderer": "dom-css-inline-svg",
+          "reducedMotion": false,
+          "horizontalOverflow": false
+        },
+        "second": {
+          "ready": true,
+          "revision": "r143-proof",
+          "selected": [
+            "tomato",
+            "tofu"
+          ],
+          "selectedNames": [
+            "番茄",
+            "豆腐"
+          ],
+          "selectionCount": 2,
+          "eligible": true,
+          "menuId": "tomato-tofu-soup",
+          "menuTitle": "番茄豆腐暖汤",
+          "missingItems": [
+            "生姜",
+            "米饭"
+          ],
+          "timelineMarks": 2,
+          "saved": false,
+          "renderer": "dom-css-inline-svg",
+          "reducedMotion": false,
+          "horizontalOverflow": false
+        }
+      }
+    },
+    {
+      "checkpoint": "desktop-save-restore-reset",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "issues": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "requestFailures": [],
+        "responseErrors": []
+      },
+      "state": {
+        "ready": true,
+        "revision": "r143-proof",
+        "selected": [
+          "spinach",
+          "mushroom"
+        ],
+        "selectedNames": [
+          "菠菜",
+          "香菇"
+        ],
+        "selectionCount": 2,
+        "eligible": true,
+        "menuId": "greens-mushroom-noodles",
+        "menuTitle": "菌菇青蔬拌面",
+        "missingItems": [
+          "面条"
+        ],
+        "timelineMarks": 2,
+        "saved": true,
+        "renderer": "dom-css-inline-svg",
+        "reducedMotion": false,
+        "horizontalOverflow": false
+      },
+      "semantic": {
+        "savedState": {
+          "ready": true,
+          "revision": "r143-proof",
+          "selected": [
+            "spinach",
+            "mushroom"
+          ],
+          "selectedNames": [
+            "菠菜",
+            "香菇"
+          ],
+          "selectionCount": 2,
+          "eligible": true,
+          "menuId": "greens-mushroom-noodles",
+          "menuTitle": "菌菇青蔬拌面",
+          "missingItems": [
+            "面条"
+          ],
+          "timelineMarks": 2,
+          "saved": true,
+          "renderer": "dom-css-inline-svg",
+          "reducedMotion": false,
+          "horizontalOverflow": false
+        },
+        "restored": {
+          "ready": true,
+          "revision": "r143-proof",
+          "selected": [
+            "spinach",
+            "mushroom"
+          ],
+          "selectedNames": [
+            "菠菜",
+            "香菇"
+          ],
+          "selectionCount": 2,
+          "eligible": true,
+          "menuId": "greens-mushroom-noodles",
+          "menuTitle": "菌菇青蔬拌面",
+          "missingItems": [
+            "面条"
+          ],
+          "timelineMarks": 2,
+          "saved": true,
+          "renderer": "dom-css-inline-svg",
+          "reducedMotion": false,
+          "horizontalOverflow": false
+        },
+        "reset": {
+          "ready": true,
+          "revision": "r143-proof",
+          "selected": [],
+          "selectedNames": [],
+          "selectionCount": 0,
+          "eligible": false,
+          "menuId": "none",
+          "menuTitle": "",
+          "missingItems": [],
+          "timelineMarks": 0,
+          "saved": false,
+          "renderer": "dom-css-inline-svg",
+          "reducedMotion": false,
+          "horizontalOverflow": false
+        }
+      }
+    },
+    {
+      "checkpoint": "mobile-reduced-result",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "issues": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "requestFailures": [],
+        "responseErrors": []
+      },
+      "state": {
+        "ready": true,
+        "revision": "r143-proof",
+        "selected": [
+          "tofu",
+          "mushroom"
+        ],
+        "selectedNames": [
+          "豆腐",
+          "香菇"
+        ],
+        "selectionCount": 2,
+        "eligible": true,
+        "menuId": "mushroom-tofu",
+        "menuTitle": "菌菇烧豆腐",
+        "missingItems": [
+          "小葱",
+          "生抽"
+        ],
+        "timelineMarks": 2,
+        "saved": false,
+        "renderer": "dom-css-inline-svg",
+        "reducedMotion": true,
+        "horizontalOverflow": false
+      },
+      "semantic": {
+        "firstButton": {
+          "x": 11.839920043945312,
+          "y": -1344.7169189453125,
+          "width": 184.2103729248047,
+          "height": 207.234619140625
+        },
+        "innerWidth": 390
+      }
+    },
+    {
+      "checkpoint": "no-js-readable",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "issues": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "requestFailures": [],
+        "responseErrors": []
+      },
+      "state": {
+        "ready": "false",
+        "buttons": 6,
+        "canvasCount": 0,
+        "horizontalOverflow": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#eef0d5" />
+    <meta
+      name="description"
+      content="纸蝶日光空间游园：在明亮屋顶温室中，以指针、触摸与键盘唤醒六只不同纸材的程序化概念纸蝶。"
+    />
+    <title>纸蝶日光空间游园 · Paper Butterfly Garden</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#butterfly-objects">跳到纸蝶选择</a>
+
+    <div id="app" class="experience-shell" data-phase="opening">
+      <img
+        class="environment-plate"
+        src="/creative-assets/r84-rooftop-greenhouse/greenhouse-master-v1.png"
+        alt=""
+        aria-hidden="true"
+      />
+      <div class="sun-wash" aria-hidden="true"></div>
+      <canvas class="butterfly-canvas" aria-hidden="true"></canvas>
+
+      <div class="fallback-garden" aria-hidden="true">
+        <i class="fallback-butterfly fallback-butterfly--mulberry"><b></b><b></b><span></span></i>
+        <i class="fallback-butterfly fallback-butterfly--glassine"><b></b><b></b><span></span></i>
+        <i class="fallback-butterfly fallback-butterfly--recycled"><b></b><b></b><span></span></i>
+        <i class="fallback-butterfly fallback-butterfly--gold"><b></b><b></b><span></span></i>
+        <i class="fallback-butterfly fallback-butterfly--indigo"><b></b><b></b><span></span></i>
+        <i class="fallback-butterfly fallback-butterfly--vellum"><b></b><b></b><span></span></i>
+      </div>
+
+      <header class="site-header">
+        <a class="brand" href="../../" aria-label="返回 Kage V2">
+          <span class="brand-seal" aria-hidden="true">纸</span>
+          <span>PAPER GARDEN</span>
+        </a>
+        <p class="site-note">ROOFTOP GREENHOUSE / 07:18</p>
+        <p class="asset-truth"><span aria-hidden="true"></span>程序化纸蝶 · 概念演示</p>
+      </header>
+
+      <main class="stage-copy" aria-labelledby="page-title">
+        <section class="hero-copy">
+          <p class="eyebrow">把一张纸，交给早晨的空气。</p>
+          <h1 id="page-title">纸蝶<br /><em>日光游园</em></h1>
+          <p class="lede">
+            六种纸材在温室里保留不同的折痕与透光。移动指针或轻触空间，让它们靠近；选择一只，听见这段纸上记忆。
+          </p>
+        </section>
+
+        <section id="butterfly-objects" class="object-field" aria-label="六只可探索的纸蝶">
+          <button class="object-marker object-marker--mulberry" type="button" data-butterfly-id="mulberry">
+            <span class="marker-dot" aria-hidden="true"></span>
+            <span class="marker-label"><b>01</b>桑皮纸</span>
+          </button>
+          <button class="object-marker object-marker--glassine" type="button" data-butterfly-id="glassine">
+            <span class="marker-dot" aria-hidden="true"></span>
+            <span class="marker-label"><b>02</b>格拉辛纸</span>
+          </button>
+          <button class="object-marker object-marker--recycled" type="button" data-butterfly-id="recycled">
+            <span class="marker-dot" aria-hidden="true"></span>
+            <span class="marker-label"><b>03</b>再生纸</span>
+          </button>
+          <button class="object-marker object-marker--gold" type="button" data-butterfly-id="gold">
+            <span class="marker-dot" aria-hidden="true"></span>
+            <span class="marker-label"><b>04</b>金纤维纸</span>
+          </button>
+          <button class="object-marker object-marker--indigo" type="button" data-butterfly-id="indigo">
+            <span class="marker-dot" aria-hidden="true"></span>
+            <span class="marker-label"><b>05</b>靛蓝宣纸</span>
+          </button>
+          <button class="object-marker object-marker--vellum" type="button" data-butterfly-id="vellum">
+            <span class="marker-dot" aria-hidden="true"></span>
+            <span class="marker-label"><b>06</b>硫酸纸</span>
+          </button>
+        </section>
+
+        <aside class="story-sheet" aria-labelledby="story-title">
+          <div class="sheet-index">
+            <span data-sheet-index>00 / 06</span>
+            <span data-sheet-state>等待一阵风</span>
+          </div>
+          <p class="sheet-kicker" data-sheet-kicker>晨光档案</p>
+          <h2 id="story-title" data-sheet-title>先靠近一只纸蝶</h2>
+          <p class="sheet-story" data-sheet-story>
+            指针会改变六只纸蝶之间的距离；触摸、Tab 或方向键也可以逐只探索。
+          </p>
+          <dl class="sheet-facts">
+            <div><dt>纸材</dt><dd data-sheet-material>六种概念纸材</dd></div>
+            <div><dt>透光</dt><dd data-sheet-light>随晨光变化</dd></div>
+          </dl>
+          <button class="join-button" type="button" data-join disabled>
+            <span data-join-label>选择后加入游园</span><span aria-hidden="true">↗</span>
+          </button>
+        </aside>
+
+        <div class="stage-guide" aria-hidden="true">
+          <span>MOVE / FORM</span><i></i><span>SELECT / REMEMBER</span>
+        </div>
+        <p class="concept-note">
+          程序化纸蝶为概念演示资产，不代表真实展品、物种或票务信息。
+        </p>
+        <div class="runtime-fallback" data-fallback-message role="status" hidden>
+          <strong>已切换到基础纸蝶游园</strong>
+          <span>六只纸蝶的选择、故事与加入动作仍然可用。</span>
+        </div>
+        <p class="sr-status" data-live-status role="status" aria-live="polite">纸蝶正在晨光中展开。</p>
+      </main>
+    </div>
+
+    <noscript>此页面需要 JavaScript 才能运行纸蝶互动；背景与文字档案仍可阅读。</noscript>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,259 @@
+{
+  "schemaVersion": 1,
+  "stage": "r129-color-relay-branching-runtime-observations",
+  "capturedAt": "2026-08-31T14:59:51.965Z",
+  "identityBinding": "runId+bundleHash",
+  "runId": "direct-r129-color-relay-branching",
+  "bundleHash": "1ccc53197308a7f6411a1157774b65980284dab773c50c8189f7210195c7e2cc",
+  "route": "/pages/v2/deliveries/color-relay-branching/",
+  "revision": "r129-proof",
+  "complete": true,
+  "captures": [
+    "01-desktop-opening.png",
+    "02-desktop-early.png",
+    "03-desktop-line-saved.png",
+    "04-mobile-reduced.png",
+    "05-fallback.png"
+  ],
+  "observations": [
+    {
+      "checkpoint": "desktop-opening",
+      "readyAtMs": 959,
+      "issues": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "requestFailures": [],
+        "responseErrors": []
+      },
+      "state": {
+        "ready": true,
+        "phase": "opening",
+        "selectedTeam": null,
+        "strategy": null,
+        "driveMode": "demo",
+        "progress": 0,
+        "saved": false,
+        "fallback": false,
+        "reducedMotion": false,
+        "routeHash": "relay-opening",
+        "routeD": "M0 0",
+        "formationSpread": 0,
+        "exchangeOverlap": 0,
+        "canvasFrames": 0,
+        "runnerTransforms": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "horizontalOverflow": false,
+        "revision": "r129-proof"
+      }
+    },
+    {
+      "checkpoint": "desktop-branch-confluence",
+      "issues": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "requestFailures": [],
+        "responseErrors": []
+      },
+      "early": {
+        "ready": true,
+        "phase": "confluence",
+        "selectedTeam": "cyan",
+        "strategy": "early",
+        "driveMode": "manual",
+        "progress": 1,
+        "saved": false,
+        "fallback": false,
+        "reducedMotion": false,
+        "routeHash": "relay-a5b860c6",
+        "routeD": "M-70 184 C270 145 410 275 608 405 C716 476 850 492 1018 406 C1165 330 1278 276 1350 230",
+        "formationSpread": 0.78,
+        "exchangeOverlap": 0.74,
+        "canvasFrames": 184,
+        "runnerTransforms": [
+          "translate(1389 137) rotate(90)",
+          "translate(1363 199) rotate(90)",
+          "translate(1337 261) rotate(90)",
+          "translate(1311 323) rotate(90)"
+        ],
+        "horizontalOverflow": false,
+        "revision": "r129-proof"
+      },
+      "line": {
+        "ready": true,
+        "phase": "confluence",
+        "selectedTeam": "cyan",
+        "strategy": "line",
+        "driveMode": "manual",
+        "progress": 1,
+        "saved": false,
+        "fallback": false,
+        "reducedMotion": false,
+        "routeHash": "relay-f46f6396",
+        "routeD": "M-70 184 C290 150 468 300 664 424 L760 458 L844 492 C1032 436 1202 306 1350 230",
+        "formationSpread": 0.34,
+        "exchangeOverlap": 0.36,
+        "canvasFrames": 368,
+        "runnerTransforms": [
+          "translate(1374 189.5) rotate(90)",
+          "translate(1358 216.5) rotate(90)",
+          "translate(1342 243.5) rotate(90)",
+          "translate(1326 270.5) rotate(90)"
+        ],
+        "horizontalOverflow": false,
+        "revision": "r129-proof"
+      },
+      "saved": {
+        "ready": true,
+        "phase": "saved",
+        "selectedTeam": "cyan",
+        "strategy": "line",
+        "driveMode": "manual",
+        "progress": 1,
+        "saved": true,
+        "fallback": false,
+        "reducedMotion": false,
+        "routeHash": "relay-f46f6396",
+        "routeD": "M-70 184 C290 150 468 300 664 424 L760 458 L844 492 C1032 436 1202 306 1350 230",
+        "formationSpread": 0.34,
+        "exchangeOverlap": 0.36,
+        "canvasFrames": 368,
+        "runnerTransforms": [
+          "translate(1374 189.5) rotate(90)",
+          "translate(1358 216.5) rotate(90)",
+          "translate(1342 243.5) rotate(90)",
+          "translate(1326 270.5) rotate(90)"
+        ],
+        "horizontalOverflow": false,
+        "revision": "r129-proof"
+      },
+      "comparison": {
+        "sameTeam": true,
+        "distinctRouteHash": true,
+        "distinctRouteGeometry": true,
+        "distinctRunnerFormation": true
+      }
+    },
+    {
+      "checkpoint": "mobile-reduced",
+      "issues": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "requestFailures": [],
+        "responseErrors": []
+      },
+      "state": {
+        "ready": true,
+        "phase": "saved",
+        "selectedTeam": "coral",
+        "strategy": "early",
+        "driveMode": "manual",
+        "progress": 1,
+        "saved": true,
+        "fallback": false,
+        "reducedMotion": true,
+        "routeHash": "relay-8fb3a7ae",
+        "routeD": "M-70 792 C260 804 430 675 612 536 C734 444 876 420 1040 507 C1188 588 1288 690 1350 760",
+        "formationSpread": 0.78,
+        "exchangeOverlap": 0.74,
+        "canvasFrames": 2,
+        "runnerTransforms": [
+          "translate(1389 667) rotate(90)",
+          "translate(1363 729) rotate(90)",
+          "translate(1337 791) rotate(90)",
+          "translate(1311 853) rotate(90)"
+        ],
+        "horizontalOverflow": false,
+        "revision": "r129-proof"
+      },
+      "branchState": {
+        "ready": true,
+        "phase": "confluence",
+        "selectedTeam": "coral",
+        "strategy": "early",
+        "driveMode": "manual",
+        "progress": 1,
+        "saved": false,
+        "fallback": false,
+        "reducedMotion": true,
+        "routeHash": "relay-8fb3a7ae",
+        "routeD": "M-70 792 C260 804 430 675 612 536 C734 444 876 420 1040 507 C1188 588 1288 690 1350 760",
+        "formationSpread": 0.78,
+        "exchangeOverlap": 0.74,
+        "canvasFrames": 2,
+        "runnerTransforms": [
+          "translate(1389 667) rotate(90)",
+          "translate(1363 729) rotate(90)",
+          "translate(1337 791) rotate(90)",
+          "translate(1311 853) rotate(90)"
+        ],
+        "horizontalOverflow": false,
+        "revision": "r129-proof"
+      },
+      "viewport": {
+        "width": 390,
+        "height": 844
+      }
+    },
+    {
+      "checkpoint": "forced-fallback",
+      "issues": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "requestFailures": [],
+        "responseErrors": []
+      },
+      "state": {
+        "ready": true,
+        "phase": "saved",
+        "selectedTeam": "blue",
+        "strategy": "line",
+        "driveMode": "manual",
+        "progress": 1,
+        "saved": true,
+        "fallback": true,
+        "reducedMotion": true,
+        "routeHash": "relay-2cb631dd",
+        "routeD": "M1350 -80 C1310 210 1160 348 978 438 L850 474 L762 520 C630 690 476 830 360 860",
+        "formationSpread": 0.34,
+        "exchangeOverlap": 0.36,
+        "canvasFrames": 0,
+        "runnerTransforms": [
+          "translate(384 819.5) rotate(90)",
+          "translate(368 846.5) rotate(90)",
+          "translate(352 873.5) rotate(90)",
+          "translate(336 900.5) rotate(90)"
+        ],
+        "horizontalOverflow": false,
+        "revision": "r129-proof"
+      },
+      "branchState": {
+        "ready": true,
+        "phase": "confluence",
+        "selectedTeam": "blue",
+        "strategy": "line",
+        "driveMode": "manual",
+        "progress": 1,
+        "saved": false,
+        "fallback": true,
+        "reducedMotion": true,
+        "routeHash": "relay-2cb631dd",
+        "routeD": "M1350 -80 C1310 210 1160 348 978 438 L850 474 L762 520 C630 690 476 830 360 860",
+        "formationSpread": 0.34,
+        "exchangeOverlap": 0.36,
+        "canvasFrames": 0,
+        "runnerTransforms": [
+          "translate(384 819.5) rotate(90)",
+          "translate(368 846.5) rotate(90)",
+          "translate(352 873.5) rotate(90)",
+          "translate(336 900.5) rotate(90)"
+        ],
+        "horizontalOverflow": false,
+        "revision": "r129-proof"
+      }
+    }
+  ]
+}

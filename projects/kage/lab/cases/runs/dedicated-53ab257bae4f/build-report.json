@@ -1,0 +1,626 @@
+{
+  "receipt": {
+    "id": "dedicated-53ab257bae4f",
+    "provider": "codex",
+    "model": "gpt-5.6-sol",
+    "status": "compiled",
+    "previewUrl": "/generated-runs/dedicated-53ab257bae4f/",
+    "generatedAt": "2026-08-29T07:28:44.133Z",
+    "files": 4,
+    "assets": 1,
+    "sourceBytes": 16599,
+    "hasShaders": false,
+    "compileMs": 375,
+    "attempts": 1,
+    "directory": "generated/runs/dedicated-53ab257bae4f"
+  },
+  "request": {
+    "brief": "为社区烘焙学习者设计一个明亮的发酵观察工作台。持续展示同一只透明发酵罐，用户调整室温、面团含水率和发酵时间时，罐内面团体积、气泡密度、表面张力与颜色同步变化，并用清楚文字解释当前状态；所有结果明确标注为教学估算，最终行动是“保存这份烘焙计划”。使用自然日光、麦粉白、亚麻、浅木与发酵琥珀色，不要暗色科技风、紫色霓虹、巨大标题、随机粒子或电影式长滚动。页面结构按这个产品需要决定，不固定三屏或四屏。",
+    "seed": 71,
+    "quality": "high",
+    "runId": "run-12kll0k",
+    "selectedId": "generated-w2wv2o-blueprint-noxgvk-fermentation-observatory-blueprint",
+    "creativeContract": {
+      "schemaVersion": 2,
+      "id": "contract-9wxgn5",
+      "brief": "为社区烘焙学习者设计一个明亮的发酵观察工作台。持续展示同一只透明发酵罐，用户调整室温、面团含水率和发酵时间时，罐内面团体积、气泡密度、表面张力与颜色同步变化，并用清楚文字解释当前状态；所有结果明确标注为教学估算，最终行动是“保存这份烘焙计划”。使用自然日光、麦粉白、亚麻、浅木与发酵琥珀色，不要暗色科技风、紫色霓虹、巨大标题、随机粒子或电影式长滚动。页面结构按这个产品需要决定，不固定三屏或四屏。",
+      "intent": {
+        "subject": "明亮的发酵观察工作台",
+        "audience": "需要快速理解并感受该想法的网页访客",
+        "desiredFeeling": "自然",
+        "narrativeChange": "从使用情绪进入产品能力显现，最后回到稳定产品英雄状态。",
+        "primaryAction": "保存这份烘焙计划",
+        "negativeConstraints": [
+          "使用自然日光、麦粉白、亚麻、浅木与发酵琥珀色，不要暗色科技风、紫色霓虹、巨大标题、随机粒子或电影式长滚动"
+        ]
+      },
+      "referenceEvidence": [
+        {
+          "referenceId": "kage-smart-audio",
+          "title": "智能声音产品 · 主体锚定",
+          "sourceUrl": "../cases/dedicated-1edb98865f4c/",
+          "evidenceLevel": "runtime-verified",
+          "relevance": "命中 产品。 支持 product-atmosphere 体验模式。 来自已归档并经过浏览器验证的本地最终案例。",
+          "borrow": [
+            "产品始终是画面锚点，氛围建立、能力解释和行动收束围绕同一主体完成。",
+            "镜头和声波反馈解释产品状态，不用无目的旋转或鼠标晃动制造虚假互动。",
+            "可信产品素材承担轮廓和材质，程序化声场承担不可见能力的可视化。"
+          ],
+          "avoid": [
+            "没有可信模型时不要伪造可拆解产品，也不要让抽象粒子抢走产品焦点。"
+          ]
+        },
+        {
+          "referenceId": "threejs-iris-articulated-reveal",
+          "title": "IRIS · 程序化关节主体展开",
+          "sourceUrl": "https://iamtechartist.github.io/Threejs-3D-Webpage/",
+          "evidenceLevel": "runtime-verified",
+          "relevance": "命中 结构。 支持 product-atmosphere 体验模式。 来自已归档并经过浏览器验证的本地最终案例。",
+          "borrow": [
+            "单一程序化主体与固定画布贯穿全程，DOM 内容围绕结构展开而不是逐屏更换背景。",
+            "全局滚动被映射为各部件错峰局部进度，并同步相机、材质、灯光、雾和后期。",
+            "只在抽象机械、生物结构或构造过程就是主题时使用程序化可动主体；真实商品仍需要可信资产。"
+          ],
+          "avoid": [
+            "不要复制花瓣外形或黑金风格，也不要用程序化几何伪装真实产品、人物或建筑。"
+          ]
+        },
+        {
+          "referenceId": "motionsites-scroll-landing",
+          "title": "MotionSites · Scroll Landing Page",
+          "sourceUrl": "https://motionsites.ai/?prompt=scroll-landing",
+          "evidenceLevel": "catalog-metadata",
+          "relevance": "支持 product-atmosphere 体验模式。 只作为外部目录方向信号，不当作实现已验证。",
+          "borrow": [
+            "目录将其标记为 Interactive，可作为滚动承担连续变化的方向索引。",
+            "参考滚动作为统一时间轴，而不是为每个区块堆叠互不相关的入场动画。",
+            "素材必须绑定滚动状态和视觉职责，不能只作为区块背景轮播。"
+          ],
+          "avoid": [
+            "不要复制固定区块数量，也不要把普通淡入误认为沉浸式叙事。"
+          ]
+        }
+      ],
+      "experience": {
+        "pattern": "product-atmosphere",
+        "structure": {
+          "mode": "guided-sequence",
+          "segmentPolicy": "content-derived",
+          "layoutRule": "围绕产品的使用情境、可见能力和行动组织非均匀节点；不把每项卖点拆成整屏。"
+        },
+        "thesis": "先建立明亮的发酵观察工作台的使用情绪，再用可见状态解释能力，最终留下明确行动。",
+        "focalSubject": "明亮的发酵观察工作台",
+        "continuityRule": "同一产品必须贯穿全部关键状态，比例、材质和环境光不能突然改变。",
+        "typographyRole": "文字负责产品价值和行动，不承担本应由产品状态表达的视觉变化。",
+        "beats": [
+          {
+            "id": "product-context",
+            "position": 0,
+            "purpose": "establish",
+            "visibleState": "产品在真实使用环境中成为唯一明确主体。",
+            "userProgression": "滚动开始靠近产品及其使用情境。"
+          },
+          {
+            "id": "product-anchor",
+            "position": 0.3,
+            "purpose": "develop",
+            "visibleState": "产品轮廓、材质和操作关系变得清晰。",
+            "userProgression": "继续滚动进入核心能力。"
+          },
+          {
+            "id": "capability-visible",
+            "position": 0.68,
+            "purpose": "transform",
+            "visibleState": "声场、光线、内部结构或状态变化解释核心能力。",
+            "userProgression": "观察能力造成的可见后果。"
+          },
+          {
+            "id": "product-resolve",
+            "position": 1,
+            "purpose": "resolve",
+            "visibleState": "产品回到稳定英雄状态，并明确“保存这份烘焙计划”。",
+            "userProgression": "主要运动停止，完成行动。"
+          }
+        ],
+        "pointerRole": "指针用于克制的材质反馈或观察角变化，不允许无目标追随。",
+        "reducedMotion": "使用产品的开场、能力和完成三个稳定状态，取消持续旋转和大幅视差。",
+        "finalMemoryPoint": "保存这份烘焙计划"
+      },
+      "visualAnchor": {
+        "subject": "承担产品识别、比例、主要材质和最终英雄构图。",
+        "relationshipToBrief": "视觉锚点必须直接证明“明亮的发酵观察工作台”和“先建立明亮的发酵观察工作台的使用情绪，再用可见状态解释能力，最终留下明确行动。”；即使隐藏标题，也能从对象、空间或数据关系辨认主题。",
+        "heroRole": "evidence-field",
+        "source": "hybrid",
+        "interactionBinding": "用户选择或输入时，视觉锚点、可见证据与语义数值必须同步变化，不能只改变边框、颜色或说明文字。",
+        "fallback": "增强层不可用时，保留同一“明亮的发酵观察工作台”的静态主题表示、完整语义内容和主要行动；不得回退为通用网格或空背景。"
+      },
+      "assets": [
+        {
+          "id": "hero-product",
+          "role": "subject",
+          "modality": "transparent-image",
+          "required": true,
+          "minimumQuality": "L3-presentable",
+          "sourcePriority": [
+            "user-supplied",
+            "curated-library",
+            "primary-image-model",
+            "minimax-fallback"
+          ],
+          "visualResponsibility": "承担产品识别、比例、主要材质和最终英雄构图。",
+          "continuityRule": "所有状态必须是同一产品，不更换轮廓、不拆成无关零件。",
+          "integration": "alpha-subject",
+          "visibleProof": "opening、middle、ending 均能识别同一产品，且 middle 显示真实能力状态。",
+          "fallback": "static-image"
+        },
+        {
+          "id": "product-atmosphere",
+          "role": "atmosphere",
+          "modality": "procedural",
+          "required": false,
+          "minimumQuality": "L2-inspectable",
+          "sourcePriority": [
+            "procedural"
+          ],
+          "visualResponsibility": "把声音、能量、雨、空气或光等不可见能力转成克制的空间反馈。",
+          "continuityRule": "氛围必须从产品位置或使用情境产生，不能成为独立装饰层。",
+          "integration": "native-procedural",
+          "visibleProof": "middle 截图能说明氛围变化与产品能力之间的因果关系。",
+          "fallback": "dom-only"
+        }
+      ],
+      "direction": {
+        "visualRole": "subject",
+        "mechanisms": [
+          {
+            "id": "subject-specimen-field",
+            "title": "主体标本场",
+            "evidenceLevel": "E4",
+            "job": "围绕独立主体和安全区组织排版，让对象始终保持识别和呼吸空间。",
+            "reason": "匹配独立主体的主要视觉职责。 支持 product-atmosphere 体验。 命中“产品”。",
+            "sourceCaseIds": [
+              "sports-ai-subject-field"
+            ]
+          },
+          {
+            "id": "state-storyboard",
+            "title": "状态故事板",
+            "evidenceLevel": "E4",
+            "job": "用连续的视觉状态分配页面节奏，每个状态只承担一个叙事动词。",
+            "reason": "匹配独立主体的主要视觉职责。 支持 product-atmosphere 体验。 命中“滚动、变化”。",
+            "sourceCaseIds": [
+              "plety-media-storyboard",
+              "igloo-cinematic-deconstruction"
+            ]
+          },
+          {
+            "id": "product-microfilm",
+            "title": "产品微电影",
+            "evidenceLevel": "E3",
+            "job": "用一个短而可重播的英雄镜头证明产品状态和关键交互。",
+            "reason": "匹配独立主体的主要视觉职责。 支持 product-atmosphere 体验。 命中“产品”。",
+            "sourceCaseIds": [
+              "aether-product-microfilm"
+            ]
+          }
+        ],
+        "interaction": {
+          "primaryInput": "direct-navigation",
+          "semanticAction": "直接选择一条探索路径并保持位置反馈。",
+          "pointerRole": "primary",
+          "touchAlternative": "提供等价的点击热点、拖拽或分段导航，不依赖 hover。",
+          "keyboardAlternative": "所有镜头、热点或路径都可通过顺序焦点和 Enter 激活。"
+        },
+        "renderer": {
+          "baseLayer": "semantic-dom",
+          "route": "dom-canvas-hybrid",
+          "enhancement": "canvas-shader",
+          "reason": "局部材质融合、遮罩或程序化氛围可由 Canvas/Shader 完成，页面结构保留在 DOM。",
+          "threeJustification": "当前职责不要求可检查的三维几何或自由相机。",
+          "fallback": "关闭 Canvas 后显示同一主体静态构图和完整内容行动。"
+        },
+        "rejectedMechanisms": [
+          {
+            "id": "cinematic-3d-deconstruction",
+            "reason": "缺少真实可检查模型，不能伪造三维拆解。"
+          },
+          {
+            "id": "sticky-archive-stack",
+            "reason": "当前核心不是一组并列档案，不使用长堆叠拖慢叙事。"
+          }
+        ],
+        "decisionSummary": "以独立主体承担主要视觉，用主体标本场、状态故事板、产品微电影组织变化；局部材质融合、遮罩或程序化氛围可由 Canvas/Shader 完成，页面结构保留在 DOM。"
+      },
+      "technical": {
+        "presentationStrategy": "layered-depth",
+        "capabilitySelection": {
+          "selected": false,
+          "capabilityId": null,
+          "score": 58,
+          "reasons": [
+            "体验模式 product-atmosphere 适合固定媒体滚动时间轴。",
+            "目标命中 滚动、变化、状态 等连续叙事信号。",
+            "需要先建立连续媒体素材职责。"
+          ],
+          "blockers": [
+            "当前素材计划没有连续图片、视频或帧序列。"
+          ],
+          "contract": null
+        },
+        "articulatedSubject": {
+          "selected": false,
+          "capabilityId": null,
+          "score": 12,
+          "reasons": [
+            "主体没有明确的抽象或程序化构造语义。",
+            "没有需要部件承担的结构变化。",
+            "没有可建立拓扑关系的部件描述。",
+            "体验模式 product-atmosphere 支持单一主体连续变化。"
+          ],
+          "blockers": [],
+          "contract": null
+        },
+        "stateAssetStrategy": {
+          "required": false,
+          "changeKind": "none",
+          "route": "static-sufficient",
+          "acceptedModalities": [
+            "transparent-image",
+            "image-sequence",
+            "model-3d",
+            "procedural"
+          ],
+          "minimumDistinctStates": 1,
+          "minimumPartGroups": 0,
+          "failurePolicy": "continue",
+          "reason": "目标没有要求实体装配、拆解或结构形变；现有素材质量与职责门禁足以决定是否进入构建。"
+        },
+        "semanticInteraction": {
+          "selected": true,
+          "capabilityId": "semantic-responsive-interaction",
+          "score": 78,
+          "matchedSignals": [
+            "时间",
+            "变化"
+          ],
+          "reasons": [
+            "目标明确要求直接选择、指针或触摸操作改变内容、比例或可见状态。",
+            "当前体验模式或素材职责不足以证明交互必须存在。",
+            "现有导演决策已把 direct-navigation 定义为有语义的主要输入。"
+          ],
+          "blockers": [],
+          "evaluatedCapability": {
+            "id": "semantic-responsive-interaction",
+            "evidenceLevel": "E4",
+            "state": "validated",
+            "problem": "装饰性鼠标动效不能帮助用户理解内容，也无法稳定迁移到触摸、键盘和减少动态效果环境。",
+            "meaning": "滚动选择证据层，时间选择改变海岸形态和数字，指针只在局部揭示相对于基准年已经消失的土地。",
+            "inputs": [
+              "scroll",
+              "pointer",
+              "touch",
+              "keyboard"
+            ],
+            "outputs": [
+              "scene-shape",
+              "evidence-value",
+              "narrative-layer",
+              "selection-state"
+            ],
+            "baseInterface": "语义 DOM 始终提供年代按钮、损失数字、解释文字和当前状态，不依赖 WebGL 完成比较。",
+            "enhancedInterface": "WebGL 把年代选择映射为同一海岸场的连续形变，并让局部证据透镜显示相对损失范围。",
+            "reducedMotionRule": "减少动态效果时立即切换到目标年代和阶段，停止连续漂移，但保留所有数值和比较结果。",
+            "rejectionRules": [
+              "移除交互后信息理解完全不变时拒绝晋级。",
+              "触摸、键盘或无 WebGL 回退无法完成比较时拒绝晋级。"
+            ],
+            "evidence": [
+              {
+                "id": "coast-1984",
+                "year": 1984,
+                "label": "基准海岸",
+                "lossSquareKilometers": 0,
+                "retreatMeters": 0,
+                "relativeWaterCentimeters": 0,
+                "sceneMorph": 0,
+                "summary": "沙洲仍然连续，潮沟尚未切断内侧湿地。"
+              },
+              {
+                "id": "coast-2004",
+                "year": 2004,
+                "label": "潮沟扩张",
+                "lossSquareKilometers": 3.2,
+                "retreatMeters": 186,
+                "relativeWaterCentimeters": 8,
+                "sceneMorph": 0.5,
+                "summary": "外侧沙洲变薄，新的潮沟开始把湿地分成孤立片区。"
+              },
+              {
+                "id": "coast-2026",
+                "year": 2026,
+                "label": "临界断面",
+                "lossSquareKilometers": 8.7,
+                "retreatMeters": 421,
+                "relativeWaterCentimeters": 17,
+                "sceneMorph": 1,
+                "summary": "连续岸线已经断裂，曾经被遮蔽的社区直接面对风暴潮。"
+              }
+            ]
+          }
+        },
+        "identityEvidence": {
+          "selected": false,
+          "score": 0,
+          "reason": "拒绝：缺少同时指向身份与证据的明确目标。",
+          "rejectedBy": [],
+          "matchedSignals": [],
+          "capabilityId": null
+        },
+        "placeGrounding": {
+          "selected": false,
+          "capabilityId": null,
+          "strategy": "none",
+          "score": 0,
+          "matchedSignals": [],
+          "reasons": [
+            "目标没有要求地点事实、空间关系或地域来源，不应为了视觉效果强行加入地图。",
+            "继续由主题、素材和交互目标选择最小充分技术路线。"
+          ],
+          "requirements": {
+            "geography": "not-applicable",
+            "map": "avoid",
+            "dataTruth": "不引入与目标无关的地点、地图或路线事实。",
+            "creativeFreedom": "围绕主体、受众、情绪变化和最终行动选择表达，不增加地域模板。"
+          }
+        },
+        "styleDiversity": {
+          "fingerprint": {
+            "composition": "typographic-canvas",
+            "palette": "daylight-neutral",
+            "motion": "spatial-inspection",
+            "spatial": "single-hero",
+            "typography": "quiet-small-scale",
+            "media": "transparent-subject"
+          },
+          "nearestCaseId": "dedicated-1b9f0b05107b",
+          "nearestDistance": 3,
+          "minimumDifferentAxes": 2,
+          "mustDifferOn": [
+            "composition",
+            "motion",
+            "typography"
+          ],
+          "avoidRepeating": [
+            "不要默认复用暗色全屏背景、中央主体和巨型标题的组合。",
+            "不要把滚动淡入、漂浮粒子和柔光当成所有主题的通用答案。",
+            "不得复刻最相近案例 dedicated-1b9f0b05107b 的整体构图和运动语法。"
+          ],
+          "rationale": "本方向与最相近案例 dedicated-1b9f0b05107b 在 3 个风格轴上不同；差异是生成约束，不是固定模板。"
+        },
+        "domResponsibilities": [
+          "承载可阅读内容、导航和最终行动。",
+          "在 WebGL 不可用时保留完整语义顺序。"
+        ],
+        "webglResponsibilities": [
+          "承载空间记忆、镜头关系和连续状态变化。",
+          "让素材融入环境并提供克制的交互反馈。"
+        ],
+        "targetFrameTimeMs": 16.7,
+        "maxInitialAssetBytes": 8000000,
+        "targetDevices": [
+          "desktop",
+          "mobile"
+        ]
+      },
+      "acceptance": [
+        {
+          "id": "intent-visible",
+          "priority": "blocker",
+          "assertion": "首屏和终点能够对应原始主体、情绪变化和最终行动；不了解行业背景的用户也能在约 10 秒内识别核心对象、可执行操作和操作后的业务结果。",
+          "evidence": "screenshot-ending"
+        },
+        {
+          "id": "visual-anchor-specific",
+          "priority": "blocker",
+          "assertion": "首屏存在与 brief 直接相关且无需依赖标题即可辨认的视觉锚点；纯色、通用网格、无主题依据的渐变、随机粒子或无关几何不能单独充当主视觉。",
+          "evidence": "screenshot-opening"
+        },
+        {
+          "id": "asset-visible",
+          "priority": "blocker",
+          "assertion": "所有 required 素材都已成功请求，并在声明状态承担可辨认的视觉职责。",
+          "evidence": "asset-request"
+        },
+        {
+          "id": "opening-composed",
+          "priority": "high",
+          "assertion": "首屏存在明确主体和空间坐标，没有空黑屏、文字裁切或主体被遮挡。",
+          "evidence": "screenshot-opening"
+        },
+        {
+          "id": "process-causal",
+          "priority": "high",
+          "assertion": "至少一个过程或交互状态能够解释能力、转化或探索关系，而不只是装饰动画；模式、Cue、预设、路线或方案等高层操作必须修改底层状态和主体画面。",
+          "evidence": "screenshot-beat"
+        },
+        {
+          "id": "semantic-state-consistent",
+          "priority": "high",
+          "assertion": "交互控件、可见数值、汇总值、结果解释和主体状态必须来自同一目标状态；专业指标或简化估算必须诚实标注并保持声明约束，不能作为虚假真实性装饰。",
+          "evidence": "runtime"
+        },
+        {
+          "id": "borderless-integration",
+          "priority": "high",
+          "assertion": "主体和环境没有棋盘格、矩形图片边界或不自然的发光方框。",
+          "evidence": "screenshot-beat"
+        },
+        {
+          "id": "mobile-readable",
+          "priority": "blocker",
+          "assertion": "390px 移动端无横向溢出，主体、正文和行动均可见。",
+          "evidence": "screenshot-mobile"
+        },
+        {
+          "id": "semantic-fallback",
+          "priority": "normal",
+          "assertion": "关闭 WebGL 或减少运动后仍保留完整内容顺序和行动。",
+          "evidence": "dom"
+        },
+        {
+          "id": "runtime-clean",
+          "priority": "blocker",
+          "assertion": "页面无阻断脚本错误，关键素材请求成功，滚动和指针输入可用。",
+          "evidence": "runtime"
+        }
+      ],
+      "executionLimits": {
+        "authoringPasses": 1,
+        "assetBatches": 1,
+        "refinementPasses": 1,
+        "stopAfterMinutes": 15,
+        "archivePolicy": "best-result-only"
+      }
+    },
+    "reference": {
+      "title": "发酵观察工作台",
+      "summary": "以一只持续可见的透明发酵罐，帮助学习者将温度、含水率和时间转化为可观察、可解释、可保存的发酵计划。",
+      "scenePlugin": "composed-world",
+      "productionStatus": "adapted",
+      "theme": {
+        "deep": "#5b432f",
+        "surface": "#f4ead7",
+        "text": "#35291f",
+        "muted": "#806f5c",
+        "accent": "#c98328",
+        "accentSoft": "#ead1a0"
+      },
+      "assets": [
+        {
+          "id": "asset-e05c3711c59ee302",
+          "uri": "/creative-assets/r68-fermentation-jar-three-state-v1.png",
+          "bundlePath": "assets/asset-e05c3711c59ee302.png",
+          "kind": "image",
+          "source": "generated",
+          "role": "subject: 承担产品识别、比例、主要材质和最终英雄构图。",
+          "description": "已通过文件签名与本地可寻址检查；绑定到任务后仍需接受最终浏览器视觉验收。 所有状态必须是同一产品，不更换轮廓、不拆成无关零件。",
+          "payloadBytes": 2568638,
+          "required": true
+        }
+      ]
+    }
+  },
+  "mediaDominance": {
+    "schemaVersion": 1,
+    "decision": "ready",
+    "route": "dom-canvas-hybrid",
+    "highQualityAssetIds": [],
+    "subjectPrimitiveCount": 0,
+    "subjectPrimitiveScore": 0,
+    "constructors": {},
+    "summary": "媒体主导权门禁不适用：当前不是具备 L3/L4 主素材的媒体主导路线。"
+  },
+  "usedAssets": [
+    {
+      "id": "asset-e05c3711c59ee302",
+      "uri": "/creative-assets/r68-fermentation-jar-three-state-v1.png",
+      "bundlePath": "assets/asset-e05c3711c59ee302.png",
+      "kind": "image",
+      "source": "generated",
+      "role": "subject: 承担产品识别、比例、主要材质和最终英雄构图。",
+      "description": "已通过文件签名与本地可寻址检查；绑定到任务后仍需接受最终浏览器视觉验收。 所有状态必须是同一产品，不更换轮廓、不拆成无关零件。",
+      "payloadBytes": 2568638,
+      "required": true
+    }
+  ],
+  "refinement": {
+    "status": "rejected",
+    "parentId": "dedicated-9850596d220a",
+    "receipt": {
+      "id": "dedicated-53ab257bae4f",
+      "provider": "codex",
+      "model": "gpt-5.6-sol",
+      "status": "compiled",
+      "previewUrl": "/generated-runs/dedicated-53ab257bae4f/",
+      "generatedAt": "2026-08-29T07:28:44.133Z",
+      "files": 4,
+      "assets": 1,
+      "sourceBytes": 16599,
+      "hasShaders": false,
+      "compileMs": 375,
+      "attempts": 1,
+      "directory": "generated/runs/dedicated-53ab257bae4f"
+    },
+    "sourceAssessment": {
+      "schemaVersion": 1,
+      "verdict": "revise",
+      "score": 52,
+      "summary": "页面可运行，但存在需要视觉修订的跨状态问题。",
+      "findings": [
+        {
+          "code": "semantic-scene-static",
+          "severity": "major",
+          "frameId": "beat-capability-visible",
+          "message": "beat-capability-visible 的参数控件改变了 DOM 状态，但 Canvas/场景没有形成足够可辨认的视觉变化。"
+        },
+        {
+          "code": "semantic-scene-static",
+          "severity": "major",
+          "frameId": "beat-capability-visible",
+          "message": "beat-capability-visible 的模式、Cue 或预设按钮只改变了控件/说明，Canvas/场景没有同步改变。"
+        }
+      ],
+      "observations": []
+    },
+    "finalAssessment": {
+      "schemaVersion": 1,
+      "verdict": "revise",
+      "score": 52,
+      "summary": "页面可运行，但存在需要视觉修订的跨状态问题。",
+      "findings": [
+        {
+          "code": "semantic-scene-static",
+          "severity": "major",
+          "frameId": "beat-capability-visible",
+          "message": "beat-capability-visible 的参数控件改变了 DOM 状态，但 Canvas/场景没有形成足够可辨认的视觉变化。"
+        },
+        {
+          "code": "semantic-scene-static",
+          "severity": "major",
+          "frameId": "beat-capability-visible",
+          "message": "beat-capability-visible 的模式、Cue 或预设按钮只改变了控件/说明，Canvas/场景没有同步改变。"
+        }
+      ],
+      "observations": []
+    },
+    "visualAcceptance": {
+      "schemaVersion": 1,
+      "verdict": "revise",
+      "score": 52,
+      "assetRole": "not-applicable",
+      "summary": "快速结构预检停止（52 分）：页面可运行，但存在需要视觉修订的跨状态问题。 不调用视觉精修模型。",
+      "findings": [
+        {
+          "code": "interaction-causality-weak",
+          "severity": "major",
+          "frameId": "beat-capability-visible",
+          "message": "beat-capability-visible 的参数控件改变了 DOM 状态，但 Canvas/场景没有形成足够可辨认的视觉变化。"
+        },
+        {
+          "code": "interaction-causality-weak",
+          "severity": "major",
+          "frameId": "beat-capability-visible",
+          "message": "beat-capability-visible 的模式、Cue 或预设按钮只改变了控件/说明，Canvas/场景没有同步改变。"
+        }
+      ]
+    },
+    "summary": "快速结构预检停止（52 分）：页面可运行，但存在需要视觉修订的跨状态问题。 不调用视觉精修模型。",
+    "resolved": [],
+    "remaining": [
+      "beat-capability-visible 的参数控件改变了 DOM 状态，但 Canvas/场景没有形成足够可辨认的视觉变化。",
+      "beat-capability-visible 的模式、Cue 或预设按钮只改变了控件/说明，Canvas/场景没有同步改变。"
+    ],
+    "selectedId": "dedicated-53ab257bae4f",
+    "model": "gpt-5.6-sol"
+  }
+}

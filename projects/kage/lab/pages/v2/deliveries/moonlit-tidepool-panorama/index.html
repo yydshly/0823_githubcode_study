@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="zh-CN" data-tidepool-ready="false" data-fallback="false">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#071b22" />
+    <meta name="description" content="沿一幅连续月光潮池全景，检查岩岸、海葵浅池和蟹洞，保存今晚的夜巡路线。" />
+    <link rel="preload" as="image" href="./assets/moonlit-tidepool-panorama-v1.png" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>月光潮池夜巡图卷</title>
+  </head>
+  <body data-experience="moonlit-tidepool-panorama">
+    <a class="skip-link" href="#station-note">跳到观察说明</a>
+    <main id="panorama-stage" aria-label="月光潮池横向夜巡">
+      <div class="masthead" aria-label="项目标题">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <div>
+          <strong>潮间志 · 夜巡 09</strong>
+          <span>教育概念插画 / 非真实调查分布</span>
+        </div>
+      </div>
+
+      <div class="route-meter" aria-live="polite">
+        <span>夜巡路线</span>
+        <strong><b id="visited-count">0</b> / 3</strong>
+      </div>
+
+      <section
+        id="panorama-viewport"
+        class="panorama-viewport"
+        tabindex="0"
+        aria-label="横向潮池全景。使用滚轮、拖动、触摸、左右方向键或前后按钮巡游。"
+      >
+        <div id="panorama-track" class="panorama-track">
+          <img
+            id="panorama-image"
+            src="./assets/moonlit-tidepool-panorama-v1.png"
+            alt="月光下连续延伸的潮池岩岸，左侧有湿岩与海螺，中部是海葵浅池，右侧蟹洞中有一只岸蟹"
+            draggable="false"
+          />
+
+          <svg id="panorama-fallback" class="panorama-fallback" viewBox="0 0 1915 821" aria-label="简化潮池剖面回退图">
+            <defs>
+              <linearGradient id="fallback-sky" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#0b3044" />
+                <stop offset="1" stop-color="#184555" />
+              </linearGradient>
+              <linearGradient id="fallback-water" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0" stop-color="#174b53" />
+                <stop offset=".5" stop-color="#2b6f72" />
+                <stop offset="1" stop-color="#173d45" />
+              </linearGradient>
+            </defs>
+            <rect width="1915" height="821" fill="url(#fallback-sky)" />
+            <circle cx="530" cy="120" r="44" fill="#dbe6c6" opacity=".86" />
+            <path d="M0 390 C260 300 430 350 620 420 S1030 490 1250 370 1610 270 1915 350 V821 H0Z" fill="#142f30" />
+            <path d="M0 540 C280 470 520 520 760 560 S1220 610 1460 520 1730 470 1915 530 V821 H0Z" fill="url(#fallback-water)" />
+            <g fill="none" stroke="#bdd7b0" stroke-width="18" opacity=".78">
+              <path d="M120 600 Q210 510 330 590" />
+              <path d="M720 630 Q800 520 885 630" />
+              <path d="M900 620 Q980 500 1060 620" />
+            </g>
+            <g fill="#dd926c" opacity=".9">
+              <circle cx="820" cy="610" r="44" />
+              <circle cx="980" cy="590" r="50" />
+              <circle cx="1100" cy="640" r="36" />
+            </g>
+            <path d="M1510 465 Q1700 350 1915 430 V750 Q1730 660 1540 690Z" fill="#091d20" />
+            <path d="M1670 575 q65 -65 130 0 q-65 65 -130 0Z" fill="#dc6d47" />
+          </svg>
+
+          <svg class="route-line" viewBox="0 0 1000 420" preserveAspectRatio="none" aria-hidden="true">
+            <path class="route-line__base" d="M170 318 C310 245 455 265 560 248 S760 205 850 170" />
+            <path id="route-path" class="route-line__active" d="M170 318 C310 245 455 265 560 248 S760 205 850 170" />
+          </svg>
+
+          <button class="station-hotspot" type="button" data-station-id="rock" style="--station-x:17%;--station-y:66%">
+            <span class="station-hotspot__ring"><i aria-hidden="true">01</i></span>
+            <span><b>湿岩带</b><small>海螺与石莼</small></span>
+          </button>
+          <button class="station-hotspot" type="button" data-station-id="anemone" style="--station-x:57%;--station-y:64%">
+            <span class="station-hotspot__ring"><i aria-hidden="true">02</i></span>
+            <span><b>浅池带</b><small>月下海葵</small></span>
+          </button>
+          <button class="station-hotspot" type="button" data-station-id="crab" style="--station-x:84%;--station-y:48%">
+            <span class="station-hotspot__ring"><i aria-hidden="true">03</i></span>
+            <span><b>岩隙带</b><small>岸蟹洞口</small></span>
+          </button>
+
+          <div id="inspection-lens" class="inspection-lens" aria-hidden="true"></div>
+        </div>
+      </section>
+
+      <header class="hero-copy">
+        <p>MOONLIT INTERTIDAL / 01—03</p>
+        <h1>沿月光，<br /><em>横穿一片潮池。</em></h1>
+        <span>滚轮、拖动或左右方向键开始夜巡</span>
+      </header>
+
+      <article id="station-note" class="station-note" aria-live="polite">
+        <div class="station-note__meta">
+          <span id="station-index">巡游起点 · 00</span>
+          <span id="station-distance">低潮后 01:26</span>
+        </div>
+        <p class="station-note__eyebrow" id="station-eyebrow">先沿岩岸向右巡游</p>
+        <h2 id="station-title">月光先落在水面上</h2>
+        <p id="station-description">这是一幅教育概念图卷，不是物种真实分布图。找到三处发光检查标记，完成今晚的潮池路线。</p>
+        <div class="station-note__progress" aria-label="三处观察进度">
+          <i data-progress-id="rock"></i>
+          <i data-progress-id="anemone"></i>
+          <i data-progress-id="crab"></i>
+        </div>
+        <div class="station-note__actions">
+          <button id="prev-station" type="button" aria-label="前一处观察点">←</button>
+          <button id="next-station" type="button">向下一处巡游 <span>→</span></button>
+        </div>
+        <button id="save-route" type="button" disabled>完成三处观察后保存路线</button>
+        <p id="save-status" class="save-status" role="status"></p>
+      </article>
+
+      <div class="traverse-progress" aria-hidden="true"><i id="traverse-progress-bar"></i></div>
+      <p class="truth-note">AI 生成环境图承担月光、材质与空间；代码只增强巡游与观察因果。</p>
+    </main>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>

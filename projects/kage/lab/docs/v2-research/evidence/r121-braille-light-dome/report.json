@@ -1,0 +1,49 @@
+{
+  "runId": "dedicated-braille-r121-repair",
+  "browserErrors": [],
+  "responseErrors": [],
+  "frames": [
+    {
+      "name": "01-opening",
+      "width": 1440,
+      "height": 900,
+      "progress": 0,
+      "scrollY": 0,
+      "scrollHeight": 1011,
+      "overflow": 0,
+      "canvasCount": 0,
+      "imageSources": [],
+      "headingVisible": true,
+      "heading": "把六个点，读成一颗星。",
+      "visibleText": 219
+    },
+    {
+      "name": "02-final",
+      "width": 1440,
+      "height": 900,
+      "progress": 1,
+      "scrollY": 111,
+      "scrollHeight": 1011,
+      "overflow": 0,
+      "canvasCount": 0,
+      "imageSources": [],
+      "headingVisible": true,
+      "heading": "把六个点，读成一颗星。",
+      "visibleText": 219
+    },
+    {
+      "name": "03-mobile",
+      "width": 390,
+      "height": 844,
+      "progress": 0,
+      "scrollY": 0,
+      "scrollHeight": 844,
+      "overflow": 0,
+      "canvasCount": 0,
+      "imageSources": [],
+      "headingVisible": true,
+      "heading": "把六个点，读成一颗星。",
+      "visibleText": 186
+    }
+  ]
+}

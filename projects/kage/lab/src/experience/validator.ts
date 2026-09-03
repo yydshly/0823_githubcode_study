@@ -5,7 +5,7 @@ import type {
   SceneStateValue,
   TrackKeyframe,
   Vec3
-} from './schema';
+} from './schema.ts';
 
 const idPattern = /^[a-z0-9][a-z0-9:_-]*$/;
 const colorPattern = /^#[0-9a-f]{6}$/i;

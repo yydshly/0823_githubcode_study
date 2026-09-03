@@ -2,6 +2,7 @@ import './styles-workbench.css';
 import './styles-workbench-provider.css';
 import './styles-workbench-capabilities.css';
 import './styles-r11.css';
+import './styles-workbench-v2-contract.css';
 import type { CapabilityProposal } from './capabilities/proposal';
 import { compileRevisionPlan, evaluateCandidate, type EvaluationReport, type RevisionPlan } from './evaluation/evaluation';
 import { compileLocalRevision, type LocalRevisionResult } from './evaluation/local-revision';
@@ -25,7 +26,13 @@ import { selectPresentationStrategy } from './generation/presentation-strategy';
 import type { BriefInterpreter, CreativeCandidate, CreativeProviderId, CreativeRun, ProviderStatusResponse } from './generation/schema';
 import { readProviderId as readProvider, renderProviderAvailability, renderProviderProvenance, syncProviderHelp } from './generation/provider-ui';
 import { decideWorkbenchBootstrap } from './generation/workbench-bootstrap';
+import type { IntentProvenance } from './generation/intent-provenance.ts';
+import { createCodexImageGenerationTasks } from './workbench-asset-recovery.ts';
 import type { OutcomeAssetRoute, OutcomeRouteInput } from './workbench-outcome-route';
+import { createV2CreativeContract } from './v2/creative-contract.ts';
+import { summarizeV2CreativeContract, type V2WorkbenchContractSummary } from './v2/workbench-contract-summary.ts';
+import { evaluateV2ContractHandshake } from './v2/build-launch.ts';
+import { renderWorkbenchJobTelemetry, renderWorkbenchResultStatus } from './workbench-job-telemetry.ts';
 
 const defaultBrief = '为一款面向独立创作者的智能声音产品，设计清冷、克制但有未来感的发布网页；先建立情绪，再解释核心能力，最后留下明确行动。';
 const examples: Readonly<Record<string, string>> = {
@@ -74,6 +81,7 @@ interface WorkbenchSnapshot {
   evaluation: { state: 'idle' | 'ready'; reportId: string | null; status: string | null; revisionPlanId: string | null; manualChecks: number; blockingChecks: number };
   runtimeEvidence: { state: 'idle' | 'collecting' | 'ready' | 'error' | 'stale'; bundleId: string | null; samples: string[]; error: string | null };
   localRevision: { state: 'idle' | 'applied' | 'unsupported' | 'invalid'; resultId: string | null; revisedCandidateId: string | null; changedPaths: string[] };
+  v2Contract: V2WorkbenchContractSummary | null;
 }
 
 export interface AssetPreparationOutcome {
@@ -104,6 +112,7 @@ const status = required<HTMLElement>('#workbench-status');
 const errorPanel = required<HTMLElement>('#workbench-error');
 const evidenceList = required<HTMLElement>('#evidence-list');
 const candidateGrid = required<HTMLElement>('#candidate-grid');
+const directionAnalysis = required<HTMLDetailsElement>('#direction-analysis');
 const proposalList = required<HTMLElement>('#proposal-list');
 const runIdLabel = required<HTMLElement>('#run-id');
 const selectionDetail = required<HTMLElement>('#selection-detail');
@@ -141,6 +150,29 @@ const providerLabel = required<HTMLElement>('#provider-label');
 const workbenchHomeLink = required<HTMLAnchorElement>('#workbench-home-link');
 const workbenchGalleryLink = required<HTMLAnchorElement>('#workbench-gallery-link');
 const publicWorkbenchNote = required<HTMLElement>('#public-workbench-note');
+const v2ContractRoot = required<HTMLElement>('#v2-contract-summary');
+const v2ContractState = required<HTMLElement>('#v2-contract-state');
+const v2ContractReferences = required<HTMLElement>('#v2-contract-references');
+const v2ContractCapabilities = required<HTMLElement>('#v2-contract-capabilities');
+const v2ContractRenderer = required<HTMLElement>('#v2-contract-renderer');
+const v2ContractLimits = required<HTMLElement>('#v2-contract-limits');
+const v2ContractTitle = required<HTMLElement>('#v2-contract-title');
+const v2ContractReferenceReasons = required<HTMLElement>('#v2-contract-reference-reasons');
+const v2ContractCapabilityReasons = required<HTMLElement>('#v2-contract-capability-reasons');
+const v2ContractReviewModes = required<HTMLElement>('#v2-contract-review-modes');
+const v2ContractStyle = required<HTMLElement>('#v2-contract-style');
+const v2ContractStyleDifference = required<HTMLElement>('#v2-contract-style-difference');
+const intentOrigin = required<HTMLElement>('#intent-origin');
+const intentSystemBoundary = required<HTMLElement>('#intent-system-boundary');
+const executionTrace = required<HTMLElement>('#execution-trace');
+const experienceQuality = required<HTMLElement>('#experience-quality');
+const experienceQualityVerdict = required<HTMLElement>('#experience-quality-verdict');
+const experienceQualityStructure = required<HTMLElement>('#experience-quality-structure');
+const experienceQualityCoverage = required<HTMLElement>('#experience-quality-coverage');
+const experienceQualityScore = required<HTMLElement>('#experience-quality-score');
+const experienceQualityArchive = required<HTMLElement>('#experience-quality-archive');
+const experienceQualitySummary = required<HTMLElement>('#experience-quality-summary');
+const experienceQualityIssues = required<HTMLElement>('#experience-quality-issues');
 let activeInterpreter: BriefInterpreter = new BaselineBriefInterpreter();
 let state: WorkbenchSnapshot['state'] = 'idle';
 let run: CreativeRun | null = null;
@@ -162,7 +194,10 @@ let runtimeEvidenceError: string | null = null;
 let localRevisionResult: LocalRevisionResult | null = null;
 let runtimeEvidenceAbort: AbortController | null = null;
 let localRevisionState: WorkbenchSnapshot['localRevision']['state'] = 'idle';
+let activeV2ContractSummary: V2WorkbenchContractSummary | null = null;
+let focusGeneratedResult = false;
 const params = new URLSearchParams(location.search);
+let expectedV2ContractId: string | null = params.get('contract');
 let generationJobId: string | null = /^job-[a-f0-9]{16}$/.test(params.get('job') || '') ? params.get('job') : null;
 let stageProgress = .04;
 generationSeed = readSeed(params.get('seed'));
@@ -173,6 +208,8 @@ qualitySelect.value = readQuality(params.get('quality'));
 providerSelect.value = readProvider(params.get('provider'));
 updateCount();
 updateProviderHelp();
+renderV2ContractForBrief(briefInput.value);
+renderIntentBoundary(null, briefInput.value);
 setCreatorStep(1);
 if (isPublishedWorkbench) {
   workbenchHomeLink.href = './';
@@ -181,14 +218,15 @@ if (isPublishedWorkbench) {
 }
 window.__creativeLab = { snapshot: createSnapshot, prepareAssets: prepareSelectedAssets };
 
-briefInput.addEventListener('input', () => { generationSeed = 17; updateCount(); setCreatorStep(1); });
-generateButton.addEventListener('click', () => void generate());
+briefInput.addEventListener('input', () => { releaseV2LaunchBinding(); generationSeed = 17; updateCount(); renderV2ContractForBrief(briefInput.value); renderIntentBoundary(null, briefInput.value); setCreatorStep(1); });
+generateButton.addEventListener('click', () => { focusGeneratedResult = true; void generate(); });
 produceAssetsButton.addEventListener('click', () => void produceSelectedAssets());
 assetProductionButton.addEventListener('click', () => { if (assetProductionReport) openArtifact('AssetProductionReport v1', assetProductionReport); });
 evaluateButton.addEventListener('click', runOfflineEvaluation);
 evaluationReportButton.addEventListener('click', () => { if (evaluationReport) openArtifact('EvaluationReport v1', evaluationReport); });
 revisionPlanButton.addEventListener('click', () => { if (revisionPlan) openArtifact('RevisionPlan v1', revisionPlan); });
 variationButton.addEventListener('click', () => {
+  focusGeneratedResult = true;
   generationSeed += 1;
   status.textContent = `正在用种子 ${generationSeed} 探索新的创意变体。`;
   void generate();
@@ -205,8 +243,10 @@ qualitySelect.addEventListener('change', () => { updateUrl(); status.textContent
 providerSelect.addEventListener('change', () => {
   updateUrl(); updateProviderHelp(); updateGenerateLabel();
   status.textContent = providerSelect.value === 'local' ? '已选择离线基线；点击生成不会产生远程调用。' : '已选择模型 provider；点击生成后才会发起远程调用。';
+  if (providerSelect.value !== 'local') renderPendingProviderSelection();
 });
 resetButton.addEventListener('click', () => {
+  releaseV2LaunchBinding();
   generationSeed = 17;
   briefInput.value = defaultBrief; qualitySelect.value = 'balanced'; updateCount(); updateUrl(); briefInput.focus();
   status.textContent = '已恢复示例；点击生成以应用当前 provider。';
@@ -259,6 +299,10 @@ manifestClose.addEventListener('click', () => manifestDialog.close());
 manifestDialog.addEventListener('click', (event) => { if (event.target === manifestDialog) manifestDialog.close(); });
 
 candidateGrid.innerHTML = '<div class="wb-empty"><p>正在建立第一个候选空间…</p></div>';
+window.addEventListener('creative-lab:generation-job-updated', (event) => {
+  if (!(event instanceof CustomEvent) || !event.detail?.job) return;
+  renderPersistentGenerationProgress(event.detail.job as PersistentGenerationJobView);
+});
 void initialize();
 
 async function initialize(): Promise<void> {
@@ -267,6 +311,41 @@ async function initialize(): Promise<void> {
   renderAvailability(availability);
   updateProviderHelp();
   const recovered = generationJobId ? await readGenerationJob(generationJobId) : null;
+  if (recovered) {
+    const recoveredBrief = recovered.intentProvenance?.rawUserBrief || recovered.brief;
+    briefInput.value = recoveredBrief;
+    updateCount();
+    renderV2ContractForBrief(recoveredBrief);
+    renderIntentBoundary(recovered.intentProvenance, recoveredBrief);
+    updateUrl();
+  }
+  const contractHandshake = activeV2ContractSummary
+    ? evaluateV2ContractHandshake(expectedV2ContractId, activeV2ContractSummary.contractId)
+    : null;
+  if (expectedV2ContractId && (!contractHandshake || !contractHandshake.allowed)) {
+    state = 'error';
+    lastError = contractHandshake?.state === 'invalid'
+      ? 'V2 构建链接中的合同 ID 不合法，已停止自动生成。'
+      : `V2 合同不一致，已停止自动生成：链接要求 ${expectedV2ContractId}，当前想法得到 ${activeV2ContractSummary?.contractId || '无有效合同'}。`;
+    setV2ContractState('failed', 'V2 合同不一致 · 已停止');
+    errorPanel.textContent = lastError;
+    errorPanel.hidden = false;
+    status.textContent = '没有创建生成任务。修改想法后可解除旧合同绑定，再重新生成。';
+    generateButton.disabled = true;
+    variationButton.disabled = true;
+    return;
+  }
+  if (contractHandshake?.state === 'matched') setV2ContractState('ready', 'V2 合同已锁定 · 即将构建');
+  if (recovered?.status === 'blocked' && recovered.assetGate?.decision === 'needs-codex-assets') {
+    state = 'ready';
+    renderPersistentGenerationProgress(recovered);
+    setV2ContractState('ready', '关键素材请求已形成');
+    setCreatorStep(2);
+    generateButton.disabled = false;
+    variationButton.disabled = false;
+    updateGenerateLabel();
+    return;
+  }
   const bootstrap = decideWorkbenchBootstrap({
     autorun: params.get('autorun') === '1',
     provider: providerSelect.value,
@@ -274,11 +353,16 @@ async function initialize(): Promise<void> {
     recovered
   });
   await generate(!bootstrap.runModel, bootstrap.resumeJobId);
-  if (!bootstrap.runModel && providerSelect.value !== 'local') status.textContent = recovered?.status === 'complete' ? '已恢复上次任务的最终最佳网页。' : '当前显示本地初稿；点击生成后才会调用所选模型 provider。';
+  if (!bootstrap.runModel && providerSelect.value !== 'local') {
+    renderPendingProviderSelection();
+    status.textContent = recovered?.status === 'complete' ? '已恢复上次任务的最终最佳网页。' : '当前显示本地初稿；点击生成后才会调用所选模型 provider。';
+    if (!recovered) setV2ContractState('ready', '约束预览 · 尚未启动生成');
+  }
 }
 
 async function generate(forceLocal = false, resumeJobId: string | null = null): Promise<void> {
   state = 'generating'; lastError = null; selected = null; synthesisWorkspaces.clear(); selectionDetail.hidden = true; errorPanel.hidden = true;
+  renderV2ContractForBrief(briefInput.value, 'generating');
   setCreatorStep(2);
   resetAssetProduction();
   resetReviewState();
@@ -301,6 +385,7 @@ async function generate(forceLocal = false, resumeJobId: string | null = null): 
     const quality = readQuality(qualitySelect.value);
     run = await generateCreativeRun({ text: briefInput.value, seed: generationSeed }, activeInterpreter, { quality, renderer: 'webgl', motion: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'reduce' : 'full' }, connectedMediaAdapters());
     state = 'ready';
+    setV2ContractState('ready', '本地约束已用于快速草案');
     updateUrl(); renderRun(run); selectCandidate(run.candidates[0], true, false);
     setCreatorStep(3);
     const fallback = run.interpretation.provenance.fallbackReason ? ` 回退原因：${run.interpretation.provenance.fallbackReason}` : '';
@@ -319,6 +404,7 @@ async function generate(forceLocal = false, resumeJobId: string | null = null): 
     }));
   } catch (error) {
     state = 'error'; run = null; lastError = error instanceof Error ? error.message : String(error);
+    setV2ContractState('failed', '生成失败，约束仍保留');
     errorPanel.textContent = lastError; errorPanel.hidden = false; runIdLabel.textContent = '生成失败'; evidenceList.replaceChildren(); proposalList.replaceChildren();
     candidateGrid.innerHTML = '<div class="wb-empty"><p>补充描述后重新生成。</p></div>';
     status.textContent = '没有产生候选。';
@@ -331,7 +417,9 @@ async function generate(forceLocal = false, resumeJobId: string | null = null): 
 
 interface PersistentGenerationJobView {
   id: string;
-  status: 'running' | 'complete' | 'blocked' | 'failed';
+  brief: string;
+  intentProvenance: IntentProvenance | null;
+  status: 'running' | 'review-required' | 'complete' | 'blocked' | 'failed';
   provider: Exclude<CreativeProviderId, 'local'>;
   selectedProvider: Exclude<CreativeProviderId, 'auto'> | null;
   stage: string;
@@ -339,34 +427,102 @@ interface PersistentGenerationJobView {
   model: string | null;
   assetRoute: 'catalog' | 'generate' | 'procedural' | 'blocked' | null;
   assetCount: number;
+  assetGate: {
+    decision: 'ready' | 'needs-codex-assets';
+    risk: 'low' | 'medium' | 'high';
+    summary: string;
+    acceptedAssetIds: string[];
+    requests: Array<{
+      requirementId: string;
+      role: 'subject' | 'environment' | 'atmosphere' | 'information';
+      modality: 'transparent-image' | 'image-sequence' | 'model-3d' | 'texture' | 'procedural';
+      minimumQuality: 'L2-inspectable' | 'L3-presentable' | 'L4-cinematic';
+      recommendedSource: 'chatgpt-imagegen' | 'user-or-licensed';
+      reason: string;
+      responsibility: string;
+      continuity: string;
+      integration: string;
+      proof: string;
+    }>;
+  } | null;
+  assetCompletion: {
+    completionId: string;
+    requirementIds: string[];
+    status: 'requested' | 'resumed' | 'exhausted';
+    submissionId: string | null;
+    attempts: number;
+  } | null;
+  deliveryQuality: {
+    renderQuality: 'high' | 'balanced' | 'low';
+    targetAssetQuality: 'not-applicable' | 'L2-inspectable' | 'L3-presentable' | 'L4-cinematic';
+    achievedAssetQuality: 'not-applicable' | 'L0-missing' | 'L1-placeholder' | 'L2-inspectable' | 'L3-presentable' | 'L4-cinematic';
+    status: 'provisional' | 'prototype-only' | 'final-eligible';
+    finalEligible: boolean;
+    experience: {
+      status: 'pending' | 'pass' | 'revise' | 'blocked';
+      score: number | null;
+      structureMode: V2WorkbenchContractSummary['structureMode'] | null;
+      expectedStateCount: number;
+      reviewedStateCount: number;
+      stateCoverage: number;
+      modelJudgment: 'pending' | 'pass' | 'revise';
+      archiveEligible: boolean;
+      summary: string;
+      issues: string[];
+    };
+    summary: string;
+  } | null;
+  sourceReceipt: { id: string; previewUrl: string; model: string } | null;
   bestPreviewUrl: string | null;
   finalScore: number | null;
   error: string | null;
   createdAt: string;
+  updatedAt: string;
+  finishedAt: string | null;
+  deadlineAt: string | null;
+  phaseDurationsMs: { planning: number; assets: number; authoring: number; reviewing: number } | null;
+  history: Array<{ stage: string; at: string; message: string }>;
+  v2ContractSummary: V2WorkbenchContractSummary | null;
 }
 
 async function generatePersistentExperience(requested: Exclude<CreativeProviderId, 'local'>, resumeJobId: string | null): Promise<void> {
   run = null;
   selected = null;
-  generationJobId = resumeJobId || await createGenerationJob(requested);
-  updateUrl();
   generateButton.disabled = true;
-  generateButton.textContent = '服务端正在构建…';
+  generateButton.textContent = resumeJobId ? '服务端正在构建…' : '正在建立生成任务…';
   variationButton.disabled = true;
   candidateGrid.setAttribute('aria-busy', 'true');
-  candidateGrid.innerHTML = '<div class="wb-empty"><p>服务端任务已建立；关闭或刷新页面不会中断。</p></div>';
+  experienceQuality.hidden = true;
+  candidateGrid.innerHTML = `<div class="wb-empty"><p>${resumeJobId ? '正在恢复已有任务。' : '正在建立服务端任务。'}</p></div>`;
   reportOutcomeRoute({ stage: 'interpret', message: '服务端正在理解目标；工作台只负责显示状态和最终网页。' });
   try {
+    generationJobId = resumeJobId || await createGenerationJob(requested);
+    updateUrl();
+    generateButton.textContent = '服务端正在构建…';
+    candidateGrid.innerHTML = '<div class="wb-empty"><p>服务端任务已建立；关闭或刷新页面不会中断。</p></div>';
     const job = await waitForPersistentGeneration(generationJobId);
+    if (job.status === 'blocked' && job.assetGate?.decision === 'needs-codex-assets') {
+      state = 'ready';
+      setV2ContractState('ready', '关键素材请求已形成');
+      setCreatorStep(2);
+      errorPanel.hidden = true;
+      status.textContent = job.message;
+      reportOutcomeRoute({
+        stage: 'blocked', assetRoute: 'blocked', assetCount: job.assetCount,
+        model: job.model, score: null, message: job.message
+      });
+      return;
+    }
     if (job.status === 'blocked') throw new Error(job.error || job.message);
-    if (job.status === 'failed') throw new Error(job.error || job.message);
+    if (job.status === 'failed' && !job.bestPreviewUrl) throw new Error(job.error || job.message);
     state = 'ready';
-    const visuallyAccepted = job.finalScore !== null;
+    const visuallyAccepted = job.status === 'complete' && job.deliveryQuality?.finalEligible !== false;
+    setV2ContractState(visuallyAccepted ? 'complete' : 'review', visuallyAccepted ? '最终结果已通过验收' : '网页已生成 · 待视觉定稿');
     setCreatorStep(visuallyAccepted ? 5 : 4);
     runIdLabel.textContent = `${job.id} · ${visuallyAccepted ? 'SERVER COMPLETE' : 'PAGE READY'} · ${job.model || 'Codex'}`;
     status.textContent = job.message;
     reportOutcomeRoute({
-      stage: visuallyAccepted ? 'complete' : 'reviewing',
+      stage: visuallyAccepted ? 'complete' : 'review-required',
       assetRoute: job.assetRoute || 'pending',
       assetCount: job.assetCount,
       model: job.model,
@@ -375,6 +531,7 @@ async function generatePersistentExperience(requested: Exclude<CreativeProviderI
     });
   } catch (error) {
     state = 'error';
+    setV2ContractState('failed', '远程生成失败，约束仍保留');
     lastError = error instanceof Error ? error.message : String(error);
     errorPanel.textContent = lastError;
     errorPanel.hidden = false;
@@ -400,13 +557,35 @@ async function waitForPersistentGeneration(id: string): Promise<PersistentGenera
 }
 
 function renderPersistentGenerationProgress(job: PersistentGenerationJobView): void {
+  renderIntentBoundary(job.intentProvenance, job.brief);
+  renderWorkbenchJobTelemetry(executionTrace, job);
+  renderWorkbenchResultStatus(experienceQuality, {
+    ...job,
+    sourcePreviewUrl: job.sourceReceipt?.previewUrl || null,
+  });
+  if (job.v2ContractSummary) renderV2ContractSummary(
+    job.v2ContractSummary,
+    job.status === 'complete' ? 'complete' : job.status === 'running' ? 'generating' : job.status === 'review-required' || Boolean(job.bestPreviewUrl) ? 'review' : 'failed'
+  );
   if (job.model) {
     const selected = job.selectedProvider || (job.provider === 'auto' ? 'codex' : job.provider);
     renderProvider({ requested: job.provider, selected, model: job.model, mode: selected === 'local' ? 'local' : 'remote', latencyMs: 0, fallbackReason: null, cacheStatus: 'bypass' });
   }
   const elapsedSeconds = Math.max(0, Math.round((Date.now() - Date.parse(job.createdAt)) / 1000));
   runIdLabel.textContent = `${job.id} · ${job.stage} · ${elapsedSeconds}s`;
-  status.textContent = `${job.message} 已用时 ${elapsedSeconds} 秒。`;
+  const deliveryStatus = job.deliveryQuality
+    ? ` 素材交付：${job.deliveryQuality.achievedAssetQuality} / 目标 ${job.deliveryQuality.targetAssetQuality}。`
+    : '';
+  status.textContent = `${job.message}${deliveryStatus} 已用时 ${elapsedSeconds} 秒。`;
+  if (job.assetGate?.decision === 'needs-codex-assets') {
+    directionAnalysis.open = true;
+    directionAnalysis.dataset.state = 'asset-blocked';
+    candidateGrid.replaceChildren(renderAssetQualityGate(job.id, job.assetCompletion?.completionId || '', job.assetGate));
+  } else if (candidateGrid.querySelector('.wb-asset-gate')) {
+    directionAnalysis.open = false;
+    delete directionAnalysis.dataset.state;
+    candidateGrid.innerHTML = '<div class="wb-empty"><p>素材已绑定到原任务；Codex 正在继续构建专属网页。</p></div>';
+  }
   const stage = job.stage === 'planning'
     ? 'interpret'
     : job.stage === 'assets'
@@ -415,8 +594,10 @@ function renderPersistentGenerationProgress(job: PersistentGenerationJobView): v
         ? 'authoring'
         : job.stage === 'reviewing' || job.stage === 'refining'
           ? 'reviewing'
+          : job.stage === 'review-required' || Boolean(job.bestPreviewUrl)
+            ? 'review-required'
           : job.status === 'complete' ? 'complete' : job.status === 'blocked' ? 'blocked' : 'failed';
-  setCreatorStep(stage === 'interpret' || stage === 'assets' ? 2 : stage === 'authoring' ? 3 : stage === 'reviewing' ? 4 : stage === 'complete' ? 5 : 1);
+  setCreatorStep(stage === 'interpret' || stage === 'assets' ? 2 : stage === 'authoring' ? 3 : stage === 'reviewing' || stage === 'review-required' ? 4 : stage === 'complete' ? 5 : 1);
   reportOutcomeRoute({
     stage,
     assetRoute: job.assetRoute || 'pending',
@@ -425,6 +606,127 @@ function renderPersistentGenerationProgress(job: PersistentGenerationJobView): v
     score: job.finalScore,
     message: job.message,
   });
+}
+
+function renderProductExperienceQuality(value: PersistentGenerationJobView['deliveryQuality'] extends infer T
+  ? T extends { experience: infer E } ? E | null : null
+  : null): void {
+  if (!value) {
+    experienceQuality.hidden = true;
+    return;
+  }
+  experienceQuality.hidden = false;
+  experienceQuality.dataset.state = value.status === 'blocked' ? 'blocked' : value.status === 'pass' ? 'complete' : 'running';
+  experienceQualityVerdict.textContent = value.status === 'pending'
+    ? '方向已确定 · 等待生成'
+    : value.status === 'pass'
+      ? '检查通过'
+      : value.status === 'revise'
+        ? '需要调整'
+        : '检查受阻';
+  const page = experienceQuality.querySelector<HTMLElement>('[data-result-page]');
+  const stopReason = experienceQuality.querySelector<HTMLElement>('[data-result-stop-reason]');
+  const link = experienceQuality.querySelector<HTMLAnchorElement>('[data-result-link]');
+  const issueDetails = experienceQuality.querySelector<HTMLDetailsElement>('[data-result-issue-details]');
+  if (page) page.textContent = '尚未开始';
+  experienceQualityStructure.textContent = value.structureMode ? structureModeLabel(value.structureMode) : '未形成 V2 结构';
+  experienceQualityCoverage.textContent = value.expectedStateCount > 0
+    ? `${value.reviewedStateCount} 个检查点 / ${value.expectedStateCount} 个产品状态`
+    : '尚未开始';
+  experienceQualityScore.textContent = value.score === null ? '等待网页生成' : `${value.score} / 100`;
+  experienceQualityArchive.textContent = value.archiveEligible ? '已定稿 · 可入精选' : '尚未开始';
+  experienceQualitySummary.textContent = value.summary;
+  experienceQualityIssues.replaceChildren(...value.issues.map((issue) => element('li', '', issue)));
+  if (stopReason) stopReason.textContent = '任务尚未开始；点击“生成并构建最佳网页”后执行。';
+  if (link) {
+    link.href = './';
+    link.setAttribute('aria-disabled', 'true');
+    link.tabIndex = -1;
+  }
+  if (issueDetails) issueDetails.hidden = value.issues.length === 0;
+}
+
+function renderAssetQualityGate(
+  jobId: string,
+  completionId: string,
+  gate: NonNullable<PersistentGenerationJobView['assetGate']>
+): HTMLElement {
+  const tasks = completionId
+    ? createCodexImageGenerationTasks(jobId, completionId, briefInput.value, gate.requests)
+    : [];
+  const panel = element('article', 'wb-asset-gate');
+  const heading = element('div', 'wb-asset-gate__heading');
+  heading.append(
+    element('span', 'wb-asset-gate__eyebrow', 'ASSET QUALITY GATE'),
+    element('h3', '', completionId
+      ? `素材早检已停止 · 本次最多处理四项图片职责 · 当前 ${tasks.length} 项`
+      : '素材早检已停止 · 正在恢复旧任务的素材完成合同')
+  );
+  panel.append(
+    heading,
+    element('p', 'wb-asset-gate__summary', `已接受 ${gate.acceptedAssetIds.length} 项 / 未通过 ${gate.requests.length} 项 / 不会自动重试。${gate.summary}`)
+  );
+  const list = element('ol', 'wb-asset-gate__list');
+  tasks.forEach((task) => {
+    const request = task.request;
+    const item = element('li', 'wb-asset-gate__item');
+    const title = element('strong', '', `${request.role} · ${request.modality} · ${request.minimumQuality}`);
+    const source = request.recommendedSource === 'chatgpt-imagegen' ? '建议由 ChatGPT / Codex 生图' : '需要用户或授权素材';
+    const copy = document.createElement('button');
+    copy.type = 'button';
+    copy.className = 'wb-asset-gate__copy';
+    copy.textContent = '复制给 Codex';
+    copy.addEventListener('click', () => void copyAssetRequestToClipboard(task.prompt, request.role, copy));
+    item.append(
+      title,
+      element('span', 'wb-asset-gate__source', source),
+      element('p', '', request.responsibility),
+      element('small', '', `连续性：${request.continuity}`),
+      element('small', '', `验收证据：${request.proof}`),
+      element('small', 'wb-asset-gate__reason', request.reason),
+      copy
+    );
+    list.append(item);
+  });
+  const remaining = Math.max(0, gate.requests.length - tasks.length);
+  panel.append(list, element('p', 'wb-asset-gate__footer', completionId
+    ? `Codex 编码尚未开始。当前只给出最多四项图片任务${remaining ? `；其余 ${remaining} 项职责不纳入本轮 Codex 生成` : ''}。复制任务或在下方登记候选素材后，只恢复并复检同一 Job 一次。普通 L2 上传不会被直接认定为 L3/L4。`
+    : '旧任务正在补写一次性素材完成合同；不会新建 Job 或重跑创意理解。刷新一次即可取得可回传任务。'));
+  return panel;
+}
+
+async function copyAssetRequestToClipboard(
+  value: string,
+  role: string,
+  button: HTMLButtonElement
+): Promise<void> {
+  const original = button.textContent;
+  button.disabled = true;
+  try {
+    if (navigator.clipboard?.writeText) await navigator.clipboard.writeText(value);
+    else {
+      const area = document.createElement('textarea');
+      area.value = value;
+      area.setAttribute('readonly', '');
+      area.style.position = 'fixed';
+      area.style.opacity = '0';
+      document.body.append(area);
+      area.select();
+      const copied = document.execCommand('copy');
+      area.remove();
+      if (!copied) throw new Error('浏览器未允许复制。');
+    }
+    button.textContent = '已复制';
+    status.textContent = `已复制 ${role} 图片任务；文本包含 Job、完成批次和职责身份。带素材与审阅回执返回后，只恢复当前 Job。`;
+  } catch (error) {
+    button.textContent = '复制失败';
+    status.textContent = error instanceof Error ? error.message : String(error);
+  } finally {
+    window.setTimeout(() => {
+      button.disabled = false;
+      button.textContent = original;
+    }, 1600);
+  }
 }
 
 function renderRun(next: CreativeRun): void {
@@ -701,6 +1003,113 @@ function connectedMediaAdapters(): ProductionCapabilityAdapters {
 }
 
 function updateCount(): void { briefCount.textContent = `${briefInput.value.length} / 600`; }
+function renderV2ContractForBrief(brief: string, state: 'ready' | 'generating' = 'ready'): void {
+  const started = performance.now();
+  try {
+    const contract = createV2CreativeContract(brief);
+    const summary = summarizeV2CreativeContract(contract, performance.now() - started);
+    renderV2ContractSummary(summary, state);
+    renderProductExperienceQuality({
+      status: 'pending',
+      score: null,
+      structureMode: summary.structureMode,
+      expectedStateCount: summary.storyBeatCount,
+      reviewedStateCount: 0,
+      stateCoverage: 0,
+      modelJudgment: 'pending',
+      archiveEligible: false,
+      summary: `${structureModeLabel(summary.structureMode)}已按产品目标规划；生成后将检查 ${summary.storyBeatCount} 个语义状态，而不是固定页面数量。`,
+      issues: []
+    });
+  } catch {
+    activeV2ContractSummary = null;
+    experienceQuality.hidden = true;
+    v2ContractRoot.dataset.state = 'idle';
+    v2ContractState.textContent = '等待有效想法';
+    v2ContractReferences.textContent = '补充主体与期望变化';
+    v2ContractCapabilities.textContent = '尚未选择';
+    v2ContractRenderer.textContent = '尚未选择';
+    v2ContractLimits.textContent = '单候选 · 有限精修';
+    v2ContractReferenceReasons.textContent = '等待目标后解释';
+    v2ContractCapabilityReasons.textContent = '等待目标后解释';
+    v2ContractReviewModes.textContent = '叙事状态 · 移动端减弱动效';
+    v2ContractStyle.textContent = '等待目标';
+    v2ContractStyleDifference.textContent = '等待目标后比较历史案例';
+    v2ContractTitle.textContent = '描述至少包含主体、感受或希望发生的变化。';
+  }
+}
+function renderV2ContractSummary(summary: V2WorkbenchContractSummary, state: 'ready' | 'generating' | 'review' | 'complete' | 'failed'): void {
+  activeV2ContractSummary = summary;
+  v2ContractRoot.dataset.state = state;
+  v2ContractState.textContent = state === 'generating' ? '约束已锁定 · 正在构建' : state === 'review' ? '网页已生成 · 待视觉定稿' : state === 'complete' ? '最终结果已交付' : state === 'failed' ? '约束保留 · 可重试' : `本地决策 ${summary.preparedMs.toFixed(1)}ms`;
+  v2ContractReferences.textContent = summary.referenceTitles.join(' · ');
+  v2ContractCapabilities.textContent = summary.capabilityLabels.length ? summary.capabilityLabels.join(' · ') : '按目标定制，不强套原型';
+  v2ContractRenderer.textContent = `${rendererRouteLabel(summary.rendererRoute)} · ${sceneCompositionRouteLabel(summary.sceneCompositionRoute)} · ${stateAssetRouteLabel(summary.stateAssetRoute)}`;
+  v2ContractRenderer.title = summary.sceneCompositionReason;
+  v2ContractLimits.textContent = `${structureModeLabel(summary.structureMode)} · ${summary.storyBeatCount} 个产品状态 / ${summary.reviewCheckpointCount} 个自适应检查点 · 最多 ${Math.min(1, summary.refinementPasses)} 次自动精修`;
+  v2ContractLimits.title = summary.layoutRule;
+  v2ContractReferenceReasons.textContent = summary.referenceReasons.slice(0, 2).join('；') || '依据目标语义选择已验证案例';
+  v2ContractReferenceReasons.title = summary.referenceReasons.join('\n');
+  v2ContractCapabilityReasons.textContent = summary.capabilityReasons.slice(0, 2).join('；') || '按目标职责组合能力';
+  v2ContractCapabilityReasons.title = summary.capabilityReasons.join('\n');
+  v2ContractReviewModes.textContent = summary.reviewModes.map(reviewModeLabel).join(' · ');
+  v2ContractStyle.textContent = summary.styleSignature;
+  v2ContractStyleDifference.textContent = summary.styleDifference;
+  v2ContractTitle.textContent = summary.decisionSummary;
+}
+function reviewModeLabel(mode: V2WorkbenchContractSummary['reviewModes'][number]): string {
+  return ({
+    'story-beats': '叙事节拍',
+    'mobile-reduced-motion': '移动端 / 减弱动效',
+    'primary-causality': '真实输入 / 主体 / 结果 / 行动',
+    'semantic-interaction': '语义交互',
+    'shared-state-driver': '播放 / 滚轮 / 人工接管',
+    'webgl-fallback': '无 WebGL 回退'
+  } as const)[mode];
+}
+function structureModeLabel(mode: V2WorkbenchContractSummary['structureMode']): string {
+  return ({
+    'single-scene': '单一持续场景',
+    'continuous-canvas': '连续画布',
+    'guided-sequence': '引导序列',
+    'interactive-field': '交互工作区',
+    'horizontal-panorama': '横向连续图卷',
+    'task-flow': '任务流程',
+    'editorial-flow': '编辑流',
+    'catalog': '目录',
+    'branching-confluence': '分支汇合',
+    'spatial-inspection': '空间动作检查场'
+  } as const)[mode];
+}
+function setV2ContractState(state: 'ready' | 'generating' | 'review' | 'complete' | 'failed', label: string): void {
+  if (!activeV2ContractSummary) return;
+  v2ContractRoot.dataset.state = state;
+  v2ContractState.textContent = label;
+}
+function rendererRouteLabel(route: V2WorkbenchContractSummary['rendererRoute']): string {
+  return ({
+    'dom-only': '语义 DOM',
+    'dom-media-hybrid': 'DOM + 连续媒体',
+    'dom-canvas-hybrid': 'DOM + Canvas / Shader',
+    'dom-three-hybrid': 'DOM + Three.js 空间'
+  } as const)[route];
+}
+
+function stateAssetRouteLabel(route: V2WorkbenchContractSummary['stateAssetRoute']): string {
+  return ({
+    'static-sufficient': '静态素材足够',
+    'continuous-media-or-layered-subject': '连续/分层状态素材',
+    'inspectable-model': '可检查真实模型',
+    'procedural-state': '程序化状态主体'
+  } as const)[route];
+}
+function sceneCompositionRouteLabel(route: V2WorkbenchContractSummary['sceneCompositionRoute']): string {
+  return ({
+    'single-image-hybrid': '单图/单平面增强',
+    'layered-2d': '2.5D 独立分层',
+    'spatial-3d': '真实空间模型'
+  } as const)[route];
+}
 function setCreatorStep(step: CreatorStep): void {
   creatorStep = step;
   document.body.dataset.creatorStep = String(step);
@@ -717,7 +1126,11 @@ function updateUrl(): void { const url = new URL(location.href); url.searchParam
 async function createGenerationJob(provider: Exclude<CreativeProviderId, 'local'>): Promise<string> {
   const response = await fetch('/api/creative/jobs', {
     method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-    body: JSON.stringify({ brief: briefInput.value.trim(), provider, quality: readQuality(qualitySelect.value), seed: generationSeed })
+    body: JSON.stringify({
+      brief: briefInput.value.trim(), provider, quality: readQuality(qualitySelect.value), seed: generationSeed,
+      intentSource: 'workbench-user', experimentConstraints: [],
+      expectedContractId: expectedV2ContractId || undefined
+    })
   });
   const body = await response.json() as { job?: { id: string }; error?: string };
   if (!response.ok || !body.job) throw new Error(body.error || `任务接口返回 ${response.status}`);
@@ -725,6 +1138,41 @@ async function createGenerationJob(provider: Exclude<CreativeProviderId, 'local'
   generationJobId = body.job.id;
   updateUrl();
   return body.job.id;
+}
+
+function releaseV2LaunchBinding(): void {
+  if (!expectedV2ContractId) return;
+  expectedV2ContractId = null;
+  const url = new URL(location.href);
+  url.searchParams.delete('contract');
+  url.searchParams.delete('source');
+  url.searchParams.delete('autorun');
+  history.replaceState(null, '', url);
+  generateButton.disabled = false;
+  variationButton.disabled = false;
+  errorPanel.hidden = true;
+}
+
+function renderIntentBoundary(provenance: IntentProvenance | null, currentBrief: string): void {
+  if (!provenance) {
+    intentOrigin.textContent = generationJobId
+      ? '历史任务 · 原始目标来源未记录；其中的实现限制不视为已确认用户要求'
+      : `当前文本框输入 · ${currentBrief.length} 字 · 不允许系统静默改写`;
+    intentSystemBoundary.textContent = '质量优先 · 素材、DOM、Canvas 与 Three.js 按目标选择；系统建议不能新增硬限制';
+    return;
+  }
+  const source = provenance.submissionSource === 'workbench-user'
+    ? '工作台用户输入'
+    : provenance.submissionSource === 'system-validation'
+      ? '系统验证任务'
+      : 'API 提交';
+  const constraints = provenance.userConstraints.length
+    ? `；明确限制：${provenance.userConstraints.join(' / ')}`
+    : '；没有提取到额外硬限制';
+  intentOrigin.textContent = `${source} · 原文已锁定${constraints}`;
+  intentSystemBoundary.textContent = provenance.experimentConstraints.length
+    ? `质量优先；实验条件单独记录且不进入创意 brief：${provenance.experimentConstraints.join(' / ')}`
+    : provenance.systemPreferences.join(' / ');
 }
 
 async function readGenerationJob(id: string): Promise<PersistentGenerationJobView | null> {
@@ -752,6 +1200,13 @@ function openArtifact(title: string, value: unknown): void {
 
 function updateProviderHelp(): void { syncProviderHelp(providerSelect, briefHelp); }
 function updateGenerateLabel(): void { generateButton.textContent = '生成并构建最佳网页'; }
+function renderPendingProviderSelection(): void {
+  const selectedProvider = readProvider(providerSelect.value);
+  if (selectedProvider === 'local') return;
+  providerBadge.dataset.mode = 'remote';
+  providerLabel.textContent = `${selectedProvider.toUpperCase()} SELECTED · LOCAL PREVIEW`;
+  providerBadge.title = '当前画面是本地约束预览；点击生成后才会调用所选模型构建专属网页。';
+}
 function reportOutcomeRoute(detail: OutcomeRouteInput): void { window.dispatchEvent(new CustomEvent('creative-lab:pipeline-stage', { detail })); }
 function renderProvider(value: Parameters<typeof renderProviderProvenance>[2]): void { renderProviderProvenance(providerBadge, providerLabel, value); }
 function renderAvailability(value: Parameters<typeof renderProviderAvailability>[3]): void { renderProviderAvailability(providerSelect, providerBadge, providerLabel, value); }
@@ -780,6 +1235,7 @@ function createSnapshot(): WorkbenchSnapshot {
     evaluation: { state: evaluationReport ? 'ready' : 'idle', reportId: evaluationReport?.id || null, status: evaluationReport?.status || null, revisionPlanId: revisionPlan?.id || null, manualChecks: evaluationReport?.manualCheckIds.length || 0, blockingChecks: evaluationReport?.blockingCheckIds.length || 0 },
     runtimeEvidence: { state: runtimeEvidenceState, bundleId: runtimeEvidenceBundle?.id || null, samples: runtimeEvidenceBundle?.samples.map((sample) => sample.mode) || [], error: runtimeEvidenceError },
     localRevision: { state: localRevisionState, resultId: localRevisionResult?.id || null, revisedCandidateId: localRevisionResult?.revisedCandidateId || null, changedPaths: localRevisionResult?.changedPaths || [] },
+    v2Contract: activeV2ContractSummary,
     error: lastError
   };
 }
@@ -809,7 +1265,10 @@ function showGeneratedPreview(candidate: CreativeCandidate, fullUrl: URL): void 
   stageProgress = .04;
   stageFrame.src = embedUrl.href;
   showcaseButtons.forEach((button) => button.setAttribute('aria-pressed', 'false'));
-  document.querySelector('.wb-creative-stage')?.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
+  if (focusGeneratedResult) {
+    focusGeneratedResult = false;
+    document.querySelector('.wb-creative-stage')?.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
+  }
 }
 
 function requestStageProgress(): void {

@@ -1,0 +1,673 @@
+{
+  "receipt": {
+    "id": "dedicated-lantern-final-r65",
+    "provider": "codex",
+    "model": "gpt-5.6-sol",
+    "status": "compiled",
+    "previewUrl": "/generated-runs/dedicated-lantern-final-r65/",
+    "generatedAt": "2026-08-29T05:27:16.818Z",
+    "files": 4,
+    "assets": 1,
+    "sourceBytes": 15038,
+    "hasShaders": false,
+    "compileMs": 712,
+    "attempts": 1,
+    "directory": "generated/runs/dedicated-lantern-final-r65"
+  },
+  "request": {
+    "brief": "为一款可折叠日光露营灯设计明亮、可信的产品网页。始终展示同一盏灯，滚动时从扁平收纳、半展开、完全展开到温暖点亮；每一步都解释收纳体积、折叠结构和真实使用状态，最后行动是“为下一次露营点亮它”。页面像自然日光下的户外装备目录与产品实验记录，不要暗色科技风、紫色、随机粒子、巨大标题或固定三屏。素材、DOM、Canvas 和 Three.js 按最终效果选择。",
+    "seed": 79,
+    "quality": "high",
+    "runId": "run-1xgeeyv",
+    "selectedId": "generated-10vpkvh-blueprint-9098om-folding-camp-light-fieldnotes-blueprint",
+    "creativeContract": {
+      "schemaVersion": 2,
+      "id": "contract-1wuufu",
+      "brief": "为一款可折叠日光露营灯设计明亮、可信的产品网页。始终展示同一盏灯，滚动时从扁平收纳、半展开、完全展开到温暖点亮；每一步都解释收纳体积、折叠结构和真实使用状态，最后行动是“为下一次露营点亮它”。页面像自然日光下的户外装备目录与产品实验记录，不要暗色科技风、紫色、随机粒子、巨大标题或固定三屏。素材、DOM、Canvas 和 Three.js 按最终效果选择。",
+      "intent": {
+        "subject": "可折叠日光露营灯",
+        "audience": "需要快速理解并感受该想法的网页访客",
+        "desiredFeeling": "真实、温暖、自然",
+        "narrativeChange": "从扁平收纳、半展开、完全展开到温暖点亮",
+        "primaryAction": "为下一次露营点亮它",
+        "negativeConstraints": [
+          "页面像自然日光下的户外装备目录与产品实验记录，不要暗色科技风、紫色、随机粒子、巨大标题或固定三屏"
+        ]
+      },
+      "referenceEvidence": [
+        {
+          "referenceId": "threejs-iris-articulated-reveal",
+          "title": "IRIS · 程序化关节主体展开",
+          "sourceUrl": "https://iamtechartist.github.io/Threejs-3D-Webpage/",
+          "evidenceLevel": "runtime-verified",
+          "relevance": "命中 展开、结构。 支持 product-atmosphere 体验模式。 来自已归档并经过浏览器验证的本地最终案例。",
+          "borrow": [
+            "单一程序化主体与固定画布贯穿全程，DOM 内容围绕结构展开而不是逐屏更换背景。",
+            "全局滚动被映射为各部件错峰局部进度，并同步相机、材质、灯光、雾和后期。",
+            "只在抽象机械、生物结构或构造过程就是主题时使用程序化可动主体；真实商品仍需要可信资产。"
+          ],
+          "avoid": [
+            "不要复制花瓣外形或黑金风格，也不要用程序化几何伪装真实产品、人物或建筑。"
+          ]
+        },
+        {
+          "referenceId": "kage-smart-audio",
+          "title": "智能声音产品 · 主体锚定",
+          "sourceUrl": "../cases/dedicated-1edb98865f4c/",
+          "evidenceLevel": "runtime-verified",
+          "relevance": "命中 产品。 支持 product-atmosphere 体验模式。 来自已归档并经过浏览器验证的本地最终案例。",
+          "borrow": [
+            "产品始终是画面锚点，氛围建立、能力解释和行动收束围绕同一主体完成。",
+            "镜头和声波反馈解释产品状态，不用无目的旋转或鼠标晃动制造虚假互动。",
+            "可信产品素材承担轮廓和材质，程序化声场承担不可见能力的可视化。"
+          ],
+          "avoid": [
+            "没有可信模型时不要伪造可拆解产品，也不要让抽象粒子抢走产品焦点。"
+          ]
+        },
+        {
+          "referenceId": "motionsites-scroll-landing",
+          "title": "MotionSites · Scroll Landing Page",
+          "sourceUrl": "https://motionsites.ai/?prompt=scroll-landing",
+          "evidenceLevel": "catalog-metadata",
+          "relevance": "命中 滚动。 支持 product-atmosphere 体验模式。 只作为外部目录方向信号，不当作实现已验证。",
+          "borrow": [
+            "目录将其标记为 Interactive，可作为滚动承担连续变化的方向索引。",
+            "参考滚动作为统一时间轴，而不是为每个区块堆叠互不相关的入场动画。",
+            "素材必须绑定滚动状态和视觉职责，不能只作为区块背景轮播。"
+          ],
+          "avoid": [
+            "不要复制固定区块数量，也不要把普通淡入误认为沉浸式叙事。"
+          ]
+        }
+      ],
+      "experience": {
+        "pattern": "product-atmosphere",
+        "structure": {
+          "mode": "guided-sequence",
+          "segmentPolicy": "content-derived",
+          "layoutRule": "围绕产品的使用情境、可见能力和行动组织非均匀节点；不把每项卖点拆成整屏。"
+        },
+        "thesis": "先建立可折叠日光露营灯的使用情绪，再用可见状态解释能力，最终留下明确行动。",
+        "focalSubject": "可折叠日光露营灯",
+        "continuityRule": "同一产品必须贯穿全部关键状态，比例、材质和环境光不能突然改变。",
+        "typographyRole": "文字负责产品价值和行动，不承担本应由产品状态表达的视觉变化。",
+        "beats": [
+          {
+            "id": "product-context",
+            "position": 0,
+            "purpose": "establish",
+            "visibleState": "产品在真实使用环境中成为唯一明确主体。",
+            "userProgression": "滚动开始靠近产品及其使用情境。"
+          },
+          {
+            "id": "product-anchor",
+            "position": 0.3,
+            "purpose": "develop",
+            "visibleState": "产品轮廓、材质和操作关系变得清晰。",
+            "userProgression": "继续滚动进入核心能力。"
+          },
+          {
+            "id": "capability-visible",
+            "position": 0.68,
+            "purpose": "transform",
+            "visibleState": "声场、光线、内部结构或状态变化解释核心能力。",
+            "userProgression": "观察能力造成的可见后果。"
+          },
+          {
+            "id": "product-resolve",
+            "position": 1,
+            "purpose": "resolve",
+            "visibleState": "产品回到稳定英雄状态，并明确“为下一次露营点亮它”。",
+            "userProgression": "主要运动停止，完成行动。"
+          }
+        ],
+        "pointerRole": "指针用于克制的材质反馈或观察角变化，不允许无目标追随。",
+        "reducedMotion": "使用产品的开场、能力和完成三个稳定状态，取消持续旋转和大幅视差。",
+        "finalMemoryPoint": "为下一次露营点亮它"
+      },
+      "visualAnchor": {
+        "subject": "持续表现同一“为一款可”从初始状态到结构变化完成的可辨认过程。",
+        "relationshipToBrief": "视觉锚点必须直接证明“可折叠日光露营灯”和“先建立可折叠日光露营灯的使用情绪，再用可见状态解释能力，最终留下明确行动。”；即使隐藏标题，也能从对象、空间或数据关系辨认主题。",
+        "heroRole": "primary-subject",
+        "source": "hybrid",
+        "interactionBinding": "视觉锚点沿体验节点连续承担建立、变化与“为下一次露营点亮它”收束，不得在中段被无关装饰替换。",
+        "fallback": "增强层不可用时，保留同一“可折叠日光露营灯”的静态主题表示、完整语义内容和主要行动；不得回退为通用网格或空背景。"
+      },
+      "assets": [
+        {
+          "id": "hero-product",
+          "role": "subject",
+          "modality": "transparent-image",
+          "required": false,
+          "minimumQuality": "L3-presentable",
+          "sourcePriority": [
+            "user-supplied",
+            "curated-library",
+            "primary-image-model",
+            "minimax-fallback"
+          ],
+          "visualResponsibility": "承担产品识别、比例、主要材质和最终英雄构图。",
+          "continuityRule": "所有状态必须是同一产品，不更换轮廓、不拆成无关零件。",
+          "integration": "alpha-subject",
+          "visibleProof": "opening、middle、ending 均能识别同一产品，且 middle 显示真实能力状态。",
+          "fallback": "static-image"
+        },
+        {
+          "id": "product-atmosphere",
+          "role": "atmosphere",
+          "modality": "procedural",
+          "required": false,
+          "minimumQuality": "L2-inspectable",
+          "sourcePriority": [
+            "procedural"
+          ],
+          "visualResponsibility": "把声音、能量、雨、空气或光等不可见能力转成克制的空间反馈。",
+          "continuityRule": "氛围必须从产品位置或使用情境产生，不能成为独立装饰层。",
+          "integration": "native-procedural",
+          "visibleProof": "middle 截图能说明氛围变化与产品能力之间的因果关系。",
+          "fallback": "dom-only"
+        },
+        {
+          "id": "state-subject",
+          "role": "subject",
+          "modality": "image-sequence",
+          "required": true,
+          "minimumQuality": "L3-presentable",
+          "sourcePriority": [
+            "user-supplied",
+            "curated-library",
+            "licensed",
+            "primary-image-model",
+            "minimax-fallback"
+          ],
+          "visualResponsibility": "持续表现同一“为一款可”从初始状态到结构变化完成的可辨认过程。",
+          "continuityRule": "至少 3 个状态必须共享同一对象身份、尺度、观察关系与光线；可分部件不少于 2 组。",
+          "integration": "full-bleed-environment",
+          "visibleProof": "关键截图能够直接指出同一主体的初始、变化中和完成状态，不能只依赖裁切、箭头或说明文字。",
+          "fallback": "block"
+        }
+      ],
+      "direction": {
+        "visualRole": "subject",
+        "mechanisms": [
+          {
+            "id": "subject-specimen-field",
+            "title": "主体标本场",
+            "evidenceLevel": "E4",
+            "job": "围绕独立主体和安全区组织排版，让对象始终保持识别和呼吸空间。",
+            "reason": "匹配独立主体的主要视觉职责。 支持 product-atmosphere 体验。 命中“产品”。",
+            "sourceCaseIds": [
+              "sports-ai-subject-field"
+            ]
+          },
+          {
+            "id": "state-storyboard",
+            "title": "状态故事板",
+            "evidenceLevel": "E4",
+            "job": "用连续的视觉状态分配页面节奏，每个状态只承担一个叙事动词。",
+            "reason": "匹配独立主体的主要视觉职责。 支持 product-atmosphere 体验。 命中“滚动、最后”。",
+            "sourceCaseIds": [
+              "plety-media-storyboard",
+              "igloo-cinematic-deconstruction"
+            ]
+          },
+          {
+            "id": "articulated-subject-reveal",
+            "title": "关节主体揭示",
+            "evidenceLevel": "E4",
+            "job": "把全局滚动拆成部件错峰进度，让单一抽象主体通过结构变化解释主题。",
+            "reason": "匹配独立主体的主要视觉职责。 支持 product-atmosphere 体验。 命中“展开”。",
+            "sourceCaseIds": [
+              "threejs-iris-articulated-reveal"
+            ]
+          }
+        ],
+        "interaction": {
+          "primaryInput": "scroll",
+          "semanticAction": "滚动从使用情绪进入产品能力，再回到稳定英雄状态。",
+          "pointerRole": "secondary",
+          "touchAlternative": "触摸滚动保持同一状态顺序；取消只依赖悬停的内容。",
+          "keyboardAlternative": "提供跳转到关键状态的语义锚点，并保持自然文档阅读顺序。"
+        },
+        "renderer": {
+          "baseLayer": "semantic-dom",
+          "route": "dom-media-hybrid",
+          "enhancement": "media",
+          "reason": "连续媒体已能承担环境或状态变化，不额外引入完整 Three.js 场景。",
+          "threeJustification": "没有必须由真实三维深度、相机或模型状态解决的职责。",
+          "fallback": "使用稳定关键帧和交叉淡化保留相同叙事顺序。"
+        },
+        "rejectedMechanisms": [
+          {
+            "id": "cinematic-3d-deconstruction",
+            "reason": "缺少真实可检查模型，不能伪造三维拆解。"
+          },
+          {
+            "id": "pointer-reveal",
+            "reason": "目标没有要求通过指针发现信息，鼠标仅保留轻量反馈。"
+          },
+          {
+            "id": "sticky-archive-stack",
+            "reason": "当前核心不是一组并列档案，不使用长堆叠拖慢叙事。"
+          }
+        ],
+        "decisionSummary": "以独立主体承担主要视觉，用主体标本场、状态故事板、关节主体揭示组织变化；连续媒体已能承担环境或状态变化，不额外引入完整 Three.js 场景。"
+      },
+      "technical": {
+        "presentationStrategy": "media-scroll-scrub",
+        "capabilitySelection": {
+          "selected": true,
+          "capabilityId": "media-scroll-scrub",
+          "score": 77,
+          "reasons": [
+            "体验模式 product-atmosphere 适合固定媒体滚动时间轴。",
+            "目标命中 滚动、状态 等连续叙事信号。",
+            "素材计划提供了可映射到滚动状态的连续媒体。"
+          ],
+          "blockers": [],
+          "contract": {
+            "id": "media-scroll-scrub",
+            "title": "连续媒体滚动叙事",
+            "evidenceLevel": "runtime-verified",
+            "prototypeUrl": "./prototypes/scroll-scrub-media/",
+            "sourceEvidence": [
+              "https://motionsites.ai/lesson/build-scroll-animated-website-with-ai",
+              "../../docs/v2-research/MOTIONSITES-R02-SCROLL-SCRUB-PROTOTYPE.md"
+            ],
+            "applicablePatterns": [
+              "continuous-scroll",
+              "environmental-memory",
+              "product-atmosphere"
+            ],
+            "positiveSignals": [
+              "滚动",
+              "连续",
+              "逐渐",
+              "形成",
+              "变化",
+              "记忆",
+              "梦境",
+              "情绪",
+              "状态",
+              "scroll",
+              "sequence",
+              "memory",
+              "transition"
+            ],
+            "blockerSignals": [
+              "glb",
+              "gltf",
+              "拆解",
+              "自由旋转",
+              "配置器",
+              "第一人称",
+              "碰撞",
+              "真实三维检查",
+              "orbit",
+              "configurator",
+              "first-person"
+            ],
+            "assetContract": {
+              "acceptedModalities": [
+                "image-sequence",
+                "video",
+                "canvas-frame-sequence"
+              ],
+              "minimumStates": 3,
+              "maximumStates": 6,
+              "continuityRules": [
+                "连续状态必须共享主体、场所或可追踪的空间坐标。",
+                "机位、光向和视觉重心不能在相邻状态中无理由跳变。",
+                "素材必须延伸到视口边缘，不允许出现矩形海报边界。"
+              ],
+              "variationRules": [
+                "每个阶段至少有一个服务叙事动词的可读状态变化。",
+                "首尾状态必须分别为标题安全区和最终行动保留空间。"
+              ],
+              "maximumInitialBytes": 2500000,
+              "maximumTotalBytes": 6000000
+            },
+            "runtimeContract": {
+              "layout": "fixed-full-bleed-media",
+              "driver": "scroll-progress",
+              "renderer": "dom-css-webgl-optional",
+              "smoothingFactor": 0.12,
+              "contentLayer": "semantic-dom",
+              "reducedMotion": "stable-states-crossfade"
+            },
+            "acceptanceEvidence": [
+              "asset-request",
+              "screenshot-opening",
+              "screenshot-beat",
+              "screenshot-ending",
+              "screenshot-mobile",
+              "runtime"
+            ]
+          }
+        },
+        "articulatedSubject": {
+          "selected": false,
+          "capabilityId": null,
+          "score": 40,
+          "reasons": [
+            "主体没有明确的抽象或程序化构造语义。",
+            "变化命中 展开、折叠。",
+            "没有可建立拓扑关系的部件描述。",
+            "体验模式 product-atmosphere 支持单一主体连续变化。"
+          ],
+          "blockers": [],
+          "contract": null
+        },
+        "stateAssetStrategy": {
+          "required": true,
+          "changeKind": "assembly",
+          "route": "continuous-media-or-layered-subject",
+          "acceptedModalities": [
+            "image-sequence",
+            "transparent-image",
+            "model-3d"
+          ],
+          "minimumDistinctStates": 3,
+          "minimumPartGroups": 2,
+          "failurePolicy": "block-authoring",
+          "reason": "目标要求同一实体产生可观察的结构变化；需要连续一致的多状态媒体、可分层主体或可检查模型，单张静态图只能承担环境和气氛。"
+        },
+        "semanticInteraction": {
+          "selected": false,
+          "capabilityId": null,
+          "score": 9,
+          "matchedSignals": [
+            "选择"
+          ],
+          "reasons": [
+            "目标命中“选择”等信息关系信号。",
+            "当前体验模式或素材职责不足以证明交互必须存在。",
+            "现有导演决策只需要滚动推进，不额外增加主要交互。"
+          ],
+          "blockers": [],
+          "evaluatedCapability": {
+            "id": "semantic-responsive-interaction",
+            "evidenceLevel": "E4",
+            "state": "validated",
+            "problem": "装饰性鼠标动效不能帮助用户理解内容，也无法稳定迁移到触摸、键盘和减少动态效果环境。",
+            "meaning": "滚动选择证据层，时间选择改变海岸形态和数字，指针只在局部揭示相对于基准年已经消失的土地。",
+            "inputs": [
+              "scroll",
+              "pointer",
+              "touch",
+              "keyboard"
+            ],
+            "outputs": [
+              "scene-shape",
+              "evidence-value",
+              "narrative-layer",
+              "selection-state"
+            ],
+            "baseInterface": "语义 DOM 始终提供年代按钮、损失数字、解释文字和当前状态，不依赖 WebGL 完成比较。",
+            "enhancedInterface": "WebGL 把年代选择映射为同一海岸场的连续形变，并让局部证据透镜显示相对损失范围。",
+            "reducedMotionRule": "减少动态效果时立即切换到目标年代和阶段，停止连续漂移，但保留所有数值和比较结果。",
+            "rejectionRules": [
+              "移除交互后信息理解完全不变时拒绝晋级。",
+              "触摸、键盘或无 WebGL 回退无法完成比较时拒绝晋级。"
+            ],
+            "evidence": [
+              {
+                "id": "coast-1984",
+                "year": 1984,
+                "label": "基准海岸",
+                "lossSquareKilometers": 0,
+                "retreatMeters": 0,
+                "relativeWaterCentimeters": 0,
+                "sceneMorph": 0,
+                "summary": "沙洲仍然连续，潮沟尚未切断内侧湿地。"
+              },
+              {
+                "id": "coast-2004",
+                "year": 2004,
+                "label": "潮沟扩张",
+                "lossSquareKilometers": 3.2,
+                "retreatMeters": 186,
+                "relativeWaterCentimeters": 8,
+                "sceneMorph": 0.5,
+                "summary": "外侧沙洲变薄，新的潮沟开始把湿地分成孤立片区。"
+              },
+              {
+                "id": "coast-2026",
+                "year": 2026,
+                "label": "临界断面",
+                "lossSquareKilometers": 8.7,
+                "retreatMeters": 421,
+                "relativeWaterCentimeters": 17,
+                "sceneMorph": 1,
+                "summary": "连续岸线已经断裂，曾经被遮蔽的社区直接面对风暴潮。"
+              }
+            ]
+          }
+        },
+        "identityEvidence": {
+          "selected": false,
+          "score": 18,
+          "reason": "拒绝：缺少同时指向身份与证据的明确目标。",
+          "rejectedBy": [],
+          "matchedSignals": [
+            "可信"
+          ],
+          "capabilityId": null
+        },
+        "placeGrounding": {
+          "selected": false,
+          "capabilityId": null,
+          "strategy": "none",
+          "score": 0,
+          "matchedSignals": [],
+          "reasons": [
+            "目标没有要求地点事实、空间关系或地域来源，不应为了视觉效果强行加入地图。",
+            "继续由主题、素材和交互目标选择最小充分技术路线。"
+          ],
+          "requirements": {
+            "geography": "not-applicable",
+            "map": "avoid",
+            "dataTruth": "不引入与目标无关的地点、地图或路线事实。",
+            "creativeFreedom": "围绕主体、受众、情绪变化和最终行动选择表达，不增加地域模板。"
+          }
+        },
+        "styleDiversity": {
+          "fingerprint": {
+            "composition": "object-catalog",
+            "palette": "daylight-neutral",
+            "motion": "state-switch",
+            "spatial": "modular-collection",
+            "typography": "mono-instrument",
+            "media": "transparent-subject"
+          },
+          "nearestCaseId": "dedicated-1b9f0b05107b",
+          "nearestDistance": 4,
+          "minimumDifferentAxes": 2,
+          "mustDifferOn": [
+            "composition",
+            "motion",
+            "spatial",
+            "typography"
+          ],
+          "avoidRepeating": [
+            "不要默认复用暗色全屏背景、中央主体和巨型标题的组合。",
+            "不要把滚动淡入、漂浮粒子和柔光当成所有主题的通用答案。",
+            "不得复刻最相近案例 dedicated-1b9f0b05107b 的整体构图和运动语法。"
+          ],
+          "rationale": "本方向与最相近案例 dedicated-1b9f0b05107b 在 4 个风格轴上不同；差异是生成约束，不是固定模板。"
+        },
+        "domResponsibilities": [
+          "承载可阅读内容、导航和最终行动。",
+          "在 WebGL 不可用时保留完整语义顺序。"
+        ],
+        "webglResponsibilities": [
+          "承载空间记忆、镜头关系和连续状态变化。",
+          "让素材融入环境并提供克制的交互反馈。"
+        ],
+        "targetFrameTimeMs": 16.7,
+        "maxInitialAssetBytes": 8000000,
+        "targetDevices": [
+          "desktop",
+          "mobile"
+        ]
+      },
+      "acceptance": [
+        {
+          "id": "intent-visible",
+          "priority": "blocker",
+          "assertion": "首屏和终点能够对应原始主体、情绪变化和最终行动；不了解行业背景的用户也能在约 10 秒内识别核心对象、可执行操作和操作后的业务结果。",
+          "evidence": "screenshot-ending"
+        },
+        {
+          "id": "visual-anchor-specific",
+          "priority": "blocker",
+          "assertion": "首屏存在与 brief 直接相关且无需依赖标题即可辨认的视觉锚点；纯色、通用网格、无主题依据的渐变、随机粒子或无关几何不能单独充当主视觉。",
+          "evidence": "screenshot-opening"
+        },
+        {
+          "id": "asset-visible",
+          "priority": "blocker",
+          "assertion": "所有 required 素材都已成功请求，并在声明状态承担可辨认的视觉职责。",
+          "evidence": "asset-request"
+        },
+        {
+          "id": "opening-composed",
+          "priority": "high",
+          "assertion": "首屏存在明确主体和空间坐标，没有空黑屏、文字裁切或主体被遮挡。",
+          "evidence": "screenshot-opening"
+        },
+        {
+          "id": "process-causal",
+          "priority": "high",
+          "assertion": "至少一个过程或交互状态能够解释能力、转化或探索关系，而不只是装饰动画；模式、Cue、预设、路线或方案等高层操作必须修改底层状态和主体画面。",
+          "evidence": "screenshot-beat"
+        },
+        {
+          "id": "semantic-state-consistent",
+          "priority": "high",
+          "assertion": "交互控件、可见数值、汇总值、结果解释和主体状态必须来自同一目标状态；专业指标或简化估算必须诚实标注并保持声明约束，不能作为虚假真实性装饰。",
+          "evidence": "runtime"
+        },
+        {
+          "id": "borderless-integration",
+          "priority": "high",
+          "assertion": "主体和环境没有棋盘格、矩形图片边界或不自然的发光方框。",
+          "evidence": "screenshot-beat"
+        },
+        {
+          "id": "mobile-readable",
+          "priority": "blocker",
+          "assertion": "390px 移动端无横向溢出，主体、正文和行动均可见。",
+          "evidence": "screenshot-mobile"
+        },
+        {
+          "id": "semantic-fallback",
+          "priority": "normal",
+          "assertion": "关闭 WebGL 或减少运动后仍保留完整内容顺序和行动。",
+          "evidence": "dom"
+        },
+        {
+          "id": "runtime-clean",
+          "priority": "blocker",
+          "assertion": "页面无阻断脚本错误，关键素材请求成功，滚动和指针输入可用。",
+          "evidence": "runtime"
+        }
+      ],
+      "executionLimits": {
+        "authoringPasses": 1,
+        "assetBatches": 1,
+        "refinementPasses": 1,
+        "stopAfterMinutes": 15,
+        "archivePolicy": "best-result-only"
+      }
+    },
+    "reference": {
+      "title": "日光折叠实验记录",
+      "summary": "一盏灯从装备台上的扁平收纳，经过可读的铰链展开，抵达傍晚营地的温暖照明时刻。",
+      "scenePlugin": "composed-world",
+      "productionStatus": "blocked",
+      "theme": {
+        "deep": "#314536",
+        "surface": "#f4f0e5",
+        "text": "#243128",
+        "muted": "#70786c",
+        "accent": "#d98a2b",
+        "accentSoft": "#f2d5a6"
+      },
+      "assets": [
+        {
+          "id": "collapsible-lantern-four-state-v1",
+          "uri": "/creative-assets/r64-collapsible-lantern-four-state-v1.png",
+          "bundlePath": "assets/r64-collapsible-lantern-four-state-v1.png",
+          "kind": "image",
+          "source": "chatgpt-generated",
+          "qualityLevel": "L3-presentable",
+          "role": "same-camera four-state collapsible daylight camping lantern subject",
+          "description": "同一盏无品牌露营灯在同一机位和自然日光下呈现扁平收纳、部分展开、完全展开和暖光点亮四个状态；铝环、提手、象牙色折叠灯罩、底座与接地阴影保持连续。",
+          "payloadBytes": 1741984,
+          "required": true,
+          "experience": {
+            "anchor": 0.5,
+            "function": "persistent",
+            "visualState": "同一盏露营灯由扁平收纳逐步展开，并在最终状态由内部暖光照亮完整灯罩。",
+            "continuity": "相机、产品尺度、铝环、提手、折叠灯罩、底座、自然日光与接地阴影保持一致，只改变灯罩展开高度和内部点亮状态。",
+            "integration": "full-bleed-environment",
+            "stateEvidence": {
+              "mode": "sequence",
+              "distinctStates": 4,
+              "partGroups": 3,
+              "continuityKey": "collapsible-lantern-daylight-camera-v1",
+              "proof": "2×2 状态母图提供扁平、部分展开、完全展开和点亮四帧；同一提手、顶盖、折叠灯罩与底座可跨状态核对。"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "mediaDominance": {
+    "schemaVersion": 1,
+    "decision": "ready",
+    "route": "dom-media-hybrid",
+    "highQualityAssetIds": [
+      "collapsible-lantern-four-state-v1"
+    ],
+    "subjectPrimitiveCount": 0,
+    "subjectPrimitiveScore": 0,
+    "constructors": {},
+    "summary": "媒体主导权门禁通过：L3/L4 素材保持主导，程序化几何没有达到主体重建阈值。"
+  },
+  "usedAssets": [
+    {
+      "id": "collapsible-lantern-four-state-v1",
+      "uri": "/creative-assets/r64-collapsible-lantern-four-state-v1.png",
+      "bundlePath": "assets/r64-collapsible-lantern-four-state-v1.png",
+      "kind": "image",
+      "source": "chatgpt-generated",
+      "qualityLevel": "L3-presentable",
+      "role": "same-camera four-state collapsible daylight camping lantern subject",
+      "description": "同一盏无品牌露营灯在同一机位和自然日光下呈现扁平收纳、部分展开、完全展开和暖光点亮四个状态；铝环、提手、象牙色折叠灯罩、底座与接地阴影保持连续。",
+      "payloadBytes": 1741984,
+      "required": true,
+      "experience": {
+        "anchor": 0.5,
+        "function": "persistent",
+        "visualState": "同一盏露营灯由扁平收纳逐步展开，并在最终状态由内部暖光照亮完整灯罩。",
+        "continuity": "相机、产品尺度、铝环、提手、折叠灯罩、底座、自然日光与接地阴影保持一致，只改变灯罩展开高度和内部点亮状态。",
+        "integration": "full-bleed-environment",
+        "stateEvidence": {
+          "mode": "sequence",
+          "distinctStates": 4,
+          "partGroups": 3,
+          "continuityKey": "collapsible-lantern-daylight-camera-v1",
+          "proof": "2×2 状态母图提供扁平、部分展开、完全展开和点亮四帧；同一提手、顶盖、折叠灯罩与底座可跨状态核对。"
+        }
+      }
+    }
+  ],
+  "r65Repair": {
+    "scope": "show complete lantern states, restore subject contrast, repair final composition",
+    "sourceRun": "dedicated-5a3c68c1117f",
+    "status": "browser-verified"
+  }
+}

@@ -1,0 +1,360 @@
+{
+  "schemaVersion": 1,
+  "creativeProtocolVersion": 3,
+  "id": "direct-r134-stormglass-archive",
+  "goalPlayback": {
+    "originalBrief": "为一座收集雷雨余光的虚构气象档案馆设计沉浸网页。开场铅灰云层中悬浮一片风暴玻璃；滚动时电荷沿玻璃裂隙汇聚，闪电余辉从冷灰逐渐凝成电白拓片，最终行动为“保存这次闪电拓片”。使用实时 WebGL 程序化光场，让滚动真实驱动电荷、裂隙亮度和玻璃折射；不是参数工作台，不要滑杆、卡片目录或固定三段。结果是艺术化模拟，不冒充真实气象测量。",
+    "subject": "雷雨余光档案馆的风暴玻璃",
+    "audience": "对自然现象、材料和视觉叙事感兴趣的普通网页访客",
+    "desiredOutcome": "从一片低能量风暴玻璃开始，沿滚动看见电荷聚集、裂隙生长和闪电余辉凝成唯一拓片，并保存这次艺术化记录。",
+    "primaryAction": "保存这次闪电拓片",
+    "hardConstraints": [
+      "滚动必须真实驱动电荷、裂隙亮度和玻璃折射，而非只切换文案",
+      "结果必须明确为艺术化模拟，不冒充真实气象测量",
+      "不得使用滑杆、卡片目录、持久参数工作台或固定三段模板"
+    ],
+    "preferences": [
+      "全视口持久 WebGL 风暴玻璃承担主题身份和运行时变化",
+      "铅灰、雾白与克制电蓝形成统一的玻璃、雾与闪电材质语言",
+      "reduced-motion 和 WebGL failure 仍保留四个状态与保存行动"
+    ]
+  },
+  "selectedDirection": {
+    "id": "stormglass-scroll-field",
+    "title": "雷雨余光档案馆 · 风暴玻璃滚动光场",
+    "experienceForm": "persistent-webgl-scroll-story",
+    "rationale": "一个持久全屏 WebGL 风暴玻璃让同一主体从休眠、电荷汇聚、裂隙分叉到拓片凝固；DOM 只承担可读章节和保存行动，因此不是参数工作台或卡片目录。"
+  },
+  "referencePrinciples": [
+    {
+      "referenceId": "positive-ice-core-persistent-scene",
+      "title": "冰芯来信 · 持久场景与章节绑定",
+      "principle": "借用同一视觉主体贯穿滚动旅程、章节只推动主体状态而不替换主场景的原理。",
+      "relevance": "风暴玻璃必须在四个状态中保持同一对象身份；只借持久场景机制，不复制冰芯主题、版式或材质。",
+      "sourceUri": "../pages/v2/deliveries/ice-core-letters/"
+    },
+    {
+      "referenceId": "threejs-runtime-causal-material",
+      "title": "Three.js 运行时材质因果研究",
+      "principle": "借用统一 director state 同时驱动相机、材质、粒子与几何，让浏览器输入产生可观察的非静态变化。",
+      "relevance": "本页需要滚动同时改变电荷、裂隙和折射；只借状态组织原理，不固化某种 Three.js 视觉模板。",
+      "sourceUri": "../pages/v2/research/"
+    }
+  ],
+  "assetPlan": {
+    "batchId": "assets-1lvks3y",
+    "strategy": "programmatic",
+    "rationale": "本次唯一素材批次服从 webgl-procedural：同一主体的材质、光照或几何必须由用户输入产生可辨认的实时因果变化，程序化 WebGL 是最小充分的动态媒介。",
+    "assets": [
+      {
+        "id": "programmatic-runtime-visual",
+        "role": "在同一“收集雷雨余光的虚构气象档案馆”上实时表达与输入绑定的材质、光照或几何变化。 可见证明：操作前后能在同一视觉主体上观察到非文案、非高亮、非整体缩放的结构或表面差异。",
+        "source": "programmatic",
+        "required": true
+      }
+    ]
+  },
+  "interactionRationale": {
+    "mode": "mixed",
+    "audioApplicable": false,
+    "rationale": "原生滚动推动 dormant → gathering → branching → imprinted，并同步改变电荷、裂隙与折射；最终按钮把稳定完成态保存到页面内状态。"
+  },
+  "mediumDecision": {
+    "schemaVersion": 1,
+    "preferred": "webgl-procedural",
+    "confidence": 0.91,
+    "rationale": "同一主体的材质、光照或几何必须由用户输入产生可辨认的实时因果变化，程序化 WebGL 是最小充分的动态媒介。",
+    "signals": [
+      {
+        "source": "user-hard",
+        "evidence": "开场铅灰云层中悬浮一片风暴玻璃"
+      },
+      {
+        "source": "user-hard",
+        "evidence": "滚动时电荷沿玻璃裂隙汇聚，闪电余辉从冷灰逐渐凝成电白拓片，最终行动为“保存这次闪电拓片”"
+      },
+      {
+        "source": "user-hard",
+        "evidence": "不是参数工作台，不要滑杆、卡片目录或固定三段"
+      },
+      {
+        "source": "contract-evidence",
+        "evidence": "目标没有要求实体装配、拆解或结构形变；现有素材质量与职责门禁足以决定是否进入构建。"
+      }
+    ],
+    "assetResponsibilities": [
+      {
+        "id": "programmatic-runtime-visual",
+        "source": "programmatic",
+        "required": true,
+        "responsibility": "在同一“收集雷雨余光的虚构气象档案馆”上实时表达与输入绑定的材质、光照或几何变化。",
+        "visibleProof": "操作前后能在同一视觉主体上观察到非文案、非高亮、非整体缩放的结构或表面差异。"
+      }
+    ],
+    "truthBoundary": "程序化结果是合同约束下的视觉表达或明确标注的模拟，不得冒充真实测量、认证数据、精确产品规格或真实素材。",
+    "alternative": {
+      "route": "code-native",
+      "trigger": "WebGL、性能预算、减弱动效或移动端能力不足时",
+      "boundary": "只在首选媒介明确失败后保留完整语义内容、主要行动和诚实的降级说明；不得把回退当作第二个并行创意方向。"
+    }
+  },
+  "visualAmbition": {
+    "schemaVersion": 1,
+    "intentLevel": "immersive",
+    "intentRationale": "主题需要在首屏建立悬浮风暴玻璃，并通过真实 WebGL 运行时变化把雷雨余光从能量状态收束为可保存拓片。",
+    "heroMoment": {
+      "title": "闪电仍被困在玻璃里",
+      "description": "首屏在铅灰云雾中呈现透明不规则风暴玻璃、内部余辉、电荷微粒与尚未展开的裂隙，先于说明建立主题。",
+      "themeConnection": "即使隐藏标题，玻璃内被困住的电白裂隙和缓慢漂移电荷也能让访客辨认“保存雷雨余光”的主题。",
+      "appearsWithinSeconds": 5,
+      "observableRuntimeChange": {
+        "trigger": "用户原生滚动推进四个语义阶段并点击最终保存按钮",
+        "from": "低对比 dormant 玻璃内只有少量余辉和微弱折射",
+        "to": "电荷沿分叉裂隙汇聚，玻璃折射增强，最终形成稳定的 imprinted 闪电拓片并被保存"
+      }
+    },
+    "rendering": {
+      "primary": "webgl-shader",
+      "supporting": [
+        "threejs-3d",
+        "dom-css",
+        "svg"
+      ],
+      "rationale": "WebGL/Three.js 程序化玻璃、裂隙线、电荷粒子和折射带承担关键视觉职责；DOM 保留语义与行动，SVG 只在渲染器失败时保持等价旅程。"
+    },
+    "spatialDepth": {
+      "mode": "scene-3d",
+      "purpose": "通过玻璃内外层遮挡、透视、折射带、雾和轻微相机侧移建立可凝视的悬浮材料空间，而不是平面背景图。",
+      "cues": [
+        "scale",
+        "occlusion",
+        "focus",
+        "lighting",
+        "perspective",
+        "camera-motion"
+      ]
+    },
+    "motionArc": {
+      "beats": [
+        {
+          "phase": "opening",
+          "driver": "time",
+          "visualState": "dormant 玻璃在雾中低速呼吸，少量电荷保留雷雨刚结束的余温",
+          "thematicPurpose": "在五秒内建立安静、危险且主题专属的风暴玻璃记忆"
+        },
+        {
+          "phase": "exploration",
+          "driver": "scroll",
+          "visualState": "滚动推动电荷增殖、裂隙连续生长、局部亮度与玻璃折射同步增强",
+          "thematicPurpose": "让访客亲自把散落余光从无形能量变成可观察的分叉结构"
+        },
+        {
+          "phase": "resolution",
+          "driver": "direct-input",
+          "visualState": "imprinted 状态减弱漂移并稳定构图，保存按钮把本次闪电拓片写入页面状态",
+          "thematicPurpose": "把沉浸变化收束为清晰且可验证的主要行动"
+        }
+      ],
+      "runtimeAdvantage": "同一主体的电荷数量、裂隙生长、折射强度、相机位置和最终保存态随真实输入形成因果链，一张静态图无法等价表达。"
+    },
+    "interactionToScene": [
+      {
+        "input": "用户原生滚动",
+        "sceneResponse": "统一 director progress 同时改变电荷、裂隙生长、折射和相机侧移，并更新四阶段语义焦点",
+        "productMeaning": "访客把雷雨过后的散落余光逐步收集成一张可辨认的闪电拓片"
+      },
+      {
+        "input": "用户点击“保存这次闪电拓片”",
+        "sceneResponse": "场景稳定在 imprinted 完成态，按钮和完成反馈同步写入 saved 状态",
+        "productMeaning": "把一次短暂自然现象转化为可带走的艺术化档案记录"
+      }
+    ],
+    "assetCredibility": {
+      "level": "conceptual-coherent",
+      "strategy": "程序化玻璃、裂隙、电荷与雾在同一 WebGL 光场内生成并共享光照与空间，避免关键主体像贴图；页面不依赖外部素材。",
+      "disclosure": "页面明确说明为艺术化模拟，不代表真实气象测量、闪电数据或科研结论。"
+    },
+    "fallbackPerformance": {
+      "targetFps": 60,
+      "maxDevicePixelRatio": 2,
+      "initialTransferBudgetMb": 4,
+      "mobileFallback": "simplified-scene",
+      "reducedMotionFallback": "key-states",
+      "rendererFailureFallback": "key-visual"
+    }
+  },
+  "attemptBudget": {
+    "limits": {
+      "directionSelections": 1,
+      "assetBatches": 1,
+      "builds": 1,
+      "deterministicRepairs": 2,
+      "visualRefinements": 1
+    },
+    "used": {
+      "directionSelections": 1,
+      "assetBatches": 1,
+      "builds": 1,
+      "deterministicRepairs": 1,
+      "visualRefinements": 1
+    }
+  },
+  "stageReports": [
+    {
+      "stage": "bounded-r134-completion",
+      "elapsedMs": 0,
+      "status": "completed",
+      "summary": "一个 WebGL 程序化媒介方向、一次无外部素材的程序化素材批次和一次完整构建已完成；浏览器证据覆盖首屏、滚动弧线、保存、390px reduced-motion 与 WebGL failure，未继续增加视觉方向。"
+    },
+    {
+      "stage": "archive-disposition",
+      "elapsedMs": 0,
+      "status": "completed",
+      "summary": "本记录为 protocol V3 精选结果：独立 V3 archive gate 绑定最终 run、bundle、宏观结构与 WebGL 主媒介后登记；冻结的 V2.5 精选门仍只接受 protocol V2，不发生跨版本伪装。"
+    }
+  ],
+  "finalCandidate": {
+    "runId": "direct-r134-stormglass-archive",
+    "bundleHash": "b518d1bcaeb0c4f4cba2267e29716337e1b1d07e09d1ab9006a704dace474591"
+  },
+  "adaptiveEvidence": {
+    "schemaVersion": 1,
+    "runId": "direct-r134-stormglass-archive",
+    "bundleHash": "b518d1bcaeb0c4f4cba2267e29716337e1b1d07e09d1ab9006a704dace474591",
+    "profile": {
+      "schemaVersion": 1,
+      "interactionMode": "mixed",
+      "audioApplicable": false,
+      "requiredCheckpoints": [
+        "opening",
+        "core",
+        "mobile",
+        "scroll",
+        "interaction"
+      ]
+    },
+    "checkpoints": [
+      {
+        "kind": "opening",
+        "runId": "direct-r134-stormglass-archive",
+        "bundleHash": "b518d1bcaeb0c4f4cba2267e29716337e1b1d07e09d1ab9006a704dace474591",
+        "passed": true,
+        "summary": "桌面首屏在 1127ms 内呈现非空 WebGL 风暴玻璃，实际绘制 15 个 draw calls / 4860 triangles，无阻断错误。"
+      },
+      {
+        "kind": "core",
+        "runId": "direct-r134-stormglass-archive",
+        "bundleHash": "b518d1bcaeb0c4f4cba2267e29716337e1b1d07e09d1ab9006a704dace474591",
+        "passed": true,
+        "summary": "同一主体完成 dormant → gathering → branching → imprinted，电荷、裂隙和折射的程序化状态均进入完成值。"
+      },
+      {
+        "kind": "mobile",
+        "runId": "direct-r134-stormglass-archive",
+        "bundleHash": "b518d1bcaeb0c4f4cba2267e29716337e1b1d07e09d1ab9006a704dace474591",
+        "passed": true,
+        "summary": "390px reduced-motion 使用离散关键状态完成 imprinted 与保存，正文无横向溢出且主要行动可达。"
+      },
+      {
+        "kind": "scroll",
+        "runId": "direct-r134-stormglass-archive",
+        "bundleHash": "b518d1bcaeb0c4f4cba2267e29716337e1b1d07e09d1ab9006a704dace474591",
+        "passed": true,
+        "summary": "真实滚动使 progress 单调推进，同时改变 charge、crackGrowth、refraction 与 canvas 像素，不是只切换文字。"
+      },
+      {
+        "kind": "interaction",
+        "runId": "direct-r134-stormglass-archive",
+        "bundleHash": "b518d1bcaeb0c4f4cba2267e29716337e1b1d07e09d1ab9006a704dace474591",
+        "passed": true,
+        "summary": "最终按钮把 imprinted 场景写入 saved 状态；WebGL failure 的 SVG 旅程同样可完成保存。"
+      }
+    ],
+    "hardGates": {
+      "runtimeClean": true,
+      "criticalAssetsLoaded": true,
+      "primaryActionReachable": true,
+      "mobileComplete": true,
+      "truthfulClaims": true,
+      "interactionVerified": true,
+      "audioVerified": null
+    },
+    "visualQuality": {
+      "schemaVersion": 1,
+      "verdict": "pass",
+      "score": 95,
+      "dimensions": {
+        "goalClarity": 94,
+        "creativeDistinctiveness": 96,
+        "craftCohesion": 94,
+        "assetIntegration": 95,
+        "interactionValue": 96,
+        "mobileReadiness": 92
+      },
+      "summary": "同一悬浮风暴玻璃、铅灰云雾、电白裂隙与克制电蓝形成主题专属语言；程序化视觉无贴图边界，滚动和保存真实强化“收集余光并形成拓片”的产品概念。",
+      "findings": [
+        {
+          "code": "conceptual-weather-disclosure",
+          "severity": "minor",
+          "checkpoint": "opening",
+          "message": "风暴玻璃和闪电拓片是艺术化模拟，不代表真实气象测量；页面持续披露这一真实性边界。"
+        }
+      ]
+    },
+    "macroStructureReview": {
+      "mode": "content-fit-gate",
+      "candidate": {
+        "runId": "direct-r134-stormglass-archive",
+        "layout": "spatial-journey",
+        "persistentControlPanel": false,
+        "visibleParameterControls": false,
+        "realtimeMetricCluster": false,
+        "primaryAction": "record-or-contribute"
+      },
+      "inertia": {
+        "mode": "advisory-only",
+        "detected": false,
+        "matchedRunIds": [],
+        "repeatedAxes": [],
+        "mustChange": false,
+        "recommendation": "未发现足以影响当前方向的宏观骨架惯性；继续由内容适配和最终效果决定页面形态。"
+      },
+      "persistentWorkbench": false,
+      "contentJustified": true,
+      "verdict": "pass",
+      "findingCode": null,
+      "summary": "当前候选不是持久参数工作台，无需为了近期案例差异而改变内容适配的宏观结构。"
+    }
+  },
+  "wowEvidence": {
+    "schemaVersion": 1,
+    "runId": "direct-r134-stormglass-archive",
+    "bundleHash": "b518d1bcaeb0c4f4cba2267e29716337e1b1d07e09d1ab9006a704dace474591",
+    "assessment": {
+      "schemaVersion": 1,
+      "intentLevel": "immersive",
+      "required": true,
+      "verdict": "pass",
+      "score": 95,
+      "dimensions": {
+        "fiveSecondImpact": 95,
+        "runtimeAdvantage": 96,
+        "themeMemorability": 95,
+        "motionDepthMeaning": 94,
+        "assetIntegrationCredibility": 95,
+        "craftCohesion": 94
+      },
+      "observation": {
+        "heroMomentObserved": true,
+        "runtimeAdvantageOverStaticObserved": true,
+        "themeSpecificMemoryObserved": true,
+        "meaningfulMotionOrDepthObserved": true,
+        "credibleAssetIntegrationObserved": true,
+        "summary": "首屏在铅灰雾中直接出现透明不规则风暴玻璃、内部电荷与微弱电白裂隙，五秒内建立主题专属材料记忆。 滚动前后 director 状态与 canvas 像素都改变，电荷、裂隙生长和折射形成一张静态背景无法表达的连续因果弧线。 可复述记忆是把玻璃里散落的雷雨余光沿裂隙收集，最终凝成并保存一张电白闪电拓片。 玻璃内外遮挡、透视、折射和相机侧移共同强化悬浮材料空间，滚动变化承担能量汇聚而非装饰。 关键视觉完全由同一 WebGL 场景中的玻璃、裂隙、电荷和雾生成，不依赖外部贴图，也没有中央图片边界。 铅灰、雾白、少量电蓝、细窄档案字体和低速玻璃运动形成一致的安静且危险的气象档案语言。 滚动真实改变场景数值和像素，最终点击再将 imprinted 结果写入 saved 状态，两类输入都具有可见产品含义。 390px reduced-motion 使用离散关键状态保留完整四阶段、视觉主体和保存行动，body 无横向溢出。 强制 WebGL failure 后，主题专属 SVG 闪电拓片、四阶段语义和保存按钮均保留，不启动第二次素材生成。"
+      },
+      "findings": []
+    }
+  },
+  "verdict": "pass",
+  "stopReason": null
+}

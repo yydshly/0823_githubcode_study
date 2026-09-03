@@ -1,4 +1,4 @@
-export type OutcomePipelineStage = 'idle' | 'interpret' | 'assets' | 'authoring' | 'reviewing' | 'complete' | 'blocked' | 'failed';
+export type OutcomePipelineStage = 'idle' | 'interpret' | 'assets' | 'authoring' | 'reviewing' | 'review-required' | 'complete' | 'blocked' | 'failed';
 export type OutcomeAssetRoute = 'pending' | 'catalog' | 'generate' | 'procedural' | 'blocked';
 
 export interface OutcomeRouteInput {
@@ -29,6 +29,7 @@ const stageIndex: Record<OutcomePipelineStage, number> = {
   assets: 0,
   authoring: 1,
   reviewing: 2,
+  'review-required': 2,
   complete: 3,
   blocked: 0,
   failed: 1
@@ -38,11 +39,11 @@ export function describeOutcomeRoute(input: OutcomeRouteInput): OutcomeRouteView
   const asset = describeAsset(input.assetRoute || 'pending', input.assetCount || 0);
   const model = input.model ? input.model.toUpperCase() : 'Codex';
   const active = stageIndex[input.stage];
-  const blocked = input.stage === 'blocked' || input.stage === 'failed';
+  const blocked = input.stage === 'blocked' || input.stage === 'failed' || input.stage === 'review-required';
   const steps: OutcomeRouteView['steps'] = [
     { label: asset.label, detail: asset.detail, state: stepState(0, active, input.stage, blocked) },
     { label: `${model} 专属构建`, detail: '生成独立页面代码，不套固定模板', state: stepState(1, active, input.stage, blocked) },
-    { label: '真实页面验收', detail: '首屏 · 中段 · 末段 · 移动端', state: stepState(2, active, input.stage, blocked) }
+    { label: '真实页面验收', detail: '产品关键状态 · 移动端 · 降级', state: stepState(2, active, input.stage, blocked) }
   ];
 
   if (input.stage === 'idle') return {
@@ -73,6 +74,12 @@ export function describeOutcomeRoute(input: OutcomeRouteInput): OutcomeRouteView
     tone: 'working',
     title: '正在用真实页面决定最终版本',
     note: input.message || '自动检查桌面滚动状态与移动端，不为了改动而强行重写。',
+    steps
+  };
+  if (input.stage === 'review-required') return {
+    tone: 'warning',
+    title: '网页已生成，等待视觉定稿',
+    note: input.message || '当前网页可立即打开；自动视觉验收未完成，因此尚未进入精选案例。',
     steps
   };
   if (input.stage === 'complete') return {

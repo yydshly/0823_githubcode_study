@@ -1,10 +1,10 @@
 import { z } from 'zod';
-import type { CameraShot, ExperienceManifest, ExperienceNode, SceneStateValue } from '../experience/schema';
-import { assertExperienceManifest } from '../experience/validator';
-import { compileComposedSceneRecipe } from './composed-scene-recipe';
-import type { EffectSpec } from './effect-spec';
-import type { BriefInterpretation, CreativeBrief, CreativeDirection } from './schema';
-import { stableHash } from './stable-hash';
+import type { CameraShot, ExperienceManifest, ExperienceNode, SceneStateValue } from '../experience/schema.ts';
+import { assertExperienceManifest } from '../experience/validator.ts';
+import { compileComposedSceneRecipe } from './composed-scene-recipe.ts';
+import type { EffectSpec } from './effect-spec.ts';
+import type { BriefInterpretation, CreativeBrief, CreativeDirection } from './schema.ts';
+import { stableHash } from './stable-hash.ts';
 
 const kebabId = z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/);
 const hexColor = z.string().regex(/^#[0-9a-fA-F]{6}$/);

@@ -1,0 +1,200 @@
+<!doctype html>
+<html
+  lang="zh-CN"
+  data-callsign-ready="false"
+  data-callsign-phase="waiting"
+  data-callsign-audio="idle"
+  data-callsign-saved="false"
+  data-audio-fallback="false"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f3eee2" />
+    <meta
+      name="description"
+      content="十秒呼号解码是一张会发声的点划排字练习卡。试听虚构演示电文，辨认节奏，并保存练习结果。"
+    />
+    <title>十秒呼号解码｜点划听辨练习</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body
+    data-experience="ten-second-callsign-decode"
+    data-phase="waiting"
+    data-audio-state="idle"
+    data-active-segment="-1"
+    data-answer-state="idle"
+    data-saved="false"
+  >
+    <a class="skip-link" href="#sonic-score">跳到十秒点划谱</a>
+
+    <header class="masthead">
+      <a class="station-mark" href="../../" aria-label="返回 V2 能力总览">
+        <span class="station-mark__signal" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span><strong>呼号入门课</strong><small>CALLSIGN STUDY · LESSON 01</small></span>
+      </a>
+      <p class="truth-note"><b>虚构演示电文</b><span>非真实呼号 · 非认证训练</span></p>
+    </header>
+
+    <main>
+      <section class="opening" aria-labelledby="page-title">
+        <div class="opening__index" aria-hidden="true">
+          <span>00:00</span><i></i><span>10 SEC</span>
+        </div>
+        <div class="opening__copy">
+          <p class="eyebrow"><span>ON AIR</span> / DOT · DASH · PAUSE</p>
+          <h1 id="page-title">先听见间隔，<br />再听见<em>字母。</em></h1>
+        </div>
+        <div class="opening__brief">
+          <p>这不是速度测试。十秒里，点、划和停顿会在原位展开对应字母。先闭眼听一次，再写下你听到的呼号。</p>
+          <div class="key-guide" aria-label="操作提示">
+            <kbd>SPACE</kbd><span>播放或暂停整段</span>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="sonic-score"
+        class="sonic-score"
+        data-signal-visual-anchor
+        aria-labelledby="score-title"
+        tabindex="-1"
+      >
+        <div class="score-heading">
+          <div>
+            <p class="eyebrow">10 SECOND SIGNAL / ONE FICTIONAL CALLSIGN</p>
+            <h2 id="score-title">点划排字谱</h2>
+          </div>
+          <div class="score-heading__actions">
+            <button
+              id="play-all"
+              class="play-sequence"
+              type="button"
+              data-signal-primary-control
+              data-signal-audio-control
+              aria-pressed="false"
+            >
+              <span class="play-sequence__glyph" aria-hidden="true"></span>
+              <span id="play-sequence-label">试听十秒电文</span>
+            </button>
+            <button id="stop-playback" class="text-control" type="button" data-signal-audio-control disabled>停止</button>
+            <button id="mute-audio" class="text-control" type="button" data-signal-audio-control aria-pressed="false">静音</button>
+            <span id="progress-label" class="progress-label" data-progress-label aria-live="off">00:00 / 00:10</span>
+          </div>
+        </div>
+
+        <div class="time-ruler" aria-hidden="true">
+          <span>00</span><i></i><span>02</span><i></i><span>04</span><i></i><span>06</span><i></i><span>08</span><i></i><span>10</span>
+        </div>
+
+        <ol class="score-track" id="signal-strip" aria-label="由四段点划组成的虚构呼号">
+          <li class="signal-segment" data-segment-index="0" data-state="waiting">
+            <button type="button" data-play-segment="0" aria-label="单独试听第 1 段">
+              <span class="segment-number">01</span>
+              <span class="morse-line" aria-hidden="true">
+                <i class="mark mark--dash"></i><i class="mark mark--dot"></i><i class="mark mark--dash"></i>
+              </span>
+              <span class="decoded-letter" data-decoded-letter aria-hidden="true"></span>
+              <span class="segment-action">点击试听</span>
+            </button>
+          </li>
+          <li class="signal-segment" data-segment-index="1" data-state="waiting">
+            <button type="button" data-play-segment="1" aria-label="单独试听第 2 段">
+              <span class="segment-number">02</span>
+              <span class="morse-line" aria-hidden="true">
+                <i class="mark mark--dot"></i><i class="mark mark--dash"></i>
+              </span>
+              <span class="decoded-letter" data-decoded-letter aria-hidden="true"></span>
+              <span class="segment-action">点击试听</span>
+            </button>
+          </li>
+          <li class="signal-segment" data-segment-index="2" data-state="waiting">
+            <button type="button" data-play-segment="2" aria-label="单独试听第 3 段">
+              <span class="segment-number">03</span>
+              <span class="morse-line" aria-hidden="true">
+                <i class="mark mark--dash"></i><i class="mark mark--dash"></i><i class="mark mark--dot"></i>
+              </span>
+              <span class="decoded-letter" data-decoded-letter aria-hidden="true"></span>
+              <span class="segment-action">点击试听</span>
+            </button>
+          </li>
+          <li class="signal-segment" data-segment-index="3" data-state="waiting">
+            <button type="button" data-play-segment="3" aria-label="单独试听第 4 段">
+              <span class="segment-number">04</span>
+              <span class="morse-line" aria-hidden="true">
+                <i class="mark mark--dot"></i>
+              </span>
+              <span class="decoded-letter" data-decoded-letter aria-hidden="true"></span>
+              <span class="segment-action">点击试听</span>
+            </button>
+          </li>
+        </ol>
+
+        <div class="score-footer">
+          <p id="audio-status" class="audio-status" data-audio-fallback data-signal-audio-feedback data-audio-status role="status" aria-live="polite">
+            <span class="audio-status__light" aria-hidden="true"></span>
+            <span class="audio-status__normal">声音只会在你主动播放后开始。</span>
+            <span class="audio-status__fallback">此设备暂时无法发声；点划仍会按真实时值逐段高亮，你可以继续完成练习。</span>
+          </p>
+          <label class="volume-control" for="audio-volume">
+            <span>音量</span>
+            <input id="audio-volume" type="range" min="0" max="1" step="0.05" value="0.65" data-signal-audio-control />
+          </label>
+        </div>
+      </section>
+
+      <section class="decode-section" aria-labelledby="decode-title">
+        <div class="decode-section__heading">
+          <p class="eyebrow">YOUR TURN / LISTEN BEFORE READING</p>
+          <h2 id="decode-title">你听到的呼号是？</h2>
+          <p>输入四位字符。大小写都可以；如果没有听清，可重听整段或单独点击任意声段。</p>
+        </div>
+
+        <form id="decode-form" class="decode-form" novalidate>
+          <label for="decode-input">虚构呼号</label>
+          <div class="decode-entry">
+            <input
+              id="decode-input"
+              name="callsign"
+              type="text"
+              inputmode="text"
+              autocomplete="off"
+              autocapitalize="characters"
+              spellcheck="false"
+              maxlength="4"
+              pattern="[A-Za-z0-9]{4}"
+              placeholder="— — — —"
+              aria-describedby="decode-hint answer-feedback"
+            />
+            <button id="submit-decode" type="submit">提交解码 <span aria-hidden="true">↗</span></button>
+          </div>
+          <p id="decode-hint" class="decode-hint">答案来自本页虚构演示序列，不对应任何真实电台。</p>
+          <p id="answer-feedback" class="decode-status" role="status" aria-live="polite"></p>
+        </form>
+
+        <aside id="completion-card" class="completion-card" data-signal-result data-signal-primary-result aria-labelledby="completion-title">
+          <div class="completion-card__signal" aria-hidden="true">
+            <span>—</span><span>—</span><span>—</span><span>—</span>
+          </div>
+          <div class="completion-card__copy">
+            <p>10 SEC / FICTIONAL SIGNAL</p>
+            <h3 id="completion-title"><span id="decoded-callsign">— — — —</span><small>第一次听见的呼号</small></h3>
+          </div>
+          <div class="completion-card__actions">
+            <button id="reset-practice" type="button">再听一次</button>
+            <button id="save-card" type="button" data-signal-primary-action data-signal-action>保存这张练习卡 <span aria-hidden="true">↓</span></button>
+          </div>
+          <p id="save-status" class="save-status" role="status" aria-live="polite"></p>
+        </aside>
+      </section>
+    </main>
+
+    <footer class="page-footer">
+      <p>点划节奏实验 / 只在本地保存</p>
+      <p>ALL CALLSIGNS &amp; MESSAGES ARE FICTIONAL</p>
+    </footer>
+
+    <p id="live-status" class="sr-only" aria-live="polite" aria-atomic="true"></p>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>

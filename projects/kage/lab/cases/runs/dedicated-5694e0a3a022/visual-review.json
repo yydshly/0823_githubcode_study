@@ -1,0 +1,172 @@
+{
+  "plan": {
+    "schemaVersion": 1,
+    "source": "creative-contract",
+    "checkpoints": [
+      {
+        "id": "opening",
+        "label": "建立主体、环境和情绪基线。",
+        "progress": 0,
+        "surface": "desktop",
+        "quality": "high",
+        "reducedMotion": false,
+        "action": "none"
+      },
+      {
+        "id": "beat-evidence",
+        "label": "一个可观察的状态变化解释核心价值。",
+        "progress": 0.58,
+        "surface": "desktop",
+        "quality": "high",
+        "reducedMotion": false,
+        "action": "none"
+      },
+      {
+        "id": "final",
+        "label": "画面形成更强的最终状态，并给出“预约一张维修桌”。",
+        "progress": 1,
+        "surface": "desktop",
+        "quality": "high",
+        "reducedMotion": false,
+        "action": "none"
+      },
+      {
+        "id": "mobile",
+        "label": "移动端首个叙事状态与 reduced-motion 基线",
+        "progress": 0,
+        "surface": "mobile",
+        "quality": "low",
+        "reducedMotion": true,
+        "action": "none"
+      }
+    ]
+  },
+  "evidence": {
+    "schemaVersion": 1,
+    "runId": "dedicated-5694e0a3a022",
+    "capturedAt": "2026-08-28T06:37:46.050Z",
+    "frames": [
+      {
+        "id": "opening",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "quality": "high",
+        "reducedMotion": false,
+        "ready": true,
+        "canvasCount": 1,
+        "progress": 0,
+        "scrollY": 0,
+        "scrollHeight": 2304,
+        "overflow": 0,
+        "heading": "先听它怎么说，再决定拆哪里。",
+        "headingVisible": true,
+        "visibleTextCount": 16,
+        "collisionCount": 0,
+        "maxOverlapRatio": 0,
+        "blockingCollisionCount": 0,
+        "editorialOverlapCount": 0,
+        "maxBlockingOverlapRatio": 0,
+        "action": "none",
+        "interactionTargetCount": 4,
+        "interactionInputObserved": true,
+        "webglAvailable": true,
+        "fallbackActive": false
+      },
+      {
+        "id": "beat-evidence",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "quality": "high",
+        "reducedMotion": false,
+        "ready": true,
+        "canvasCount": 1,
+        "progress": 0.58,
+        "scrollY": 814,
+        "scrollHeight": 2304,
+        "overflow": 0,
+        "heading": "先听它怎么说，再决定拆哪里。",
+        "headingVisible": false,
+        "visibleTextCount": 4,
+        "collisionCount": 0,
+        "maxOverlapRatio": 0,
+        "blockingCollisionCount": 0,
+        "editorialOverlapCount": 0,
+        "maxBlockingOverlapRatio": 0,
+        "action": "none",
+        "interactionTargetCount": 0,
+        "interactionInputObserved": true,
+        "webglAvailable": true,
+        "fallbackActive": false
+      },
+      {
+        "id": "final",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "quality": "high",
+        "reducedMotion": false,
+        "ready": true,
+        "canvasCount": 1,
+        "progress": 1,
+        "scrollY": 1404,
+        "scrollHeight": 2304,
+        "overflow": 0,
+        "heading": "先听它怎么说，再决定拆哪里。",
+        "headingVisible": false,
+        "visibleTextCount": 4,
+        "collisionCount": 0,
+        "maxOverlapRatio": 0,
+        "blockingCollisionCount": 0,
+        "editorialOverlapCount": 0,
+        "maxBlockingOverlapRatio": 0,
+        "action": "none",
+        "interactionTargetCount": 1,
+        "interactionInputObserved": true,
+        "webglAvailable": true,
+        "fallbackActive": false
+      },
+      {
+        "id": "mobile",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "quality": "low",
+        "reducedMotion": true,
+        "ready": true,
+        "canvasCount": 1,
+        "progress": 0,
+        "scrollY": 0,
+        "scrollHeight": 2345,
+        "overflow": 0,
+        "heading": "先听它怎么说，再决定拆哪里。",
+        "headingVisible": true,
+        "visibleTextCount": 9,
+        "collisionCount": 0,
+        "maxOverlapRatio": 0,
+        "blockingCollisionCount": 0,
+        "editorialOverlapCount": 0,
+        "maxBlockingOverlapRatio": 0,
+        "action": "none",
+        "interactionTargetCount": 4,
+        "interactionInputObserved": true,
+        "webglAvailable": true,
+        "fallbackActive": false
+      }
+    ],
+    "browserErrors": []
+  },
+  "assessment": {
+    "schemaVersion": 1,
+    "verdict": "pass",
+    "score": 100,
+    "summary": "结构质量门通过；仍需结合截图判断构图、材质、层级与创意完成度。",
+    "findings": [],
+    "observations": []
+  }
+}

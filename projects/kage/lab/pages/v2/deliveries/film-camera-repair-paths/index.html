@@ -1,0 +1,294 @@
+<!doctype html>
+<html
+  lang="zh-CN"
+  data-film-camera-ready="false"
+  data-film-camera-phase="opening"
+  data-film-camera-route="none"
+  data-camera-ready="false"
+  data-phase="opening"
+  data-route="none"
+  data-enhancement="on"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f3ead7" />
+    <meta name="description" content="沿着一台旧胶片相机的机构图，形成安全、可解释的初步维修判断。" />
+    <title>旧胶片相机维修判断 · KAGE V2 R136A</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body data-experience="film-camera-repair-paths">
+    <a class="skip-link" href="#repair-controls">跳到维修判断</a>
+
+    <header class="manual-header">
+      <a class="manual-brand" href="../../" aria-label="返回 KAGE V2">
+        <span class="brand-registration" aria-hidden="true"></span>
+        <span>旧物修理日 · 共修手册</span>
+      </a>
+      <p>R136A / FILM CAMERA</p>
+      <p class="header-truth">安全的初步判断，不代替维修师诊断。</p>
+    </header>
+
+    <main>
+      <section class="manual-intro" aria-labelledby="page-title">
+        <div class="intro-index" aria-hidden="true">
+          <span>第 04 册</span>
+          <strong>35</strong>
+          <span>毫米机械相机</span>
+        </div>
+        <div class="intro-copy">
+          <p class="eyebrow">COMMUNITY REPAIR MANUAL / 旧物重新开口</p>
+          <h1 id="page-title">先听它怎么回应，<br />再决定下一步。</h1>
+          <p class="intro-lead">
+            不拆机，也不猜故障。我们只沿着外部可见的机构，记录快门、过片与电池仓给出的线索。
+          </p>
+          <button id="begin-check" class="primary-button" type="button">
+            <span>开始今天的判断</span><span aria-hidden="true">→</span>
+          </button>
+        </div>
+        <svg class="intro-camera-silhouette" viewBox="0 0 640 450" aria-hidden="true">
+          <path class="intro-camera-offset" d="M68 167L126 130H235L267 82H425L457 130H546L590 167V369H68Z" />
+          <path class="intro-camera-body" d="M58 157L116 120H225L257 72H415L447 120H536L580 157V359H58Z" />
+          <path class="intro-camera-top" d="M116 120H225L257 72H415L447 120H536" />
+          <rect class="intro-camera-window" x="288" y="87" width="96" height="42" rx="4" />
+          <circle class="intro-camera-lens intro-camera-lens--outer" cx="321" cy="255" r="125" />
+          <circle class="intro-camera-lens intro-camera-lens--middle" cx="321" cy="255" r="92" />
+          <circle class="intro-camera-lens intro-camera-lens--inner" cx="321" cy="255" r="51" />
+          <path class="intro-camera-lever" d="M467 105L548 72L563 89L486 132Z" />
+          <circle class="intro-camera-button" cx="450" cy="126" r="19" />
+          <path class="intro-camera-route intro-camera-route--a" d="M450 126C401 41 242 34 184 119" />
+          <path class="intro-camera-route intro-camera-route--b" d="M450 126C530 210 526 337 455 374" />
+        </svg>
+        <aside class="intro-note" aria-label="使用边界">
+          <span class="note-number">00</span>
+          <p>若看见电池结晶、渗漏或闻到异常气味，请停止操作并交给现场维修师。</p>
+        </aside>
+      </section>
+
+      <section
+        id="repair-stage"
+        class="repair-stage"
+        data-signal-visual-anchor
+        data-signal-shared-driver
+        aria-labelledby="repair-title"
+      >
+        <div class="diagram-column">
+          <div class="diagram-heading">
+            <div>
+              <p class="eyebrow">PLATE 01 / EXTERNAL MECHANISM</p>
+              <h2 id="repair-title">同一台相机，两条判断路径</h2>
+            </div>
+            <p id="diagram-caption">先确认快门给出的第一条线索。</p>
+          </div>
+
+          <svg
+            id="camera-svg"
+            class="camera-diagram"
+            viewBox="0 0 960 700"
+            role="img"
+            aria-labelledby="camera-title camera-description"
+            data-signal-visual-anchor
+          >
+            <title id="camera-title">旧胶片相机外部机构图</title>
+            <desc id="camera-description">正面的机身、镜头、取景器、快门钮、过片拨杆、测光窗与底部电池仓。</desc>
+            <defs>
+              <pattern id="paper-dots" width="12" height="12" patternUnits="userSpaceOnUse">
+                <circle cx="2" cy="2" r="1.2" fill="#1f211f" opacity=".11" />
+              </pattern>
+              <pattern id="camera-hatch" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(25)">
+                <path d="M0 0V14" stroke="#1f211f" stroke-width="2" opacity=".12" />
+              </pattern>
+              <filter id="ink-offset" x="-20%" y="-20%" width="140%" height="140%">
+                <feOffset dx="5" dy="4" />
+              </filter>
+              <marker id="route-arrow" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+                <path d="M0 0L9 4.5L0 9Z" fill="currentColor" />
+              </marker>
+            </defs>
+
+            <rect class="plate-paper" x="18" y="18" width="924" height="664" rx="4" />
+            <rect class="paper-dots" x="18" y="18" width="924" height="664" rx="4" fill="url(#paper-dots)" />
+            <path class="plate-fold" d="M48 120H912M48 570H912" />
+
+            <g id="camera-shadow" class="camera-shadow" aria-hidden="true" transform="translate(8 10)">
+              <path d="M164 258L222 216H365L407 146H600L642 216H764L814 258V520H164Z" />
+              <circle cx="492" cy="379" r="166" />
+            </g>
+
+            <g id="camera-body" class="camera-body">
+              <path class="body-fill" d="M150 246L218 204H356L399 134H608L651 204H774L828 246V526H150Z" />
+              <path class="body-hatch" d="M150 246L218 204H356L399 134H608L651 204H774L828 246V526H150Z" fill="url(#camera-hatch)" />
+              <path class="body-outline" d="M150 246L218 204H356L399 134H608L651 204H774L828 246V526H150Z" />
+              <path class="top-line" d="M218 204H356L399 134H608L651 204H774" />
+              <path class="grip-line" d="M720 246V526M748 258V506" />
+              <path class="film-door-line" d="M172 484H806M201 508H704" />
+            </g>
+
+            <g id="viewfinder" class="viewfinder">
+              <path d="M416 150H590L620 226H384Z" />
+              <rect x="447" y="163" width="112" height="43" rx="4" />
+              <path d="M461 174L548 174L536 195H472Z" />
+            </g>
+
+            <g id="meter-window" class="meter-window" data-component="meter">
+              <rect x="252" y="225" width="112" height="59" rx="8" />
+              <path d="M271 265Q306 228 345 265" />
+              <path id="meter-needle" class="meter-needle" d="M307 265L307 237" transform="rotate(0 307 265)" />
+              <circle cx="307" cy="265" r="5" />
+            </g>
+
+            <g id="shutter-button" class="shutter-button" data-component="shutter-button" transform="translate(0 0)">
+              <ellipse cx="670" cy="183" rx="36" ry="12" />
+              <path d="M640 183V201Q670 214 700 201V183" />
+            </g>
+
+            <g id="advance-lever" class="advance-lever" data-component="advance-lever" transform="rotate(0 708 170)">
+              <circle cx="708" cy="170" r="23" />
+              <path d="M709 170L794 138Q814 132 820 147Q825 160 806 170L728 190Z" />
+              <circle cx="806" cy="151" r="8" />
+            </g>
+
+            <g id="rewind-knob" class="rewind-knob" aria-hidden="true">
+              <ellipse cx="245" cy="190" rx="44" ry="13" />
+              <path d="M207 190V209Q245 222 283 209V190" />
+              <path d="M220 181V165H271V181" />
+            </g>
+
+            <g id="lens" class="lens" data-component="lens">
+              <circle class="lens-offset" cx="492" cy="379" r="169" />
+              <circle class="lens-outer" cx="492" cy="379" r="166" />
+              <circle class="lens-ring" cx="492" cy="379" r="140" />
+              <circle class="lens-ring lens-ring--inner" cx="492" cy="379" r="110" />
+              <g id="shutter-blades" class="shutter-blades" transform="rotate(0 492 379) scale(1)">
+                <path d="M492 282C535 283 570 306 589 340L511 365Z" />
+                <path d="M589 340C603 381 591 421 565 450L507 392Z" />
+                <path d="M565 450C531 478 487 482 451 467L479 393Z" />
+                <path d="M451 467C411 450 390 414 390 375L473 385Z" />
+                <path d="M390 375C394 335 420 303 456 289L482 368Z" />
+                <path d="M456 289C468 284 480 282 492 282L492 365Z" />
+              </g>
+              <circle class="aperture" cx="492" cy="379" r="25" />
+              <text x="492" y="248" text-anchor="middle">50 mm · 1:1.8</text>
+            </g>
+
+            <g id="battery-door" class="battery-door" data-component="battery-door" transform="translate(0 0)">
+              <path d="M620 505H733V546H620Z" />
+              <circle cx="676" cy="525" r="11" />
+              <path id="battery-contact" d="M644 518H663M689 518H709" />
+            </g>
+
+            <g class="fixed-labels" aria-hidden="true">
+              <path d="M205 183L135 118H72" /><text x="72" y="102">01 / 倒片旋钮</text>
+              <path d="M311 225L254 95H138" /><text x="138" y="78">02 / 测光窗</text>
+              <path d="M685 182L741 92H882" /><text x="882" y="74" text-anchor="end">03 / 快门钮</text>
+              <path d="M762 159L841 187H912" /><text x="912" y="170" text-anchor="end">04 / 过片拨杆</text>
+              <path d="M675 546L742 610H890" /><text x="890" y="633" text-anchor="end">05 / 电池仓</text>
+              <path d="M383 488L279 616H92" /><text x="92" y="640">06 / 胶片舱门</text>
+            </g>
+
+            <g id="route-ink" class="route-ink" aria-hidden="true">
+              <path id="route-path-shadow" d="M670 185C610 105 389 87 307 230" />
+              <path id="route-path" d="M670 185C610 105 389 87 307 230" marker-end="url(#route-arrow)" />
+              <circle id="route-node-one" cx="670" cy="185" r="13" />
+              <circle id="route-node-two" cx="307" cy="230" r="13" />
+            </g>
+
+            <g class="state-stamp" aria-hidden="true">
+              <rect x="68" y="320" width="126" height="68" />
+              <text id="state-stamp-code" x="131" y="348" text-anchor="middle">WAIT</text>
+              <text id="state-stamp-label" x="131" y="371" text-anchor="middle">等待判断</text>
+            </g>
+          </svg>
+
+          <div class="diagram-legend" aria-label="图例">
+            <span><i class="legend-line legend-line--blue"></i>A · 机械响应路径</span>
+            <span><i class="legend-line legend-line--red"></i>B · 停止施力路径</span>
+            <span><i class="legend-number">01</i>外部可见部件</span>
+          </div>
+        </div>
+
+        <div id="repair-controls" class="control-column" tabindex="-1">
+          <section id="opening-panel" class="manual-panel opening-panel" aria-labelledby="opening-title">
+            <p class="step-code">OPENING / 从一条线索开始</p>
+            <h3 id="opening-title">相机不用先被拆开，<br />它会先用动作回答。</h3>
+            <p>把相机平放在桌面上，不装胶卷，不强行扳动任何卡住的部件。</p>
+            <button id="opening-start" class="panel-button" type="button">看快门的第一条线索</button>
+          </section>
+
+          <section id="fork-panel" class="manual-panel fork-panel" aria-labelledby="fork-title" hidden>
+            <p class="step-code">STEP 01 / 只做外部观察</p>
+            <h3 id="fork-title">轻按一次快门钮，<br />它现在怎样回应？</h3>
+            <div class="route-choices" aria-label="选择快门状态">
+              <button type="button" data-route="moving" data-route-choice="a" aria-describedby="route-a-desc">
+                <span class="route-key">A</span>
+                <strong>快门还能动作</strong>
+                <small id="route-a-desc">继续观察过片拨杆与测光窗</small>
+              </button>
+              <button type="button" data-route="stuck" data-route-choice="b" aria-describedby="route-b-desc">
+                <span class="route-key">B</span>
+                <strong>快门已经卡住</strong>
+                <small id="route-b-desc">停止施力，查看电池仓与快门钮</small>
+              </button>
+            </div>
+            <div id="route-history" class="route-history" aria-live="polite">尚未走过判断路径。</div>
+          </section>
+
+          <section id="route-panel" class="manual-panel route-panel" aria-labelledby="route-title" hidden>
+            <div class="route-panel-head">
+              <p id="route-code" class="step-code">ROUTE A / 01—02</p>
+              <button id="return-to-fork" class="text-button" type="button">← 返回选择</button>
+            </div>
+            <h3 id="route-title">先看过片拨杆</h3>
+            <p id="route-copy">缓慢观察拨杆是否能完成一个行程，不要越过明显阻力。</p>
+            <ol id="check-list" class="check-list">
+              <li data-check="1" aria-current="step"><span>01</span><strong id="check-one-title">过片拨杆</strong><small id="check-one-copy">观察完整行程</small></li>
+              <li data-check="2"><span>02</span><strong id="check-two-title">测光窗</strong><small id="check-two-copy">只记录可见变化</small></li>
+            </ol>
+            <div class="safe-note">
+              <strong>安全边界</strong>
+              <p id="route-safety">只做外部观察；出现阻力就停止，不拆卸顶盖。</p>
+            </div>
+            <button id="advance-check" class="panel-button" type="button">记录第一处检查</button>
+          </section>
+
+          <section
+            id="judgement-card"
+            class="manual-panel result-card"
+            data-signal-result
+            data-signal-primary-result
+            aria-labelledby="result-title"
+            hidden
+          >
+            <div class="card-register">
+              <span>COMMUNITY REPAIR / 初步判断卡</span>
+              <strong id="result-code">A-02</strong>
+            </div>
+            <p id="result-route-label" class="step-code">路径 A · 快门仍有动作</p>
+            <h3 id="result-title" tabindex="-1">机械动作仍有回应</h3>
+            <p id="result-copy">先做表面清洁与妥善保存，再请现场维修师确认过片与测光状态。</p>
+            <dl class="result-details">
+              <div><dt>已记录</dt><dd id="result-history">快门响应 → 过片拨杆 → 测光窗</dd></div>
+              <div><dt>下一步</dt><dd id="result-next">清洁外表，带卡交给维修师</dd></div>
+              <div><dt>请避免</dt><dd id="result-avoid">不要强扳拨杆或自行拆卸</dd></div>
+            </dl>
+            <p class="result-disclaimer">本卡只记录今天看到的外部线索，不代表精确故障或维修结论。</p>
+            <div class="result-actions">
+              <button id="replay-route" type="button">重放这条路径</button>
+              <button id="compare-route" type="button">返回比较另一条</button>
+              <button id="save-card" class="save-button" type="button" data-signal-primary-action>保存今天的维修判断卡</button>
+            </div>
+            <p id="save-status" role="status" aria-live="polite"></p>
+          </section>
+
+          <aside class="manual-footnote">
+            <p><strong>键盘：</strong>在路径选择处按 A / B；回车推进；Esc 返回；结果页按 R 重放、S 保存。</p>
+            <p><strong>注意：</strong>发现电池结晶或渗漏时不要触碰，直接请维修师处理。</p>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <p id="camera-live" class="sr-only" role="status" aria-live="polite"></p>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>

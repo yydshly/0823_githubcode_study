@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#16181b" />
+    <meta name="description" content="两张异地餐桌在同一时刻靠近的概念体验。" />
+    <title>同桌时刻 · Same Table Tonight</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body data-state="apart" data-asset="loading" data-invitation="pending" data-input="initial">
+    <header class="topbar" aria-label="页面导航">
+      <a class="wordmark" href="../../" aria-label="返回 V2 实验首页">
+        <span>SAME</span><span>TABLE</span>
+      </a>
+      <p class="time-mark"><span aria-hidden="true">●</span> 今晚 · 20:15</p>
+      <a class="top-action" href="#invitation">发起同桌时刻</a>
+    </header>
+
+    <main>
+      <section class="journey" id="journey" aria-labelledby="page-title">
+        <div class="stage" id="stage">
+          <div class="scene-window" id="scene-window" aria-label="两张异地餐桌逐渐靠近的概念场景">
+            <div class="scene-half scene-half--left" aria-hidden="true">
+              <img class="scene-image scene-image--left" data-scene-image alt="" />
+              <span class="room-label room-label--left">城西 · 20:15</span>
+            </div>
+            <div class="scene-half scene-half--right" aria-hidden="true">
+              <img class="scene-image scene-image--right" data-scene-image alt="" />
+              <span class="room-label room-label--right">海边 · 20:15</span>
+            </div>
+            <canvas class="light-field" id="light-field" aria-hidden="true"></canvas>
+            <div class="distance-gap" aria-hidden="true"><span></span></div>
+          </div>
+
+          <div class="hero-copy">
+            <p class="eyebrow">一顿晚饭 / 两个地方</p>
+            <h1 id="page-title">远方，也能<br /><em>同时开席。</em></h1>
+            <p class="lede">留下一道菜和一句话，邀请另一张餐桌在同一时刻亮起。</p>
+          </div>
+
+          <article class="table-note table-note--left" aria-label="第一张餐桌的留言">
+            <p class="note-index">01 / 一道菜</p>
+            <h2>番茄鸡蛋面</h2>
+            <p>“今天还是少放了半勺盐。”</p>
+          </article>
+
+          <article class="table-note table-note--right" aria-label="第二张餐桌的留言">
+            <p class="note-index">02 / 一句话</p>
+            <h2>烤饼与炖菜</h2>
+            <p>“我把你的位置留在窗边。”</p>
+          </article>
+
+          <div class="resolution" aria-live="polite">
+            <p class="resolution-kicker">距离归零，不代表生活相同。</p>
+            <p>只是在这一刻，两张空椅朝向彼此。</p>
+            <button class="primary-button" id="invite-button" type="button" disabled>
+              <span>发起今晚的同桌时刻</span><span aria-hidden="true">↗</span>
+            </button>
+          </div>
+
+          <nav class="stage-nav" aria-label="场景阶段">
+            <button type="button" data-stage-progress="0" aria-label="查看相隔状态">远</button>
+            <button type="button" data-stage-progress="0.52" aria-label="查看靠近状态">近</button>
+            <button type="button" data-stage-progress="1" aria-label="查看同桌状态">同桌</button>
+          </nav>
+
+          <div class="progress-rail" aria-hidden="true">
+            <span class="progress-value">00</span>
+            <span class="progress-line"><i></i></span>
+            <span>100</span>
+          </div>
+
+          <p class="scroll-hint"><span>SCROLL</span><i></i><span>让两张桌子靠近</span></p>
+
+          <div class="asset-fallback" id="asset-fallback" role="status" hidden>
+            <p>主视觉暂时没有载入。</p>
+            <p>这里不会用通用色块伪装两张餐桌；完整说明与发起行动仍然可用。</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="explanation" aria-labelledby="how-title">
+        <div class="explanation-intro">
+          <p class="eyebrow eyebrow--dark">同桌时刻如何发生</p>
+          <h2 id="how-title">不是视频通话，<br />是一顿饭的共同时间。</h2>
+        </div>
+        <ol class="steps">
+          <li>
+            <span>01</span>
+            <div><h3>约定一刻</h3><p>选择今晚双方都能坐下来的时间。</p></div>
+          </li>
+          <li>
+            <span>02</span>
+            <div><h3>留下一道菜</h3><p>不比较菜单，只分享此刻桌上的生活。</p></div>
+          </li>
+          <li>
+            <span>03</span>
+            <div><h3>邀请另一桌</h3><p>对方加入后，两处灯光在页面里同时亮起。</p></div>
+          </li>
+        </ol>
+      </section>
+
+      <section class="invitation" id="invitation" aria-labelledby="invitation-title">
+        <p class="eyebrow">今晚 / 留一把空椅</p>
+        <h2 id="invitation-title">把距离放在桌外。</h2>
+        <p id="invitation-status">这是一项概念演示；人物、地点、菜品与故事不对应真实家庭或服务记录。</p>
+        <button class="primary-button primary-button--light" id="footer-invite-button" type="button">
+          <span>发起今晚的同桌时刻</span><span aria-hidden="true">↗</span>
+        </button>
+      </section>
+    </main>
+
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,398 @@
+{
+  "receipt": {
+    "id": "dedicated-5694e0a3a022",
+    "provider": "codex",
+    "model": "gpt-5.6-sol",
+    "status": "compiled",
+    "previewUrl": "/generated-runs/dedicated-5694e0a3a022/",
+    "generatedAt": "2026-08-28T06:37:37.997Z",
+    "files": 4,
+    "assets": 0,
+    "sourceBytes": 24383,
+    "hasShaders": false,
+    "compileMs": 959,
+    "attempts": 1,
+    "directory": "generated/runs/dedicated-5694e0a3a022"
+  },
+  "request": {
+    "brief": "为社区维修工作坊设计一张明亮、实用的老式台式电风扇诊断网页。页面主体是一幅程序化剖面与彩色装配示意，不对应任何商业型号，也不需要真实商品图。访客选择“不转、异响、风力变弱”后，同步更新故障部件、检查顺序、安全提示和预计难度；横向查看诊断、拆解、测试三个工作阶段，最后行动为“预约一张维修桌”。画面像工业说明书、彩色装配图与社区公告，清晰、亲切、可操作。不要暗色全屏、中央产品海报、巨型标题、电影式长滚动、随机粒子或玻璃科技界面。",
+    "seed": 83,
+    "quality": "high",
+    "runId": "run-1kgev3u",
+    "selectedId": "generated-hfbkl0-blueprint-18127qx-fan-repair-diagnostic-board-blueprint",
+    "creativeContract": {
+      "schemaVersion": 2,
+      "id": "contract-1aa3niw",
+      "brief": "为社区维修工作坊设计一张明亮、实用的老式台式电风扇诊断网页。页面主体是一幅程序化剖面与彩色装配示意，不对应任何商业型号，也不需要真实商品图。访客选择“不转、异响、风力变弱”后，同步更新故障部件、检查顺序、安全提示和预计难度；横向查看诊断、拆解、测试三个工作阶段，最后行动为“预约一张维修桌”。画面像工业说明书、彩色装配图与社区公告，清晰、亲切、可操作。不要暗色全屏、中央产品海报、巨型标题、电影式长滚动、随机粒子或玻璃科技界面。",
+      "intent": {
+        "subject": "社区维修工作坊",
+        "audience": "需要快速理解并感受该想法的网页访客",
+        "desiredFeeling": "真实",
+        "narrativeChange": "从情绪基线进入可观察变化，最后形成明确行动。",
+        "primaryAction": "预约一张维修桌",
+        "negativeConstraints": [
+          "不要暗色全屏、中央产品海报、巨型标题、电影式长滚动、随机粒子或玻璃科技界面"
+        ]
+      },
+      "referenceEvidence": [
+        {
+          "referenceId": "kage-night-wind-instrument",
+          "title": "读取今夜的风 · 物理响应装置",
+          "sourceUrl": "../cases/dedicated-191bc3ce2125/",
+          "evidenceLevel": "runtime-verified",
+          "relevance": "命中 风。 支持 continuous-scroll 体验模式。 来自已归档并经过浏览器验证的本地最终案例。",
+          "borrow": [
+            "窗边装置、真实房间和可读气象证据保持同一尺度，主体不被界面仪表包围。",
+            "纤维弯曲、读数和气流轨迹共享同一个风速变量，建立可验证的物理因果。",
+            "环境图像承担材质与尺度，Three.js 只生成装置响应和沿气流出现的信息证据。"
+          ],
+          "avoid": [
+            "不要把数据做成玻璃仪表盘，也不要以随机粒子冒充有方向和速度的真实气流。"
+          ]
+        },
+        {
+          "referenceId": "threejs-iris-articulated-reveal",
+          "title": "IRIS · 程序化关节主体展开",
+          "sourceUrl": "https://iamtechartist.github.io/Threejs-3D-Webpage/",
+          "evidenceLevel": "runtime-verified",
+          "relevance": "命中 程序化。 支持 continuous-scroll 体验模式。 来自已归档并经过浏览器验证的本地最终案例。",
+          "borrow": [
+            "单一程序化主体与固定画布贯穿全程，DOM 内容围绕结构展开而不是逐屏更换背景。",
+            "全局滚动被映射为各部件错峰局部进度，并同步相机、材质、灯光、雾和后期。",
+            "只在抽象机械、生物结构或构造过程就是主题时使用程序化可动主体；真实商品仍需要可信资产。"
+          ],
+          "avoid": [
+            "不要复制花瓣外形或黑金风格，也不要用程序化几何伪装真实产品、人物或建筑。"
+          ]
+        },
+        {
+          "referenceId": "motionsites-interactive-discovery",
+          "title": "MotionSites · Interactive Discovery",
+          "sourceUrl": "https://motionsites.ai/?prompt=interactive-discovery",
+          "evidenceLevel": "catalog-metadata",
+          "relevance": "命中 选择。 只作为外部目录方向信号，不当作实现已验证。",
+          "borrow": [
+            "目录证据表明它属于交互式 Hero，可作为“首屏即发生探索”的方向索引。",
+            "只借鉴交互发现的节奏命题；未取得完整提示词前不推断具体动画实现。",
+            "外部目录只提供方向信号，具体素材策略必须由当前 brief 和本地运行证据决定。"
+          ],
+          "avoid": [
+            "不要把目录缩略图或未知提示词当成已经验证的 Three.js 实现。"
+          ]
+        }
+      ],
+      "experience": {
+        "pattern": "continuous-scroll",
+        "thesis": "用一次连续状态变化建立社区维修工作坊的情绪、证据和行动。",
+        "focalSubject": "社区维修工作坊",
+        "continuityRule": "核心主体和空间坐标保持连续，只改变理解所需的状态。",
+        "typographyRole": "DOM 负责阅读与行动，避免文字和 WebGL 同时争夺焦点。",
+        "beats": [
+          {
+            "id": "baseline",
+            "position": 0,
+            "purpose": "establish",
+            "visibleState": "建立主体、环境和情绪基线。",
+            "userProgression": "滚动进入核心变化。"
+          },
+          {
+            "id": "evidence",
+            "position": 0.58,
+            "purpose": "transform",
+            "visibleState": "一个可观察的状态变化解释核心价值。",
+            "userProgression": "继续滚动确认变化结果。"
+          },
+          {
+            "id": "conclusion",
+            "position": 1,
+            "purpose": "resolve",
+            "visibleState": "画面形成更强的最终状态，并给出“预约一张维修桌”。",
+            "userProgression": "主要运动停止并允许行动。"
+          }
+        ],
+        "pointerRole": "指针只提供轻微空间反馈，主要叙事由滚动进度驱动。",
+        "reducedMotion": "把连续时间轴压缩为建立、证明和收束三个静态关键状态。",
+        "finalMemoryPoint": "预约一张维修桌"
+      },
+      "assets": [],
+      "direction": {
+        "visualRole": "procedural-field",
+        "mechanisms": [
+          {
+            "id": "state-storyboard",
+            "title": "状态故事板",
+            "evidenceLevel": "E4",
+            "job": "用连续的视觉状态分配页面节奏，每个状态只承担一个叙事动词。",
+            "reason": "匹配程序化状态场职责。 支持 continuous-scroll 体验。 命中“滚动、最后、拆解”。",
+            "sourceCaseIds": [
+              "plety-media-storyboard",
+              "igloo-cinematic-deconstruction"
+            ]
+          }
+        ],
+        "interaction": {
+          "primaryInput": "pointer",
+          "semanticAction": "指针只用于揭示、比较或检查当前视觉对象的局部关系。",
+          "pointerRole": "primary",
+          "touchAlternative": "触摸设备通过点击选择和再次点击复位获得同一信息。",
+          "keyboardAlternative": "可发现区域进入焦点后显示相同内容，并支持 Enter 切换。"
+        },
+        "renderer": {
+          "baseLayer": "semantic-dom",
+          "route": "dom-only",
+          "enhancement": "none",
+          "reason": "当前目标可以由语义内容、编辑式排版和离散状态完成。",
+          "threeJustification": "没有证据表明 WebGL 能增加必要理解。",
+          "fallback": "DOM 本身就是完整可用路径。"
+        },
+        "rejectedMechanisms": [
+          {
+            "id": "cinematic-3d-deconstruction",
+            "reason": "缺少真实可检查模型，不能伪造三维拆解。"
+          },
+          {
+            "id": "sticky-archive-stack",
+            "reason": "当前核心不是一组并列档案，不使用长堆叠拖慢叙事。"
+          }
+        ],
+        "decisionSummary": "以程序化状态场承担主要视觉，用状态故事板组织变化；当前目标可以由语义内容、编辑式排版和离散状态完成。"
+      },
+      "technical": {
+        "presentationStrategy": "procedural-field",
+        "capabilitySelection": {
+          "selected": false,
+          "capabilityId": null,
+          "score": 0,
+          "reasons": [
+            "体验模式 continuous-scroll 适合固定媒体滚动时间轴。",
+            "目标命中 滚动 等连续叙事信号。",
+            "需要先建立连续媒体素材职责。"
+          ],
+          "blockers": [
+            "目标包含“拆解”，需要真实空间或模型交互路线。",
+            "当前素材计划没有连续图片、视频或帧序列。"
+          ],
+          "contract": null
+        },
+        "articulatedSubject": {
+          "selected": false,
+          "capabilityId": null,
+          "score": 36,
+          "reasons": [
+            "主体没有明确的抽象或程序化构造语义。",
+            "没有需要部件承担的结构变化。",
+            "部件命中 部件。",
+            "体验模式 continuous-scroll 支持单一主体连续变化。"
+          ],
+          "blockers": [],
+          "contract": null
+        },
+        "semanticInteraction": {
+          "selected": false,
+          "capabilityId": null,
+          "score": 0,
+          "matchedSignals": [
+            "选择"
+          ],
+          "reasons": [
+            "目标命中“选择”等信息关系信号。",
+            "当前体验模式或素材职责不足以证明交互必须存在。",
+            "现有导演决策已把 pointer 定义为有语义的主要输入。"
+          ],
+          "blockers": [
+            "目标包含“拆解”，应使用真实空间对象能力，不能套用当前证据比较原型。"
+          ],
+          "evaluatedCapability": {
+            "id": "semantic-responsive-interaction",
+            "evidenceLevel": "E4",
+            "state": "validated",
+            "problem": "装饰性鼠标动效不能帮助用户理解内容，也无法稳定迁移到触摸、键盘和减少动态效果环境。",
+            "meaning": "滚动选择证据层，时间选择改变海岸形态和数字，指针只在局部揭示相对于基准年已经消失的土地。",
+            "inputs": [
+              "scroll",
+              "pointer",
+              "touch",
+              "keyboard"
+            ],
+            "outputs": [
+              "scene-shape",
+              "evidence-value",
+              "narrative-layer",
+              "selection-state"
+            ],
+            "baseInterface": "语义 DOM 始终提供年代按钮、损失数字、解释文字和当前状态，不依赖 WebGL 完成比较。",
+            "enhancedInterface": "WebGL 把年代选择映射为同一海岸场的连续形变，并让局部证据透镜显示相对损失范围。",
+            "reducedMotionRule": "减少动态效果时立即切换到目标年代和阶段，停止连续漂移，但保留所有数值和比较结果。",
+            "rejectionRules": [
+              "移除交互后信息理解完全不变时拒绝晋级。",
+              "触摸、键盘或无 WebGL 回退无法完成比较时拒绝晋级。"
+            ],
+            "evidence": [
+              {
+                "id": "coast-1984",
+                "year": 1984,
+                "label": "基准海岸",
+                "lossSquareKilometers": 0,
+                "retreatMeters": 0,
+                "relativeWaterCentimeters": 0,
+                "sceneMorph": 0,
+                "summary": "沙洲仍然连续，潮沟尚未切断内侧湿地。"
+              },
+              {
+                "id": "coast-2004",
+                "year": 2004,
+                "label": "潮沟扩张",
+                "lossSquareKilometers": 3.2,
+                "retreatMeters": 186,
+                "relativeWaterCentimeters": 8,
+                "sceneMorph": 0.5,
+                "summary": "外侧沙洲变薄，新的潮沟开始把湿地分成孤立片区。"
+              },
+              {
+                "id": "coast-2026",
+                "year": 2026,
+                "label": "临界断面",
+                "lossSquareKilometers": 8.7,
+                "retreatMeters": 421,
+                "relativeWaterCentimeters": 17,
+                "sceneMorph": 1,
+                "summary": "连续岸线已经断裂，曾经被遮蔽的社区直接面对风暴潮。"
+              }
+            ]
+          }
+        },
+        "identityEvidence": {
+          "selected": false,
+          "score": 0,
+          "reason": "拒绝：缺少同时指向身份与证据的明确目标。",
+          "rejectedBy": [],
+          "matchedSignals": [],
+          "capabilityId": null
+        },
+        "placeGrounding": {
+          "selected": false,
+          "capabilityId": null,
+          "strategy": "none",
+          "score": 0,
+          "matchedSignals": [],
+          "reasons": [
+            "目标没有要求地点事实、空间关系或地域来源，不应为了视觉效果强行加入地图。",
+            "继续由主题、素材和交互目标选择最小充分技术路线。"
+          ],
+          "requirements": {
+            "geography": "not-applicable",
+            "map": "avoid",
+            "dataTruth": "不引入与目标无关的地点、地图或路线事实。",
+            "creativeFreedom": "围绕主体、受众、情绪变化和最终行动选择表达，不增加地域模板。"
+          }
+        },
+        "styleDiversity": {
+          "fingerprint": {
+            "composition": "split-stage",
+            "palette": "daylight-neutral",
+            "motion": "state-switch",
+            "spatial": "environment-journey",
+            "typography": "quiet-small-scale",
+            "media": "procedural-3d"
+          },
+          "nearestCaseId": "dedicated-896cfb7e6657",
+          "nearestDistance": 4,
+          "minimumDifferentAxes": 2,
+          "mustDifferOn": [
+            "composition",
+            "motion",
+            "typography",
+            "media"
+          ],
+          "avoidRepeating": [
+            "不要默认复用暗色全屏背景、中央主体和巨型标题的组合。",
+            "不要把滚动淡入、漂浮粒子和柔光当成所有主题的通用答案。",
+            "不得复刻最相近案例 dedicated-896cfb7e6657 的整体构图和运动语法。"
+          ],
+          "rationale": "本方向与最相近案例 dedicated-896cfb7e6657 在 4 个风格轴上不同；差异是生成约束，不是固定模板。"
+        },
+        "domResponsibilities": [
+          "承载可阅读内容、导航和最终行动。",
+          "在 WebGL 不可用时保留完整语义顺序。"
+        ],
+        "webglResponsibilities": [
+          "承载空间记忆、镜头关系和连续状态变化。",
+          "让素材融入环境并提供克制的交互反馈。"
+        ],
+        "targetFrameTimeMs": 16.7,
+        "maxInitialAssetBytes": 8000000,
+        "targetDevices": [
+          "desktop",
+          "mobile"
+        ]
+      },
+      "acceptance": [
+        {
+          "id": "intent-visible",
+          "priority": "blocker",
+          "assertion": "首屏和终点能够对应原始主体、情绪变化和最终行动。",
+          "evidence": "screenshot-ending"
+        },
+        {
+          "id": "opening-composed",
+          "priority": "high",
+          "assertion": "首屏存在明确主体和空间坐标，没有空黑屏、文字裁切或主体被遮挡。",
+          "evidence": "screenshot-opening"
+        },
+        {
+          "id": "middle-causal",
+          "priority": "high",
+          "assertion": "中段变化能够解释能力、转化或探索关系，而不只是装饰动画。",
+          "evidence": "screenshot-middle"
+        },
+        {
+          "id": "borderless-integration",
+          "priority": "high",
+          "assertion": "主体和环境没有棋盘格、矩形图片边界或不自然的发光方框。",
+          "evidence": "screenshot-middle"
+        },
+        {
+          "id": "mobile-readable",
+          "priority": "blocker",
+          "assertion": "390px 移动端无横向溢出，主体、正文和行动均可见。",
+          "evidence": "screenshot-mobile"
+        },
+        {
+          "id": "semantic-fallback",
+          "priority": "normal",
+          "assertion": "关闭 WebGL 或减少运动后仍保留完整内容顺序和行动。",
+          "evidence": "dom"
+        },
+        {
+          "id": "runtime-clean",
+          "priority": "blocker",
+          "assertion": "页面无阻断脚本错误，关键素材请求成功，滚动和指针输入可用。",
+          "evidence": "runtime"
+        }
+      ],
+      "executionLimits": {
+        "authoringPasses": 1,
+        "assetBatches": 1,
+        "refinementPasses": 2,
+        "stopAfterMinutes": 15,
+        "archivePolicy": "best-result-only"
+      }
+    },
+    "reference": {
+      "title": "风扇诊断台",
+      "summary": "以故障选择驱动的横向维修说明页：从识别症状，到安全拆解与台架测试，最终预约社区维修桌。",
+      "scenePlugin": "composed-world",
+      "productionStatus": "adapted",
+      "theme": {
+        "deep": "#16324f",
+        "surface": "#fff7df",
+        "text": "#16324f",
+        "muted": "#6d7b83",
+        "accent": "#e7513b",
+        "accentSoft": "#d9e96a"
+      },
+      "assets": []
+    }
+  },
+  "usedAssets": []
+}

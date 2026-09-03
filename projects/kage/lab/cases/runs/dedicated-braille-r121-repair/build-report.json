@@ -1,0 +1,603 @@
+{
+  "receipt": {
+    "id": "dedicated-braille-r121-repair",
+    "provider": "codex",
+    "model": "deterministic-r121-repair",
+    "status": "compiled",
+    "previewUrl": "/generated-runs/dedicated-braille-r121-repair/",
+    "generatedAt": "2026-08-31T06:21:11.015Z",
+    "files": 4,
+    "assets": 0,
+    "sourceBytes": 11213,
+    "hasShaders": false,
+    "compileMs": 418,
+    "attempts": 1,
+    "directory": "generated/runs/dedicated-braille-r121-repair"
+  },
+  "request": {
+    "brief": "为盲文初学者设计一座明亮的“六点光穹”触觉星座练习网页。首屏持续展示同一组六个具有实体高度和柔和投影的圆顶触点；选择 A、L、T 三个练习字母时，正确点位在同一阵列中升起或落下，连接光带、点位编号和简短说明同步变化。点击与键盘方向键都能切换同一状态，最后行动是“保存今日点阵练习”。明确说明这是视觉教学演示，不能替代真实触读训练。使用暖白、钴蓝、珊瑚红和柔和实体阴影；用程序化 DOM、Canvas 或 Three.js 构建主体，不需要外部照片。不要暗色科技界面、随机粒子、数据仪表盘、长滚动章节或只改文字不改主体。",
+    "seed": 43,
+    "quality": "high",
+    "runId": "run-3iqjex",
+    "selectedId": "generated-1ol84nx-guided-journey",
+    "creativeContract": {
+      "schemaVersion": 2,
+      "id": "contract-zdpd73",
+      "brief": "为盲文初学者设计一座明亮的“六点光穹”触觉星座练习网页。首屏持续展示同一组六个具有实体高度和柔和投影的圆顶触点；选择 A、L、T 三个练习字母时，正确点位在同一阵列中升起或落下，连接光带、点位编号和简短说明同步变化。点击与键盘方向键都能切换同一状态，最后行动是“保存今日点阵练习”。明确说明这是视觉教学演示，不能替代真实触读训练。使用暖白、钴蓝、珊瑚红和柔和实体阴影；用程序化 DOM、Canvas 或 Three.js 构建主体，不需要外部照片。不要暗色科技界面、随机粒子、数据仪表盘、长滚动章节或只改文字不改主体。",
+      "intent": {
+        "subject": "明亮的“六点光穹”触觉星座练习",
+        "audience": "盲文初学者",
+        "desiredFeeling": "清晰、可信并具有独特记忆点",
+        "narrativeChange": "从编辑式留白进入主体显现，最后形成有张力的整体构图。",
+        "primaryAction": "保存今日点阵练习",
+        "negativeConstraints": [
+          "明确说明这是视觉教学演示，不能替代真实触读训练",
+          "不要暗色科技界面、随机粒子、数据仪表盘、长滚动章节或只改文字不改主体"
+        ]
+      },
+      "instructions": [
+        {
+          "id": "user-constraint-1",
+          "content": "点击与键盘方向键都能切换同一状态，最后行动是“保存今日点阵练习”",
+          "source": "user",
+          "scope": "current-run",
+          "strength": "hard",
+          "rationale": "来自当前用户 brief 的显式要求，不继承到其他任务。"
+        },
+        {
+          "id": "user-constraint-2",
+          "content": "明确说明这是视觉教学演示，不能替代真实触读训练",
+          "source": "user",
+          "scope": "current-run",
+          "strength": "hard",
+          "rationale": "来自当前用户 brief 的显式要求，不继承到其他任务。"
+        },
+        {
+          "id": "user-constraint-3",
+          "content": "用程序化 DOM、Canvas 或 Three.js 构建主体，不需要外部照片",
+          "source": "user",
+          "scope": "current-run",
+          "strength": "hard",
+          "rationale": "来自当前用户 brief 的显式要求，不继承到其他任务。"
+        },
+        {
+          "id": "user-constraint-4",
+          "content": "不要暗色科技界面、随机粒子、数据仪表盘、长滚动章节或只改文字不改主体",
+          "source": "user",
+          "scope": "current-run",
+          "strength": "hard",
+          "rationale": "来自当前用户 brief 的显式要求，不继承到其他任务。"
+        },
+        {
+          "id": "quality-runnable-accessible",
+          "content": "最终网页必须可运行，并在桌面、移动端、减弱动效和增强能力失败时保留可读可操作的核心路径。",
+          "source": "quality",
+          "scope": "project-quality",
+          "strength": "hard",
+          "rationale": "这是跨风格的交付可用性要求。"
+        },
+        {
+          "id": "quality-truthful-assets-data",
+          "content": "不得伪造不存在的素材、模型、业务数据或专业结论；模拟和估算必须清楚标注。",
+          "source": "quality",
+          "scope": "project-quality",
+          "strength": "hard",
+          "rationale": "这是跨主题的真实性要求。"
+        },
+        {
+          "id": "quality-causal-finished",
+          "content": "最终浏览器画面必须形成清楚焦点与完成态；主要交互必须造成可辨认的主体变化和业务结果，交付画面不得残留调试标记。",
+          "source": "quality",
+          "scope": "project-quality",
+          "strength": "hard",
+          "rationale": "这是优秀成品的最低质量门，不指定任何视觉风格。"
+        },
+        {
+          "id": "inference-creative-direction",
+          "content": "建议从 editorial-evidence 出发，并将 object-catalog、daylight-neutral、state-switch、flat-editorial、quiet-small-scale、procedural-3d 作为候选视觉方向；可为更好的主题表达调整或放弃。",
+          "source": "inference",
+          "scope": "current-run",
+          "strength": "advisory",
+          "rationale": "系统建议从 editorial-evidence 出发；与案例 dedicated-beed36a85788 的六轴距离为 4，该距离只用于参考排序和诊断，不是生成门禁。"
+        }
+      ],
+      "referenceEvidence": [],
+      "experience": {
+        "pattern": "editorial-field",
+        "structure": {
+          "mode": "editorial-flow",
+          "segmentPolicy": "content-derived",
+          "layoutRule": "按信息密度组织连续编辑版面；不为满足固定屏数制造空章节。"
+        },
+        "thesis": "先把明亮的“六点光穹”触觉星座练习组织为清晰可读的编辑场，再按目标加入最小充分的视觉增强。",
+        "focalSubject": "明亮的“六点光穹”触觉星座练习",
+        "continuityRule": "内容结构、视觉锚点和行动保持稳定；只有用户能够理解的选择或状态变化才改变画面。",
+        "typographyRole": "DOM 承担完整信息层级、导航和行动；Canvas 或 Three.js 只补充主题所需的空间、材质或反馈。",
+        "beats": [
+          {
+            "id": "editorial-context",
+            "position": 0,
+            "purpose": "establish",
+            "visibleState": "建立主题、核心信息与唯一视觉锚点。",
+            "userProgression": "浏览内容或选择明确入口。"
+          },
+          {
+            "id": "editorial-action",
+            "position": 1,
+            "purpose": "resolve",
+            "visibleState": "证据和行动关系稳定，并给出“保存今日点阵练习”。",
+            "userProgression": "完成页面的主要行动。"
+          }
+        ],
+        "pointerRole": "指针优先服务选择、检查和轻量反馈；没有明确语义时不创建跟随动画。",
+        "reducedMotion": "直接展示稳定主构图与离散状态，保留全部内容和行动。",
+        "finalMemoryPoint": "保存今日点阵练习"
+      },
+      "visualAnchor": {
+        "subject": "围绕“明亮的“六点光穹”触觉星座练习”构建可辨认的主题专属对象、空间或证据场。",
+        "relationshipToBrief": "视觉锚点必须直接证明“明亮的“六点光穹”触觉星座练习”和“先把明亮的“六点光穹”触觉星座练习组织为清晰可读的编辑场，再按目标加入最小充分的视觉增强。”；即使隐藏标题，也能从对象、空间或数据关系辨认主题。",
+        "heroRole": "evidence-field",
+        "source": "procedural",
+        "interactionBinding": "用户选择或输入时，视觉锚点、可见证据与语义数值必须同步变化，不能只改变边框、颜色或说明文字。",
+        "fallback": "增强层不可用时，保留同一“明亮的“六点光穹”触觉星座练习”的静态主题表示、完整语义内容和主要行动；不得回退为通用网格或空背景。"
+      },
+      "assets": [],
+      "direction": {
+        "visualRole": "procedural-field",
+        "mechanisms": [
+          {
+            "id": "state-storyboard",
+            "title": "状态故事板",
+            "evidenceLevel": "E4",
+            "job": "用连续的视觉状态分配页面节奏，每个状态只承担一个叙事动词。",
+            "reason": "匹配程序化状态场的主要视觉职责。 命中“滚动、变化、最后”。",
+            "sourceCaseIds": [
+              "plety-media-storyboard",
+              "igloo-cinematic-deconstruction"
+            ]
+          },
+          {
+            "id": "branded-media-mask",
+            "title": "品牌蒙版",
+            "evidenceLevel": "E4",
+            "job": "让品牌字形或有语义的轮廓成为媒体容器，并与证据内容共同构图。",
+            "reason": "支持 editorial-field 体验。 命中“数据”。",
+            "sourceCaseIds": [
+              "harvest-masked-statistics"
+            ]
+          },
+          {
+            "id": "subject-specimen-field",
+            "title": "主体标本场",
+            "evidenceLevel": "E4",
+            "job": "围绕独立主体和安全区组织排版，让对象始终保持识别和呼吸空间。",
+            "reason": "支持 editorial-field 体验。 命中“主体”。",
+            "sourceCaseIds": [
+              "sports-ai-subject-field"
+            ]
+          }
+        ],
+        "interaction": {
+          "primaryInput": "direct-navigation",
+          "semanticAction": "直接选择一条探索路径并保持位置反馈。",
+          "pointerRole": "primary",
+          "touchAlternative": "提供等价的点击热点、拖拽或分段导航，不依赖 hover。",
+          "keyboardAlternative": "所有镜头、热点或路径都可通过顺序焦点和 Enter 激活。"
+        },
+        "renderer": {
+          "baseLayer": "semantic-dom",
+          "route": "dom-only",
+          "enhancement": "none",
+          "reason": "当前目标可以由语义内容、编辑式排版和离散状态完成。",
+          "threeJustification": "没有证据表明 WebGL 能增加必要理解。",
+          "fallback": "DOM 本身就是完整可用路径。"
+        },
+        "rejectedMechanisms": [
+          {
+            "id": "cinematic-3d-deconstruction",
+            "reason": "缺少真实可检查模型，不能伪造三维拆解。"
+          },
+          {
+            "id": "sticky-archive-stack",
+            "reason": "当前核心不是一组并列档案，不使用长堆叠拖慢叙事。"
+          }
+        ],
+        "decisionSummary": "以程序化状态场承担主要视觉，用状态故事板、品牌蒙版、主体标本场组织变化；当前目标可以由语义内容、编辑式排版和离散状态完成。"
+      },
+      "technical": {
+        "presentationStrategy": "dom-led",
+        "capabilitySelection": {
+          "selected": false,
+          "capabilityId": null,
+          "score": 18,
+          "reasons": [
+            "体验模式 editorial-field 不是该能力的优先路线。",
+            "目标命中 滚动、变化、状态 等连续叙事信号。",
+            "需要先建立连续媒体素材职责。"
+          ],
+          "blockers": [
+            "当前素材计划没有连续图片、视频或帧序列。"
+          ],
+          "contract": null
+        },
+        "articulatedSubject": {
+          "selected": false,
+          "capabilityId": null,
+          "score": 12,
+          "reasons": [
+            "主体没有明确的抽象或程序化构造语义。",
+            "没有需要部件承担的结构变化。",
+            "没有可建立拓扑关系的部件描述。",
+            "体验模式 editorial-field 支持单一主体连续变化。"
+          ],
+          "blockers": [],
+          "contract": null
+        },
+        "stateAssetStrategy": {
+          "required": false,
+          "changeKind": "none",
+          "route": "static-sufficient",
+          "acceptedModalities": [
+            "transparent-image",
+            "image-sequence",
+            "model-3d",
+            "procedural"
+          ],
+          "minimumDistinctStates": 1,
+          "minimumPartGroups": 0,
+          "failurePolicy": "continue",
+          "reason": "目标没有要求实体装配、拆解或结构形变；现有素材质量与职责门禁足以决定是否进入构建。"
+        },
+        "sceneComposition": {
+          "schemaVersion": 1,
+          "route": "single-image-hybrid",
+          "required": false,
+          "requiredLayers": [
+            "environment"
+          ],
+          "minimumIndependentLayers": 1,
+          "stateBinding": "tint-and-camera",
+          "failurePolicy": "continue-with-declared-fallback",
+          "fallbackRoute": "dom-only",
+          "reason": "当前目标由信息、控件与行动承担价值，DOM 路线不应被迫增加图片分层或三维素材。"
+        },
+        "semanticInteraction": {
+          "selected": true,
+          "capabilityId": "semantic-responsive-interaction",
+          "score": 100,
+          "matchedSignals": [
+            "变化",
+            "选择"
+          ],
+          "reasons": [
+            "目标明确要求直接选择、指针或触摸操作改变内容、比例或可见状态。",
+            "当前体验模式或素材职责不足以证明交互必须存在。",
+            "现有导演决策已把 direct-navigation 定义为有语义的主要输入。"
+          ],
+          "blockers": [],
+          "evaluatedCapability": {
+            "id": "semantic-responsive-interaction",
+            "evidenceLevel": "E4",
+            "state": "validated",
+            "problem": "装饰性鼠标动效不能帮助用户理解内容，也无法稳定迁移到触摸、键盘和减少动态效果环境。",
+            "meaning": "滚动选择证据层，时间选择改变海岸形态和数字，指针只在局部揭示相对于基准年已经消失的土地。",
+            "inputs": [
+              "scroll",
+              "pointer",
+              "touch",
+              "keyboard"
+            ],
+            "outputs": [
+              "scene-shape",
+              "evidence-value",
+              "narrative-layer",
+              "selection-state"
+            ],
+            "baseInterface": "语义 DOM 始终提供年代按钮、损失数字、解释文字和当前状态，不依赖 WebGL 完成比较。",
+            "enhancedInterface": "WebGL 把年代选择映射为同一海岸场的连续形变，并让局部证据透镜显示相对损失范围。",
+            "reducedMotionRule": "减少动态效果时立即切换到目标年代和阶段，停止连续漂移，但保留所有数值和比较结果。",
+            "rejectionRules": [
+              "移除交互后信息理解完全不变时拒绝晋级。",
+              "触摸、键盘或无 WebGL 回退无法完成比较时拒绝晋级。"
+            ],
+            "evidence": [
+              {
+                "id": "coast-1984",
+                "year": 1984,
+                "label": "基准海岸",
+                "lossSquareKilometers": 0,
+                "retreatMeters": 0,
+                "relativeWaterCentimeters": 0,
+                "sceneMorph": 0,
+                "summary": "沙洲仍然连续，潮沟尚未切断内侧湿地。"
+              },
+              {
+                "id": "coast-2004",
+                "year": 2004,
+                "label": "潮沟扩张",
+                "lossSquareKilometers": 3.2,
+                "retreatMeters": 186,
+                "relativeWaterCentimeters": 8,
+                "sceneMorph": 0.5,
+                "summary": "外侧沙洲变薄，新的潮沟开始把湿地分成孤立片区。"
+              },
+              {
+                "id": "coast-2026",
+                "year": 2026,
+                "label": "临界断面",
+                "lossSquareKilometers": 8.7,
+                "retreatMeters": 421,
+                "relativeWaterCentimeters": 17,
+                "sceneMorph": 1,
+                "summary": "连续岸线已经断裂，曾经被遮蔽的社区直接面对风暴潮。"
+              }
+            ]
+          }
+        },
+        "interactionDriver": {
+          "selected": false,
+          "capabilityId": null,
+          "score": 28,
+          "requestedModes": [],
+          "matchedSignals": [
+            "shared-state"
+          ],
+          "reasons": [
+            "目标没有同时请求两种以上驱动方式，不建立共享状态导演。",
+            "目标没有明确请求自动演示，禁止为了展示能力而自行加入。",
+            "现有语义交互已要求可见主体与结果同步，适合从同一状态派生。"
+          ],
+          "blockers": [],
+          "authoringContract": null,
+          "evaluatedCapability": {
+            "id": "shared-state-interaction-driver",
+            "evidenceLevel": "E4",
+            "state": "validated",
+            "sourceCaseId": "wind-tunnel-r78",
+            "problem": "自动演示、滚轮进度和直接控件各自维护状态时，画面、数值和操作会互相打架，用户也无法判断当前由谁控制。",
+            "meaning": "多个明确请求的输入源只写入一个规范化状态；主体、场景、语义结果和进度显示从同一状态派生，第一次人工输入立即接管自动演示。",
+            "rejectionRules": [
+              "brief 只要求一种输入方式时不得加入额外演示或滚轮接管。",
+              "自动演示无法播放、暂停、重置或在人工输入后停止时拒绝使用。",
+              "状态只改变数字或说明文字而没有改变主体和场景时拒绝晋级。"
+            ]
+          }
+        },
+        "productSemanticFeedback": {
+          "selected": false,
+          "capabilityId": null,
+          "score": 0,
+          "matchedSignals": [],
+          "reasons": [
+            "目标没有充分证明听觉是核心产品任务，不强行加入音频能力。",
+            "目标未明确要求播放、试听、调音、录制或声音对比。"
+          ],
+          "blockers": [],
+          "authoringContract": null,
+          "evaluatedCapability": {
+            "id": "product-semantic-audio-feedback",
+            "evidenceLevel": "E4",
+            "state": "validated",
+            "sourceCaseId": "dedicated-b4d381a24320",
+            "problem": "当产品价值依赖听觉判断时，只有图片、波形动画或频率数字的页面无法证明核心能力，也会让用户误以为交互没有生效。",
+            "meaning": "把声音作为与视觉结果同级的产品反馈：由同一因果状态驱动，用户明确触发，并提供可辨认的对比、静音、音量、真实性说明和无音频降级。",
+            "rejectionRules": [
+              "声音只是文案修饰且不影响产品任务时，不得为了展示能力强行加入音频。",
+              "不同状态听感无法辨认，或声音与视觉、参数使用不同状态时拒绝验收。",
+              "未提供用户手势激活、静音、音量与失败降级时拒绝验收。"
+            ]
+          }
+        },
+        "identityEvidence": {
+          "selected": false,
+          "score": 0,
+          "reason": "拒绝：缺少同时指向身份与证据的明确目标。",
+          "rejectedBy": [],
+          "matchedSignals": [],
+          "capabilityId": null
+        },
+        "placeGrounding": {
+          "selected": false,
+          "capabilityId": null,
+          "strategy": "none",
+          "score": 0,
+          "matchedSignals": [],
+          "reasons": [
+            "目标没有要求地点事实、空间关系或地域来源，不应为了视觉效果强行加入地图。",
+            "继续由主题、素材和交互目标选择最小充分技术路线。"
+          ],
+          "requirements": {
+            "geography": "not-applicable",
+            "map": "avoid",
+            "dataTruth": "不引入与目标无关的地点、地图或路线事实。",
+            "creativeFreedom": "围绕主体、受众、情绪变化和最终行动选择表达，不增加地域模板。"
+          }
+        },
+        "styleDiversity": {
+          "fingerprint": {
+            "composition": "object-catalog",
+            "palette": "daylight-neutral",
+            "motion": "state-switch",
+            "spatial": "flat-editorial",
+            "typography": "quiet-small-scale",
+            "media": "procedural-3d"
+          },
+          "structureDirection": {
+            "experienceForm": "editorial-evidence",
+            "workbenchPolicy": "allowed",
+            "surfaceArchetype": "editorial-narrative",
+            "controlVisibility": "none",
+            "interactionStyle": "scroll",
+            "compositionRule": "使用有主次的编辑流组织主题、变化和行动，让内容密度与阅读节奏由当前业务决定。",
+            "informationRule": "信息贴近其解释的对象或状态出现，保持单一阅读主线，不把卖点机械拆成仪表卡和固定屏。",
+            "antiTemplateRule": "结构应由当前内容和行动决定；工作台、面板或分栏都只是可选方案，不是默认答案。",
+            "strength": "advisory"
+          },
+          "nearestCaseId": "dedicated-beed36a85788",
+          "nearestDistance": 4,
+          "minimumDifferentAxes": 0,
+          "mustDifferOn": [],
+          "avoidRepeating": [
+            "可借鉴最相近案例 dedicated-beed36a85788 的已验证原理，但应由当前目标决定是否采用其构图和运动语法。"
+          ],
+          "rankingOnly": true,
+          "rationale": "系统建议从 editorial-evidence 出发；与案例 dedicated-beed36a85788 的六轴距离为 4，该距离只用于参考排序和诊断，不是生成门禁。"
+        },
+        "domResponsibilities": [
+          "承载可阅读内容、导航和最终行动。",
+          "在 WebGL 不可用时保留完整语义顺序。"
+        ],
+        "webglResponsibilities": [
+          "承载空间记忆、镜头关系和连续状态变化。",
+          "让素材融入环境并提供克制的交互反馈。"
+        ],
+        "targetFrameTimeMs": 16.7,
+        "maxInitialAssetBytes": 8000000,
+        "targetDevices": [
+          "desktop",
+          "mobile"
+        ]
+      },
+      "acceptance": [
+        {
+          "id": "intent-visible",
+          "priority": "blocker",
+          "assertion": "首屏和终点能够对应原始主体、情绪变化和最终行动；不了解行业背景的用户也能在约 10 秒内识别核心对象、可执行操作和操作后的业务结果。",
+          "evidence": "screenshot-ending"
+        },
+        {
+          "id": "visual-anchor-specific",
+          "priority": "blocker",
+          "assertion": "首屏存在与 brief 直接相关且无需依赖标题即可辨认的视觉锚点；纯色、通用网格、无主题依据的渐变、随机粒子或无关几何不能单独充当主视觉。",
+          "evidence": "screenshot-opening"
+        },
+        {
+          "id": "opening-composed",
+          "priority": "high",
+          "assertion": "首屏存在明确主体和空间坐标，没有空黑屏、文字裁切或主体被遮挡。",
+          "evidence": "screenshot-opening"
+        },
+        {
+          "id": "process-causal",
+          "priority": "blocker",
+          "assertion": "主要输入、主要参数或高层操作必须通过同一目标状态依次驱动 data-signal-visual-anchor 中同一主体的可见变化、data-signal-primary-result 的业务结果与 data-signal-primary-action 的最终行动；真实滑杆、按钮或选择器还必须标记 data-signal-primary-control。文案、数字、active class、裁切跳变、镜头切换、整体缩放、透明度或模糊不能冒充因果变化。",
+          "evidence": "screenshot-beat"
+        },
+        {
+          "id": "semantic-state-consistent",
+          "priority": "high",
+          "assertion": "交互控件、可见数值、汇总值、结果解释和主体状态必须来自同一目标状态；专业指标或简化估算必须诚实标注并保持声明约束，不能作为虚假真实性装饰。",
+          "evidence": "runtime"
+        },
+        {
+          "id": "borderless-integration",
+          "priority": "high",
+          "assertion": "主体和环境没有棋盘格、矩形图片边界或不自然的发光方框。",
+          "evidence": "screenshot-beat"
+        },
+        {
+          "id": "mobile-readable",
+          "priority": "blocker",
+          "assertion": "390px 移动端无横向溢出；主体、正文和行动可见，并能沿纵向完成与桌面等价的主要控件→结果→最终行动路径，不能只保留桌面工作区的裁切局部。",
+          "evidence": "screenshot-mobile"
+        },
+        {
+          "id": "semantic-fallback",
+          "priority": "normal",
+          "assertion": "关闭 WebGL 或减少运动后仍保留完整内容顺序和行动。",
+          "evidence": "dom"
+        },
+        {
+          "id": "runtime-clean",
+          "priority": "blocker",
+          "assertion": "页面无阻断脚本错误，关键素材请求成功，滚动和指针输入可用。",
+          "evidence": "runtime"
+        }
+      ],
+      "executionLimits": {
+        "authoringPasses": 1,
+        "assetBatches": 1,
+        "refinementPasses": 1,
+        "stopAfterMinutes": 3,
+        "archivePolicy": "best-result-only"
+      }
+    },
+    "reference": {
+      "title": "为盲文初学者设计一座明亮的“六点光穹”触觉星… · 分阶段铺陈",
+      "summary": "把理解过程拆成建立、展开、证明和收束。",
+      "scenePlugin": "chromatic-tide",
+      "productionStatus": "adapted",
+      "theme": {
+        "deep": "#08131f",
+        "surface": "#1d3c47",
+        "text": "#ecf8ef",
+        "muted": "#9ab3b5",
+        "accent": "#f0c88d",
+        "accentSoft": "#79e7c4"
+      },
+      "assets": []
+    }
+  },
+  "mediaDominance": {
+    "schemaVersion": 1,
+    "decision": "ready",
+    "route": "dom-only",
+    "highQualityAssetIds": [],
+    "subjectPrimitiveCount": 0,
+    "subjectPrimitiveScore": 0,
+    "constructors": {},
+    "summary": "媒体主导权门禁不适用：当前不是具备 L3/L4 主素材的媒体主导路线。"
+  },
+  "usedAssets": [],
+  "revision": {
+    "parentId": "dedicated-62215947bbff",
+    "instruction": "依据首轮浏览器证据修复标准六点空间顺序、真实控制标记、保存态复位与 CSP 字体错误；保持原方向和同一程序化素材批次。",
+    "summary": "一次确定性证据修复；没有第二个创意方向、素材批次或开放式模型重写。",
+    "changedFiles": [
+      "src/experience.ts",
+      "src/page.css"
+    ],
+    "model": "deterministic-r121-repair"
+  },
+  "refinement": {
+    "status": "kept",
+    "parentId": "dedicated-braille-r121-repair",
+    "selectedId": "dedicated-braille-r121-repair",
+    "model": "gpt-5.6-sol",
+    "sourceAssessment": {
+      "schemaVersion": 1,
+      "verdict": "pass",
+      "score": 100,
+      "summary": "结构质量门通过；仍需结合截图判断构图、材质、层级与创意完成度。",
+      "findings": [],
+      "observations": []
+    },
+    "finalAssessment": {
+      "schemaVersion": 1,
+      "verdict": "pass",
+      "score": 100,
+      "summary": "结构质量门通过；仍需结合截图判断构图、材质、层级与创意完成度。",
+      "findings": [],
+      "observations": []
+    },
+    "visualAcceptance": {
+      "schemaVersion": 1,
+      "verdict": "pass",
+      "score": 92,
+      "assetRole": "not-applicable",
+      "dimensions": {
+        "productIntent": 95,
+        "structureFit": 92,
+        "stateContinuity": 96,
+        "visualCohesion": 91,
+        "interactionCausality": 93,
+        "mobileReadiness": 89
+      },
+      "summary": "连续编辑式版面符合产品目标，没有机械拆成固定三屏。六点圆顶阵列构成明确且主题专属的视觉锚点；A 与 L 状态在同一阵列中通过触点升起、连接光带、编号、选择控件和结果说明同步变化，因果关系清楚。桌面与移动端均能在短时间内理解练习对象、切换方式、当前结果及“保存今日点阵练习”的最终行动，免责声明也保持可读。整体已达到可交付的视觉完成度。",
+      "findings": []
+    },
+    "summary": "连续编辑式版面符合产品目标，没有机械拆成固定三屏。六点圆顶阵列构成明确且主题专属的视觉锚点；A 与 L 状态在同一阵列中通过触点升起、连接光带、编号、选择控件和结果说明同步变化，因果关系清楚。桌面与移动端均能在短时间内理解练习对象、切换方式、当前结果及“保存今日点阵练习”的最终行动，免责声明也保持可读。整体已达到可交付的视觉完成度。",
+    "resolved": [],
+    "remaining": []
+  }
+}

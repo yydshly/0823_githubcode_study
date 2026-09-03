@@ -1,10 +1,11 @@
-import { mkdtemp, readFile, rm } from 'node:fs/promises';
+import { mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { afterEach, describe, expect, it } from 'vitest';
 import { generateAssets, readGeneratedAsset } from '../server/asset-generator';
 import { compileAssetPrompt } from '../src/generation/asset-production';
 import { assertEffectSpec, type EffectSpec } from '../src/generation/effect-spec';
+import { transparentSubjectPng } from './image-test-fixtures.ts';
 
 const roots: string[] = [];
 
@@ -36,6 +37,17 @@ function effectSpec(): EffectSpec {
   });
 }
 
+function producibleEffectSpec(): EffectSpec {
+  const spec = structuredClone(effectSpec());
+  spec.assetRequirements[0] = {
+    ...spec.assetRequirements[0],
+    purpose: '提供可检查的建议性材质与轮廓参考，不承担准确产品证据。',
+    minimumQuality: 'L2-inspectable',
+    fidelity: 'suggestive',
+  };
+  return assertEffectSpec(spec);
+}
+
 describe('asset production adapter', () => {
   it('compiles a bounded asset prompt from the model-owned EffectSpec', () => {
     const spec = effectSpec();
@@ -52,25 +64,61 @@ describe('asset production adapter', () => {
   it('materializes, validates and reuses a MiniMax image response', async () => {
     const root = await mkdtemp(join(tmpdir(), 'signal-asset-test-'));
     roots.push(root);
-    const jpeg = Buffer.from([0xff, 0xd8, 0xff, 0xdb, 0x00, 0x43, 0x00, 0xff, 0xd9]);
+    const png = await transparentSubjectPng();
     let calls = 0;
     const fetchMock: typeof fetch = async () => {
       calls += 1;
-      return new Response(JSON.stringify({ data: { image_base64: [jpeg.toString('base64')] }, base_resp: { status_code: 0, status_msg: 'success' } }), { status: 200, headers: { 'Content-Type': 'application/json' } });
+      return new Response(JSON.stringify({ data: { image_base64: [png.toString('base64')] }, base_resp: { status_code: 0, status_msg: 'success' } }), { status: 200, headers: { 'Content-Type': 'application/json' } });
     };
-    const request = { schemaVersion: 1 as const, provider: 'minimax' as const, brief: '为独立创作者设计智能声音产品发布页。', effectSpec: effectSpec(), seed: 17 };
+    const request = { schemaVersion: 1 as const, provider: 'minimax' as const, brief: '为独立创作者设计智能声音产品发布页。', effectSpec: producibleEffectSpec(), seed: 17 };
     const first = await generateAssets(request, { MINIMAX_API_KEY: 'test', SIGNAL_ASSET_CACHE_DIR: root }, fetchMock);
     expect(first).toMatchObject({ status: 'ready', cache: { hits: 0, misses: 1 }, assets: [expect.objectContaining({ qualityLevel: 'L2-inspectable', publishable: false })] });
     const served = await readGeneratedAsset(first.assets[0].uri.split('/').at(-1)!, { SIGNAL_ASSET_CACHE_DIR: root });
-    expect(served?.contentType).toBe('image/jpeg');
-    expect(served?.bytes).toEqual(jpeg);
+    expect(served?.contentType).toBe('image/png');
+    expect(served?.bytes).toEqual(png);
     const second = await generateAssets(request, { MINIMAX_API_KEY: 'test', SIGNAL_ASSET_CACHE_DIR: root }, fetchMock);
     expect(second.cache).toEqual({ hits: 1, misses: 0 });
     expect(calls).toBe(1);
-    expect(JSON.parse(await readFile(join(root, `${first.assets[0].uri.split('/').at(-1)}.json`), 'utf8'))).toMatchObject({ candidate: { requirementId: 'hero-image' } });
+    expect(JSON.parse(await readFile(join(root, `${first.assets[0].uri.split('/').at(-1)}.json`), 'utf8'))).toMatchObject({
+      candidate: { requirementId: 'hero-image', features: { alpha: 'binary', depth: 'none' } },
+      inspection: { width: 512, height: 512, alpha: 'binary', inspectorVersion: 1 },
+    });
+  });
+
+  it('invalidates corrupted cached image bytes and fetches one replacement', async () => {
+    const root = await mkdtemp(join(tmpdir(), 'signal-asset-cache-recheck-'));
+    roots.push(root);
+    const png = await transparentSubjectPng();
+    let calls = 0;
+    const fetchMock: typeof fetch = async () => {
+      calls += 1;
+      return new Response(JSON.stringify({ data: { image_base64: [png.toString('base64')] }, base_resp: { status_code: 0 } }), { status: 200 });
+    };
+    const request = { schemaVersion: 1 as const, provider: 'minimax' as const, brief: '为独立创作者设计智能声音产品发布页。', effectSpec: producibleEffectSpec(), seed: 23 };
+    const first = await generateAssets(request, { MINIMAX_API_KEY: 'test', SIGNAL_ASSET_CACHE_DIR: root }, fetchMock);
+    const id = first.assets[0].uri.split('/').at(-1)!;
+    await writeFile(join(root, `${id}.png`), png.subarray(0, Math.floor(png.length / 2)));
+
+    const second = await generateAssets(request, { MINIMAX_API_KEY: 'test', SIGNAL_ASSET_CACHE_DIR: root }, fetchMock);
+    expect(second.cache).toEqual({ hits: 0, misses: 1 });
+    expect(calls).toBe(2);
+    expect((await readGeneratedAsset(id, { SIGNAL_ASSET_CACHE_DIR: root }))?.bytes).toEqual(png);
   });
 
   it('does not pretend Codex or an unconfigured MiniMax key can emit image bytes', async () => {
     await expect(generateAssets({ schemaVersion: 1, provider: 'minimax', brief: '为独立创作者设计智能声音产品发布页。', effectSpec: effectSpec(), seed: 17 }, {})).rejects.toThrow(/MINIMAX_API_KEY/);
+  });
+
+  it('does not start another image request after the generation deadline', async () => {
+    const root = await mkdtemp(join(tmpdir(), 'signal-asset-deadline-'));
+    roots.push(root);
+    let calls = 0;
+    const fetchMock: typeof fetch = async () => { calls += 1; throw new Error('must not fetch'); };
+    await expect(generateAssets(
+      { schemaVersion: 1, provider: 'minimax', brief: '为独立创作者设计智能声音产品发布页。', effectSpec: producibleEffectSpec(), seed: 17 },
+      { MINIMAX_API_KEY: 'test', SIGNAL_ASSET_CACHE_DIR: root, GENERATION_JOB_DEADLINE_AT: new Date(Date.now() - 1).toISOString() },
+      fetchMock,
+    )).rejects.toThrow('总时间上限');
+    expect(calls).toBe(0);
   });
 });

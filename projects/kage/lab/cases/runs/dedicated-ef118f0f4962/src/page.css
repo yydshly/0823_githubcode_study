@@ -1,0 +1,67 @@
+* { box-sizing: border-box; }
+html { margin: 0; max-width: 100%; scroll-behavior: smooth; background: #31291f; }
+body { margin: 0; max-width: 100%; overflow-x: clip; color: #f0e9dc; background: #31291f; font-family: "Noto Serif SC", "Songti SC", Georgia, serif; }
+canvas { position: fixed; inset: 0; width: 100%; height: 100%; display: block; z-index: 0; }
+button, a { font: inherit; }
+.scent-page { --clarity: 0; --story-progress: 0; position: relative; min-height: 340vh; max-width: 100%; isolation: isolate; }
+.scent-canvas-wash { position: fixed; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(90deg, rgba(34,28,21,.74) 0%, rgba(34,28,21,.28) 48%, rgba(34,28,21,.08) 100%), linear-gradient(0deg, rgba(28,23,18,.48), transparent 34%); opacity: calc(.96 - var(--clarity) * .36); }
+.scent-nav { position: fixed; top: 0; left: 0; z-index: 5; width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 24px clamp(20px, 5vw, 72px); font-family: system-ui, sans-serif; font-size: 11px; letter-spacing: .13em; text-transform: uppercase; }
+.scent-mark { color: inherit; text-decoration: none; font-weight: 650; }
+.scent-mark span { margin-left: 10px; color: #d4b784; font-weight: 400; }
+.scent-nav-note { color: rgba(240,233,220,.66); }
+.scent-scroll { position: relative; z-index: 2; min-height: 340vh; max-width: 100%; }
+.scent-hero, .scent-blend, .scent-final { min-height: 100vh; padding: clamp(88px, 12vh, 138px) clamp(20px, 7vw, 104px) clamp(48px, 8vh, 96px); }
+.scent-hero { display: flex; flex-direction: column; justify-content: center; align-items: flex-start; width: min(720px, 58vw); }
+.scent-kicker { margin-bottom: 20px; color: #dfc89f; font-family: system-ui, sans-serif; font-size: 10px; font-weight: 650; letter-spacing: .2em; }
+.scent-hero h1 { max-width: 690px; margin: 0; font-size: clamp(42px, 6.3vw, 88px); line-height: 1.08; font-weight: 450; letter-spacing: -.045em; text-wrap: balance; }
+.scent-hero p { max-width: 500px; margin: 28px 0 0; color: rgba(240,233,220,.78); font-size: clamp(15px, 1.35vw, 19px); line-height: 1.9; }
+.scent-enter { display: inline-flex; gap: 18px; align-items: center; margin-top: 34px; padding: 12px 0; border-bottom: 1px solid rgba(240,233,220,.5); color: #f0e9dc; text-decoration: none; font-family: system-ui, sans-serif; font-size: 13px; letter-spacing: .08em; }
+.scent-blend { min-height: 125vh; display: flex; justify-content: space-between; align-items: center; gap: 40px; }
+.scent-panel { width: min(500px, 44vw); padding: 34px 38px; border-left: 1px solid rgba(228,211,181,.48); background: linear-gradient(90deg, rgba(41,34,26,.62), rgba(41,34,26,.08)); backdrop-filter: blur(8px); }
+.scent-panel h2, .scent-final h2 { margin: 0; font-size: clamp(34px, 4.4vw, 64px); line-height: 1.12; font-weight: 450; letter-spacing: -.035em; }
+.scent-panel > p { min-height: 4.2em; margin: 24px 0 0; color: rgba(244,237,224,.88); font-size: 16px; line-height: 1.95; }
+.scent-ratios { margin-top: 22px; color: #d9bd8d; font-family: system-ui, sans-serif; font-size: 11px; line-height: 1.8; letter-spacing: .08em; }
+.scent-panel .scent-hint { min-height: 0; margin-top: 10px; color: rgba(240,233,220,.54); font-family: system-ui, sans-serif; font-size: 11px; line-height: 1.6; }
+.scent-index { align-self: flex-end; display: grid; gap: 11px; margin-bottom: 8vh; color: rgba(240,233,220,.74); font-family: system-ui, sans-serif; font-size: 11px; letter-spacing: .08em; }
+.scent-index span { display: flex; align-items: center; gap: 10px; }
+.scent-index i { width: 22px; height: 3px; display: inline-block; }
+.scent-index .soil { background: #65523b; }
+.scent-index .paper { background: #c1a474; }
+.scent-index .cotton { background: #e4d8ba; }
+.scent-final { min-height: 115vh; display: flex; align-items: center; justify-content: space-between; gap: 64px; background: linear-gradient(90deg, rgba(38,31,24,.82), rgba(38,31,24,.2) 56%, transparent); }
+.scent-final-copy { width: min(550px, 48vw); }
+.scent-final-copy > p { max-width: 460px; margin: 26px 0 0; color: rgba(240,233,220,.76); font-size: 16px; line-height: 1.9; }
+.scent-seal { min-width: 190px; min-height: 52px; margin-top: 34px; padding: 14px 25px; border: 1px solid #d7bd91; border-radius: 0; color: #31291f; background: #dfc89f; cursor: pointer; font-family: system-ui, sans-serif; font-size: 14px; font-weight: 650; letter-spacing: .08em; transition: background-color .25s ease, color .25s ease; }
+.scent-seal:hover, .scent-seal:focus-visible { color: #f0e9dc; background: #8b6843; outline: 2px solid rgba(240,233,220,.5); outline-offset: 3px; }
+.scent-seal:disabled { cursor: default; color: #e9decc; background: #66513b; }
+.scent-sealed-note { min-height: 22px; margin-top: 14px; color: #d9bd8d; font-family: system-ui, sans-serif; font-size: 12px; }
+.scent-catalog { display: grid; grid-template-columns: auto minmax(150px, 230px); gap: 14px 28px; align-self: flex-end; margin-bottom: 6vh; padding: 24px 0; border-top: 1px solid rgba(240,233,220,.28); border-bottom: 1px solid rgba(240,233,220,.28); font-family: system-ui, sans-serif; font-size: 11px; }
+.scent-catalog span { color: rgba(240,233,220,.48); }
+.scent-catalog b { color: rgba(240,233,220,.84); font-weight: 500; }
+.is-sealed .scent-catalog b:nth-of-type(2) { color: #dfc89f; }
+@media (max-width: 720px) {
+  .scent-page, .scent-scroll { min-height: 360vh; }
+  .scent-nav { padding: 18px 20px; }
+  .scent-nav-note { display: none; }
+  .scent-hero, .scent-blend, .scent-final { padding: 84px 20px 42px; }
+  .scent-hero { width: 100%; min-height: 100svh; justify-content: flex-start; padding-top: 17svh; }
+  .scent-hero h1 { max-width: 350px; font-size: clamp(40px, 13.2vw, 58px); line-height: 1.09; }
+  .scent-hero p { max-width: 330px; margin-top: 22px; font-size: 15px; line-height: 1.75; }
+  .scent-enter { margin-top: 22px; min-height: 44px; }
+  .scent-canvas-wash { background: linear-gradient(180deg, rgba(34,28,21,.62) 0%, rgba(34,28,21,.15) 44%, rgba(34,28,21,.7) 100%); }
+  .scent-blend { min-height: 135svh; flex-direction: column; align-items: stretch; justify-content: flex-end; padding-bottom: 11vh; }
+  .scent-panel { width: 100%; padding: 26px 22px; background: rgba(41,34,26,.68); }
+  .scent-panel h2, .scent-final h2 { font-size: clamp(34px, 10.5vw, 48px); }
+  .scent-panel > p { font-size: 14px; }
+  .scent-index { align-self: flex-start; margin: 0 0 0 22px; }
+  .scent-final { min-height: 125svh; flex-direction: column; justify-content: flex-end; align-items: stretch; padding-bottom: 8vh; background: linear-gradient(0deg, rgba(38,31,24,.93), rgba(38,31,24,.14) 78%, transparent); }
+  .scent-final-copy { width: 100%; }
+  .scent-final-copy > p { font-size: 14px; }
+  .scent-seal { width: 100%; min-height: 54px; }
+  .scent-catalog { align-self: stretch; margin: 8px 0 0; grid-template-columns: 82px 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .scent-seal { transition: none; }
+  .scent-panel { backdrop-filter: none; }
+}

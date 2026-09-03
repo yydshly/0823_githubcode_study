@@ -1,0 +1,494 @@
+{
+  "receipt": {
+    "id": "dedicated-7c944e0c386f",
+    "provider": "codex",
+    "model": "gpt-5.6-sol",
+    "status": "compiled",
+    "previewUrl": "/generated-runs/dedicated-7c944e0c386f/",
+    "generatedAt": "2026-08-27T10:21:51.906Z",
+    "files": 4,
+    "assets": 2,
+    "sourceBytes": 21625,
+    "hasShaders": false,
+    "compileMs": 488,
+    "attempts": 1,
+    "directory": "generated/runs/dedicated-7c944e0c386f"
+  },
+  "request": {
+    "brief": "为一间纸本文献修复工坊设计沉浸式网页。开场是一张受潮、撕裂且墨迹模糊的旧纸页；滚动时沿同一张纸的纤维断面进入修复过程，依次看到纤维对齐、手工补纸和墨迹重新可读，最后纸页在安静的工作台光线中恢复完整，并收束为“提交一页待修复文献”。面向个人收藏者和小型档案机构；质感真实、克制、温暖，不要紫色科技风、随机粒子或玻璃仪表盘。",
+    "seed": 71,
+    "quality": "high",
+    "runId": "run-acyh1n",
+    "selectedId": "generated-n6384u-blueprint-tb02e-paper-restoration-journey-blueprint",
+    "creativeContract": {
+      "schemaVersion": 2,
+      "id": "contract-hhx2di",
+      "brief": "为一间纸本文献修复工坊设计沉浸式网页。开场是一张受潮、撕裂且墨迹模糊的旧纸页；滚动时沿同一张纸的纤维断面进入修复过程，依次看到纤维对齐、手工补纸和墨迹重新可读，最后纸页在安静的工作台光线中恢复完整，并收束为“提交一页待修复文献”。面向个人收藏者和小型档案机构；质感真实、克制、温暖，不要紫色科技风、随机粒子或玻璃仪表盘。",
+      "intent": {
+        "subject": "一间纸本文献修复工坊",
+        "audience": "个人收藏者和小型档案机构",
+        "desiredFeeling": "安静、真实、克制、温暖",
+        "narrativeChange": "沿同一张纸的纤维断面进入修复过程，依次看到纤维对齐、手工补纸和墨迹重新可读，最后纸页在安静的工作台光线中恢复完整，并收束为“提交一页待修复文献”",
+        "primaryAction": "提交一页待修复文献",
+        "negativeConstraints": [
+          "质感真实、克制、温暖，不要紫色科技风、随机粒子或玻璃仪表盘"
+        ]
+      },
+      "referenceEvidence": [
+        {
+          "referenceId": "kage-dream-room",
+          "title": "梦境记录 · 同一房间的记忆形成",
+          "sourceUrl": "../cases/dedicated-8574ee46ab16/",
+          "evidenceLevel": "runtime-verified",
+          "relevance": "命中 模糊、安静。 来自已归档并经过浏览器验证的本地最终案例。",
+          "borrow": [
+            "始终保持同一房间、机位与晨光，让模糊到清晰成为可信的记忆变化。",
+            "滚动控制环境清晰度、碎片聚合和空间深度，最终把注意力收束到记录行动。",
+            "连续环境素材承担真实空间，Three.js 只添加记忆回声、景深和过渡，不遮盖空间证据。"
+          ],
+          "avoid": [
+            "不要生成三个无关联梦境画面，也不要把安静主题变成霓虹科技界面。"
+          ]
+        },
+        {
+          "referenceId": "kage-cloud-observatory",
+          "title": "云上观测站 · 连续空间旅程",
+          "sourceUrl": "../cases/dedicated-896cfb7e6657/",
+          "evidenceLevel": "runtime-verified",
+          "relevance": "命中 进入。 支持 spatial-exploration 体验模式。 来自已归档并经过浏览器验证的本地最终案例。",
+          "borrow": [
+            "外景、入口与内部终点形成连续空间坐标，镜头推进负责解释位置关系。",
+            "滚动完成接近、穿越和展开，远景、中景与终局停留具有明确职责。",
+            "连续环境素材必须共享地点、机位逻辑、天气和色彩，不能只是三个独立概念图。"
+          ],
+          "avoid": [
+            "不要用持续前推代替空间叙事，也不要让每一屏更换无关联场所。"
+          ]
+        },
+        {
+          "referenceId": "motionsites-immersive-studio",
+          "title": "MotionSites · Immersive Studio",
+          "sourceUrl": "https://motionsites.ai/?prompt=immersive-studio",
+          "evidenceLevel": "catalog-metadata",
+          "relevance": "命中 沉浸。 支持 spatial-exploration 体验模式。 只作为外部目录方向信号，不当作实现已验证。",
+          "borrow": [
+            "目录把它归入沉浸式工作室方向，可用于提醒页面需要品牌世界而非通用科技背景。",
+            "运动应服务身份、作品证据和最终记忆点，不能只是连续悬浮。",
+            "真实作品、品牌字体和内容证据优先于额外的抽象三维装饰。"
+          ],
+          "avoid": [
+            "不要在缺少品牌证据时用随机 3D 物体冒充创意身份。"
+          ]
+        }
+      ],
+      "experience": {
+        "pattern": "spatial-exploration",
+        "thesis": "把一间纸本文献修复工坊组织成一次有坐标、有证据、有终点的空间探索。",
+        "focalSubject": "一间纸本文献修复工坊",
+        "continuityRule": "入口、内部与终点必须能从镜头方向和共享地标判断为空间连续关系。",
+        "typographyRole": "DOM 负责位置说明、证据和选择；不覆盖空间主路径。",
+        "beats": [
+          {
+            "id": "spatial-coordinate",
+            "position": 0,
+            "purpose": "establish",
+            "visibleState": "远景建立地点、尺度和入口方向。",
+            "userProgression": "滚动使镜头接近清晰地标。"
+          },
+          {
+            "id": "threshold",
+            "position": 0.3,
+            "purpose": "develop",
+            "visibleState": "穿过入口或边界，确认空间关系正在发生变化。",
+            "userProgression": "继续推进到核心证据区域。"
+          },
+          {
+            "id": "evidence-field",
+            "position": 0.68,
+            "purpose": "transform",
+            "visibleState": "档案、数据或主题证据在空间中形成可选择关系。",
+            "userProgression": "浏览或选择一条理解路径。"
+          },
+          {
+            "id": "shared-conclusion",
+            "position": 1,
+            "purpose": "resolve",
+            "visibleState": "空间在共同结论处稳定，并给出“提交一页待修复文献”。",
+            "userProgression": "从探索返回明确行动。"
+          }
+        ],
+        "pointerRole": "指针只用于近距离检查、热点提示或轻微观察角变化。",
+        "reducedMotion": "保持入口、证据和终点三张稳定空间构图，通过导航直接切换。",
+        "finalMemoryPoint": "提交一页待修复文献"
+      },
+      "assets": [
+        {
+          "id": "spatial-environment",
+          "role": "environment",
+          "modality": "image-sequence",
+          "required": true,
+          "minimumQuality": "L3-presentable",
+          "sourcePriority": [
+            "user-supplied",
+            "curated-library",
+            "primary-image-model",
+            "minimax-fallback"
+          ],
+          "visualResponsibility": "建立入口、内部证据区和终点之间可辨认的空间连续性。",
+          "continuityRule": "关键地标、光线、尺度和观察方向必须在所有状态中保持一致。",
+          "integration": "full-bleed-environment",
+          "visibleProof": "三段截图能指出共享地标，并能解释镜头从哪里移动到哪里。",
+          "fallback": "static-image"
+        },
+        {
+          "id": "evidence-layer",
+          "role": "information",
+          "modality": "transparent-image",
+          "required": false,
+          "minimumQuality": "L2-inspectable",
+          "sourcePriority": [
+            "user-supplied",
+            "curated-library",
+            "procedural"
+          ],
+          "visualResponsibility": "提供档案、数据或路线的真实内容证据，而非装饰符号。",
+          "continuityRule": "证据层必须锚定在明确空间位置，并与 DOM 说明保持一一对应。",
+          "integration": "alpha-subject",
+          "visibleProof": "middle 截图中至少一个证据节点可读且不遮挡空间主线。",
+          "fallback": "dom-only"
+        }
+      ],
+      "direction": {
+        "visualRole": "environment",
+        "mechanisms": [
+          {
+            "id": "environmental-aperture",
+            "title": "环境窗口",
+            "evidenceLevel": "E4",
+            "job": "让核心环境直接成为视口，而不是被装进一个装饰性图片框。",
+            "reason": "匹配环境职责。 支持 spatial-exploration 体验。 命中“进入”。",
+            "sourceCaseIds": [
+              "airlines-environmental-aperture"
+            ]
+          },
+          {
+            "id": "state-storyboard",
+            "title": "状态故事板",
+            "evidenceLevel": "E4",
+            "job": "用连续的视觉状态分配页面节奏，每个状态只承担一个叙事动词。",
+            "reason": "匹配环境职责。 支持 spatial-exploration 体验。 命中“滚动、最后、进入”。",
+            "sourceCaseIds": [
+              "plety-media-storyboard",
+              "igloo-cinematic-deconstruction"
+            ]
+          },
+          {
+            "id": "sticky-archive-stack",
+            "title": "滚动堆叠档案",
+            "evidenceLevel": "E4",
+            "job": "把并列对象组织成可追踪的层级，让每次滚动只引入一个新证据。",
+            "reason": "支持 spatial-exploration 体验。 命中“档案”。",
+            "sourceCaseIds": [
+              "fabrica-sticky-stack"
+            ]
+          }
+        ],
+        "interaction": {
+          "primaryInput": "scroll",
+          "semanticAction": "滚动建立入口、证据区域和终点之间的空间关系。",
+          "pointerRole": "secondary",
+          "touchAlternative": "触摸滚动保持同一状态顺序；取消只依赖悬停的内容。",
+          "keyboardAlternative": "提供跳转到关键状态的语义锚点，并保持自然文档阅读顺序。"
+        },
+        "renderer": {
+          "baseLayer": "semantic-dom",
+          "route": "dom-media-hybrid",
+          "enhancement": "media",
+          "reason": "连续媒体已能承担环境或状态变化，不额外引入完整 Three.js 场景。",
+          "threeJustification": "没有必须由真实三维深度、相机或模型状态解决的职责。",
+          "fallback": "使用稳定关键帧和交叉淡化保留相同叙事顺序。"
+        },
+        "rejectedMechanisms": [
+          {
+            "id": "cinematic-3d-deconstruction",
+            "reason": "缺少真实可检查模型，不能伪造三维拆解。"
+          },
+          {
+            "id": "pointer-reveal",
+            "reason": "目标没有要求通过指针发现信息，鼠标仅保留轻量反馈。"
+          },
+          {
+            "id": "sticky-archive-stack",
+            "reason": "当前核心不是一组并列档案，不使用长堆叠拖慢叙事。"
+          }
+        ],
+        "decisionSummary": "以环境承担主要视觉，用环境窗口、状态故事板、滚动堆叠档案组织变化；连续媒体已能承担环境或状态变化，不额外引入完整 Three.js 场景。"
+      },
+      "technical": {
+        "presentationStrategy": "layered-depth",
+        "capabilitySelection": {
+          "selected": false,
+          "capabilityId": null,
+          "score": 31,
+          "reasons": [
+            "体验模式 spatial-exploration 不是该能力的优先路线。",
+            "目标命中 滚动 等连续叙事信号。",
+            "素材计划提供了可映射到滚动状态的连续媒体。"
+          ],
+          "blockers": [],
+          "contract": null
+        },
+        "semanticInteraction": {
+          "selected": false,
+          "capabilityId": null,
+          "score": 54,
+          "matchedSignals": [
+            "档案"
+          ],
+          "reasons": [
+            "目标命中“档案”等信息关系信号。",
+            "体验模式 spatial-exploration 且存在信息素材职责，交互可以改变理解。",
+            "现有导演决策只需要滚动推进，不额外增加主要交互。"
+          ],
+          "blockers": [],
+          "evaluatedCapability": {
+            "id": "semantic-responsive-interaction",
+            "evidenceLevel": "E4",
+            "state": "validated",
+            "problem": "装饰性鼠标动效不能帮助用户理解内容，也无法稳定迁移到触摸、键盘和减少动态效果环境。",
+            "meaning": "滚动选择证据层，时间选择改变海岸形态和数字，指针只在局部揭示相对于基准年已经消失的土地。",
+            "inputs": [
+              "scroll",
+              "pointer",
+              "touch",
+              "keyboard"
+            ],
+            "outputs": [
+              "scene-shape",
+              "evidence-value",
+              "narrative-layer",
+              "selection-state"
+            ],
+            "baseInterface": "语义 DOM 始终提供年代按钮、损失数字、解释文字和当前状态，不依赖 WebGL 完成比较。",
+            "enhancedInterface": "WebGL 把年代选择映射为同一海岸场的连续形变，并让局部证据透镜显示相对损失范围。",
+            "reducedMotionRule": "减少动态效果时立即切换到目标年代和阶段，停止连续漂移，但保留所有数值和比较结果。",
+            "rejectionRules": [
+              "移除交互后信息理解完全不变时拒绝晋级。",
+              "触摸、键盘或无 WebGL 回退无法完成比较时拒绝晋级。"
+            ],
+            "evidence": [
+              {
+                "id": "coast-1984",
+                "year": 1984,
+                "label": "基准海岸",
+                "lossSquareKilometers": 0,
+                "retreatMeters": 0,
+                "relativeWaterCentimeters": 0,
+                "sceneMorph": 0,
+                "summary": "沙洲仍然连续，潮沟尚未切断内侧湿地。"
+              },
+              {
+                "id": "coast-2004",
+                "year": 2004,
+                "label": "潮沟扩张",
+                "lossSquareKilometers": 3.2,
+                "retreatMeters": 186,
+                "relativeWaterCentimeters": 8,
+                "sceneMorph": 0.5,
+                "summary": "外侧沙洲变薄，新的潮沟开始把湿地分成孤立片区。"
+              },
+              {
+                "id": "coast-2026",
+                "year": 2026,
+                "label": "临界断面",
+                "lossSquareKilometers": 8.7,
+                "retreatMeters": 421,
+                "relativeWaterCentimeters": 17,
+                "sceneMorph": 1,
+                "summary": "连续岸线已经断裂，曾经被遮蔽的社区直接面对风暴潮。"
+              }
+            ]
+          }
+        },
+        "identityEvidence": {
+          "selected": true,
+          "score": 36,
+          "reason": "命中 过程、档案；需要让身份、主体和证明内容共同建立可信度。",
+          "rejectedBy": [],
+          "matchedSignals": [
+            "过程",
+            "档案"
+          ],
+          "capabilityId": "identity-through-evidence"
+        },
+        "domResponsibilities": [
+          "承载可阅读内容、导航和最终行动。",
+          "在 WebGL 不可用时保留完整语义顺序。"
+        ],
+        "webglResponsibilities": [
+          "承载空间记忆、镜头关系和连续状态变化。",
+          "让素材融入环境并提供克制的交互反馈。"
+        ],
+        "targetFrameTimeMs": 16.7,
+        "maxInitialAssetBytes": 8000000,
+        "targetDevices": [
+          "desktop",
+          "mobile"
+        ]
+      },
+      "acceptance": [
+        {
+          "id": "intent-visible",
+          "priority": "blocker",
+          "assertion": "首屏和终点能够对应原始主体、情绪变化和最终行动。",
+          "evidence": "screenshot-ending"
+        },
+        {
+          "id": "asset-visible",
+          "priority": "blocker",
+          "assertion": "所有 required 素材都已成功请求，并在声明状态承担可辨认的视觉职责。",
+          "evidence": "asset-request"
+        },
+        {
+          "id": "opening-composed",
+          "priority": "high",
+          "assertion": "首屏存在明确主体和空间坐标，没有空黑屏、文字裁切或主体被遮挡。",
+          "evidence": "screenshot-opening"
+        },
+        {
+          "id": "middle-causal",
+          "priority": "high",
+          "assertion": "中段变化能够解释能力、转化或探索关系，而不只是装饰动画。",
+          "evidence": "screenshot-middle"
+        },
+        {
+          "id": "borderless-integration",
+          "priority": "high",
+          "assertion": "主体和环境没有棋盘格、矩形图片边界或不自然的发光方框。",
+          "evidence": "screenshot-middle"
+        },
+        {
+          "id": "mobile-readable",
+          "priority": "blocker",
+          "assertion": "390px 移动端无横向溢出，主体、正文和行动均可见。",
+          "evidence": "screenshot-mobile"
+        },
+        {
+          "id": "semantic-fallback",
+          "priority": "normal",
+          "assertion": "关闭 WebGL 或减少运动后仍保留完整内容顺序和行动。",
+          "evidence": "dom"
+        },
+        {
+          "id": "runtime-clean",
+          "priority": "blocker",
+          "assertion": "页面无阻断脚本错误，关键素材请求成功，滚动和指针输入可用。",
+          "evidence": "runtime"
+        }
+      ],
+      "executionLimits": {
+        "authoringPasses": 1,
+        "assetBatches": 1,
+        "refinementPasses": 2,
+        "stopAfterMinutes": 15,
+        "archivePolicy": "best-result-only"
+      }
+    },
+    "reference": {
+      "title": "一页纸的修复旅程",
+      "summary": "沿一张受损文献的裂缝下潜到纸纤维，见证对齐、补纸与复墨，再回到安静工作台上的完整纸页并提交送修。",
+      "scenePlugin": "composed-world",
+      "productionStatus": "blocked",
+      "theme": {
+        "deep": "#2b251e",
+        "surface": "#ded3bd",
+        "text": "#2a241d",
+        "muted": "#766b5d",
+        "accent": "#a46a32",
+        "accentSoft": "#d8bb8b"
+      },
+      "assets": [
+        {
+          "id": "r12-paper-damaged-v1",
+          "uri": "/creative-assets/r12-paper-restoration/paper-damaged-v1.png",
+          "bundlePath": "assets/r12-paper-damaged-v1.png",
+          "kind": "image",
+          "source": "chatgpt-generated",
+          "role": "opening environment",
+          "description": "同一页文献的受潮、撕裂和墨迹模糊状态，作为全屏开场环境。",
+          "payloadBytes": 2175116,
+          "required": true,
+          "experience": {
+            "anchor": 0.05,
+            "function": "establish",
+            "visualState": "同一页旧文献在暖色修复工作台上呈现潮渍、裂缝与卷曲纤维。",
+            "continuity": "机位、文献版式、裂缝和光线与最终修复态保持一致。",
+            "integration": "full-bleed-environment"
+          }
+        },
+        {
+          "id": "r12-paper-restored-v1",
+          "uri": "/creative-assets/r12-paper-restoration/paper-restored-v1.png",
+          "bundlePath": "assets/r12-paper-restored-v1.png",
+          "kind": "image",
+          "source": "chatgpt-generated",
+          "role": "resolved environment",
+          "description": "同一页文献完成保守修复后的状态，作为滚动终点环境。",
+          "payloadBytes": 2600120,
+          "required": true,
+          "experience": {
+            "anchor": 0.94,
+            "function": "resolve",
+            "visualState": "同一页文献裂缝闭合、纸面平复且墨迹恢复可读，仍保留真实年代痕迹。",
+            "continuity": "保持与开场完全相同的工作台、工具、纸页版式和光线方向。",
+            "integration": "full-bleed-environment"
+          }
+        }
+      ]
+    }
+  },
+  "usedAssets": [
+    {
+      "id": "r12-paper-damaged-v1",
+      "uri": "/creative-assets/r12-paper-restoration/paper-damaged-v1.png",
+      "bundlePath": "assets/r12-paper-damaged-v1.png",
+      "kind": "image",
+      "source": "chatgpt-generated",
+      "role": "opening environment",
+      "description": "同一页文献的受潮、撕裂和墨迹模糊状态，作为全屏开场环境。",
+      "payloadBytes": 2175116,
+      "required": true,
+      "experience": {
+        "anchor": 0.05,
+        "function": "establish",
+        "visualState": "同一页旧文献在暖色修复工作台上呈现潮渍、裂缝与卷曲纤维。",
+        "continuity": "机位、文献版式、裂缝和光线与最终修复态保持一致。",
+        "integration": "full-bleed-environment"
+      }
+    },
+    {
+      "id": "r12-paper-restored-v1",
+      "uri": "/creative-assets/r12-paper-restoration/paper-restored-v1.png",
+      "bundlePath": "assets/r12-paper-restored-v1.png",
+      "kind": "image",
+      "source": "chatgpt-generated",
+      "role": "resolved environment",
+      "description": "同一页文献完成保守修复后的状态，作为滚动终点环境。",
+      "payloadBytes": 2600120,
+      "required": true,
+      "experience": {
+        "anchor": 0.94,
+        "function": "resolve",
+        "visualState": "同一页文献裂缝闭合、纸面平复且墨迹恢复可读，仍保留真实年代痕迹。",
+        "continuity": "保持与开场完全相同的工作台、工具、纸页版式和光线方向。",
+        "integration": "full-bleed-environment"
+      }
+    }
+  ],
+  "targetedRefinement": {
+    "at": "2026-08-27T10:42:24.548Z",
+    "assetRoute": "chatgpt-generated-continuity-pair",
+    "reason": "MiniMax outputs lacked same-document continuity; removed framed media and unrelated geometry.",
+    "verification": ".artifacts/r12-paper-final/report.json"
+  }
+}

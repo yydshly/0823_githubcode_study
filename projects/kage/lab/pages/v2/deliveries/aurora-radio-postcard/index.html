@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="zh-CN" data-aurora-ready="false" data-aurora-state="searching" data-fallback="false" data-audio="off" data-sent="false">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#061b2b" />
+    <meta name="description" content="极光无线电明信片：调节一段艺术化频率，让光与声音共同形成一张极夜明信片。" />
+    <title>极光无线电明信片 · Aurora Post</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#frequency-control">跳到调频控制</a>
+
+    <main class="aurora-stage" aria-labelledby="aurora-title">
+      <div class="scene" aria-hidden="true">
+        <img id="aurora-image" src="./assets/aurora-radio-landscape-v1.png" alt="" width="1672" height="941" fetchpriority="high" decoding="async" />
+        <canvas id="aurora-canvas"></canvas>
+        <div class="atmosphere"></div>
+        <div class="horizon-glow"></div>
+        <div class="receiver-signal" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="signal-beam" aria-hidden="true"></div>
+      </div>
+
+      <header class="masthead">
+        <a class="brand" href="../../" aria-label="返回 V2 研究首页">
+          <span class="brand-orbit" aria-hidden="true"></span>
+          <span>AURORA POST</span>
+          <small>极夜电波局</small>
+        </a>
+        <p>ART RADIO / 76°N</p>
+        <button id="audio-toggle" class="audio-toggle" type="button" aria-pressed="false">
+          <span class="audio-dot" aria-hidden="true"></span>
+          <span id="audio-label">开启监听</span>
+        </button>
+      </header>
+
+      <section class="hero-copy">
+        <p class="eyebrow">A POSTCARD TUNED BY LIGHT</p>
+        <h1 id="aurora-title"><span>把极光</span><em>调进一张</em><span>明信片。</span></h1>
+        <p>滚轮、拖动或方向键都在调同一段艺术化频率。光带会改变形状，接收器会回应，耳边的声纹也会随之移动。</p>
+      </section>
+
+      <section class="signal-copy" aria-live="polite">
+        <p id="signal-index">01 / SEARCHING</p>
+        <h2 id="signal-title">雪地里只有很轻的底噪。</h2>
+        <p id="signal-detail">慢慢调频，让天空与接收器找到同一个节拍。</p>
+      </section>
+
+      <div class="frequency-readout" aria-hidden="true">
+        <span id="frequency-value">34.8</span>
+        <small>kHz · ARTISTIC MAPPING</small>
+      </div>
+
+      <section class="frequency-console" aria-label="极光调频">
+        <div class="frequency-meta">
+          <span>SEARCH</span>
+          <span>CAPTURE</span>
+          <span>RESONATE</span>
+          <span>POST</span>
+        </div>
+        <div
+          id="frequency-control"
+          class="frequency-control"
+          role="slider"
+          tabindex="0"
+          aria-label="艺术化极光频率"
+          aria-valuemin="34.8"
+          aria-valuemax="72.4"
+          aria-valuenow="34.8"
+          aria-valuetext="搜寻信号"
+        >
+          <span class="frequency-track"><i></i></span>
+          <span class="frequency-thumb" aria-hidden="true"><b></b></span>
+        </div>
+        <p class="gesture"><span>WHEEL / DRAG / ARROWS</span><i></i><span>同一频率</span></p>
+      </section>
+
+      <section class="postcard-action" aria-labelledby="postcard-title">
+        <p>04 / POSTCARD READY</p>
+        <h2 id="postcard-title">今晚的光，已经被听见。</h2>
+        <p>这是艺术化声音与光场体验，不代表真实极光频率或科学观测。</p>
+        <button id="send-postcard" type="button" disabled>
+          <span>寄出这张极光明信片</span>
+          <span aria-hidden="true">↗</span>
+        </button>
+        <p id="send-status" class="send-status" role="status" aria-live="polite"></p>
+      </section>
+
+      <p id="live-status" class="visually-hidden" role="status" aria-live="polite">极光无线电正在准备。</p>
+    </main>
+
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>

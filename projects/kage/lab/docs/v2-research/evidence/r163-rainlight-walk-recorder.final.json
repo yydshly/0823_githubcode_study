@@ -1,0 +1,157 @@
+{
+  "schemaVersion": 1,
+  "creativeProtocolVersion": 5,
+  "deliveryId": "rainlight-walk-recorder",
+  "route": "./deliveries/rainlight-walk-recorder/",
+  "identity": {
+    "runId": "direct-r163-rainlight-walk-recorder",
+    "bundleHash": "51fcaa3efa5b78525d2f6bc58258d1366508c9480b0be7f664ceadcb786647e4",
+    "bundleFiles": [
+      "index.html",
+      "style.css",
+      "main.ts",
+      "asset-manifest.json",
+      "assets/rainlight-street-v1.png"
+    ]
+  },
+  "goalReplay": {
+    "subject": "雨光夜行记录器",
+    "audience": "希望把一次夜间散步、旅行或独自回家的地点与心情保存下来的人",
+    "feeling": "雨后城市安静、真实、可进入，并在行走后留下温暖结果",
+    "primaryAction": "写下地点和一句话，再通过滚轮、拖动或方向键走完光迹",
+    "hardConstraints": [
+      "页面必须形成进入、使用、结果与继续四阶段产品旅程",
+      "生成素材必须真实加载并承担空间场景职责",
+      "路线不得伪装成真实地图、定位或导航数据",
+      "执行限定为一个方向、一次素材批次和有限修复"
+    ]
+  },
+  "mediumDecision": {
+    "preferred": "hybrid",
+    "rationale": "正式生成式街景负责情绪、空间和视觉记忆点；Canvas 光迹、DOM 表单、本机保存与用户触发的 Web Audio 负责真实因果互动。"
+  },
+  "direction": {
+    "selected": "让同一幅雨后街景贯穿写下、夜行、抵达与保存，用户输入最终成为一封有地点和节奏的夜行信。",
+    "referenceIds": [
+      "windborne-letter-valley",
+      "eclipse-post-office",
+      "ten-second-callsign-decode"
+    ],
+    "borrowPrinciples": [
+      "连续环境承载完整旅程而非分离工作台卡片",
+      "正式主视觉与运行时光影共享同一进度",
+      "声音只由用户触发并作为产品氛围反馈"
+    ],
+    "assetBatchCount": 1
+  },
+  "productDeliveryPlan": {
+    "schemaVersion": 1,
+    "productName": "雨光夜行记录器",
+    "targetUser": "希望保存雨夜地点、短句和行走感受的城市散步者与旅行者",
+    "userProblem": "普通文字记录难以保存一次夜行的空间、节奏和情绪，地图记录又不适合私人记忆。",
+    "valuePromise": "把地点、短句和行走节奏变成一段可推进的光迹，并收束成可以保存在本机的夜行信笺。",
+    "primaryAction": "写下地点和一句话并重新走完这段路",
+    "completionResult": "场景光迹抵达暖光，生成包含用户短句、地点、节奏和完成时间的夜行信笺。",
+    "continuation": "用户可以保存到当前设备，也可以返回编辑地点、短句与节奏后重新生成。",
+    "journey": [
+      {
+        "id": "understand-rainlight",
+        "phase": "entry",
+        "userGoal": "理解产品用途并开始一次夜行记录",
+        "visibleOutcome": "全屏雨后街景说明产品身份、价值和第一行动，并提供地点、短句与节奏输入"
+      },
+      {
+        "id": "walk-the-memory",
+        "phase": "use",
+        "userGoal": "通过自己的输入重新走完这段记忆",
+        "visibleOutcome": "滚轮、拖动或方向键推进同一条光迹，场景色彩、雨层、阶段与进度同步变化"
+      },
+      {
+        "id": "receive-night-letter",
+        "phase": "result",
+        "userGoal": "看到这段路被整理成完整结果",
+        "visibleOutcome": "完成态信笺展示用户短句、地点、行走节奏、完成度和时间"
+      },
+      {
+        "id": "keep-or-rewrite",
+        "phase": "continuation",
+        "userGoal": "保存结果或重新编辑",
+        "visibleOutcome": "本机保存写入真实 localStorage，重新编辑返回原始输入并保留可修改内容"
+      }
+    ],
+    "visualAssetPolicy": "hybrid",
+    "visualAssetRationale": "2.7MB 正式生成街景持续承担空间、主题和记忆点；Canvas 只绘制与真实输入绑定的光迹，CSS 负责雨层和调色，关键视觉并非低质量程序化占位。"
+  },
+  "productDeliveryEvidence": {
+    "schemaVersion": 1,
+    "runId": "direct-r163-rainlight-walk-recorder",
+    "bundleHash": "51fcaa3efa5b78525d2f6bc58258d1366508c9480b0be7f664ceadcb786647e4",
+    "checks": {
+      "productIdentityClear": true,
+      "audienceAndValueClear": true,
+      "entryStateComplete": true,
+      "coreUseStateComplete": true,
+      "resultStateComplete": true,
+      "continuationStateComplete": true,
+      "primaryActionProducesMeaningfulResult": true,
+      "visualAssetsAreFormalOrRuntimeNativeIsJustified": true,
+      "interactionServesProduct": true,
+      "mobileJourneyComplete": true,
+      "truthfulClaims": true
+    },
+    "summary": "最终产品完成地点与短句输入、三种真实推进方式、持续雨夜场景、完成信笺、本机保存和再次编辑；Chrome 证据覆盖桌面、390px、键盘、减弱动效与素材回退。",
+    "evidenceNotes": [
+      "正式生成街景 naturalWidth 大于 1000，贯穿进入、使用、结果和保存状态",
+      "桌面真实滚轮将路线从 4% 推进到中段并完成，光迹与场景反馈同步改变",
+      "390px 真实拖动完成夜行，结果、保存与重新编辑均在视口内可用",
+      "键盘 End 与保存 Enter 在减弱动效状态下完成全部核心路径",
+      "保存后 localStorage 包含用户地点、短句、节奏、时间和真实性边界",
+      "正式素材被阻断时，语义背景、Canvas 光迹、信笺和行动仍可完整使用",
+      "页面明确说明路线是情绪化表达，不是地图、定位或真实导航服务",
+      "运行中没有阻断错误、控制台错误或横向溢出"
+    ]
+  },
+  "executionBudget": {
+    "directionsBuilt": 1,
+    "assetBatches": 1,
+    "fullBuilds": 1,
+    "deterministicFixes": 2,
+    "visualRefinements": 0
+  },
+  "browserEvidence": {
+    "browser": "local Chrome via Playwright",
+    "desktopEntry": "docs/v2-deliveries/evidence/r163-rainlight-walk-recorder/desktop-entry.png",
+    "desktopWalking": "docs/v2-deliveries/evidence/r163-rainlight-walk-recorder/desktop-walking.png",
+    "desktopSaved": "docs/v2-deliveries/evidence/r163-rainlight-walk-recorder/desktop-saved.png",
+    "mobileEntry": "docs/v2-deliveries/evidence/r163-rainlight-walk-recorder/mobile-entry.png",
+    "mobileResult": "docs/v2-deliveries/evidence/r163-rainlight-walk-recorder/mobile-result.png",
+    "assetFallback": "docs/v2-deliveries/evidence/r163-rainlight-walk-recorder/desktop-asset-fallback.png",
+    "testsPassed": 4,
+    "testsTotal": 4,
+    "runtimeErrors": 0,
+    "consoleErrors": 0,
+    "formalAssetLoaded": true,
+    "wheelProgressLinked": true,
+    "pointerProgressLinked": true,
+    "keyboardProgressLinked": true,
+    "localSaveLinked": true,
+    "mobile390JourneyPassed": true,
+    "reducedMotionPassed": true,
+    "assetFallbackPassed": true,
+    "horizontalOverflow": 0
+  },
+  "qualityAssessment": {
+    "verdict": "pass",
+    "goalClarity": 94,
+    "creativeDistinctiveness": 92,
+    "craftCohesion": 92,
+    "assetIntegration": 95,
+    "interactionValue": 93,
+    "mobileReadiness": 91,
+    "summary": "正式雨夜场景、可推进光迹和纸质信笺形成统一叙事，核心互动直接强化“把一次夜行变成可保存记忆”的产品特点。它证明 V5 能从新的外部主题复现完整产品闭环，而不是只包装已有 KAGE 能力。"
+  },
+  "truthBoundary": "地点和光迹只用于私人记忆的视觉表达；页面不获取定位、不生成地图路径，也不声称提供真实导航。保存仅写入当前浏览器 localStorage。",
+  "verdict": "pass",
+  "archiveDisposition": "second-formal-v5-product-reproducibility-proof",
+  "stopReason": "一个方向、一次素材批次、一次完整构建、两次确定性修复、零产品视觉返工后，最终版本通过 4/4 Chrome Playwright 产品验收并绑定 bundle；按有界协议停止。"
+}

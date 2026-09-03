@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "assetBatch": "r145-aurora-radio-postcard-v1",
+  "assets": [
+    {
+      "id": "aurora-radio-landscape-v1",
+      "path": "./assets/aurora-radio-landscape-v1.png",
+      "source": "built-in-image-generation",
+      "role": "lead-visual",
+      "responsibility": "建立冰原、极光与接收器的主题身份和空间尺度",
+      "truthBoundary": "艺术化生成场景，不代表真实地点、设备或极光科学观测"
+    }
+  ]
+}
+

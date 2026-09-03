@@ -1,0 +1,326 @@
+{
+  "schemaVersion": 1,
+  "creativeProtocolVersion": 3,
+  "id": "direct-r140-folded-light-studio",
+  "goalPlayback": {
+    "originalBrief": "为一家使用再生纸纤维制作折叠灯具的工作室设计发布网页。开场是一盏完全折叠的纸灯；访客滚动、拖动或用方向键时，同一盏灯依次展开，纸纤维开始透光，桌面光影随结构变化。完全展开后显示结构与材料说明，最终行动是“预约看样”。画面像工业设计杂志与灯光舞台结合，明亮、安静、有视觉冲击力，不做参数工作台。所有结构与发光变化均为概念演示。",
+    "subject": "同一盏再生纸纤维折叠灯从合拢到成光的连续形态",
+    "audience": "希望理解纸灯结构并预约查看真实样品的设计访客",
+    "desiredOutcome": "用滚轮、拖拽或键盘让同一盏灯依次展开，理解纤维透光和结构变化，并在完全展开后预约看样。",
+    "primaryAction": "预约看样",
+    "hardConstraints": [
+      "生成 atlas 与四个机械裁剪 derivative 必须来自同一素材批次并进入最终 bundleHash",
+      "滚轮、拖拽、键盘和阶段导航必须共享同一展开进度，不得形成参数工作台",
+      "所有结构与发光变化均为概念演示；素材失败时保持 folded 并明确不伪装展开"
+    ],
+    "preferences": [
+      "工业设计杂志、灯光舞台、纸白与暖光形成明亮安静的视觉语言",
+      "同一铰点、灯座和纸纤维在四态保持连续，代码光场只承担增强",
+      "390px 与 reduced-motion 保留四个关键状态和预约行动"
+    ]
+  },
+  "selectedDirection": {
+    "id": "folded-paper-lamp-causal-unfold",
+    "title": "折光成形 · 纸灯连续展开舞台",
+    "experienceForm": "image-sequence-spatial-journey",
+    "rationale": "透明生成 atlas 的四个机械裁剪持续承担同一纸灯；sticky 编辑舞台让共享进度同时驱动帧权重、透光、材料叙事和预约，不复制工作台或卡片式结构。"
+  },
+  "referencePrinciples": [
+    {
+      "referenceId": "positive-prism-seed-media-responsibility",
+      "title": "棱镜种子剧场 · 主素材职责分离",
+      "principle": "高质量生成素材承担对象、材质和第一记忆，代码只增强可验证的输入因果。",
+      "relevance": "本页只借素材职责原则；纸灯需要自己的四态 atlas、机械裁剪和展开叙事，不复制温室构图或 WebGL 折射。",
+      "sourceUri": "../pages/v2/deliveries/prism-seed-theatre/"
+    },
+    {
+      "referenceId": "positive-shared-state-causal-inputs",
+      "title": "共享状态驱动 · 多输入同一结果",
+      "principle": "滚轮、指针和键盘必须写入同一产品状态，并由状态统一更新视觉与语义结果。",
+      "relevance": "纸灯展开正需要三类输入共享 progress；只借因果验证方法，不继承任何既有视觉样式。",
+      "sourceUri": "../../docs/V2-REFERENCE-GUIDED-CREATIVE-CONTRACT.md"
+    }
+  ],
+  "assetPlan": {
+    "batchId": "r140-folded-paper-lamp-single-atlas",
+    "strategy": "generated",
+    "rationale": "唯一生成 atlas 承担同一纸灯四态；四张运行图只是该 atlas 的像素完全一致机械裁剪，不计为额外生成批次。",
+    "assets": [
+      {
+        "id": "state-subject",
+        "role": "同一再生纸灯的 folded / third / two-thirds / open 四个连续透明栅格状态，由一张生成 atlas 和四个机械裁剪共同交付。",
+        "source": "generated",
+        "required": true
+      }
+    ]
+  },
+  "interactionRationale": {
+    "mode": "mixed",
+    "audioApplicable": false,
+    "rationale": "滚轮、灯体指针拖拽与键盘共享同一 progress，统一改变四帧权重、透光、材料说明和预约解锁；阶段按钮提供 reduced-motion 的离散入口。"
+  },
+  "mediumDecision": {
+    "schemaVersion": 1,
+    "preferred": "generated-image",
+    "confidence": 0.84,
+    "rationale": "主题依赖自然材质、虚构环境或氛围主视觉，而不承担真实产品、地点或数据证明；一张高质量生成图比通用代码图形更能建立视觉身份。",
+    "signals": [
+      {
+        "source": "user-hard",
+        "evidence": "开场是一盏完全折叠的纸灯"
+      },
+      {
+        "source": "user-hard",
+        "evidence": "完全展开后显示结构与材料说明，最终行动是“预约看样”"
+      },
+      {
+        "source": "user-hard",
+        "evidence": "画面像工业设计杂志与灯光舞台结合，明亮、安静、有视觉冲击力，不做参数工作台"
+      },
+      {
+        "source": "contract-evidence",
+        "evidence": "required “state-subject” 要求至少 3 个同一主体连续状态；生成媒介必须承担该状态职责，不能改绑环境图。"
+      }
+    ],
+    "assetResponsibilities": [
+      {
+        "id": "state-subject",
+        "source": "generated-image",
+        "required": true,
+        "responsibility": "required “state-subject” 素材职责必须由同一主体至少 3 个连续状态承担。持续表现同一“为一家使用再生纸纤维制作”从初始状态到结构变化完成的可辨认过程。全部状态必须在同一素材批次生成与整合，不得退化为单张环境图。",
+        "visibleProof": "同一主体至少 3 个连续状态（初始、变化中与完成）均真实加载、进入最终 bundleHash，并保持身份、尺度、观察关系与光线连续；关键截图能够直接指出同一主体的初始、变化中和完成状态，不能只依赖裁切、箭头或说明文字。"
+      }
+    ],
+    "truthBoundary": "生成图只能承担概念、虚构环境或编辑视觉，不得冒充真实地点分布、事实数据、真实商品细节、品牌界面或专业结论。",
+    "alternative": {
+      "route": "code-native",
+      "trigger": "生成图超时、质量不达标、整合失败或素材请求不可用时",
+      "boundary": "只在首选媒介明确失败后保留完整语义内容、主要行动和诚实的降级说明；不得把回退当作第二个并行创意方向。"
+    }
+  },
+  "visualAmbition": {
+    "schemaVersion": 1,
+    "intentLevel": "expressive",
+    "intentRationale": "既有截图证明主题专属主素材、编辑构图和因果展开达到优秀质量；证据未记录精确首屏毫秒数，因此不额外宣称未测量的旗舰五秒门。",
+    "heroMoment": {
+      "title": "把一束光折进纸里",
+      "description": "首屏以完全折叠的透明纸灯主体、超大编辑标题、纤维纸白和金属铰点建立工业设计杂志与灯光舞台的第一印象。",
+      "themeConnection": "隐藏标题后，同一折叠纸灯、纤维纹理、金属铰点与暖光仍能明确辨认再生纸灯主题。",
+      "appearsWithinSeconds": 5,
+      "observableRuntimeChange": {
+        "trigger": "滚轮、灯体拖拽、方向键或阶段按钮推进共享进度",
+        "from": "完全合拢、低透光、预约锁定的纸灯",
+        "to": "完全展开、暖光和投影扩散、材料说明收束且预约解锁的同一盏灯"
+      }
+    },
+    "rendering": {
+      "primary": "raster-image",
+      "supporting": [
+        "image-sequence",
+        "canvas-2d",
+        "dom-css"
+      ],
+      "rationale": "单批透明 atlas 及其四个机械裁剪承担纸灯身份和材质；Canvas 2D 只画克制光场，DOM/CSS 只承担编辑排版、状态混合、披露与行动。"
+    },
+    "spatialDepth": {
+      "mode": "layered-2d",
+      "purpose": "纸灯尺度、透明边界、投影、光晕、文字遮挡关系和轻微水平位移形成灯光舞台深度，不伪装真实 3D。",
+      "cues": [
+        "scale",
+        "occlusion",
+        "focus",
+        "lighting"
+      ]
+    },
+    "motionArc": {
+      "beats": [
+        {
+          "phase": "opening",
+          "driver": "time",
+          "visualState": "完全折叠纸灯与大标题直接建立产品、材质和安静舞台。",
+          "thematicPurpose": "先确认同一主体和初始结构，再邀请访客展开。"
+        },
+        {
+          "phase": "exploration",
+          "driver": "hybrid",
+          "visualState": "shared progress 交叉混合相邻机械裁剪，同时扩散暖光、投影并更新材料叙事。",
+          "thematicPurpose": "让结构展开与纤维透光成为同一可操作因果。"
+        },
+        {
+          "phase": "resolution",
+          "driver": "direct-input",
+          "visualState": "open 帧占主导，结构说明收束，预约按钮解锁并可确认。",
+          "thematicPurpose": "把概念演示自然收束到查看真实样品的行动。"
+        }
+      ],
+      "runtimeAdvantage": "静态海报不能同时表达同一灯具的四态连续性、多输入共享进度、透光增强和只在完成后解锁预约的因果链。"
+    },
+    "interactionToScene": [
+      {
+        "input": "原生滚轮",
+        "sceneResponse": "更新同一 targetProgress，并同步改变 frame weights、状态文案、灯光与预约门槛。",
+        "productMeaning": "访客沿页面旅程把折叠结构逐步展开。"
+      },
+      {
+        "input": "灯体指针或触摸拖拽",
+        "sceneResponse": "水平或垂直位移写入同一 progress，并反映为相邻纸灯帧交叉混合。",
+        "productMeaning": "访客像展开实物一样直接推动灯体结构。"
+      },
+      {
+        "input": "方向键、Home / End 或阶段按钮",
+        "sceneResponse": "通过同一 scrollToProgress 路径抵达连续或离散展开状态。",
+        "productMeaning": "键盘和 reduced-motion 访客获得等价完成路径。"
+      },
+      {
+        "input": "预约看样",
+        "sceneResponse": "仅在 open 状态启用，点击后写入 confirmed 并更新行动文案。",
+        "productMeaning": "概念展开完成后转向查看真实样品。"
+      }
+    ],
+    "assetCredibility": {
+      "level": "editorial-credible",
+      "strategy": "透明 atlas 是唯一生成源；四个运行时状态是带精确 frame rect、bytes、hash、alpha coverage 和逐像素同一性证明的机械裁剪。",
+      "disclosure": "页面持续声明结构、透光与光影为概念演示，不代表量产参数；fallback 不用通用图形冒充纸灯状态。"
+    },
+    "fallbackPerformance": {
+      "targetFps": 60,
+      "maxDevicePixelRatio": 1.75,
+      "initialTransferBudgetMb": 4.5,
+      "mobileFallback": "key-visual-with-content",
+      "reducedMotionFallback": "key-states",
+      "rendererFailureFallback": "dom-content"
+    }
+  },
+  "attemptBudget": {
+    "limits": {
+      "directionSelections": 1,
+      "assetBatches": 1,
+      "builds": 1,
+      "deterministicRepairs": 2,
+      "visualRefinements": 1
+    },
+    "used": {
+      "directionSelections": 1,
+      "assetBatches": 1,
+      "builds": 1,
+      "deterministicRepairs": 2,
+      "visualRefinements": 1
+    }
+  },
+  "stageReports": [],
+  "finalCandidate": {
+    "runId": "direct-r140-folded-light-studio",
+    "bundleHash": "752235b5c5303e616318a484f632bcd7f037d0841bc28469f15b433527f37f24"
+  },
+  "adaptiveEvidence": {
+    "schemaVersion": 1,
+    "runId": "direct-r140-folded-light-studio",
+    "bundleHash": "752235b5c5303e616318a484f632bcd7f037d0841bc28469f15b433527f37f24",
+    "profile": {
+      "schemaVersion": 1,
+      "interactionMode": "mixed",
+      "audioApplicable": false,
+      "requiredCheckpoints": [
+        "opening",
+        "core",
+        "mobile",
+        "scroll",
+        "interaction"
+      ]
+    },
+    "checkpoints": [
+      {
+        "kind": "opening",
+        "runId": "direct-r140-folded-light-studio",
+        "bundleHash": "752235b5c5303e616318a484f632bcd7f037d0841bc28469f15b433527f37f24",
+        "passed": true,
+        "summary": "1440×900 开场真实显示 atlas 左上裁剪的 folded 纸灯，主体宽度约占视口 59%，不是 body 背景且没有横向溢出。"
+      },
+      {
+        "kind": "core",
+        "runId": "direct-r140-folded-light-studio",
+        "bundleHash": "752235b5c5303e616318a484f632bcd7f037d0841bc28469f15b433527f37f24",
+        "passed": true,
+        "summary": "同一生成 atlas 的四个 627×627 机械裁剪逐像素一致；共享进度让相邻帧混合并最终由 open 帧占主导。"
+      },
+      {
+        "kind": "mobile",
+        "runId": "direct-r140-folded-light-studio",
+        "bundleHash": "752235b5c5303e616318a484f632bcd7f037d0841bc28469f15b433527f37f24",
+        "passed": true,
+        "summary": "390×844 reduced-motion 通过四个离散阶段抵达 open，预约行动可达且没有页面级横向溢出；已诚实记录标题遮挡小瑕疵。"
+      },
+      {
+        "kind": "scroll",
+        "runId": "direct-r140-folded-light-studio",
+        "bundleHash": "752235b5c5303e616318a484f632bcd7f037d0841bc28469f15b433527f37f24",
+        "passed": true,
+        "summary": "真实 wheel 先推进到 0.231，随后 drag 继续到 0.575；两次输入写入同一 progress 和 frame weights。"
+      },
+      {
+        "kind": "interaction",
+        "runId": "direct-r140-folded-light-studio",
+        "bundleHash": "752235b5c5303e616318a484f632bcd7f037d0841bc28469f15b433527f37f24",
+        "passed": true,
+        "summary": "既有浏览器序列在 wheel 和 drag 后以 End 键抵达 open 并确认预约；任一运行时 state derivative 失败时保持 folded、显示披露且仍可预约实物。"
+      }
+    ],
+    "hardGates": {
+      "runtimeClean": true,
+      "criticalAssetsLoaded": true,
+      "primaryActionReachable": true,
+      "mobileComplete": true,
+      "truthfulClaims": true,
+      "interactionVerified": true,
+      "audioVerified": null
+    },
+    "visualQuality": {
+      "schemaVersion": 1,
+      "verdict": "pass",
+      "score": 91,
+      "dimensions": {
+        "goalClarity": 94,
+        "creativeDistinctiveness": 93,
+        "craftCohesion": 92,
+        "assetIntegration": 96,
+        "interactionValue": 91,
+        "mobileReadiness": 78
+      },
+      "summary": "桌面三态截图以同一纸灯、清晰纤维、金属铰点、暖光与大尺度编辑排版形成强而一致的产品记忆；wheel、drag、keyboard 共享展开因果。390px 主要行动和四态轨道可达且无横向溢出，但完成态标题下半部被行动区遮住，因此移动端维度明确下调。",
+      "findings": [
+        {
+          "code": "mobile-open-copy-crop",
+          "severity": "minor",
+          "checkpoint": "mobile",
+          "message": "390×844 完成态截图中，材料标题的下半部被预约行动区遮住；主灯、阶段轨道和预约按钮仍清楚可达，且没有页面级横向溢出。"
+        }
+      ]
+    },
+    "macroStructureReview": {
+      "mode": "content-fit-gate",
+      "candidate": {
+        "runId": "direct-r140-folded-light-studio",
+        "layout": "spatial-journey",
+        "persistentControlPanel": false,
+        "visibleParameterControls": false,
+        "realtimeMetricCluster": false,
+        "primaryAction": "purchase-or-book"
+      },
+      "inertia": {
+        "mode": "advisory-only",
+        "detected": false,
+        "matchedRunIds": [],
+        "repeatedAxes": [],
+        "mustChange": false,
+        "recommendation": "未发现足以影响当前方向的宏观骨架惯性；继续由内容适配和最终效果决定页面形态。"
+      },
+      "persistentWorkbench": false,
+      "contentJustified": true,
+      "verdict": "pass",
+      "findingCode": null,
+      "summary": "当前候选不是持久参数工作台，无需为了近期案例差异而改变内容适配的宏观结构。"
+    }
+  },
+  "verdict": "pass",
+  "stopReason": null
+}

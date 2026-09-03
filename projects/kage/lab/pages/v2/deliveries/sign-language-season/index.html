@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f3e7d2" />
+    <meta
+      name="description"
+      content="城市手语剧场演出季的交互式演示页面；所列场次、票价与无障碍信息均为演示数据。"
+    />
+    <title>手势之间 · 城市手语剧场演出季</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#performance-panel">跳到当前演出信息</a>
+
+    <header class="site-header">
+      <a class="brand" href="../../" aria-label="返回 Kage V2">
+        <span class="brand-mark" aria-hidden="true">
+          <i></i><i></i><i></i>
+        </span>
+        <span>城市手语剧场</span>
+      </a>
+      <p class="season-label">演出季 / 2026</p>
+      <p class="demo-label"><span aria-hidden="true"></span> 演示场次 · 非真实售票</p>
+    </header>
+
+    <main class="editorial-canvas">
+      <section class="intro" aria-labelledby="page-title">
+        <p class="kicker">动作被看见，语言才抵达</p>
+        <h1 id="page-title">手势之间</h1>
+        <p class="intro-copy">
+          三部以身体、停顿与字幕共同完成的作品。选择演出，动作记谱与观演信息会同步改变。
+        </p>
+
+        <div class="performance-tabs" role="tablist" aria-label="选择演示场次" aria-orientation="vertical">
+          <button
+            id="performance-tab-0"
+            class="performance-tab"
+            type="button"
+            role="tab"
+            aria-selected="true"
+            aria-controls="performance-panel"
+            tabindex="0"
+            data-performance-index="0"
+          >
+            <span class="tab-index">01</span>
+            <span class="tab-title">沿着风的边缘</span>
+            <span class="tab-date">09.12</span>
+          </button>
+          <button
+            id="performance-tab-1"
+            class="performance-tab"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="performance-panel"
+            tabindex="-1"
+            data-performance-index="1"
+          >
+            <span class="tab-index">02</span>
+            <span class="tab-title">停顿练习</span>
+            <span class="tab-date">10.03</span>
+          </button>
+          <button
+            id="performance-tab-2"
+            class="performance-tab"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="performance-panel"
+            tabindex="-1"
+            data-performance-index="2"
+          >
+            <span class="tab-index">03</span>
+            <span class="tab-title">向光说话</span>
+            <span class="tab-date">11.16</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="notation-field" aria-labelledby="notation-title">
+        <div class="notation-heading">
+          <p id="notation-title">动作记谱 / Motion score</p>
+          <p data-score-count>01 / 03</p>
+        </div>
+
+        <svg
+          class="gesture-score"
+          viewBox="0 0 720 690"
+          role="img"
+          aria-labelledby="gesture-title gesture-description"
+        >
+          <title id="gesture-title">当前演出的抽象动作记谱</title>
+          <desc id="gesture-description" data-gesture-description>
+            两条手势轨迹从舞台两侧靠近，在中央停顿后向上展开。
+          </desc>
+          <g class="score-grid" aria-hidden="true">
+            <path d="M60 84H660M60 210H660M60 336H660M60 462H660M60 588H660" />
+            <path d="M120 42V648M270 42V648M420 42V648M570 42V648" />
+          </g>
+          <g class="time-marks" aria-hidden="true">
+            <text x="60" y="69">00:00</text>
+            <text x="60" y="195">04:20</text>
+            <text x="60" y="321">11:10</text>
+            <text x="60" y="447">18:40</text>
+            <text x="60" y="573">26:00</text>
+          </g>
+          <path class="gesture-trace gesture-trace--shadow" data-gesture-shadow d="M100 540 C150 470 205 490 246 410 C292 319 352 384 394 292 C438 194 520 252 620 116" />
+          <path class="gesture-trace" data-gesture-path d="M100 540 C150 470 205 490 246 410 C292 319 352 384 394 292 C438 194 520 252 620 116" />
+          <path class="counter-trace" data-counter-path d="M132 168 C210 205 222 292 316 300 C402 307 446 424 598 506" />
+          <g class="gesture-nodes" aria-hidden="true">
+            <circle data-node="0" cx="100" cy="540" r="10" />
+            <circle data-node="1" cx="246" cy="410" r="18" />
+            <circle data-node="2" cx="394" cy="292" r="12" />
+            <circle data-node="3" cx="620" cy="116" r="24" />
+          </g>
+          <g class="hold-mark" aria-hidden="true" data-hold-mark>
+            <path d="M329 345h68" />
+            <path d="M343 330v30M383 330v30" />
+            <text x="363" y="324" text-anchor="middle">HOLD</text>
+          </g>
+          <text class="score-word" x="112" y="628" data-score-word>靠近 / 呼吸 / 展开</text>
+        </svg>
+
+        <div class="caption-fragment" aria-live="polite" aria-atomic="true">
+          <span>字幕片段</span>
+          <blockquote data-caption>“风没有声音，但它让每一只手有了方向。”</blockquote>
+        </div>
+      </section>
+
+      <section
+        id="performance-panel"
+        class="performance-panel"
+        role="tabpanel"
+        aria-labelledby="performance-tab-0"
+        tabindex="0"
+      >
+        <div class="performance-meta">
+          <p class="meta-label">当前演出 · 演示数据</p>
+          <p class="performance-date"><span data-month>SEP</span><strong data-day>12</strong><span data-time>19:30</span></p>
+        </div>
+
+        <div class="performance-summary">
+          <p class="performance-number" data-performance-number>作品 01</p>
+          <h2 data-performance-title>沿着风的边缘</h2>
+          <p data-performance-summary>双人动作剧。两种手语节奏从舞台边缘相遇，停顿成为第三位表演者。</p>
+        </div>
+
+        <div class="stage-diagram">
+          <div class="section-heading">
+            <p>舞台动作图</p>
+            <p data-stage-label>相遇 / 上升</p>
+          </div>
+          <svg viewBox="0 0 360 170" role="img" aria-labelledby="stage-title stage-desc">
+            <title id="stage-title">当前演出的抽象舞台动作图</title>
+            <desc id="stage-desc" data-stage-description>两个抽象动作点从左右两侧进入，在中央交汇后向上移动。</desc>
+            <rect x="1" y="1" width="358" height="168" rx="3" />
+            <path class="stage-centerline" d="M180 1V169M1 85H359" />
+            <path class="stage-path" data-stage-path d="M34 132 C90 116 120 82 178 84 C236 86 270 50 326 32" />
+            <circle class="stage-origin" data-stage-origin cx="34" cy="132" r="8" />
+            <circle class="stage-target" data-stage-target cx="326" cy="32" r="12" />
+            <text x="16" y="24">STAGE / NOT TO SCALE</text>
+          </svg>
+        </div>
+
+        <div class="accessibility-block">
+          <div class="section-heading">
+            <p>无障碍说明</p>
+            <p>Accessibility</p>
+          </div>
+          <ul data-accessibility-list>
+            <li>全场中国手语演出</li>
+            <li>开放式中文字幕</li>
+            <li>演后提供触觉舞台导览</li>
+          </ul>
+        </div>
+
+        <div class="ticket-block">
+          <button class="ticket-button" type="button" data-ticket-button>
+            <span data-ticket-action>选择演示座位</span>
+            <span data-ticket-price>¥180 · 演示</span>
+          </button>
+          <p class="ticket-note" role="status" aria-live="polite" data-ticket-status>
+            此页面不连接真实票务系统。
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>手语、字幕与身体动作具有同等叙事权。</p>
+      <p>所列剧目、日期、票价与服务均为产品能力演示，并非真实演出信息。</p>
+    </footer>
+
+    <noscript>页面内容仍可阅读；切换演出与同步信息需要启用 JavaScript。</noscript>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>

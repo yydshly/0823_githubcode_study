@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="zh-CN" data-ice-state="opening">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#dcecf2" />
+    <meta
+      name="description"
+      content="冰芯来信：沿着气泡、灰带与花粉的可见层理，理解冰如何保存时间线索，并写下一封只留在当前页面的未来信。"
+    />
+    <title>冰芯来信 · Letters Held in Ice</title>
+    <link rel="preload" as="image" href="./assets/glacier-crevasse-v1.png" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body data-experience="ice-core-letters">
+    <a class="skip-link" href="#opening">跳到冰芯旅程</a>
+
+    <div id="app" class="ice-experience" data-ice-state="opening">
+      <div class="scene-layer" aria-hidden="true">
+        <img
+          class="environment-plate"
+          src="./assets/glacier-crevasse-v1.png"
+          alt=""
+          width="1680"
+          height="941"
+          decoding="async"
+        />
+        <div class="environment-wash"></div>
+
+        <div id="fallback-scene" class="fallback-scene" data-fallback>
+          <svg class="fallback-core" viewBox="0 0 720 1200" focusable="false">
+            <defs>
+              <linearGradient id="ice-body" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0" stop-color="#9ccbd9" stop-opacity=".32" />
+                <stop offset=".18" stop-color="#effbfe" stop-opacity=".88" />
+                <stop offset=".48" stop-color="#bfe4ed" stop-opacity=".58" />
+                <stop offset=".78" stop-color="#f8feff" stop-opacity=".92" />
+                <stop offset="1" stop-color="#76b1c4" stop-opacity=".42" />
+              </linearGradient>
+              <linearGradient id="ice-glint" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#ffffff" stop-opacity=".94" />
+                <stop offset=".46" stop-color="#d4f1f7" stop-opacity=".12" />
+                <stop offset="1" stop-color="#8bc4d4" stop-opacity=".48" />
+              </linearGradient>
+              <linearGradient id="letter-paper" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#fffdf2" />
+                <stop offset="1" stop-color="#dbe8e5" />
+              </linearGradient>
+              <filter id="core-shadow" x="-90%" y="-20%" width="280%" height="150%">
+                <feGaussianBlur stdDeviation="28" />
+              </filter>
+              <filter id="soft-grain" x="-20%" y="-20%" width="140%" height="140%">
+                <feTurbulence baseFrequency=".68" numOctaves="2" seed="17" type="fractalNoise" result="noise" />
+                <feComposite in="noise" in2="SourceGraphic" operator="in" result="texture" />
+                <feBlend in="SourceGraphic" in2="texture" mode="soft-light" />
+              </filter>
+              <clipPath id="core-clip">
+                <rect x="242" y="57" width="236" height="1086" rx="116" />
+              </clipPath>
+            </defs>
+
+            <ellipse cx="360" cy="1128" rx="174" ry="34" fill="#173d4c" opacity=".28" filter="url(#core-shadow)" />
+            <rect x="230" y="43" width="260" height="1114" rx="128" fill="#d8f4fa" opacity=".24" filter="url(#core-shadow)" />
+            <g class="core-body" filter="url(#soft-grain)">
+              <rect x="242" y="57" width="236" height="1086" rx="116" fill="url(#ice-body)" stroke="#e9fbff" stroke-opacity=".78" stroke-width="4" />
+              <g clip-path="url(#core-clip)">
+                <rect x="242" y="57" width="236" height="1086" fill="url(#ice-glint)" opacity=".5" />
+                <g class="fallback-strata" fill="none" stroke-linecap="round">
+                  <path d="M229 157 C289 146 390 169 492 151" stroke="#f6feff" stroke-width="7" opacity=".76" />
+                  <path d="M229 219 C302 207 404 234 492 211" stroke="#8fc5d3" stroke-width="4" opacity=".52" />
+                  <path d="M231 286 C310 272 408 300 491 279" stroke="#f7ffff" stroke-width="9" opacity=".65" />
+                  <path d="M230 350 C291 363 410 337 491 352" stroke="#7aafbe" stroke-width="5" opacity=".4" />
+                  <path d="M229 424 C310 405 416 439 492 415" stroke="#eefcff" stroke-width="8" opacity=".72" />
+                  <path d="M229 489 C304 476 398 499 491 485" stroke="#75adbd" stroke-width="5" opacity=".42" />
+                  <path d="M230 616 C305 597 415 632 493 609" stroke="#e8f8fa" stroke-width="7" opacity=".68" />
+                  <path d="M230 690 C306 674 399 702 492 684" stroke="#79afbd" stroke-width="4" opacity=".44" />
+                  <path d="M230 772 C321 754 408 789 493 766" stroke="#effbfc" stroke-width="8" opacity=".7" />
+                  <path d="M229 852 C305 838 403 866 491 844" stroke="#6fa8b8" stroke-width="5" opacity=".42" />
+                  <path d="M230 935 C309 916 413 949 492 928" stroke="#f2fcfc" stroke-width="8" opacity=".7" />
+                  <path d="M230 1017 C302 1003 414 1032 492 1008" stroke="#70a8b6" stroke-width="4" opacity=".42" />
+                </g>
+
+                <g class="fallback-bubbles" fill="#fbffff" stroke="#7daebe" stroke-width="2">
+                  <circle cx="307" cy="238" r="10" /><circle cx="386" cy="263" r="6" />
+                  <circle cx="426" cy="321" r="12" /><circle cx="332" cy="332" r="5" />
+                  <circle cx="282" cy="376" r="7" /><circle cx="398" cy="395" r="4" />
+                  <circle cx="448" cy="441" r="8" /><circle cx="345" cy="457" r="11" />
+                </g>
+
+                <g class="fallback-ash">
+                  <path d="M229 542 C293 524 401 563 494 533 L494 579 C412 597 309 558 229 581Z" fill="#6e6258" opacity=".77" />
+                  <path d="M229 546 C310 535 410 570 494 542" fill="none" stroke="#b2a89f" stroke-width="4" opacity=".72" />
+                  <g fill="#463f3a" opacity=".65">
+                    <circle cx="274" cy="558" r="3" /><circle cx="315" cy="548" r="5" /><circle cx="359" cy="564" r="3" />
+                    <circle cx="401" cy="574" r="4" /><circle cx="448" cy="552" r="3" />
+                  </g>
+                </g>
+
+                <g class="fallback-pollen" fill="#d7ad57" stroke="#fff2b8" stroke-width="1.5">
+                  <circle cx="288" cy="732" r="5" /><circle cx="332" cy="748" r="8" /><circle cx="391" cy="716" r="4" />
+                  <circle cx="438" cy="753" r="7" /><circle cx="308" cy="806" r="4" /><circle cx="372" cy="821" r="6" />
+                  <circle cx="425" cy="799" r="4" /><path d="M276 843 l7 7 -7 7 -7 -7Z" />
+                  <path d="M405 873 l8 8 -8 8 -8 -8Z" /><circle cx="452" cy="894" r="5" />
+                </g>
+
+                <g class="fallback-letter" transform="translate(0 12)">
+                  <rect x="284" y="954" width="152" height="112" rx="5" fill="url(#letter-paper)" stroke="#a8c0bd" stroke-width="3" />
+                  <path d="M284 963 L360 1019 L436 963 M284 1062 L339 1013 M436 1062 L381 1013" fill="none" stroke="#95ada9" stroke-width="3" />
+                  <circle cx="360" cy="1018" r="15" fill="#caa663" opacity=".9" />
+                </g>
+              </g>
+              <path d="M283 119 C298 88 326 74 350 73 C316 298 314 851 339 1109 C289 1093 268 1055 267 1004 L267 184 C267 156 273 134 283 119Z" fill="#ffffff" opacity=".38" />
+              <path d="M435 147 C454 323 455 900 424 1080" fill="none" stroke="#ffffff" stroke-width="7" stroke-linecap="round" opacity=".34" />
+            </g>
+          </svg>
+
+          <div class="fallback-key">
+            <span><i class="key-bubble"></i>气泡层</span>
+            <span><i class="key-ash"></i>灰带层</span>
+            <span><i class="key-pollen"></i>花粉层</span>
+            <span><i class="key-letter"></i>当代纸签</span>
+          </div>
+        </div>
+
+        <canvas id="ice-canvas" class="ice-canvas" aria-hidden="true" data-signal-visual-anchor></canvas>
+      </div>
+
+      <header class="site-header">
+        <a class="brand" href="../../" aria-label="返回 Kage V2 展陈目录">
+          <span class="brand-glyph" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span><strong>冰芯来信</strong><small>LETTERS HELD IN ICE</small></span>
+        </a>
+        <p class="edition">FIELD NOTE / R125</p>
+        <p class="truth-note">层理概念展陈 · 非具体采样记录</p>
+      </header>
+
+      <nav class="depth-nav" aria-label="冰芯章节导航">
+        <a href="#opening" data-scene-link data-state-link aria-label="前往开场：看见冰芯">
+          <i></i><span>开场</span>
+        </a>
+        <a href="#air-bubbles" data-scene-link data-state-link aria-label="前往第一章：气泡层">
+          <i></i><span>气泡</span>
+        </a>
+        <a href="#ash-band" data-scene-link data-state-link aria-label="前往第二章：火山灰带">
+          <i></i><span>灰带</span>
+        </a>
+        <a href="#pollen-summer" data-scene-link data-state-link aria-label="前往第三章：花粉层">
+          <i></i><span>花粉</span>
+        </a>
+        <a href="#letter-ready" data-scene-link data-state-link aria-label="前往结尾：给未来的信">
+          <i></i><span>来信</span>
+        </a>
+      </nav>
+
+      <main class="story-flow">
+        <section
+          id="opening"
+          class="story-state story-opening"
+          data-scene="opening"
+          data-ice-state="opening"
+          aria-labelledby="opening-title"
+        >
+          <div class="opening-copy">
+            <p class="kicker">一封没有墨水的长信，先由雪写成。</p>
+            <h1 id="opening-title">冰芯<br /><em>来信</em></h1>
+            <p class="opening-lede">
+              年复一年的积雪被压成冰，气泡、微粒与层带也随之留在其中。向下滚动，沿一根示意冰芯阅读这些可见线索。
+            </p>
+            <p class="truth-strip">本页演示冰芯的阅读方式；深度、层距与颗粒分布均为概念化表现。</p>
+          </div>
+          <a class="descent-cue" href="#air-bubbles" aria-label="开始向下阅读气泡层">
+            <span>沿层理向下</span><i aria-hidden="true"></i>
+          </a>
+        </section>
+
+        <section
+          id="air-bubbles"
+          class="story-state chapter chapter--bubbles"
+          data-scene="air-bubbles"
+          data-ice-state="air-bubbles"
+          aria-labelledby="bubbles-title"
+        >
+          <div class="chapter-copy">
+            <p class="chapter-index"><span>01</span> AIR HELD IN ICE</p>
+            <h2 id="bubbles-title">被压住的<br />一口旧空气</h2>
+            <p class="chapter-lede">雪粒逐渐压实，缝隙可能封闭成细小气泡。它们让过去的大气留下可被研究的入口。</p>
+            <aside class="evidence-note" aria-label="气泡层证据说明">
+              <strong>可见线索 / 气泡</strong>
+              <p>研究者会分析冰中气体来了解过去的大气状况；单凭气泡外观不能读出精确年份或浓度。</p>
+            </aside>
+            <p class="relative-depth">相对阅读位置：较浅层 → 更深层</p>
+          </div>
+        </section>
+
+        <section
+          id="ash-band"
+          class="story-state chapter chapter--ash"
+          data-scene="ash-band"
+          data-ice-state="ash-band"
+          aria-labelledby="ash-title"
+        >
+          <div class="chapter-copy">
+            <p class="chapter-index"><span>02</span> A DARK LINE ARRIVES</p>
+            <h2 id="ash-title">一条不肯<br />融掉的灰</h2>
+            <p class="chapter-lede">火山喷发产生的微粒可能随风落在雪面，后来被压进冰里，形成与周围浅色冰不同的窄带。</p>
+            <aside class="evidence-note" aria-label="火山灰带证据说明">
+              <strong>可见线索 / 灰带</strong>
+              <p>不同地点的灰层需要结合化学组成与其他资料比对后才能对应；这里的灰带只说明这种证据形态。</p>
+            </aside>
+            <p class="relative-depth">相对阅读位置：气泡层之后</p>
+          </div>
+        </section>
+
+        <section
+          id="pollen-summer"
+          class="story-state chapter chapter--pollen"
+          data-scene="pollen-summer"
+          data-ice-state="pollen-summer"
+          aria-labelledby="pollen-title"
+        >
+          <div class="chapter-copy">
+            <p class="chapter-index"><span>03</span> A WARM-SEASON TRACE</p>
+            <h2 id="pollen-title">暖季留下<br />很轻的金</h2>
+            <p class="chapter-lede">花粉与其他微粒会随空气和积雪进入冰层。微小的形态差异，可能成为环境变化的旁证。</p>
+            <aside class="evidence-note" aria-label="花粉层证据说明">
+              <strong>可见线索 / 花粉与微粒</strong>
+              <p>这类颗粒需要显微观察并与其他证据共同解释；本页的暖金色颗粒不是某一地点的真实样本。</p>
+            </aside>
+            <p class="relative-depth">相对阅读位置：更深的暖季线索</p>
+          </div>
+        </section>
+
+        <section
+          id="letter-ready"
+          class="story-state chapter chapter--letter"
+          data-scene="letter-ready"
+          data-ice-state="letter-ready"
+          aria-labelledby="letter-ready-title"
+        >
+          <div class="letter-copy">
+            <p class="chapter-index"><span>04</span> A NOTE FROM THE PRESENT</p>
+            <h2 id="letter-ready-title">轮到今天，<br />留下一层。</h2>
+            <p>
+              天然层理记录环境，我们写下的纸签只代表一次当代回应。它不会冒充样本，也不会离开这台设备。
+            </p>
+            <aside class="evidence-note evidence-note--letter" aria-label="当代纸签说明">
+              <strong>当代注脚 / 非科研样本</strong>
+              <p>你的文字仅在当前页面中暂存；刷新或离开后可能消失，不会自动上传。</p>
+            </aside>
+            <button id="open-letter" class="open-letter" type="button" data-open-letter data-signal-action>
+              <span>写一封给未来的信</span><i aria-hidden="true">↗</i>
+            </button>
+          </div>
+        </section>
+      </main>
+
+      <p id="live-status" class="sr-only" data-live-status role="status" aria-live="polite">
+        冰芯旅程从表层开始。
+      </p>
+    </div>
+
+    <dialog
+      id="letter-dialog"
+      class="letter-dialog"
+      data-letter-dialog
+      aria-labelledby="letter-dialog-title"
+      aria-describedby="letter-dialog-description"
+    >
+      <div class="letter-sheet">
+        <button id="close-letter" class="close-letter" type="button" data-close-letter aria-label="关闭给未来的信">
+          <span aria-hidden="true">×</span><small>关闭</small>
+        </button>
+        <p class="dialog-kicker">A LETTER HELD FOR A MOMENT</p>
+        <h2 id="letter-dialog-title">给未来的你</h2>
+        <p id="letter-dialog-description">
+          写下一件你希望仍被看见、被照顾或被记住的事。这是一张本地编辑纸，不会被送往服务器。
+        </p>
+        <form id="letter-form" class="letter-form" data-letter-form method="dialog">
+          <label for="letter-draft">今天想留下的话</label>
+          <textarea
+            id="letter-draft"
+            data-letter-draft
+            name="letter"
+            rows="7"
+            maxlength="280"
+            placeholder="例如：愿未来的人仍能听见河流结冰与解冻的声音。"
+          ></textarea>
+          <div class="letter-actions">
+            <p id="letter-status" data-letter-status role="status" aria-live="polite">只保留在当前页面 · 最多 280 字</p>
+            <button id="seal-letter" class="seal-letter" type="submit" value="sealed">
+              <span>把这张纸夹进时间里</span><i aria-hidden="true"></i>
+            </button>
+          </div>
+        </form>
+        <p class="paper-footnote">概念参与体验 · 不是数据采集或长期存储服务</p>
+      </div>
+    </dialog>
+
+    <noscript>
+      <strong>基础冰芯视图正在显示。</strong>
+      气泡、灰带、花粉与纸签仍可沿页面阅读；启用 JavaScript 后可获得滚动驱动的空间变化与信纸对话框。
+    </noscript>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>

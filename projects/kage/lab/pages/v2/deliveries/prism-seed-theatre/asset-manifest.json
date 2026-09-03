@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "batchId": "r135-prism-seed-single-batch",
+  "generationCalls": 1,
+  "assets": [
+    {
+      "id": "prism-seed-glasshouse-v1",
+      "path": "assets/prism-seed-glasshouse-v1.png",
+      "source": "built-in-imagegen",
+      "width": 1672,
+      "height": 941,
+      "bytes": 3102559,
+      "sha256": "0b0707c8b8976ec25cfbd3b6ceed201ddee45dddbdd2991aacf62db1f9692dcf",
+      "responsibility": "承担温室环境、半透明种荚、真实材质、日光与第一视觉记忆点。",
+      "runtimeBoundary": "WebGL 只增强折射、光谱和输入因果，不替代该主视觉。"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "deliveryId": "west-bund-meeting-points",
+  "assets": [
+    {
+      "id": "xuhui-west-bund-osm-map-v1",
+      "path": "assets/xuhui-west-bund-osm-map-v1.jpg",
+      "kind": "image",
+      "mimeType": "image/jpeg",
+      "width": 960,
+      "height": 576,
+      "bytes": 124206,
+      "sha256": "0a4e65006b159dfc8900e9ef2631a83c0c8bbb456efd774dd582fc12694b3d75",
+      "source": {
+        "type": "licensed",
+        "provider": "OpenStreetMap contributors",
+        "url": "https://www.openstreetmap.org/copyright",
+        "localSource": "public/creative-assets/xuhui-west-bund-osm-map-v1.jpg",
+        "provenanceRecord": "cases/runs/dedicated-c0514ddead80/build-report.json",
+        "originalBundlePath": "assets/xuhui-west-bund-osm-map-v1.jpg"
+      },
+      "license": {
+        "name": "Open Data Commons Open Database License (ODbL) 1.0",
+        "url": "https://opendatacommons.org/licenses/odbl/1-0/"
+      },
+      "attribution": "© OpenStreetMap contributors",
+      "description": "基于 OpenStreetMap 数据的小范围徐汇滨江静态地图；本地加载，运行时不发起外部瓦片请求。",
+      "responsibility": "承担真实道路、黄浦江岸线与四个文化地标的共同地理基底，是页面第一视觉记忆点。",
+      "runtimeBoundary": "地图加载失败时改为真实地标名单；不得以程序化或生成图伪造地理证据。"
+    }
+  ]
+}

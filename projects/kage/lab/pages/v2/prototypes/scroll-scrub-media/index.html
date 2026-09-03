@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#141313" />
+    <meta name="description" content="Kage V2 滚动叙事原型：使用连续视觉素材把一个想法组织成完整网页体验。" />
+    <title>昨夜仍在房间里 · Kage V2 Scroll Study</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="scroll-space" aria-label="梦境记录产品滚动叙事原型">
+      <section class="experience" aria-live="polite">
+        <div class="media-field" aria-hidden="true">
+          <figure class="media-layer" data-scene="awakening">
+            <img
+              src="/creative-assets/dream-room-awakening-v1.png"
+              alt=""
+              decoding="async"
+              fetchpriority="high"
+            />
+          </figure>
+          <figure class="media-layer" data-scene="fragments">
+            <img src="/creative-assets/dream-memory-fragments-v1.png" alt="" decoding="async" />
+          </figure>
+          <figure class="media-layer" data-scene="record">
+            <img src="/creative-assets/dream-night-record-v1.png" alt="" decoding="async" />
+          </figure>
+          <div class="atmosphere"></div>
+          <div class="grain"></div>
+        </div>
+
+        <header class="masthead">
+          <a class="brand" href="../../index.html" aria-label="返回 Kage V2">
+            <span class="brand-mark"></span>
+            <span>REMEMBER / 01</span>
+          </a>
+          <span class="chapter" data-chapter>醒来以后</span>
+          <span class="time">04:17</span>
+        </header>
+
+        <div class="story" aria-label="叙事内容">
+          <article class="story-beat" data-beat="0">
+            <p class="eyebrow">梦没有立刻消失</p>
+            <h1>昨夜仍在<br /><em>房间里。</em></h1>
+            <p class="copy">醒来的几秒里，光线、声音和没有说完的话还停在原处。</p>
+          </article>
+
+          <article class="story-beat story-beat--middle" data-beat="1">
+            <p class="eyebrow">记忆 / 正在成形</p>
+            <h2>沿着碎片，<br />走回梦里。</h2>
+            <p class="copy">不必先解释。触碰一个颜色、一段声音，空间会替你找回余下部分。</p>
+          </article>
+
+          <article class="story-beat story-beat--final" data-beat="2">
+            <p class="eyebrow">留给清醒之后</p>
+            <h2>在它变淡以前，<br /><em>轻轻记下。</em></h2>
+            <a class="cta" href="#record">记录今晚的梦 <span aria-hidden="true">↗</span></a>
+          </article>
+        </div>
+
+        <aside class="progress-rail" aria-label="阅读进度">
+          <span class="progress-index" data-index>01</span>
+          <span class="progress-line"><i data-progress-line></i></span>
+          <span>03</span>
+        </aside>
+
+        <footer class="footer-note">
+          <span>SCROLL TO REMEMBER</span>
+          <span class="footer-rule"></span>
+          <span data-state-label>房间尚未清晰</span>
+        </footer>
+      </section>
+      <div id="record" class="scroll-end" aria-hidden="true"></div>
+    </main>
+
+    <noscript>此体验需要启用 JavaScript 才能响应滚动。</noscript>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>

@@ -18,7 +18,7 @@ export default defineConfig({
     { name: 'desktop', use: { ...devices['Desktop Chrome'], viewport: { width: 1440, height: 900 } } }
   ],
   webServer: {
-    command: 'npm run dev -- --host 127.0.0.1 --port 8143',
+    command: 'npm run dev:8143',
     url: 'http://127.0.0.1:8143',
     reuseExistingServer: true,
     timeout: 120_000

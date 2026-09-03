@@ -4,9 +4,16 @@
 
 .signal-lab-cache/
 generated/runs/
+generated/jobs/*.json
+generated/.evidence/
+.artifacts/
 .pages-dist/
 .release-preview/
 test-results/
+playwright-report/
+r116-regression-results/
+r116-test-results/
+n.dataset.dot)
 *.orig
 cases/runs/dedicated-5dfdc4d0650e/
 cases/runs/dedicated-ac182411e506/

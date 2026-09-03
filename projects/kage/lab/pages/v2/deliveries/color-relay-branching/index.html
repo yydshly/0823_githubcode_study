@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="zh-CN" data-relay-ready="false" data-drive-mode="demo" data-phase="opening">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f5f0e6" />
+    <title>高彩城市接力演练 · KAGE V2.5 R129</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header class="relay-header">
+      <a class="relay-brand" href="../../" aria-label="返回 KAGE V2">
+        <span class="relay-brand-mark" aria-hidden="true"></span>
+        <span>COMMON GROUND RELAY</span>
+      </a>
+      <p>R129 / BRANCHING REPLAY</p>
+      <p class="truth-note">虚构的视觉编排模拟，不代表真实赛事、成绩或训练建议。</p>
+    </header>
+
+    <main
+      id="relay-stage"
+      class="relay-stage"
+      data-signal-visual-anchor
+      data-signal-shared-driver
+      data-drive-mode="demo"
+      aria-labelledby="relay-title"
+    >
+      <div class="stage-copy">
+        <p class="eyebrow">COLOR RELAY / 04 TEAMS</p>
+        <h1 id="relay-title">交棒，<br />让路径作答。</h1>
+        <p>选择一支队伍，再决定何时交棒。两条路线会改变同一根接力棒的轨迹、交接关系和终点队形。</p>
+      </div>
+
+      <svg id="relay-svg" class="relay-svg" viewBox="0 0 1600 940" role="img" aria-labelledby="relay-svg-title relay-svg-desc" preserveAspectRatio="xMidYMid slice">
+        <title id="relay-svg-title">四支高彩接力队伍汇入同一交接区</title>
+        <desc id="relay-svg-desc">选择队伍和交棒策略后，同一根接力棒沿不同路线经过交接区并形成不同终点队形。</desc>
+        <defs>
+          <pattern id="halftone" width="18" height="18" patternUnits="userSpaceOnUse">
+            <circle cx="3" cy="3" r="1.5" fill="#171712" opacity=".14" />
+          </pattern>
+          <pattern id="diagonal" width="20" height="20" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+            <rect width="8" height="20" fill="#171712" opacity=".08" />
+          </pattern>
+          <filter id="baton-shadow" x="-80%" y="-80%" width="260%" height="260%">
+            <feDropShadow dx="0" dy="8" stdDeviation="7" flood-color="#171712" flood-opacity=".34" />
+          </filter>
+        </defs>
+
+        <rect width="1600" height="940" fill="#f5f0e6" />
+        <path class="poster-cut poster-cut--one" d="M0 0H470L270 940H0Z" />
+        <path class="poster-cut poster-cut--two" d="M1600 0H1320L1500 940H1600Z" />
+        <rect width="1600" height="940" fill="url(#halftone)" />
+
+        <g id="lane-field" class="lane-field">
+          <path class="lane-outline" d="M-90 184 C260 135 395 260 610 402 C720 475 854 492 1014 408 C1200 310 1370 262 1690 210" />
+          <path class="lane lane--cyan" data-lane="cyan" d="M-90 184 C260 135 395 260 610 402 C720 475 854 492 1014 408 C1200 310 1370 262 1690 210" />
+          <path class="lane-center lane-center--cyan" d="M-90 184 C260 135 395 260 610 402 C720 475 854 492 1014 408 C1200 310 1370 262 1690 210" />
+
+          <path class="lane-outline" d="M-80 795 C260 808 430 670 610 535 C730 445 880 420 1035 505 C1230 612 1392 720 1690 780" />
+          <path class="lane lane--coral" data-lane="coral" d="M-80 795 C260 808 430 670 610 535 C730 445 880 420 1035 505 C1230 612 1392 720 1690 780" />
+          <path class="lane-center lane-center--coral" d="M-80 795 C260 808 430 670 610 535 C730 445 880 420 1035 505 C1230 612 1392 720 1690 780" />
+
+          <path class="lane-outline" d="M340 -100 C355 180 435 300 610 426 C735 516 818 558 930 710 C1005 812 1090 895 1220 1040" />
+          <path class="lane lane--yellow" data-lane="yellow" d="M340 -100 C355 180 435 300 610 426 C735 516 818 558 930 710 C1005 812 1090 895 1220 1040" />
+          <path class="lane-center lane-center--yellow" d="M340 -100 C355 180 435 300 610 426 C735 516 818 558 930 710 C1005 812 1090 895 1220 1040" />
+
+          <path class="lane-outline" d="M1350 -100 C1315 185 1195 300 1010 420 C865 514 780 575 665 720 C570 840 450 938 260 1040" />
+          <path class="lane lane--blue" data-lane="blue" d="M1350 -100 C1315 185 1195 300 1010 420 C865 514 780 575 665 720 C570 840 450 938 260 1040" />
+          <path class="lane-center lane-center--blue" d="M1350 -100 C1315 185 1195 300 1010 420 C865 514 780 575 665 720 C570 840 450 938 260 1040" />
+        </g>
+
+        <g class="exchange-zone" aria-hidden="true">
+          <ellipse id="exchange-pulse" cx="810" cy="475" rx="158" ry="112" />
+          <ellipse cx="810" cy="475" rx="116" ry="76" fill="url(#diagonal)" />
+          <text x="810" y="458" text-anchor="middle">EXCHANGE</text>
+          <text x="810" y="486" text-anchor="middle">共同交接区</text>
+        </g>
+
+        <path id="selected-route-shadow" class="selected-route-shadow" d="M0 0" aria-hidden="true" />
+        <path id="selected-route" class="selected-route" d="M0 0" aria-hidden="true" />
+
+        <g id="runner-pack" class="runner-pack" aria-hidden="true">
+          <g class="runner" data-runner="0"><circle cy="-15" r="8" /><path d="M0 -5L0 18M0 4L-12 13M0 4L12 13M0 18L-10 35M0 18L12 34" /></g>
+          <g class="runner" data-runner="1"><circle cy="-15" r="8" /><path d="M0 -5L0 18M0 4L-12 13M0 4L12 13M0 18L-10 35M0 18L12 34" /></g>
+          <g class="runner" data-runner="2"><circle cy="-15" r="8" /><path d="M0 -5L0 18M0 4L-12 13M0 4L12 13M0 18L-10 35M0 18L12 34" /></g>
+          <g class="runner" data-runner="3"><circle cy="-15" r="8" /><path d="M0 -5L0 18M0 4L-12 13M0 4L12 13M0 18L-10 35M0 18L12 34" /></g>
+        </g>
+
+        <g id="baton" class="baton" filter="url(#baton-shadow)" aria-hidden="true">
+          <rect x="-34" y="-7" width="68" height="14" rx="7" />
+          <circle cx="-24" cy="0" r="3" />
+        </g>
+      </svg>
+
+      <canvas id="trail-canvas" class="trail-canvas" aria-hidden="true"></canvas>
+
+      <nav id="team-chooser" class="team-chooser" aria-label="选择接力队伍" data-signal-primary-control>
+        <button type="button" class="team-button team-button--cyan" data-team="cyan" aria-pressed="false"><span>01</span><strong>北岸青</strong></button>
+        <button type="button" class="team-button team-button--coral" data-team="coral" aria-pressed="false"><span>02</span><strong>南桥红</strong></button>
+        <button type="button" class="team-button team-button--yellow" data-team="yellow" aria-pressed="false"><span>03</span><strong>晨光黄</strong></button>
+        <button type="button" class="team-button team-button--blue" data-team="blue" aria-pressed="false"><span>04</span><strong>远洋蓝</strong></button>
+      </nav>
+
+      <section id="branch-choice" class="branch-choice" aria-labelledby="branch-title" hidden>
+        <div>
+          <p class="eyebrow">BRANCH / STRATEGY</p>
+          <h2 id="branch-title"><span id="current-team-name">当前队伍</span>，何时交棒？</h2>
+        </div>
+        <div class="strategy-actions">
+          <button type="button" data-strategy="early"><span>A</span><strong>提前交棒</strong><small>宽缓弧线 · 松散队形</small></button>
+          <button type="button" data-strategy="line"><span>B</span><strong>压线交棒</strong><small>急切折线 · 紧凑队形</small></button>
+        </div>
+      </section>
+
+      <section id="outcome-ticket" class="outcome-ticket" data-signal-primary-result aria-labelledby="outcome-title" hidden>
+        <p class="ticket-code"><span id="ticket-team-code">01</span> / <span id="ticket-strategy-code">A</span></p>
+        <p class="eyebrow">CONFLUENCE / 路径已汇合</p>
+        <h2 id="outcome-title">提前交棒</h2>
+        <p id="outcome-copy">接力棒以宽缓弧线进入交接区，队形在终点保持呼吸距离。</p>
+        <div class="ticket-actions">
+          <button id="replay-branch" type="button">重放这条路径</button>
+          <button id="choose-again" type="button">返回策略</button>
+          <button id="save-plan" type="button" data-signal-primary-action>保存这次交接方案</button>
+        </div>
+        <p id="save-status" role="status" aria-live="polite"></p>
+      </section>
+
+      <div class="stage-status">
+        <p id="stage-instruction">选择跑道上的一支队伍。</p>
+        <button id="reset-relay" type="button">重置全场</button>
+      </div>
+      <p id="relay-live" class="sr-only" role="status" aria-live="polite"></p>
+    </main>
+
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>

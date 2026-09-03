@@ -1,0 +1,323 @@
+{
+  "schemaVersion": 1,
+  "creativeProtocolVersion": 3,
+  "id": "direct-r136b-west-bund-meeting-points",
+  "goalPlayback": {
+    "originalBrief": "为第一次去上海徐汇滨江看展、需要与朋友约碰头点的人，设计「西岸集合点图卷」。必须使用项目已有、带 OpenStreetMap 署名的真实徐汇滨江地图与可追溯地标坐标，并把它组织为一张可横向穿行的连续图卷。西岸美术馆、油罐艺术中心、龙美术馆和星美术馆始终落在同一真实底图和同一坐标变换中。访客用滚轮、拖拽、触摸、方向键或上一站/下一站按钮改变同一个横向位置；选择地标后，真实热点、场馆名称、地址和集合卡同步更新。最终行动为「保存集合点卡」。视觉像一张摊开的周末展览折页：纸白、江水蓝、橙红定位针，地图是第一记忆点，信息贴近地点出现。真实区域、场馆名称、地址和坐标承担事实；集合建议与示意步行线必须显式标为产品演示，不提供或暗示实时开放时间。不要 WebGL、Three.js 或生成图；代码只负责语义 DOM、SVG 标记与输入状态。",
+    "subject": "上海徐汇滨江真实底图上的四个文化场馆集合点",
+    "audience": "第一次去徐汇滨江看展、需要与朋友确定碰头点的访客",
+    "desiredOutcome": "在同一真实地图和统一横向位置中比较四个地标，核对名称、地址与坐标，并保存一张集合点卡。",
+    "primaryAction": "保存集合点卡",
+    "hardConstraints": [
+      "真实地理必须由本地 OpenStreetMap 静态图、可追溯地标坐标和持续署名承担",
+      "集合建议和橙红示意路线必须标为产品演示，不展示或暗示实时开放时间、路况或可通行性",
+      "图片失败时只能回退到真实地标名单，不得用生成图或程序化图形伪造地图",
+      "不得使用 WebGL、Three.js、Canvas 或生成图替代授权地图的事实职责"
+    ],
+    "preferences": [
+      "纸白、江水蓝与橙红定位针组成摊开的周末展览折页",
+      "滚轮、拖拽、触摸、键盘、热点和按钮必须共享同一个横向位置状态",
+      "390px reduced-motion 与图片失败状态均保留选择和保存行动"
+    ]
+  },
+  "selectedDirection": {
+    "id": "west-bund-grounded-map-foldout",
+    "title": "西岸集合点图卷 · 真实地图横向折页",
+    "experienceForm": "horizontal-panorama",
+    "rationale": "一张带 OpenStreetMap 署名的真实徐汇滨江地图持续承担地理基底；统一横向位置同时驱动地图热点、路线、场馆事实、集合卡与保存状态，不形成控制台或卡片轮播。"
+  },
+  "referencePrinciples": [
+    {
+      "referenceId": "positive-xuhui-grounded-atlas",
+      "title": "徐汇滨江地图 · 真实地理与演示边界",
+      "principle": "真实底图、地标经纬度与同一投影承担事实，署名持续可见；事实与产品演示建议明确分层。",
+      "relevance": "本交付复用同一可追溯地图资产和四个地标事实，并把它们组织为横向集合点图卷。",
+      "sourceUri": "cases/runs/dedicated-c0514ddead80/"
+    },
+    {
+      "referenceId": "positive-moonlit-tidepool-panorama",
+      "title": "月光潮池 · 同一横向位置的多输入证明",
+      "principle": "滚轮、拖拽、触摸、键盘和按钮应改变同一横向位置，并保留移动端与诚实回退。",
+      "relevance": "本页只借横向输入与证据方法，不复制虚构潮池视觉；地理事实始终由授权地图承担。",
+      "sourceUri": "../pages/v2/deliveries/moonlit-tidepool-panorama/"
+    }
+  ],
+  "assetPlan": {
+    "batchId": "assets-im5lgw",
+    "strategy": "licensed",
+    "rationale": "本次唯一素材批次服从 grounded-real-media：地点、路线或业务决定依赖可核验地理关系，因此真实媒体和数据必须承担视觉底座；生成图只能作为非事实氛围层。",
+    "assets": [
+      {
+        "id": "map-evidence-field",
+        "role": "以可追溯底图、地点或路线证据承担主要空间事实。 可见证明：最终画面能指出真实区域、来源署名以及与同一数据源绑定的位置或路线。",
+        "source": "licensed",
+        "required": true
+      }
+    ]
+  },
+  "interactionRationale": {
+    "mode": "mixed",
+    "audioApplicable": false,
+    "rationale": "原生横向滚动、滚轮、拖拽、触摸、方向键、热点和上一站/下一站共享 scrollLeft；选择同步更新真实地标事实，按钮保存当前集合点卡。"
+  },
+  "mediumDecision": {
+    "schemaVersion": 1,
+    "preferred": "grounded-real-media",
+    "confidence": 0.99,
+    "rationale": "地点、路线或业务决定依赖可核验地理关系，因此真实媒体和数据必须承担视觉底座；生成图只能作为非事实氛围层。",
+    "signals": [
+      {
+        "source": "user-hard",
+        "evidence": "为第一次去上海徐汇滨江看展、需要与朋友约碰头点的人，设计「西岸集合点图卷」"
+      },
+      {
+        "source": "user-hard",
+        "evidence": "必须使用项目已有、带 OpenStreetMap 署名的真实徐汇滨江地图与可追溯地标坐标，并把它组织为一张可横向穿行的连续图卷"
+      },
+      {
+        "source": "user-hard",
+        "evidence": "最终行动为「保存集合点卡」"
+      },
+      {
+        "source": "user-hard",
+        "evidence": "集合建议与示意步行线必须显式标为产品演示，不提供或暗示实时开放时间"
+      },
+      {
+        "source": "user-hard",
+        "evidence": "不要 WebGL、Three.js 或生成图"
+      },
+      {
+        "source": "truth-boundary",
+        "evidence": "地理底图、地点和路线必须可追溯；模拟业务点与数值必须显式标注，模型不得虚构为事实。"
+      }
+    ],
+    "assetResponsibilities": [
+      {
+        "id": "map-evidence-field",
+        "source": "real-media",
+        "required": true,
+        "responsibility": "以可追溯底图、地点或路线证据承担主要空间事实。",
+        "visibleProof": "最终画面能指出真实区域、来源署名以及与同一数据源绑定的位置或路线。"
+      }
+    ],
+    "truthBoundary": "地理底图、地点和路线必须可追溯；模拟业务点与数值必须显式标注，模型不得虚构为事实。",
+    "alternative": {
+      "route": "code-native",
+      "trigger": "真实或授权素材未通过来源、许可、质量或加载门禁时",
+      "boundary": "只在首选媒介明确失败后保留完整语义内容、主要行动和诚实的降级说明；不得把回退当作第二个并行创意方向。"
+    }
+  },
+  "visualAmbition": {
+    "schemaVersion": 1,
+    "intentLevel": "expressive",
+    "intentRationale": "视觉野心等级 expressive 来自主题、叙事变化与运行时职责：把为第一次去上海徐汇滨江看展、需要与朋友约碰头点的人组织为一张基于真实地理关系、可连续横向穿行并能完成“「保存集合点卡」”的地图或图卷。。它只决定本次内容需要的表达强度，不继承历史案例的布局、风格或渲染器禁令。",
+    "heroMoment": {
+      "title": "为第一次去上海徐汇滨江看展、需要与朋友约碰头点的人 · 「保存集合点卡」",
+      "description": "开场以“带署名且可追溯的真实地图与 brief 指定地标在同一张横向图卷中建立完整地域关系。”建立主体，并让后续变化服务于“从编辑式留白进入主体显现，最后形成有张力的整体构图。”。",
+      "themeConnection": "视觉锚点必须直接证明“为第一次去上海徐汇滨江看展、需要与朋友约碰头点的人”和“把为第一次去上海徐汇滨江看展、需要与朋友约碰头点的人组织为一张基于真实地理关系、可连续横向穿行并能完成“「保存集合点卡」”的地图或图卷。”；即使隐藏标题，也能从对象、空间或数据关系辨认主题。；这一记忆点直接指向“「保存集合点卡」”。",
+      "appearsWithinSeconds": 8,
+      "observableRuntimeChange": {
+        "trigger": "用户执行“直接调整参数并让同一主体的可见状态、数值与结果解释同步变化。”",
+        "from": "带署名且可追溯的真实地图与 brief 指定地标在同一张横向图卷中建立完整地域关系。",
+        "to": "同一图卷保留已选地标、事实来源与必要披露，并给出“「保存集合点卡」”。"
+      }
+    },
+    "rendering": {
+      "primary": "raster-image",
+      "supporting": [
+        "dom-css"
+      ],
+      "rationale": "以 raster-image 承担“使用 brief 要求的带署名且可追溯的真实地图作为连续底图，并以可信坐标承载指定地标；不得用抽象线条、虚构街区或彼此断开的地图切片替代。”的主要可见职责；语义内容和行动仍由 DOM 保底。媒介依据：地点、路线或业务决定依赖可核验地理关系，因此真实媒体和数据必须承担视觉底座；生成图只能作为非事实氛围层。"
+    },
+    "spatialDepth": {
+      "mode": "layered-2d",
+      "purpose": "通过有职责的层级和遮挡强化“使用 brief 要求的带署名且可追溯的真实地图作为连续底图，并以可信坐标承载指定地标；不得用抽象线条、虚构街区或彼此断开的地图切片替代。”，不为炫技增加虚假空间。",
+      "cues": [
+        "scale",
+        "occlusion"
+      ]
+    },
+    "motionArc": {
+      "beats": [
+        {
+          "phase": "opening",
+          "driver": "time",
+          "visualState": "带署名且可追溯的真实地图与 brief 指定地标在同一张横向图卷中建立完整地域关系。",
+          "thematicPurpose": "确认真实地图、地标与来源披露，开始横向穿行。"
+        },
+        {
+          "phase": "exploration",
+          "driver": "direct-input",
+          "visualState": "brief 指定的横向输入共同改变同一个规范化位置，真实地图与地标坐标保持连续。",
+          "thematicPurpose": "沿连续真实地图前往下一个地标。"
+        },
+        {
+          "phase": "resolution",
+          "driver": "direct-input",
+          "visualState": "同一图卷保留已选地标、事实来源与必要披露，并给出“「保存集合点卡」”。",
+          "thematicPurpose": "核对当前地点结果后完成最终行动。"
+        }
+      ],
+      "runtimeAdvantage": "运行时让用户从“带署名且可追溯的真实地图与 brief 指定地标在同一张横向图卷中建立完整地域关系。”抵达“同一图卷保留已选地标、事实来源与必要披露，并给出“「保存集合点卡」”。”；这种状态变化服务于主题，不能由一张静态截图等价替代。"
+    },
+    "interactionToScene": [
+      {
+        "input": "用户执行“直接调整参数并让同一主体的可见状态、数值与结果解释同步变化。”",
+        "sceneResponse": "用户选择或输入时，视觉锚点、可见证据与语义数值必须同步变化，不能只改变边框、颜色或说明文字。",
+        "productMeaning": "可见变化必须帮助用户理解“从编辑式留白进入主体显现，最后形成有张力的整体构图。”，并自然抵达“「保存集合点卡」”。"
+      }
+    ],
+    "assetCredibility": {
+      "level": "data-grounded",
+      "strategy": "地点、路线或业务决定依赖可核验地理关系，因此真实媒体和数据必须承担视觉底座；生成图只能作为非事实氛围层。",
+      "disclosure": "地理底图、地点和路线必须可追溯；模拟业务点与数值必须显式标注，模型不得虚构为事实。"
+    },
+    "fallbackPerformance": {
+      "targetFps": 60,
+      "maxDevicePixelRatio": 2.5,
+      "initialTransferBudgetMb": 7.63,
+      "mobileFallback": "key-visual-with-content",
+      "reducedMotionFallback": "key-states",
+      "rendererFailureFallback": "alternate-media"
+    }
+  },
+  "attemptBudget": {
+    "limits": {
+      "directionSelections": 1,
+      "assetBatches": 1,
+      "builds": 1,
+      "deterministicRepairs": 2,
+      "visualRefinements": 1
+    },
+    "used": {
+      "directionSelections": 1,
+      "assetBatches": 1,
+      "builds": 1,
+      "deterministicRepairs": 1,
+      "visualRefinements": 1
+    }
+  },
+  "stageReports": [
+    {
+      "stage": "bounded-r136b-completion",
+      "elapsedMs": 0,
+      "status": "completed",
+      "summary": "一个方向、一批授权地图素材与一次构建形成当前 bundle；一次确定性修复解决滚轮回吸，一次视觉精修消除 fallback 说明遮挡，随后 manifest 真相门及五个自适应浏览器检查全部通过并停止。"
+    }
+  ],
+  "finalCandidate": {
+    "runId": "direct-r136b-west-bund-meeting-points",
+    "bundleHash": "8112989e87b0046a51b3b4420a12555d160b7590b3adf929d79105a3998037e3"
+  },
+  "adaptiveEvidence": {
+    "schemaVersion": 1,
+    "runId": "direct-r136b-west-bund-meeting-points",
+    "bundleHash": "8112989e87b0046a51b3b4420a12555d160b7590b3adf929d79105a3998037e3",
+    "profile": {
+      "schemaVersion": 1,
+      "interactionMode": "mixed",
+      "audioApplicable": false,
+      "requiredCheckpoints": [
+        "opening",
+        "core",
+        "mobile",
+        "scroll",
+        "interaction"
+      ]
+    },
+    "checkpoints": [
+      {
+        "kind": "opening",
+        "runId": "direct-r136b-west-bund-meeting-points",
+        "bundleHash": "8112989e87b0046a51b3b4420a12555d160b7590b3adf929d79105a3998037e3",
+        "passed": true,
+        "summary": "桌面首屏在 410ms 内解码并显示 960×576 授权地图、四个真实地标和 OpenStreetMap 署名，文档无横向溢出。"
+      },
+      {
+        "kind": "core",
+        "runId": "direct-r136b-west-bund-meeting-points",
+        "bundleHash": "8112989e87b0046a51b3b4420a12555d160b7590b3adf929d79105a3998037e3",
+        "passed": true,
+        "summary": "选择龙美术馆后，同一位置上的热点、示意路线、名称、地址、坐标和集合卡同步更新，保存状态跨重载保留。"
+      },
+      {
+        "kind": "mobile",
+        "runId": "direct-r136b-west-bund-meeting-points",
+        "bundleHash": "8112989e87b0046a51b3b4420a12555d160b7590b3adf929d79105a3998037e3",
+        "passed": true,
+        "summary": "390×844 reduced-motion 触摸下一站并保存油罐艺术中心集合点卡，地图、事实、行动与文档宽度均完整。"
+      },
+      {
+        "kind": "scroll",
+        "runId": "direct-r136b-west-bund-meeting-points",
+        "bundleHash": "8112989e87b0046a51b3b4420a12555d160b7590b3adf929d79105a3998037e3",
+        "passed": true,
+        "summary": "滚轮、拖拽、ArrowRight、上一站和下一站都改变同一 scrollLeft，并同步活跃热点与横向位置索引。"
+      },
+      {
+        "kind": "interaction",
+        "runId": "direct-r136b-west-bund-meeting-points",
+        "bundleHash": "8112989e87b0046a51b3b4420a12555d160b7590b3adf929d79105a3998037e3",
+        "passed": true,
+        "summary": "热点选择、跨重载保存和图片失败名单均可完成；fallback 不显示图片、SVG 或伪造地图，仍保留真实事实与署名。"
+      }
+    ],
+    "hardGates": {
+      "runtimeClean": true,
+      "criticalAssetsLoaded": true,
+      "primaryActionReachable": true,
+      "mobileComplete": true,
+      "truthfulClaims": true,
+      "interactionVerified": true,
+      "audioVerified": null
+    },
+    "visualQuality": {
+      "schemaVersion": 1,
+      "verdict": "pass",
+      "score": 93,
+      "dimensions": {
+        "goalClarity": 95,
+        "creativeDistinctiveness": 91,
+        "craftCohesion": 92,
+        "assetIntegration": 96,
+        "interactionValue": 94,
+        "mobileReadiness": 92
+      },
+      "summary": "真实徐汇滨江地图是稳定的第一视觉记忆点；纸白折页、江水蓝与橙红定位针把地图、地标事实、横向位置和保存行动组织成统一的周末看展集合体验。",
+      "findings": [
+        {
+          "code": "realtime-information-boundary",
+          "severity": "minor",
+          "checkpoint": "core",
+          "message": "集合建议与橙红路线只承担产品演示；页面持续声明不代表实时开放、路况或可通行路线。"
+        }
+      ]
+    },
+    "macroStructureReview": {
+      "mode": "content-fit-gate",
+      "candidate": {
+        "runId": "direct-r136b-west-bund-meeting-points",
+        "layout": "horizontal-panorama",
+        "persistentControlPanel": false,
+        "visibleParameterControls": false,
+        "realtimeMetricCluster": false,
+        "primaryAction": "save-configuration"
+      },
+      "inertia": {
+        "mode": "advisory-only",
+        "detected": false,
+        "matchedRunIds": [],
+        "repeatedAxes": [],
+        "mustChange": false,
+        "recommendation": "未发现足以影响当前方向的宏观骨架惯性；继续由内容适配和最终效果决定页面形态。"
+      },
+      "persistentWorkbench": false,
+      "contentJustified": true,
+      "verdict": "pass",
+      "findingCode": null,
+      "summary": "当前候选不是持久参数工作台，无需为了近期案例差异而改变内容适配的宏观结构。"
+    }
+  },
+  "verdict": "pass",
+  "stopReason": null
+}

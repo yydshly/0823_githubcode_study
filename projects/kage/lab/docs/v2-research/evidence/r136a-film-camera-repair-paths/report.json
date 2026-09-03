@@ -1,0 +1,389 @@
+{
+  "schemaVersion": 1,
+  "stage": "r136a-film-camera-repair-runtime-observations",
+  "capturedAt": "2026-09-01T02:08:51.807Z",
+  "identityBinding": "runId+bundleHash",
+  "runId": "direct-r136a-film-camera-repair-paths",
+  "bundleHash": "f4c32fc7300996f0fac8c9afa82aeac0c8c01e721ff42cd1fb7c88d2a1838977",
+  "route": "/pages/v2/deliveries/film-camera-repair-paths/",
+  "revision": "r136a-proof",
+  "complete": true,
+  "captures": [
+    "01-desktop-opening.png",
+    "02-desktop-moving-route.png",
+    "03-desktop-stuck-saved.png",
+    "04-mobile-reduced.png",
+    "05-enhancement-off-saved.png"
+  ],
+  "observations": [
+    {
+      "checkpoint": "desktop-opening",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "issues": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "requestFailures": [],
+        "responseErrors": []
+      },
+      "readyAtMs": 465,
+      "state": {
+        "ready": true,
+        "phase": "opening",
+        "routeId": null,
+        "route": null,
+        "step": 0,
+        "routeHistory": [],
+        "checkHistory": [],
+        "saved": false,
+        "reducedMotion": false,
+        "enhancementOff": false,
+        "fallback": false,
+        "routeD": "M670 185C610 105 389 87 307 230",
+        "pathD": "M670 185C610 105 389 87 307 230",
+        "routeHash": "film-camera-6452f54d",
+        "geometryHash": "film-camera-2dea8e85",
+        "cameraGeometryHash": "film-camera-2dea8e85",
+        "geometry": {
+          "advanceLeverTransform": "rotate(0 708 170)",
+          "meterNeedleTransform": "rotate(0 307 265)",
+          "shutterButtonTransform": "translate(0 0)",
+          "batteryDoorTransform": "translate(0 0)",
+          "shutterBladesTransform": "rotate(0 492 379) scale(1)",
+          "batteryContactD": "M644 518H663M689 518H709"
+        },
+        "partTransforms": {
+          "advanceLever": "rotate(0 708 170)",
+          "meterNeedle": "rotate(0 307 265)",
+          "shutterButton": "translate(0 0)",
+          "batteryDoor": "translate(0 0)",
+          "shutterBlades": "rotate(0 492 379) scale(1)",
+          "batteryContactPath": "M644 518H663M689 518H709"
+        },
+        "resultTitle": "",
+        "resultCopy": "",
+        "horizontalOverflow": false,
+        "revision": "r136a-proof"
+      }
+    },
+    {
+      "checkpoint": "desktop-moving-route",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "issues": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "requestFailures": [],
+        "responseErrors": []
+      },
+      "moving": {
+        "ready": true,
+        "phase": "confluence",
+        "routeId": "a",
+        "route": "moving",
+        "step": 2,
+        "routeHistory": [
+          "moving"
+        ],
+        "checkHistory": [
+          "过片拨杆",
+          "测光窗"
+        ],
+        "saved": false,
+        "reducedMotion": false,
+        "enhancementOff": false,
+        "fallback": false,
+        "routeD": "M675 183C612 112 390 92 307 230",
+        "pathD": "M675 183C612 112 390 92 307 230",
+        "routeHash": "film-camera-88b01059",
+        "geometryHash": "film-camera-f84bd2c1",
+        "cameraGeometryHash": "film-camera-f84bd2c1",
+        "geometry": {
+          "advanceLeverTransform": "rotate(8 708 170)",
+          "meterNeedleTransform": "rotate(22 307 265)",
+          "shutterButtonTransform": "translate(0 3)",
+          "batteryDoorTransform": "translate(0 0)",
+          "shutterBladesTransform": "rotate(24 492 379) scale(0.88)",
+          "batteryContactD": "M644 518H663M689 518H709"
+        },
+        "partTransforms": {
+          "advanceLever": "rotate(8 708 170)",
+          "meterNeedle": "rotate(22 307 265)",
+          "shutterButton": "translate(0 3)",
+          "batteryDoor": "translate(0 0)",
+          "shutterBlades": "rotate(24 492 379) scale(0.88)",
+          "batteryContactPath": "M644 518H663M689 518H709"
+        },
+        "resultTitle": "机械动作仍有回应",
+        "resultCopy": "已记录到快门、过片与测光的外部回应。先做表面清洁与妥善保存，再请现场维修师确认内部状态。",
+        "horizontalOverflow": false,
+        "revision": "r136a-proof"
+      },
+      "svgHashes": [
+        "4c9028d6d736b0f00ccee34b7f04651e467836544d9b749f7c56efc9f2b9d414",
+        "a6426075d2652b25767339a418906fb3b422624baba29a801e0855faf79c34e1"
+      ]
+    },
+    {
+      "checkpoint": "desktop-stuck-saved",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "issues": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "requestFailures": [],
+        "responseErrors": []
+      },
+      "moving": {
+        "ready": true,
+        "phase": "confluence",
+        "routeId": "a",
+        "route": "moving",
+        "step": 2,
+        "routeHistory": [
+          "moving"
+        ],
+        "checkHistory": [
+          "过片拨杆",
+          "测光窗"
+        ],
+        "saved": false,
+        "reducedMotion": false,
+        "enhancementOff": false,
+        "fallback": false,
+        "routeD": "M675 183C612 112 390 92 307 230",
+        "pathD": "M675 183C612 112 390 92 307 230",
+        "routeHash": "film-camera-88b01059",
+        "geometryHash": "film-camera-f84bd2c1",
+        "cameraGeometryHash": "film-camera-f84bd2c1",
+        "geometry": {
+          "advanceLeverTransform": "rotate(8 708 170)",
+          "meterNeedleTransform": "rotate(22 307 265)",
+          "shutterButtonTransform": "translate(0 3)",
+          "batteryDoorTransform": "translate(0 0)",
+          "shutterBladesTransform": "rotate(24 492 379) scale(0.88)",
+          "batteryContactD": "M644 518H663M689 518H709"
+        },
+        "partTransforms": {
+          "advanceLever": "rotate(8 708 170)",
+          "meterNeedle": "rotate(22 307 265)",
+          "shutterButton": "translate(0 3)",
+          "batteryDoor": "translate(0 0)",
+          "shutterBlades": "rotate(24 492 379) scale(0.88)",
+          "batteryContactPath": "M644 518H663M689 518H709"
+        },
+        "resultTitle": "机械动作仍有回应",
+        "resultCopy": "已记录到快门、过片与测光的外部回应。先做表面清洁与妥善保存，再请现场维修师确认内部状态。",
+        "horizontalOverflow": false,
+        "revision": "r136a-proof"
+      },
+      "stuck": {
+        "ready": true,
+        "phase": "confluence",
+        "routeId": "b",
+        "route": "stuck",
+        "step": 2,
+        "routeHistory": [
+          "moving",
+          "stuck"
+        ],
+        "checkHistory": [
+          "电池仓外观",
+          "快门钮位置"
+        ],
+        "saved": false,
+        "reducedMotion": false,
+        "enhancementOff": false,
+        "fallback": false,
+        "routeD": "M676 525C789 476 824 342 770 263C735 213 702 193 670 185",
+        "pathD": "M676 525C789 476 824 342 770 263C735 213 702 193 670 185",
+        "routeHash": "film-camera-73135efa",
+        "geometryHash": "film-camera-043f3023",
+        "cameraGeometryHash": "film-camera-043f3023",
+        "geometry": {
+          "advanceLeverTransform": "rotate(0 708 170)",
+          "meterNeedleTransform": "rotate(-34 307 265)",
+          "shutterButtonTransform": "translate(0 15)",
+          "batteryDoorTransform": "translate(0 43)",
+          "shutterBladesTransform": "rotate(-12 492 379) scale(.82)",
+          "batteryContactD": "M641 522L660 534M692 534L712 511"
+        },
+        "partTransforms": {
+          "advanceLever": "rotate(0 708 170)",
+          "meterNeedle": "rotate(-34 307 265)",
+          "shutterButton": "translate(0 15)",
+          "batteryDoor": "translate(0 43)",
+          "shutterBlades": "rotate(-12 492 379) scale(.82)",
+          "batteryContactPath": "M641 522L660 534M692 534L712 511"
+        },
+        "resultTitle": "停止施力，保留现场状态",
+        "resultCopy": "快门卡住时，继续按压可能扩大损伤。保持相机水平、不要处理可疑电池残留，并交给现场维修师。",
+        "horizontalOverflow": false,
+        "revision": "r136a-proof"
+      },
+      "state": {
+        "ready": true,
+        "phase": "saved",
+        "routeId": "b",
+        "route": "stuck",
+        "step": 2,
+        "routeHistory": [
+          "moving",
+          "stuck"
+        ],
+        "checkHistory": [
+          "电池仓外观",
+          "快门钮位置"
+        ],
+        "saved": true,
+        "reducedMotion": false,
+        "enhancementOff": false,
+        "fallback": false,
+        "routeD": "M676 525C789 476 824 342 770 263C735 213 702 193 670 185",
+        "pathD": "M676 525C789 476 824 342 770 263C735 213 702 193 670 185",
+        "routeHash": "film-camera-73135efa",
+        "geometryHash": "film-camera-043f3023",
+        "cameraGeometryHash": "film-camera-043f3023",
+        "geometry": {
+          "advanceLeverTransform": "rotate(0 708 170)",
+          "meterNeedleTransform": "rotate(-34 307 265)",
+          "shutterButtonTransform": "translate(0 15)",
+          "batteryDoorTransform": "translate(0 43)",
+          "shutterBladesTransform": "rotate(-12 492 379) scale(.82)",
+          "batteryContactD": "M641 522L660 534M692 534L712 511"
+        },
+        "partTransforms": {
+          "advanceLever": "rotate(0 708 170)",
+          "meterNeedle": "rotate(-34 307 265)",
+          "shutterButton": "translate(0 15)",
+          "batteryDoor": "translate(0 43)",
+          "shutterBlades": "rotate(-12 492 379) scale(.82)",
+          "batteryContactPath": "M641 522L660 534M692 534L712 511"
+        },
+        "resultTitle": "停止施力，保留现场状态",
+        "resultCopy": "快门卡住时，继续按压可能扩大损伤。保持相机水平、不要处理可疑电池残留，并交给现场维修师。",
+        "horizontalOverflow": false,
+        "revision": "r136a-proof"
+      }
+    },
+    {
+      "checkpoint": "mobile-reduced",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "issues": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "requestFailures": [],
+        "responseErrors": []
+      },
+      "state": {
+        "ready": true,
+        "phase": "saved",
+        "routeId": "b",
+        "route": "stuck",
+        "step": 2,
+        "routeHistory": [
+          "moving",
+          "stuck"
+        ],
+        "checkHistory": [
+          "电池仓外观",
+          "快门钮位置"
+        ],
+        "saved": true,
+        "reducedMotion": true,
+        "enhancementOff": false,
+        "fallback": false,
+        "routeD": "M676 525C789 476 824 342 770 263C735 213 702 193 670 185",
+        "pathD": "M676 525C789 476 824 342 770 263C735 213 702 193 670 185",
+        "routeHash": "film-camera-73135efa",
+        "geometryHash": "film-camera-043f3023",
+        "cameraGeometryHash": "film-camera-043f3023",
+        "geometry": {
+          "advanceLeverTransform": "rotate(0 708 170)",
+          "meterNeedleTransform": "rotate(-34 307 265)",
+          "shutterButtonTransform": "translate(0 15)",
+          "batteryDoorTransform": "translate(0 43)",
+          "shutterBladesTransform": "rotate(-12 492 379) scale(.82)",
+          "batteryContactD": "M641 522L660 534M692 534L712 511"
+        },
+        "partTransforms": {
+          "advanceLever": "rotate(0 708 170)",
+          "meterNeedle": "rotate(-34 307 265)",
+          "shutterButton": "translate(0 15)",
+          "batteryDoor": "translate(0 43)",
+          "shutterBlades": "rotate(-12 492 379) scale(.82)",
+          "batteryContactPath": "M641 522L660 534M692 534L712 511"
+        },
+        "resultTitle": "停止施力，保留现场状态",
+        "resultCopy": "快门卡住时，继续按压可能扩大损伤。保持相机水平、不要处理可疑电池残留，并交给现场维修师。",
+        "horizontalOverflow": false,
+        "revision": "r136a-proof"
+      }
+    },
+    {
+      "checkpoint": "enhancement-off-saved",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "issues": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "requestFailures": [],
+        "responseErrors": []
+      },
+      "state": {
+        "ready": true,
+        "phase": "saved",
+        "routeId": "b",
+        "route": "stuck",
+        "step": 2,
+        "routeHistory": [
+          "stuck"
+        ],
+        "checkHistory": [
+          "电池仓外观",
+          "快门钮位置"
+        ],
+        "saved": true,
+        "reducedMotion": true,
+        "enhancementOff": true,
+        "fallback": false,
+        "routeD": "M676 525C789 476 824 342 770 263C735 213 702 193 670 185",
+        "pathD": "M676 525C789 476 824 342 770 263C735 213 702 193 670 185",
+        "routeHash": "film-camera-73135efa",
+        "geometryHash": "film-camera-043f3023",
+        "cameraGeometryHash": "film-camera-043f3023",
+        "geometry": {
+          "advanceLeverTransform": "rotate(0 708 170)",
+          "meterNeedleTransform": "rotate(-34 307 265)",
+          "shutterButtonTransform": "translate(0 15)",
+          "batteryDoorTransform": "translate(0 43)",
+          "shutterBladesTransform": "rotate(-12 492 379) scale(.82)",
+          "batteryContactD": "M641 522L660 534M692 534L712 511"
+        },
+        "partTransforms": {
+          "advanceLever": "rotate(0 708 170)",
+          "meterNeedle": "rotate(-34 307 265)",
+          "shutterButton": "translate(0 15)",
+          "batteryDoor": "translate(0 43)",
+          "shutterBlades": "rotate(-12 492 379) scale(.82)",
+          "batteryContactPath": "M641 522L660 534M692 534L712 511"
+        },
+        "resultTitle": "停止施力，保留现场状态",
+        "resultCopy": "快门卡住时，继续按压可能扩大损伤。保持相机水平、不要处理可疑电池残留，并交给现场维修师。",
+        "horizontalOverflow": false,
+        "revision": "r136a-proof"
+      }
+    }
+  ]
+}

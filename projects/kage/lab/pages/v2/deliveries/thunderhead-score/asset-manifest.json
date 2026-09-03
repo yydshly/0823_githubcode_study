@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "delivery": "thunderhead-score",
+  "batchId": "r152-thunderhead-environment-batch-01",
+  "attempts": 1,
+  "assets": [
+    {
+      "id": "thunderhead-environment-v1",
+      "path": "./assets/thunderhead-environment-v1.png",
+      "source": "generated",
+      "generator": "Codex built-in image generation",
+      "role": "Full-bleed atmospheric environment and material anchor across all four storm movements",
+      "required": true,
+      "containsText": false,
+      "truthNote": "Art-directed environmental plate; not observational weather data"
+    }
+  ],
+  "runtimeLayers": [
+    "Canvas wind streamlines",
+    "Canvas charge paths",
+    "Canvas rain field",
+    "CSS pressure lens and phase grading",
+    "Web Audio procedural weather field"
+  ]
+}

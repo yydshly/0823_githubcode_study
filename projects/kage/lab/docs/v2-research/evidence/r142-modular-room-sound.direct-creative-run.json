@@ -1,0 +1,356 @@
+{
+  "schemaVersion": 1,
+  "creativeProtocolVersion": 3,
+  "id": "direct-r142-modular-room-sound",
+  "goalPlayback": {
+    "originalBrief": "为一款可分体的客厅音响设计产品网页。访客可以自由旋转检查同一套音频设备，并在横置、左右分体和壁挂之间切换；箱体、扬声单元、低音腔、连接触点和挂扣必须按真实装配关系重新就位。开启剖视后，访客要能沿声音通路看清每个单元与腔体怎样连接，并试听当前组合对应的程序化声音片段。最终行动是保存这套组合并预约试听。页面中的产品、声路和试听均为概念设计演示，不代表真实产品参数。",
+    "subject": "同一套可横置、分体、壁挂并可剖视的概念客厅音响",
+    "audience": "正在为客厅选择音响摆位、希望先理解装配和声路的普通访客",
+    "desiredOutcome": "围绕同一装配树检查三种姿态、内部声路与当前程序化试听，并保存组合、记录预约意向。",
+    "primaryAction": "保存当前组合并预约客厅试听",
+    "hardConstraints": [
+      "horizontal、split、wall 必须改变同一具名装配树的真实空间关系，不能替换成图片或无关对象",
+      "剖视只移开前盖；WebGL 与音频独立失败时，装配、保存和预约仍须诚实可用",
+      "产品、声路与声音均为概念演示，不得冒充品牌规格、声学测量或安装建议"
+    ],
+    "preferences": [
+      "奶油白日光空间、珊瑚橙产品、钴蓝声路与拉丝金属形成温暖雕塑家具语言",
+      "非均匀原生滚动负责叙事，按钮、键盘、拖拽、滚轮和触摸负责直接检查",
+      "390px、low quality、reduced motion 保留完整语义旅程和至少 44px 控制"
+    ]
+  },
+  "selectedDirection": {
+    "id": "daylight-modular-sound-path",
+    "title": "日光雕塑音响 · 可检查装配声路",
+    "experienceForm": "spatial-inspection",
+    "rationale": "同一珊瑚橙装配树常驻奶油白客厅舞台，原生滚动、三姿态、剖视、受限 OrbitControls、程序化声音和最终行动共享一套运行状态。"
+  },
+  "referencePrinciples": [
+    {
+      "referenceId": "positive-smart-audio-anchor",
+      "title": "同一可信产品贯穿全程",
+      "principle": "让抽象声音反馈绑定具体产品状态，产品身份、装配关系和行动不被中段装饰替换。",
+      "relevance": "本页需要同一音响在三姿态、剖视、试听与完成态中保持可追踪身份，只借状态锚定原则。"
+    },
+    {
+      "referenceId": "positive-sonic-editorial-feedback",
+      "title": "声音、可见反馈与行动共享状态",
+      "principle": "声音仅由用户手势启动，可见反馈说明当前状态，并诚实披露声音边界。",
+      "relevance": "本页用程序化提示音强化当前装配，但不继承电台排版或冒充实测声学。"
+    }
+  ],
+  "assetPlan": {
+    "batchId": "assets-bie4wq",
+    "strategy": "generated",
+    "rationale": "本次唯一素材批次服从 threejs-spatial：当前目标要求可检查的真实深度、部件层级或空间拓扑；Three.js 负责证明这些关系，语义 DOM 继续承担内容和行动。",
+    "assets": [
+      {
+        "id": "hero-product",
+        "role": "以可检查模型承担“可分体的客厅音响”的几何、材质、部件和空间关系。 可见证明：最终浏览器能验证真实模型加载、受控相机以及 brief 声明的部件或空间状态。",
+        "source": "generated",
+        "required": true
+      }
+    ]
+  },
+  "interactionRationale": {
+    "mode": "mixed",
+    "audioApplicable": true,
+    "rationale": "原生滚动推进非均匀章节；按钮、键盘、触摸、拖拽与滚轮直接改变同一装配树、剖视、相机、试听及最终完成状态。"
+  },
+  "mediumDecision": {
+    "schemaVersion": 1,
+    "preferred": "threejs-spatial",
+    "confidence": 0.98,
+    "rationale": "当前目标要求可检查的真实深度、部件层级或空间拓扑；Three.js 负责证明这些关系，语义 DOM 继续承担内容和行动。",
+    "signals": [
+      {
+        "source": "user-hard",
+        "evidence": "箱体、扬声单元、低音腔、连接触点和挂扣必须按真实装配关系重新就位"
+      },
+      {
+        "source": "user-hard",
+        "evidence": "最终行动是保存这套组合并预约试听"
+      },
+      {
+        "source": "contract-evidence",
+        "evidence": "目标要求可环绕检查、拆解或真实部件关系；平面图和伪三维不能证明空间结构，必须先获得可检查模型。"
+      }
+    ],
+    "assetResponsibilities": [
+      {
+        "id": "hero-product",
+        "source": "model-3d",
+        "required": true,
+        "responsibility": "以可检查模型承担“可分体的客厅音响”的几何、材质、部件和空间关系。",
+        "visibleProof": "最终浏览器能验证真实模型加载、受控相机以及 brief 声明的部件或空间状态。"
+      }
+    ],
+    "truthBoundary": "没有通过门禁的模型时不得用球体、盒子、平面图或生成图片冒充真实三维检查、拆解和结构证据。",
+    "alternative": {
+      "route": "code-native",
+      "trigger": "模型缺失、层级不可用、WebGL 失败或移动端无法维持可用体验时",
+      "boundary": "只在首选媒介明确失败后保留完整语义内容、主要行动和诚实的降级说明；不得把回退当作第二个并行创意方向。"
+    }
+  },
+  "visualAmbition": {
+    "schemaVersion": 1,
+    "intentLevel": "immersive",
+    "intentRationale": "视觉野心等级 immersive 来自主题、叙事变化与运行时职责：先建立可分体的客厅音响的使用情绪，再用可见状态解释能力，最终留下明确行动。。它只决定本次内容需要的表达强度，不继承历史案例的布局、风格或渲染器禁令。",
+    "heroMoment": {
+      "title": "日光客厅里，一件声音家具先合为一体",
+      "description": "五秒内奶油白空间、珊瑚橙双模块与金属桥形成可辨识声音家具；具名 WebGL 装配树随后承担真实遮挡、材质与空间关系。",
+      "themeConnection": "隐藏标题后，橙色双模块、中央金属桥、三姿态和蓝色内部声路仍能辨认“可分体客厅音响”。",
+      "appearsWithinSeconds": 5,
+      "observableRuntimeChange": {
+        "trigger": "滚动章节或使用装配按钮、数字键、剖视、拖拽、滚轮与试听按钮",
+        "from": "双模块由金属桥合为一件横置声音家具，前盖闭合且试听未启动",
+        "to": "模块分开或抬升壁挂，前盖移开，内部腔体、触点、挂扣和钴蓝声路可检查，并可保存预约"
+      }
+    },
+    "rendering": {
+      "primary": "threejs-3d",
+      "supporting": [
+        "dom-css"
+      ],
+      "rationale": "Three.js 生成并保持唯一具名音响装配树，承担空间拓扑、遮挡、材质、相机和声路；语义 DOM 承担章节、控制、披露、SVG fallback 与行动。"
+    },
+    "spatialDepth": {
+      "mode": "scene-3d",
+      "purpose": "用真实相对位置、旋转、遮挡、前盖位移、挂扣、触点和受限相机证明装配因果，而不是用平面状态图冒充。",
+      "cues": [
+        "scale",
+        "occlusion",
+        "perspective",
+        "lighting",
+        "camera-motion"
+      ]
+    },
+    "motionArc": {
+      "beats": [
+        {
+          "phase": "opening",
+          "driver": "time",
+          "visualState": "横置双模块与金属桥在日光客厅成为一件声音家具",
+          "thematicPurpose": "先建立同一概念产品与温暖住宅尺度"
+        },
+        {
+          "phase": "exploration",
+          "driver": "hybrid",
+          "visualState": "原生滚动与直接输入切换分体、剖视和壁挂，并允许环绕、靠近与程序化试听",
+          "thematicPurpose": "让空间拓扑、内部声路和当前声音状态变得可理解"
+        },
+        {
+          "phase": "resolution",
+          "driver": "direct-input",
+          "visualState": "当前组合以保存和预约意向收束，同时保留概念边界",
+          "thematicPurpose": "把理解装配关系转化为明确且诚实的下一步"
+        }
+      ],
+      "runtimeAdvantage": "只有持续运行的同一装配树才能同时证明三姿态的相对位置、剖视遮挡、可控相机、声路与声音状态；静态海报不能等价表达。"
+    },
+    "interactionToScene": [
+      {
+        "input": "原生滚动、装配按钮与数字/方向键",
+        "sceneResponse": "同一 leftModule、rightModule 与 bridge 插值到 horizontal、split 或 wall 姿态",
+        "productMeaning": "访客理解同一产品如何随客厅摆位重新装配"
+      },
+      {
+        "input": "拖拽环绕与滚轮靠近",
+        "sceneResponse": "OrbitControls 在受限角度与距离内改变相机，并产生不同画布与运行时 hash",
+        "productMeaning": "访客主动检查模块、触点、挂扣和前后遮挡"
+      },
+      {
+        "input": "剖视与用户手势试听",
+        "sceneResponse": "只移开 frontCover，显示 drivers、bassChamber、contacts、wallHooks、soundRoute，并启动当前姿态的程序化声音",
+        "productMeaning": "访客把听觉提示与可见内部连接关联起来"
+      },
+      {
+        "input": "保存与预约按钮",
+        "sceneResponse": "saved、booked、状态文字和本地存储同步确认，不向外部服务提交资料",
+        "productMeaning": "把当前概念组合收束为下一步试听意向"
+      }
+    ],
+    "assetCredibility": {
+      "level": "product-faithful",
+      "strategy": "单一作者生成 TypeScript 模型批次提供具名、可寻址、可插值的产品树；manifest 冻结 main.ts 字节、SHA-256、姿态和部件职责。",
+      "disclosure": "页面与 fallback 持续说明这是精致概念产品和程序化声音提示，不是现实品牌、规格、测量或安装建议。"
+    },
+    "fallbackPerformance": {
+      "targetFps": 60,
+      "maxDevicePixelRatio": 1.9,
+      "initialTransferBudgetMb": 2,
+      "mobileFallback": "simplified-scene",
+      "reducedMotionFallback": "key-states",
+      "rendererFailureFallback": "key-visual"
+    }
+  },
+  "attemptBudget": {
+    "limits": {
+      "directionSelections": 1,
+      "assetBatches": 1,
+      "builds": 1,
+      "deterministicRepairs": 2,
+      "visualRefinements": 1
+    },
+    "used": {
+      "directionSelections": 1,
+      "assetBatches": 1,
+      "builds": 1,
+      "deterministicRepairs": 0,
+      "visualRefinements": 0
+    }
+  },
+  "stageReports": [
+    {
+      "stage": "bounded-r142-completion",
+      "elapsedMs": 0,
+      "status": "completed",
+      "summary": "一个方向、一个确定性程序化模型批次和一次完整构建形成当前 bundle；六项真实浏览器检查点及 runId+bundleHash 身份门禁通过后停止。"
+    }
+  ],
+  "finalCandidate": {
+    "runId": "direct-r142-modular-room-sound",
+    "bundleHash": "d652cca11f053aeb4879c33cd9f1a003e248b523a245f73e48bb872a0a0ff4a0"
+  },
+  "adaptiveEvidence": {
+    "schemaVersion": 1,
+    "runId": "direct-r142-modular-room-sound",
+    "bundleHash": "d652cca11f053aeb4879c33cd9f1a003e248b523a245f73e48bb872a0a0ff4a0",
+    "profile": {
+      "schemaVersion": 1,
+      "interactionMode": "mixed",
+      "audioApplicable": true,
+      "requiredCheckpoints": [
+        "opening",
+        "core",
+        "mobile",
+        "scroll",
+        "interaction",
+        "audio"
+      ]
+    },
+    "checkpoints": [
+      {
+        "kind": "opening",
+        "runId": "direct-r142-modular-room-sound",
+        "bundleHash": "d652cca11f053aeb4879c33cd9f1a003e248b523a245f73e48bb872a0a0ff4a0",
+        "passed": true,
+        "summary": "日光产品电影与横置装配在 1413ms 内可见，WebGL 于 1697ms 内产生具名部件、调用数、三角形与画布 hash。"
+      },
+      {
+        "kind": "core",
+        "runId": "direct-r142-modular-room-sound",
+        "bundleHash": "d652cca11f053aeb4879c33cd9f1a003e248b523a245f73e48bb872a0a0ff4a0",
+        "passed": true,
+        "summary": "单一作者生成装配树、manifest、三姿态空间位置、剖视部件、保存与预约均由当前 bundle 和真实浏览器状态核验。"
+      },
+      {
+        "kind": "mobile",
+        "runId": "direct-r142-modular-room-sound",
+        "bundleHash": "d652cca11f053aeb4879c33cd9f1a003e248b523a245f73e48bb872a0a0ff4a0",
+        "passed": true,
+        "summary": "390×844、low quality、reduced motion 的触摸旅程保持三姿态、剖视、44px 控制、DPR≤1、保存与预约，无横向溢出。"
+      },
+      {
+        "kind": "scroll",
+        "runId": "direct-r142-modular-room-sound",
+        "bundleHash": "d652cca11f053aeb4879c33cd9f1a003e248b523a245f73e48bb872a0a0ff4a0",
+        "passed": true,
+        "summary": "真实鼠标滚轮在章节卡上推进原生页面滚动；装配状态与非均匀章节同步，未退化为强制滚动容器。"
+      },
+      {
+        "kind": "interaction",
+        "runId": "direct-r142-modular-room-sound",
+        "bundleHash": "d652cca11f053aeb4879c33cd9f1a003e248b523a245f73e48bb872a0a0ff4a0",
+        "passed": true,
+        "summary": "真实按钮、键盘、鼠标拖拽、画布滚轮和触摸改变装配、相机、hash 与完成状态；WebGL/音频可独立失败。"
+      },
+      {
+        "kind": "audio",
+        "runId": "direct-r142-modular-room-sound",
+        "bundleHash": "d652cca11f053aeb4879c33cd9f1a003e248b523a245f73e48bb872a0a0ff4a0",
+        "passed": true,
+        "summary": "音频仅在真实试听按钮手势后进入 playing；WebGL fallback 仍可播放，audioFallback 明确 unavailable 且不阻断装配、剖视和主要行动。"
+      }
+    ],
+    "hardGates": {
+      "runtimeClean": true,
+      "criticalAssetsLoaded": true,
+      "primaryActionReachable": true,
+      "mobileComplete": true,
+      "truthfulClaims": true,
+      "interactionVerified": true,
+      "audioVerified": true
+    },
+    "visualQuality": {
+      "schemaVersion": 1,
+      "verdict": "pass",
+      "score": 94,
+      "dimensions": {
+        "goalClarity": 94,
+        "creativeDistinctiveness": 93,
+        "craftCohesion": 92,
+        "assetIntegration": 95,
+        "interactionValue": 95,
+        "mobileReadiness": 92
+      },
+      "summary": "日光住宅、珊瑚橙装配树、金属桥与钴蓝声路形成主题专属产品电影；三姿态、剖视、相机、声音、移动端与独立 fallback 都直接解释产品意义。",
+      "findings": []
+    },
+    "macroStructureReview": {
+      "mode": "content-fit-gate",
+      "candidate": {
+        "runId": "direct-r142-modular-room-sound",
+        "layout": "spatial-inspection",
+        "persistentControlPanel": false,
+        "visibleParameterControls": false,
+        "realtimeMetricCluster": false,
+        "primaryAction": "record-or-contribute"
+      },
+      "inertia": {
+        "mode": "advisory-only",
+        "detected": false,
+        "matchedRunIds": [],
+        "repeatedAxes": [],
+        "mustChange": false,
+        "recommendation": "未发现足以影响当前方向的宏观骨架惯性；继续由内容适配和最终效果决定页面形态。"
+      },
+      "persistentWorkbench": false,
+      "contentJustified": true,
+      "verdict": "pass",
+      "findingCode": null,
+      "summary": "当前候选不是持久参数工作台，无需为了近期案例差异而改变内容适配的宏观结构。"
+    }
+  },
+  "wowEvidence": {
+    "schemaVersion": 1,
+    "runId": "direct-r142-modular-room-sound",
+    "bundleHash": "d652cca11f053aeb4879c33cd9f1a003e248b523a245f73e48bb872a0a0ff4a0",
+    "assessment": {
+      "schemaVersion": 1,
+      "intentLevel": "immersive",
+      "required": true,
+      "verdict": "pass",
+      "score": 94,
+      "dimensions": {
+        "fiveSecondImpact": 92,
+        "runtimeAdvantage": 96,
+        "themeMemorability": 94,
+        "motionDepthMeaning": 95,
+        "assetIntegrationCredibility": 95,
+        "craftCohesion": 93
+      },
+      "observation": {
+        "heroMomentObserved": true,
+        "runtimeAdvantageOverStaticObserved": true,
+        "themeSpecificMemoryObserved": true,
+        "meaningfulMotionOrDepthObserved": true,
+        "credibleAssetIntegrationObserved": true,
+        "summary": "五秒内日光客厅、珊瑚橙双模块与金属桥形成可辨识声音家具，真实 WebGL 装配树随后承担结构和材质。 三姿态改变具名部件位置；拖拽、滚轮、剖视与声音改变相机、遮挡、声路及 canvas/hash，静态海报不能等价表达。 可复述记忆是同一件珊瑚橙声音家具从横置合体到左右分体、壁挂，再移开前盖沿蓝色声路试听并保存。 模块、金属桥、触点、挂扣与前盖使用真实相对位置、旋转、遮挡和受限相机解释装配因果，不是装饰性自转。 唯一作者生成模型批次以 main.ts 63114 bytes / 030b59781140eb8966e377bb93131e6794e7331be062a76611e7b6fb66b8fb5b 冻结，具名姿态和部件职责与可见概念边界均可核验。 奶油白、珊瑚橙、钴蓝、拉丝金属、住宅日光与编辑式章节形成统一且非工作台式的产品电影语言。 每种输入都改变同一产品的装配、观察、声音或完成状态，并直接服务于理解与保存当前组合。 390px low/reduced 保留 WebGL 主体、触摸装配、剖视、保存和预约，控制不越界且 DPR 被限制为 1。 WebGL fallback 以同状态 SVG 保留三姿态、剖视、试听和完成；audioFallback 保留实时 WebGL、装配、剖视与完成并明确 unavailable。"
+      },
+      "findings": []
+    }
+  },
+  "verdict": "pass",
+  "stopReason": null
+}

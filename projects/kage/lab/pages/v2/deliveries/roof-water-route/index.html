@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="zh-CN" data-water-state="opening" data-fallback="true">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#e8f3e5" />
+    <meta
+      name="description"
+      content="一滴水的屋顶路线：沿同一座明亮建筑，从屋面降雨、天沟汇流、蓄水过滤，一直看见水回到花园。"
+    />
+    <title>一滴水的屋顶路线 · Roof Water Route</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body data-experience="roof-water-route">
+    <a class="skip-link" href="#opening">跳到屋顶水路</a>
+
+    <div id="app" class="water-experience" data-water-state="opening">
+      <div class="scene-layer" aria-hidden="true">
+        <div class="daylight-field"><i></i><i></i><i></i></div>
+
+        <div id="fallback-scene" class="fallback-scene" data-fallback>
+          <svg class="fallback-building" viewBox="0 0 1100 820" focusable="false">
+            <defs>
+              <linearGradient id="wall-face" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#f6eedb" />
+                <stop offset="1" stop-color="#d6c9aa" />
+              </linearGradient>
+              <linearGradient id="roof-face" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#c96d4b" />
+                <stop offset="1" stop-color="#984b38" />
+              </linearGradient>
+              <linearGradient id="glass-tank" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0" stop-color="#a9d7d5" stop-opacity=".78" />
+                <stop offset=".42" stop-color="#eef8ed" stop-opacity=".65" />
+                <stop offset="1" stop-color="#6faeb1" stop-opacity=".72" />
+              </linearGradient>
+              <linearGradient id="tank-water" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#6ec4d1" stop-opacity=".78" />
+                <stop offset="1" stop-color="#2c879d" stop-opacity=".9" />
+              </linearGradient>
+              <filter id="building-shadow" x="-30%" y="-30%" width="170%" height="190%">
+                <feDropShadow dx="0" dy="22" stdDeviation="18" flood-color="#556d55" flood-opacity=".2" />
+              </filter>
+              <filter id="water-glow" x="-80%" y="-80%" width="260%" height="260%">
+                <feGaussianBlur stdDeviation="5" result="blur" />
+                <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+              </filter>
+              <clipPath id="tank-clip"><rect x="718" y="453" width="151" height="217" rx="30" /></clipPath>
+            </defs>
+
+            <ellipse cx="555" cy="705" rx="437" ry="57" fill="#7d9a6e" opacity=".17" />
+            <g class="building-model" filter="url(#building-shadow)">
+              <path d="M233 333 L519 145 L804 333Z" fill="url(#roof-face)" />
+              <path d="M519 145 L841 295 L804 333Z" fill="#7f4033" opacity=".78" />
+              <path d="M253 333 H789 V687 H253Z" fill="url(#wall-face)" />
+              <path d="M789 333 L841 295 V650 L789 687Z" fill="#b8aa8f" />
+              <path d="M233 333 H812" fill="none" stroke="#526763" stroke-width="13" stroke-linecap="round" />
+              <path d="M790 333 V600" fill="none" stroke="#526763" stroke-width="13" stroke-linecap="round" />
+              <path d="M789 601 C789 622 774 629 754 629 H711" fill="none" stroke="#526763" stroke-width="13" stroke-linecap="round" />
+              <rect x="326" y="442" width="143" height="184" rx="4" fill="#92b4b5" opacity=".7" />
+              <path d="M397 443 V626 M326 531 H469" stroke="#f4f0de" stroke-width="8" />
+              <rect x="531" y="425" width="119" height="262" rx="4" fill="#ad7a54" />
+              <circle cx="620" cy="555" r="6" fill="#e7d4a8" />
+            </g>
+
+            <g class="fallback-rain" fill="#4ba9bf" filter="url(#water-glow)">
+              <path d="M405 178 C405 178 391 198 391 210 A14 14 0 0 0 419 210 C419 198 405 178 405 178Z" />
+              <path d="M508 101 C508 101 497 117 497 127 A11 11 0 0 0 519 127 C519 117 508 101 508 101Z" />
+              <circle cx="570" cy="158" r="7" /><circle cx="665" cy="206" r="6" />
+              <circle cx="314" cy="243" r="6" /><circle cx="741" cy="251" r="8" />
+            </g>
+
+            <g class="fallback-route" fill="none" stroke="#43a8bd" stroke-linecap="round" stroke-linejoin="round" filter="url(#water-glow)">
+              <path class="route-roof" d="M508 126 C506 184 560 236 736 313" stroke-width="8" />
+              <path class="route-gutter" d="M238 328 C400 342 628 331 790 331 V596 C790 621 764 627 718 627" stroke-width="9" />
+              <path class="route-outlet" d="M794 628 H869 V682 C869 698 892 706 921 706" stroke-width="8" />
+            </g>
+
+            <g class="fallback-cistern">
+              <rect x="708" y="443" width="171" height="237" rx="38" fill="url(#glass-tank)" stroke="#568489" stroke-width="6" />
+              <rect class="tank-fill" x="718" y="516" width="151" height="154" fill="url(#tank-water)" clip-path="url(#tank-clip)" />
+              <path d="M725 496 H862 M725 526 H862" stroke="#efe6cb" stroke-width="12" opacity=".78" />
+              <path d="M729 511 H858" stroke="#778c71" stroke-width="7" stroke-dasharray="9 12" opacity=".8" />
+              <path d="M746 467 H841" stroke="#52747a" stroke-width="8" stroke-linecap="round" />
+            </g>
+
+            <g class="fallback-garden">
+              <path d="M854 709 C894 672 962 667 1018 703 L1018 736 H850Z" fill="#7c6544" />
+              <g class="garden-plants" stroke="#456f48" stroke-width="6" stroke-linecap="round">
+                <path d="M902 711 C902 674 889 650 878 630 M902 684 C916 654 929 640 945 628" />
+                <path d="M965 711 C966 671 978 641 994 620 M966 682 C947 651 934 643 918 641" />
+              </g>
+              <g class="garden-leaves" fill="#6e9d58">
+                <ellipse cx="875" cy="629" rx="23" ry="11" transform="rotate(26 875 629)" />
+                <ellipse cx="947" cy="626" rx="24" ry="12" transform="rotate(-28 947 626)" />
+                <ellipse cx="994" cy="618" rx="26" ry="12" transform="rotate(-35 994 618)" />
+                <ellipse cx="918" cy="639" rx="23" ry="11" transform="rotate(25 918 639)" />
+              </g>
+            </g>
+          </svg>
+
+          <div class="fallback-key">
+            <span><i class="key-roof"></i>屋面</span>
+            <span><i class="key-route"></i>水路</span>
+            <span><i class="key-filter"></i>过滤层</span>
+            <span><i class="key-garden"></i>花园</span>
+          </div>
+        </div>
+
+        <canvas
+          id="roof-water-canvas"
+          class="roof-water-canvas"
+          data-roof-canvas
+          data-signal-visual-anchor
+          aria-hidden="true"
+        ></canvas>
+        <p class="scene-caption"><span>概念建筑剖面</span>路线与水位用于解释过程，不代表真实工程尺寸</p>
+      </div>
+
+      <header class="site-header">
+        <a class="brand" href="../../" aria-label="返回 Kage V2 展陈目录">
+          <span class="brand-mark" aria-hidden="true"><i></i><i></i></span>
+          <span><strong>屋顶水路</strong><small>ROOF WATER ROUTE</small></span>
+        </a>
+        <p class="edition">FIELD ROUTE / R127</p>
+        <p class="truth-note"><span aria-hidden="true"></span>雨水路径概念展陈 · 非工程测算</p>
+      </header>
+
+      <nav class="route-nav" aria-label="屋顶水路章节导航">
+        <a href="#opening" data-scene-link data-state-link aria-label="前往开场：看见一滴水">
+          <i></i><span><small>00</small>开场</span>
+        </a>
+        <a href="#rainfall" data-scene-link data-state-link aria-label="前往第一章：雨落屋面">
+          <i></i><span><small>01</small>降雨</span>
+        </a>
+        <a href="#gutter-flow" data-scene-link data-state-link aria-label="前往第二章：沿天沟汇流">
+          <i></i><span><small>02</small>天沟</span>
+        </a>
+        <a href="#cistern" data-scene-link data-state-link aria-label="前往第三章：进入蓄水箱">
+          <i></i><span><small>03</small>蓄水</span>
+        </a>
+        <a href="#garden-release" data-scene-link data-state-link aria-label="前往第四章：回到花园">
+          <i></i><span><small>04</small>花园</span>
+        </a>
+      </nav>
+
+      <main class="story-flow">
+        <section
+          id="opening"
+          class="story-state story-opening"
+          data-scene="opening"
+          data-water-state="opening"
+          aria-labelledby="opening-title"
+        >
+          <div class="story-copy opening-copy">
+            <p class="eyebrow">一滴雨 · 一座屋 · 一条看得见的回路</p>
+            <h1 id="opening-title">雨落屋檐，<br /><em>然后去哪里？</em></h1>
+            <p class="lede">沿同一座建筑向下走。雨水会掠过屋瓦、进入天沟，在蓄水箱里暂住，最后回到需要它的土壤。</p>
+            <p class="truth-strip">本页解释一种概念路线；真实收集与使用方案应结合当地规范、屋面条件和专业意见。</p>
+          </div>
+          <a class="scroll-cue" href="#rainfall" aria-label="开始追踪雨滴">
+            <span>跟着这一滴</span><i aria-hidden="true"></i>
+          </a>
+        </section>
+
+        <section
+          id="rainfall"
+          class="story-state chapter chapter--rainfall"
+          data-scene="rainfall"
+          data-water-state="rainfall"
+          aria-labelledby="rainfall-title"
+        >
+          <div class="story-copy chapter-card chapter-card--left">
+            <p class="chapter-index"><span>01</span> RAIN MEETS THE ROOF</p>
+            <h2 id="rainfall-title">屋面先接住<br />整片天空</h2>
+            <p>雨滴落在斜屋面，沿坡度向低处移动。屋面材质、清洁状况与汇水方向，都会影响接下来的一段路。</p>
+            <aside class="route-note" aria-label="降雨章节提示">
+              <strong>先观察</strong>
+              <p>水从哪一面屋顶汇集？落叶与灰尘可能在哪里停留？</p>
+            </aside>
+          </div>
+        </section>
+
+        <section
+          id="gutter-flow"
+          class="story-state chapter chapter--gutter"
+          data-scene="gutter-flow"
+          data-water-state="gutter-flow"
+          aria-labelledby="gutter-title"
+        >
+          <div class="story-copy chapter-card chapter-card--right">
+            <p class="chapter-index"><span>02</span> GATHERED AT THE EDGE</p>
+            <h2 id="gutter-title">屋檐把散落的雨<br />并成一条线</h2>
+            <p>天沟承接屋面来水，再由落水管把水带向地面附近。顺畅的转角与可检查的入口，让这段路径更容易维护。</p>
+            <aside class="route-note" aria-label="天沟章节提示">
+              <strong>路径关键</strong>
+              <p>入口、转角与落水管是最值得留意的三处；概念路线不代替排水能力核算。</p>
+            </aside>
+          </div>
+        </section>
+
+        <section
+          id="cistern"
+          class="story-state chapter chapter--cistern"
+          data-scene="cistern"
+          data-water-state="cistern"
+          aria-labelledby="cistern-title"
+        >
+          <div class="story-copy chapter-card chapter-card--left">
+            <p class="chapter-index"><span>03</span> A PAUSE BEFORE USE</p>
+            <h2 id="cistern-title">先过滤，<br />再让水停一会儿</h2>
+            <p>简单的拦截与过滤帮助减少可见杂物，蓄水箱则让雨水在使用前有一个容身处。封闭、防溢流与便于清理同样重要。</p>
+            <aside class="route-note route-note--tank" aria-label="蓄水章节提示">
+              <strong>概念蓄水节点</strong>
+              <p>水位只表示路线进展，不对应容量、降雨量或可供应时长。</p>
+            </aside>
+          </div>
+        </section>
+
+        <section
+          id="garden-release"
+          class="story-state chapter chapter--garden"
+          data-scene="garden-release"
+          data-water-state="garden-release"
+          aria-labelledby="garden-title"
+        >
+          <div class="garden-copy">
+            <p class="chapter-index"><span>04</span> WATER RETURNS TO SOIL</p>
+            <h2 id="garden-title">最后一段路，<br />回到花园。</h2>
+            <p>在适合的条件下，收集的雨水可以用于花园浇灌，让水在离屋顶不远的地方重新进入土壤。这是一张讨论路线的起点。</p>
+            <aside class="route-note route-note--garden" aria-label="花园释放说明">
+              <strong>到达 / 不是结论</strong>
+              <p>植物、土壤与当地要求各不相同；先画清路径，再与专业人员确认具体做法。</p>
+            </aside>
+            <button id="open-plan" class="open-plan" type="button" data-open-plan data-signal-action>
+              <span>规划我的屋顶路线</span><i aria-hidden="true">↗</i>
+            </button>
+          </div>
+        </section>
+      </main>
+
+      <p id="live-status" class="sr-only" data-live-status role="status" aria-live="polite">
+        屋顶水路从一滴尚未落下的雨开始。
+      </p>
+      <div class="runtime-fallback" data-fallback-message role="status" hidden>
+        <strong>已切换到基础建筑剖面</strong>
+        <span>五段水路与规划行动仍可完整阅读和使用。</span>
+      </div>
+    </div>
+
+    <dialog
+      id="plan-dialog"
+      class="plan-dialog"
+      data-plan-dialog
+      aria-labelledby="plan-dialog-title"
+      aria-describedby="plan-dialog-description"
+    >
+      <div class="route-sheet">
+        <button id="close-plan" class="close-plan" type="button" data-close-plan aria-label="关闭屋顶路线规划">
+          <span aria-hidden="true">×</span><small>关闭</small>
+        </button>
+        <p class="dialog-kicker">A SMALL ROUTE TO START WITH</p>
+        <h2 id="plan-dialog-title">画下你的第一条水路</h2>
+        <p id="plan-dialog-description">选择想先查看的屋顶和用水方向。保存后只在这台设备的浏览器中保留一份概念清单，不会生成工程方案。</p>
+
+        <form id="plan-form" class="plan-form" data-plan-form method="dialog">
+          <fieldset>
+            <legend>我的屋顶大致是</legend>
+            <div class="choice-grid">
+              <label><input type="radio" name="roof" value="sloped" checked /><span><b>斜屋面</b><small>先找低檐和现有落水管</small></span></label>
+              <label><input type="radio" name="roof" value="flat" /><span><b>平屋面</b><small>先找排水口与溢流方向</small></span></label>
+              <label><input type="radio" name="roof" value="unknown" /><span><b>还不确定</b><small>先做一次雨天观察</small></span></label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>我想先讨论的去向</legend>
+            <div class="choice-grid choice-grid--two">
+              <label><input type="radio" name="destination" value="garden" checked /><span><b>花园浇灌</b><small>从植物与土壤需求开始</small></span></label>
+              <label><input type="radio" name="destination" value="slow-release" /><span><b>缓慢释放</b><small>先确认场地和当地要求</small></span></label>
+            </div>
+          </fieldset>
+
+          <label class="note-field" for="plan-note">
+            <span>留给自己的观察</span>
+            <textarea id="plan-note" data-plan-note name="note" rows="3" maxlength="160" placeholder="例如：北侧天沟常有落叶；花园在落水管右侧。"></textarea>
+          </label>
+
+          <div class="route-actions">
+            <p id="plan-status" data-plan-status role="status" aria-live="polite">概念清单 · 只保存在当前浏览器</p>
+            <button id="save-plan" class="save-plan" type="submit" value="saved" data-save-plan>
+              <span>保存我的路线起点</span><i aria-hidden="true"></i>
+            </button>
+          </div>
+        </form>
+        <p class="sheet-footnote">概念规划工具 · 不替代建筑、给排水或雨洪专业意见</p>
+      </div>
+    </dialog>
+
+    <noscript>
+      <strong>基础屋顶水路正在显示。</strong>
+      屋面、天沟、蓄水与花园仍可沿页面阅读；启用 JavaScript 后可获得滚动驱动的空间变化与路线规划对话框。
+    </noscript>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>

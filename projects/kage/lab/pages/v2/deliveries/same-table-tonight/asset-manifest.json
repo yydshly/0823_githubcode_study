@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "deliveryId": "same-table-tonight",
+  "batchId": "r141-same-table-single-panorama",
+  "assetBatches": 1,
+  "generationCalls": 1,
+  "sourceAssetCount": 1,
+  "derivativeCount": 0,
+  "medium": {
+    "preferred": "generated-image",
+    "rendering": "raster-image",
+    "supporting": ["canvas-2d", "dom-css"]
+  },
+  "assets": [
+    {
+      "path": "assets/distant-dinner-panorama-v1.png",
+      "kind": "raster-image",
+      "role": "source-panorama",
+      "mimeType": "image/png",
+      "width": 1881,
+      "height": 836,
+      "bytes": 1731679,
+      "sha256": "c42a15f590d0704b789b31a5eecb894ce01fc55694a6f5c026840be1480af23d",
+      "sourceLineage": {
+        "type": "generated-source",
+        "provider": "built-in-imagegen",
+        "batchId": "r141-same-table-single-panorama",
+        "sourceAsset": null,
+        "operation": "single-wide-diptych-generation"
+      },
+      "visualResponsibility": "两处生活化餐桌、冷暖光线、同一眼平线和可拼合桌沿共同承担主题身份；代码只裁切同一源图并改变两半之间的距离。",
+      "truthBoundary": "人物、地点、菜品与故事均为概念演示；该图不对应真实家庭、真实住址或真实服务记录。"
+    }
+  ]
+}

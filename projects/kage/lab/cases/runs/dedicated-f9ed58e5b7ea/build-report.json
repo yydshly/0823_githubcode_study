@@ -1,0 +1,688 @@
+{
+  "receipt": {
+    "id": "dedicated-f9ed58e5b7ea",
+    "provider": "codex",
+    "model": "gpt-5.6-terra",
+    "status": "compiled",
+    "previewUrl": "/generated-runs/dedicated-f9ed58e5b7ea/",
+    "generatedAt": "2026-08-30T08:22:41.467Z",
+    "files": 4,
+    "assets": 0,
+    "sourceBytes": 13803,
+    "hasShaders": false,
+    "compileMs": 556,
+    "attempts": 1,
+    "directory": "generated/runs/dedicated-f9ed58e5b7ea"
+  },
+  "request": {
+    "brief": "为一部没有画面的午夜电台短篇小说设计可聆听的编辑式网页，声音为主，文字和声音共同构成排版画面。开场是一句未读完的台词和长停顿；滚动或键盘切换耳语、雨点、远钟三个叙事声部时，字距、标点、声纹线和章节情绪在同一画布中同步变化；点击试听时用三种明显不同的程序化声景表现，提供播放、静音和音量，并明确说明不是真人录音。最后行动是保存这一段夜话。使用夜纸灰、路灯琥珀和清晨蓝，安静、有节奏。不要参数侧栏、中央产品、紫色科技风、随机粒子、地图或固定三段卡片长页。",
+    "seed": 100,
+    "quality": "high",
+    "runId": "run-1g6w4ac",
+    "selectedId": "generated-ctecl9-focused-hero",
+    "creativeContract": {
+      "schemaVersion": 2,
+      "id": "contract-1tnt3s0",
+      "brief": "为一部没有画面的午夜电台短篇小说设计可聆听的编辑式网页，声音为主，文字和声音共同构成排版画面。开场是一句未读完的台词和长停顿；滚动或键盘切换耳语、雨点、远钟三个叙事声部时，字距、标点、声纹线和章节情绪在同一画布中同步变化；点击试听时用三种明显不同的程序化声景表现，提供播放、静音和音量，并明确说明不是真人录音。最后行动是保存这一段夜话。使用夜纸灰、路灯琥珀和清晨蓝，安静、有节奏。不要参数侧栏、中央产品、紫色科技风、随机粒子、地图或固定三段卡片长页。",
+      "intent": {
+        "subject": "一句未读完的台词和长停顿",
+        "audience": "一部没有画面的午夜电台短篇小说",
+        "desiredFeeling": "安静",
+        "narrativeChange": "从编辑式留白进入主体显现，最后形成有张力的整体构图。",
+        "primaryAction": "保存这一段夜话",
+        "negativeConstraints": [
+          "不要参数侧栏、中央产品、紫色科技风、随机粒子、地图或固定三段卡片长页"
+        ]
+      },
+      "referenceEvidence": [
+        {
+          "referenceId": "kage-rain-recorder",
+          "title": "雨声记录器 · 单主体连续状态",
+          "sourceUrl": "../cases/dedicated-1b9f0b05107b/",
+          "evidenceLevel": "runtime-verified",
+          "relevance": "命中 雨、清晨、声音。 来自已归档并经过浏览器验证的本地最终案例。",
+          "borrow": [
+            "同一台产品贯穿开场、能力显现和终点，环境只为主体提供真实尺度和情绪。",
+            "雨滴、膜片振动、声波与记录灯形成可读因果链，终点主动安静下来。",
+            "透明产品主体和全屏环境分别承担产品识别与空间可信度，两者需共用光向和色温。"
+          ],
+          "avoid": [
+            "不要拆成无关零件展示，也不要让辉光、波纹或文案遮住最终产品状态。"
+          ]
+        },
+        {
+          "referenceId": "kage-fashion-depth-field",
+          "title": "先锋时装 · 全屏材质场",
+          "sourceUrl": "../cases/dedicated-ba4e9d10caaa-depth-field/",
+          "evidenceLevel": "runtime-verified",
+          "relevance": "命中 编辑。 支持 editorial-field 体验模式。 来自已归档并经过浏览器验证的本地最终案例。",
+          "borrow": [
+            "透明主体位于全屏材质场中，文字、主体和背景共同构成一个连续画面。",
+            "滚动改变材质、景深和主体显现程度，避免把主体当成独立海报移动。",
+            "透明主体素材承担识别与材质细节，Three.js 只增强融合、景深和连续运动。"
+          ],
+          "avoid": [
+            "不要恢复矩形主图边框，也不要用巨型文字遮挡主体的识别区域。"
+          ]
+        },
+        {
+          "referenceId": "motionsites-scroll-landing",
+          "title": "MotionSites · Scroll Landing Page",
+          "sourceUrl": "https://motionsites.ai/?prompt=scroll-landing",
+          "evidenceLevel": "catalog-metadata",
+          "relevance": "命中 滚动、叙事。 只作为外部目录方向信号，不当作实现已验证。",
+          "borrow": [
+            "目录将其标记为 Interactive，可作为滚动承担连续变化的方向索引。",
+            "参考滚动作为统一时间轴，而不是为每个区块堆叠互不相关的入场动画。",
+            "素材必须绑定滚动状态和视觉职责，不能只作为区块背景轮播。"
+          ],
+          "avoid": [
+            "不要复制固定区块数量，也不要把普通淡入误认为沉浸式叙事。"
+          ]
+        }
+      ],
+      "experience": {
+        "pattern": "editorial-field",
+        "structure": {
+          "mode": "editorial-flow",
+          "segmentPolicy": "content-derived",
+          "layoutRule": "文字节奏、声音触发与章节状态共同组成一个连续排版场；声部数量来自内容，不制造参数侧栏或固定卡片章节。"
+        },
+        "thesis": "让一句未读完的台词和长停顿通过可读排版与可听状态共同显现，阅读、滚动和聆听属于同一叙事。",
+        "focalSubject": "一句未读完的台词和长停顿",
+        "continuityRule": "台词、声部、章节情绪、试听状态和最终行动必须来自同一目标状态；声音变化不能脱离文字与画面另行播放。",
+        "typographyRole": "DOM 文字本身承担主视觉、阅读顺序与状态变化；Canvas 只补充声纹、纸面、光线或停顿节奏，不能创建中央产品或仪表盘。",
+        "beats": [
+          {
+            "id": "unfinished-line",
+            "position": 0,
+            "purpose": "establish",
+            "visibleState": "未读完的台词、停顿和第一个声部建立可阅读、可聆听的开场。",
+            "userProgression": "阅读开场并由用户明确启动试听。"
+          },
+          {
+            "id": "voices-emerge",
+            "position": 0.42,
+            "purpose": "develop",
+            "visibleState": "声部切换同步改变字距、标点、声纹线、章节情绪和可听结果。",
+            "userProgression": "滚动、键盘或按钮比较至少两个声音状态。"
+          },
+          {
+            "id": "night-composes",
+            "position": 0.74,
+            "purpose": "transform",
+            "visibleState": "文字、停顿和声音差异在同一排版场中形成完整章节关系。",
+            "userProgression": "确认当前声部与视觉状态来自同一叙事状态。"
+          },
+          {
+            "id": "quiet-save",
+            "position": 1,
+            "purpose": "resolve",
+            "visibleState": "声音停止争抢注意力，文字与行动稳定收束到“保存这一段夜话”。",
+            "userProgression": "检查真实性说明后完成最终行动。"
+          }
+        ],
+        "pointerRole": "滚动、键盘或明确的声部按钮推进同一叙事状态；指针没有语义时不创建跟随动画。",
+        "reducedMotion": "保留离散声部切换、完整文字、试听控制和最终行动，取消连续位移与自动演示。",
+        "finalMemoryPoint": "保存这一段夜话"
+      },
+      "visualAnchor": {
+        "subject": "围绕“一句未读完的台词和长停顿”构建可辨认的主题专属对象、空间或证据场。",
+        "relationshipToBrief": "视觉锚点必须直接证明“一句未读完的台词和长停顿”和“让一句未读完的台词和长停顿通过可读排版与可听状态共同显现，阅读、滚动和聆听属于同一叙事。”；即使隐藏标题，也能从对象、空间或数据关系辨认主题。",
+        "heroRole": "evidence-field",
+        "source": "procedural",
+        "interactionBinding": "用户选择或输入时，视觉锚点、可见证据与语义数值必须同步变化，不能只改变边框、颜色或说明文字。",
+        "fallback": "增强层不可用时，保留同一“一句未读完的台词和长停顿”的静态主题表示、完整语义内容和主要行动；不得回退为通用网格或空背景。"
+      },
+      "assets": [],
+      "direction": {
+        "visualRole": "procedural-field",
+        "mechanisms": [
+          {
+            "id": "state-storyboard",
+            "title": "状态故事板",
+            "evidenceLevel": "E4",
+            "job": "用连续的视觉状态分配页面节奏，每个状态只承担一个叙事动词。",
+            "reason": "匹配程序化状态场的主要视觉职责。 命中“滚动、变化、最后”。",
+            "sourceCaseIds": [
+              "plety-media-storyboard",
+              "igloo-cinematic-deconstruction"
+            ]
+          },
+          {
+            "id": "subject-specimen-field",
+            "title": "主体标本场",
+            "evidenceLevel": "E4",
+            "job": "围绕独立主体和安全区组织排版，让对象始终保持识别和呼吸空间。",
+            "reason": "支持 editorial-field 体验。 命中“产品”。",
+            "sourceCaseIds": [
+              "sports-ai-subject-field"
+            ]
+          }
+        ],
+        "interaction": {
+          "primaryInput": "direct-navigation",
+          "semanticAction": "直接选择一条探索路径并保持位置反馈。",
+          "pointerRole": "primary",
+          "touchAlternative": "提供等价的点击热点、拖拽或分段导航，不依赖 hover。",
+          "keyboardAlternative": "所有镜头、热点或路径都可通过顺序焦点和 Enter 激活。"
+        },
+        "renderer": {
+          "baseLayer": "semantic-dom",
+          "route": "dom-only",
+          "enhancement": "none",
+          "reason": "当前目标可以由语义内容、编辑式排版和离散状态完成。",
+          "threeJustification": "没有证据表明 WebGL 能增加必要理解。",
+          "fallback": "DOM 本身就是完整可用路径。"
+        },
+        "rejectedMechanisms": [
+          {
+            "id": "cinematic-3d-deconstruction",
+            "reason": "缺少真实可检查模型，不能伪造三维拆解。"
+          },
+          {
+            "id": "sticky-archive-stack",
+            "reason": "当前核心不是一组并列档案，不使用长堆叠拖慢叙事。"
+          }
+        ],
+        "decisionSummary": "以程序化状态场承担主要视觉，用状态故事板、主体标本场组织变化；当前目标可以由语义内容、编辑式排版和离散状态完成。"
+      },
+      "technical": {
+        "presentationStrategy": "dom-led",
+        "capabilitySelection": {
+          "selected": false,
+          "capabilityId": null,
+          "score": 18,
+          "reasons": [
+            "体验模式 editorial-field 不是该能力的优先路线。",
+            "目标命中 滚动、变化、情绪 等连续叙事信号。",
+            "需要先建立连续媒体素材职责。"
+          ],
+          "blockers": [
+            "当前素材计划没有连续图片、视频或帧序列。"
+          ],
+          "contract": null
+        },
+        "articulatedSubject": {
+          "selected": false,
+          "capabilityId": null,
+          "score": 12,
+          "reasons": [
+            "主体没有明确的抽象或程序化构造语义。",
+            "没有需要部件承担的结构变化。",
+            "没有可建立拓扑关系的部件描述。",
+            "体验模式 editorial-field 支持单一主体连续变化。"
+          ],
+          "blockers": [],
+          "contract": null
+        },
+        "stateAssetStrategy": {
+          "required": false,
+          "changeKind": "none",
+          "route": "static-sufficient",
+          "acceptedModalities": [
+            "transparent-image",
+            "image-sequence",
+            "model-3d",
+            "procedural"
+          ],
+          "minimumDistinctStates": 1,
+          "minimumPartGroups": 0,
+          "failurePolicy": "continue",
+          "reason": "目标没有要求实体装配、拆解或结构形变；现有素材质量与职责门禁足以决定是否进入构建。"
+        },
+        "sceneComposition": {
+          "schemaVersion": 1,
+          "route": "single-image-hybrid",
+          "required": false,
+          "requiredLayers": [
+            "environment"
+          ],
+          "minimumIndependentLayers": 1,
+          "stateBinding": "tint-and-camera",
+          "failurePolicy": "continue-with-declared-fallback",
+          "fallbackRoute": "dom-only",
+          "reason": "当前目标由信息、控件与行动承担价值，DOM 路线不应被迫增加图片分层或三维素材。"
+        },
+        "semanticInteraction": {
+          "selected": true,
+          "capabilityId": "semantic-responsive-interaction",
+          "score": 94,
+          "matchedSignals": [
+            "变化"
+          ],
+          "reasons": [
+            "目标明确要求直接选择、指针或触摸操作改变内容、比例或可见状态。",
+            "当前体验模式或素材职责不足以证明交互必须存在。",
+            "现有导演决策已把 direct-navigation 定义为有语义的主要输入。"
+          ],
+          "blockers": [],
+          "evaluatedCapability": {
+            "id": "semantic-responsive-interaction",
+            "evidenceLevel": "E4",
+            "state": "validated",
+            "problem": "装饰性鼠标动效不能帮助用户理解内容，也无法稳定迁移到触摸、键盘和减少动态效果环境。",
+            "meaning": "滚动选择证据层，时间选择改变海岸形态和数字，指针只在局部揭示相对于基准年已经消失的土地。",
+            "inputs": [
+              "scroll",
+              "pointer",
+              "touch",
+              "keyboard"
+            ],
+            "outputs": [
+              "scene-shape",
+              "evidence-value",
+              "narrative-layer",
+              "selection-state"
+            ],
+            "baseInterface": "语义 DOM 始终提供年代按钮、损失数字、解释文字和当前状态，不依赖 WebGL 完成比较。",
+            "enhancedInterface": "WebGL 把年代选择映射为同一海岸场的连续形变，并让局部证据透镜显示相对损失范围。",
+            "reducedMotionRule": "减少动态效果时立即切换到目标年代和阶段，停止连续漂移，但保留所有数值和比较结果。",
+            "rejectionRules": [
+              "移除交互后信息理解完全不变时拒绝晋级。",
+              "触摸、键盘或无 WebGL 回退无法完成比较时拒绝晋级。"
+            ],
+            "evidence": [
+              {
+                "id": "coast-1984",
+                "year": 1984,
+                "label": "基准海岸",
+                "lossSquareKilometers": 0,
+                "retreatMeters": 0,
+                "relativeWaterCentimeters": 0,
+                "sceneMorph": 0,
+                "summary": "沙洲仍然连续，潮沟尚未切断内侧湿地。"
+              },
+              {
+                "id": "coast-2004",
+                "year": 2004,
+                "label": "潮沟扩张",
+                "lossSquareKilometers": 3.2,
+                "retreatMeters": 186,
+                "relativeWaterCentimeters": 8,
+                "sceneMorph": 0.5,
+                "summary": "外侧沙洲变薄，新的潮沟开始把湿地分成孤立片区。"
+              },
+              {
+                "id": "coast-2026",
+                "year": 2026,
+                "label": "临界断面",
+                "lossSquareKilometers": 8.7,
+                "retreatMeters": 421,
+                "relativeWaterCentimeters": 17,
+                "sceneMorph": 1,
+                "summary": "连续岸线已经断裂，曾经被遮蔽的社区直接面对风暴潮。"
+              }
+            ]
+          }
+        },
+        "interactionDriver": {
+          "selected": false,
+          "capabilityId": null,
+          "score": 8,
+          "requestedModes": [],
+          "matchedSignals": [],
+          "reasons": [
+            "目标没有同时请求两种以上驱动方式，不建立共享状态导演。",
+            "目标没有明确请求自动演示，禁止为了展示能力而自行加入。",
+            "现有语义交互已要求可见主体与结果同步，适合从同一状态派生。"
+          ],
+          "blockers": [],
+          "authoringContract": null,
+          "evaluatedCapability": {
+            "id": "shared-state-interaction-driver",
+            "evidenceLevel": "E4",
+            "state": "validated",
+            "sourceCaseId": "wind-tunnel-r78",
+            "problem": "自动演示、滚轮进度和直接控件各自维护状态时，画面、数值和操作会互相打架，用户也无法判断当前由谁控制。",
+            "meaning": "多个明确请求的输入源只写入一个规范化状态；主体、场景、语义结果和进度显示从同一状态派生，第一次人工输入立即接管自动演示。",
+            "rejectionRules": [
+              "brief 只要求一种输入方式时不得加入额外演示或滚轮接管。",
+              "自动演示无法播放、暂停、重置或在人工输入后停止时拒绝使用。",
+              "状态只改变数字或说明文字而没有改变主体和场景时拒绝晋级。"
+            ]
+          }
+        },
+        "productSemanticFeedback": {
+          "selected": true,
+          "capabilityId": "product-semantic-audio-feedback",
+          "score": 85,
+          "matchedSignals": [
+            "声音",
+            "录音",
+            "和声",
+            "播放",
+            "试听",
+            "聆听"
+          ],
+          "reasons": [
+            "核心产品价值或主要操作需要用户实际听见结果，视觉表现不能替代声音反馈。",
+            "目标命中“播放、试听、聆听”等听觉操作或结果信号。"
+          ],
+          "blockers": [],
+          "authoringContract": {
+            "modality": "audio",
+            "required": true,
+            "route": "hybrid-audio",
+            "stateBinding": "same-causal-state-as-visual-result",
+            "activation": "explicit-user-gesture",
+            "controls": [
+              "play-or-trigger",
+              "mute",
+              "volume"
+            ],
+            "comparison": "a-b-or-before-after",
+            "honesty": "明确标注声音为交互模拟或合成预览，不把 Web Audio 合成结果冒充真实测量或真实录音。",
+            "fallback": "AudioContext、解码或素材请求失败时保留完整视觉任务、状态说明与行动，并清楚显示声音暂不可用。",
+            "markers": {
+              "root": "data-signal-audio-feedback",
+              "control": "data-signal-audio-control",
+              "stateAttribute": "data-audio-state"
+            }
+          },
+          "evaluatedCapability": {
+            "id": "product-semantic-audio-feedback",
+            "evidenceLevel": "E4",
+            "state": "validated",
+            "sourceCaseId": "dedicated-b4d381a24320",
+            "problem": "当产品价值依赖听觉判断时，只有图片、波形动画或频率数字的页面无法证明核心能力，也会让用户误以为交互没有生效。",
+            "meaning": "把声音作为与视觉结果同级的产品反馈：由同一因果状态驱动，用户明确触发，并提供可辨认的对比、静音、音量、真实性说明和无音频降级。",
+            "rejectionRules": [
+              "声音只是文案修饰且不影响产品任务时，不得为了展示能力强行加入音频。",
+              "不同状态听感无法辨认，或声音与视觉、参数使用不同状态时拒绝验收。",
+              "未提供用户手势激活、静音、音量与失败降级时拒绝验收。"
+            ]
+          }
+        },
+        "identityEvidence": {
+          "selected": false,
+          "score": 0,
+          "reason": "拒绝：缺少同时指向身份与证据的明确目标。",
+          "rejectedBy": [],
+          "matchedSignals": [],
+          "capabilityId": null
+        },
+        "placeGrounding": {
+          "selected": false,
+          "capabilityId": null,
+          "strategy": "none",
+          "score": 0,
+          "matchedSignals": [],
+          "reasons": [
+            "目标没有要求地点事实、空间关系或地域来源，不应为了视觉效果强行加入地图。",
+            "继续由主题、素材和交互目标选择最小充分技术路线。"
+          ],
+          "requirements": {
+            "geography": "not-applicable",
+            "map": "avoid",
+            "dataTruth": "不引入与目标无关的地点、地图或路线事实。",
+            "creativeFreedom": "围绕主体、受众、情绪变化和最终行动选择表达，不增加地域模板。"
+          }
+        },
+        "styleDiversity": {
+          "fingerprint": {
+            "composition": "editorial-grid",
+            "palette": "daylight-neutral",
+            "motion": "state-switch",
+            "spatial": "flat-editorial",
+            "typography": "display-condensed",
+            "media": "procedural-3d"
+          },
+          "structureDirection": {
+            "experienceForm": "typographic-sonic-field",
+            "workbenchPolicy": "forbidden",
+            "compositionRule": "让文字节奏、声音触发与证据关系共同形成主画面，阅读和聆听本身就是空间推进方式。",
+            "informationRule": "说话者、时间、地点或声音状态在触发内容附近展开，保持语义 DOM 和清晰阅读顺序。",
+            "antiTemplateRule": "禁止添加中央 3D 主体、参数侧栏或波形仪表盘，把文字与声音降级成普通说明卡。"
+          },
+          "nearestCaseId": "dedicated-1b9f0b05107b",
+          "nearestDistance": 5,
+          "minimumDifferentAxes": 2,
+          "mustDifferOn": [
+            "composition",
+            "motion",
+            "spatial",
+            "typography"
+          ],
+          "avoidRepeating": [
+            "不要默认复用暗色全屏背景、中央主体和巨型标题的组合。",
+            "不要把滚动淡入、漂浮粒子和柔光当成所有主题的通用答案。",
+            "不得复刻最相近案例 dedicated-1b9f0b05107b 的整体构图和运动语法。"
+          ],
+          "rationale": "本方向采用 typographic-sonic-field，与最相近案例 dedicated-1b9f0b05107b 在 5 个风格轴上不同；差异是生成约束，不是固定模板。"
+        },
+        "domResponsibilities": [
+          "承载可阅读内容、导航和最终行动。",
+          "在 WebGL 不可用时保留完整语义顺序。"
+        ],
+        "webglResponsibilities": [
+          "承载空间记忆、镜头关系和连续状态变化。",
+          "让素材融入环境并提供克制的交互反馈。"
+        ],
+        "targetFrameTimeMs": 16.7,
+        "maxInitialAssetBytes": 8000000,
+        "targetDevices": [
+          "desktop",
+          "mobile"
+        ]
+      },
+      "acceptance": [
+        {
+          "id": "intent-visible",
+          "priority": "blocker",
+          "assertion": "首屏和终点能够对应原始主体、情绪变化和最终行动；不了解行业背景的用户也能在约 10 秒内识别核心对象、可执行操作和操作后的业务结果。",
+          "evidence": "screenshot-ending"
+        },
+        {
+          "id": "visual-anchor-specific",
+          "priority": "blocker",
+          "assertion": "首屏存在与 brief 直接相关且无需依赖标题即可辨认的视觉锚点；纯色、通用网格、无主题依据的渐变、随机粒子或无关几何不能单独充当主视觉。",
+          "evidence": "screenshot-opening"
+        },
+        {
+          "id": "opening-composed",
+          "priority": "high",
+          "assertion": "首屏存在明确主体和空间坐标，没有空黑屏、文字裁切或主体被遮挡。",
+          "evidence": "screenshot-opening"
+        },
+        {
+          "id": "process-causal",
+          "priority": "blocker",
+          "assertion": "主要输入、主要参数或高层操作必须通过同一目标状态依次驱动 data-signal-visual-anchor 中同一主体的可见变化、data-signal-primary-result 的业务结果与 data-signal-primary-action 的最终行动；真实滑杆、按钮或选择器还必须标记 data-signal-primary-control。文案、数字、active class、裁切跳变、镜头切换、整体缩放、透明度或模糊不能冒充因果变化。",
+          "evidence": "screenshot-beat"
+        },
+        {
+          "id": "semantic-state-consistent",
+          "priority": "high",
+          "assertion": "声音产品的可听结果、视觉主体、参数、可见数值和结果解释必须来自同一目标状态；需验证用户手势激活、播放或触发、静音、音量、可辨认对比、真实性标注与音频失败降级。",
+          "evidence": "runtime"
+        },
+        {
+          "id": "borderless-integration",
+          "priority": "high",
+          "assertion": "主体和环境没有棋盘格、矩形图片边界或不自然的发光方框。",
+          "evidence": "screenshot-beat"
+        },
+        {
+          "id": "mobile-readable",
+          "priority": "blocker",
+          "assertion": "390px 移动端无横向溢出；主体、正文和行动可见，并能沿纵向完成与桌面等价的主要控件→结果→最终行动路径，不能只保留桌面工作区的裁切局部。",
+          "evidence": "screenshot-mobile"
+        },
+        {
+          "id": "semantic-fallback",
+          "priority": "normal",
+          "assertion": "关闭 WebGL 或减少运动后仍保留完整内容顺序和行动。",
+          "evidence": "dom"
+        },
+        {
+          "id": "runtime-clean",
+          "priority": "blocker",
+          "assertion": "页面无阻断脚本错误，关键素材请求成功，滚动和指针输入可用。",
+          "evidence": "runtime"
+        }
+      ],
+      "executionLimits": {
+        "authoringPasses": 1,
+        "assetBatches": 1,
+        "refinementPasses": 1,
+        "stopAfterMinutes": 15,
+        "archivePolicy": "best-result-only"
+      }
+    },
+    "reference": {
+      "title": "为一部没有画面的午夜电台短篇小说设计可聆听的… · 单镜凝视",
+      "summary": "把主体压缩为一次连续、可记忆的视觉变化。",
+      "scenePlugin": "signal-world",
+      "productionStatus": "adapted",
+      "theme": {
+        "deep": "#07141c",
+        "surface": "#102a35",
+        "text": "#f1fbff",
+        "muted": "#9bb7c2",
+        "accent": "#83ddff",
+        "accentSoft": "#c8f1e7"
+      },
+      "assets": []
+    }
+  },
+  "mediaDominance": {
+    "schemaVersion": 1,
+    "decision": "ready",
+    "route": "dom-only",
+    "highQualityAssetIds": [],
+    "subjectPrimitiveCount": 0,
+    "subjectPrimitiveScore": 0,
+    "constructors": {},
+    "summary": "媒体主导权门禁不适用：当前不是具备 L3/L4 主素材的媒体主导路线。"
+  },
+  "usedAssets": [],
+  "refinement": {
+    "status": "rejected",
+    "parentId": "dedicated-f9ed58e5b7ea",
+    "receipt": {
+      "id": "dedicated-f9ed58e5b7ea",
+      "provider": "codex",
+      "model": "gpt-5.6-terra",
+      "status": "compiled",
+      "previewUrl": "/generated-runs/dedicated-f9ed58e5b7ea/",
+      "generatedAt": "2026-08-30T08:22:41.467Z",
+      "files": 4,
+      "assets": 0,
+      "sourceBytes": 13803,
+      "hasShaders": false,
+      "compileMs": 556,
+      "attempts": 1,
+      "directory": "generated/runs/dedicated-f9ed58e5b7ea"
+    },
+    "sourceAssessment": {
+      "schemaVersion": 1,
+      "verdict": "revise",
+      "score": 12,
+      "summary": "页面可运行，但存在需要视觉修订的跨状态问题。",
+      "findings": [
+        {
+          "code": "opening-heading-missing",
+          "severity": "major",
+          "frameId": "opening",
+          "message": "桌面首屏主标题不在可见视口内；不能把 DOM 中存在但被画布或文档流推离首屏的标题视为有效内容。"
+        },
+        {
+          "code": "primary-journey-unverified",
+          "severity": "major",
+          "frameId": "beat-voices-emerge",
+          "message": "beat-voices-emerge 只改变了文案、数值或高亮，主体视觉锚点没有发生可辨认变化。"
+        },
+        {
+          "code": "semantic-state-inconsistent",
+          "severity": "major",
+          "frameId": "beat-voices-emerge",
+          "message": "beat-voices-emerge 的控件改变后，可见数值、结果解释或状态反馈没有同步变化。"
+        },
+        {
+          "code": "semantic-state-inconsistent",
+          "severity": "major",
+          "frameId": "mobile",
+          "message": "mobile 的控件改变后，可见数值、结果解释或状态反馈没有同步变化。"
+        }
+      ],
+      "observations": []
+    },
+    "finalAssessment": {
+      "schemaVersion": 1,
+      "verdict": "revise",
+      "score": 12,
+      "summary": "页面可运行，但存在需要视觉修订的跨状态问题。",
+      "findings": [
+        {
+          "code": "opening-heading-missing",
+          "severity": "major",
+          "frameId": "opening",
+          "message": "桌面首屏主标题不在可见视口内；不能把 DOM 中存在但被画布或文档流推离首屏的标题视为有效内容。"
+        },
+        {
+          "code": "primary-journey-unverified",
+          "severity": "major",
+          "frameId": "beat-voices-emerge",
+          "message": "beat-voices-emerge 只改变了文案、数值或高亮，主体视觉锚点没有发生可辨认变化。"
+        },
+        {
+          "code": "semantic-state-inconsistent",
+          "severity": "major",
+          "frameId": "beat-voices-emerge",
+          "message": "beat-voices-emerge 的控件改变后，可见数值、结果解释或状态反馈没有同步变化。"
+        },
+        {
+          "code": "semantic-state-inconsistent",
+          "severity": "major",
+          "frameId": "mobile",
+          "message": "mobile 的控件改变后，可见数值、结果解释或状态反馈没有同步变化。"
+        }
+      ],
+      "observations": []
+    },
+    "visualAcceptance": {
+      "schemaVersion": 1,
+      "verdict": "revise",
+      "score": 12,
+      "assetRole": "not-applicable",
+      "summary": "快速结构预检停止（12 分）：页面可运行，但存在需要视觉修订的跨状态问题。 不调用视觉精修模型。",
+      "findings": [
+        {
+          "code": "copy-obstructed",
+          "severity": "major",
+          "frameId": "opening",
+          "message": "桌面首屏主标题不在可见视口内；不能把 DOM 中存在但被画布或文档流推离首屏的标题视为有效内容。"
+        },
+        {
+          "code": "structure-mode-mismatch",
+          "severity": "major",
+          "frameId": "beat-voices-emerge",
+          "message": "beat-voices-emerge 只改变了文案、数值或高亮，主体视觉锚点没有发生可辨认变化。"
+        },
+        {
+          "code": "interaction-causality-weak",
+          "severity": "major",
+          "frameId": "beat-voices-emerge",
+          "message": "beat-voices-emerge 的控件改变后，可见数值、结果解释或状态反馈没有同步变化。"
+        },
+        {
+          "code": "interaction-causality-weak",
+          "severity": "major",
+          "frameId": "mobile",
+          "message": "mobile 的控件改变后，可见数值、结果解释或状态反馈没有同步变化。"
+        }
+      ]
+    },
+    "summary": "快速结构预检停止（12 分）：页面可运行，但存在需要视觉修订的跨状态问题。 不调用视觉精修模型。",
+    "resolved": [],
+    "remaining": [
+      "桌面首屏主标题不在可见视口内；不能把 DOM 中存在但被画布或文档流推离首屏的标题视为有效内容。",
+      "beat-voices-emerge 只改变了文案、数值或高亮，主体视觉锚点没有发生可辨认变化。",
+      "beat-voices-emerge 的控件改变后，可见数值、结果解释或状态反馈没有同步变化。",
+      "mobile 的控件改变后，可见数值、结果解释或状态反馈没有同步变化。"
+    ],
+    "selectedId": "dedicated-f9ed58e5b7ea",
+    "model": "gpt-5.6-sol"
+  }
+}

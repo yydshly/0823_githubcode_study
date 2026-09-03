@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "deliveryId": "eclipse-post-office",
+  "generationCalls": 1,
+  "sourcePolicy": "open-best-fit-resources",
+  "assets": [
+    {
+      "id": "eclipse-post-office-salt-flat-v1",
+      "path": "./assets/eclipse-post-office-salt-flat-v1.png",
+      "role": "environment-and-material-identity",
+      "source": "openai-built-in-imagegen",
+      "sha256": "13ed8583aa062308168abc88b8ed26e63d025ca3dec82d643336e5377463d470",
+      "visualResponsibility": "承担盐湖、黄铜邮局、纸张、纵深与日食前自然光线；不包含日轮、月影、界面或文字。",
+      "generatedAt": "2026-09-02",
+      "fallback": "CSS 盐湖地平线保留完整交互与语义状态"
+    }
+  ]
+}

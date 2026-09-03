@@ -1,0 +1,314 @@
+{
+  "schemaVersion": 1,
+  "creativeProtocolVersion": 3,
+  "id": "direct-r139-ten-second-callsign-decode",
+  "goalPlayback": {
+    "originalBrief": "为第一次参加业余无线电公开课的人设计一个「十秒呼号解码」网页。一条虚构演示电文以点划文字与合成音调同步出现，用户必须实际聆听并辨认点划节奏。点击试听按钮或按空格键播放每一段，点划在原位展开对应字母，之后提交解码；最终行动是保存这张呼号练习卡。页面像一张会发声的现代排版作品，使用明亮纸白、信号橙和墨黑。所有呼号与电文均为虚构演示。",
+    "subject": "业余无线电公开课中的十秒虚构呼号点划练习",
+    "audience": "第一次参加业余无线电公开课、尚不能稳定辨认点划节奏的学习者",
+    "desiredOutcome": "通过一次真实聆听辨认四段点划节奏，提交呼号解码，并保存完成的练习卡。",
+    "primaryAction": "保存这张呼号练习卡",
+    "hardConstraints": [
+      "所有呼号、电文与练习结果必须持续说明为虚构演示",
+      "声音必须由真实用户手势触发，并与点划文字共享同一 canonical sequence",
+      "错误答案不得显示完成态或开放保存，正确答案才可保存并跨重载恢复",
+      "音频不可用时不得伪装播放，但必须保留等时视觉练习和主要行动"
+    ],
+    "preferences": [
+      "使用纸白、信号橙和墨黑形成现代编辑排版作品，而非暗色电台控制台",
+      "四段点划横跨页面并在原位展开字母，声音、时间标尺和字形保持同一语言",
+      "页面长度、布局与操作服从十秒聆听任务，不套固定三屏、中央产品或参数工作台"
+    ]
+  },
+  "selectedDirection": {
+    "id": "ten-second-callsign-typographic-sonic-field",
+    "title": "十秒呼号解码 · 会发声的现代排版作品",
+    "experienceForm": "typographic-sonic-field",
+    "rationale": "把四段点划本身放大为横跨页面的视觉主体；一次真实试听使合成音、点划高亮、原位字母展开、解码反馈和保存练习卡沿同一十秒序列推进，不需要外部主素材或持久工具面板。"
+  },
+  "referencePrinciples": [
+    {
+      "referenceId": "positive-sonic-editorial-feedback",
+      "title": "声音与排版共享同一状态",
+      "principle": "借用用户手势启动声音，并让节奏、文字、解释和不可用降级共享状态的原理。",
+      "relevance": "呼号练习必须把听见的九个音调与四段点划、字母揭示和解码结果绑定；只借因果和诚实降级，不复制电台视觉模板。",
+      "sourceUri": "../generated-runs/dedicated-f9ed58e5b7ea/"
+    }
+  ],
+  "assetPlan": {
+    "batchId": "assets-mrz3au",
+    "strategy": "none",
+    "rationale": "当前体验的视觉身份来自可读文字、声音时值、播放状态与原位排版变化；语义 DOM、SVG 与 Web Audio 必须共享同一状态，生成图不能承担这项因果职责。 当前首选不需要独立素材批次。",
+    "assets": []
+  },
+  "interactionRationale": {
+    "mode": "direct",
+    "audioApplicable": true,
+    "rationale": "点击试听或按空格创建并运行 Web Audio；同一 canonical sequence 同步驱动九个音调、四段点划、字母揭示、答案校验、保存和恢复，音频失败时明确进入视觉节拍回退。"
+  },
+  "mediumDecision": {
+    "schemaVersion": 1,
+    "preferred": "code-native",
+    "confidence": 0.96,
+    "rationale": "当前体验的视觉身份来自可读文字、声音时值、播放状态与原位排版变化；语义 DOM、SVG 与 Web Audio 必须共享同一状态，生成图不能承担这项因果职责。",
+    "signals": [
+      {
+        "source": "user-hard",
+        "evidence": "一条虚构演示电文以点划文字与合成音调同步出现，用户必须实际聆听并辨认点划节奏"
+      },
+      {
+        "source": "user-hard",
+        "evidence": "最终行动是保存这张呼号练习卡"
+      },
+      {
+        "source": "contract-evidence",
+        "evidence": "体验形态为 typographic-sonic-field，声音能力为 synthesized-web-audio。"
+      }
+    ],
+    "assetResponsibilities": [],
+    "truthBoundary": "合成声音、虚构文本和练习结果必须明确标注为演示；不得把生成图、波形动画或视觉高亮冒充真实可听反馈。",
+    "alternative": null
+  },
+  "visualAmbition": {
+    "schemaVersion": 1,
+    "intentLevel": "expressive",
+    "intentRationale": "主题记忆点来自声音与巨幅点划排版的严格同步；不需要为了“高级”强加 3D 或沉浸式渲染器。",
+    "heroMoment": {
+      "title": "四段点划在纸白页面上形成十秒可听乐谱",
+      "description": "开场直接看见四段信号橙点划、十秒标尺和试听入口；真实播放后点划依次发声并在原位展开字母。",
+      "themeConnection": "即使没有产品设备或背景图片，观众也能从点划、时间标尺和音调反馈辨认“呼号解码”。",
+      "appearsWithinSeconds": 2,
+      "observableRuntimeChange": {
+        "trigger": "用户点击试听全部或按空格键",
+        "from": "四段点划静止，答案与完成卡隐藏",
+        "to": "九个合成音依次播放，点划和字母展开，随后进入可提交的解码状态"
+      }
+    },
+    "rendering": {
+      "primary": "dom-css",
+      "supporting": [],
+      "rationale": "语义 DOM 和 CSS 直接承担点划、排版、状态与可访问操作；Web Audio 承担声音，避免把没有空间职责的任务伪装成 Canvas 或 3D。"
+    },
+    "spatialDepth": {
+      "mode": "flat",
+      "purpose": "通过字号、留白、基线和橙黑反差建立印刷层级，让时间与节奏清晰可读。",
+      "cues": []
+    },
+    "motionArc": {
+      "beats": [
+        {
+          "phase": "opening",
+          "driver": "time",
+          "visualState": "四段点划保持完整可读，十秒标尺和试听入口建立任务",
+          "thematicPurpose": "先让学习者看懂需要聆听和辨认的对象"
+        },
+        {
+          "phase": "exploration",
+          "driver": "audio",
+          "visualState": "九个音调依序响起，对应点划高亮并逐段展开字母",
+          "thematicPurpose": "让声音、节奏和符号形成真实因果"
+        },
+        {
+          "phase": "resolution",
+          "driver": "direct-input",
+          "visualState": "错误答案停留在校验态，正确答案开放练习卡并保存恢复",
+          "thematicPurpose": "把十秒聆听收束为可带走的学习结果"
+        }
+      ],
+      "runtimeAdvantage": "真实声音时间线、点划高亮、字母展开和答案状态共同表达听辨过程，静态海报无法等价完成。"
+    },
+    "interactionToScene": [
+      {
+        "input": "点击试听全部或按空格键",
+        "sceneResponse": "创建并运行 Web Audio，按同一序列播放九个音调并同步推进点划与字母",
+        "productMeaning": "学习者实际聆听而不是只阅读答案"
+      },
+      {
+        "input": "提交呼号并保存练习卡",
+        "sceneResponse": "错误时保留未完成态，正确时显示完成卡并跨重载恢复",
+        "productMeaning": "校验和保存真实反映这次听辨是否完成"
+      }
+    ],
+    "assetCredibility": {
+      "level": "conceptual-coherent",
+      "strategy": "零外部主素材；点划、文字、计时与合成音全部由同一代码内 canonical sequence 生成。",
+      "disclosure": "页面明确说明 KAGE 与电文均为虚构练习，合成音不是录音、真实通信或认证训练。"
+    },
+    "fallbackPerformance": {
+      "targetFps": 60,
+      "maxDevicePixelRatio": 2.5,
+      "initialTransferBudgetMb": 1,
+      "mobileFallback": "equivalent",
+      "reducedMotionFallback": "key-states",
+      "rendererFailureFallback": "dom-content"
+    }
+  },
+  "attemptBudget": {
+    "limits": {
+      "directionSelections": 1,
+      "assetBatches": 1,
+      "builds": 1,
+      "deterministicRepairs": 2,
+      "visualRefinements": 1
+    },
+    "used": {
+      "directionSelections": 1,
+      "assetBatches": 1,
+      "builds": 1,
+      "deterministicRepairs": 2,
+      "visualRefinements": 0
+    }
+  },
+  "stageReports": [
+    {
+      "stage": "bounded-r139-completion",
+      "elapsedMs": 0,
+      "status": "completed",
+      "summary": "一个方向、一次零外部素材决策与一次完整构建完成；两次确定性修复解决播放取消和完成态选择器，五个自适应浏览器检查通过后停止，没有静默重生素材或无限视觉返工。"
+    }
+  ],
+  "finalCandidate": {
+    "runId": "direct-r139-ten-second-callsign-decode",
+    "bundleHash": "bb1cbb3a06ea697d4f5dd2f00761ac5c9e445d31bd7e173f6f8c7cb76ab833d6"
+  },
+  "adaptiveEvidence": {
+    "schemaVersion": 1,
+    "runId": "direct-r139-ten-second-callsign-decode",
+    "bundleHash": "bb1cbb3a06ea697d4f5dd2f00761ac5c9e445d31bd7e173f6f8c7cb76ab833d6",
+    "profile": {
+      "schemaVersion": 1,
+      "interactionMode": "direct",
+      "audioApplicable": true,
+      "requiredCheckpoints": [
+        "opening",
+        "core",
+        "mobile",
+        "interaction",
+        "audio"
+      ]
+    },
+    "checkpoints": [
+      {
+        "kind": "opening",
+        "runId": "direct-r139-ten-second-callsign-decode",
+        "bundleHash": "bb1cbb3a06ea697d4f5dd2f00761ac5c9e445d31bd7e173f6f8c7cb76ab833d6",
+        "passed": true,
+        "summary": "桌面开场在 255ms 内呈现四段点划、十秒标尺和试听入口；KAGE 未提前出现在页面文字中。"
+      },
+      {
+        "kind": "core",
+        "runId": "direct-r139-ten-second-callsign-decode",
+        "bundleHash": "bb1cbb3a06ea697d4f5dd2f00761ac5c9e445d31bd7e173f6f8c7cb76ab833d6",
+        "passed": true,
+        "summary": "九个音调完成后四段字母从同一序列揭示；错误 KAGX 不显示完成卡，正确 KAGE 才保存并在重载后恢复。"
+      },
+      {
+        "kind": "mobile",
+        "runId": "direct-r139-ten-second-callsign-decode",
+        "bundleHash": "bb1cbb3a06ea697d4f5dd2f00761ac5c9e445d31bd7e173f6f8c7cb76ab833d6",
+        "passed": true,
+        "summary": "390×844 reduced-motion 完成真实试听、解码和保存，保留九个音调证据且没有页面级横向溢出。"
+      },
+      {
+        "kind": "interaction",
+        "runId": "direct-r139-ten-second-callsign-decode",
+        "bundleHash": "bb1cbb3a06ea697d4f5dd2f00761ac5c9e445d31bd7e173f6f8c7cb76ab833d6",
+        "passed": true,
+        "summary": "真实点击进入 sounding；答案校验控制完成卡和保存，强制音频回退仍用同一视觉时序完成任务。"
+      },
+      {
+        "kind": "audio",
+        "runId": "direct-r139-ten-second-callsign-decode",
+        "bundleHash": "bb1cbb3a06ea697d4f5dd2f00761ac5c9e445d31bd7e173f6f8c7cb76ab833d6",
+        "passed": true,
+        "summary": "真实 Web Audio context 处于 running 并调度九个音调；音频不可用时明确标记 unavailable，不伪装发声。"
+      }
+    ],
+    "hardGates": {
+      "runtimeClean": true,
+      "criticalAssetsLoaded": true,
+      "primaryActionReachable": true,
+      "mobileComplete": true,
+      "truthfulClaims": true,
+      "interactionVerified": true,
+      "audioVerified": true
+    },
+    "visualQuality": {
+      "schemaVersion": 1,
+      "verdict": "pass",
+      "score": 92,
+      "dimensions": {
+        "goalClarity": 94,
+        "creativeDistinctiveness": 91,
+        "craftCohesion": 93,
+        "assetIntegration": 92,
+        "interactionValue": 94,
+        "mobileReadiness": 88
+      },
+      "summary": "纸白、信号橙、墨黑、横跨页面的四段点划和十秒声音时间线形成统一的现代编辑语言；真实播放、错误阻断、正确保存和音频回退都直接服务呼号听辨。",
+      "findings": [
+        {
+          "code": "fictional-training-boundary",
+          "severity": "minor",
+          "checkpoint": "audio",
+          "message": "KAGE 和演示电文仅用于产品内虚构练习，页面持续声明合成音不是录音、真实通信或认证训练。"
+        }
+      ]
+    },
+    "macroStructureReview": {
+      "mode": "content-fit-gate",
+      "candidate": {
+        "runId": "direct-r139-ten-second-callsign-decode",
+        "layout": "editorial-flow",
+        "persistentControlPanel": false,
+        "visibleParameterControls": false,
+        "realtimeMetricCluster": false,
+        "primaryAction": "record-or-contribute"
+      },
+      "inertia": {
+        "mode": "advisory-only",
+        "detected": false,
+        "matchedRunIds": [],
+        "repeatedAxes": [],
+        "mustChange": false,
+        "recommendation": "未发现足以影响当前方向的宏观骨架惯性；继续由内容适配和最终效果决定页面形态。"
+      },
+      "persistentWorkbench": false,
+      "contentJustified": true,
+      "verdict": "pass",
+      "findingCode": null,
+      "summary": "当前候选不是持久参数工作台，无需为了近期案例差异而改变内容适配的宏观结构。"
+    }
+  },
+  "wowEvidence": {
+    "schemaVersion": 1,
+    "runId": "direct-r139-ten-second-callsign-decode",
+    "bundleHash": "bb1cbb3a06ea697d4f5dd2f00761ac5c9e445d31bd7e173f6f8c7cb76ab833d6",
+    "assessment": {
+      "schemaVersion": 1,
+      "intentLevel": "expressive",
+      "required": false,
+      "verdict": "not-required",
+      "score": 93,
+      "dimensions": {
+        "fiveSecondImpact": 93,
+        "runtimeAdvantage": 94,
+        "themeMemorability": 92,
+        "motionDepthMeaning": 91,
+        "assetIntegrationCredibility": 93,
+        "craftCohesion": 92
+      },
+      "observation": {
+        "heroMomentObserved": true,
+        "runtimeAdvantageOverStaticObserved": true,
+        "themeSpecificMemoryObserved": true,
+        "meaningfulMotionOrDepthObserved": true,
+        "credibleAssetIntegrationObserved": true,
+        "summary": "首屏以四段巨幅点划、十秒标尺和信号橙试听入口直接建立可发声的呼号练习，不依赖背景图片或设备模型。 真实 Web Audio 播放改变 sounding、当前点划、字母揭示和解码状态；静态海报无法完成相同听辨因果。 可复述记忆是在十秒内听见九个点划音调，辨认 KAGE，并把完成的呼号练习卡保存在本机。 点划高亮、字母原位展开和十秒时间线解释声音节奏；运动承担学习语义，不冒充空间 3D。 零外部素材；语义 DOM、CSS 点划和 Web Audio 从同一 canonical sequence 生成，并明确披露其虚构训练属性。 纸白、信号橙、墨黑、超宽点划字形、十秒标尺和克制控件形成统一的现代编辑排版语言。 真实输入改变声音播放、点划高亮、字母揭示、错误阻断、正确完成、保存和跨重载恢复。 390px reduced-motion 保留完整试听、四段点划、解码和保存任务，没有页面级横向溢出。 强制音频不可用后不创建或伪装 AudioContext，仍按同一十秒视觉时序揭示四段字母并完成解码和保存。"
+      },
+      "findings": []
+    }
+  },
+  "verdict": "pass",
+  "stopReason": null
+}

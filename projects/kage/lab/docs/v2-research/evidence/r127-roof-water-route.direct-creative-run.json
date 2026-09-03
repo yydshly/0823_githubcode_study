@@ -1,0 +1,297 @@
+{
+  "schemaVersion": 1,
+  "creativeProtocolVersion": 2,
+  "id": "direct-r127-roof-water-route",
+  "goalPlayback": {
+    "originalBrief": "为想理解住宅雨水去向的城市住户与社区规划者设计“一滴水的屋顶路线”网页。开场是明亮日光中的建筑剖面和一滴悬在屋檐的雨水；向下滚动时，同一座建筑依次展示屋顶降雨、天沟汇流、蓄水过滤和花园释放。水线、相机、水箱和植物状态同步变化，形成持续 Three.js 空间旅程，不做参数工作台。最终行动为“规划我的屋顶路线”。页面明确这是概念路线，不伪造真实降雨量、节水量、地理或工程结论。",
+    "subject": "一滴水的屋顶路线",
+    "audience": "想理解住宅雨水去向的城市住户与社区规划者",
+    "desiredOutcome": "沿同一建筑追踪雨水从屋面到花园的完整路线，理解每个节点的因果，并保存一份诚实的概念观察清单。",
+    "primaryAction": "规划我的屋顶路线",
+    "hardConstraints": [
+      "开场是明亮日光中的建筑剖面和一滴悬在屋檐的雨水",
+      "向下滚动时，同一座建筑依次展示屋顶降雨、天沟汇流、蓄水过滤和花园释放",
+      "最终行动为“规划我的屋顶路线”"
+    ],
+    "preferences": [
+      "明亮自然日光、建筑剖面与可追踪水线",
+      "持续空间旅程与内容自适应长度",
+      "不使用持久参数面板，不虚构工程或节水数据"
+    ]
+  },
+  "selectedDirection": {
+    "id": "direction-18aejrt",
+    "title": "一滴水的屋顶路线 · 专属创意方向",
+    "experienceForm": "continuous-spatial-water-journey",
+    "rationale": "以同一建筑剖面作为持续空间坐标，滚动统一驱动降雨、天沟、落水管、蓄水箱与花园，让“水去了哪里”成为可看见的因果路线。"
+  },
+  "referencePrinciples": [
+    {
+      "referenceId": "positive-iris-articulated-reveal",
+      "title": "IRIS · 程序化关节主体展开",
+      "principle": "借用单一三维主体、相机、材质与局部状态共享同一时间轴的机制，使建筑水路连续可追踪。",
+      "relevance": "屋顶水路同样需要一个持续空间主体和错峰局部变化；不复制机械题材、暗色材质或原页面构图。",
+      "sourceUrl": "https://iamtechartist.github.io/Threejs-3D-Webpage/"
+    },
+    {
+      "referenceId": "positive-scroll-scrub-media",
+      "title": "连续媒体滚动 · 同一进度驱动",
+      "principle": "借用滚动连续驱动同一状态变量的原理，让相机、水线、水位和植物响应保持因果一致。",
+      "relevance": "本页需要解释一条连续路线；只借状态驱动机制，不复制媒体卡片、色彩或章节外形。",
+      "sourceUri": "../pages/v2/prototypes/scroll-scrub-media/"
+    },
+    {
+      "referenceId": "direct-r125-ice-core-letters",
+      "title": "冰芯来信 · 同一环境的可逆空间旅程",
+      "principle": "借用同一环境、同一主体、可逆章节状态与可操作终点的连续性。",
+      "relevance": "建筑水路需要保留地点证据和反向滚动；不复制冰川题材、档案语言或冰蓝视觉。",
+      "sourceUri": "../pages/v2/deliveries/ice-core-letters/"
+    }
+  ],
+  "assetPlan": {
+    "batchId": "assets-r127-roof-water-route",
+    "strategy": "programmatic",
+    "rationale": "唯一程序化素材批次建立可辨认的建筑剖面、水路、透明蓄水箱和花园；几何与材质共同承担空间因果，不以低质量 CSS 图形冒充关键主体。",
+    "assets": [
+      {
+        "id": "programmatic-roof-water-system",
+        "role": "以 Three.js 建筑剖面、水线、蓄水体积和植物响应承载全部关键视觉与互动状态",
+        "source": "programmatic",
+        "required": true
+      }
+    ]
+  },
+  "interactionRationale": {
+    "mode": "scroll",
+    "audioApplicable": false,
+    "rationale": "滚动和章节导航共享一个进度，真实改变相机、水路、水箱和植物，最终抵达概念路线保存行动。"
+  },
+  "visualAmbition": {
+    "schemaVersion": 1,
+    "intentLevel": "immersive",
+    "intentRationale": "视觉野心等级 immersive 来自用户明确的体验要求：把一滴水的屋顶路线组织为可浏览、可选择、能用证据做决定的信息地图。。它只决定本次内容需要的表达强度，不继承历史案例的布局、风格或渲染器禁令。",
+    "heroMoment": {
+      "title": "一滴水的屋顶路线 · 规划我的屋顶路线",
+      "description": "开场以“明亮地图建立街区、站点分布和当前选区。”建立主体，并让后续变化服务于“，同一座建筑依次展示屋顶降雨、天沟汇流、蓄水过滤和花园释放”。",
+      "themeConnection": "视觉锚点必须直接证明“一滴水的屋顶路线”和“把一滴水的屋顶路线组织为可浏览、可选择、能用证据做决定的信息地图。”；即使隐藏标题，也能从对象、空间或数据关系辨认主题。；这一记忆点直接指向“规划我的屋顶路线”。",
+      "appearsWithinSeconds": 5,
+      "observableRuntimeChange": {
+        "trigger": "用户滚动推进体验",
+        "from": "明亮地图建立街区、站点分布和当前选区。",
+        "to": "地图收束到最优站点，并给出“规划我的屋顶路线”。"
+      }
+    },
+    "rendering": {
+      "primary": "webgl-shader",
+      "supporting": [
+        "dom-css"
+      ],
+      "rationale": "以 webgl-shader 承担“围绕“一滴水的屋顶路线”构建可辨认的主题专属对象、空间或证据场。”的主要可见职责；语义内容和行动仍由 DOM 保底。选择依据是 局部材质融合、遮罩或程序化氛围可由 Canvas/Shader 完成，页面结构保留在 DOM。"
+    },
+    "spatialDepth": {
+      "mode": "volumetric",
+      "purpose": "以连续材质和光场变化表现“，同一座建筑依次展示屋顶降雨、天沟汇流、蓄水过滤和花园释放”，变化必须保持主题含义。",
+      "cues": [
+        "lighting",
+        "focus",
+        "volumetric"
+      ]
+    },
+    "motionArc": {
+      "beats": [
+        {
+          "phase": "opening",
+          "driver": "time",
+          "visualState": "明亮地图建立街区、站点分布和当前选区。",
+          "thematicPurpose": "横向浏览街区或直接选择站点。"
+        },
+        {
+          "phase": "exploration",
+          "driver": "scroll",
+          "visualState": "当前站点的证据、距离和状态与地图标记同步更新。",
+          "thematicPurpose": "比较信息后确认最合适的站点。"
+        },
+        {
+          "phase": "resolution",
+          "driver": "scroll",
+          "visualState": "地图收束到最优站点，并给出“规划我的屋顶路线”。",
+          "thematicPurpose": "打开路线或完成最终行动。"
+        }
+      ],
+      "runtimeAdvantage": "运行时让用户从“明亮地图建立街区、站点分布和当前选区。”抵达“地图收束到最优站点，并给出“规划我的屋顶路线”。”；这种状态变化服务于主题，不能由一张静态截图等价替代。"
+    },
+    "interactionToScene": [
+      {
+        "input": "用户滚动推进体验",
+        "sceneResponse": "视觉锚点沿体验节点连续承担建立、变化与“规划我的屋顶路线”收束，不得在中段被无关装饰替换。",
+        "productMeaning": "可见变化必须帮助用户理解“，同一座建筑依次展示屋顶降雨、天沟汇流、蓄水过滤和花园释放”，并自然抵达“规划我的屋顶路线”。"
+      }
+    ],
+    "assetCredibility": {
+      "level": "data-grounded",
+      "strategy": "地理底图、地点和路线必须可追溯；模拟业务点与数值必须显式标注，模型不得虚构为事实。",
+      "disclosure": "地域、路线与数据只使用可追溯来源；模拟内容必须明确标为演示。"
+    },
+    "fallbackPerformance": {
+      "targetFps": 60,
+      "maxDevicePixelRatio": 2,
+      "initialTransferBudgetMb": 7.63,
+      "mobileFallback": "simplified-scene",
+      "reducedMotionFallback": "key-states",
+      "rendererFailureFallback": "key-visual"
+    }
+  },
+  "attemptBudget": {
+    "limits": {
+      "directionSelections": 1,
+      "assetBatches": 1,
+      "builds": 1,
+      "deterministicRepairs": 2,
+      "visualRefinements": 1
+    },
+    "used": {
+      "directionSelections": 1,
+      "assetBatches": 1,
+      "builds": 1,
+      "deterministicRepairs": 1,
+      "visualRefinements": 1
+    }
+  },
+  "stageReports": [],
+  "finalCandidate": {
+    "runId": "direct-r127-roof-water-route",
+    "bundleHash": "c41783ee2c07301fd996e92dd300618c9c019a93f74c358c8a0f36c8cb6effce"
+  },
+  "adaptiveEvidence": {
+    "schemaVersion": 1,
+    "runId": "direct-r127-roof-water-route",
+    "bundleHash": "c41783ee2c07301fd996e92dd300618c9c019a93f74c358c8a0f36c8cb6effce",
+    "profile": {
+      "schemaVersion": 1,
+      "interactionMode": "scroll",
+      "audioApplicable": false,
+      "requiredCheckpoints": [
+        "opening",
+        "core",
+        "mobile",
+        "scroll"
+      ]
+    },
+    "checkpoints": [
+      {
+        "kind": "opening",
+        "runId": "direct-r127-roof-water-route",
+        "bundleHash": "c41783ee2c07301fd996e92dd300618c9c019a93f74c358c8a0f36c8cb6effce",
+        "passed": true,
+        "summary": "桌面开场在 3344ms 内呈现明亮建筑剖面、屋檐雨滴与完整空间坐标，无运行错误。"
+      },
+      {
+        "kind": "core",
+        "runId": "direct-r127-roof-water-route",
+        "bundleHash": "c41783ee2c07301fd996e92dd300618c9c019a93f74c358c8a0f36c8cb6effce",
+        "passed": true,
+        "summary": "同一 Three.js 建筑持续承担屋面、天沟、落水管、透明蓄水箱与花园，关键对象均由程序化几何真实渲染。"
+      },
+      {
+        "kind": "mobile",
+        "runId": "direct-r127-roof-water-route",
+        "bundleHash": "c41783ee2c07301fd996e92dd300618c9c019a93f74c358c8a0f36c8cb6effce",
+        "passed": true,
+        "summary": "390×844 reduced-motion 无横向溢出，建筑、水路、终点卡片和主要行动保持可见可用。"
+      },
+      {
+        "kind": "scroll",
+        "runId": "direct-r127-roof-water-route",
+        "bundleHash": "c41783ee2c07301fd996e92dd300618c9c019a93f74c358c8a0f36c8cb6effce",
+        "passed": true,
+        "summary": "四个阶段的状态、画布哈希与可见截图哈希均不同，反向切换可回到降雨态；滚动因果真实联动。"
+      }
+    ],
+    "hardGates": {
+      "runtimeClean": true,
+      "criticalAssetsLoaded": true,
+      "primaryActionReachable": true,
+      "mobileComplete": true,
+      "truthfulClaims": true,
+      "interactionVerified": true,
+      "audioVerified": null
+    },
+    "visualQuality": {
+      "schemaVersion": 1,
+      "verdict": "pass",
+      "score": 92,
+      "dimensions": {
+        "goalClarity": 94,
+        "creativeDistinctiveness": 91,
+        "craftCohesion": 90,
+        "assetIntegration": 90,
+        "interactionValue": 93,
+        "mobileReadiness": 91
+      },
+      "summary": "明亮建筑剖面、水路、蓄水体积与花园在同一持续空间内形成主题专属语言；滚动把空间变化直接连接到雨水路线与最终规划行动。",
+      "findings": [
+        {
+          "code": "conceptual-route-only",
+          "severity": "minor",
+          "checkpoint": "core",
+          "message": "建筑与水路是用于解释流程的概念模型，不代表真实排水能力、蓄水容量或节水效果；页面已持续披露。"
+        }
+      ]
+    },
+    "macroStructureReview": {
+      "mode": "content-fit-gate",
+      "candidate": {
+        "runId": "direct-r127-roof-water-route",
+        "layout": "spatial-journey",
+        "persistentControlPanel": false,
+        "visibleParameterControls": false,
+        "realtimeMetricCluster": false,
+        "primaryAction": "record-or-contribute"
+      },
+      "inertia": {
+        "mode": "advisory-only",
+        "detected": false,
+        "matchedRunIds": [],
+        "repeatedAxes": [],
+        "mustChange": false,
+        "recommendation": "未发现足以影响当前方向的宏观骨架惯性；继续由内容适配和最终效果决定页面形态。"
+      },
+      "persistentWorkbench": false,
+      "contentJustified": true,
+      "verdict": "pass",
+      "findingCode": null,
+      "summary": "当前候选不是持久参数工作台，无需为了近期案例差异而改变内容适配的宏观结构。"
+    }
+  },
+  "wowEvidence": {
+    "schemaVersion": 1,
+    "runId": "direct-r127-roof-water-route",
+    "bundleHash": "c41783ee2c07301fd996e92dd300618c9c019a93f74c358c8a0f36c8cb6effce",
+    "assessment": {
+      "schemaVersion": 1,
+      "intentLevel": "immersive",
+      "required": true,
+      "verdict": "pass",
+      "score": 91,
+      "dimensions": {
+        "fiveSecondImpact": 92,
+        "runtimeAdvantage": 93,
+        "themeMemorability": 91,
+        "motionDepthMeaning": 92,
+        "assetIntegrationCredibility": 89,
+        "craftCohesion": 90
+      },
+      "observation": {
+        "heroMomentObserved": true,
+        "runtimeAdvantageOverStaticObserved": true,
+        "themeSpecificMemoryObserved": true,
+        "meaningfulMotionOrDepthObserved": true,
+        "credibleAssetIntegrationObserved": true,
+        "summary": "首屏直接看见一滴雨、屋顶、天沟、蓄水箱与花园的空间关系，主题和路线悬念在五秒内成立。 同一建筑在四个阶段连续改变相机、水路、水箱和植物，截图与画布哈希共同证明不是静态背景翻页。 可复述记忆是跟着一滴水穿过屋顶、天沟和透明蓄水箱，最后看见花园回应并保存路线起点。 镜头换位、遮挡、水流路径、水位与叶片生长都解释同一物理因果，动效不是装饰。 程序化建筑剖面保持对象、光线和坐标连续；页面明确其为概念模型，不把它伪装成真实工程数据。 石灰墙、陶土屋面、金属天沟、透明水体和植被形成统一、明亮而非科技模板的材质语言。 所有输入共享同一进度和五个状态，并最终抵达可保存、可关闭且可返回焦点的概念规划行动。 390px reduced-motion 保留完整建筑终点、花园卡片、底部章节导航和主要行动，没有横向溢出。 强制 WebGL fallback 仍呈现语义化建筑水路、五章节、路线表单、本地保存和焦点返回。"
+      },
+      "findings": []
+    }
+  },
+  "verdict": "pass",
+  "stopReason": null
+}

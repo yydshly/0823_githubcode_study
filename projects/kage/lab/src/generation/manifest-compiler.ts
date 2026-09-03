@@ -1,9 +1,9 @@
-import type { CreativeBrief, CreativeDirection, BriefInterpretation } from './schema';
-import type { CameraShot, ExperienceFlow, ExperienceManifest, ExperienceNode, SceneStateValue, TrackKeyframe } from '../experience/schema';
-import { assertExperienceManifest } from '../experience/validator';
+import type { CreativeBrief, CreativeDirection, BriefInterpretation } from './schema.ts';
+import type { CameraShot, ExperienceFlow, ExperienceManifest, ExperienceNode, SceneStateValue, TrackKeyframe } from '../experience/schema.ts';
+import { assertExperienceManifest } from '../experience/validator.ts';
 import { stableHash } from './stable-hash.ts';
-import type { EffectSpec } from './effect-spec';
-import { compileComposedSceneRecipe } from './composed-scene-recipe';
+import type { EffectSpec } from './effect-spec.ts';
+import { compileComposedSceneRecipe } from './composed-scene-recipe.ts';
 
 interface NodeDraft {
   id: string;

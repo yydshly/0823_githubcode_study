@@ -75,14 +75,14 @@ const phaseMessages = [
   ['正在理解你的目标', '提取主体、受众、情绪和希望发生的变化。'],
   ['正在选择素材路线', '优选或用户素材优先，MiniMax 仅在适合时备用。'],
   ['Codex 正在构建专属网页', '编译页面叙事、Three.js 场景、镜头与交互。'],
-  ['正在验收真实页面', '检查首屏、中段、末段与移动端并保留最佳版本。']
+  ['正在验收真实页面', '按产品体验节点检查关键状态、移动端与降级方案，并只保留最佳版本。']
 ] as const;
 
 let phaseIndex = 0;
 let phaseTimer = 0;
 let lastState: ProductState | null = null;
 let autoSelectedRunId: string | null = null;
-let userRequestedGeneration = params.get('autorun') === '1' || params.get('provider') === 'local';
+let userRequestedGeneration = params.get('autorun') === '1' || params.get('provider') === 'local' || /^job-[a-f0-9]{16}$/.test(params.get('job') || '');
 let lastOutcomeStage: OutcomeRouteInput['stage'] = 'idle';
 
 upgradeReferenceLibrary();
@@ -127,6 +127,7 @@ stageFrame.addEventListener('load', () => {
     return;
   }
   prepareEmbeddedPreview();
+  stageShell.dataset.previewState = 'ready';
   placeholder.classList.add('is-hidden');
   stageFrame.classList.add('is-ready');
   stageOpen.removeAttribute('aria-disabled');
@@ -186,6 +187,7 @@ function beginUserGeneration(): void {
 }
 
 function renderWaitingState(): void {
+  delete stageShell.dataset.previewState;
   body.dataset.productAwaiting = 'true';
   body.dataset.productState = 'idle';
   sourceBadge.textContent = 'WAITING / CLICK GENERATE';
@@ -206,12 +208,14 @@ function renderWaitingState(): void {
 }
 
 function suppressBootstrapDraft(): void {
+  delete stageShell.dataset.previewState;
   stageFrame.classList.remove('is-ready');
   stageOpen.setAttribute('aria-disabled', 'true');
   if (stageFrame.getAttribute('src') !== 'about:blank') stageFrame.src = 'about:blank';
 }
 
 function renderGeneratingState(): void {
+  stageShell.dataset.previewState = 'loading';
   body.dataset.productAwaiting = 'false';
   body.dataset.productState = 'generating';
   sourceBadge.textContent = 'MODEL GENERATING';
@@ -324,17 +328,17 @@ function createGenerationTrace(): GenerationTrace {
 }
 
 function prepareEmbeddedPreview(): void {
-  stageFrame.setAttribute('scrolling', 'no');
+  stageFrame.setAttribute('scrolling', 'auto');
   const doc = stageFrame.contentDocument;
   if (!doc?.head) return;
   if (!doc.querySelector('#workbench-preview-r16')) {
     const style = doc.createElement('style');
     style.id = 'workbench-preview-r16';
     style.textContent = `
-      body[data-embed="true"] .lab-controls,
-      body[data-embed="true"] .controls-toggle { display: none !important; }
-      body[data-embed="true"] #story { height: 100vh; overflow: hidden; }
-      body[data-embed="true"] .story-intro { box-sizing: border-box; width: 100%; height: 100vh; min-height: 100vh; overflow: hidden; }
+      body[data-signal-embed="true"] .lab-controls,
+      body[data-signal-embed="true"] .controls-toggle { display: none !important; }
+      body[data-signal-embed="true"] #story { min-height: 100vh; }
+      body[data-signal-embed="true"] .story-intro { box-sizing: border-box; width: 100%; min-height: 100vh; }
     `;
     doc.head.append(style);
   }
@@ -388,12 +392,18 @@ function candidateScore(candidate: ProductCandidateSnapshot): number {
 }
 
 function startProgress(): void {
+  const keepCurrentPreview = hasUsablePreview();
   clearPhaseTimer();
   phaseIndex = 0;
   progress.hidden = false;
-  placeholder.classList.remove('is-hidden');
-  stageFrame.classList.remove('is-ready');
-  stageOpen.setAttribute('aria-disabled', 'true');
+  placeholder.classList.toggle('is-hidden', keepCurrentPreview);
+  stageFrame.classList.toggle('is-ready', keepCurrentPreview);
+  if (keepCurrentPreview) {
+    stageShell.dataset.previewState = 'ready';
+    stageOpen.removeAttribute('aria-disabled');
+  } else {
+    stageOpen.setAttribute('aria-disabled', 'true');
+  }
   renderPhase();
 }
 
@@ -416,6 +426,19 @@ function completeProgress(): void {
 }
 
 function showErrorState(): void {
+  if (hasUsablePreview()) {
+    stageShell.dataset.previewState = 'ready';
+    clearPhaseTimer();
+    sourceBadge.textContent = 'NEW GENERATION FAILED · CURRENT KEPT';
+    generationTrace.root.hidden = true;
+    progress.hidden = true;
+    placeholder.classList.add('is-hidden');
+    stageFrame.classList.add('is-ready');
+    stageOpen.removeAttribute('aria-disabled');
+    renderOutcomeRoute({ stage: 'failed', message: '新任务未完成；当前可运行页面、链接和交互均已保留。' });
+    return;
+  }
+  stageShell.dataset.previewState = 'failed';
   clearPhaseTimer();
   sourceBadge.textContent = 'GENERATION FAILED';
   generationTrace.root.hidden = true;
@@ -447,6 +470,7 @@ function renderOutcomeRoute(input: OutcomeRouteInput): void {
     assets: 1,
     authoring: 2,
     reviewing: 3,
+    'review-required': 3,
     blocked: 1,
     failed: Math.max(0, phaseIndex)
   };
@@ -464,11 +488,16 @@ function renderOutcomeRoute(input: OutcomeRouteInput): void {
     stageFrame.classList.add('is-ready');
     stageOpen.removeAttribute('aria-disabled');
   }
-  if (input.stage === 'failed') {
+  if (input.stage === 'failed' && !hasUsablePreview()) {
     placeholder.classList.remove('is-hidden');
     placeholderTitle.textContent = '这次没有构建完成';
     placeholderCopy.textContent = '你的描述仍然保留。检查提示后可以直接重新生成。';
   }
+}
+
+function hasUsablePreview(): boolean {
+  return stageFrame.getAttribute('src') !== 'about:blank'
+    && stageFrame.classList.contains('is-ready');
 }
 
 function setProgressPhase(index: number): void {

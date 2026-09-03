@@ -1,0 +1,306 @@
+{
+  "schemaVersion": 1,
+  "id": "direct-kinetic-score-r116",
+  "goalPlayback": {
+    "originalBrief": "创建一个未使用过的新主题，验证 Kage V2 能否产出明亮、具有主题专属记忆和真实因果互动的旗舰网页。页面服务独立舞者，让用户观看、修改并保存一段四拍动作短句；不能退回暗色科技、中央圆环或固定三屏模板。",
+    "subject": "KINETIC SCORE 动作记谱台",
+    "audience": "在排练前整理短动作句法的独立舞者与编舞学习者",
+    "desiredOutcome": "让用户在一个持续记谱场中理解四拍动作，并通过滚轮、指针、控件或键盘改变当前动作的方向、能量和时值",
+    "primaryAction": "保存这段动作短句",
+    "hardConstraints": [
+      "所有方向、能量和时值必须明确为编舞视觉模拟，而非动作捕捉或生理测量",
+      "最终版本必须支持键盘、390px、低动态和 Canvas 失败回退"
+    ],
+    "preferences": [
+      "明亮动作图纸与高对比编辑语言",
+      "页面结构服从动作短句，不使用固定三屏"
+    ]
+  },
+  "selectedDirection": {
+    "id": "kinetic-score-phrase-lab",
+    "title": "KINETIC SCORE · 动作记谱台",
+    "experienceForm": "明亮全屏动作记谱场与直接编辑工具",
+    "rationale": "把四拍动作、身体示意、轨迹、参数和保存行动放入同一持续状态场，让网页本身像一张可以被修改的编舞图纸。"
+  },
+  "referencePrinciples": [
+    {
+      "referenceId": "positive-semantic-direct-interaction",
+      "title": "潮线证词 · 输入、画面与结果共享状态",
+      "principle": "让一个因果状态同时驱动画面、数值与结果文案，人工输入可以直接接管体验。",
+      "relevance": "节拍、滚轮、指针、滑块和键盘共享一组动作状态，并同步改变轨迹、身体姿态、数值和前景说明；只借鉴状态机制，不复制原型视觉。",
+      "sourceUri": "src/v2/reference-intelligence.ts"
+    },
+    {
+      "referenceId": "sports-ai-subject-field",
+      "title": "Sports AI · 主体安全区与媒体标本场",
+      "principle": "在明亮场域中为动态主体保留清楚安全区，使文字、行动和主体形成可读空间关系。",
+      "relevance": "动作轨迹占据中央持续场，标题、当前动作说明和控制台分别服从其边缘安全区；不复制居中方形媒体或具体版式。",
+      "sourceUri": "src/v2/local-exemplar-research.ts"
+    }
+  ],
+  "assetPlan": {
+    "batchId": "kinetic-score-programmatic-01",
+    "strategy": "programmatic",
+    "rationale": "动作记谱需要可连续编辑的轨迹与身体示意；一次程序化批次同时承担 Canvas 动态主体、SVG 回退与语义 DOM，不需要用图片伪装动作证据。",
+    "assets": [
+      {
+        "id": "kinetic-trail-canvas",
+        "role": "由共享动作状态驱动的多层轨迹、节拍节点与身体示意",
+        "source": "programmatic",
+        "required": true
+      },
+      {
+        "id": "kinetic-score-fallback",
+        "role": "Canvas 不可用时保留主题辨识、四拍结构与可操作控件的 SVG/CSS 回退",
+        "source": "programmatic",
+        "required": true
+      }
+    ]
+  },
+  "interactionRationale": {
+    "mode": "mixed",
+    "audioApplicable": false,
+    "rationale": "滚轮选择节拍，指针改变方向，滑块与键盘改变能量和时值；全部输入共享状态并改变画面与说明。声音不是本轮动作记谱产品承诺的核心能力。"
+  },
+  "visualAmbition": {
+    "schemaVersion": 1,
+    "intentLevel": "flagship",
+    "intentRationale": "本轮是跨主题旗舰验证，必须在开场形成一眼可辨的动作记谱语言，并以真实运行变化明显超越静态海报。",
+    "heroMoment": {
+      "title": "身体留下可以编辑的句法",
+      "description": "橙、蓝、黑与酸绿色轨迹在明亮图纸上形成四拍动作短句，当前身体节点、节拍与说明立即进入同一可编辑状态。",
+      "themeConnection": "运动轨迹、身体示意和四拍节奏本身就是编舞记谱，而不是叠加在通用背景上的动画。",
+      "appearsWithinSeconds": 2,
+      "observableRuntimeChange": {
+        "trigger": "页面进入后的首个有界绘制状态",
+        "from": "空白明亮动作图纸与基础语义框架",
+        "to": "完整多层动作轨迹、当前身体节点、四拍节奏和可编辑控制状态"
+      }
+    },
+    "rendering": {
+      "primary": "canvas-2d",
+      "supporting": [
+        "svg",
+        "dom-css"
+      ],
+      "rationale": "Canvas 连续绘制动作轨迹和身体示意，SVG 提供同主题失败回退，DOM 保留可访问节拍、参数、说明和保存行动。"
+    },
+    "spatialDepth": {
+      "mode": "layered-2d",
+      "purpose": "用不同粗细与偏移的轨迹、节点遮挡、指针弯曲和边缘编辑区建立动作前后关系，而不伪造三维空间。",
+      "cues": [
+        "scale",
+        "occlusion",
+        "parallax"
+      ]
+    },
+    "motionArc": {
+      "beats": [
+        {
+          "phase": "opening",
+          "driver": "time",
+          "visualState": "首个绘制状态建立四拍轨迹、当前身体节点和高对比动作图纸。",
+          "thematicPurpose": "立即让用户看懂这是动作句法而不是通用参数面板。"
+        },
+        {
+          "phase": "exploration",
+          "driver": "hybrid",
+          "visualState": "滚轮、指针、滑块和键盘同步改变节拍、轨迹弯曲、身体姿态、能量、时值与说明。",
+          "thematicPurpose": "把编舞修改变成清楚、可观察的输入与动作结果因果。"
+        },
+        {
+          "phase": "resolution",
+          "driver": "direct-input",
+          "visualState": "保存行动保留当前四拍状态，并给出明确完成反馈。",
+          "thematicPurpose": "把视觉探索收束为一段可复述的动作短句。"
+        }
+      ],
+      "runtimeAdvantage": "静态截图只能显示某一条动作轨迹；运行态能证明节拍选择、方向、能量和时值共同改变身体句法与语义结果。"
+    },
+    "interactionToScene": [
+      {
+        "input": "滚轮或节拍按钮",
+        "sceneResponse": "切换当前节拍，并同步改变活动节点、身体姿态、轨迹重点、数值和动作说明。",
+        "productMeaning": "让舞者逐拍选择要检查和修改的动作。"
+      },
+      {
+        "input": "指针移动或方向键",
+        "sceneResponse": "改变当前动作方向、轨迹弯曲、身体四肢方向与可见角度数值。",
+        "productMeaning": "把动作空间方向直接写进记谱结果。"
+      },
+      {
+        "input": "能量与时值滑块或键盘",
+        "sceneResponse": "同步改变身体幅度、轨迹表现、百分比、拍值和当前动作说明。",
+        "productMeaning": "让用户用同一动作句法比较力度与持续时间。"
+      }
+    ],
+    "assetCredibility": {
+      "level": "conceptual-coherent",
+      "strategy": "Canvas 轨迹、身体示意、SVG 回退和 DOM 排版共享同一高对比图纸语言；程序化记谱明确作为编舞模拟，不冒充真实动作捕捉。",
+      "disclosure": "页面和保存反馈持续说明参数属于动作编排视觉模拟。"
+    },
+    "fallbackPerformance": {
+      "targetFps": 60,
+      "maxDevicePixelRatio": 1.75,
+      "initialTransferBudgetMb": 1,
+      "mobileFallback": "simplified-scene",
+      "reducedMotionFallback": "static-complete-state",
+      "rendererFailureFallback": "alternate-media"
+    }
+  },
+  "attemptBudget": {
+    "limits": {
+      "directionSelections": 1,
+      "assetBatches": 1,
+      "builds": 1,
+      "deterministicRepairs": 2,
+      "visualRefinements": 1
+    },
+    "used": {
+      "directionSelections": 1,
+      "assetBatches": 1,
+      "builds": 1,
+      "deterministicRepairs": 0,
+      "visualRefinements": 1
+    }
+  },
+  "stageReports": [
+    {
+      "stage": "goal-direction-and-assets",
+      "elapsedMs": 9000,
+      "status": "completed",
+      "summary": "完成目标回放、唯一动作记谱方向、两条高相关正向原理和一次程序化素材批次决策。"
+    },
+    {
+      "stage": "single-build",
+      "elapsedMs": 29000,
+      "status": "completed",
+      "summary": "完成唯一页面构建，Canvas、SVG、语义 DOM 与共享交互状态在同一全屏动作场中工作。"
+    },
+    {
+      "stage": "bounded-visual-refinement",
+      "elapsedMs": 9000,
+      "status": "completed",
+      "summary": "唯一视觉精修收束明亮高对比记谱语言和移动控制区，没有更换方向、渲染媒介或素材批次。"
+    },
+    {
+      "stage": "browser-evidence",
+      "elapsedMs": 18300,
+      "status": "completed",
+      "summary": "真实 Chrome 通过桌面、因果交互、390px 低动态与 SVG/CSS 回退四项自适应验收，且无运行错误。"
+    }
+  ],
+  "finalCandidate": {
+    "runId": "direct-kinetic-score-r116",
+    "bundleHash": "f9704462453865a29f0d2c902ebf6e72fb7b595e667ab2cc467924b9c66f3040"
+  },
+  "adaptiveEvidence": {
+    "schemaVersion": 1,
+    "runId": "direct-kinetic-score-r116",
+    "bundleHash": "f9704462453865a29f0d2c902ebf6e72fb7b595e667ab2cc467924b9c66f3040",
+    "profile": {
+      "schemaVersion": 1,
+      "interactionMode": "mixed",
+      "audioApplicable": false,
+      "requiredCheckpoints": [
+        "opening",
+        "core",
+        "mobile",
+        "scroll",
+        "interaction"
+      ]
+    },
+    "checkpoints": [
+      {
+        "kind": "opening",
+        "runId": "direct-kinetic-score-r116",
+        "bundleHash": "f9704462453865a29f0d2c902ebf6e72fb7b595e667ab2cc467924b9c66f3040",
+        "passed": true,
+        "summary": "桌面开场立即呈现明亮全屏动作图纸、四拍轨迹、当前身体节点和清楚编辑行动。"
+      },
+      {
+        "kind": "core",
+        "runId": "direct-kinetic-score-r116",
+        "bundleHash": "f9704462453865a29f0d2c902ebf6e72fb7b595e667ab2cc467924b9c66f3040",
+        "passed": true,
+        "summary": "Canvas 轨迹、身体示意、节拍节点、参数说明与保存行动构成同一动作记谱工具。"
+      },
+      {
+        "kind": "mobile",
+        "runId": "direct-kinetic-score-r116",
+        "bundleHash": "f9704462453865a29f0d2c902ebf6e72fb7b595e667ab2cc467924b9c66f3040",
+        "passed": true,
+        "summary": "390×844 与 reduced-motion 状态无横向溢出，动作说明、参数控件和保存行动均可达。"
+      },
+      {
+        "kind": "scroll",
+        "runId": "direct-kinetic-score-r116",
+        "bundleHash": "f9704462453865a29f0d2c902ebf6e72fb7b595e667ab2cc467924b9c66f3040",
+        "passed": true,
+        "summary": "真实滚轮把当前节拍从 0 切换到 1，并同步改变轨迹、身体、数值与动作说明。"
+      },
+      {
+        "kind": "interaction",
+        "runId": "direct-kinetic-score-r116",
+        "bundleHash": "f9704462453865a29f0d2c902ebf6e72fb7b595e667ab2cc467924b9c66f3040",
+        "passed": true,
+        "summary": "指针、滑块、键盘与保存共享动作状态；操作前后 Canvas 像素差超过 1%，语义数值和完成反馈同步变化。"
+      }
+    ],
+    "hardGates": {
+      "runtimeClean": true,
+      "criticalAssetsLoaded": true,
+      "primaryActionReachable": true,
+      "mobileComplete": true,
+      "truthfulClaims": true,
+      "interactionVerified": true,
+      "audioVerified": null
+    },
+    "visualQuality": {
+      "schemaVersion": 1,
+      "verdict": "pass",
+      "score": 92,
+      "dimensions": {
+        "goalClarity": 91,
+        "creativeDistinctiveness": 95,
+        "craftCohesion": 90,
+        "assetIntegration": 91,
+        "interactionValue": 94,
+        "mobileReadiness": 89
+      },
+      "summary": "明亮全屏动作图纸、主题专属多层记谱和因果编辑形成统一结果；它明显区别于暗色科技、中央圆环与固定三屏模板，390px 和回退仍保持完整任务。",
+      "findings": []
+    }
+  },
+  "wowEvidence": {
+    "schemaVersion": 1,
+    "runId": "direct-kinetic-score-r116",
+    "bundleHash": "f9704462453865a29f0d2c902ebf6e72fb7b595e667ab2cc467924b9c66f3040",
+    "assessment": {
+      "schemaVersion": 1,
+      "intentLevel": "flagship",
+      "required": true,
+      "verdict": "pass",
+      "score": 93,
+      "dimensions": {
+        "fiveSecondImpact": 93,
+        "runtimeAdvantage": 95,
+        "themeMemorability": 94,
+        "motionDepthMeaning": 93,
+        "assetIntegrationCredibility": 90,
+        "craftCohesion": 90
+      },
+      "observation": {
+        "heroMomentObserved": true,
+        "runtimeAdvantageOverStaticObserved": true,
+        "themeSpecificMemoryObserved": true,
+        "meaningfulMotionOrDepthObserved": true,
+        "credibleAssetIntegrationObserved": true,
+        "summary": "首个绘制状态在 820ms 内完成，明亮图纸出现完整四拍动作记谱。 Canvas 前后帧像素差超过 1%，真实输入同步改变共享状态和视觉输出。 可复述记忆是身体动作被写成橙、蓝、黑与酸绿色的四拍句法。 轨迹层次、身体姿态和节拍位移共同解释动作方向、能量与时值。 Canvas 动态主体、SVG 回退和 DOM 控件使用同一高对比动作图纸语言。 字体、线条、色彩、留白和控制区共同服从动作记谱主题。 滚轮、指针、滑块与键盘同时改变状态、Canvas 画面和语义数值。 390px reduced-motion 无横向溢出，内容与保存行动可达。 强制 fallback 后 SVG/CSS 保留主题、四拍内容、编辑控件和保存行动。"
+      },
+      "findings": []
+    }
+  },
+  "verdict": "pass",
+  "stopReason": null
+}

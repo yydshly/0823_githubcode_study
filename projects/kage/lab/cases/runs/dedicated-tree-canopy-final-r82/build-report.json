@@ -1,0 +1,555 @@
+{
+  "receipt": {
+    "id": "dedicated-tree-canopy-final-r82",
+    "provider": "codex",
+    "model": "gpt-5.6-sol+direct-r82",
+    "status": "compiled",
+    "previewUrl": "/generated-runs/dedicated-tree-canopy-final-r82/",
+    "generatedAt": "2026-08-29T13:31:41.776Z",
+    "files": 4,
+    "assets": 1,
+    "sourceBytes": 22452,
+    "hasShaders": false,
+    "compileMs": 457,
+    "attempts": 1,
+    "directory": "generated/runs/dedicated-tree-canopy-final-r82"
+  },
+  "request": {
+    "brief": "为城市居民设计一座“树冠降温观察站”的明亮互动网页。持续展示同一段真实感街道树冠与路面剖面；自动演示从清晨到正午再到浇灌后的温度变化，鼠标滚轮驱动同一时间线，树冠密度和浇水量控件可随时接管并停止演示。界面同步显示树荫范围、路面温度和蒸腾说明，最后行动为“保存这次降温方案”。使用自然日光、植物绿、浅石灰和市政图册式排版，业务先于特效，不要暗色科技风、巨大标题、随机粒子或固定三屏。",
+    "seed": 83,
+    "quality": "high",
+    "runId": "run-1te5zur",
+    "selectedId": "generated-1orqzwy-blueprint-1q7rzuv-canopy-cooling-observatory-blueprint",
+    "creativeContract": {
+      "schemaVersion": 2,
+      "id": "contract-dwzjh9",
+      "brief": "为城市居民设计一座“树冠降温观察站”的明亮互动网页。持续展示同一段真实感街道树冠与路面剖面；自动演示从清晨到正午再到浇灌后的温度变化，鼠标滚轮驱动同一时间线，树冠密度和浇水量控件可随时接管并停止演示。界面同步显示树荫范围、路面温度和蒸腾说明，最后行动为“保存这次降温方案”。使用自然日光、植物绿、浅石灰和市政图册式排版，业务先于特效，不要暗色科技风、巨大标题、随机粒子或固定三屏。",
+      "intent": {
+        "subject": "树冠降温观察站",
+        "audience": "城市居民",
+        "desiredFeeling": "真实、自然",
+        "narrativeChange": "从情绪基线进入可观察变化，最后形成明确行动。",
+        "primaryAction": "保存这次降温方案",
+        "negativeConstraints": [
+          "使用自然日光、植物绿、浅石灰和市政图册式排版，业务先于特效，不要暗色科技风、巨大标题、随机粒子或固定三屏"
+        ]
+      },
+      "referenceEvidence": [
+        {
+          "referenceId": "kage-rain-recorder",
+          "title": "雨声记录器 · 单主体连续状态",
+          "sourceUrl": "../cases/dedicated-1b9f0b05107b/",
+          "evidenceLevel": "runtime-verified",
+          "relevance": "命中 清晨。 来自已归档并经过浏览器验证的本地最终案例。",
+          "borrow": [
+            "同一台产品贯穿开场、能力显现和终点，环境只为主体提供真实尺度和情绪。",
+            "雨滴、膜片振动、声波与记录灯形成可读因果链，终点主动安静下来。",
+            "透明产品主体和全屏环境分别承担产品识别与空间可信度，两者需共用光向和色温。"
+          ],
+          "avoid": [
+            "不要拆成无关零件展示，也不要让辉光、波纹或文案遮住最终产品状态。"
+          ]
+        },
+        {
+          "referenceId": "kage-dream-room",
+          "title": "梦境记录 · 同一房间的记忆形成",
+          "sourceUrl": "../cases/dedicated-8574ee46ab16/",
+          "evidenceLevel": "runtime-verified",
+          "relevance": "支持 continuous-scroll 体验模式。 来自已归档并经过浏览器验证的本地最终案例。",
+          "borrow": [
+            "始终保持同一房间、机位与晨光，让模糊到清晰成为可信的记忆变化。",
+            "滚动控制环境清晰度、碎片聚合和空间深度，最终把注意力收束到记录行动。",
+            "连续环境素材承担真实空间，Three.js 只添加记忆回声、景深和过渡，不遮盖空间证据。"
+          ],
+          "avoid": [
+            "不要生成三个无关联梦境画面，也不要把安静主题变成霓虹科技界面。"
+          ]
+        },
+        {
+          "referenceId": "motionsites-interactive-discovery",
+          "title": "MotionSites · Interactive Discovery",
+          "sourceUrl": "https://motionsites.ai/?prompt=interactive-discovery",
+          "evidenceLevel": "catalog-metadata",
+          "relevance": "命中 互动。 只作为外部目录方向信号，不当作实现已验证。",
+          "borrow": [
+            "目录证据表明它属于交互式 Hero，可作为“首屏即发生探索”的方向索引。",
+            "只借鉴交互发现的节奏命题；未取得完整提示词前不推断具体动画实现。",
+            "外部目录只提供方向信号，具体素材策略必须由当前 brief 和本地运行证据决定。"
+          ],
+          "avoid": [
+            "不要把目录缩略图或未知提示词当成已经验证的 Three.js 实现。"
+          ]
+        }
+      ],
+      "experience": {
+        "pattern": "continuous-scroll",
+        "structure": {
+          "mode": "continuous-canvas",
+          "segmentPolicy": "content-derived",
+          "layoutRule": "以一个连续时间轴驱动主题状态；语义节点只是时间锚点，不是三个页面。"
+        },
+        "thesis": "用一次连续状态变化建立树冠降温观察站的情绪、证据和行动。",
+        "focalSubject": "树冠降温观察站",
+        "continuityRule": "核心主体和空间坐标保持连续，只改变理解所需的状态。",
+        "typographyRole": "DOM 负责阅读与行动，避免文字和 WebGL 同时争夺焦点。",
+        "beats": [
+          {
+            "id": "baseline",
+            "position": 0,
+            "purpose": "establish",
+            "visibleState": "建立主体、环境和情绪基线。",
+            "userProgression": "滚动进入核心变化。"
+          },
+          {
+            "id": "evidence",
+            "position": 0.58,
+            "purpose": "transform",
+            "visibleState": "一个可观察的状态变化解释核心价值。",
+            "userProgression": "继续滚动确认变化结果。"
+          },
+          {
+            "id": "conclusion",
+            "position": 1,
+            "purpose": "resolve",
+            "visibleState": "画面形成更强的最终状态，并给出“保存这次降温方案”。",
+            "userProgression": "主要运动停止并允许行动。"
+          }
+        ],
+        "pointerRole": "指针只提供轻微空间反馈，主要叙事由滚动进度驱动。",
+        "reducedMotion": "把连续时间轴压缩为最少且足够的静态关键状态。",
+        "finalMemoryPoint": "保存这次降温方案"
+      },
+      "visualAnchor": {
+        "subject": "围绕“树冠降温观察站”构建可辨认的主题专属对象、空间或证据场。",
+        "relationshipToBrief": "视觉锚点必须直接证明“树冠降温观察站”和“用一次连续状态变化建立树冠降温观察站的情绪、证据和行动。”；即使隐藏标题，也能从对象、空间或数据关系辨认主题。",
+        "heroRole": "spatial-context",
+        "source": "procedural",
+        "interactionBinding": "视觉锚点沿体验节点连续承担建立、变化与“保存这次降温方案”收束，不得在中段被无关装饰替换。",
+        "fallback": "增强层不可用时，保留同一“树冠降温观察站”的静态主题表示、完整语义内容和主要行动；不得回退为通用网格或空背景。"
+      },
+      "assets": [],
+      "direction": {
+        "visualRole": "procedural-field",
+        "mechanisms": [
+          {
+            "id": "state-storyboard",
+            "title": "状态故事板",
+            "evidenceLevel": "E4",
+            "job": "用连续的视觉状态分配页面节奏，每个状态只承担一个叙事动词。",
+            "reason": "匹配程序化状态场的主要视觉职责。 支持 continuous-scroll 体验。 命中“变化、最后”。",
+            "sourceCaseIds": [
+              "plety-media-storyboard",
+              "igloo-cinematic-deconstruction"
+            ]
+          }
+        ],
+        "interaction": {
+          "primaryInput": "direct-navigation",
+          "semanticAction": "直接选择一条探索路径并保持位置反馈。",
+          "pointerRole": "primary",
+          "touchAlternative": "提供等价的点击热点、拖拽或分段导航，不依赖 hover。",
+          "keyboardAlternative": "所有镜头、热点或路径都可通过顺序焦点和 Enter 激活。"
+        },
+        "renderer": {
+          "baseLayer": "semantic-dom",
+          "route": "dom-three-hybrid",
+          "enhancement": "three-webgl",
+          "reason": "环境主体、树荫覆盖、日照和地表结果需要在同一空间坐标中形成可见因果关系；DOM 继续承担参数、估算说明和保存行动。",
+          "threeJustification": "Three.js 只构建可辨认的环境剖面、主体尺度、阴影与状态变化，并让参数结果与同一场景坐标对应。",
+          "fallback": "WebGL 不可用时保留同一环境的语义剖面、全部参数、估算结果和保存行动。"
+        },
+        "rejectedMechanisms": [
+          {
+            "id": "cinematic-3d-deconstruction",
+            "reason": "缺少真实可检查模型，不能伪造三维拆解。"
+          },
+          {
+            "id": "sticky-archive-stack",
+            "reason": "当前核心不是一组并列档案，不使用长堆叠拖慢叙事。"
+          }
+        ],
+        "decisionSummary": "以程序化状态场承担主要视觉，用状态故事板组织变化；环境主体、树荫覆盖、日照和地表结果需要在同一空间坐标中形成可见因果关系；DOM 继续承担参数、估算说明和保存行动。"
+      },
+      "technical": {
+        "presentationStrategy": "procedural-field",
+        "capabilitySelection": {
+          "selected": false,
+          "capabilityId": null,
+          "score": 46,
+          "reasons": [
+            "体验模式 continuous-scroll 适合固定媒体滚动时间轴。",
+            "目标命中 变化 等连续叙事信号。",
+            "需要先建立连续媒体素材职责。"
+          ],
+          "blockers": [
+            "当前素材计划没有连续图片、视频或帧序列。"
+          ],
+          "contract": null
+        },
+        "articulatedSubject": {
+          "selected": false,
+          "capabilityId": null,
+          "score": 12,
+          "reasons": [
+            "主体没有明确的抽象或程序化构造语义。",
+            "没有需要部件承担的结构变化。",
+            "没有可建立拓扑关系的部件描述。",
+            "体验模式 continuous-scroll 支持单一主体连续变化。"
+          ],
+          "blockers": [],
+          "contract": null
+        },
+        "stateAssetStrategy": {
+          "required": false,
+          "changeKind": "none",
+          "route": "static-sufficient",
+          "acceptedModalities": [
+            "transparent-image",
+            "image-sequence",
+            "model-3d",
+            "procedural"
+          ],
+          "minimumDistinctStates": 1,
+          "minimumPartGroups": 0,
+          "failurePolicy": "continue",
+          "reason": "目标没有要求实体装配、拆解或结构形变；现有素材质量与职责门禁足以决定是否进入构建。"
+        },
+        "semanticInteraction": {
+          "selected": false,
+          "capabilityId": null,
+          "score": 33,
+          "matchedSignals": [
+            "时间",
+            "变化"
+          ],
+          "reasons": [
+            "目标命中“时间、变化”等信息关系信号。",
+            "当前体验模式或素材职责不足以证明交互必须存在。",
+            "现有导演决策已把 direct-navigation 定义为有语义的主要输入。"
+          ],
+          "blockers": [],
+          "evaluatedCapability": {
+            "id": "semantic-responsive-interaction",
+            "evidenceLevel": "E4",
+            "state": "validated",
+            "problem": "装饰性鼠标动效不能帮助用户理解内容，也无法稳定迁移到触摸、键盘和减少动态效果环境。",
+            "meaning": "滚动选择证据层，时间选择改变海岸形态和数字，指针只在局部揭示相对于基准年已经消失的土地。",
+            "inputs": [
+              "scroll",
+              "pointer",
+              "touch",
+              "keyboard"
+            ],
+            "outputs": [
+              "scene-shape",
+              "evidence-value",
+              "narrative-layer",
+              "selection-state"
+            ],
+            "baseInterface": "语义 DOM 始终提供年代按钮、损失数字、解释文字和当前状态，不依赖 WebGL 完成比较。",
+            "enhancedInterface": "WebGL 把年代选择映射为同一海岸场的连续形变，并让局部证据透镜显示相对损失范围。",
+            "reducedMotionRule": "减少动态效果时立即切换到目标年代和阶段，停止连续漂移，但保留所有数值和比较结果。",
+            "rejectionRules": [
+              "移除交互后信息理解完全不变时拒绝晋级。",
+              "触摸、键盘或无 WebGL 回退无法完成比较时拒绝晋级。"
+            ],
+            "evidence": [
+              {
+                "id": "coast-1984",
+                "year": 1984,
+                "label": "基准海岸",
+                "lossSquareKilometers": 0,
+                "retreatMeters": 0,
+                "relativeWaterCentimeters": 0,
+                "sceneMorph": 0,
+                "summary": "沙洲仍然连续，潮沟尚未切断内侧湿地。"
+              },
+              {
+                "id": "coast-2004",
+                "year": 2004,
+                "label": "潮沟扩张",
+                "lossSquareKilometers": 3.2,
+                "retreatMeters": 186,
+                "relativeWaterCentimeters": 8,
+                "sceneMorph": 0.5,
+                "summary": "外侧沙洲变薄，新的潮沟开始把湿地分成孤立片区。"
+              },
+              {
+                "id": "coast-2026",
+                "year": 2026,
+                "label": "临界断面",
+                "lossSquareKilometers": 8.7,
+                "retreatMeters": 421,
+                "relativeWaterCentimeters": 17,
+                "sceneMorph": 1,
+                "summary": "连续岸线已经断裂，曾经被遮蔽的社区直接面对风暴潮。"
+              }
+            ]
+          }
+        },
+        "interactionDriver": {
+          "selected": true,
+          "capabilityId": "shared-state-interaction-driver",
+          "score": 100,
+          "requestedModes": [
+            "manual",
+            "scroll",
+            "demo"
+          ],
+          "matchedSignals": [
+            "demo",
+            "scroll",
+            "manual",
+            "shared-state"
+          ],
+          "reasons": [
+            "目标同时请求 manual、scroll、demo 驱动。",
+            "自动演示是明确需求，必须具有播放、暂停、重置和人工接管边界。",
+            "没有语义交互职责时，多源输入仍不得退化为无意义镜头运动。"
+          ],
+          "blockers": [],
+          "authoringContract": {
+            "stateModel": "single-canonical-state",
+            "modes": [
+              "manual",
+              "scroll",
+              "demo"
+            ],
+            "demoControl": "bounded-play-pause-reset",
+            "scrollMapping": "real-scroll-range-to-shared-state",
+            "manualOverride": "first-user-input-stops-demo",
+            "visualMapping": "subject-scene-and-semantic-results",
+            "reducedMotion": "discrete-semantic-states",
+            "mobileFallback": "direct-controls-remain-complete",
+            "markers": {
+              "root": "data-signal-shared-driver",
+              "demoControl": "data-signal-demo-control",
+              "progress": "data-signal-driver-progress",
+              "modeAttribute": "data-drive-mode"
+            }
+          },
+          "evaluatedCapability": {
+            "id": "shared-state-interaction-driver",
+            "evidenceLevel": "E4",
+            "state": "validated",
+            "sourceCaseId": "wind-tunnel-r78",
+            "problem": "自动演示、滚轮进度和直接控件各自维护状态时，画面、数值和操作会互相打架，用户也无法判断当前由谁控制。",
+            "meaning": "多个明确请求的输入源只写入一个规范化状态；主体、场景、语义结果和进度显示从同一状态派生，第一次人工输入立即接管自动演示。",
+            "rejectionRules": [
+              "brief 只要求一种输入方式时不得加入额外演示或滚轮接管。",
+              "自动演示无法播放、暂停、重置或在人工输入后停止时拒绝使用。",
+              "状态只改变数字或说明文字而没有改变主体和场景时拒绝晋级。"
+            ]
+          }
+        },
+        "identityEvidence": {
+          "selected": false,
+          "score": 0,
+          "reason": "拒绝：缺少同时指向身份与证据的明确目标。",
+          "rejectedBy": [],
+          "matchedSignals": [],
+          "capabilityId": null
+        },
+        "placeGrounding": {
+          "selected": false,
+          "capabilityId": null,
+          "strategy": "none",
+          "score": 0,
+          "matchedSignals": [],
+          "reasons": [
+            "目标没有要求地点事实、空间关系或地域来源，不应为了视觉效果强行加入地图。",
+            "继续由主题、素材和交互目标选择最小充分技术路线。"
+          ],
+          "requirements": {
+            "geography": "not-applicable",
+            "map": "avoid",
+            "dataTruth": "不引入与目标无关的地点、地图或路线事实。",
+            "creativeFreedom": "围绕主体、受众、情绪变化和最终行动选择表达，不增加地域模板。"
+          }
+        },
+        "styleDiversity": {
+          "fingerprint": {
+            "composition": "object-catalog",
+            "palette": "daylight-neutral",
+            "motion": "spatial-inspection",
+            "spatial": "modular-collection",
+            "typography": "quiet-small-scale",
+            "media": "image-sequence"
+          },
+          "nearestCaseId": "dedicated-896cfb7e6657",
+          "nearestDistance": 4,
+          "minimumDifferentAxes": 2,
+          "mustDifferOn": [
+            "composition",
+            "motion",
+            "spatial",
+            "typography"
+          ],
+          "avoidRepeating": [
+            "不要默认复用暗色全屏背景、中央主体和巨型标题的组合。",
+            "不要把滚动淡入、漂浮粒子和柔光当成所有主题的通用答案。",
+            "不得复刻最相近案例 dedicated-896cfb7e6657 的整体构图和运动语法。"
+          ],
+          "rationale": "本方向与最相近案例 dedicated-896cfb7e6657 在 4 个风格轴上不同；差异是生成约束，不是固定模板。"
+        },
+        "domResponsibilities": [
+          "承载可阅读内容、导航和最终行动。",
+          "在 WebGL 不可用时保留完整语义顺序。"
+        ],
+        "webglResponsibilities": [
+          "承载空间记忆、镜头关系和连续状态变化。",
+          "让素材融入环境并提供克制的交互反馈。"
+        ],
+        "targetFrameTimeMs": 16.7,
+        "maxInitialAssetBytes": 8000000,
+        "targetDevices": [
+          "desktop",
+          "mobile"
+        ]
+      },
+      "acceptance": [
+        {
+          "id": "intent-visible",
+          "priority": "blocker",
+          "assertion": "首屏和终点能够对应原始主体、情绪变化和最终行动；不了解行业背景的用户也能在约 10 秒内识别核心对象、可执行操作和操作后的业务结果。",
+          "evidence": "screenshot-ending"
+        },
+        {
+          "id": "visual-anchor-specific",
+          "priority": "blocker",
+          "assertion": "首屏存在与 brief 直接相关且无需依赖标题即可辨认的视觉锚点；纯色、通用网格、无主题依据的渐变、随机粒子或无关几何不能单独充当主视觉。",
+          "evidence": "screenshot-opening"
+        },
+        {
+          "id": "opening-composed",
+          "priority": "high",
+          "assertion": "首屏存在明确主体和空间坐标，没有空黑屏、文字裁切或主体被遮挡。",
+          "evidence": "screenshot-opening"
+        },
+        {
+          "id": "process-causal",
+          "priority": "high",
+          "assertion": "至少一个过程或交互状态能够解释能力、转化或探索关系，而不只是装饰动画；主要参数以及模式、Cue、预设、路线或方案等高层操作必须让 data-signal-visual-anchor 中的主体或场景产生无需依赖数字和说明文字也能辨认的差异。",
+          "evidence": "screenshot-beat"
+        },
+        {
+          "id": "semantic-state-consistent",
+          "priority": "high",
+          "assertion": "演示、滚轮和直接控件必须写入同一规范化状态，主体、场景、可见数值和结果解释从该状态派生；播放、暂停、重置与首次人工接管均可验证，不能形成并行时间线。",
+          "evidence": "runtime"
+        },
+        {
+          "id": "borderless-integration",
+          "priority": "high",
+          "assertion": "主体和环境没有棋盘格、矩形图片边界或不自然的发光方框。",
+          "evidence": "screenshot-beat"
+        },
+        {
+          "id": "mobile-readable",
+          "priority": "blocker",
+          "assertion": "390px 移动端无横向溢出；主体、正文和行动可见，并能沿纵向完成与桌面等价的主要控件→结果→最终行动路径，不能只保留桌面工作区的裁切局部。",
+          "evidence": "screenshot-mobile"
+        },
+        {
+          "id": "semantic-fallback",
+          "priority": "normal",
+          "assertion": "关闭 WebGL 或减少运动后仍保留完整内容顺序和行动。",
+          "evidence": "dom"
+        },
+        {
+          "id": "runtime-clean",
+          "priority": "blocker",
+          "assertion": "页面无阻断脚本错误，关键素材请求成功，滚动和指针输入可用。",
+          "evidence": "runtime"
+        }
+      ],
+      "executionLimits": {
+        "authoringPasses": 1,
+        "assetBatches": 1,
+        "refinementPasses": 1,
+        "stopAfterMinutes": 15,
+        "archivePolicy": "best-result-only"
+      }
+    },
+    "reference": {
+      "title": "树冠降温观察站",
+      "summary": "一段连续的市政街道剖面，沿清晨、正午和浇灌后状态展示树荫、路温与蒸腾的因果关系，并允许用户保存自己的参数方案。",
+      "scenePlugin": "composed-world",
+      "productionStatus": "asset-grounded",
+      "theme": {
+        "deep": "#35563a",
+        "surface": "#e9e6dc",
+        "text": "#26332a",
+        "muted": "#69746b",
+        "accent": "#4f8b4a",
+        "accentSoft": "#b9d9aa"
+      },
+      "assets": [
+        {
+          "id": "street-canopy-hero-v1",
+          "uri": "/creative-assets/r82-tree-canopy/street-canopy-hero-v1.png",
+          "bundlePath": "assets/street-canopy-hero-v1.png",
+          "kind": "image",
+          "source": "chatgpt-generated",
+          "qualityLevel": "L3-presentable",
+          "role": "persistent real-world street canopy environment",
+          "description": "真实街道、成熟树冠与地面树荫的全屏主体环境；Three.js 只叠加可验证的树荫、热场和补水反馈。",
+          "payloadBytes": 2836496,
+          "required": true,
+          "experience": {
+            "anchor": 0.5,
+            "function": "persistent",
+            "visualState": "同一街道环境从清晨、正午到浇灌后保持空间连续。",
+            "continuity": "树木、道路、建筑与光向不切换，只改变树荫、热场和湿润反馈。",
+            "integration": "full-bleed-environment"
+          }
+        }
+      ]
+    }
+  },
+  "mediaDominance": {
+    "schemaVersion": 1,
+    "decision": "ready",
+    "route": "dom-three-hybrid",
+    "highQualityAssetIds": [
+      "street-canopy-hero-v1"
+    ],
+    "subjectPrimitiveCount": 0,
+    "subjectPrimitiveScore": 0,
+    "constructors": {},
+    "summary": "媒体主导权门禁不适用：当前不是具备 L3/L4 主素材的媒体主导路线。"
+  },
+  "usedAssets": [
+    {
+      "id": "street-canopy-hero-v1",
+      "uri": "/creative-assets/r82-tree-canopy/street-canopy-hero-v1.png",
+      "bundlePath": "assets/street-canopy-hero-v1.png",
+      "kind": "image",
+      "source": "chatgpt-generated",
+      "qualityLevel": "L3-presentable",
+      "role": "persistent real-world street canopy environment",
+      "description": "真实街道、成熟树冠与地面树荫的全屏主体环境；Three.js 只叠加可验证的树荫、热场和补水反馈。",
+      "payloadBytes": 2836496,
+      "required": true,
+      "experience": {
+        "anchor": 0.5,
+        "function": "persistent",
+        "visualState": "同一街道环境从清晨、正午到浇灌后保持空间连续。",
+        "continuity": "树木、道路、建筑与光向不切换，只改变树荫、热场和湿润反馈。",
+        "integration": "full-bleed-environment"
+      }
+    }
+  ],
+  "revision": {
+    "parentId": "dedicated-d436653c3b9a",
+    "instruction": "以最终效果收口：用真实树冠街道素材替换基础几何主体，并打通自动演示、真实滚轮与直接控件。",
+    "summary": "全屏真实环境承担主体识别，Three.js 只负责树荫、热场和补水的可验证反馈；保留业务闭环并支持移动端。",
+    "changedFiles": [
+      "src/experience.ts",
+      "src/director.ts",
+      "src/scene.ts",
+      "src/page.css"
+    ],
+    "model": "gpt-5.6-sol+direct-r82"
+  }
+}

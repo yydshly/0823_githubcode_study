@@ -1,0 +1,250 @@
+{
+  "plan": {
+    "schemaVersion": 1,
+    "source": "creative-contract",
+    "checkpoints": [
+      {
+        "id": "opening",
+        "label": "建立主题、核心信息与唯一视觉锚点。",
+        "progress": 0,
+        "surface": "desktop",
+        "quality": "high",
+        "reducedMotion": false,
+        "action": "none"
+      },
+      {
+        "id": "interaction",
+        "label": "语义交互输入、可见控件与状态反馈",
+        "progress": 0.5,
+        "surface": "desktop",
+        "quality": "high",
+        "reducedMotion": false,
+        "action": "semantic-probe"
+      },
+      {
+        "id": "final",
+        "label": "证据和行动关系稳定，并给出“预约体验”。",
+        "progress": 1,
+        "surface": "desktop",
+        "quality": "high",
+        "reducedMotion": false,
+        "action": "none"
+      },
+      {
+        "id": "mobile",
+        "label": "移动端首个叙事状态与 reduced-motion 基线",
+        "progress": 0,
+        "surface": "mobile",
+        "quality": "low",
+        "reducedMotion": true,
+        "action": "none"
+      },
+      {
+        "id": "fallback",
+        "label": "无 WebGL 时的完整语义阅读回退",
+        "progress": 0,
+        "surface": "fallback",
+        "quality": "low",
+        "reducedMotion": true,
+        "action": "webgl-fallback"
+      }
+    ]
+  },
+  "evidence": {
+    "schemaVersion": 1,
+    "runId": "dedicated-7d00f0096507",
+    "capturedAt": "2026-08-28T08:14:55.38Z",
+    "frames": [
+      {
+        "id": "opening",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "quality": "high",
+        "reducedMotion": false,
+        "ready": true,
+        "canvasCount": 1,
+        "progress": 0,
+        "scrollY": 0,
+        "scrollHeight": 2705,
+        "overflow": 0,
+        "heading": "安静座位观察台",
+        "headingVisible": true,
+        "visibleTextCount": 8,
+        "collisionCount": 0,
+        "maxOverlapRatio": 0,
+        "blockingCollisionCount": 0,
+        "editorialOverlapCount": 0,
+        "maxBlockingOverlapRatio": 0,
+        "canvasOcclusionRisk": false,
+        "canvasOcclusionRatio": 0,
+        "canvasOccludingLayer": "",
+        "action": "none",
+        "interactionTargetCount": 4,
+        "interactionInputObserved": true,
+        "webglAvailable": true,
+        "fallbackActive": false
+      },
+      {
+        "id": "interaction",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "quality": "high",
+        "reducedMotion": false,
+        "ready": true,
+        "canvasCount": 1,
+        "progress": 0.5,
+        "scrollY": 903,
+        "scrollHeight": 2705,
+        "overflow": 0,
+        "heading": "安静座位观察台",
+        "headingVisible": false,
+        "visibleTextCount": 7,
+        "collisionCount": 0,
+        "maxOverlapRatio": 0,
+        "blockingCollisionCount": 0,
+        "editorialOverlapCount": 0,
+        "maxBlockingOverlapRatio": 0,
+        "canvasOcclusionRisk": false,
+        "canvasOcclusionRatio": 0,
+        "canvasOccludingLayer": "",
+        "action": "semantic-probe",
+        "interactionTargetCount": 5,
+        "interactionInputObserved": true,
+        "webglAvailable": true,
+        "fallbackActive": false
+      },
+      {
+        "id": "final",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "quality": "high",
+        "reducedMotion": false,
+        "ready": true,
+        "canvasCount": 1,
+        "progress": 1,
+        "scrollY": 1805,
+        "scrollHeight": 2705,
+        "overflow": 0,
+        "heading": "安静座位观察台",
+        "headingVisible": false,
+        "visibleTextCount": 4,
+        "collisionCount": 0,
+        "maxOverlapRatio": 0,
+        "blockingCollisionCount": 0,
+        "editorialOverlapCount": 0,
+        "maxBlockingOverlapRatio": 0,
+        "canvasOcclusionRisk": false,
+        "canvasOcclusionRatio": 0,
+        "canvasOccludingLayer": "",
+        "action": "none",
+        "interactionTargetCount": 1,
+        "interactionInputObserved": true,
+        "webglAvailable": true,
+        "fallbackActive": false
+      },
+      {
+        "id": "mobile",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "quality": "low",
+        "reducedMotion": true,
+        "ready": true,
+        "canvasCount": 1,
+        "progress": 0,
+        "scrollY": 0,
+        "scrollHeight": 3105,
+        "overflow": 0,
+        "heading": "安静座位观察台",
+        "headingVisible": true,
+        "visibleTextCount": 7,
+        "collisionCount": 0,
+        "maxOverlapRatio": 0,
+        "blockingCollisionCount": 0,
+        "editorialOverlapCount": 0,
+        "maxBlockingOverlapRatio": 0,
+        "canvasOcclusionRisk": false,
+        "canvasOcclusionRatio": 0,
+        "canvasOccludingLayer": "",
+        "action": "none",
+        "interactionTargetCount": 3,
+        "interactionInputObserved": true,
+        "webglAvailable": true,
+        "fallbackActive": false
+      },
+      {
+        "id": "fallback",
+        "viewport": {
+          "width": 1024,
+          "height": 720
+        },
+        "quality": "low",
+        "reducedMotion": true,
+        "ready": true,
+        "canvasCount": 1,
+        "progress": 0,
+        "scrollY": 0,
+        "scrollHeight": 2222,
+        "overflow": 0,
+        "heading": "安静座位观察台",
+        "headingVisible": true,
+        "visibleTextCount": 8,
+        "collisionCount": 0,
+        "maxOverlapRatio": 0,
+        "blockingCollisionCount": 0,
+        "editorialOverlapCount": 0,
+        "maxBlockingOverlapRatio": 0,
+        "canvasOcclusionRisk": false,
+        "canvasOcclusionRatio": 0,
+        "canvasOccludingLayer": "",
+        "action": "webgl-fallback",
+        "interactionTargetCount": 4,
+        "interactionInputObserved": true,
+        "webglAvailable": false,
+        "fallbackActive": true
+      }
+    ],
+    "browserErrors": []
+  },
+  "assessment": {
+    "schemaVersion": 1,
+    "verdict": "pass",
+    "score": 100,
+    "summary": "结构质量门通过；仍需结合截图判断构图、材质、层级与创意完成度。",
+    "findings": [],
+    "observations": []
+  },
+  "visualAcceptance": {
+    "schemaVersion": 1,
+    "verdict": "pass",
+    "score": 86,
+    "assetRole": "not-applicable",
+    "summary": "用户复核后完成有边界的空间重构：中段现在是一张具有完整外墙、内墙、交通核、窗带、书架、桌席和路径的建筑平面；二层与三层拓扑可辨，时段改变光向与色温，选区、指标和预约信息保持一致。桌面开场、中段、结尾、390px 移动端和无 WebGL 回退均通过真实浏览器检查。",
+    "findings": []
+  },
+  "interactionVerification": {
+    "verifiedAt": "2026-08-28T08:18:38.6408501Z",
+    "initialSelection": "2-1-3",
+    "changedSelection": "3-2-0",
+    "directZoneSelection": "3-2-2",
+    "valuesChanged": true,
+    "recommendationChanged": true,
+    "directZoneChanged": true,
+    "finalCopyChanged": true,
+    "actionConfirmed": true,
+    "fallback": {
+      "heading": "安静座位观察台",
+      "canvasUnavailable": true,
+      "selectorAvailable": true,
+      "actionAvailable": true,
+      "overflow": 0
+    }
+  }
+}

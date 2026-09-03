@@ -1,0 +1,91 @@
+{
+  "runId": "dedicated-ff076d4a2347",
+  "browserErrors": [],
+  "responseErrors": [],
+  "frames": [
+    {
+      "name": "01-opening",
+      "width": 1440,
+      "height": 900,
+      "progress": 0,
+      "scrollY": 0,
+      "scrollHeight": 900,
+      "overflow": 0,
+      "canvasCount": 1,
+      "imageSources": [
+        "http://127.0.0.1:8143/api/creative/assets/asset-32d93dbc183e3307",
+        "http://127.0.0.1:8143/api/creative/assets/asset-ee3381db635e1827",
+        "http://127.0.0.1:8143/api/creative/assets/asset-ee3381db635e1827",
+        "http://127.0.0.1:8143/api/creative/assets/asset-ee3381db635e1827",
+        "http://127.0.0.1:8143/api/creative/assets/asset-ee3381db635e1827",
+        "http://127.0.0.1:8143/api/creative/assets/asset-ee3381db635e1827"
+      ],
+      "headingVisible": true,
+      "heading": "本周当季食材编排台",
+      "visibleText": 210
+    },
+    {
+      "name": "02-causal-response",
+      "width": 1440,
+      "height": 900,
+      "progress": 0,
+      "scrollY": 0,
+      "scrollHeight": 900,
+      "overflow": 0,
+      "canvasCount": 1,
+      "imageSources": [
+        "http://127.0.0.1:8143/api/creative/assets/asset-32d93dbc183e3307",
+        "http://127.0.0.1:8143/api/creative/assets/asset-ee3381db635e1827",
+        "http://127.0.0.1:8143/api/creative/assets/asset-ee3381db635e1827",
+        "http://127.0.0.1:8143/api/creative/assets/asset-ee3381db635e1827",
+        "http://127.0.0.1:8143/api/creative/assets/asset-ee3381db635e1827",
+        "http://127.0.0.1:8143/api/creative/assets/asset-ee3381db635e1827"
+      ],
+      "headingVisible": true,
+      "heading": "本周当季食材编排台",
+      "visibleText": 210
+    },
+    {
+      "name": "03-final",
+      "width": 1440,
+      "height": 900,
+      "progress": 0,
+      "scrollY": 0,
+      "scrollHeight": 900,
+      "overflow": 0,
+      "canvasCount": 1,
+      "imageSources": [
+        "http://127.0.0.1:8143/api/creative/assets/asset-32d93dbc183e3307",
+        "http://127.0.0.1:8143/api/creative/assets/asset-ee3381db635e1827",
+        "http://127.0.0.1:8143/api/creative/assets/asset-ee3381db635e1827",
+        "http://127.0.0.1:8143/api/creative/assets/asset-ee3381db635e1827",
+        "http://127.0.0.1:8143/api/creative/assets/asset-ee3381db635e1827",
+        "http://127.0.0.1:8143/api/creative/assets/asset-ee3381db635e1827"
+      ],
+      "headingVisible": true,
+      "heading": "本周当季食材编排台",
+      "visibleText": 210
+    },
+    {
+      "name": "04-mobile",
+      "width": 390,
+      "height": 844,
+      "progress": 0,
+      "scrollY": 0,
+      "scrollHeight": 911,
+      "overflow": 0,
+      "canvasCount": 1,
+      "imageSources": [
+        "http://127.0.0.1:8143/api/creative/assets/asset-32d93dbc183e3307",
+        "http://127.0.0.1:8143/api/creative/assets/asset-ee3381db635e1827",
+        "http://127.0.0.1:8143/api/creative/assets/asset-ee3381db635e1827",
+        "http://127.0.0.1:8143/api/creative/assets/asset-ee3381db635e1827",
+        "http://127.0.0.1:8143/api/creative/assets/asset-ee3381db635e1827",
+        "http://127.0.0.1:8143/api/creative/assets/asset-ee3381db635e1827"
+      ],
+      "headingVisible": true,
+      "heading": "本周当季食材编排台",
+      "visibleText": 210
+    }
+  ]
+}

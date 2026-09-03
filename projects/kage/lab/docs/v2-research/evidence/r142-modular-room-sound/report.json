@@ -1,0 +1,2736 @@
+{
+  "schemaVersion": 1,
+  "stage": "r142-modular-room-sound-runtime-observations",
+  "capturedAt": "2026-09-01T15:55:38.745Z",
+  "identityBinding": "runId+bundleHash",
+  "runId": "direct-r142-modular-room-sound",
+  "bundleHash": "d652cca11f053aeb4879c33cd9f1a003e248b523a245f73e48bb872a0a0ff4a0",
+  "bundleFiles": [
+    "index.html",
+    "style.css",
+    "main.ts",
+    "CONTRACT.md",
+    "asset-manifest.json"
+  ],
+  "route": "/pages/v2/deliveries/modular-room-sound/",
+  "revision": "r142-proof",
+  "complete": true,
+  "captures": [
+    "01-desktop-opening.png",
+    "02-desktop-assembly-causality.png",
+    "03-desktop-cutaway-audio-complete.png",
+    "04-mobile-low-reduced.png",
+    "05-webgl-fallback-complete.png",
+    "06-audio-fallback-complete.png"
+  ],
+  "observations": [
+    {
+      "checkpoint": "desktop-opening",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "issues": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "requestFailures": [],
+        "responseErrors": []
+      },
+      "heroVisibleAtMs": 1413,
+      "readyAtMs": 1697,
+      "state": {
+        "ready": true,
+        "mode": "horizontal",
+        "progress": 0,
+        "cutaway": false,
+        "playing": false,
+        "audioState": "idle",
+        "saved": false,
+        "booked": false,
+        "fallback": false,
+        "reducedMotion": false,
+        "quality": "high",
+        "revision": "r142-proof",
+        "frames": 14,
+        "drawCalls": 68,
+        "triangles": 26712,
+        "pixelRatio": 1,
+        "camera": {
+          "position": [
+            4.8,
+            2.5,
+            10.2
+          ],
+          "target": [
+            0,
+            0.06,
+            0
+          ],
+          "distance": 11.534
+        },
+        "partPositions": {
+          "productRoot": [
+            1.32,
+            0,
+            0
+          ],
+          "leftModule": [
+            0.36,
+            0.12,
+            0
+          ],
+          "rightModule": [
+            2.28,
+            0.12,
+            0
+          ],
+          "bridge": [
+            1.32,
+            0.14,
+            -0.05
+          ],
+          "drivers": [
+            1.32,
+            0,
+            0
+          ],
+          "bassChamber": [
+            1.32,
+            0,
+            0
+          ],
+          "leftContact": [
+            1.299,
+            0.109,
+            0.067
+          ],
+          "rightContact": [
+            1.341,
+            0.109,
+            0.067
+          ],
+          "contacts": [
+            1.32,
+            0,
+            0
+          ],
+          "leftHook": [
+            0.38,
+            0.75,
+            -0.68
+          ],
+          "rightHook": [
+            2.26,
+            0.75,
+            -0.68
+          ],
+          "wallHooks": [
+            1.32,
+            0,
+            0
+          ],
+          "frontCover": [
+            1.32,
+            0,
+            0
+          ],
+          "soundRoute": [
+            1.32,
+            0,
+            0
+          ]
+        },
+        "coverOffset": 0,
+        "hooksVisible": false,
+        "routeVisible": false,
+        "canvasVisualHash": "d6f35673",
+        "horizontalOverflow": false
+      },
+      "partNames": [
+        "bassChamber",
+        "bridge",
+        "contacts",
+        "drivers",
+        "frontCover",
+        "leftContact",
+        "leftHook",
+        "leftModule",
+        "productRoot",
+        "rightContact",
+        "rightHook",
+        "rightModule",
+        "soundRoute",
+        "wallHooks"
+      ]
+    },
+    {
+      "checkpoint": "desktop-assembly-causality",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "issues": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "requestFailures": [],
+        "responseErrors": []
+      },
+      "assemblies": {
+        "horizontal": {
+          "ready": true,
+          "mode": "horizontal",
+          "progress": 0,
+          "cutaway": false,
+          "playing": false,
+          "audioState": "idle",
+          "saved": false,
+          "booked": false,
+          "fallback": false,
+          "reducedMotion": false,
+          "quality": "high",
+          "revision": "r142-proof",
+          "frames": 17,
+          "drawCalls": 68,
+          "triangles": 26712,
+          "pixelRatio": 1,
+          "camera": {
+            "position": [
+              4.8,
+              2.5,
+              10.2
+            ],
+            "target": [
+              0,
+              0.06,
+              0
+            ],
+            "distance": 11.534
+          },
+          "partPositions": {
+            "productRoot": [
+              1.32,
+              0,
+              0
+            ],
+            "leftModule": [
+              0.36,
+              0.12,
+              0
+            ],
+            "rightModule": [
+              2.28,
+              0.12,
+              0
+            ],
+            "bridge": [
+              1.32,
+              0.14,
+              -0.05
+            ],
+            "drivers": [
+              1.32,
+              0,
+              0
+            ],
+            "bassChamber": [
+              1.32,
+              0,
+              0
+            ],
+            "leftContact": [
+              1.299,
+              0.109,
+              0.067
+            ],
+            "rightContact": [
+              1.341,
+              0.109,
+              0.067
+            ],
+            "contacts": [
+              1.32,
+              0,
+              0
+            ],
+            "leftHook": [
+              0.38,
+              0.75,
+              -0.68
+            ],
+            "rightHook": [
+              2.26,
+              0.75,
+              -0.68
+            ],
+            "wallHooks": [
+              1.32,
+              0,
+              0
+            ],
+            "frontCover": [
+              1.32,
+              0,
+              0
+            ],
+            "soundRoute": [
+              1.32,
+              0,
+              0
+            ]
+          },
+          "coverOffset": 0,
+          "hooksVisible": false,
+          "routeVisible": false,
+          "canvasVisualHash": "d6f35673",
+          "horizontalOverflow": false
+        },
+        "split": {
+          "ready": true,
+          "mode": "split",
+          "progress": 0.1778,
+          "cutaway": false,
+          "playing": false,
+          "audioState": "idle",
+          "saved": false,
+          "booked": false,
+          "fallback": false,
+          "reducedMotion": false,
+          "quality": "high",
+          "revision": "r142-proof",
+          "frames": 38,
+          "drawCalls": 68,
+          "triangles": 26712,
+          "pixelRatio": 1,
+          "camera": {
+            "position": [
+              5.198,
+              2.659,
+              10.598
+            ],
+            "target": [
+              0.159,
+              0.06,
+              0
+            ],
+            "distance": 12.02
+          },
+          "partPositions": {
+            "productRoot": [
+              1.32,
+              0,
+              0
+            ],
+            "leftModule": [
+              -0.427,
+              0.178,
+              0.211
+            ],
+            "rightModule": [
+              3.067,
+              0.274,
+              -0.077
+            ],
+            "bridge": [
+              1.32,
+              -0.829,
+              0.305
+            ],
+            "drivers": [
+              1.32,
+              0,
+              0
+            ],
+            "bassChamber": [
+              1.32,
+              0,
+              0
+            ],
+            "leftContact": [
+              0.507,
+              0.125,
+              0.11
+            ],
+            "rightContact": [
+              2.13,
+              0.228,
+              -0.153
+            ],
+            "contacts": [
+              1.32,
+              0,
+              0
+            ],
+            "leftHook": [
+              -0.504,
+              0.79,
+              -0.48
+            ],
+            "rightHook": [
+              3.126,
+              0.914,
+              -0.744
+            ],
+            "wallHooks": [
+              1.32,
+              0,
+              0
+            ],
+            "frontCover": [
+              1.32,
+              0,
+              0
+            ],
+            "soundRoute": [
+              1.32,
+              0,
+              0
+            ]
+          },
+          "coverOffset": 0,
+          "hooksVisible": false,
+          "routeVisible": false,
+          "canvasVisualHash": "0a3ec598",
+          "horizontalOverflow": false
+        },
+        "wall": {
+          "ready": true,
+          "mode": "wall",
+          "progress": 0.5958,
+          "cutaway": false,
+          "playing": false,
+          "audioState": "idle",
+          "saved": false,
+          "booked": false,
+          "fallback": false,
+          "reducedMotion": false,
+          "quality": "high",
+          "revision": "r142-proof",
+          "frames": 85,
+          "drawCalls": 80,
+          "triangles": 28872,
+          "pixelRatio": 1,
+          "camera": {
+            "position": [
+              5.192,
+              2.848,
+              10.94
+            ],
+            "target": [
+              0.218,
+              0.199,
+              -0.065
+            ],
+            "distance": 12.365
+          },
+          "partPositions": {
+            "productRoot": [
+              1.32,
+              0,
+              0
+            ],
+            "leftModule": [
+              0.564,
+              0.733,
+              -0.57
+            ],
+            "rightModule": [
+              3.002,
+              0.957,
+              -0.761
+            ],
+            "bridge": [
+              1.765,
+              -0.809,
+              -0.162
+            ],
+            "drivers": [
+              1.32,
+              0,
+              0
+            ],
+            "bassChamber": [
+              1.32,
+              0,
+              0
+            ],
+            "leftContact": [
+              1.493,
+              0.707,
+              -0.721
+            ],
+            "rightContact": [
+              2.067,
+              0.937,
+              -0.871
+            ],
+            "contacts": [
+              1.32,
+              0,
+              0
+            ],
+            "leftHook": [
+              0.43,
+              1.324,
+              -1.271
+            ],
+            "rightHook": [
+              3.1,
+              1.612,
+              -1.41
+            ],
+            "wallHooks": [
+              1.32,
+              0,
+              0
+            ],
+            "frontCover": [
+              1.32,
+              0,
+              0
+            ],
+            "soundRoute": [
+              1.32,
+              0,
+              0
+            ]
+          },
+          "coverOffset": 0,
+          "hooksVisible": true,
+          "routeVisible": false,
+          "canvasVisualHash": "38b6113e",
+          "horizontalOverflow": false
+        }
+      },
+      "orbit": {
+        "input": "mouse-drag",
+        "canvasHashes": {
+          "before": "08d672942b4d8a3761d675e2c7b98aef5b1133f3c3d0d82762f77721a68f2366",
+          "after": "7fb80d37f3c01851d63f607264d84c9d250e886d9891d3bda26a62df22500bcb"
+        },
+        "camera": {
+          "before": {
+            "position": [
+              5.199,
+              3.065,
+              11.337
+            ],
+            "target": [
+              0.289,
+              0.355,
+              -0.138
+            ],
+            "distance": 12.772
+          },
+          "after": {
+            "position": [
+              -6.394,
+              0.768,
+              10.764
+            ],
+            "target": [
+              0.293,
+              0.366,
+              -0.143
+            ],
+            "distance": 12.8
+          }
+        }
+      },
+      "zoom": {
+        "input": "mouse-wheel",
+        "canvasHashes": {
+          "before": "7fb80d37f3c01851d63f607264d84c9d250e886d9891d3bda26a62df22500bcb",
+          "after": "1895cba65c5e1dad64423486d03a8f0888e61579c0d9c3c369604e16cbbfa1e7"
+        },
+        "camera": {
+          "before": {
+            "position": [
+              -6.394,
+              0.768,
+              10.764
+            ],
+            "target": [
+              0.293,
+              0.366,
+              -0.143
+            ],
+            "distance": 12.8
+          },
+          "after": {
+            "position": [
+              -4.329,
+              0.643,
+              7.396
+            ],
+            "target": [
+              0.293,
+              0.366,
+              -0.143
+            ],
+            "distance": 8.847
+          }
+        }
+      },
+      "nativeScroll": {
+        "input": "mouse-wheel-over-chapter",
+        "before": 3724,
+        "after": 4574
+      }
+    },
+    {
+      "checkpoint": "desktop-cutaway-audio-complete",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "issues": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "requestFailures": [],
+        "responseErrors": []
+      },
+      "beforeAudio": {
+        "ready": true,
+        "mode": "horizontal",
+        "progress": 0,
+        "cutaway": false,
+        "playing": false,
+        "audioState": "idle",
+        "saved": false,
+        "booked": false,
+        "fallback": false,
+        "reducedMotion": false,
+        "quality": "high",
+        "revision": "r142-proof",
+        "frames": 15,
+        "drawCalls": 68,
+        "triangles": 26712,
+        "pixelRatio": 1,
+        "camera": {
+          "position": [
+            4.8,
+            2.5,
+            10.2
+          ],
+          "target": [
+            0,
+            0.06,
+            0
+          ],
+          "distance": 11.534
+        },
+        "partPositions": {
+          "productRoot": [
+            1.32,
+            0,
+            0
+          ],
+          "leftModule": [
+            0.36,
+            0.12,
+            0
+          ],
+          "rightModule": [
+            2.28,
+            0.12,
+            0
+          ],
+          "bridge": [
+            1.32,
+            0.14,
+            -0.05
+          ],
+          "drivers": [
+            1.32,
+            0,
+            0
+          ],
+          "bassChamber": [
+            1.32,
+            0,
+            0
+          ],
+          "leftContact": [
+            1.299,
+            0.109,
+            0.067
+          ],
+          "rightContact": [
+            1.341,
+            0.109,
+            0.067
+          ],
+          "contacts": [
+            1.32,
+            0,
+            0
+          ],
+          "leftHook": [
+            0.38,
+            0.75,
+            -0.68
+          ],
+          "rightHook": [
+            2.26,
+            0.75,
+            -0.68
+          ],
+          "wallHooks": [
+            1.32,
+            0,
+            0
+          ],
+          "frontCover": [
+            1.32,
+            0,
+            0
+          ],
+          "soundRoute": [
+            1.32,
+            0,
+            0
+          ]
+        },
+        "coverOffset": 0,
+        "hooksVisible": false,
+        "routeVisible": false,
+        "canvasVisualHash": "d6f35673",
+        "horizontalOverflow": false
+      },
+      "cutaway": {
+        "ready": true,
+        "mode": "horizontal",
+        "progress": 0.4116,
+        "cutaway": true,
+        "playing": false,
+        "audioState": "idle",
+        "saved": false,
+        "booked": false,
+        "fallback": false,
+        "reducedMotion": false,
+        "quality": "high",
+        "revision": "r142-proof",
+        "frames": 38,
+        "drawCalls": 82,
+        "triangles": 29304,
+        "pixelRatio": 1,
+        "camera": {
+          "position": [
+            4.8,
+            2.5,
+            10.2
+          ],
+          "target": [
+            0,
+            0.06,
+            0
+          ],
+          "distance": 11.534
+        },
+        "partPositions": {
+          "productRoot": [
+            1.32,
+            0,
+            0
+          ],
+          "leftModule": [
+            0.36,
+            0.12,
+            0
+          ],
+          "rightModule": [
+            2.28,
+            0.12,
+            0
+          ],
+          "bridge": [
+            1.32,
+            0.14,
+            -0.05
+          ],
+          "drivers": [
+            1.32,
+            0,
+            0
+          ],
+          "bassChamber": [
+            1.32,
+            0,
+            0
+          ],
+          "leftContact": [
+            1.299,
+            0.109,
+            0.067
+          ],
+          "rightContact": [
+            1.341,
+            0.109,
+            0.067
+          ],
+          "contacts": [
+            1.32,
+            0,
+            0
+          ],
+          "leftHook": [
+            0.38,
+            0.75,
+            -0.68
+          ],
+          "rightHook": [
+            2.26,
+            0.75,
+            -0.68
+          ],
+          "wallHooks": [
+            1.32,
+            0,
+            0
+          ],
+          "frontCover": [
+            2.939,
+            0.332,
+            1.248
+          ],
+          "soundRoute": [
+            1.32,
+            0,
+            0
+          ]
+        },
+        "coverOffset": 2.071,
+        "hooksVisible": true,
+        "routeVisible": true,
+        "canvasVisualHash": "0f488d9d",
+        "horizontalOverflow": false
+      },
+      "listenMode": {
+        "ready": true,
+        "mode": "split",
+        "progress": 0.8239,
+        "cutaway": true,
+        "playing": false,
+        "audioState": "idle",
+        "saved": false,
+        "booked": false,
+        "fallback": false,
+        "reducedMotion": false,
+        "quality": "high",
+        "revision": "r142-proof",
+        "frames": 75,
+        "drawCalls": 82,
+        "triangles": 29304,
+        "pixelRatio": 1,
+        "camera": {
+          "position": [
+            5.05,
+            2.6,
+            10.45
+          ],
+          "target": [
+            0.1,
+            0.06,
+            0
+          ],
+          "distance": 11.839
+        },
+        "partPositions": {
+          "productRoot": [
+            1.32,
+            0,
+            0
+          ],
+          "leftModule": [
+            -0.423,
+            0.177,
+            0.21
+          ],
+          "rightModule": [
+            3.063,
+            0.273,
+            -0.076
+          ],
+          "bridge": [
+            1.32,
+            -0.824,
+            0.303
+          ],
+          "drivers": [
+            1.32,
+            0,
+            0
+          ],
+          "bassChamber": [
+            1.32,
+            0,
+            0
+          ],
+          "leftContact": [
+            0.512,
+            0.125,
+            0.11
+          ],
+          "rightContact": [
+            2.125,
+            0.227,
+            -0.152
+          ],
+          "contacts": [
+            1.32,
+            0,
+            0
+          ],
+          "leftHook": [
+            -0.499,
+            0.79,
+            -0.481
+          ],
+          "rightHook": [
+            3.121,
+            0.913,
+            -0.744
+          ],
+          "wallHooks": [
+            1.32,
+            0,
+            0
+          ],
+          "frontCover": [
+            3.358,
+            0.418,
+            1.571
+          ],
+          "soundRoute": [
+            1.32,
+            0,
+            0
+          ]
+        },
+        "coverOffset": 2.607,
+        "hooksVisible": true,
+        "routeVisible": true,
+        "canvasVisualHash": "5045bd9c",
+        "horizontalOverflow": false
+      },
+      "audioStarted": {
+        "ready": true,
+        "mode": "split",
+        "progress": 0.8239,
+        "cutaway": true,
+        "playing": true,
+        "audioState": "playing",
+        "saved": false,
+        "booked": false,
+        "fallback": false,
+        "reducedMotion": false,
+        "quality": "high",
+        "revision": "r142-proof",
+        "frames": 82,
+        "drawCalls": 84,
+        "triangles": 29640,
+        "pixelRatio": 1,
+        "camera": {
+          "position": [
+            5.234,
+            2.674,
+            10.634
+          ],
+          "target": [
+            0.174,
+            0.06,
+            0
+          ],
+          "distance": 12.064
+        },
+        "partPositions": {
+          "productRoot": [
+            1.32,
+            0,
+            0
+          ],
+          "leftModule": [
+            -0.444,
+            0.179,
+            0.216
+          ],
+          "rightModule": [
+            3.084,
+            0.277,
+            -0.078
+          ],
+          "bridge": [
+            1.32,
+            -0.851,
+            0.313
+          ],
+          "drivers": [
+            1.32,
+            0,
+            0
+          ],
+          "bassChamber": [
+            1.32,
+            0,
+            0
+          ],
+          "leftContact": [
+            0.49,
+            0.125,
+            0.111
+          ],
+          "rightContact": [
+            2.148,
+            0.23,
+            -0.158
+          ],
+          "contacts": [
+            1.32,
+            0,
+            0
+          ],
+          "leftHook": [
+            -0.523,
+            0.791,
+            -0.476
+          ],
+          "rightHook": [
+            3.145,
+            0.918,
+            -0.745
+          ],
+          "wallHooks": [
+            1.32,
+            0,
+            0
+          ],
+          "frontCover": [
+            3.365,
+            0.419,
+            1.576
+          ],
+          "soundRoute": [
+            1.32,
+            0,
+            0
+          ]
+        },
+        "coverOffset": 2.616,
+        "hooksVisible": true,
+        "routeVisible": true,
+        "canvasVisualHash": "cf341ce1",
+        "horizontalOverflow": false
+      },
+      "completed": {
+        "ready": true,
+        "mode": "horizontal",
+        "progress": 0.9815,
+        "cutaway": true,
+        "playing": false,
+        "audioState": "stopped",
+        "saved": true,
+        "booked": true,
+        "fallback": false,
+        "reducedMotion": false,
+        "quality": "high",
+        "revision": "r142-proof",
+        "frames": 108,
+        "drawCalls": 82,
+        "triangles": 29304,
+        "pixelRatio": 1,
+        "camera": {
+          "position": [
+            5.272,
+            2.689,
+            10.672
+          ],
+          "target": [
+            0.189,
+            0.06,
+            0
+          ],
+          "distance": 12.11
+        },
+        "partPositions": {
+          "productRoot": [
+            1.32,
+            0,
+            0
+          ],
+          "leftModule": [
+            0.007,
+            0.146,
+            0.095
+          ],
+          "rightModule": [
+            2.633,
+            0.189,
+            -0.034
+          ],
+          "bridge": [
+            1.32,
+            -0.294,
+            0.109
+          ],
+          "drivers": [
+            1.32,
+            0,
+            0
+          ],
+          "bassChamber": [
+            1.32,
+            0,
+            0
+          ],
+          "leftContact": [
+            0.948,
+            0.117,
+            0.086
+          ],
+          "rightContact": [
+            1.692,
+            0.162,
+            -0.032
+          ],
+          "contacts": [
+            1.32,
+            0,
+            0
+          ],
+          "leftHook": [
+            -0.016,
+            0.767,
+            -0.593
+          ],
+          "rightHook": [
+            2.649,
+            0.823,
+            -0.71
+          ],
+          "wallHooks": [
+            1.32,
+            0,
+            0
+          ],
+          "frontCover": [
+            3.37,
+            0.42,
+            1.58
+          ],
+          "soundRoute": [
+            1.32,
+            0,
+            0
+          ]
+        },
+        "coverOffset": 2.622,
+        "hooksVisible": true,
+        "routeVisible": true,
+        "canvasVisualHash": "9e93181e",
+        "horizontalOverflow": false
+      },
+      "storage": "{\"saved\":true,\"booked\":true}"
+    },
+    {
+      "checkpoint": "mobile-low-reduced",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "issues": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "requestFailures": [],
+        "responseErrors": []
+      },
+      "inputs": {
+        "split": {
+          "ready": true,
+          "mode": "split",
+          "progress": 0.1863,
+          "cutaway": false,
+          "playing": false,
+          "audioState": "idle",
+          "saved": false,
+          "booked": false,
+          "fallback": false,
+          "reducedMotion": true,
+          "quality": "low",
+          "revision": "r142-proof",
+          "frames": 56,
+          "drawCalls": 40,
+          "triangles": 6036,
+          "pixelRatio": 1,
+          "camera": {
+            "position": [
+              4.1,
+              2.35,
+              11.3
+            ],
+            "target": [
+              0,
+              0.05,
+              0
+            ],
+            "distance": 12.239
+          },
+          "partPositions": {
+            "productRoot": [
+              0,
+              0,
+              0
+            ],
+            "leftModule": [
+              -1.78,
+              0.18,
+              0.22
+            ],
+            "rightModule": [
+              1.78,
+              0.28,
+              -0.08
+            ],
+            "bridge": [
+              0,
+              -0.87,
+              0.32
+            ],
+            "drivers": [
+              0,
+              0,
+              0
+            ],
+            "bassChamber": [
+              0,
+              0,
+              0
+            ],
+            "leftContact": [
+              -0.846,
+              0.126,
+              0.112
+            ],
+            "rightContact": [
+              0.843,
+              0.233,
+              -0.162
+            ],
+            "contacts": [
+              0,
+              0,
+              0
+            ],
+            "leftHook": [
+              -1.861,
+              0.792,
+              -0.472
+            ],
+            "rightHook": [
+              1.842,
+              0.921,
+              -0.746
+            ],
+            "wallHooks": [
+              0,
+              0,
+              0
+            ],
+            "frontCover": [
+              0,
+              0,
+              0
+            ],
+            "soundRoute": [
+              0,
+              0,
+              0
+            ]
+          },
+          "coverOffset": 0,
+          "hooksVisible": false,
+          "routeVisible": false,
+          "canvasVisualHash": "181b772f",
+          "horizontalOverflow": false
+        },
+        "wall": {
+          "ready": true,
+          "mode": "wall",
+          "progress": 0.5825,
+          "cutaway": false,
+          "playing": false,
+          "audioState": "idle",
+          "saved": false,
+          "booked": false,
+          "fallback": false,
+          "reducedMotion": true,
+          "quality": "low",
+          "revision": "r142-proof",
+          "frames": 72,
+          "drawCalls": 47,
+          "triangles": 7156,
+          "pixelRatio": 1,
+          "camera": {
+            "position": [
+              4.2,
+              2.9,
+              11.8
+            ],
+            "target": [
+              0,
+              0.25,
+              0
+            ],
+            "distance": 12.802
+          },
+          "partPositions": {
+            "productRoot": [
+              0,
+              0,
+              0
+            ],
+            "leftModule": [
+              -0.72,
+              0.78,
+              -0.62
+            ],
+            "rightModule": [
+              1.72,
+              1.02,
+              -0.82
+            ],
+            "bridge": [
+              0.48,
+              -0.86,
+              -0.18
+            ],
+            "drivers": [
+              0,
+              0,
+              0
+            ],
+            "bassChamber": [
+              0,
+              0,
+              0
+            ],
+            "leftContact": [
+              0.206,
+              0.753,
+              -0.784
+            ],
+            "rightContact": [
+              0.787,
+              1,
+              -0.94
+            ],
+            "contacts": [
+              0,
+              0,
+              0
+            ],
+            "leftHook": [
+              -0.864,
+              1.369,
+              -1.321
+            ],
+            "rightHook": [
+              1.826,
+              1.676,
+              -1.466
+            ],
+            "wallHooks": [
+              0,
+              0,
+              0
+            ],
+            "frontCover": [
+              0,
+              0,
+              0
+            ],
+            "soundRoute": [
+              0,
+              0,
+              0
+            ]
+          },
+          "coverOffset": 0,
+          "hooksVisible": true,
+          "routeVisible": false,
+          "canvasVisualHash": "c24f8e3a",
+          "horizontalOverflow": false
+        }
+      },
+      "state": {
+        "ready": true,
+        "mode": "horizontal",
+        "progress": 1,
+        "cutaway": true,
+        "playing": false,
+        "audioState": "idle",
+        "saved": true,
+        "booked": true,
+        "fallback": false,
+        "reducedMotion": true,
+        "quality": "low",
+        "revision": "r142-proof",
+        "frames": 109,
+        "drawCalls": 49,
+        "triangles": 7216,
+        "pixelRatio": 1,
+        "camera": {
+          "position": [
+            3.8,
+            2.25,
+            10.6
+          ],
+          "target": [
+            0,
+            0.05,
+            0
+          ],
+          "distance": 11.473
+        },
+        "partPositions": {
+          "productRoot": [
+            0,
+            0,
+            0
+          ],
+          "leftModule": [
+            -0.96,
+            0.12,
+            0
+          ],
+          "rightModule": [
+            0.96,
+            0.12,
+            0
+          ],
+          "bridge": [
+            0,
+            0.14,
+            -0.05
+          ],
+          "drivers": [
+            0,
+            0,
+            0
+          ],
+          "bassChamber": [
+            0,
+            0,
+            0
+          ],
+          "leftContact": [
+            -0.021,
+            0.109,
+            0.067
+          ],
+          "rightContact": [
+            0.021,
+            0.109,
+            0.067
+          ],
+          "contacts": [
+            0,
+            0,
+            0
+          ],
+          "leftHook": [
+            -0.94,
+            0.75,
+            -0.68
+          ],
+          "rightHook": [
+            0.94,
+            0.75,
+            -0.68
+          ],
+          "wallHooks": [
+            0,
+            0,
+            0
+          ],
+          "frontCover": [
+            2.05,
+            0.42,
+            1.58
+          ],
+          "soundRoute": [
+            0,
+            0,
+            0
+          ]
+        },
+        "coverOffset": 2.622,
+        "hooksVisible": true,
+        "routeVisible": true,
+        "canvasVisualHash": "24c18319",
+        "horizontalOverflow": false
+      },
+      "controlBoxes": [
+        {
+          "left": 23.984375,
+          "right": 366.015625,
+          "width": 342.03125,
+          "height": 57.8125
+        },
+        {
+          "left": 24.984375,
+          "right": 365.015625,
+          "width": 340.03125,
+          "height": 57.8125
+        },
+        {
+          "left": 24.984375,
+          "right": 365.015625,
+          "width": 340.03125,
+          "height": 59.59375
+        },
+        {
+          "left": 24.984375,
+          "right": 361.015625,
+          "width": 336.03125,
+          "height": 57.8125
+        },
+        {
+          "left": 23.984375,
+          "right": 366.015625,
+          "width": 342.03125,
+          "height": 66.78125
+        },
+        {
+          "left": 40.1875,
+          "right": 349.8125,
+          "width": 309.625,
+          "height": 52
+        },
+        {
+          "left": 40.1875,
+          "right": 349.8125,
+          "width": 309.625,
+          "height": 52
+        }
+      ]
+    },
+    {
+      "checkpoint": "webgl-fallback-complete",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "issues": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "requestFailures": [],
+        "responseErrors": []
+      },
+      "inputs": {
+        "split": {
+          "ready": true,
+          "mode": "split",
+          "progress": 0.1778,
+          "cutaway": false,
+          "playing": false,
+          "audioState": "idle",
+          "saved": false,
+          "booked": false,
+          "fallback": true,
+          "reducedMotion": true,
+          "quality": "low",
+          "revision": "r142-proof",
+          "frames": 0,
+          "drawCalls": 0,
+          "triangles": 0,
+          "pixelRatio": 0,
+          "camera": {
+            "position": [
+              5.3,
+              2.7,
+              10.7
+            ],
+            "target": [
+              0.2,
+              0.06,
+              0
+            ],
+            "distance": 12.144
+          },
+          "partPositions": {
+            "productRoot": [
+              1.32,
+              0,
+              0
+            ],
+            "leftModule": [
+              -0.46,
+              0.18,
+              0.22
+            ],
+            "rightModule": [
+              3.1,
+              0.28,
+              -0.08
+            ],
+            "bridge": [
+              1.32,
+              -0.87,
+              0.32
+            ],
+            "drivers": [
+              1.32,
+              0,
+              0
+            ],
+            "bassChamber": [
+              1.32,
+              0,
+              0
+            ],
+            "leftContact": [
+              0.474,
+              0.126,
+              0.112
+            ],
+            "rightContact": [
+              2.163,
+              0.233,
+              -0.162
+            ],
+            "contacts": [
+              1.32,
+              0,
+              0
+            ],
+            "leftHook": [
+              -0.541,
+              0.792,
+              -0.472
+            ],
+            "rightHook": [
+              3.162,
+              0.921,
+              -0.746
+            ],
+            "wallHooks": [
+              1.32,
+              0,
+              0
+            ],
+            "frontCover": [
+              1.32,
+              0,
+              0
+            ],
+            "soundRoute": [
+              1.32,
+              0,
+              0
+            ]
+          },
+          "coverOffset": 0,
+          "hooksVisible": false,
+          "routeVisible": false,
+          "canvasVisualHash": "bb074606",
+          "horizontalOverflow": false
+        },
+        "wall": {
+          "ready": true,
+          "mode": "wall",
+          "progress": 0.1778,
+          "cutaway": false,
+          "playing": false,
+          "audioState": "idle",
+          "saved": false,
+          "booked": false,
+          "fallback": true,
+          "reducedMotion": true,
+          "quality": "low",
+          "revision": "r142-proof",
+          "frames": 0,
+          "drawCalls": 0,
+          "triangles": 0,
+          "pixelRatio": 0,
+          "camera": {
+            "position": [
+              5.2,
+              3.1,
+              11.4
+            ],
+            "target": [
+              0.3,
+              0.38,
+              -0.15
+            ],
+            "distance": 12.838
+          },
+          "partPositions": {
+            "productRoot": [
+              1.32,
+              0,
+              0
+            ],
+            "leftModule": [
+              0.6,
+              0.78,
+              -0.62
+            ],
+            "rightModule": [
+              3.04,
+              1.02,
+              -0.82
+            ],
+            "bridge": [
+              1.8,
+              -0.86,
+              -0.18
+            ],
+            "drivers": [
+              1.32,
+              0,
+              0
+            ],
+            "bassChamber": [
+              1.32,
+              0,
+              0
+            ],
+            "leftContact": [
+              1.526,
+              0.753,
+              -0.784
+            ],
+            "rightContact": [
+              2.107,
+              1,
+              -0.94
+            ],
+            "contacts": [
+              1.32,
+              0,
+              0
+            ],
+            "leftHook": [
+              0.456,
+              1.369,
+              -1.321
+            ],
+            "rightHook": [
+              3.146,
+              1.676,
+              -1.466
+            ],
+            "wallHooks": [
+              1.32,
+              0,
+              0
+            ],
+            "frontCover": [
+              1.32,
+              0,
+              0
+            ],
+            "soundRoute": [
+              1.32,
+              0,
+              0
+            ]
+          },
+          "coverOffset": 0,
+          "hooksVisible": true,
+          "routeVisible": false,
+          "canvasVisualHash": "0b0d05f8",
+          "horizontalOverflow": false
+        },
+        "listenMode": {
+          "ready": true,
+          "mode": "split",
+          "progress": 0.8239,
+          "cutaway": true,
+          "playing": false,
+          "audioState": "idle",
+          "saved": false,
+          "booked": false,
+          "fallback": true,
+          "reducedMotion": true,
+          "quality": "low",
+          "revision": "r142-proof",
+          "frames": 0,
+          "drawCalls": 0,
+          "triangles": 0,
+          "pixelRatio": 0,
+          "camera": {
+            "position": [
+              5.3,
+              2.7,
+              10.7
+            ],
+            "target": [
+              0.2,
+              0.06,
+              0
+            ],
+            "distance": 12.144
+          },
+          "partPositions": {
+            "productRoot": [
+              1.32,
+              0,
+              0
+            ],
+            "leftModule": [
+              -0.46,
+              0.18,
+              0.22
+            ],
+            "rightModule": [
+              3.1,
+              0.28,
+              -0.08
+            ],
+            "bridge": [
+              1.32,
+              -0.87,
+              0.32
+            ],
+            "drivers": [
+              1.32,
+              0,
+              0
+            ],
+            "bassChamber": [
+              1.32,
+              0,
+              0
+            ],
+            "leftContact": [
+              0.474,
+              0.126,
+              0.112
+            ],
+            "rightContact": [
+              2.163,
+              0.233,
+              -0.162
+            ],
+            "contacts": [
+              1.32,
+              0,
+              0
+            ],
+            "leftHook": [
+              -0.541,
+              0.792,
+              -0.472
+            ],
+            "rightHook": [
+              3.162,
+              0.921,
+              -0.746
+            ],
+            "wallHooks": [
+              1.32,
+              0,
+              0
+            ],
+            "frontCover": [
+              3.37,
+              0.42,
+              1.58
+            ],
+            "soundRoute": [
+              1.32,
+              0,
+              0
+            ]
+          },
+          "coverOffset": 2.622,
+          "hooksVisible": true,
+          "routeVisible": true,
+          "canvasVisualHash": "1a921293",
+          "horizontalOverflow": false
+        }
+      },
+      "cutaway": {
+        "ready": true,
+        "mode": "horizontal",
+        "progress": 0.4184,
+        "cutaway": true,
+        "playing": false,
+        "audioState": "idle",
+        "saved": false,
+        "booked": false,
+        "fallback": true,
+        "reducedMotion": true,
+        "quality": "low",
+        "revision": "r142-proof",
+        "frames": 0,
+        "drawCalls": 0,
+        "triangles": 0,
+        "pixelRatio": 0,
+        "camera": {
+          "position": [
+            4.8,
+            2.5,
+            10.2
+          ],
+          "target": [
+            0,
+            0.06,
+            0
+          ],
+          "distance": 11.534
+        },
+        "partPositions": {
+          "productRoot": [
+            1.32,
+            0,
+            0
+          ],
+          "leftModule": [
+            0.36,
+            0.12,
+            0
+          ],
+          "rightModule": [
+            2.28,
+            0.12,
+            0
+          ],
+          "bridge": [
+            1.32,
+            0.14,
+            -0.05
+          ],
+          "drivers": [
+            1.32,
+            0,
+            0
+          ],
+          "bassChamber": [
+            1.32,
+            0,
+            0
+          ],
+          "leftContact": [
+            1.299,
+            0.109,
+            0.067
+          ],
+          "rightContact": [
+            1.341,
+            0.109,
+            0.067
+          ],
+          "contacts": [
+            1.32,
+            0,
+            0
+          ],
+          "leftHook": [
+            0.38,
+            0.75,
+            -0.68
+          ],
+          "rightHook": [
+            2.26,
+            0.75,
+            -0.68
+          ],
+          "wallHooks": [
+            1.32,
+            0,
+            0
+          ],
+          "frontCover": [
+            3.37,
+            0.42,
+            1.58
+          ],
+          "soundRoute": [
+            1.32,
+            0,
+            0
+          ]
+        },
+        "coverOffset": 2.622,
+        "hooksVisible": true,
+        "routeVisible": true,
+        "canvasVisualHash": "5f371977",
+        "horizontalOverflow": false
+      },
+      "audioStarted": {
+        "ready": true,
+        "mode": "split",
+        "progress": 0.8239,
+        "cutaway": true,
+        "playing": true,
+        "audioState": "playing",
+        "saved": false,
+        "booked": false,
+        "fallback": true,
+        "reducedMotion": true,
+        "quality": "low",
+        "revision": "r142-proof",
+        "frames": 0,
+        "drawCalls": 0,
+        "triangles": 0,
+        "pixelRatio": 0,
+        "camera": {
+          "position": [
+            5.3,
+            2.7,
+            10.7
+          ],
+          "target": [
+            0.2,
+            0.06,
+            0
+          ],
+          "distance": 12.144
+        },
+        "partPositions": {
+          "productRoot": [
+            1.32,
+            0,
+            0
+          ],
+          "leftModule": [
+            -0.46,
+            0.18,
+            0.22
+          ],
+          "rightModule": [
+            3.1,
+            0.28,
+            -0.08
+          ],
+          "bridge": [
+            1.32,
+            -0.87,
+            0.32
+          ],
+          "drivers": [
+            1.32,
+            0,
+            0
+          ],
+          "bassChamber": [
+            1.32,
+            0,
+            0
+          ],
+          "leftContact": [
+            0.474,
+            0.126,
+            0.112
+          ],
+          "rightContact": [
+            2.163,
+            0.233,
+            -0.162
+          ],
+          "contacts": [
+            1.32,
+            0,
+            0
+          ],
+          "leftHook": [
+            -0.541,
+            0.792,
+            -0.472
+          ],
+          "rightHook": [
+            3.162,
+            0.921,
+            -0.746
+          ],
+          "wallHooks": [
+            1.32,
+            0,
+            0
+          ],
+          "frontCover": [
+            3.37,
+            0.42,
+            1.58
+          ],
+          "soundRoute": [
+            1.32,
+            0,
+            0
+          ]
+        },
+        "coverOffset": 2.622,
+        "hooksVisible": true,
+        "routeVisible": true,
+        "canvasVisualHash": "1307af69",
+        "horizontalOverflow": false
+      },
+      "completed": {
+        "ready": true,
+        "mode": "horizontal",
+        "progress": 0.9815,
+        "cutaway": true,
+        "playing": false,
+        "audioState": "stopped",
+        "saved": true,
+        "booked": true,
+        "fallback": true,
+        "reducedMotion": true,
+        "quality": "low",
+        "revision": "r142-proof",
+        "frames": 0,
+        "drawCalls": 0,
+        "triangles": 0,
+        "pixelRatio": 0,
+        "camera": {
+          "position": [
+            4.8,
+            2.5,
+            10.2
+          ],
+          "target": [
+            0,
+            0.06,
+            0
+          ],
+          "distance": 11.534
+        },
+        "partPositions": {
+          "productRoot": [
+            1.32,
+            0,
+            0
+          ],
+          "leftModule": [
+            0.36,
+            0.12,
+            0
+          ],
+          "rightModule": [
+            2.28,
+            0.12,
+            0
+          ],
+          "bridge": [
+            1.32,
+            0.14,
+            -0.05
+          ],
+          "drivers": [
+            1.32,
+            0,
+            0
+          ],
+          "bassChamber": [
+            1.32,
+            0,
+            0
+          ],
+          "leftContact": [
+            1.299,
+            0.109,
+            0.067
+          ],
+          "rightContact": [
+            1.341,
+            0.109,
+            0.067
+          ],
+          "contacts": [
+            1.32,
+            0,
+            0
+          ],
+          "leftHook": [
+            0.38,
+            0.75,
+            -0.68
+          ],
+          "rightHook": [
+            2.26,
+            0.75,
+            -0.68
+          ],
+          "wallHooks": [
+            1.32,
+            0,
+            0
+          ],
+          "frontCover": [
+            3.37,
+            0.42,
+            1.58
+          ],
+          "soundRoute": [
+            1.32,
+            0,
+            0
+          ]
+        },
+        "coverOffset": 2.622,
+        "hooksVisible": true,
+        "routeVisible": true,
+        "canvasVisualHash": "5fd9ab40",
+        "horizontalOverflow": false
+      }
+    },
+    {
+      "checkpoint": "audio-fallback-complete",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "issues": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "requestFailures": [],
+        "responseErrors": []
+      },
+      "beforeInput": {
+        "ready": true,
+        "mode": "horizontal",
+        "progress": 0,
+        "cutaway": false,
+        "playing": false,
+        "audioState": "unavailable",
+        "saved": false,
+        "booked": false,
+        "fallback": false,
+        "reducedMotion": true,
+        "quality": "high",
+        "revision": "r142-proof",
+        "frames": 15,
+        "drawCalls": 68,
+        "triangles": 26712,
+        "pixelRatio": 1,
+        "camera": {
+          "position": [
+            4.8,
+            2.5,
+            10.2
+          ],
+          "target": [
+            0,
+            0.06,
+            0
+          ],
+          "distance": 11.534
+        },
+        "partPositions": {
+          "productRoot": [
+            1.32,
+            0,
+            0
+          ],
+          "leftModule": [
+            0.36,
+            0.12,
+            0
+          ],
+          "rightModule": [
+            2.28,
+            0.12,
+            0
+          ],
+          "bridge": [
+            1.32,
+            0.14,
+            -0.05
+          ],
+          "drivers": [
+            1.32,
+            0,
+            0
+          ],
+          "bassChamber": [
+            1.32,
+            0,
+            0
+          ],
+          "leftContact": [
+            1.299,
+            0.109,
+            0.067
+          ],
+          "rightContact": [
+            1.341,
+            0.109,
+            0.067
+          ],
+          "contacts": [
+            1.32,
+            0,
+            0
+          ],
+          "leftHook": [
+            0.38,
+            0.75,
+            -0.68
+          ],
+          "rightHook": [
+            2.26,
+            0.75,
+            -0.68
+          ],
+          "wallHooks": [
+            1.32,
+            0,
+            0
+          ],
+          "frontCover": [
+            1.32,
+            0,
+            0
+          ],
+          "soundRoute": [
+            1.32,
+            0,
+            0
+          ]
+        },
+        "coverOffset": 0,
+        "hooksVisible": false,
+        "routeVisible": false,
+        "canvasVisualHash": "b453a88b",
+        "horizontalOverflow": false
+      },
+      "unavailable": {
+        "ready": true,
+        "mode": "split",
+        "progress": 0.8013,
+        "cutaway": false,
+        "playing": false,
+        "audioState": "unavailable",
+        "saved": false,
+        "booked": false,
+        "fallback": false,
+        "reducedMotion": true,
+        "quality": "high",
+        "revision": "r142-proof",
+        "frames": 23,
+        "drawCalls": 68,
+        "triangles": 26712,
+        "pixelRatio": 1,
+        "camera": {
+          "position": [
+            5.3,
+            2.7,
+            10.7
+          ],
+          "target": [
+            0.2,
+            0.06,
+            0
+          ],
+          "distance": 12.144
+        },
+        "partPositions": {
+          "productRoot": [
+            1.32,
+            0,
+            0
+          ],
+          "leftModule": [
+            -0.46,
+            0.18,
+            0.22
+          ],
+          "rightModule": [
+            3.1,
+            0.28,
+            -0.08
+          ],
+          "bridge": [
+            1.32,
+            -0.87,
+            0.32
+          ],
+          "drivers": [
+            1.32,
+            0,
+            0
+          ],
+          "bassChamber": [
+            1.32,
+            0,
+            0
+          ],
+          "leftContact": [
+            0.474,
+            0.126,
+            0.112
+          ],
+          "rightContact": [
+            2.163,
+            0.233,
+            -0.162
+          ],
+          "contacts": [
+            1.32,
+            0,
+            0
+          ],
+          "leftHook": [
+            -0.541,
+            0.792,
+            -0.472
+          ],
+          "rightHook": [
+            3.162,
+            0.921,
+            -0.746
+          ],
+          "wallHooks": [
+            1.32,
+            0,
+            0
+          ],
+          "frontCover": [
+            1.32,
+            0,
+            0
+          ],
+          "soundRoute": [
+            1.32,
+            0,
+            0
+          ]
+        },
+        "coverOffset": 0,
+        "hooksVisible": false,
+        "routeVisible": false,
+        "canvasVisualHash": "ae795126",
+        "horizontalOverflow": false
+      },
+      "inputs": {
+        "split": {
+          "ready": true,
+          "mode": "split",
+          "progress": 0.1778,
+          "cutaway": false,
+          "playing": false,
+          "audioState": "unavailable",
+          "saved": false,
+          "booked": false,
+          "fallback": false,
+          "reducedMotion": true,
+          "quality": "high",
+          "revision": "r142-proof",
+          "frames": 33,
+          "drawCalls": 68,
+          "triangles": 26712,
+          "pixelRatio": 1,
+          "camera": {
+            "position": [
+              5.3,
+              2.7,
+              10.7
+            ],
+            "target": [
+              0.2,
+              0.06,
+              0
+            ],
+            "distance": 12.144
+          },
+          "partPositions": {
+            "productRoot": [
+              1.32,
+              0,
+              0
+            ],
+            "leftModule": [
+              -0.46,
+              0.18,
+              0.22
+            ],
+            "rightModule": [
+              3.1,
+              0.28,
+              -0.08
+            ],
+            "bridge": [
+              1.32,
+              -0.87,
+              0.32
+            ],
+            "drivers": [
+              1.32,
+              0,
+              0
+            ],
+            "bassChamber": [
+              1.32,
+              0,
+              0
+            ],
+            "leftContact": [
+              0.474,
+              0.126,
+              0.112
+            ],
+            "rightContact": [
+              2.163,
+              0.233,
+              -0.162
+            ],
+            "contacts": [
+              1.32,
+              0,
+              0
+            ],
+            "leftHook": [
+              -0.541,
+              0.792,
+              -0.472
+            ],
+            "rightHook": [
+              3.162,
+              0.921,
+              -0.746
+            ],
+            "wallHooks": [
+              1.32,
+              0,
+              0
+            ],
+            "frontCover": [
+              1.32,
+              0,
+              0
+            ],
+            "soundRoute": [
+              1.32,
+              0,
+              0
+            ]
+          },
+          "coverOffset": 0,
+          "hooksVisible": false,
+          "routeVisible": false,
+          "canvasVisualHash": "4ce4b985",
+          "horizontalOverflow": false
+        },
+        "cutaway": {
+          "ready": true,
+          "mode": "split",
+          "progress": 0.1778,
+          "cutaway": true,
+          "playing": false,
+          "audioState": "unavailable",
+          "saved": false,
+          "booked": false,
+          "fallback": false,
+          "reducedMotion": true,
+          "quality": "high",
+          "revision": "r142-proof",
+          "frames": 41,
+          "drawCalls": 82,
+          "triangles": 29304,
+          "pixelRatio": 1,
+          "camera": {
+            "position": [
+              5.3,
+              2.7,
+              10.7
+            ],
+            "target": [
+              0.2,
+              0.06,
+              0
+            ],
+            "distance": 12.144
+          },
+          "partPositions": {
+            "productRoot": [
+              1.32,
+              0,
+              0
+            ],
+            "leftModule": [
+              -0.46,
+              0.18,
+              0.22
+            ],
+            "rightModule": [
+              3.1,
+              0.28,
+              -0.08
+            ],
+            "bridge": [
+              1.32,
+              -0.87,
+              0.32
+            ],
+            "drivers": [
+              1.32,
+              0,
+              0
+            ],
+            "bassChamber": [
+              1.32,
+              0,
+              0
+            ],
+            "leftContact": [
+              0.474,
+              0.126,
+              0.112
+            ],
+            "rightContact": [
+              2.163,
+              0.233,
+              -0.162
+            ],
+            "contacts": [
+              1.32,
+              0,
+              0
+            ],
+            "leftHook": [
+              -0.541,
+              0.792,
+              -0.472
+            ],
+            "rightHook": [
+              3.162,
+              0.921,
+              -0.746
+            ],
+            "wallHooks": [
+              1.32,
+              0,
+              0
+            ],
+            "frontCover": [
+              3.37,
+              0.42,
+              1.58
+            ],
+            "soundRoute": [
+              1.32,
+              0,
+              0
+            ]
+          },
+          "coverOffset": 2.622,
+          "hooksVisible": true,
+          "routeVisible": true,
+          "canvasVisualHash": "42a65563",
+          "horizontalOverflow": false
+        }
+      },
+      "completed": {
+        "ready": true,
+        "mode": "horizontal",
+        "progress": 0.9815,
+        "cutaway": true,
+        "playing": false,
+        "audioState": "unavailable",
+        "saved": true,
+        "booked": true,
+        "fallback": false,
+        "reducedMotion": true,
+        "quality": "high",
+        "revision": "r142-proof",
+        "frames": 53,
+        "drawCalls": 82,
+        "triangles": 29304,
+        "pixelRatio": 1,
+        "camera": {
+          "position": [
+            4.8,
+            2.5,
+            10.2
+          ],
+          "target": [
+            0,
+            0.06,
+            0
+          ],
+          "distance": 11.534
+        },
+        "partPositions": {
+          "productRoot": [
+            1.32,
+            0,
+            0
+          ],
+          "leftModule": [
+            0.36,
+            0.12,
+            0
+          ],
+          "rightModule": [
+            2.28,
+            0.12,
+            0
+          ],
+          "bridge": [
+            1.32,
+            0.14,
+            -0.05
+          ],
+          "drivers": [
+            1.32,
+            0,
+            0
+          ],
+          "bassChamber": [
+            1.32,
+            0,
+            0
+          ],
+          "leftContact": [
+            1.299,
+            0.109,
+            0.067
+          ],
+          "rightContact": [
+            1.341,
+            0.109,
+            0.067
+          ],
+          "contacts": [
+            1.32,
+            0,
+            0
+          ],
+          "leftHook": [
+            0.38,
+            0.75,
+            -0.68
+          ],
+          "rightHook": [
+            2.26,
+            0.75,
+            -0.68
+          ],
+          "wallHooks": [
+            1.32,
+            0,
+            0
+          ],
+          "frontCover": [
+            3.37,
+            0.42,
+            1.58
+          ],
+          "soundRoute": [
+            1.32,
+            0,
+            0
+          ]
+        },
+        "coverOffset": 2.622,
+        "hooksVisible": true,
+        "routeVisible": true,
+        "canvasVisualHash": "7a1723a8",
+        "horizontalOverflow": false
+      }
+    }
+  ]
+}

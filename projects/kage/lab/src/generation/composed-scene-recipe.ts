@@ -1,5 +1,5 @@
-import type { ComposedSceneRecipe } from '../experience/schema';
-import type { EffectSpec } from './effect-spec';
+import type { ComposedSceneRecipe } from '../experience/schema.ts';
+import type { EffectSpec } from './effect-spec.ts';
 
 const includesAny = (value: string, terms: readonly string[]): boolean => terms.some((term) => value.includes(term));
 

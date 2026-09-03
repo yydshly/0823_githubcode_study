@@ -1,0 +1,174 @@
+{
+  "schemaVersion": 1,
+  "stage": "r128-night-reflective-catalog-runtime-observations",
+  "capturedAt": "2026-08-31T12:03:56.758Z",
+  "identityBinding": "runId+bundleHash",
+  "runId": "direct-r128-night-reflective-catalog",
+  "bundleHash": "ef0ae71482af63a997095d6398b03f806833a418593d1ac46b8d0e709faca379",
+  "route": "/pages/v2/deliveries/night-reflective-catalog/",
+  "revision": "r128-proof",
+  "complete": true,
+  "captures": [
+    "01-desktop-overview.png",
+    "02-desktop-compare.png",
+    "03-mobile-reduced.png",
+    "04-fallback.png"
+  ],
+  "observations": [
+    {
+      "checkpoint": "desktop-overview",
+      "readyAtMs": 3461,
+      "issues": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "requestFailures": [],
+        "responseErrors": []
+      },
+      "state": {
+        "ready": true,
+        "filter": "all",
+        "visibleCount": 8,
+        "selected": [],
+        "selectedCount": 0,
+        "beamX": 0.8218,
+        "beamY": 0.5882,
+        "activeSample": null,
+        "driveMode": "demo",
+        "dialogOpen": false,
+        "saved": false,
+        "fallback": false,
+        "reducedMotion": false,
+        "frames": 2,
+        "canvasCount": 8,
+        "canvasVisualHash": "catalog-41c4636d",
+        "horizontalOverflow": false,
+        "revision": "r128-proof"
+      }
+    },
+    {
+      "checkpoint": "desktop-interaction",
+      "issues": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "requestFailures": [],
+        "responseErrors": []
+      },
+      "initialVisualHash": "catalog-e6e41e85",
+      "inspected": {
+        "ready": true,
+        "filter": "route",
+        "visibleCount": 4,
+        "selected": [],
+        "selectedCount": 0,
+        "beamX": 0.18,
+        "beamY": 0.72,
+        "activeSample": "micro-prism",
+        "driveMode": "manual",
+        "dialogOpen": false,
+        "saved": false,
+        "fallback": false,
+        "reducedMotion": true,
+        "frames": 0,
+        "canvasCount": 8,
+        "canvasVisualHash": "catalog-3d248b25",
+        "horizontalOverflow": false,
+        "revision": "r128-proof"
+      },
+      "state": {
+        "ready": true,
+        "filter": "route",
+        "visibleCount": 4,
+        "selected": [
+          "micro-prism",
+          "segmented-guide"
+        ],
+        "selectedCount": 2,
+        "beamX": 0.9233,
+        "beamY": 0.0738,
+        "activeSample": "segmented-guide",
+        "driveMode": "manual",
+        "dialogOpen": false,
+        "saved": true,
+        "fallback": false,
+        "reducedMotion": true,
+        "frames": 0,
+        "canvasCount": 8,
+        "canvasVisualHash": "catalog-3342bb64",
+        "horizontalOverflow": false,
+        "revision": "r128-proof"
+      },
+      "semantic": {
+        "closeMethod": "Escape",
+        "focusReturnedTo": "open-compare"
+      }
+    },
+    {
+      "checkpoint": "mobile-reduced",
+      "issues": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "requestFailures": [],
+        "responseErrors": []
+      },
+      "state": {
+        "ready": true,
+        "filter": "wear",
+        "visibleCount": 4,
+        "selected": [
+          "glass-bead",
+          "reflective-thread"
+        ],
+        "selectedCount": 2,
+        "beamX": 0.8598,
+        "beamY": 0.092,
+        "activeSample": "reflective-thread",
+        "driveMode": "manual",
+        "dialogOpen": true,
+        "saved": false,
+        "fallback": false,
+        "reducedMotion": true,
+        "frames": 0,
+        "canvasCount": 8,
+        "canvasVisualHash": "catalog-3223bb27",
+        "horizontalOverflow": false,
+        "revision": "r128-proof"
+      },
+      "viewport": {
+        "width": 390,
+        "height": 844
+      }
+    },
+    {
+      "checkpoint": "forced-fallback",
+      "issues": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "requestFailures": [],
+        "responseErrors": []
+      },
+      "state": {
+        "ready": true,
+        "filter": "stage",
+        "visibleCount": 3,
+        "selected": [
+          "honeycomb-film",
+          "reflective-pigment"
+        ],
+        "selectedCount": 2,
+        "beamX": 0.8237,
+        "beamY": 0.0629,
+        "activeSample": "reflective-pigment",
+        "driveMode": "manual",
+        "dialogOpen": true,
+        "saved": true,
+        "fallback": true,
+        "reducedMotion": true,
+        "frames": 0,
+        "canvasCount": 0,
+        "canvasVisualHash": "catalog-04ec872e",
+        "horizontalOverflow": false,
+        "revision": "r128-proof"
+      }
+    }
+  ]
+}

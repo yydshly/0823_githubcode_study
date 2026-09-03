@@ -1,0 +1,162 @@
+{
+  "schemaVersion": 1,
+  "id": "direct-sign-language-season-r113",
+  "goalPlayback": {
+    "originalBrief": "为一座城市手语剧场设计明亮、具有编辑感的演出季网页。观众可以选择不同演出，并看见动作记谱、字幕、舞台路径与无障碍信息同步变化；最后进入演示选座。所有场次、票价与服务必须明确标为演示数据。",
+    "subject": "城市手语剧场演出季",
+    "audience": "关注表演艺术、手语文化与无障碍观演的城市观众",
+    "desiredOutcome": "让观众理解每部作品的动作语言与无障碍支持，并愿意选择一个演示场次",
+    "primaryAction": "选择演示场次并查看演示席位",
+    "hardConstraints": [
+      "场次、票价与服务不得伪装为真实售票信息",
+      "主要选择交互必须支持键盘与 390px 手机"
+    ],
+    "preferences": [
+      "明亮编辑画布",
+      "用动作记谱而不是通用科技粒子表达主题"
+    ]
+  },
+  "selectedDirection": {
+    "id": "gesture-score-editorial-season",
+    "title": "手势之间 · 动作记谱编辑场",
+    "experienceForm": "明亮编辑画布与直接选择交互",
+    "rationale": "以演出选择作为唯一因果状态，同步组织动作轨迹、字幕、舞台路径、无障碍信息和演示行动，形成主题专属而非模板化的阅读体验。"
+  },
+  "referencePrinciples": [],
+  "assetPlan": {
+    "batchId": "sign-language-season-programmatic-01",
+    "strategy": "programmatic",
+    "rationale": "该主题需要抽象动作谱与舞台路径，不需要用外部人物照片冒充真实演员或演出证据。",
+    "assets": [
+      {
+        "id": "synchronized-gesture-score",
+        "role": "由同一场次状态驱动的动作轨迹、节点与舞台路径",
+        "source": "programmatic",
+        "required": true
+      }
+    ]
+  },
+  "interactionRationale": {
+    "mode": "direct",
+    "audioApplicable": false,
+    "rationale": "场次选择必须真实改变动作谱、字幕、舞台图和观演信息；声音并非本次演示所承诺的产品能力。"
+  },
+  "attemptBudget": {
+    "limits": {
+      "directionSelections": 1,
+      "assetBatches": 1,
+      "builds": 1,
+      "deterministicRepairs": 2,
+      "visualRefinements": 1
+    },
+    "used": {
+      "directionSelections": 1,
+      "assetBatches": 1,
+      "builds": 1,
+      "deterministicRepairs": 0,
+      "visualRefinements": 1
+    }
+  },
+  "stageReports": [
+    {
+      "stage": "goal-direction-and-assets",
+      "elapsedMs": 9000,
+      "status": "completed",
+      "summary": "完成目标回放、单一编辑方向与一次程序化素材批次决策。"
+    },
+    {
+      "stage": "single-build",
+      "elapsedMs": 28000,
+      "status": "completed",
+      "summary": "完成唯一一次页面构建，未启动第二创意方向或素材批次。"
+    },
+    {
+      "stage": "bounded-visual-refinement",
+      "elapsedMs": 8000,
+      "status": "completed",
+      "summary": "终审只修正浅底小字号对比度，并增强同一 bundle 的因果验收。"
+    },
+    {
+      "stage": "browser-evidence",
+      "elapsedMs": 13700,
+      "status": "completed",
+      "summary": "真实 Chrome 验证桌面、390px、键盘、减少动态、运行错误与 SVG 路径联动。"
+    }
+  ],
+  "finalCandidate": {
+    "runId": "direct-sign-language-season-r113",
+    "bundleHash": "3c865222ec507ac52605d2cbf7d3b1ca247d40670bfa427ced28a05ee94a9734"
+  },
+  "adaptiveEvidence": {
+    "schemaVersion": 1,
+    "runId": "direct-sign-language-season-r113",
+    "bundleHash": "3c865222ec507ac52605d2cbf7d3b1ca247d40670bfa427ced28a05ee94a9734",
+    "profile": {
+      "schemaVersion": 1,
+      "interactionMode": "direct",
+      "audioApplicable": false,
+      "requiredCheckpoints": [
+        "opening",
+        "core",
+        "mobile",
+        "interaction"
+      ]
+    },
+    "checkpoints": [
+      {
+        "kind": "opening",
+        "runId": "direct-sign-language-season-r113",
+        "bundleHash": "3c865222ec507ac52605d2cbf7d3b1ca247d40670bfa427ced28a05ee94a9734",
+        "passed": true,
+        "summary": "开场立即说明手语剧场主题、演出选择方式与非真实售票边界。"
+      },
+      {
+        "kind": "core",
+        "runId": "direct-sign-language-season-r113",
+        "bundleHash": "3c865222ec507ac52605d2cbf7d3b1ca247d40670bfa427ced28a05ee94a9734",
+        "passed": true,
+        "summary": "动作记谱、字幕、舞台图、无障碍信息和行动在同一编辑画布中形成完整核心状态。"
+      },
+      {
+        "kind": "mobile",
+        "runId": "direct-sign-language-season-r113",
+        "bundleHash": "3c865222ec507ac52605d2cbf7d3b1ca247d40670bfa427ced28a05ee94a9734",
+        "passed": true,
+        "summary": "390×844 真实浏览器状态无横向溢出，全部内容、选择与行动可达。"
+      },
+      {
+        "kind": "interaction",
+        "runId": "direct-sign-language-season-r113",
+        "bundleHash": "3c865222ec507ac52605d2cbf7d3b1ca247d40670bfa427ced28a05ee94a9734",
+        "passed": true,
+        "summary": "方向键和点击会同步改变标题、日期、字幕、动作与舞台 SVG 路径、无障碍信息和演示行动反馈。"
+      }
+    ],
+    "hardGates": {
+      "runtimeClean": true,
+      "criticalAssetsLoaded": true,
+      "primaryActionReachable": true,
+      "mobileComplete": true,
+      "truthfulClaims": true,
+      "interactionVerified": true,
+      "audioVerified": null
+    },
+    "visualQuality": {
+      "schemaVersion": 1,
+      "verdict": "pass",
+      "score": 92,
+      "dimensions": {
+        "goalClarity": 93,
+        "creativeDistinctiveness": 92,
+        "craftCohesion": 91,
+        "assetIntegration": 90,
+        "interactionValue": 91,
+        "mobileReadiness": 92
+      },
+      "summary": "明亮的杏色与钴蓝编辑语言、主题专属动作谱和真实同步选择形成统一结果；桌面与手机均完整，未落入暗色中央主体或固定三屏惯性。",
+      "findings": []
+    }
+  },
+  "verdict": "pass",
+  "stopReason": null
+}

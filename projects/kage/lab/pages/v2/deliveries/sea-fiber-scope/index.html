@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="zh-CN" data-fiber-ready="false" data-fiber-state="dormant" data-fallback="false" data-sound="off" data-saved="false">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#020b11" />
+    <meta name="description" content="海底光缆听诊台：沿一束正在呼吸的玻璃纤芯，听见故障回波并完成恢复模拟。" />
+    <title>海底光缆听诊台 · LINE 41</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body data-experience="sea-fiber-scope">
+    <a class="skip-link" href="#save-scan">跳到保存听诊</a>
+
+    <main id="fiber-stage" aria-labelledby="fiber-title">
+      <div class="scene" aria-hidden="true">
+        <canvas id="fiber-canvas"></canvas>
+        <div class="fiber-fallback">
+          <i></i><i></i><i></i><i></i><i></i><i></i>
+        </div>
+        <div class="bathymetry"></div>
+        <div class="vignette"></div>
+      </div>
+
+      <div class="instrument-shell">
+        <header class="masthead">
+          <a class="identity" href="../../" aria-label="返回 V2 研究首页">
+            <span class="identity-orbit" aria-hidden="true"></span>
+            <span>ABYSSAL SIGNAL UNIT</span>
+          </a>
+          <p>LINE 41 · 24.7 KM</p>
+          <button id="sound-toggle" type="button" aria-pressed="false">
+            <span class="sound-dot" aria-hidden="true"></span>
+            <span id="sound-label">开启线路声音</span>
+          </button>
+        </header>
+
+        <section class="opening" aria-describedby="fiber-intro">
+          <p class="kicker">DEEP SEA FIBER / LIVE SONIFICATION</p>
+          <h1 id="fiber-title"><span>听见一条</span><em>沉默的线路。</em></h1>
+          <p id="fiber-intro">滚动沿着玻璃纤芯下潜。光不是装饰，它会在故障处失真；声音也会从平稳载波变成可辨认的回波。</p>
+        </section>
+
+        <aside class="scope" aria-live="polite">
+          <div class="scope-ring" aria-hidden="true"><span></span><i></i></div>
+          <p class="scope-index" id="scope-index">00.0 KM</p>
+          <h2 id="scope-title">线路尚未发声</h2>
+          <p id="scope-detail">移动指针检查纤芯角度，滚动开始一次听诊。</p>
+          <dl>
+            <div><dt>RETURN</dt><dd id="return-value">−48 dB</dd></div>
+            <div><dt>STRAIN</dt><dd id="strain-value">0.02%</dd></div>
+            <div><dt>PHASE</dt><dd id="phase-value">STILL</dd></div>
+          </dl>
+        </aside>
+
+        <nav class="route" aria-label="线路听诊阶段">
+          <button type="button" data-target="0" aria-current="step"><span>01</span><b>静默</b></button>
+          <button type="button" data-target="0.34"><span>02</span><b>追踪</b></button>
+          <button type="button" data-target="0.62"><span>03</span><b>裂隙</b></button>
+          <button type="button" data-target="1"><span>04</span><b>复明</b></button>
+        </nav>
+
+        <div class="depth-track" aria-hidden="true">
+          <span>SEA 00</span><i><b id="depth-fill"></b></i><span>−4,120 M</span>
+        </div>
+
+        <section class="completion" aria-labelledby="completion-title">
+          <p class="kicker">SIMULATION COMPLETE / LINE 41</p>
+          <h2 id="completion-title">回波已经重新连成一束光。</h2>
+          <p>这是用于展示交互与状态表达的模拟听诊，不代表真实海缆测量或维修结果。</p>
+          <button id="save-scan" type="button" disabled><span>保存本次听诊</span><span aria-hidden="true">↗</span></button>
+          <p id="save-status" role="status" aria-live="polite"></p>
+        </section>
+
+        <p class="gesture"><span>SCROLL TO TRACE</span><i></i><span>MOVE TO INSPECT</span></p>
+        <p id="live-status" class="visually-hidden" role="status" aria-live="polite">海底光缆听诊台正在准备。</p>
+      </div>
+    </main>
+
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>
+

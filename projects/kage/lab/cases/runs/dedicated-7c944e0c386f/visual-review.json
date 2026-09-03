@@ -1,0 +1,118 @@
+{
+  "evidence": {
+    "schemaVersion": 1,
+    "runId": "dedicated-7c944e0c386f",
+    "capturedAt": "2026-08-27T10:47:23.780Z",
+    "frames": [
+      {
+        "id": "opening",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "quality": "high",
+        "reducedMotion": false,
+        "ready": true,
+        "canvasCount": 1,
+        "progress": 0,
+        "scrollY": 0,
+        "scrollHeight": 5004,
+        "overflow": 0,
+        "heading": "让一页旧纸，重新被读懂。",
+        "headingVisible": true,
+        "visibleTextCount": 10,
+        "collisionCount": 0,
+        "maxOverlapRatio": 0,
+        "blockingCollisionCount": 0,
+        "editorialOverlapCount": 0,
+        "maxBlockingOverlapRatio": 0
+      },
+      {
+        "id": "middle",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "quality": "high",
+        "reducedMotion": false,
+        "ready": true,
+        "canvasCount": 1,
+        "progress": 0.4789,
+        "scrollY": 1970,
+        "scrollHeight": 5004,
+        "overflow": 0,
+        "heading": "让一页旧纸，重新被读懂。",
+        "headingVisible": false,
+        "visibleTextCount": 10,
+        "collisionCount": 0,
+        "maxOverlapRatio": 0,
+        "blockingCollisionCount": 0,
+        "editorialOverlapCount": 0,
+        "maxBlockingOverlapRatio": 0
+      },
+      {
+        "id": "final",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "quality": "high",
+        "reducedMotion": false,
+        "ready": true,
+        "canvasCount": 1,
+        "progress": 0.9999,
+        "scrollY": 4104,
+        "scrollHeight": 5004,
+        "overflow": 0,
+        "heading": "让一页旧纸，重新被读懂。",
+        "headingVisible": false,
+        "visibleTextCount": 10,
+        "collisionCount": 0,
+        "maxOverlapRatio": 0,
+        "blockingCollisionCount": 0,
+        "editorialOverlapCount": 0,
+        "maxBlockingOverlapRatio": 0
+      },
+      {
+        "id": "mobile",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "quality": "low",
+        "reducedMotion": true,
+        "ready": true,
+        "canvasCount": 1,
+        "progress": 0,
+        "scrollY": 0,
+        "scrollHeight": 4811,
+        "overflow": 0,
+        "heading": "让一页旧纸，重新被读懂。",
+        "headingVisible": true,
+        "visibleTextCount": 8,
+        "collisionCount": 0,
+        "maxOverlapRatio": 0,
+        "blockingCollisionCount": 0,
+        "editorialOverlapCount": 0,
+        "maxBlockingOverlapRatio": 0
+      }
+    ],
+    "browserErrors": []
+  },
+  "assessment": {
+    "schemaVersion": 1,
+    "verdict": "pass",
+    "score": 100,
+    "summary": "四个真实浏览器状态均已挂载 Three.js，滚动范围完整，首屏标题可见，移动端可读，且无脚本错误、资源错误或横向溢出。",
+    "findings": [],
+    "observations": []
+  },
+  "visualAcceptance": {
+    "schemaVersion": 1,
+    "verdict": "pass",
+    "score": 95,
+    "assetRole": "dominant",
+    "summary": "同一页文献的破损态与修复态承担全屏环境，工作台、纸页版式、裂缝和光线保持连续；首屏焦点明确，中段纤维反馈服务修复叙事，末段自然收束到提交行动。未见矩形图片边界、占位几何、素材割裂或移动端裁切。",
+    "findings": []
+  }
+}

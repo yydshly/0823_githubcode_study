@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#101715" />
+    <meta name="description" content="Kage V2 交互即信息原型：用滚动、指针、触摸和键盘理解同一段海岸在时间中的变化。" />
+    <title>潮线证词 · Kage V2 Semantic Interaction</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#era-control">跳到年代比较</a>
+
+    <main class="archive-scroll" aria-label="潮线证词交互档案">
+      <section class="archive-stage" aria-describedby="experience-instructions">
+        <div class="scene-field" aria-hidden="true">
+          <canvas id="coast-canvas"></canvas>
+          <div class="fallback-coast">
+            <span class="fallback-shore fallback-shore--base"></span>
+            <span class="fallback-shore fallback-shore--current"></span>
+          </div>
+          <svg class="coast-evidence-map" viewBox="0 0 1000 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <path class="coast-land" data-coast-land></path>
+            <path class="coast-loss" data-coast-loss></path>
+            <path class="coast-baseline" data-coast-baseline></path>
+            <path class="coast-current" data-coast-current></path>
+            <circle class="coast-lens" data-coast-lens cx="500" cy="350" r="62"></circle>
+          </svg>
+          <div class="scene-wash"></div>
+          <div class="scene-grain"></div>
+        </div>
+
+        <header class="masthead">
+          <a class="brand" href="../../research/#research-program" aria-label="返回 Kage V2 研究计划">
+            <span class="brand-mark"></span>
+            <span>KAGE / FIELD NOTE 08</span>
+          </a>
+          <p class="archive-title">潮线证词 / TIDELINE TESTIMONY</p>
+          <p class="archive-location">31°14′N · 121°29′E</p>
+        </header>
+
+        <div class="stage-index" aria-hidden="true">
+          <span data-stage-number>01</span>
+          <i><b data-stage-progress></b></i>
+          <span>03</span>
+        </div>
+
+        <div class="narrative" aria-live="polite">
+          <article class="narrative-beat" data-beat="0">
+            <p class="eyebrow">OBSERVE / 01</p>
+            <h1>一条岸线，<br /><em>三次证词。</em></h1>
+            <p>这不是一张会动的背景。滚动决定你正在阅读哪一层证据，年代选择同时改变地形与数字。</p>
+          </article>
+
+          <article class="narrative-beat" data-beat="1">
+            <p class="eyebrow">COMPARE / 02</p>
+            <h2>把时间放在<br /><em>同一片土地上。</em></h2>
+            <p>移动下方时间标尺，或使用左右方向键。局部透镜显示相对于 1984 年已经消失的区域。</p>
+          </article>
+
+          <article class="narrative-beat" data-beat="2">
+            <p class="eyebrow">CONSEQUENCE / 03</p>
+            <h2>数字最终指向<br /><em>生活的边界。</em></h2>
+            <p>形态、距离与损失面积属于同一个判断。交互的意义，是让抽象变化变成可比较的证据。</p>
+          </article>
+        </div>
+
+        <aside class="evidence-readout" aria-live="polite" aria-atomic="true">
+          <div class="evidence-year">
+            <span>SELECTED YEAR</span>
+            <strong data-year>1984</strong>
+          </div>
+          <div class="evidence-state">
+            <span data-era-label>基准海岸</span>
+            <p data-summary>沙洲仍然连续，潮沟尚未切断内侧湿地。</p>
+          </div>
+          <dl class="evidence-metrics">
+            <div><dt>消失面积</dt><dd><strong data-loss>0.0</strong><span>km²</span></dd></div>
+            <div><dt>岸线后退</dt><dd><strong data-retreat>0</strong><span>m</span></dd></div>
+            <div><dt>相对水位</dt><dd><strong data-water>+0</strong><span>cm</span></dd></div>
+          </dl>
+        </aside>
+
+        <aside class="lens-readout" data-lens-readout aria-hidden="true">
+          <span>LOCAL / EVIDENCE</span>
+          <strong data-local-retreat>0 m</strong>
+          <p data-local-loss>局部损失 0.0 km²</p>
+        </aside>
+
+        <section class="control-deck" id="era-control" aria-label="年代比较控制">
+          <div class="control-heading">
+            <span>TIME / EVIDENCE</span>
+            <p id="experience-instructions">移动、触摸或使用 ← → 比较年代；滚动切换证据层。</p>
+          </div>
+          <div class="era-track" data-era-track>
+            <button class="timeline-demo" type="button" data-demo-trigger aria-pressed="false">
+              <span>播放岸线变化</span>
+              <small>1984 → 2026</small>
+            </button>
+            <i class="era-track-line" aria-hidden="true"><b data-era-progress></b></i>
+            <span class="era-live-handle" data-era-handle aria-hidden="true"><strong data-drag-year>1984</strong></span>
+            <button type="button" data-era-index="0" aria-pressed="true"><span>1984</span><small>基准</small></button>
+            <button type="button" data-era-index="1" aria-pressed="false"><span>2004</span><small>扩张</small></button>
+            <button type="button" data-era-index="2" aria-pressed="false"><span>2026</span><small>临界</small></button>
+          </div>
+          <div class="input-witness">
+            <span data-input-mode>SCROLL / READY</span>
+            <span data-renderer-mode>WEBGL / CHECKING</span>
+          </div>
+        </section>
+
+        <div class="fallback-note" role="status">
+          <strong>可读模式</strong>
+          <span>增强场景不可用；年代、数字与比较仍然完整。</span>
+        </div>
+      </section>
+      <div class="scroll-end" aria-hidden="true"></div>
+    </main>
+
+    <noscript>请启用 JavaScript 以比较年代；页面文字仍说明三个证据层。</noscript>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>

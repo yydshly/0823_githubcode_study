@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "deliveryId": "fridge-tonight",
+  "batchId": "r143-code-native-no-assets",
+  "assetBatches": 0,
+  "generationCalls": 0,
+  "sourceAssetCount": 0,
+  "derivativeCount": 0,
+  "medium": {
+    "preferred": "code-native",
+    "rendering": "dom-css",
+    "supporting": ["inline-svg"]
+  },
+  "assets": [],
+  "lineagePolicy": "No asset batch was created. The six ingredient cutouts are project-authored inline SVG illustrations embedded in semantic selection buttons.",
+  "visualResponsibility": "Semantic HTML establishes the continuous editorial reading order, CSS provides the bright refrigerator-door and kitchen-magazine composition, and inline SVG supplies the ingredient cutouts and state-linked freshness timeline.",
+  "truthBoundary": "All ingredients, dates, freshness timing, menu combinations and shopping suggestions are fictional concept-demo content and are not food-safety, nutrition, inventory or purchasing advice."
+}

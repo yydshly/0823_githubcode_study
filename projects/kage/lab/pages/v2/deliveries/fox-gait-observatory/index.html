@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23e9e1d1'/%3E%3Cpath d='m7 20 5-10 4 4 4-4 5 10-9 6Z' fill='%23864a2f'/%3E%3C/svg%3E" />
+    <meta name="theme-color" content="#dfe7e5" />
+    <meta name="description" content="狐步三拍：用一只可追溯的动画 Fox GLB 观察侦察、行走与奔跑三种动作。" />
+    <title>狐步三拍 · FOX IN THREE TEMPOS</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body data-active-gait="survey" data-model-loaded="false" data-scene-ready="false" data-fallback="false" data-saved="false">
+    <a class="skip-link" href="#gait-controls">跳到动作选择</a>
+    <div class="atmosphere" aria-hidden="true"></div>
+    <canvas id="scene-canvas" aria-label="可拖拽环绕观察的赤狐三维场景"></canvas>
+    <div class="paper-grain" aria-hidden="true"></div>
+
+    <header class="topbar">
+      <div class="identity"><span>FIELD NOTE</span><strong>137</strong></div>
+      <p class="model-truth">Khronos Fox GLB · CC0 / CC BY 4.0</p>
+      <a href="https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/Fox" target="_blank" rel="noreferrer">模型来源 ↗</a>
+    </header>
+
+    <main>
+      <section class="hero-copy" aria-labelledby="page-title">
+        <p class="eyebrow">A FOX IN THREE TEMPOS</p>
+        <h1 id="page-title"><span>狐步</span><em>三拍</em></h1>
+        <p class="intro">不把动物变成一组速度数字。围绕同一只狐，观察它如何先停下来听，再向前试探，最后把身体交给奔跑。</p>
+        <p class="drag-hint"><span aria-hidden="true">↔</span> 拖拽环绕 · 滚轮靠近 · 1 / 2 / 3 切换动作</p>
+      </section>
+
+      <aside class="observation-note" aria-live="polite">
+        <div class="note-index"><span id="gait-index">01</span><i></i><span>03</span></div>
+        <p class="note-kicker" id="gait-kicker">LISTEN / 侦察</p>
+        <h2 id="gait-title">先让耳朵抵达。</h2>
+        <p id="gait-description">身体几乎停住，头部和耳朵先扫描周围。观察重心如何留在四足之间。</p>
+        <dl>
+          <div><dt>MODEL CLIP</dt><dd id="clip-name">Survey</dd></div>
+          <div><dt>TRAIL RHYTHM</dt><dd id="trail-rhythm">短距 · 停驻</dd></div>
+        </dl>
+      </aside>
+
+      <section class="fallback-card" id="fallback-card" hidden>
+        <p class="eyebrow">SEMANTIC FALLBACK</p>
+        <h2>三维模型暂不可用，观察任务仍然保留。</h2>
+        <p id="fallback-reason">浏览器没有建立 WebGL 场景。</p>
+        <ul>
+          <li><strong>Survey</strong>：停驻并环顾。</li>
+          <li><strong>Walk</strong>：稳定交替迈步。</li>
+          <li><strong>Run</strong>：步幅拉开并快速循环。</li>
+        </ul>
+        <p>以上仅说明模型内三套动画，不代表野外测量结果。</p>
+      </section>
+
+      <div class="loading" id="loading" role="status" aria-live="polite">
+        <span class="loading-mark" aria-hidden="true"></span>
+        <p><strong>正在让赤狐进入晨雪</strong><small id="loading-progress">读取模型 · 0%</small></p>
+      </div>
+    </main>
+
+    <footer class="control-deck">
+      <nav class="gait-controls" id="gait-controls" aria-label="选择赤狐动作">
+        <button type="button" data-gait="survey" aria-pressed="true"><span>01</span><strong>侦察</strong><small>SURVEY</small></button>
+        <button type="button" data-gait="walk" aria-pressed="false"><span>02</span><strong>行走</strong><small>WALK</small></button>
+        <button type="button" data-gait="run" aria-pressed="false"><span>03</span><strong>奔跑</strong><small>RUN</small></button>
+      </nav>
+      <div class="actions">
+        <button class="quiet-action" id="reset-view" type="button">复位视角</button>
+        <button class="save-action" id="save-card" type="button"><span>保存狐步观察卡</span><b aria-hidden="true">↗</b></button>
+      </div>
+      <p class="truth-boundary">模型动作演示 · 不是野外测量数据</p>
+    </footer>
+
+    <p class="sr-only" id="scene-status" aria-live="polite">正在载入三维模型。</p>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="zh-CN" data-r128-ready="false" data-drive-mode="demo" data-fallback="false">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="夜行反光材料样本馆：移动光束、筛选并比较八种程序化反光表面。" />
+    <title>夜行反光材料样本馆</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main id="catalog-root">
+      <header class="masthead">
+        <a class="brand" href="../../" aria-label="返回 Kage V2">
+          <span class="brand-mark" aria-hidden="true"></span>
+          KAGE MATERIAL INDEX
+        </a>
+        <p class="masthead-note">R128 / VISUAL RESPONSE STUDY</p>
+        <p id="truth-note">视觉模拟，不代表安全等级、照度、可视距离或任何认证。</p>
+      </header>
+
+      <section class="catalog-intro" aria-labelledby="catalog-title">
+        <div class="intro-index" aria-hidden="true">08 / NIGHT</div>
+        <div class="intro-title-wrap">
+          <p class="eyebrow">RETROREFLECTIVE MATERIAL READING ROOM</p>
+          <h1 id="catalog-title"><span>夜行反光</span><br />材料样本馆</h1>
+        </div>
+        <div class="intro-guide">
+          <p>像车灯一样移动光束，观察不同表面如何把光送回视线。选择两件样本，用同一个光点并排比较。</p>
+          <div class="beam-key"><i aria-hidden="true"></i><span>移动指针 / 触摸样本 / 使用方向键</span></div>
+        </div>
+      </section>
+
+      <section class="catalog-section" aria-labelledby="samples-title">
+        <div class="catalog-toolbar">
+          <div>
+            <p class="eyebrow">CONTACT SHEET / 01—08</p>
+            <h2 id="samples-title">八种表面，同一道光。</h2>
+          </div>
+          <div id="filter-bar" class="filter-bar" role="group" aria-label="按应用筛选样本">
+            <button type="button" data-filter="all" aria-pressed="true">全部 08</button>
+            <button type="button" data-filter="ride" aria-pressed="false">骑行</button>
+            <button type="button" data-filter="wear" aria-pressed="false">服装</button>
+            <button type="button" data-filter="route" aria-pressed="false">导向</button>
+            <button type="button" data-filter="stage" aria-pressed="false">舞台</button>
+          </div>
+        </div>
+
+        <div class="sample-wall" aria-describedby="catalog-help">
+          <article class="sample-card sample-card--wide material-glass" data-sample-id="glass-bead" data-category="ride wear" tabindex="0">
+            <canvas class="sample-canvas" aria-hidden="true"></canvas>
+            <span class="sample-number">01</span>
+            <div class="sample-copy"><p>玻璃微珠织带</p><span>细密亮点 / 柔和回射</span></div>
+            <button class="sample-select" type="button" aria-pressed="false"><span>加入比较</span><i aria-hidden="true"></i></button>
+          </article>
+
+          <article class="sample-card sample-card--tall material-prism" data-sample-id="micro-prism" data-category="route ride" tabindex="0">
+            <canvas class="sample-canvas" aria-hidden="true"></canvas>
+            <span class="sample-number">02</span>
+            <div class="sample-copy"><p>微棱镜薄膜</p><span>切面闪烁 / 集中高亮</span></div>
+            <button class="sample-select" type="button" aria-pressed="false"><span>加入比较</span><i aria-hidden="true"></i></button>
+          </article>
+
+          <article class="sample-card material-thread" data-sample-id="reflective-thread" data-category="wear stage" tabindex="0">
+            <canvas class="sample-canvas" aria-hidden="true"></canvas>
+            <span class="sample-number">03</span>
+            <div class="sample-copy"><p>反光纱线</p><span>方向纹理 / 织物亮带</span></div>
+            <button class="sample-select" type="button" aria-pressed="false"><span>加入比较</span><i aria-hidden="true"></i></button>
+          </article>
+
+          <article class="sample-card sample-card--wide material-honeycomb" data-sample-id="honeycomb-film" data-category="stage route" tabindex="0">
+            <canvas class="sample-canvas" aria-hidden="true"></canvas>
+            <span class="sample-number">04</span>
+            <div class="sample-copy"><p>蜂巢反光膜</p><span>单元边缘 / 分区响应</span></div>
+            <button class="sample-select" type="button" aria-pressed="false"><span>加入比较</span><i aria-hidden="true"></i></button>
+          </article>
+
+          <article class="sample-card sample-card--tall material-perforated" data-sample-id="perforated-silver" data-category="wear" tabindex="0">
+            <canvas class="sample-canvas" aria-hidden="true"></canvas>
+            <span class="sample-number">05</span>
+            <div class="sample-copy"><p>穿孔银膜</p><span>透气孔阵 / 断续银面</span></div>
+            <button class="sample-select" type="button" aria-pressed="false"><span>加入比较</span><i aria-hidden="true"></i></button>
+          </article>
+
+          <article class="sample-card material-pigment" data-sample-id="reflective-pigment" data-category="stage wear" tabindex="0">
+            <canvas class="sample-canvas" aria-hidden="true"></canvas>
+            <span class="sample-number">06</span>
+            <div class="sample-copy"><p>反光颜料网</p><span>颗粒漫射 / 不规则亮斑</span></div>
+            <button class="sample-select" type="button" aria-pressed="false"><span>加入比较</span><i aria-hidden="true"></i></button>
+          </article>
+
+          <article class="sample-card sample-card--wide material-segment" data-sample-id="segmented-guide" data-category="route" tabindex="0">
+            <canvas class="sample-canvas" aria-hidden="true"></canvas>
+            <span class="sample-number">07</span>
+            <div class="sample-copy"><p>分段导向贴</p><span>节奏切片 / 方向高亮</span></div>
+            <button class="sample-select" type="button" aria-pressed="false"><span>加入比较</span><i aria-hidden="true"></i></button>
+          </article>
+
+          <article class="sample-card material-frosted" data-sample-id="frosted-return" data-category="ride route" tabindex="0">
+            <canvas class="sample-canvas" aria-hidden="true"></canvas>
+            <span class="sample-number">08</span>
+            <div class="sample-copy"><p>雾面回射片</p><span>宽域光晕 / 低锐度边界</span></div>
+            <button class="sample-select" type="button" aria-pressed="false"><span>加入比较</span><i aria-hidden="true"></i></button>
+          </article>
+        </div>
+        <p id="catalog-help" class="catalog-help">每件样本的纹理和亮度变化均为程序化视觉模拟，用于比较界面表达，不用于真实选材。</p>
+      </section>
+
+      <section class="catalog-closing" aria-labelledby="closing-title">
+        <p class="eyebrow">THE LIGHT COMES BACK DIFFERENTLY</p>
+        <h2 id="closing-title">不是让夜更亮，<br />是让位置被看见。</h2>
+        <p>先检查表面，再决定哪两件值得留下。收藏只保存样本编号，不保存或暗示任何虚构性能数据。</p>
+      </section>
+    </main>
+
+    <aside id="compare-dock" class="compare-dock" aria-label="比较选择" data-visible="false">
+      <span><strong id="compare-count">0 / 2</strong> 已选择</span>
+      <div class="dock-swatches" aria-hidden="true"></div>
+      <button id="open-compare" type="button" disabled>并排比较 <i aria-hidden="true">↗</i></button>
+    </aside>
+
+    <dialog id="compare-dialog" aria-labelledby="compare-title">
+      <div class="compare-shell">
+        <header>
+          <div><p class="eyebrow">SAME BEAM / TWO SURFACES</p><h2 id="compare-title">同一道光，两种返回。</h2></div>
+          <button id="close-compare" type="button" aria-label="关闭比较">关闭 ×</button>
+        </header>
+        <div id="compare-grid" class="compare-grid"></div>
+        <footer>
+          <p>视觉模拟不会替代真实材料测试或安全认证。</p>
+          <button id="save-selection" type="button">收藏这组夜行材料</button>
+          <span id="save-status" role="status" aria-live="polite"></span>
+        </footer>
+      </div>
+    </dialog>
+
+    <div id="catalog-live" class="sr-only" role="status" aria-live="polite"></div>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>

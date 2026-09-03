@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#c8eaff" />
+    <meta name="description" content="风筝风场校准台：用实时 3D 纸鸢理解风速、缰绳偏置与飞行高度的概念关系。" />
+    <title>风筝风场校准台 · Wind Atlas</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#kite-controls">跳到风场控制</a>
+    <div id="app" class="experience-shell">
+      <div class="sky-field" aria-hidden="true"><i></i><i></i><i></i></div>
+      <canvas class="kite-canvas" aria-hidden="true"></canvas>
+
+      <svg class="fallback-kite" viewBox="0 0 900 900" aria-hidden="true">
+        <defs>
+          <linearGradient id="paper-red" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#ff6a39"/><stop offset="1" stop-color="#d82d22"/>
+          </linearGradient>
+          <linearGradient id="paper-blue" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#3f7dff"/><stop offset="1" stop-color="#164ebf"/>
+          </linearGradient>
+          <filter id="paper-shadow"><feDropShadow dx="0" dy="18" stdDeviation="18" flood-opacity=".18"/></filter>
+        </defs>
+        <g class="fallback-flow">
+          <path d="M20 210 C220 130 420 220 850 118"/><path d="M40 344 C260 268 540 360 880 265"/>
+          <path d="M-20 478 C250 410 560 500 920 394"/><path d="M25 612 C280 535 590 630 900 540"/>
+        </g>
+        <g class="fallback-kite-body" filter="url(#paper-shadow)">
+          <path d="M420 100 L185 365 L420 670 Z" fill="url(#paper-red)"/>
+          <path d="M420 100 L655 365 L420 670 Z" fill="url(#paper-blue)"/>
+          <path d="M420 100 L420 670 M185 365 L655 365" class="fallback-bamboo"/>
+          <path d="M420 670 C350 750 500 770 420 850" class="fallback-tail red"/>
+          <path d="M420 670 C505 740 370 790 470 860" class="fallback-tail blue"/>
+          <path d="M420 670 C425 745 430 800 390 875" class="fallback-tail paper"/>
+        </g>
+        <path d="M420 365 Q620 545 850 890" class="fallback-tether"/>
+      </svg>
+
+      <header class="site-header">
+        <a class="brand" href="../../" aria-label="返回 Kage V2">
+          <span class="brand-mark" aria-hidden="true"><i></i><i></i></span>
+          <span>WIND ATLAS</span>
+        </a>
+        <p>COASTAL FLIGHT NOTE / 018</p>
+        <p class="simulation-flag truth-label"><span></span>概念模拟 · 纸鸢飞行</p>
+      </header>
+
+      <main class="stage-copy" aria-labelledby="page-title">
+        <section class="hero-copy">
+          <p class="eyebrow">把风，看成一条可以练习的路。</p>
+          <h1 id="page-title"><span>风筝</span><i>风场校准台</i></h1>
+          <p class="lede">让同一只手工纸鸢进入不同风况。看迎角、弯曲、尾带与牵引如何一起改变，再保存适合今天的飞行方案。</p>
+        </section>
+
+        <aside class="live-reading" aria-label="当前概念模拟结果">
+          <div class="reading-head">
+            <p>LIVE FLIGHT</p>
+            <p data-flight-state>纸鸢正在升起</p>
+          </div>
+          <dl>
+            <div><dt>稳定性</dt><dd><strong data-stability>--</strong><span>/ 100</span></dd></div>
+            <div><dt>牵引力</dt><dd><strong data-tension>--</strong><span>N*</span></dd></div>
+          </dl>
+          <p class="reading-note">* 视觉概念值，不构成真实气象或飞行安全建议。</p>
+        </aside>
+
+        <section id="kite-controls" class="control-panel" aria-labelledby="control-title">
+          <div class="control-heading">
+            <div><span>01</span><p id="control-title">校准飞行方案</p></div>
+            <p>滚轮微调风速<br>指针模拟侧风</p>
+          </div>
+
+          <label for="wind-speed">
+            <span>风速 <output data-wind-output for="wind-speed">22 km/h</output></span>
+            <input id="wind-speed" name="wind-speed" type="range" min="8" max="36" value="22" step="1" />
+          </label>
+          <label for="bridle-offset">
+            <span>缰绳偏置 <output data-bridle-output for="bridle-offset">0%</output></span>
+            <input id="bridle-offset" name="bridle-offset" type="range" min="-40" max="40" value="0" step="1" />
+          </label>
+          <label for="altitude">
+            <span>飞行高度 <output data-altitude-output for="altitude">65 m*</output></span>
+            <input id="altitude" name="altitude" type="range" min="20" max="120" value="65" step="1" />
+          </label>
+
+          <button class="save-button" type="button" data-save>
+            <span>保存这组飞行方案</span><span aria-hidden="true">↗</span>
+          </button>
+          <p class="save-status" data-save-status role="status" aria-live="polite">调整任一参数，观察同一只纸鸢的完整响应。</p>
+        </section>
+      </main>
+
+      <div class="altitude-scale" aria-hidden="true"><span>120M</span><i></i><span>20M</span></div>
+      <p class="interaction-hint">MOVE / GUST&nbsp;&nbsp;&nbsp; SCROLL / WIND</p>
+      <div class="runtime-fallback" data-fallback-message role="status" hidden>
+        <strong>已切换到基础风场模拟</strong>
+        <span>三个参数、姿态反馈与保存仍然可用。</span>
+      </div>
+    </div>
+
+    <noscript>此页面需要 JavaScript 才能运行互动模拟；页面中的数值不代表真实气象结论。</noscript>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>

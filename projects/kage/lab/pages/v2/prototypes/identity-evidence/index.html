@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-CN" data-evidence="source" data-assets="loading" data-ready="false">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Kage V2 身份与证据 E4 原型：让品牌、主体素材和证明内容成为同一个视觉系统。" />
+    <title>NACRE 04 · Identity Through Evidence</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header class="masthead">
+      <a href="../../" class="wordmark" aria-label="返回 Kage V2"><span>N</span>NACRE / 04</a>
+      <p>FICTIONAL MATERIAL STUDY</p>
+      <a href="../../#verified-examples">KAGE V2 ↗</a>
+    </header>
+
+    <main class="story" data-story>
+      <section class="identity-stage" aria-labelledby="evidence-title">
+        <div class="media-field" aria-hidden="true">
+          <figure class="media-layer media-layer--source"><img data-asset src="./assets/source.jpg" alt="" /></figure>
+          <figure class="media-layer media-layer--process"><img data-asset src="./assets/process.jpg" alt="" /></figure>
+          <figure class="media-layer media-layer--performance"><img data-asset src="./assets/performance.jpg" alt="" /></figure>
+          <div class="media-fallback"></div>
+          <div class="media-veil"></div>
+          <div class="media-grain"></div>
+        </div>
+
+        <div class="identity-mark" aria-hidden="true"><span>N</span><strong>04</strong></div>
+
+        <article class="evidence-copy">
+          <p class="eyebrow" data-eyebrow>SOURCE / 01</p>
+          <h1 id="evidence-title" data-title>身份从材料的来历开始。</h1>
+          <p class="summary" data-summary></p>
+          <dl class="proof">
+            <div><dt data-proof-label>ORIGIN / 来源</dt><dd data-proof-value></dd></div>
+            <div><dt>STATUS / 边界</dt><dd data-proof-detail></dd></div>
+          </dl>
+          <a class="archive-link" href="#material-note">进入材料档案 <span>↘</span></a>
+        </article>
+
+        <nav class="evidence-nav" aria-label="证据状态">
+          <button type="button" data-state-index="0" aria-pressed="true"><span>01</span><strong>来源</strong><small>SOURCE</small></button>
+          <button type="button" data-state-index="1" aria-pressed="false"><span>02</span><strong>过程</strong><small>PROCESS</small></button>
+          <button type="button" data-state-index="2" aria-pressed="false"><span>03</span><strong>表现</strong><small>PERFORMANCE</small></button>
+        </nav>
+
+        <div class="runtime-witness" aria-live="polite">
+          <span data-input-mode>SCROLL / READY</span>
+          <span data-asset-mode>MEDIA / CHECKING</span>
+        </div>
+      </section>
+
+      <div class="scroll-track" aria-hidden="true">
+        <div data-beat-index="0"></div>
+        <div data-beat-index="1"></div>
+        <div data-beat-index="2"></div>
+      </div>
+    </main>
+
+    <footer id="material-note" class="material-note">
+      <p>NACRE 04 是用于验证“身份与证据”能力的虚构材料研究，不代表真实产品声明。</p>
+      <a href="../../">返回 V2 创意契约</a>
+    </footer>
+
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>

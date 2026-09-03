@@ -118,7 +118,10 @@
 .wb-asset-intake strong { margin: .25rem 0; color: var(--wb-text); font-size: .82rem; }
 .wb-asset-intake p { color: rgb(188 207 211 / 78%); font-size: .66rem; line-height: 1.45; }
 .wb-asset-intake label { display: grid; gap: .42rem; }
-.wb-asset-intake input { width: 100%; color: var(--wb-text); font-size: .66rem; }
+.wb-asset-intake input,
+.wb-asset-intake select { width: 100%; min-width: 0; color: var(--wb-text); font-size: .66rem; }
+.wb-asset-intake select { min-height: 2.3rem; padding: .42rem .55rem; border: 1px solid rgb(255 201 159 / 28%); border-radius: .55rem; background: rgb(8 18 21 / 86%); }
+.wb-asset-intake__actions { display: flex; flex-wrap: wrap; gap: .5rem; justify-content: end; }
 .wb-asset-intake button {
   min-height: 2.6rem;
   padding: .65rem .9rem;
@@ -129,6 +132,10 @@
   font: 700 .64rem/1.2 var(--wb-mono, monospace);
   cursor: pointer;
 }
+.wb-asset-intake button:focus-visible,
+.wb-asset-intake select:focus-visible,
+.wb-asset-intake input:focus-visible { outline: 2px solid #ffd5b1; outline-offset: 3px; }
+.wb-asset-intake button:disabled { cursor: wait; opacity: .62; }
 .wb-asset-intake > [data-asset-intake-result] { grid-column: 1 / -1; color: #ffd5b1; }
 
 

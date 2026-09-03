@@ -1,16 +1,16 @@
-import { capabilityCatalog } from '../capabilities/catalog';
-import { planCapabilities } from '../capabilities/planner';
-import { planCapabilityProposals } from '../capabilities/proposal';
-import type { PlanContext } from '../capabilities/schema';
-import { compileDirectionManifest } from './manifest-compiler';
-import { compileBlueprintManifest } from './experience-blueprint';
+import { capabilityCatalog } from '../capabilities/catalog.ts';
+import { planCapabilities } from '../capabilities/planner.ts';
+import { planCapabilityProposals } from '../capabilities/proposal.ts';
+import type { PlanContext } from '../capabilities/schema.ts';
+import { compileDirectionManifest } from './manifest-compiler.ts';
+import { compileBlueprintManifest } from './experience-blueprint.ts';
 import { stableHash } from './stable-hash.ts';
-import { planAssets } from './asset-plan';
-import { compileCompatibilityEffectSpec } from './effect-spec';
-import type { BriefInterpreter, CreativeBrief, CreativeRun } from './schema';
-import { createProductionCapabilityProfile, type IntegratedProductionCapabilities } from './production-capabilities';
-import { planCreativeProduction } from './production-plan';
-import { selectPresentationStrategy } from './presentation-strategy';
+import { planAssets } from './asset-plan.ts';
+import { compileCompatibilityEffectSpec } from './effect-spec.ts';
+import type { BriefInterpreter, CreativeBrief, CreativeRun } from './schema.ts';
+import { createProductionCapabilityProfile, type IntegratedProductionCapabilities } from './production-capabilities.ts';
+import { planCreativeProduction } from './production-plan.ts';
+import { selectPresentationStrategy } from './presentation-strategy.ts';
 
 export async function generateCreativeRun(
   brief: CreativeBrief,

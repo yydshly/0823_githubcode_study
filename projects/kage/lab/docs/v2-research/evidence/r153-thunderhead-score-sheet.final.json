@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "creativeProtocolVersion": 4,
+  "deliveryId": "thunderhead-score",
+  "route": "./deliveries/thunderhead-score/",
+  "identity": {
+    "runId": "direct-r153-thunderhead-score-sheet",
+    "bundleHash": "c03da35dd9edbef7fe1477927335269adff30639fd4f1f04c8e28a465989f710",
+    "bundleFiles": [
+      "index.html",
+      "style.css",
+      "main.ts",
+      "asset-manifest.json",
+      "assets/thunderhead-environment-v1.png"
+    ]
+  },
+  "revisionReason": "用户在真实浏览器中指出 R149 与 R152 风格相同；R153 修正宏观构图而不增加全局风格禁令。",
+  "structureCorrection": {
+    "priorPattern": "full-bleed generated image + overlaid large title + bottom stage rail",
+    "finalPattern": "light editorial score sheet + bounded storm aperture + vertical movement axis",
+    "addedAssetBatches": 0,
+    "preservedCausality": [
+      "scroll-phase",
+      "pointer-shear",
+      "programmatic-audio",
+      "save-score"
+    ]
+  },
+  "browserEvidence": {
+    "desktopOpening": "docs/v2-deliveries/evidence/r153-thunderhead-score-sheet/01-desktop-opening.png",
+    "desktopInteraction": "docs/v2-deliveries/evidence/r153-thunderhead-score-sheet/02-desktop-charge.png",
+    "desktopCompletion": "docs/v2-deliveries/evidence/r153-thunderhead-score-sheet/03-desktop-saved.png",
+    "mobile": "docs/v2-deliveries/evidence/r153-thunderhead-score-sheet/04-mobile-charge.png",
+    "mobileFallback": "docs/v2-deliveries/evidence/r153-thunderhead-score-sheet/05-mobile-fallback.png",
+    "photoWidthBelow70Percent": true,
+    "verticalMovementAxis": true,
+    "scrollLinked": true,
+    "pointerLinked": true,
+    "audioLinked": true,
+    "saveReached": true,
+    "mobile390Passed": true,
+    "reducedMotionPassed": true,
+    "canvasFallbackPassed": true,
+    "assetFallbackPassed": true,
+    "horizontalOverflow": 0
+  },
+  "qualityAssessment": {
+    "verdict": "pass",
+    "goalClarity": 93,
+    "creativeDistinctiveness": 91,
+    "craftCohesion": 91,
+    "assetIntegration": 92,
+    "interactionValue": 92,
+    "mobileReadiness": 89,
+    "templateInertiaCorrected": true,
+    "summary": "雷暴素材不再充当可互换全屏背景；纸面、窗口、垂直乐谱和同一天气状态形成新的版面与交互语言。"
+  },
+  "truthBoundary": "页面持续标注为艺术化展览模拟，不代表真实气象观测或预报。",
+  "verdict": "pass",
+  "archiveDisposition": "replace-r152-current-reference",
+  "stopReason": "宏观骨架差异、因果互动与跨表面证据均已通过；停止继续增加案例或视觉技术。"
+}

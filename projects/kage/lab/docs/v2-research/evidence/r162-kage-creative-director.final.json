@@ -1,0 +1,156 @@
+{
+  "schemaVersion": 1,
+  "creativeProtocolVersion": 5,
+  "deliveryId": "kage-creative-director",
+  "route": "./deliveries/kage-creative-director/",
+  "identity": {
+    "runId": "direct-r162-kage-creative-director",
+    "bundleHash": "cca916f2df90b7d6d2d069efac826649399faaa31f9be34aaa338bcd7ea672bd",
+    "bundleFiles": [
+      "index.html",
+      "style.css",
+      "main.ts",
+      "../../assets/verified-examples/prism-seed-theatre.png",
+      "../../assets/verified-examples/modular-room-sound.png",
+      "../../assets/verified-examples/west-bund-meeting-points.png",
+      "../../assets/verified-examples/folded-light-studio.png"
+    ]
+  },
+  "goalReplay": {
+    "subject": "KAGE 想法到优秀创意网页",
+    "audience": "希望从一句想法开始发展产品网页的独立创作者、产品设计者和研究者",
+    "feeling": "鲜明、可信、具有创作期待，而非后台面板或技术演示",
+    "primaryAction": "输入想法并选择有证据的创意方向",
+    "hardConstraints": [
+      "页面必须是完整产品而非单个演示效果",
+      "必须使用正式素材",
+      "必须与当前 KAGE 产品目标有关",
+      "不冒充已经连接后台实时生成"
+    ]
+  },
+  "mediumDecision": {
+    "preferred": "formal-source-assets",
+    "rationale": "KAGE 的产品可信度来自已经通过验证的真实案例画面；编辑式 DOM、输入与方向选择负责把能力组织成可理解的产品旅程。"
+  },
+  "direction": {
+    "selected": "让 KAGE 自身成为创意导演产品：一句想法进入，三个有依据的方向展开，真实案例证明结果，并给出继续创作路径。",
+    "referenceIds": [
+      "prism-seed-theatre",
+      "modular-room-sound",
+      "west-bund-meeting-points",
+      "folded-light-studio"
+    ],
+    "borrowPrinciples": [
+      "正式素材先建立产品可信度",
+      "不同媒介由主题与产品责任选择",
+      "结果必须连接可继续使用的路径"
+    ],
+    "assetBatchCount": 1
+  },
+  "productDeliveryPlan": {
+    "schemaVersion": 1,
+    "productName": "KAGE 创意导演",
+    "targetUser": "希望把一句想法发展成优秀创意网页的独立创作者、产品设计者和研究者",
+    "userProblem": "用户有主题和意图，但难以同时确定优秀参考、视觉方向、媒介组合与可执行产品路径。",
+    "valuePromise": "用已有研究能力和真实案例证据，把想法发展成可选择、可理解、可继续创作的网页方向。",
+    "primaryAction": "输入想法并选择创意方向",
+    "completionResult": "页面给出与想法相关的方向、真实案例证明、借鉴原理和可打开结果。",
+    "continuation": "用户可以打开完整案例，或把当前想法与方向带入兼容工作台继续。",
+    "journey": [
+      {
+        "id": "understand-kage",
+        "phase": "entry",
+        "userGoal": "确认产品是谁以及能解决什么问题",
+        "visibleOutcome": "首屏说明 KAGE 将想法发展成创意方向，并用四张真实案例画面证明能力"
+      },
+      {
+        "id": "shape-idea",
+        "phase": "use",
+        "userGoal": "输入自己的产品想法并获得方向",
+        "visibleOutcome": "输入后推荐光、声音或地点三类方向，用户可继续选择"
+      },
+      {
+        "id": "inspect-proof",
+        "phase": "result",
+        "userGoal": "理解所选方向为何适合并看到真实结果",
+        "visibleOutcome": "案例预览、方向解释、借鉴原理和完整案例链接同步变化"
+      },
+      {
+        "id": "continue-creating",
+        "phase": "continuation",
+        "userGoal": "继续检查案例或带着方向进入创作",
+        "visibleOutcome": "打开完整案例，或进入带有 brief 与方向参数的兼容工作台"
+      }
+    ],
+    "visualAssetPolicy": "formal-source-assets",
+    "visualAssetRationale": "四张主视觉来自 KAGE 已通过浏览器验证的案例截图，承担品牌记忆点、媒介差异和结果可信度；页面没有用手写图形冒充关键产品素材。"
+  },
+  "productDeliveryEvidence": {
+    "schemaVersion": 1,
+    "runId": "direct-r162-kage-creative-director",
+    "bundleHash": "cca916f2df90b7d6d2d069efac826649399faaa31f9be34aaa338bcd7ea672bd",
+    "checks": {
+      "productIdentityClear": true,
+      "audienceAndValueClear": true,
+      "entryStateComplete": true,
+      "coreUseStateComplete": true,
+      "resultStateComplete": true,
+      "continuationStateComplete": true,
+      "primaryActionProducesMeaningfulResult": true,
+      "visualAssetsAreFormalOrRuntimeNativeIsJustified": true,
+      "interactionServesProduct": true,
+      "mobileJourneyComplete": true,
+      "truthfulClaims": true
+    },
+    "summary": "最终页面完成 KAGE 产品身份、想法输入、方向选择、真实案例结果与继续创作路径；浏览器验证覆盖桌面、390px、键盘与减弱动效。",
+    "evidenceNotes": [
+      "桌面首屏可直接理解产品身份、受众、价值与第一行动",
+      "输入声音相关想法后系统真实推荐声音方向",
+      "键盘选择地点方向后预览、解释、案例链接和工作台参数同步改变",
+      "四张正式案例截图均成功加载且 naturalWidth 大于 800",
+      "390px 下完整执行输入、选择、结果与继续路径，无横向溢出",
+      "减弱动效状态下键盘路径和主要信息仍可使用",
+      "页面明确说明这是产品策划预演，没有声称后台已经实时生成网页"
+    ]
+  },
+  "executionBudget": {
+    "directionsBuilt": 1,
+    "assetBatches": 1,
+    "fullBuilds": 1,
+    "deterministicFixes": 1,
+    "visualRefinements": 1
+  },
+  "browserEvidence": {
+    "browser": "local Chrome via Playwright",
+    "desktopOpening": "docs/v2-deliveries/evidence/r162-kage-creative-director/desktop-opening.png",
+    "desktopUse": "docs/v2-deliveries/evidence/r162-kage-creative-director/desktop-use.png",
+    "desktopResult": "docs/v2-deliveries/evidence/r162-kage-creative-director/desktop-result.png",
+    "mobileOpening": "docs/v2-deliveries/evidence/r162-kage-creative-director/mobile-opening.png",
+    "mobileResult": "docs/v2-deliveries/evidence/r162-kage-creative-director/mobile-result.png",
+    "testsPassed": 4,
+    "testsTotal": 4,
+    "runtimeErrors": 0,
+    "consoleErrors": 0,
+    "formalAssetsLoaded": true,
+    "ideaRecommendationLinked": true,
+    "keyboardDirectionLinked": true,
+    "continuationRouteBound": true,
+    "mobile390JourneyPassed": true,
+    "reducedMotionPassed": true,
+    "horizontalOverflow": 0
+  },
+  "qualityAssessment": {
+    "verdict": "pass",
+    "goalClarity": 94,
+    "creativeDistinctiveness": 88,
+    "craftCohesion": 91,
+    "assetIntegration": 93,
+    "interactionValue": 89,
+    "mobileReadiness": 91,
+    "summary": "鲜明编辑构图与真实案例拼接让 KAGE 的能力在首屏成立；输入、推荐、方向选择、案例证明和继续创作共同形成产品闭环。它是首个 V5 正式产品基线，但仍不是后台实时生成系统。"
+  },
+  "truthBoundary": "方向推荐与案例切换在浏览器本地执行；页面展示的是 KAGE 已验证案例截图和产品策划预演，不代表工作台后台已接入 Codex 自动生成。",
+  "verdict": "pass",
+  "archiveDisposition": "first-formal-v5-product-not-capability-reference",
+  "stopReason": "一个方向、一次正式素材复用批次、一次构建、一次确定性修复和一次视觉精修后，产品页与正式产品入口通过 4/4 Chrome Playwright 验收并绑定最终 bundle；按有界协议停止。"
+}

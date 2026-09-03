@@ -1,0 +1,537 @@
+{
+  "schemaVersion": 1,
+  "stage": "r127-roof-water-route-runtime-observations",
+  "capturedAt": "2026-08-31T11:12:29.196Z",
+  "identityBinding": "runId+bundleHash",
+  "runId": "direct-r127-roof-water-route",
+  "bundleHash": "c41783ee2c07301fd996e92dd300618c9c019a93f74c358c8a0f36c8cb6effce",
+  "route": "/pages/v2/deliveries/roof-water-route/",
+  "revision": "r127-proof",
+  "captures": [
+    "01-desktop-opening.png",
+    "02-desktop-water-route.png",
+    "03-desktop-plan.png",
+    "04-mobile-reduced.png",
+    "05-fallback.png"
+  ],
+  "observations": [
+    {
+      "checkpoint": "desktop-opening",
+      "readyAtMs": 3344,
+      "issues": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "requestFailures": [],
+        "responseErrors": []
+      },
+      "state": {
+        "ready": true,
+        "state": "opening",
+        "activeState": "opening",
+        "activeIndex": 0,
+        "progress": 0,
+        "rainLevel": 0.04,
+        "waterTravel": 0.08,
+        "tankFill": 0.08,
+        "plantGrowth": 0.42,
+        "cameraX": 0.2,
+        "cameraY": 0.85,
+        "cameraZ": 15.7,
+        "canvasVisualHash": "roof-98437be6",
+        "camera": {
+          "x": 0.2,
+          "y": 0.85,
+          "z": 15.7,
+          "lookX": 0.2,
+          "lookY": 0.35
+        },
+        "water": {
+          "rainfall": 0.04,
+          "roofFlow": 0.06,
+          "gutterFlow": 0.02,
+          "downpipeFlow": 0,
+          "releaseFlow": 0,
+          "routeExtent": 0.08,
+          "visibleDrops": 4
+        },
+        "tank": {
+          "level": 0.08,
+          "opacity": 0.487
+        },
+        "plant": {
+          "growth": 0.42,
+          "hydration": 0.06
+        },
+        "dialogOpen": false,
+        "saved": false,
+        "noteLength": 0,
+        "frames": 4,
+        "drawCalls": 143,
+        "triangles": 47016,
+        "fallback": false,
+        "reducedMotion": false,
+        "horizontalOverflow": false,
+        "quality": "high",
+        "revision": "r127-proof"
+      }
+    },
+    {
+      "checkpoint": "desktop-route",
+      "issues": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "requestFailures": [],
+        "responseErrors": []
+      },
+      "states": {
+        "rainfall": {
+          "ready": true,
+          "state": "rainfall",
+          "activeState": "rainfall",
+          "activeIndex": 1,
+          "progress": 0.2574,
+          "rainLevel": 1,
+          "waterTravel": 0.3,
+          "tankFill": 0.1,
+          "plantGrowth": 0.43,
+          "cameraX": -0.8,
+          "cameraY": 1.7,
+          "cameraZ": 12.7,
+          "canvasVisualHash": "roof-d3a22e6a",
+          "camera": {
+            "x": -0.8,
+            "y": 1.7,
+            "z": 12.7,
+            "lookX": -0.55,
+            "lookY": 1.55
+          },
+          "water": {
+            "rainfall": 1,
+            "roofFlow": 0.72,
+            "gutterFlow": 0.18,
+            "downpipeFlow": 0.04,
+            "releaseFlow": 0,
+            "routeExtent": 0.3,
+            "visibleDrops": 92
+          },
+          "tank": {
+            "level": 0.1,
+            "opacity": 0.494
+          },
+          "plant": {
+            "growth": 0.43,
+            "hydration": 0.08
+          },
+          "dialogOpen": false,
+          "saved": false,
+          "noteLength": 0,
+          "frames": 14,
+          "drawCalls": 143,
+          "triangles": 47016,
+          "fallback": false,
+          "reducedMotion": true,
+          "horizontalOverflow": false,
+          "quality": "high",
+          "revision": "r127-proof"
+        },
+        "gutter-flow": {
+          "ready": true,
+          "state": "gutter-flow",
+          "activeState": "gutter-flow",
+          "activeIndex": 2,
+          "progress": 0.4983,
+          "rainLevel": 0.78,
+          "waterTravel": 0.62,
+          "tankFill": 0.24,
+          "plantGrowth": 0.45,
+          "cameraX": 0.85,
+          "cameraY": 0.8,
+          "cameraZ": 11.45,
+          "canvasVisualHash": "roof-789525f7",
+          "camera": {
+            "x": 0.85,
+            "y": 0.8,
+            "z": 11.45,
+            "lookX": 1.2,
+            "lookY": 0.78
+          },
+          "water": {
+            "rainfall": 0.78,
+            "roofFlow": 1,
+            "gutterFlow": 1,
+            "downpipeFlow": 0.86,
+            "releaseFlow": 0,
+            "routeExtent": 0.62,
+            "visibleDrops": 72
+          },
+          "tank": {
+            "level": 0.24,
+            "opacity": 0.542
+          },
+          "plant": {
+            "growth": 0.45,
+            "hydration": 0.12
+          },
+          "dialogOpen": false,
+          "saved": false,
+          "noteLength": 0,
+          "frames": 32,
+          "drawCalls": 141,
+          "triangles": 37380,
+          "fallback": false,
+          "reducedMotion": true,
+          "horizontalOverflow": false,
+          "quality": "high",
+          "revision": "r127-proof"
+        },
+        "cistern": {
+          "ready": true,
+          "state": "cistern",
+          "activeState": "cistern",
+          "activeIndex": 3,
+          "progress": 0.7408,
+          "rainLevel": 0.38,
+          "waterTravel": 0.78,
+          "tankFill": 0.82,
+          "plantGrowth": 0.53,
+          "cameraX": 2.05,
+          "cameraY": -0.55,
+          "cameraZ": 10.5,
+          "canvasVisualHash": "roof-683a89e2",
+          "camera": {
+            "x": 2.05,
+            "y": -0.55,
+            "z": 10.5,
+            "lookX": 2.55,
+            "lookY": -0.65
+          },
+          "water": {
+            "rainfall": 0.38,
+            "roofFlow": 0.55,
+            "gutterFlow": 0.72,
+            "downpipeFlow": 1,
+            "releaseFlow": 0.06,
+            "routeExtent": 0.78,
+            "visibleDrops": 35
+          },
+          "tank": {
+            "level": 0.82,
+            "opacity": 0.739
+          },
+          "plant": {
+            "growth": 0.53,
+            "hydration": 0.3
+          },
+          "dialogOpen": false,
+          "saved": false,
+          "noteLength": 0,
+          "frames": 48,
+          "drawCalls": 141,
+          "triangles": 37380,
+          "fallback": false,
+          "reducedMotion": true,
+          "horizontalOverflow": false,
+          "quality": "high",
+          "revision": "r127-proof"
+        },
+        "garden-release": {
+          "ready": true,
+          "state": "garden-release",
+          "activeState": "garden-release",
+          "activeIndex": 4,
+          "progress": 0.9772,
+          "rainLevel": 0.16,
+          "waterTravel": 1,
+          "tankFill": 0.62,
+          "plantGrowth": 1,
+          "cameraX": 2.45,
+          "cameraY": -0.35,
+          "cameraZ": 13.7,
+          "canvasVisualHash": "roof-85ab369a",
+          "camera": {
+            "x": 2.45,
+            "y": -0.35,
+            "z": 13.7,
+            "lookX": 2.5,
+            "lookY": -0.7
+          },
+          "water": {
+            "rainfall": 0.16,
+            "roofFlow": 0.28,
+            "gutterFlow": 0.36,
+            "downpipeFlow": 0.5,
+            "releaseFlow": 1,
+            "routeExtent": 1,
+            "visibleDrops": 15
+          },
+          "tank": {
+            "level": 0.62,
+            "opacity": 0.671
+          },
+          "plant": {
+            "growth": 1,
+            "hydration": 1
+          },
+          "dialogOpen": false,
+          "saved": false,
+          "noteLength": 0,
+          "frames": 65,
+          "drawCalls": 141,
+          "triangles": 37380,
+          "fallback": false,
+          "reducedMotion": true,
+          "horizontalOverflow": false,
+          "quality": "high",
+          "revision": "r127-proof"
+        }
+      },
+      "canvasVisualHashes": [
+        "roof-d3a22e6a",
+        "roof-789525f7",
+        "roof-683a89e2",
+        "roof-85ab369a"
+      ],
+      "visibleScreenshotHashes": [
+        "4e674890dc80f0692b15f12941f1afebdabf0c6992ad9c599c94fd2c53575fe1",
+        "89ed31bc04c663dbd204729b69d4efcad355fedb6c1bfc50412540c660388ce9",
+        "330e53d8fa03134ce3e05b2c20f78841a7f8cdcad882c8d0827f94b63058d7b6",
+        "9303f00dd531d9cd0988a9e37088dcab4900148668b1fe645cb6b6f5cd2aec9b"
+      ],
+      "reverseState": {
+        "ready": true,
+        "state": "rainfall",
+        "activeState": "rainfall",
+        "activeIndex": 1,
+        "progress": 0.2574,
+        "rainLevel": 1,
+        "waterTravel": 0.3,
+        "tankFill": 0.1,
+        "plantGrowth": 0.43,
+        "cameraX": -0.8,
+        "cameraY": 1.7,
+        "cameraZ": 12.7,
+        "canvasVisualHash": "roof-d3a22e6a",
+        "camera": {
+          "x": -0.8,
+          "y": 1.7,
+          "z": 12.7,
+          "lookX": -0.55,
+          "lookY": 1.55
+        },
+        "water": {
+          "rainfall": 1,
+          "roofFlow": 0.72,
+          "gutterFlow": 0.18,
+          "downpipeFlow": 0.04,
+          "releaseFlow": 0,
+          "routeExtent": 0.3,
+          "visibleDrops": 92
+        },
+        "tank": {
+          "level": 0.1,
+          "opacity": 0.494
+        },
+        "plant": {
+          "growth": 0.43,
+          "hydration": 0.08
+        },
+        "dialogOpen": false,
+        "saved": false,
+        "noteLength": 0,
+        "frames": 76,
+        "drawCalls": 143,
+        "triangles": 47016,
+        "fallback": false,
+        "reducedMotion": true,
+        "horizontalOverflow": false,
+        "quality": "high",
+        "revision": "r127-proof"
+      }
+    },
+    {
+      "checkpoint": "desktop-plan",
+      "issues": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "requestFailures": [],
+        "responseErrors": []
+      },
+      "state": {
+        "ready": true,
+        "state": "garden-release",
+        "activeState": "garden-release",
+        "activeIndex": 4,
+        "progress": 0.9772,
+        "rainLevel": 0.16,
+        "waterTravel": 1,
+        "tankFill": 0.62,
+        "plantGrowth": 1,
+        "cameraX": 2.45,
+        "cameraY": -0.35,
+        "cameraZ": 13.7,
+        "canvasVisualHash": "roof-85ab369a",
+        "camera": {
+          "x": 2.45,
+          "y": -0.35,
+          "z": 13.7,
+          "lookX": 2.5,
+          "lookY": -0.7
+        },
+        "water": {
+          "rainfall": 0.16,
+          "roofFlow": 0.28,
+          "gutterFlow": 0.36,
+          "downpipeFlow": 0.5,
+          "releaseFlow": 1,
+          "routeExtent": 1,
+          "visibleDrops": 15
+        },
+        "tank": {
+          "level": 0.62,
+          "opacity": 0.671
+        },
+        "plant": {
+          "growth": 1,
+          "hydration": 1
+        },
+        "dialogOpen": false,
+        "saved": true,
+        "noteLength": 25,
+        "frames": 25,
+        "drawCalls": 141,
+        "triangles": 37380,
+        "fallback": false,
+        "reducedMotion": true,
+        "horizontalOverflow": false,
+        "quality": "high",
+        "revision": "r127-proof"
+      },
+      "semantic": {
+        "closeMethod": "Escape",
+        "focusReturnedTo": "open-plan"
+      }
+    },
+    {
+      "checkpoint": "mobile-reduced",
+      "issues": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "requestFailures": [],
+        "responseErrors": []
+      },
+      "state": {
+        "ready": true,
+        "state": "garden-release",
+        "activeState": "garden-release",
+        "activeIndex": 4,
+        "progress": 0.9801,
+        "rainLevel": 0.16,
+        "waterTravel": 1,
+        "tankFill": 0.62,
+        "plantGrowth": 1,
+        "cameraX": 2.85,
+        "cameraY": 0,
+        "cameraZ": 19,
+        "canvasVisualHash": "roof-bcf4c44a",
+        "camera": {
+          "x": 2.85,
+          "y": 0,
+          "z": 19,
+          "lookX": 2.5,
+          "lookY": -0.7
+        },
+        "water": {
+          "rainfall": 0.16,
+          "roofFlow": 0.28,
+          "gutterFlow": 0.36,
+          "downpipeFlow": 0.5,
+          "releaseFlow": 1,
+          "routeExtent": 1,
+          "visibleDrops": 6
+        },
+        "tank": {
+          "level": 0.62,
+          "opacity": 0.671
+        },
+        "plant": {
+          "growth": 1,
+          "hydration": 1
+        },
+        "dialogOpen": false,
+        "saved": false,
+        "noteLength": 0,
+        "frames": 18,
+        "drawCalls": 94,
+        "triangles": 7616,
+        "fallback": false,
+        "reducedMotion": true,
+        "horizontalOverflow": false,
+        "quality": "low",
+        "revision": "r127-proof"
+      },
+      "viewport": {
+        "width": 390,
+        "height": 844
+      }
+    },
+    {
+      "checkpoint": "forced-fallback",
+      "issues": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "requestFailures": [],
+        "responseErrors": []
+      },
+      "state": {
+        "ready": true,
+        "state": "garden-release",
+        "activeState": "garden-release",
+        "activeIndex": 4,
+        "progress": 0.9772,
+        "rainLevel": 0.16,
+        "waterTravel": 1,
+        "tankFill": 0.62,
+        "plantGrowth": 1,
+        "cameraX": 2.45,
+        "cameraY": -0.35,
+        "cameraZ": 13.7,
+        "canvasVisualHash": "roof-e4dcc741",
+        "camera": {
+          "x": 2.45,
+          "y": -0.35,
+          "z": 13.7,
+          "lookX": 2.5,
+          "lookY": -0.7
+        },
+        "water": {
+          "rainfall": 0.16,
+          "roofFlow": 0.28,
+          "gutterFlow": 0.36,
+          "downpipeFlow": 0.5,
+          "releaseFlow": 1,
+          "routeExtent": 1,
+          "visibleDrops": 0
+        },
+        "tank": {
+          "level": 0.62,
+          "opacity": 0.671
+        },
+        "plant": {
+          "growth": 1,
+          "hydration": 1
+        },
+        "dialogOpen": false,
+        "saved": true,
+        "noteLength": 13,
+        "frames": 0,
+        "drawCalls": 0,
+        "triangles": 0,
+        "fallback": true,
+        "reducedMotion": true,
+        "horizontalOverflow": false,
+        "quality": "low",
+        "revision": "r127-proof"
+      }
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "id": "rooftop-greenhouse-layer-pack-v1",
+  "canvas": { "width": 1672, "height": 941, "aspectRatio": "16:9" },
+  "continuityKey": "rooftop-greenhouse-dawn-camera-v1",
+  "route": "layered-2d",
+  "assets": [
+    { "id": "rooftop-greenhouse-environment-v1", "role": "environment", "file": "greenhouse-master-v1.png" },
+    { "id": "rooftop-greenhouse-subject-v1", "role": "subject", "file": "greenhouse-subject-v1.png" },
+    { "id": "rooftop-greenhouse-foreground-v1", "role": "foreground", "file": "greenhouse-foreground-dew-v1.svg" },
+    { "id": "rooftop-greenhouse-depth-v1", "role": "depth-map", "file": "greenhouse-depth-field-v1.svg" }
+  ],
+  "fallback": "greenhouse-master-v1.png",
+  "notes": "All four assets share the master plate canvas. The depth field is an inspectable authored mask; the dew layer is transparent procedural SVG because the image provider returned a false RGB checkerboard during alpha extraction."
+}

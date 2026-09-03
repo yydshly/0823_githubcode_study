@@ -1,0 +1,28 @@
+export const localThreeExemplarCases = [
+  {
+    id: 'igloo-cinematic-deconstruction',
+    fileName: '3d (1).html',
+    title: 'IGLOO — 滚动驱动的电影式 3D 拆解',
+    role: 'technical-lab',
+    status: 'promote',
+    evidence: 'E4-runtime',
+    archetype: 'scroll-driven-three-deconstruction',
+    mechanism: ['Three.js 独立块体', '五个可寻址场景', '长滚动时间线', '形态拆解与重组', '遥测界面'],
+    strengths: ['五个场景均产生可验证的独立画面状态', '滚动与拆解、重组的含义一致', '程序化 3D 形成连续叙事'],
+    limits: ['技术演示文案和遥测层过重', '视觉语言偏通用全息科技风', '需要移动端和低动效策略'],
+    reusablePrinciples: ['复杂 WebGL 叙事拆为可寻址、可测试、可复位的镜头状态', '结构变化确实能解释产品时才采用 Three.js 拆解'],
+  },
+  {
+    id: 'aero-x-product-state-machine',
+    fileName: 'aero_x_premium_3d_interactive_showcase (2).html',
+    title: 'AERO-X — 产品拆箱与爆炸状态机',
+    role: 'technical-lab',
+    status: 'hold',
+    evidence: 'E4-runtime',
+    archetype: 'interactive-product-state-machine',
+    mechanism: ['CLOSE/OPEN/FLOAT/EXPLODE/WAVE 五态', '360 度观察', '自动演示', 'Web Audio 反馈'],
+    strengths: ['五个产品状态都产生不同画面', '状态名称和产品变化对应清楚'],
+    limits: ['自动演示连续触发 Web Audio 参数错误', '实验室界面强于产品品牌表达', '尚未验证移动端替代交互'],
+    reusablePrinciples: ['产品 3D 体验先建显式状态机，再编排镜头', '声音故障不能被视觉成功掩盖'],
+  },
+] as const

@@ -1,0 +1,250 @@
+{
+  "schemaVersion": 1,
+  "stage": "r132-moonlit-tidepool-panorama-runtime-observations",
+  "capturedAt": "2026-08-31T21:21:56.398Z",
+  "identityBinding": "runId+bundleHash",
+  "runId": "direct-r132-moonlit-tidepool-panorama",
+  "bundleHash": "afd279d0604da135c9b764feb3f987ee086f67525685a56f040bf9e293a43026",
+  "route": "/pages/v2/deliveries/moonlit-tidepool-panorama/",
+  "revision": "r132-proof",
+  "complete": true,
+  "captures": [
+    "01-desktop-opening.png",
+    "02-desktop-navigation.png",
+    "03-desktop-route-saved.png",
+    "04-mobile-reduced.png",
+    "05-fallback-complete.png"
+  ],
+  "observations": [
+    {
+      "checkpoint": "desktop-opening",
+      "readyAtMs": 973,
+      "issues": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "requestFailures": [],
+        "responseErrors": []
+      },
+      "state": {
+        "ready": true,
+        "activeStation": "rock",
+        "visited": [],
+        "routeReady": false,
+        "saved": false,
+        "progress": 0,
+        "scrollLeft": 0,
+        "imageLoaded": true,
+        "fallback": false,
+        "reducedMotion": false,
+        "horizontalOverflow": false,
+        "assetUrl": "http://127.0.0.1:8143/pages/v2/deliveries/moonlit-tidepool-panorama/assets/moonlit-tidepool-panorama-v1.png",
+        "quality": "high",
+        "revision": "r132-proof"
+      },
+      "image": {
+        "complete": true,
+        "naturalWidth": 1915,
+        "naturalHeight": 821,
+        "currentSrc": "http://127.0.0.1:8143/pages/v2/deliveries/moonlit-tidepool-panorama/assets/moonlit-tidepool-panorama-v1.png"
+      }
+    },
+    {
+      "checkpoint": "desktop-panorama-navigation",
+      "issues": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "requestFailures": [],
+        "responseErrors": []
+      },
+      "state": {
+        "ready": true,
+        "activeStation": "rock",
+        "visited": [],
+        "routeReady": false,
+        "saved": false,
+        "progress": 0,
+        "scrollLeft": 0,
+        "imageLoaded": true,
+        "fallback": false,
+        "reducedMotion": false,
+        "horizontalOverflow": false,
+        "assetUrl": "http://127.0.0.1:8143/pages/v2/deliveries/moonlit-tidepool-panorama/assets/moonlit-tidepool-panorama-v1.png",
+        "quality": "high",
+        "revision": "r132-proof"
+      },
+      "comparison": {
+        "wheelMoved": true,
+        "dragMoved": true,
+        "arrowMoved": true,
+        "nextMoved": true,
+        "previousMovedBack": true
+      },
+      "positions": {
+        "wheelBefore": 0,
+        "wheelAfter": 63,
+        "dragBefore": 0,
+        "dragAfter": 504,
+        "arrowBefore": 0,
+        "arrowAfter": 10,
+        "nextBefore": 0,
+        "nextAfter": 381,
+        "prevAfter": 219
+      }
+    },
+    {
+      "checkpoint": "desktop-stations-save",
+      "issues": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "requestFailures": [],
+        "responseErrors": []
+      },
+      "states": {
+        "rock": {
+          "ready": true,
+          "activeStation": "rock",
+          "visited": [
+            "rock"
+          ],
+          "routeReady": false,
+          "saved": false,
+          "progress": 0,
+          "scrollLeft": 0,
+          "imageLoaded": true,
+          "fallback": false,
+          "reducedMotion": true,
+          "horizontalOverflow": false,
+          "assetUrl": "http://127.0.0.1:8143/pages/v2/deliveries/moonlit-tidepool-panorama/assets/moonlit-tidepool-panorama-v1.png",
+          "quality": "high",
+          "revision": "r132-proof"
+        },
+        "anemone": {
+          "ready": true,
+          "activeStation": "anemone",
+          "visited": [
+            "rock",
+            "anemone"
+          ],
+          "routeReady": false,
+          "saved": false,
+          "progress": 0.5625,
+          "scrollLeft": 486,
+          "imageLoaded": true,
+          "fallback": false,
+          "reducedMotion": true,
+          "horizontalOverflow": false,
+          "assetUrl": "http://127.0.0.1:8143/pages/v2/deliveries/moonlit-tidepool-panorama/assets/moonlit-tidepool-panorama-v1.png",
+          "quality": "high",
+          "revision": "r132-proof"
+        },
+        "crab": {
+          "ready": true,
+          "activeStation": "crab",
+          "visited": [
+            "rock",
+            "anemone",
+            "crab"
+          ],
+          "routeReady": true,
+          "saved": false,
+          "progress": 0.9988,
+          "scrollLeft": 863,
+          "imageLoaded": true,
+          "fallback": false,
+          "reducedMotion": true,
+          "horizontalOverflow": false,
+          "assetUrl": "http://127.0.0.1:8143/pages/v2/deliveries/moonlit-tidepool-panorama/assets/moonlit-tidepool-panorama-v1.png",
+          "quality": "high",
+          "revision": "r132-proof"
+        },
+        "saved": {
+          "ready": true,
+          "activeStation": "crab",
+          "visited": [
+            "rock",
+            "anemone",
+            "crab"
+          ],
+          "routeReady": true,
+          "saved": true,
+          "progress": 1,
+          "scrollLeft": 864,
+          "imageLoaded": true,
+          "fallback": false,
+          "reducedMotion": true,
+          "horizontalOverflow": false,
+          "assetUrl": "http://127.0.0.1:8143/pages/v2/deliveries/moonlit-tidepool-panorama/assets/moonlit-tidepool-panorama-v1.png",
+          "quality": "high",
+          "revision": "r132-proof"
+        }
+      },
+      "comparison": {
+        "progressAdvanced": true,
+        "allStationsVisited": true,
+        "routeSaved": true
+      }
+    },
+    {
+      "checkpoint": "mobile-reduced",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "issues": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "requestFailures": [],
+        "responseErrors": []
+      },
+      "state": {
+        "ready": true,
+        "activeStation": "crab",
+        "visited": [
+          "rock",
+          "anemone",
+          "crab"
+        ],
+        "routeReady": true,
+        "saved": true,
+        "progress": 1,
+        "scrollLeft": 780,
+        "imageLoaded": true,
+        "fallback": false,
+        "reducedMotion": true,
+        "horizontalOverflow": false,
+        "assetUrl": "http://127.0.0.1:8143/pages/v2/deliveries/moonlit-tidepool-panorama/assets/moonlit-tidepool-panorama-v1.png",
+        "quality": "high",
+        "revision": "r132-proof"
+      }
+    },
+    {
+      "checkpoint": "fallback-complete",
+      "issues": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "requestFailures": [],
+        "responseErrors": []
+      },
+      "state": {
+        "ready": true,
+        "activeStation": "crab",
+        "visited": [
+          "rock",
+          "anemone",
+          "crab"
+        ],
+        "routeReady": true,
+        "saved": true,
+        "progress": 1,
+        "scrollLeft": 768,
+        "imageLoaded": false,
+        "fallback": true,
+        "reducedMotion": true,
+        "horizontalOverflow": false,
+        "assetUrl": "http://127.0.0.1:8143/pages/v2/deliveries/moonlit-tidepool-panorama/assets/moonlit-tidepool-panorama-v1.png",
+        "quality": "high",
+        "revision": "r132-proof"
+      }
+    }
+  ]
+}

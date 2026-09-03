@@ -1,0 +1,217 @@
+{
+  "schemaVersion": 1,
+  "stage": "r135-prism-seed-theatre-runtime-observations",
+  "capturedAt": "2026-09-01T00:25:20.854Z",
+  "identityBinding": "runId+asset-bound-bundleHash",
+  "runId": "direct-r135-prism-seed-theatre",
+  "bundleHash": "d4ebe575019203c7335541c30d22e750be9d64ddf1663e127740f1f55ac6f739",
+  "route": "/pages/v2/deliveries/prism-seed-theatre/",
+  "revision": "r135-proof",
+  "complete": true,
+  "captures": [
+    "01-desktop-opening.png",
+    "02-desktop-spectrum.png",
+    "03-desktop-saved.png",
+    "04-mobile-reduced.png",
+    "05-dual-fallback-saved.png"
+  ],
+  "observations": [
+    {
+      "checkpoint": "desktop-opening",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "issues": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "requestFailures": [],
+        "responseErrors": []
+      },
+      "readyAtMs": 1413,
+      "state": {
+        "ready": true,
+        "state": "sealed",
+        "progress": 0,
+        "pointerX": 0.22,
+        "pointerY": 0.48,
+        "lightAngle": -15.12,
+        "refraction": 0.002,
+        "spectralSpread": 0,
+        "imageLoaded": true,
+        "frames": 2,
+        "drawCalls": 1,
+        "triangles": 2,
+        "fallback": false,
+        "assetFallback": false,
+        "reducedMotion": false,
+        "saved": false,
+        "horizontalOverflow": 0,
+        "quality": "high",
+        "revision": "r135-proof"
+      }
+    },
+    {
+      "checkpoint": "desktop-spectrum-interaction",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "issues": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "requestFailures": [],
+        "responseErrors": []
+      },
+      "before": {
+        "ready": true,
+        "state": "sealed",
+        "progress": 0,
+        "pointerX": 0.181,
+        "pointerY": 0.689,
+        "lightAngle": -17.25,
+        "refraction": 0.002,
+        "spectralSpread": 0,
+        "imageLoaded": true,
+        "frames": 16,
+        "drawCalls": 1,
+        "triangles": 2,
+        "fallback": false,
+        "assetFallback": false,
+        "reducedMotion": false,
+        "saved": false,
+        "horizontalOverflow": 0,
+        "quality": "high",
+        "revision": "r135-proof"
+      },
+      "after": {
+        "ready": true,
+        "state": "spectrum",
+        "progress": 0.667,
+        "pointerX": 0.694,
+        "pointerY": 0.311,
+        "lightAngle": 10.5,
+        "refraction": 0.008,
+        "spectralSpread": 0.583,
+        "imageLoaded": true,
+        "frames": 129,
+        "drawCalls": 1,
+        "triangles": 2,
+        "fallback": false,
+        "assetFallback": false,
+        "reducedMotion": false,
+        "saved": false,
+        "horizontalOverflow": 0,
+        "quality": "high",
+        "revision": "r135-proof"
+      },
+      "actualScrollDelta": 1860,
+      "canvasPixelHashes": [
+        "fde5ee8ba79e16fec50ac00e7af0d6e5849f20111e42fc5dd5e123ba18017657",
+        "08b9743bd651256ab0a0ff481c337e24b02e7bb1b2b07b9f95c538f210616c6d"
+      ]
+    },
+    {
+      "checkpoint": "desktop-specimen-saved",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "issues": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "requestFailures": [],
+        "responseErrors": []
+      },
+      "state": {
+        "ready": true,
+        "state": "specimen",
+        "progress": 1,
+        "pointerX": 0.5,
+        "pointerY": 0.862,
+        "lightAngle": 0,
+        "refraction": 0.01,
+        "spectralSpread": 1,
+        "imageLoaded": true,
+        "frames": 68,
+        "drawCalls": 1,
+        "triangles": 2,
+        "fallback": false,
+        "assetFallback": false,
+        "reducedMotion": false,
+        "saved": true,
+        "horizontalOverflow": 0,
+        "quality": "high",
+        "revision": "r135-proof"
+      }
+    },
+    {
+      "checkpoint": "mobile-reduced",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "issues": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "requestFailures": [],
+        "responseErrors": []
+      },
+      "state": {
+        "ready": true,
+        "state": "specimen",
+        "progress": 1,
+        "pointerX": 0.5,
+        "pointerY": 0.808,
+        "lightAngle": 0,
+        "refraction": 0.01,
+        "spectralSpread": 1,
+        "imageLoaded": true,
+        "frames": 112,
+        "drawCalls": 1,
+        "triangles": 2,
+        "fallback": false,
+        "assetFallback": false,
+        "reducedMotion": true,
+        "saved": true,
+        "horizontalOverflow": 0,
+        "quality": "high",
+        "revision": "r135-proof"
+      }
+    },
+    {
+      "checkpoint": "dual-fallback-saved",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "issues": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "requestFailures": [],
+        "responseErrors": []
+      },
+      "state": {
+        "ready": true,
+        "state": "specimen",
+        "progress": 1,
+        "pointerX": 0.5,
+        "pointerY": 0.862,
+        "lightAngle": 0,
+        "refraction": 0.01,
+        "spectralSpread": 1,
+        "imageLoaded": false,
+        "frames": 0,
+        "drawCalls": 0,
+        "triangles": 0,
+        "fallback": true,
+        "assetFallback": true,
+        "reducedMotion": true,
+        "saved": true,
+        "horizontalOverflow": 0,
+        "quality": "high",
+        "revision": "r135-proof"
+      }
+    }
+  ]
+}

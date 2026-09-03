@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="zh-CN" data-forest-sound-ready="false">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#edf1c8" />
+    <meta name="description" content="在一块明亮的森林剖面中寻找叶幕、树洞、溪石与昆虫的声音，并保存自己的聆听路线。" />
+    <title>声音藏在哪里？｜儿童自然博物馆</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body data-experience="forest-sound-route" data-phase="discover" data-audio-state="idle" data-route-ready="false" data-saved="false">
+    <a class="skip-link" href="#forest-field">进入森林声音场</a>
+
+    <div class="experience-shell">
+      <header class="masthead" aria-label="页面标题栏">
+        <a class="museum-mark" href="../../" aria-label="返回 V2 能力总览">
+          <span class="museum-mark__seed" aria-hidden="true"></span>
+          <span><strong>声藏</strong><small>儿童自然博物馆 · 林地切片 07</small></span>
+        </a>
+        <div class="discovery-meter" aria-live="polite">
+          <span>聆听路线</span>
+          <strong><b id="collected-count">0</b> / 3</strong>
+        </div>
+      </header>
+
+      <main id="forest-field" class="forest-stage" data-signal-audio-feedback data-audio-state="idle" tabindex="-1">
+        <div class="scene-surface" aria-hidden="true">
+          <svg class="forest-illustration" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice">
+            <defs>
+              <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#f6f0c9" />
+                <stop offset=".48" stop-color="#cae0b0" />
+                <stop offset="1" stop-color="#7aa981" />
+              </linearGradient>
+              <linearGradient id="hill" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#91be87" />
+                <stop offset="1" stop-color="#3e765f" />
+              </linearGradient>
+              <linearGradient id="trunk" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0" stop-color="#5a4d2e" />
+                <stop offset=".4" stop-color="#8d7140" />
+                <stop offset=".72" stop-color="#5b4c2d" />
+                <stop offset="1" stop-color="#3d4128" />
+              </linearGradient>
+              <linearGradient id="water" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#d7ece1" />
+                <stop offset=".48" stop-color="#72baa2" />
+                <stop offset="1" stop-color="#2d716a" />
+              </linearGradient>
+              <radialGradient id="sun" cx="50%" cy="50%" r="50%">
+                <stop offset="0" stop-color="#fffbe2" stop-opacity="1" />
+                <stop offset=".42" stop-color="#f7dc7e" stop-opacity=".72" />
+                <stop offset="1" stop-color="#f7dc7e" stop-opacity="0" />
+              </radialGradient>
+              <filter id="paper-grain" x="-20%" y="-20%" width="140%" height="140%">
+                <feTurbulence baseFrequency=".78" numOctaves="2" seed="17" type="fractalNoise" result="noise" />
+                <feColorMatrix in="noise" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 .07 0" />
+                <feBlend in="SourceGraphic" mode="multiply" />
+              </filter>
+              <filter id="soft-glow" x="-80%" y="-80%" width="260%" height="260%">
+                <feGaussianBlur stdDeviation="12" result="blur" />
+                <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+              </filter>
+              <pattern id="bark-lines" width="34" height="70" patternUnits="userSpaceOnUse">
+                <path d="M8 0C1 24 21 39 8 70M25 0C34 17 13 41 27 70" fill="none" stroke="#302f1d" stroke-opacity=".2" stroke-width="4" />
+              </pattern>
+            </defs>
+
+            <rect width="1600" height="1000" fill="url(#sky)" />
+            <circle class="sun-disc" cx="1260" cy="134" r="210" fill="url(#sun)" />
+            <g class="light-rays">
+              <path d="M1090 -60 1540 -30 900 1020 620 1020Z" fill="#fff7ce" opacity=".16" />
+              <path d="M1330 -80 1600 0 1330 980 1090 980Z" fill="#fffbe0" opacity=".19" />
+            </g>
+
+            <g class="far-layer">
+              <path d="M0 430C190 315 362 360 520 302c205-76 350-18 520 20 214 48 362-24 560-82v760H0Z" fill="url(#hill)" opacity=".56" />
+              <path d="M0 512c188-90 367-77 548-26 205 58 370 22 542-23 199-53 349-42 510 12v525H0Z" fill="#326a55" opacity=".48" />
+              <g fill="#2f6650" opacity=".58">
+                <path d="M82 535 130 205l44 330Z" /><path d="M203 500 249 140l55 360Z" />
+                <path d="M355 492 412 185l47 307Z" /><path d="M1040 480 1092 116l54 364Z" />
+                <path d="M1188 485 1238 176l46 309Z" /><path d="M1450 500 1500 126l60 374Z" />
+              </g>
+            </g>
+
+            <g class="mid-layer" filter="url(#paper-grain)">
+              <path d="M0 650c210-73 389-57 575 31 155 73 326 86 505 29 187-60 345-64 520-9v299H0Z" fill="#345d3f" />
+              <path d="M0 777c188-50 345-33 497 33 164 72 342 76 519 20 214-68 401-43 584 27v143H0Z" fill="#203f31" />
+              <g class="fern-field" fill="none" stroke="#aac77e" stroke-linecap="round">
+                <path d="M102 840c40-98 48-176 17-240M120 690 75 645M124 732l55-54M112 770l-62-42M99 808l66-34" stroke-width="12" />
+                <path d="M1360 867c-19-115-2-189 55-259M1386 702l-54-58M1400 750l70-49M1390 797l-72-35M1373 837l70-20" stroke-width="11" />
+              </g>
+            </g>
+
+            <g class="creek-layer">
+              <path d="M1600 610c-178 33-278 99-371 157-112 69-217 86-339 80-179-8-299 32-442 153H0v-55c164-113 316-165 506-167 155-2 296-19 421-82 166-83 318-123 673-121Z" fill="url(#water)" />
+              <path d="M1600 655c-176 20-296 79-398 132-131 69-251 83-392 68-96-11-174-2-281 43" fill="none" stroke="#eef5cf" stroke-opacity=".62" stroke-width="9" stroke-linecap="round" />
+              <path class="water-glint" d="M1472 698c-164 31-216 92-352 119M790 886c-97 4-151 26-220 70M1110 844c-89 30-144 31-228 27" fill="none" stroke="#fcf7c9" stroke-width="6" stroke-linecap="round" opacity=".7" />
+              <g fill="#4b6856">
+                <ellipse cx="590" cy="877" rx="96" ry="48" transform="rotate(-8 590 877)" />
+                <ellipse cx="1010" cy="813" rx="70" ry="36" transform="rotate(9 1010 813)" />
+                <ellipse cx="1295" cy="715" rx="46" ry="28" transform="rotate(-12 1295 715)" />
+              </g>
+            </g>
+
+            <g class="tree-layer">
+              <path d="M1038 1000c29-167 83-258 126-358 55-128 31-285-20-454l180-42c44 204 68 383 34 540-21 99-5 211 84 314Z" fill="url(#trunk)" />
+              <path d="M1118 1000c62-107 111-155 165-192 58-40 120-58 203-58-121 58-154 134-166 250Z" fill="#5b4b2e" />
+              <path d="M1250 1000c-15-89-9-169 50-228 65-65 138-78 227-50-113 11-169 97-174 278Z" fill="#4a4328" />
+              <path d="M1157 665c9-116 4-232-38-354" fill="none" stroke="#3d3822" stroke-width="15" opacity=".32" />
+              <path d="M1040 1000c-62-90-147-127-255-110 102 40 155 74 187 110Z" fill="#403e27" />
+              <path d="M1038 1000c29-167 83-258 126-358 55-128 31-285-20-454l180-42c44 204 68 383 34 540-21 99-5 211 84 314Z" fill="url(#bark-lines)" opacity=".8" />
+              <ellipse class="hollow-cavity" cx="1230" cy="507" rx="64" ry="92" transform="rotate(7 1230 507)" fill="#1f2e22" />
+              <ellipse cx="1215" cy="488" rx="31" ry="54" transform="rotate(7 1215 488)" fill="#0b1d17" opacity=".82" />
+            </g>
+
+            <g class="canopy-layer">
+              <path d="M-80 45c178-83 362-64 465 14 73-113 266-126 355-42 111-77 287-48 343 60 98-81 269-67 332 36 87-25 190 14 245 81v179c-156-25-289-82-430-55-168 32-250 36-402-19-134-49-249-11-381 26C248 375 82 320-80 274Z" fill="#477850" />
+              <path d="M-30 38c151-31 248 6 346 75 90-109 262-119 347-32 116-69 254-47 315 44 106-49 227-23 273 66-171-23-285 45-433 59-166 16-274-51-426-16-165 38-276 11-422-49Z" fill="#6b9d59" opacity=".94" />
+              <g class="leaf-cluster" fill="#a9c76b">
+                <ellipse cx="335" cy="180" rx="57" ry="23" transform="rotate(-29 335 180)" />
+                <ellipse cx="415" cy="216" rx="51" ry="21" transform="rotate(18 415 216)" />
+                <ellipse cx="488" cy="157" rx="55" ry="21" transform="rotate(-8 488 157)" />
+                <ellipse cx="582" cy="211" rx="63" ry="24" transform="rotate(26 582 211)" />
+                <ellipse cx="700" cy="156" rx="58" ry="22" transform="rotate(-22 700 156)" />
+              </g>
+              <g fill="#d2df8b" opacity=".72">
+                <ellipse cx="188" cy="239" rx="36" ry="13" transform="rotate(22 188 239)" />
+                <ellipse cx="768" cy="232" rx="43" ry="14" transform="rotate(-16 768 232)" />
+                <ellipse cx="905" cy="172" rx="38" ry="14" transform="rotate(29 905 172)" />
+              </g>
+            </g>
+
+            <g class="insect-layer" filter="url(#soft-glow)">
+              <circle cx="300" cy="486" r="7" fill="#ffe57f" />
+              <circle cx="240" cy="545" r="4" fill="#fff2a9" />
+              <circle cx="364" cy="568" r="5" fill="#ffcd58" />
+              <circle cx="198" cy="626" r="3" fill="#fff6b8" />
+              <path d="M300 486c-42 26-64 52-60 79M300 486c32 17 53 44 64 82" fill="none" stroke="#f8d86a" stroke-width="2" stroke-dasharray="3 12" opacity=".58" />
+            </g>
+          </svg>
+        </div>
+
+        <div class="field-index" aria-hidden="true">
+          <span>07:18</span><i></i><span>林冠 12.4 m</span><i></i><span>溪流 14 °C</span>
+        </div>
+
+        <section class="intro-copy" aria-labelledby="page-title">
+          <p class="eyebrow"><span></span> FOREST LISTENING / 01</p>
+          <h1 id="page-title">声音，<br /><em>藏在哪里？</em></h1>
+          <p class="lede">不要先看说明。靠近一片叶、一个树洞、一块溪石，或一只躲在光里的昆虫——森林会从你选择的位置开口。</p>
+          <p class="micro-guide"><b>选择任意三个声源</b><span>形成你的聆听路线</span></p>
+        </section>
+
+        <svg class="route-thread" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+          <path id="route-shadow" d="" />
+          <path id="route-path" d="" />
+        </svg>
+
+        <nav class="hotspot-field" aria-label="森林声源">
+          <button class="sound-hotspot sound-hotspot--leaf" type="button" data-sound-id="leaf" aria-pressed="false">
+            <span class="sound-hotspot__orbit" aria-hidden="true"></span>
+            <span class="sound-hotspot__glyph" aria-hidden="true"><svg viewBox="0 0 72 72"><path d="M58 12C35 12 14 26 14 47c13 7 31 0 40-14 5-8 6-15 4-21Z" /><path d="M18 53c9-15 20-23 35-32" /></svg></span>
+            <span class="sound-hotspot__copy"><b>叶幕</b><small>CANOPY · 0.4 m</small></span>
+          </button>
+          <button class="sound-hotspot sound-hotspot--hollow" type="button" data-sound-id="hollow" aria-pressed="false">
+            <span class="sound-hotspot__orbit" aria-hidden="true"></span>
+            <span class="sound-hotspot__glyph" aria-hidden="true"><svg viewBox="0 0 72 72"><ellipse cx="36" cy="36" rx="22" ry="29" /><ellipse cx="36" cy="36" rx="9" ry="15" /></svg></span>
+            <span class="sound-hotspot__copy"><b>树洞</b><small>HOLLOW · 2.1 m</small></span>
+          </button>
+          <button class="sound-hotspot sound-hotspot--creek" type="button" data-sound-id="creek" aria-pressed="false">
+            <span class="sound-hotspot__orbit" aria-hidden="true"></span>
+            <span class="sound-hotspot__glyph" aria-hidden="true"><svg viewBox="0 0 72 72"><path d="M12 48c14-8 32-8 48 0" /><path d="M18 55c12-6 25-6 38 0" /><ellipse cx="36" cy="37" rx="17" ry="10" /></svg></span>
+            <span class="sound-hotspot__copy"><b>溪石</b><small>CREEK · 8.7 m</small></span>
+          </button>
+          <button class="sound-hotspot sound-hotspot--insect" type="button" data-sound-id="insect" aria-pressed="false">
+            <span class="sound-hotspot__orbit" aria-hidden="true"></span>
+            <span class="sound-hotspot__glyph" aria-hidden="true"><svg viewBox="0 0 72 72"><ellipse cx="36" cy="38" rx="6" ry="15" /><ellipse cx="23" cy="33" rx="13" ry="8" transform="rotate(-28 23 33)" /><ellipse cx="49" cy="33" rx="13" ry="8" transform="rotate(28 49 33)" /><path d="M33 22 26 13M39 22l7-9" /></svg></span>
+            <span class="sound-hotspot__copy"><b>昆虫</b><small>GLOW · 5.3 m</small></span>
+          </button>
+        </nav>
+
+        <aside class="field-guide" aria-label="当前声音与聆听路线">
+          <div class="field-guide__header">
+            <p id="sound-index">等待发现 · 00</p>
+            <span class="audio-light" aria-hidden="true"></span>
+          </div>
+          <div class="field-guide__body">
+            <p class="field-guide__position" id="sound-position">把耳朵放进画面</p>
+            <h2 id="sound-name">先选择一个声源</h2>
+            <p id="sound-observation">四个对象都在同一块森林里。点击、触摸，或用 Tab 与方向键移动焦点。</p>
+            <div class="sound-wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          </div>
+
+          <div class="audio-controls" aria-label="声音控制">
+            <button id="play-toggle" type="button" data-signal-audio-control disabled aria-pressed="false">
+              <span class="play-symbol" aria-hidden="true"></span><span id="play-label">选择后试听</span>
+            </button>
+            <button id="mute-toggle" type="button" data-signal-audio-control aria-pressed="false">静音</button>
+            <label class="volume-control">音量
+              <input id="volume-control" type="range" min="0" max="1" step="0.05" value="0.65" data-signal-audio-control aria-label="声音音量" />
+            </label>
+          </div>
+          <p class="audio-status" id="audio-status" data-audio-fallback aria-live="polite">程序化自然声预览，不是现场录音。</p>
+
+          <div class="route-panel" id="route-panel">
+            <div class="route-panel__heading"><span>你的路线</span><b id="route-count">0 / 3</b></div>
+            <ol id="route-list" aria-label="已收集声源">
+              <li data-route-slot="0"><span>01</span><b>等待声源</b></li>
+              <li data-route-slot="1"><span>02</span><b>等待声源</b></li>
+              <li data-route-slot="2"><span>03</span><b>等待声源</b></li>
+            </ol>
+            <button class="save-route" id="save-route" type="button" data-signal-primary-action disabled>
+              <span id="save-label">再发现 3 个声音</span><b aria-hidden="true">↗</b>
+            </button>
+            <p class="save-status" id="save-status" role="status" aria-live="polite"></p>
+          </div>
+        </aside>
+
+        <p class="scene-note">移动指针会改变森林的观看位置 · 声音只在你主动选择后播放</p>
+        <div class="live-status" id="live-status" aria-live="polite" aria-atomic="true"></div>
+      </main>
+    </div>
+
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>

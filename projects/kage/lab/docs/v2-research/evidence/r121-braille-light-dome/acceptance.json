@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "acceptanceId": "v2-r121-beta-main-path",
+  "goal": {
+    "title": "六点光穹 · 盲文触觉星座练习场",
+    "noveltyCheck": {
+      "query": "盲文|点字|Braille|六点光穹|触觉星座",
+      "repositoryMatchesBeforeR121": 0,
+      "gitHistoryMatches": 0
+    }
+  },
+  "timing": {
+    "goalLockedAt": "2026-08-31T14:04:32.8213774+08:00",
+    "finalDecisionLockedAt": "2026-08-31T14:37:48.0267715+08:00",
+    "totalElapsedMs": 1995205,
+    "initialMainPathElapsedMs": 83891,
+    "persistentJobElapsedMs": 836363,
+    "recordedActivePhaseMs": 113073
+  },
+  "job": {
+    "id": "job-5f54280060921cab",
+    "contractId": "contract-zdpd73",
+    "status": "complete",
+    "decision": "kept",
+    "sourceRunId": "dedicated-62215947bbff",
+    "bestRunId": "dedicated-braille-r121-repair",
+    "authoringAttempts": 1,
+    "recoveryAttempts": 0,
+    "refinementAttempts": 1,
+    "assetGate": "ready",
+    "assetRoute": "procedural",
+    "assetCount": 0,
+    "deliveryQuality": "final-eligible"
+  },
+  "review": {
+    "source": {
+      "verdict": "blocked",
+      "score": 32
+    },
+    "finalMechanical": {
+      "verdict": "pass",
+      "score": 100,
+      "causalAnchorDelta": 0.02060639070442992,
+      "minimumCausalAnchorDelta": 0.018,
+      "browserErrors": 0
+    },
+    "finalVisual": {
+      "verdict": "pass",
+      "score": 92,
+      "assetRole": "not-applicable"
+    }
+  },
+  "coverage": {
+    "desktop": {
+      "viewport": "1440x900",
+      "states": ["A", "L", "T", "saved"],
+      "inputs": ["click", "keyboard"],
+      "horizontalOverflow": 0
+    },
+    "mobileReducedMotion": {
+      "viewport": "390x844",
+      "prefersReducedMotion": true,
+      "states": ["A", "L", "saved"],
+      "controlResultActionInsideInitialViewport": true,
+      "horizontalOverflow": 0
+    },
+    "braille": {
+      "domOrder": [1, 4, 2, 5, 3, 6],
+      "patterns": {
+        "A": [1],
+        "L": [1, 2, 3],
+        "T": [2, 3, 4, 5]
+      }
+    }
+  },
+  "evidence": [
+    "01-desktop-a-opening.png",
+    "02-desktop-l-click.png",
+    "03-desktop-t-keyboard-saved.png",
+    "04-mobile-reduced-opening.png",
+    "05-mobile-reduced-l-saved.png",
+    "report.json",
+    "../../../../generated/runs/dedicated-braille-r121-repair/visual-review.json"
+  ],
+  "hashes": {
+    "bundleSha256": "FA44A09C233D610B362378A364B676A7FC1621E7042A2E063B197F29ADC093CA",
+    "visualReviewSha256": "71675B28F081835D4054AC24FE55F15E50215500BB0A61B2670F70333D31CE76",
+    "jobSha256": "688AD5022F21BBA33F0AB6A3BECAD61B7CB1028BA0E6B3CFAAA913A282B6509C",
+    "caseCoverSha256": "58CE7EFED10D6F0E0B323A51C5DBA430E9E8A114F511409A0FDF2717FBD4B63C"
+  },
+  "archive": {
+    "eligible": true,
+    "performed": true,
+    "caseId": "dedicated-braille-r121-repair",
+    "stage": "featured",
+    "catalogCount": 20,
+    "curatedOutCaseId": "dedicated-f9ed58e5b7ea",
+    "curatedOutEvidencePreserved": true
+  },
+  "finalTriState": {
+    "complete": true,
+    "blocked": false,
+    "reviewRequired": false,
+    "result": "pass"
+  }
+}

@@ -1,0 +1,255 @@
+{
+  "schemaVersion": 1,
+  "id": "direct-pdqxba",
+  "goalPlayback": {
+    "originalBrief": "为希望探索文化活动、展览和对象系列的访客设计一座明亮、会呼吸的纸蝶日光空间游园。六只纸蝶在同一空间中形成不同深度与队形，使用主题专属 3D 纸蝶和 Three.js。指针或触摸改变队形与局部反光；点击、键盘或触摸选择对象。每只纸蝶的颜色、纸材和巡游故事只在选择后于对象附近展开，未选择时保持场景主导。最终行动为“选择一只加入巡游”。页面不是工作台、卡片目录或长滚动文章；不要持久侧栏、滑杆或指标簇。",
+    "subject": "明亮、会呼吸的纸蝶日光空间游园",
+    "audience": "希望探索文化活动、展览和对象系列的访客",
+    "desiredOutcome": "从入口建立坐标，进入证据空间，再汇合到共同结论。",
+    "primaryAction": "选择一只加入巡游",
+    "hardConstraints": [
+      "最终行动为“选择一只加入巡游”",
+      "不要持久侧栏、滑杆或指标簇"
+    ],
+    "preferences": [
+      "清晰、可信并具有独特记忆点",
+      "建议从 object-field 出发，并将 object-catalog、daylight-neutral、direct-manipulation、modular-collection、editorial-serif、procedural-3d 作为候选视觉方向；可为更好的主题表达调整或放弃。"
+    ]
+  },
+  "selectedDirection": {
+    "id": "direction-rregru",
+    "title": "明亮、会呼吸的纸蝶日光空间游园 · 专属创意方向",
+    "experienceForm": "object-field",
+    "rationale": "以独立主体承担主要视觉，用主体标本场、状态故事板、指针揭示组织变化；多个主题对象需要在同一空间中保持可选择的深度、队形、反光与焦点关系；DOM 继续承担对象名称、上下文信息和最终行动。"
+  },
+  "referencePrinciples": [],
+  "assetPlan": {
+    "batchId": "assets-qi0x2w",
+    "strategy": "mixed",
+    "rationale": "同一素材批次复用已生成的屋顶温室环境，并以程序化 Three.js 构造六只纸蝶；两者都必须在最终页面承担声明的视觉职责。",
+    "assets": [
+      {
+        "id": "rooftop-greenhouse-environment-v1",
+        "role": "提供屋顶温室的真实空间尺度、自然日光与植物环境",
+        "source": "generated",
+        "required": true
+      },
+      {
+        "id": "object-field-subjects",
+        "role": "构建无需标题即可辨认的明亮、会呼吸的纸蝶日光空间游园对象集合，并在同一空间中提供主题专属的深度、队形、焦点和局部材质反馈。",
+        "source": "programmatic",
+        "required": true
+      }
+    ]
+  },
+  "interactionRationale": {
+    "mode": "direct",
+    "audioApplicable": false,
+    "rationale": "以pointer组织playful-exploration中的“通过指针、触摸或键盘探索并选择同一对象场中的对象，让队形、焦点、就近信息和最终行动共享当前选择状态。”，并让变化服务于主要行动。"
+  },
+  "visualAmbition": {
+    "schemaVersion": 1,
+    "intentLevel": "immersive",
+    "intentRationale": "视觉野心等级 immersive 来自用户明确的体验要求：把明亮、会呼吸的纸蝶日光空间游园组织为一个可立即探索的对象场：访客先看见完整关系，再选择对象、理解差异并完成“选择一只加入巡游”。。它只决定本次内容需要的表达强度，不继承历史案例的布局、风格或渲染器禁令。",
+    "heroMoment": {
+      "title": "明亮、会呼吸的纸蝶日光空间游园 · 选择一只加入巡游",
+      "description": "开场以“完整对象集合在同一空间中形成非均匀关系、清晰层级和可辨身份。”建立主体，并让后续变化服务于“从入口建立坐标，进入证据空间，再汇合到共同结论。”。",
+      "themeConnection": "视觉锚点必须直接证明“明亮、会呼吸的纸蝶日光空间游园”和“把明亮、会呼吸的纸蝶日光空间游园组织为一个可立即探索的对象场：访客先看见完整关系，再选择对象、理解差异并完成“选择一只加入巡游”。”；即使隐藏标题，也能从对象、空间或数据关系辨认主题。；这一记忆点直接指向“选择一只加入巡游”。",
+      "appearsWithinSeconds": 5,
+      "observableRuntimeChange": {
+        "trigger": "用户用指针探索主体",
+        "from": "完整对象集合在同一空间中形成非均匀关系、清晰层级和可辨身份。",
+        "to": "当前选择、对象关系和上下文信息保持稳定，并给出“选择一只加入巡游”。"
+      }
+    },
+    "rendering": {
+      "primary": "threejs-3d",
+      "supporting": [
+        "dom-css"
+      ],
+      "rationale": "以 threejs-3d 承担“构建无需标题即可辨认的明亮、会呼吸的纸蝶日光空间游园对象集合，并在同一空间中提供主题专属的深度、队形、焦点和局部材质反馈。”的主要可见职责；语义内容和行动仍由 DOM 保底。选择依据是 多个主题对象需要在同一空间中保持可选择的深度、队形、反光与焦点关系；DOM 继续承担对象名称、上下文信息和最终行动。"
+    },
+    "spatialDepth": {
+      "mode": "scene-3d",
+      "purpose": "用可检查空间关系证明“把明亮、会呼吸的纸蝶日光空间游园组织为一个可立即探索的对象场：访客先看见完整关系，再选择对象、理解差异并完成“选择一只加入巡游”。”，而不是把三维当作装饰。",
+      "cues": [
+        "perspective",
+        "occlusion",
+        "lighting",
+        "camera-motion"
+      ]
+    },
+    "motionArc": {
+      "beats": [
+        {
+          "phase": "opening",
+          "driver": "time",
+          "visualState": "完整对象集合在同一空间中形成非均匀关系、清晰层级和可辨身份。",
+          "thematicPurpose": "先理解对象之间的整体关系，再开始探索。"
+        },
+        {
+          "phase": "exploration",
+          "driver": "pointer",
+          "visualState": "指针、触摸或键盘改变对象焦点、局部反馈和队形关系，完整舞台保持可见。",
+          "thematicPurpose": "在对象之间移动焦点，并发现可选择目标。"
+        },
+        {
+          "phase": "resolution",
+          "driver": "pointer",
+          "visualState": "当前选择、对象关系和上下文信息保持稳定，并给出“选择一只加入巡游”。",
+          "thematicPurpose": "核对当前对象后完成最终行动。"
+        }
+      ],
+      "runtimeAdvantage": "运行时让用户从“完整对象集合在同一空间中形成非均匀关系、清晰层级和可辨身份。”抵达“当前选择、对象关系和上下文信息保持稳定，并给出“选择一只加入巡游”。”；这种状态变化服务于主题，不能由一张静态截图等价替代。"
+    },
+    "interactionToScene": [
+      {
+        "input": "用户用指针探索主体",
+        "sceneResponse": "用户选择或输入时，视觉锚点、可见证据与语义数值必须同步变化，不能只改变边框、颜色或说明文字。",
+        "productMeaning": "可见变化必须帮助用户理解“从入口建立坐标，进入证据空间，再汇合到共同结论。”，并自然抵达“选择一只加入巡游”。"
+      }
+    ],
+    "assetCredibility": {
+      "level": "conceptual-coherent",
+      "strategy": "关键素材分别承担：构建无需标题即可辨认的明亮、会呼吸的纸蝶日光空间游园对象集合，并在同一空间中提供主题专属的深度、队形、焦点和局部材质反馈。。",
+      "disclosure": "程序化或生成内容按概念表达使用，不伪装为真实测量、地点或商品。"
+    },
+    "fallbackPerformance": {
+      "targetFps": 60,
+      "maxDevicePixelRatio": 2,
+      "initialTransferBudgetMb": 7.63,
+      "mobileFallback": "simplified-scene",
+      "reducedMotionFallback": "key-states",
+      "rendererFailureFallback": "key-visual"
+    }
+  },
+  "attemptBudget": {
+    "limits": {
+      "directionSelections": 1,
+      "assetBatches": 1,
+      "builds": 1,
+      "deterministicRepairs": 2,
+      "visualRefinements": 1
+    },
+    "used": {
+      "directionSelections": 1,
+      "assetBatches": 1,
+      "builds": 1,
+      "deterministicRepairs": 1,
+      "visualRefinements": 0
+    }
+  },
+  "stageReports": [],
+  "finalCandidate": {
+    "runId": "direct-pdqxba",
+    "bundleHash": "b88dd7c92230fc5044b835eb5fa860fa31509c40c6ff42081cb38d677f80dbf2"
+  },
+  "adaptiveEvidence": {
+    "schemaVersion": 1,
+    "runId": "direct-pdqxba",
+    "bundleHash": "b88dd7c92230fc5044b835eb5fa860fa31509c40c6ff42081cb38d677f80dbf2",
+    "profile": {
+      "schemaVersion": 1,
+      "interactionMode": "direct",
+      "audioApplicable": false,
+      "requiredCheckpoints": [
+        "opening",
+        "core",
+        "mobile",
+        "interaction"
+      ]
+    },
+    "checkpoints": [
+      {
+        "kind": "opening",
+        "runId": "direct-pdqxba",
+        "bundleHash": "b88dd7c92230fc5044b835eb5fa860fa31509c40c6ff42081cb38d677f80dbf2",
+        "passed": true,
+        "summary": "桌面高质量模式在 2250ms 内完成展开，真实温室环境和六只 Three.js 纸蝶可见且无运行错误。"
+      },
+      {
+        "kind": "core",
+        "runId": "direct-pdqxba",
+        "bundleHash": "b88dd7c92230fc5044b835eb5fa860fa31509c40c6ff42081cb38d677f80dbf2",
+        "passed": true,
+        "summary": "一个持续全屏舞台同时承载对象深度、纸材差异、上下文故事和最终加入行动，没有退化为工作台或卡片目录。"
+      },
+      {
+        "kind": "mobile",
+        "runId": "direct-pdqxba",
+        "bundleHash": "b88dd7c92230fc5044b835eb5fa860fa31509c40c6ff42081cb38d677f80dbf2",
+        "passed": true,
+        "summary": "390×844 reduced-motion 强制 fallback 无横向溢出，六个选择、故事与加入行动完整可用。"
+      },
+      {
+        "kind": "interaction",
+        "runId": "direct-pdqxba",
+        "bundleHash": "b88dd7c92230fc5044b835eb5fa860fa31509c40c6ff42081cb38d677f80dbf2",
+        "passed": true,
+        "summary": "真实指针改变队形，选择改变 3D 焦点与对象故事，加入行动改变同一对象场的最终编队。"
+      }
+    ],
+    "hardGates": {
+      "runtimeClean": true,
+      "criticalAssetsLoaded": true,
+      "primaryActionReachable": true,
+      "mobileComplete": true,
+      "truthfulClaims": true,
+      "interactionVerified": true,
+      "audioVerified": null
+    },
+    "visualQuality": {
+      "schemaVersion": 1,
+      "verdict": "pass",
+      "score": 91,
+      "dimensions": {
+        "goalClarity": 92,
+        "creativeDistinctiveness": 94,
+        "craftCohesion": 90,
+        "assetIntegration": 88,
+        "interactionValue": 92,
+        "mobileReadiness": 91
+      },
+      "summary": "明亮温室、六只纸蝶与上下文故事形成主题专属对象场；指针、选择和加入行动具有同源因果，移动端和回退保留完整任务。",
+      "findings": [
+        {
+          "code": "conceptual-subject-fidelity",
+          "severity": "minor",
+          "checkpoint": "core",
+          "message": "纸蝶为风格化程序化概念对象；本轮证明空间对象场与互动能力，不宣称真实展品级模型精度。"
+        }
+      ]
+    }
+  },
+  "wowEvidence": {
+    "schemaVersion": 1,
+    "runId": "direct-pdqxba",
+    "bundleHash": "b88dd7c92230fc5044b835eb5fa860fa31509c40c6ff42081cb38d677f80dbf2",
+    "assessment": {
+      "schemaVersion": 1,
+      "intentLevel": "immersive",
+      "required": true,
+      "verdict": "pass",
+      "score": 91,
+      "dimensions": {
+        "fiveSecondImpact": 92,
+        "runtimeAdvantage": 93,
+        "themeMemorability": 94,
+        "motionDepthMeaning": 91,
+        "assetIntegrationCredibility": 88,
+        "craftCohesion": 90
+      },
+      "observation": {
+        "heroMomentObserved": true,
+        "runtimeAdvantageOverStaticObserved": true,
+        "themeSpecificMemoryObserved": true,
+        "meaningfulMotionOrDepthObserved": true,
+        "credibleAssetIntegrationObserved": true,
+        "summary": "Hero 在 2250ms 内由入场折叠态展开为六只纸蝶占据明亮温室的完整对象场。 浏览器快照与状态截图共同证明指针编队、对象选择和加入巡游会改变 Three.js 场景，而非只替换文字。 可复述记忆是六种纸材的彩色纸蝶在屋顶温室晨光中被访客重新编队。 纸蝶的前后深度、翅面折叠、透光、指针聚散与加入队列共同解释空间游园主题。 真实加载的日光温室环境承担尺度与光线，程序化纸蝶承担可交互主体；页面明确披露其概念演示属性。 纸材色彩、温室晨光、编辑排版、对象标记与上下文故事形成统一的明亮游园语言。 真实指针改变六只纸蝶队形；点击或键盘选择同一对象并展开对应纸材故事，加入行动再形成共同队列。 390px reduced-motion 状态无横向溢出，六个语义对象、故事与加入行动均可达。 强制 WebGL fallback 后保留六只纸蝶、对象选择、纸材故事和加入巡游的完整旅程。"
+      },
+      "findings": []
+    }
+  },
+  "verdict": "pass",
+  "stopReason": null
+}

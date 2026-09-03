@@ -2,7 +2,10 @@ import { fileURLToPath } from 'node:url';
 import { defineConfig, loadEnv, type Plugin } from 'vite';
 import { creativeApiPlugin } from './server/creative-api-plugin.ts';
 
-const DEFAULT_CODEX_CREATIVE_MODEL = 'gpt-5.6-sol';
+const DEFAULT_CODEX_CREATIVE_MODEL = 'gpt-5.6-terra';
+const DEFAULT_CODEX_BALANCED_AUTHORING_MODEL = 'gpt-5.6-terra';
+const DEFAULT_CODEX_HIGH_QUALITY_AUTHORING_MODEL = 'gpt-5.6-sol';
+const DEFAULT_CODEX_VISUAL_REFINEMENT_MODEL = 'gpt-5.6-sol';
 
 function sandboxedGeneratedModuleCors(): Plugin {
   const allowedPrefixes = ['/generated/runs/', '/cases/runs/', '/src/generated-sdk/', '/node_modules/.vite/deps/', '/creative-assets/'];
@@ -54,6 +57,9 @@ export default defineConfig(({ mode }) => {
       creativeApiPlugin({
         ...environment,
         CODEX_CREATIVE_MODEL: environment.CODEX_CREATIVE_MODEL || DEFAULT_CODEX_CREATIVE_MODEL,
+        CODEX_BALANCED_AUTHORING_MODEL: environment.CODEX_BALANCED_AUTHORING_MODEL || DEFAULT_CODEX_BALANCED_AUTHORING_MODEL,
+        CODEX_HIGH_QUALITY_AUTHORING_MODEL: environment.CODEX_HIGH_QUALITY_AUTHORING_MODEL || DEFAULT_CODEX_HIGH_QUALITY_AUTHORING_MODEL,
+        CODEX_VISUAL_REFINEMENT_MODEL: environment.CODEX_VISUAL_REFINEMENT_MODEL || DEFAULT_CODEX_VISUAL_REFINEMENT_MODEL,
         SIGNAL_PROJECT_ROOT: process.cwd()
       })
     ],

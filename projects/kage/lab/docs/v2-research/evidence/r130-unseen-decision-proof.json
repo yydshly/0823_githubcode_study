@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "phase": "r130-unseen-decision-proof",
+  "brief": "为儿童自然博物馆设计“声音藏在哪里”互动网页；在明亮森林剖面中点击叶片、树洞、溪石或昆虫，播放对应自然声音，声源位置、波纹和观察提示同步出现；收集三个后形成聆听路线并保存。不要暗色科技、卡片目录或固定三屏。",
+  "contractId": "contract-18hovnw",
+  "packageId": "author-package-1jsbt50",
+  "runId": "direct-1wnuuwn",
+  "decision": {
+    "subject": "声音藏在哪里",
+    "audience": "需要快速理解并感受该想法的网页访客",
+    "primaryAction": "保存当前结果",
+    "structureMode": "single-scene",
+    "experienceForm": "object-field",
+    "rendererRoute": "dom-only",
+    "renderingPrimary": "svg",
+    "depthMode": "layered-2d",
+    "credibility": "conceptual-coherent",
+    "placeStrategy": "place-atmosphere",
+    "map": "avoid",
+    "interactionMode": "direct",
+    "audioApplicable": true,
+    "audioRoute": "audio-asset-playback",
+    "referenceIds": [],
+    "referenceDecision": "没有高相关度证据包；按规则不强行引用低相关案例。",
+    "assetIds": ["object-field-subjects"],
+    "authorPackageBytes": 15330,
+    "silentRetries": 0
+  },
+  "assertions": {
+    "notMap": true,
+    "notWorkbench": true,
+    "notShader": true,
+    "goalIncluded": true,
+    "assetDutiesIncluded": true,
+    "bounded": true
+  },
+  "verdict": "pass",
+  "stopReason": "decision-proof-complete-no-page-build"
+}

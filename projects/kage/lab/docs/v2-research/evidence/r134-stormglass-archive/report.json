@@ -1,0 +1,300 @@
+{
+  "schemaVersion": 1,
+  "stage": "r134-stormglass-archive-runtime-observations",
+  "capturedAt": "2026-08-31T23:29:32.838Z",
+  "identityBinding": "runId+bundleHash",
+  "runId": "direct-r134-stormglass-archive",
+  "bundleHash": "b518d1bcaeb0c4f4cba2267e29716337e1b1d07e09d1ab9006a704dace474591",
+  "route": "/pages/v2/deliveries/stormglass-archive/",
+  "revision": "r134-proof",
+  "complete": true,
+  "captures": [
+    "01-desktop-opening.png",
+    "02-desktop-branching.png",
+    "03-desktop-imprint-saved.png",
+    "04-mobile-reduced.png",
+    "05-fallback-saved.png"
+  ],
+  "observations": [
+    {
+      "checkpoint": "desktop-opening",
+      "url": "http://127.0.0.1:8143/pages/v2/deliveries/stormglass-archive/?quality=high&motion=full&revision=r134-proof",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "issues": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "requestFailures": [],
+        "responseErrors": []
+      },
+      "readyAtMs": 1127,
+      "state": {
+        "ready": true,
+        "state": "dormant",
+        "phase": "dormant",
+        "progress": 0,
+        "charge": 0.08,
+        "crackGrowth": 0.03,
+        "refraction": 0.18,
+        "brightness": 0.2,
+        "cameraDepth": 11.7,
+        "glassRotation": -0.18,
+        "canvasVisualHash": "1vyoqxb",
+        "saved": false,
+        "fallback": false,
+        "reducedMotion": false,
+        "frames": 13,
+        "drawCalls": 15,
+        "triangles": 4860,
+        "horizontalOverflow": false,
+        "quality": "high",
+        "revision": "r134-proof"
+      }
+    },
+    {
+      "checkpoint": "desktop-wheel-journey",
+      "url": "http://127.0.0.1:8143/pages/v2/deliveries/stormglass-archive/?quality=high&motion=full&revision=r134-proof",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "issues": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "requestFailures": [],
+        "responseErrors": []
+      },
+      "states": {
+        "dormant": {
+          "ready": true,
+          "state": "dormant",
+          "phase": "dormant",
+          "progress": 0,
+          "charge": 0.08,
+          "crackGrowth": 0.03,
+          "refraction": 0.18,
+          "brightness": 0.2,
+          "cameraDepth": 11.7,
+          "glassRotation": -0.18,
+          "canvasVisualHash": "1vyoqxb",
+          "saved": false,
+          "fallback": false,
+          "reducedMotion": false,
+          "frames": 10,
+          "drawCalls": 15,
+          "triangles": 4860,
+          "horizontalOverflow": false,
+          "quality": "high",
+          "revision": "r134-proof"
+        },
+        "gathering": {
+          "ready": true,
+          "state": "gathering",
+          "phase": "gathering",
+          "progress": 0.3274,
+          "charge": 0.62,
+          "crackGrowth": 0.2,
+          "refraction": 0.48,
+          "brightness": 0.44,
+          "cameraDepth": 10.55,
+          "glassRotation": 0.05,
+          "canvasVisualHash": "11x24qv",
+          "saved": false,
+          "fallback": false,
+          "reducedMotion": false,
+          "frames": 47,
+          "drawCalls": 15,
+          "triangles": 5252,
+          "horizontalOverflow": false,
+          "quality": "high",
+          "revision": "r134-proof"
+        },
+        "branching": {
+          "ready": true,
+          "state": "branching",
+          "phase": "branching",
+          "progress": 0.649,
+          "charge": 1,
+          "crackGrowth": 0.8,
+          "refraction": 0.9,
+          "brightness": 1,
+          "cameraDepth": 9.65,
+          "glassRotation": 0.2,
+          "canvasVisualHash": "15065s3",
+          "saved": false,
+          "fallback": false,
+          "reducedMotion": false,
+          "frames": 83,
+          "drawCalls": 15,
+          "triangles": 6652,
+          "horizontalOverflow": false,
+          "quality": "high",
+          "revision": "r134-proof"
+        },
+        "imprinted": {
+          "ready": true,
+          "state": "imprinted",
+          "phase": "imprinted",
+          "progress": 0.9729,
+          "charge": 0.28,
+          "crackGrowth": 1,
+          "refraction": 0.68,
+          "brightness": 0.84,
+          "cameraDepth": 10.65,
+          "glassRotation": 0.34,
+          "canvasVisualHash": "1em00rs",
+          "saved": false,
+          "fallback": false,
+          "reducedMotion": false,
+          "frames": 132,
+          "drawCalls": 15,
+          "triangles": 7128,
+          "horizontalOverflow": false,
+          "quality": "high",
+          "revision": "r134-proof"
+        }
+      },
+      "canvasPixelHashes": [
+        "3952c9578d4e784e727e11e4a9a6539471ac6ef8d7fb49dfa6d0b22ddb1f7366",
+        "a8b6d7c4324d59fb5d35c3cb94d5202556ccc4a7f826c1e13487b6e289eadfc1",
+        "7a43a0a05ff5d3e7a9dc9848203917e7eb2c59ead227932402a1bfdbaec9861a",
+        "d8f6195362c39af801750ce83e1d4e6b0b2cd5e0dc2f53d0fa0af2f991898fab"
+      ],
+      "semantic": {
+        "actualWheelScrollDelta": 3038,
+        "stateSequence": [
+          "dormant",
+          "gathering",
+          "branching",
+          "imprinted"
+        ]
+      }
+    },
+    {
+      "checkpoint": "desktop-imprint-saved",
+      "url": "http://127.0.0.1:8143/pages/v2/deliveries/stormglass-archive/?quality=high&motion=reduce&revision=r134-proof",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "issues": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "requestFailures": [],
+        "responseErrors": []
+      },
+      "state": {
+        "ready": true,
+        "state": "imprinted",
+        "phase": "imprinted",
+        "progress": 0.9729,
+        "charge": 0.28,
+        "crackGrowth": 1,
+        "refraction": 0.68,
+        "brightness": 0.84,
+        "cameraDepth": 10.65,
+        "glassRotation": 0.34,
+        "canvasVisualHash": "eq1e11",
+        "saved": true,
+        "fallback": false,
+        "reducedMotion": true,
+        "frames": 59,
+        "drawCalls": 15,
+        "triangles": 7128,
+        "horizontalOverflow": false,
+        "quality": "high",
+        "revision": "r134-proof"
+      },
+      "semantic": {
+        "status": "已保存 · 风暴玻璃 07 / 本地页面状态",
+        "focusedElement": "save-imprint"
+      }
+    },
+    {
+      "checkpoint": "mobile-reduced",
+      "url": "http://127.0.0.1:8143/pages/v2/deliveries/stormglass-archive/?quality=high&motion=reduce&revision=r134-proof",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "issues": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "requestFailures": [],
+        "responseErrors": []
+      },
+      "state": {
+        "ready": true,
+        "state": "imprinted",
+        "phase": "imprinted",
+        "progress": 0.9684,
+        "charge": 0.28,
+        "crackGrowth": 1,
+        "refraction": 0.68,
+        "brightness": 0.84,
+        "cameraDepth": 12.25,
+        "glassRotation": 0.34,
+        "canvasVisualHash": "m0wvzt",
+        "saved": true,
+        "fallback": false,
+        "reducedMotion": true,
+        "frames": 32,
+        "drawCalls": 15,
+        "triangles": 7128,
+        "horizontalOverflow": false,
+        "quality": "high",
+        "revision": "r134-proof"
+      },
+      "semantic": {
+        "stateSequence": [
+          "dormant",
+          "gathering",
+          "branching",
+          "imprinted"
+        ]
+      }
+    },
+    {
+      "checkpoint": "fallback-saved",
+      "url": "http://127.0.0.1:8143/pages/v2/deliveries/stormglass-archive/?quality=high&motion=reduce&fallback=1&revision=r134-proof",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "issues": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "requestFailures": [],
+        "responseErrors": []
+      },
+      "state": {
+        "ready": true,
+        "state": "imprinted",
+        "phase": "imprinted",
+        "progress": 0.897,
+        "charge": 0.28,
+        "crackGrowth": 1,
+        "refraction": 0.68,
+        "brightness": 0.84,
+        "cameraDepth": 11.7,
+        "glassRotation": 0.34,
+        "canvasVisualHash": "1uik6ip",
+        "saved": true,
+        "fallback": true,
+        "reducedMotion": true,
+        "frames": 0,
+        "drawCalls": 0,
+        "triangles": 0,
+        "horizontalOverflow": false,
+        "quality": "high",
+        "revision": "r134-proof"
+      },
+      "semantic": {
+        "fallbackVisible": true,
+        "status": "已保存 · 风暴玻璃 07 / 本地页面状态"
+      }
+    }
+  ]
+}

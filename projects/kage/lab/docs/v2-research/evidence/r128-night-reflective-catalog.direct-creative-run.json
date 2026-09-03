@@ -1,0 +1,304 @@
+{
+  "schemaVersion": 1,
+  "creativeProtocolVersion": 2,
+  "id": "direct-r128-night-reflective-catalog",
+  "goalPlayback": {
+    "originalBrief": "为夜间骑行装备、舞台服装与公共安全视觉的学习者设计夜行反光材料样本馆。八件纤维与反光材料样本同时出现；按用途筛选后，移动光束检查每件表面，选择两件并排比较，最后行动为“收藏这组夜行材料”。不要中央产品、长滚动空间旅程或持久参数面板。所有反光表现都只是视觉模拟，不伪造安全等级、照度、可视距离、品牌或认证。",
+    "subject": "夜行反光材料样本馆",
+    "audience": "夜间骑行装备、舞台服装与公共安全视觉的学习者",
+    "desiredOutcome": "在同一束可移动光线下看懂八种反光表面的差异，按用途筛选、二选并排比较，并收藏当前组合。",
+    "primaryAction": "收藏这组夜行材料",
+    "hardConstraints": [
+      "按用途筛选后，移动光束检查每件表面，选择两件并排比较，最后行动为“收藏这组夜行材料”",
+      "不要中央产品、长滚动空间旅程或持久参数面板"
+    ],
+    "preferences": [
+      "非均匀工业接触印目录，而非中央英雄或参数工作台",
+      "反光响应直接由指针、触摸和键盘光束驱动",
+      "明确披露视觉模拟，不把效果冒充安全或性能认证"
+    ]
+  },
+  "selectedDirection": {
+    "id": "direction-1or8zyl",
+    "title": "夜行反光材料样本馆 · 动态接触印目录",
+    "experienceForm": "dynamic-material-catalog",
+    "rationale": "把八件材料组织成非均匀接触印样本墙，以共享光束维持可比较尺度；筛选、局部检查与二选比较共同解释材料差异，并让收藏成为目录旅程的明确终点。"
+  },
+  "referencePrinciples": [
+    {
+      "referenceId": "direct-r120-paper-butterfly-garden",
+      "title": "纸蝶日光游园 · 多对象身份连续性",
+      "principle": "借用多个对象始终保留身份、相对尺度与可选择关系的机制。",
+      "relevance": "八件材料在筛选与比较中需要保持编号、纹理和选择身份；不复制温室、纸蝶、三维队形或叙事结构。",
+      "sourceUri": "../pages/v2/deliveries/paper-butterfly-garden/"
+    },
+    {
+      "referenceId": "paper-restoration-material-evidence",
+      "title": "纸张修复工坊 · 材质证据靠近对象",
+      "principle": "借用近距离纹理证据和解释文字始终指向同一材料对象的原理。",
+      "relevance": "每件反光样本必须让名称、纹理与光束响应自然结合；不复制旧纸题材、暖色工作台或修复流程。",
+      "sourceUri": "../cases/dedicated-r36-delivery-final/"
+    },
+    {
+      "referenceId": "motionsites-opening-discovery",
+      "title": "MotionSites catalog research · opening discovery",
+      "principle": "借用首屏即可探索、输入本身承担发现的正向原理。",
+      "relevance": "目录首屏让材料墙和移动光束立即可用；只借发现机制，不复制任何案例布局或视觉外观。",
+      "sourceUrl": "https://motionsites.ai/"
+    }
+  ],
+  "assetPlan": {
+    "batchId": "assets-r128-night-reflective-catalog",
+    "strategy": "programmatic",
+    "rationale": "唯一程序化素材批次用八种独立 Canvas 2D 纹理承担反光差异；CSS 纹理仅在强制回退时保留目录和主要行动，不伪装成真实材料测试。",
+    "assets": [
+      {
+        "id": "programmatic-reflective-samples",
+        "role": "八种独立材料纹理在同一光束坐标下产生可辨认的视觉响应，并在比较层保持身份与尺度",
+        "source": "programmatic",
+        "required": true
+      }
+    ]
+  },
+  "interactionRationale": {
+    "mode": "direct",
+    "audioApplicable": false,
+    "rationale": "指针、触摸与方向键共享同一光束状态，筛选保留身份，二选比较在同一光点下展示差异，收藏结束本次目录选择。"
+  },
+  "visualAmbition": {
+    "schemaVersion": 1,
+    "intentLevel": "immersive",
+    "intentRationale": "视觉野心等级 immersive 来自主题、叙事变化与运行时职责：把夜行反光材料样本馆组织为可直接浏览的多对象目录：先看见集合与差异，再筛选、检查、比较并完成“收藏这组夜行材料”。。它只决定本次内容需要的表达强度，不继承历史案例的布局、风格或渲染器禁令。",
+    "heroMoment": {
+      "title": "夜行反光材料样本馆 · 收藏这组夜行材料",
+      "description": "开场以“完整条目集合同时建立可辨身份、编号、类别与可比较尺度。”建立主体，并让后续变化服务于“从编辑式留白进入主体显现，最后形成有张力的整体构图。”。",
+      "themeConnection": "视觉锚点必须直接证明“夜行反光材料样本馆”和“把夜行反光材料样本馆组织为可直接浏览的多对象目录：先看见集合与差异，再筛选、检查、比较并完成“收藏这组夜行材料”。”；即使隐藏标题，也能从对象、空间或数据关系辨认主题。；这一记忆点直接指向“收藏这组夜行材料”。",
+      "appearsWithinSeconds": 5,
+      "observableRuntimeChange": {
+        "trigger": "用户用指针探索主体",
+        "from": "完整条目集合同时建立可辨身份、编号、类别与可比较尺度。",
+        "to": "当前筛选、二选组合与“收藏这组夜行材料”保持一致，最终行动已准备。"
+      }
+    },
+    "rendering": {
+      "primary": "threejs-3d",
+      "supporting": [
+        "dom-css"
+      ],
+      "rationale": "以 threejs-3d 承担“围绕“夜行反光材料样本馆”构建可辨认的主题专属对象、空间或证据场。”的主要可见职责；语义内容和行动仍由 DOM 保底。选择依据是 同一舞台上的灯位、体积光束、落点、阴影与多灯 cue 需要真实三维空间和光照关系；DOM 继续承担控制、读数与保存行动。"
+    },
+    "spatialDepth": {
+      "mode": "scene-3d",
+      "purpose": "用可检查空间关系证明“把夜行反光材料样本馆组织为可直接浏览的多对象目录：先看见集合与差异，再筛选、检查、比较并完成“收藏这组夜行材料”。”，而不是把三维当作装饰。",
+      "cues": [
+        "perspective",
+        "occlusion",
+        "lighting",
+        "camera-motion"
+      ]
+    },
+    "motionArc": {
+      "beats": [
+        {
+          "phase": "opening",
+          "driver": "time",
+          "visualState": "完整条目集合同时建立可辨身份、编号、类别与可比较尺度。",
+          "thematicPurpose": "先浏览完整集合并理解可筛选、可检查和可比较的关系。"
+        },
+        {
+          "phase": "exploration",
+          "driver": "pointer",
+          "visualState": "当前条目在原目录关系附近显示主题专属反馈与就近证据，其余条目仍保持上下文。",
+          "thematicPurpose": "用指针、触摸或键盘逐件检查差异。"
+        },
+        {
+          "phase": "resolution",
+          "driver": "pointer",
+          "visualState": "当前筛选、二选组合与“收藏这组夜行材料”保持一致，最终行动已准备。",
+          "thematicPurpose": "确认当前组合并完成最终行动。"
+        }
+      ],
+      "runtimeAdvantage": "运行时让用户从“完整条目集合同时建立可辨身份、编号、类别与可比较尺度。”抵达“当前筛选、二选组合与“收藏这组夜行材料”保持一致，最终行动已准备。”；这种状态变化服务于主题，不能由一张静态截图等价替代。"
+    },
+    "interactionToScene": [
+      {
+        "input": "用户用指针探索主体",
+        "sceneResponse": "视觉锚点沿体验节点连续承担建立、变化与“收藏这组夜行材料”收束，不得在中段被无关装饰替换。",
+        "productMeaning": "可见变化必须帮助用户理解“从编辑式留白进入主体显现，最后形成有张力的整体构图。”，并自然抵达“收藏这组夜行材料”。"
+      }
+    ],
+    "assetCredibility": {
+      "level": "conceptual-coherent",
+      "strategy": "以语义 DOM 和必要的程序化表达承担“围绕“夜行反光材料样本馆”构建可辨认的主题专属对象、空间或证据场。”，不制造无职责素材。",
+      "disclosure": "程序化或生成内容按概念表达使用，不伪装为真实测量、地点或商品。"
+    },
+    "fallbackPerformance": {
+      "targetFps": 60,
+      "maxDevicePixelRatio": 2,
+      "initialTransferBudgetMb": 7.63,
+      "mobileFallback": "simplified-scene",
+      "reducedMotionFallback": "key-states",
+      "rendererFailureFallback": "key-visual"
+    }
+  },
+  "attemptBudget": {
+    "limits": {
+      "directionSelections": 1,
+      "assetBatches": 1,
+      "builds": 1,
+      "deterministicRepairs": 2,
+      "visualRefinements": 1
+    },
+    "used": {
+      "directionSelections": 1,
+      "assetBatches": 1,
+      "builds": 1,
+      "deterministicRepairs": 1,
+      "visualRefinements": 1
+    }
+  },
+  "stageReports": [
+    {
+      "stage": "bounded-completion",
+      "elapsedMs": 0,
+      "status": "completed",
+      "summary": "一次构建、一次确定性修复和一次明确视觉精修后，最终 bundle 已通过桌面开场、直接互动、390px reduced-motion 与强制 fallback 证据；达到阶段完成条件并停止，不再继续重做。"
+    }
+  ],
+  "finalCandidate": {
+    "runId": "direct-r128-night-reflective-catalog",
+    "bundleHash": "ef0ae71482af63a997095d6398b03f806833a418593d1ac46b8d0e709faca379"
+  },
+  "adaptiveEvidence": {
+    "schemaVersion": 1,
+    "runId": "direct-r128-night-reflective-catalog",
+    "bundleHash": "ef0ae71482af63a997095d6398b03f806833a418593d1ac46b8d0e709faca379",
+    "profile": {
+      "schemaVersion": 1,
+      "interactionMode": "direct",
+      "audioApplicable": false,
+      "requiredCheckpoints": [
+        "opening",
+        "core",
+        "mobile",
+        "interaction"
+      ]
+    },
+    "checkpoints": [
+      {
+        "kind": "opening",
+        "runId": "direct-r128-night-reflective-catalog",
+        "bundleHash": "ef0ae71482af63a997095d6398b03f806833a418593d1ac46b8d0e709faca379",
+        "passed": true,
+        "summary": "桌面开场在 3461ms 内同时呈现主题、操作提示和八件不同样本入口，无运行错误或调试残留。"
+      },
+      {
+        "kind": "core",
+        "runId": "direct-r128-night-reflective-catalog",
+        "bundleHash": "ef0ae71482af63a997095d6398b03f806833a418593d1ac46b8d0e709faca379",
+        "passed": true,
+        "summary": "八件 Canvas 2D 材料各自承担独立纹理职责；筛选后身份和选择保持一致，比较层以同一光束坐标并排展示两件样本。"
+      },
+      {
+        "kind": "mobile",
+        "runId": "direct-r128-night-reflective-catalog",
+        "bundleHash": "ef0ae71482af63a997095d6398b03f806833a418593d1ac46b8d0e709faca379",
+        "passed": true,
+        "summary": "390×844 reduced-motion 无横向溢出，单列比较层保留两件材料、关闭操作和可滚动到达的收藏行动。"
+      },
+      {
+        "kind": "interaction",
+        "runId": "direct-r128-night-reflective-catalog",
+        "bundleHash": "ef0ae71482af63a997095d6398b03f806833a418593d1ac46b8d0e709faca379",
+        "passed": true,
+        "summary": "用途筛选、共享光束、最多二选、Escape 关闭与焦点返回、收藏状态均由真实输入产生可观察状态和画面变化。"
+      }
+    ],
+    "hardGates": {
+      "runtimeClean": true,
+      "criticalAssetsLoaded": true,
+      "primaryActionReachable": true,
+      "mobileComplete": true,
+      "truthfulClaims": true,
+      "interactionVerified": true,
+      "audioVerified": null
+    },
+    "visualQuality": {
+      "schemaVersion": 1,
+      "verdict": "pass",
+      "score": 93,
+      "dimensions": {
+        "goalClarity": 95,
+        "creativeDistinctiveness": 93,
+        "craftCohesion": 92,
+        "assetIntegration": 92,
+        "interactionValue": 94,
+        "mobileReadiness": 91
+      },
+      "summary": "工业接触印目录、警示黄绿与安全橙、八种反光纹理和共享光束形成主题专属统一语言；筛选、检查、二选比较与收藏让视觉变化直接服务材料理解。",
+      "findings": [
+        {
+          "code": "visual-simulation-only",
+          "severity": "minor",
+          "checkpoint": "core",
+          "message": "程序化纹理用于比较视觉响应，不代表真实材料性能、安全等级或认证；页面在开场与比较层持续披露。"
+        }
+      ]
+    },
+    "macroStructureReview": {
+      "mode": "content-fit-gate",
+      "candidate": {
+        "runId": "direct-r128-night-reflective-catalog",
+        "layout": "catalog",
+        "persistentControlPanel": false,
+        "visibleParameterControls": false,
+        "realtimeMetricCluster": false,
+        "primaryAction": "browse-collection"
+      },
+      "inertia": {
+        "mode": "advisory-only",
+        "detected": false,
+        "matchedRunIds": [],
+        "repeatedAxes": [],
+        "mustChange": false,
+        "recommendation": "未发现足以影响当前方向的宏观骨架惯性；继续由内容适配和最终效果决定页面形态。"
+      },
+      "persistentWorkbench": false,
+      "contentJustified": true,
+      "verdict": "pass",
+      "findingCode": null,
+      "summary": "当前候选不是持久参数工作台，无需为了近期案例差异而改变内容适配的宏观结构。"
+    }
+  },
+  "wowEvidence": {
+    "schemaVersion": 1,
+    "runId": "direct-r128-night-reflective-catalog",
+    "bundleHash": "ef0ae71482af63a997095d6398b03f806833a418593d1ac46b8d0e709faca379",
+    "assessment": {
+      "schemaVersion": 1,
+      "intentLevel": "immersive",
+      "required": true,
+      "verdict": "pass",
+      "score": 93,
+      "dimensions": {
+        "fiveSecondImpact": 93,
+        "runtimeAdvantage": 94,
+        "themeMemorability": 93,
+        "motionDepthMeaning": 92,
+        "assetIntegrationCredibility": 91,
+        "craftCohesion": 93
+      },
+      "observation": {
+        "heroMomentObserved": true,
+        "runtimeAdvantageOverStaticObserved": true,
+        "themeSpecificMemoryObserved": true,
+        "meaningfulMotionOrDepthObserved": true,
+        "credibleAssetIntegrationObserved": true,
+        "summary": "首屏在五秒内建立夜行材料阅览室、共享光束说明和八件非均匀样本入口，主题和探索动作同时成立。 共享光束坐标改变八件样本的局部返回，筛选和选择再把相同材质送入同光束比较，静态截图无法表达这条因果。 可复述记忆是像车灯一样移动一道光，在八种夜行材料中挑出两件，并在同一道光下看到不同返回。 局部光斑、衰减和纹理响应解释反光表面差异；动态用于材料检查和比较，不是无意义装饰。 八种程序化纹理分别承担玻璃微珠、微棱镜、编织丝等视觉职责，并持续披露为视觉模拟而非真实认证。 非均匀接触印网格、工业标牌字、警示黄绿、反光银与安全橙形成统一的夜间材料目录语言。 真实输入改变光束位置、活跃样本、筛选结果、二选比较和收藏完成态，且 Escape 将焦点返回比较按钮。 390px reduced-motion 将比较卡片转为单列，保留两件材料、关闭操作和收藏行动，没有横向溢出或自动扫光依赖。 强制 Canvas fallback 使用 CSS 材料纹理，仍完成舞台筛选、二选比较和本地收藏，并保留模拟披露。"
+      },
+      "findings": []
+    }
+  },
+  "verdict": "pass",
+  "stopReason": null
+}

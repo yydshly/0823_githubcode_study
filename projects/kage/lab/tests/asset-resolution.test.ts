@@ -32,16 +32,44 @@ describe('dedicated asset resolution', () => {
     expect(planAssetResolution(await imageSpec(), ['image'], false)).toMatchObject({ route: 'catalog' });
   });
 
-  it('calls the connected generator only when the effect policy approves the asset', async () => {
+  it('does not call an L2-only generator for a required L3 subject', async () => {
     const value = await imageSpec();
-    expect(planAssetResolution(value, [], true)).toMatchObject({ route: 'generate' });
+    expect(planAssetResolution(value, [], true)).toMatchObject({
+      route: 'blocked',
+      message: expect.stringContaining('需要真实来源')
+    });
+  });
+
+  it('calls the connected generator for a required L2 visual reference', async () => {
+    const value = structuredClone(await imageSpec());
+    value.assetRequirements = value.assetRequirements.map((requirement) => ({
+      ...requirement,
+      purpose: '提供可检查的建议性主体轮廓参考。',
+      minimumQuality: 'L2-inspectable' as const,
+      fidelity: 'suggestive' as const,
+    }));
+    expect(planAssetResolution(assertEffectSpec(value), [], true)).toMatchObject({ route: 'generate' });
   });
 
   it('blocks a required subject rather than replacing it with placeholder geometry', async () => {
     const value = await imageSpec();
     expect(planAssetResolution(value, [], false)).toMatchObject({
       route: 'blocked',
-      message: expect.stringContaining('不能用程序化占位物冒充目标主体')
+      message: expect.stringContaining('需要真实来源')
+    });
+  });
+
+  it('continues with a bounded procedural candidate when only optional model references lack a provider', async () => {
+    const value = structuredClone(await imageSpec());
+    value.assetRequirements = value.assetRequirements.map((requirement) => ({
+      ...requirement,
+      required: false,
+      minimumQuality: 'L2-inspectable' as const,
+      fallback: 'dom-only' as const
+    }));
+    expect(planAssetResolution(assertEffectSpec(value), [], false)).toMatchObject({
+      route: 'procedural',
+      message: expect.stringContaining('可选质量参考')
     });
   });
 
@@ -85,7 +113,7 @@ describe('dedicated asset resolution', () => {
     )).toMatchObject({ route: 'blocked' });
   });
 
-  it('routes a required full-bleed fictional environment through the image generator', async () => {
+  it('routes a required cinematic environment to a higher-quality source instead of the L2 adapter', async () => {
     const value = structuredClone(await imageSpec());
     value.assetRequirements = [{
       id: 'cloud-observatory-world', role: 'environment', modality: 'environment',
@@ -97,6 +125,9 @@ describe('dedicated asset resolution', () => {
       }
     }];
     value.composition.layers[1].assetRequirementIds = ['cloud-observatory-world'];
-    expect(planAssetResolution(assertEffectSpec(value), [], true)).toMatchObject({ route: 'generate' });
+    expect(planAssetResolution(assertEffectSpec(value), [], true)).toMatchObject({
+      route: 'blocked',
+      message: expect.stringContaining('需要真实来源')
+    });
   });
 });

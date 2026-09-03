@@ -1,4 +1,4 @@
-import type { CapabilityCatalog, CapabilityDescriptor } from './schema';
+import type { CapabilityCatalog, CapabilityDescriptor } from './schema.ts';
 
 const descriptor = (value: CapabilityDescriptor): CapabilityDescriptor => value;
 
