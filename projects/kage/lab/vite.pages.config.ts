@@ -190,6 +190,10 @@ export default defineConfig({
           import.meta.dirname,
           'pages/v2/deliveries/rainlight-walk-recorder/index.html',
         ),
+        'pages/v2/deliveries/kage-feeling-lens/index': resolve(
+          import.meta.dirname,
+          'pages/v2/deliveries/kage-feeling-lens/index.html',
+        ),
       },
     },
   },

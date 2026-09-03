@@ -44,5 +44,17 @@ export const V2_FORMAL_PRODUCT_ARCHIVE: readonly FormalProductArchiveEntry[] = [
     productValue: '证明 V5 能把一个未使用过的外部主题发展为正式素材、真实互动、结果保存和再次编辑组成的完整产品。',
     journey: ['entry', 'use', 'result', 'continuation'],
     status: 'formal-product'
+  }),
+  formalProductArchiveEntrySchema.parse({
+    id: 'kage-feeling-lens',
+    title: 'KAGE 感受取景器',
+    summary: '让一句产品想法先获得可感知的情绪、空间与动作，再带着明确方向进入完整网页创作。',
+    route: '/pages/v2/deliveries/kage-feeling-lens/',
+    previewUrl: '/creative-assets/v2-formal-products/kage-feeling-lens.png',
+    runId: 'direct-r169-kage-feeling-lens',
+    bundleHash: '08472f8b9d36229381e9a71af98f636a9236f56b541f7af3753f03886e9b7550',
+    productValue: '证明开放能力目录能在不固定技术或模板的前提下，指导一次正式素材、连续场景和真实输入形成完整产品体验。',
+    journey: ['entry', 'use', 'result', 'continuation'],
+    status: 'formal-product'
   })
 ];

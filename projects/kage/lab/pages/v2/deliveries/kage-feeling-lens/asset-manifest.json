@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "assetId": "kage-paper-light-world-v1",
+  "projectPath": "pages/v2/deliveries/kage-feeling-lens/assets/kage-paper-light-world-v1.png",
+  "source": {
+    "type": "openai-imagegen",
+    "mode": "built-in",
+    "batch": 1,
+    "generatedFile": "exec-474f1814-27fc-405e-b2c2-db02ce2dfa38.png"
+  },
+  "role": "A continuous paper-and-light environment that establishes KAGE's idea-becoming-experience identity and supports runtime reveal, depth and light-path interaction.",
+  "constraints": [
+    "no embedded text or interface",
+    "single coherent scene",
+    "runtime layers enhance rather than replace the asset"
+  ]
+}

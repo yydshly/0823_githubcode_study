@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="zh-CN" data-phase="idea" data-emotion="near" data-asset="loading">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="KAGE 感受取景器：先让一句想法形成可以感受的视觉与互动方向，再进入完整网页创作。" />
+    <meta name="theme-color" content="#ece9df" />
+    <title>KAGE 感受取景器 · 想法先成为感受</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#idea-field">跳到想法输入</a>
+
+    <header class="masthead">
+      <a class="brand" href="../../" aria-label="返回 KAGE V2">
+        <strong>KAGE</strong><span>IDEA → FEELING → EXPERIENCE</span>
+      </a>
+      <p class="release">PRODUCT STUDY / R169</p>
+      <a class="header-cta" href="#idea-field">开始取景 <span aria-hidden="true">↘</span></a>
+    </header>
+
+    <main class="experience" id="experience" data-signal-visual-anchor>
+      <div class="world" id="world" aria-hidden="true">
+        <img
+          class="world-image world-image--dream"
+          src="./assets/kage-paper-light-world-v1.png"
+          alt=""
+          data-hero-asset
+        />
+        <img
+          class="world-image world-image--formed"
+          src="./assets/kage-paper-light-world-v1.png"
+          alt=""
+        />
+        <canvas id="light-canvas"></canvas>
+        <div class="world-wash"></div>
+        <div class="world-grain"></div>
+        <div class="focus-ring"></div>
+      </div>
+
+      <aside class="progress-rail" aria-label="创意成形进度">
+        <span class="progress-index" id="progress-index">00</span>
+        <i><b id="progress-bar"></b></i>
+        <span>100</span>
+      </aside>
+
+      <div class="journey" id="journey">
+        <section class="opening beat" id="opening" data-beat="idea" aria-labelledby="opening-title">
+          <div class="opening-copy">
+            <p class="kicker">A FEELING LENS FOR WEB IDEAS</p>
+            <h1 id="opening-title">先别选模板。<br /><em>先看见它的感受。</em></h1>
+            <p class="lede">KAGE 帮助创作者把一句模糊的产品想法，发展成有情绪、有空间、有动作的网页方向。图像、3D、声音或动画，只在它们能让感受更准确时出现。</p>
+            <a class="start-link" href="#idea-field">把一句话放进光里 <span aria-hidden="true">↓</span></a>
+          </div>
+          <p class="opening-note"><span>01</span> 滚动不是翻页，它会让同一个想法逐渐获得清晰度。</p>
+        </section>
+
+        <section class="composer beat" id="idea-field" data-beat="feeling" aria-labelledby="composer-title">
+          <form class="idea-sheet" id="idea-form" data-signal-primary-control>
+            <p class="sheet-label">YOUR IDEA / 让它先保持不完整</p>
+            <h2 id="composer-title">你希望人走进一个<br />怎样的产品世界？</h2>
+            <label class="sr-only" for="idea-input">描述你的产品想法</label>
+            <textarea id="idea-input" name="idea" rows="3">为独立创作者设计一个网页，让一闪而过的想法逐渐形成可以进入的视觉世界。</textarea>
+
+            <fieldset>
+              <legend>希望第一秒留下什么感受？</legend>
+              <div class="emotion-row">
+                <button class="emotion is-active" type="button" data-emotion-value="near" aria-pressed="true">
+                  <span>01</span><strong>想靠近</strong><small>温度 / 细节 / 亲密</small>
+                </button>
+                <button class="emotion" type="button" data-emotion-value="awake" aria-pressed="false">
+                  <span>02</span><strong>被唤醒</strong><small>张力 / 光变 / 回应</small>
+                </button>
+                <button class="emotion" type="button" data-emotion-value="open" aria-pressed="false">
+                  <span>03</span><strong>想展开</strong><small>空间 / 路径 / 远方</small>
+                </button>
+              </div>
+            </fieldset>
+
+            <div class="composer-actions">
+              <button class="form-button" id="form-direction" type="submit">让方向成形 <span aria-hidden="true">→</span></button>
+              <p id="composer-status" role="status" aria-live="polite">已选择「想靠近」；继续滚动，让画面和方向一起形成。</p>
+            </div>
+          </form>
+
+          <aside class="scene-legend" aria-label="当前视觉变化">
+            <span>SCENE RESPONSE</span>
+            <strong id="scene-response">暖光正在靠近纸面纤维</strong>
+            <small>移动指针改变光的落点；滚动改变成形程度。</small>
+          </aside>
+        </section>
+
+        <section class="formation beat" id="formation" data-beat="formed" aria-labelledby="formation-title">
+          <div class="formation-copy" data-signal-primary-result>
+            <p class="kicker">DIRECTION FORMED / NOT A FAKE GENERATION</p>
+            <h2 id="formation-title" tabindex="-1">让想法从纸面，<br /><em>长成可以进入的光域。</em></h2>
+            <p id="formation-summary">这是一段创意方向试演：用正式主视觉建立世界，让指针与滚动共同控制清晰度和光路，把“靠近”变成真实可感知的产品动作。</p>
+            <dl class="direction-notes">
+              <div><dt>主体</dt><dd id="direction-subject">一张正在打开的纤维纸膜</dd></div>
+              <div><dt>媒介</dt><dd id="direction-medium">正式生成视觉 × 蒙版景深 × Canvas 光路</dd></div>
+              <div><dt>互动</dt><dd id="direction-interaction">滚动成形；指针寻找光；选择改变色温与节奏</dd></div>
+            </dl>
+            <div class="formation-actions">
+              <a class="primary-action" id="continue-action" data-signal-primary-action href="../../../../workbench.html">带着这个方向继续创作 <span aria-hidden="true">↗</span></a>
+              <button class="reset-action" id="reset-action" type="button">换一种感受重新看</button>
+            </div>
+            <p class="truth-note">本页完成的是方向试演与产品体验；点击后才进入 KAGE 的完整创作入口。</p>
+          </div>
+
+          <p class="formed-caption"><span>100%</span> 想法、感受、媒介和行动已在同一场景中对齐。</p>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <a href="../../">KAGE / V2</a>
+      <p>优秀不是技术数量，而是用户真的感受到它。</p>
+      <span>R169 / CAPABILITY-GUIDED PRODUCT</span>
+    </footer>
+
+    <noscript><p class="noscript">视觉成形需要 JavaScript；产品说明和创作入口仍可阅读与访问。</p></noscript>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>
