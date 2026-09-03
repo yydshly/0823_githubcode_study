@@ -224,4 +224,3 @@ export function getThreeUiResearchBridgeSummary() {
     status: 'research-bridge-ready'
   } as const;
 }
-
