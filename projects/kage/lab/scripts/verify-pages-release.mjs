@@ -101,8 +101,11 @@ await open('archive/', async (url) => {
   if (!(await page.getByRole('heading', { name: /归档/ }).count())) {
     failures.push('missing Kage research archive heading: ' + url)
   }
-  if ((await page.locator('#case-catalog .case-row').count()) !== 35) {
-    failures.push('Kage research archive does not expose 35 delivery cases: ' + url)
+  if ((await page.locator('#case-catalog .case-row').count()) !== 58) {
+    failures.push('Kage research archive does not expose 58 runnable cases: ' + url)
+  }
+  if ((await page.locator('#history-list .history-row').count()) !== 98) {
+    failures.push('Kage research archive does not expose 98 generation records: ' + url)
   }
   if ((await page.locator('#document-list .document-row').count()) !== 151) {
     failures.push('Kage research archive does not expose 151 research documents: ' + url)
@@ -116,6 +119,29 @@ await open('archive/', async (url) => {
     image instanceof HTMLImageElement && image.complete && image.naturalWidth > 0
   ))
   if (!firstPreviewLoaded) failures.push('Kage research archive primary preview did not load: ' + url)
+
+  const caseUrls = await page.locator('#case-catalog [data-case-view]').evaluateAll((links) => links.map((link) => link.href))
+  if (caseUrls.length !== 58) failures.push('Kage research archive is missing runnable case links: ' + url)
+  const caseResponses = await Promise.all(caseUrls.map((caseUrl) => page.request.get(caseUrl)))
+  for (const response of caseResponses) {
+    if (!response.ok()) failures.push('archived case URL failed: ' + response.status() + ' ' + response.url())
+  }
+})
+
+await open('archive/snapshot/pages/v2/deliveries/kage-opening-rehearsal/', async (url) => {
+  if ((await page.locator('body').innerText()).trim().length < 80) {
+    failures.push('V2 archive snapshot is blank: ' + url)
+  }
+})
+
+await open('archive/snapshot/pages/v1/case.html?id=dedicated-r36-delivery-final&quality=high&motion=full', async (url) => {
+  if (!(await page.locator('canvas').count()) || (await page.locator('.case-error').count())) {
+    failures.push('V1 archive snapshot did not start: ' + url)
+  }
+})
+
+await open('archive/snapshot/?experience=resonance-flagship&quality=high&motion=full', async (url) => {
+  if (!(await page.locator('canvas').count())) failures.push('capability snapshot did not start: ' + url)
 })
 
 for (const experience of ['resonance-flagship', 'tidal-archive', 'chromatic-tide']) {
