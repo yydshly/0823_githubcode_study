@@ -13,7 +13,7 @@
 | Kindergrimm | 确定性童话风格的 2D、程序化 3D 与游戏场景素材研究 | 暂时归档 | [研究记录](projects/kindergrimm/README.md) | [能力展示](https://yydshly.github.io/0823_githubcode_study/projects/kindergrimm.html) |
 | Claude of Tanks | Three.js 程序化 3D、战车运行时、独立产品工作台与复用边界 | 暂时归档 | [研究记录](projects/claude-of-tanks/README.md) | [能力总览](https://yydshly.github.io/0823_githubcode_study/projects/claude-of-tanks.html) · [阶段归档](https://yydshly.github.io/0823_githubcode_study/projects/claude-of-tanks-archive.html) |
 | OpenChatCut | Agent-native 本地视频剪辑、多轨音频、字幕、MG、导出与 MCP 自动化 | 暂时归档 | [研究记录](projects/openchatcut/README.md) | 暂未发布 |
-| Kage · Idea to Experience | 自然语言目标理解、素材生成与组织、Codex 专属页面构建、Three.js 交互叙事和视觉验收 | V1 已归档，V2 研究中 | [研究记录](projects/kage/README.md) | [项目入口](https://yydshly.github.io/0823_githubcode_study/projects/kage/) · [公开工作台](https://yydshly.github.io/0823_githubcode_study/projects/kage/workbench.html) · [V1 案例](https://yydshly.github.io/0823_githubcode_study/projects/kage/v1/) · [V2 方向](https://yydshly.github.io/0823_githubcode_study/projects/kage/v2/) |
+| Kage · Idea to Experience | 从自然语言想法到创意网页：参考案例、素材/3D/音视频、互动实现与浏览器验收 | V1/V2 阶段研究已归档 | [研究记录](projects/kage/README.md) | [完整研究归档](https://yydshly.github.io/0823_githubcode_study/projects/kage/archive/) · [项目入口](https://yydshly.github.io/0823_githubcode_study/projects/kage/) · [公开工作台](https://yydshly.github.io/0823_githubcode_study/projects/kage/workbench.html) · [V1 案例](https://yydshly.github.io/0823_githubcode_study/projects/kage/v1/) · [V2 研究界面](https://yydshly.github.io/0823_githubcode_study/projects/kage/v2/) |
 | Reverse Skill | AI 安全 Skill 路由、工具平面、证据闭环、44 个 Skill 能力与逆向/安全知识地图 | 本阶段完成 | [研究记录](projects/reverse-skill/README.md) | [架构地图](https://yydshly.github.io/0823_githubcode_study/projects/reverse-skill.html) |
 | BabelDOC | 版式保真的 PDF 翻译能力与使用边界 | 按需使用 | [使用评估](projects/babeldoc/README.md) | 暂不发布 |
 | Nanobrowser | 浏览器 Agent 的状态建模、结构化动作、规划执行闭环与工程边界 | 轻量评估后归档 | [研究记录](projects/nanobrowser/README.md) | 暂不发布 |
@@ -21,14 +21,16 @@
 | Apache Superset | 数据库之上的 BI、查询管理、权限治理与仪表盘展示平台 | 轻量评估后归档 | [使用评估](projects/apache-superset/README.md) | 暂不发布 |
 | Calibre-Web | Calibre 书库之上的 Web 管理、在线阅读与设备分发层；不提供书籍正文数据源 | 轻量评估后归档 | [使用评估](projects/calibre-web/README.md) | 暂不发布 |
 
-## Kage：从想法到专属 Three.js 网页
+## Kage：从想法到优秀创意网页的阶段研究
 
-Kage 研究已经从“拆解一个 Three.js 作品”推进为一条可运行的创作链路：用户描述希望表达的对象、受众、氛围和变化，系统分析目标，按需生成或选择素材，再由 Codex 构建独立网页，并通过真实浏览器检查滚动、鼠标、移动端、素材使用和最终视觉结果。
+Kage 探索的核心问题是：如何让用户的一句话想法，在优秀网页案例、素材、3D、声音、视频、动画与真实互动的帮助下，变成符合主题和情绪价值的完整网页产品。本阶段已经完成从目标理解、参考选择、素材组织、Codex 直接构建到真实浏览器验收的研究闭环，并以独立只读站点完整归档。
 
-- **V1** 冻结当前完整能力与六个最终案例，同时公开三个工作台内置效果样例。
-- **公开工作台** 可直接输入想法并运行确定性生成与 Three.js 预览；Codex/MiniMax 专属构建需要本机服务。
-- **V2** 基于 V1 的稳定运行时继续开发，但拥有独立入口；重点用优秀参考、创意合同、素材职责和有上限的精修减少模型盲目探索。
-- 项目以最终网页效果为判断标准，不限制为基础几何、固定模板或单一 Three.js 表现形式。
+- **完整研究归档** 收录 58 个可直接查看的案例（35 个 V2 交付、20 个 V1 精选/精修案例、3 个能力基准），并保留 98 条生成历史、151 份研究文档和 33 组验收证据；每个案例均有对应封面、运行入口和源码入口。
+- **已验证能力** 包括 Three.js/WebGL、Canvas/SVG、声音与媒体、生成或真实素材、滚动/指针/状态互动、移动端适配、浏览器证据和独立案例归档。
+- **阶段结论** 是运行与交付基础已成立，但仅靠不断增加规则和案例指导，尚不能稳定地优于强模型直接创作；因此当前版本停止继续堆叠约束，如实归档研究成果与边界。
+- **既有入口保持独立**：项目入口、公开工作台、V1 案例和 V2 研究界面均继续保留，归档站不会覆盖这些已发布版本。
+
+查看：[完整研究归档](https://yydshly.github.io/0823_githubcode_study/projects/kage/archive/) · [项目入口](https://yydshly.github.io/0823_githubcode_study/projects/kage/) · [公开工作台](https://yydshly.github.io/0823_githubcode_study/projects/kage/workbench.html) · [V1 案例](https://yydshly.github.io/0823_githubcode_study/projects/kage/v1/) · [V2 研究界面](https://yydshly.github.io/0823_githubcode_study/projects/kage/v2/)
 
 ## 仓库结构
 

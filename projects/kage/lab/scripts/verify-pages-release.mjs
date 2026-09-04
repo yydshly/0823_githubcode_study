@@ -120,11 +120,18 @@ await open('archive/', async (url) => {
   ))
   if (!firstPreviewLoaded) failures.push('Kage research archive primary preview did not load: ' + url)
 
-  const caseUrls = await page.locator('#case-catalog [data-case-view]').evaluateAll((links) => links.map((link) => link.href))
+  const caseUrls = await page.locator('#case-catalog .case-actions [data-case-view]').evaluateAll((links) => links.map((link) => link.href))
   if (caseUrls.length !== 58) failures.push('Kage research archive is missing runnable case links: ' + url)
   const caseResponses = await Promise.all(caseUrls.map((caseUrl) => page.request.get(caseUrl)))
   for (const response of caseResponses) {
     if (!response.ok()) failures.push('archived case URL failed: ' + response.status() + ' ' + response.url())
+  }
+
+  const thumbnailUrls = await page.locator('#case-catalog .case-thumb img').evaluateAll((images) => images.map((image) => image.src))
+  if (thumbnailUrls.length !== 58) failures.push('Kage research archive is missing case covers: ' + url)
+  const thumbnailResponses = await Promise.all(thumbnailUrls.map((thumbnailUrl) => page.request.get(thumbnailUrl)))
+  for (const response of thumbnailResponses) {
+    if (!response.ok()) failures.push('archived case cover failed: ' + response.status() + ' ' + response.url())
   }
 })
 
