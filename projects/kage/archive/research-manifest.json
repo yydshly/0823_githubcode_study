@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "archiveDate": "2026-09-04",
   "sourceBranch": "codex/kage-v2-baseline-r165",
-  "sourceCommit": "26876e65790d86c337f9099a8c6fa4d52ca5303b",
+  "sourceCommit": "b17aca4cb8b9e402adf24b6a1c0864031e72a01c",
   "stats": {
     "researchDocs": 151,
     "runnableCases": 58,

@@ -76,6 +76,10 @@ function listFilesRecursive(root) {
   });
 }
 
+function readJson(path) {
+  try { return JSON.parse(readFileSync(path, 'utf8')); } catch { return null; }
+}
+
 function titleAndPromise(id) {
   const html = readFileSync(join(deliveryRoot, id, 'index.html'), 'utf8');
   const title = html.match(/<title>(.*?)<\/title>/is)?.[1]?.replace(/\s+/g, ' ').trim() ?? id;
@@ -143,21 +147,25 @@ const capabilityEntries = capabilityCases.map((item) => ({
 
 const allCases = [...cases, ...legacyCases, ...capabilityEntries];
 
-const generatedRunIds = readdirSync(generatedRunsRoot, { withFileTypes: true })
-  .filter((entry) => entry.isDirectory())
-  .map((entry) => entry.name)
-  .sort();
-const archivedPackageIds = new Set(readdirSync(caseRunsRoot, { withFileTypes: true })
-  .filter((entry) => entry.isDirectory())
-  .map((entry) => entry.name));
+const previousManifest = readJson(join(archiveRoot, 'research-manifest.json'));
+const previousHistory = Array.isArray(previousManifest?.generatedHistory) ? previousManifest.generatedHistory : [];
+const previousHistoryById = new Map(previousHistory.map((item) => [item.id, item]));
+const generatedRunIds = existsSync(generatedRunsRoot)
+  ? readdirSync(generatedRunsRoot, { withFileTypes: true })
+    .filter((entry) => entry.isDirectory())
+    .map((entry) => entry.name)
+    .sort()
+  : previousHistory.map((item) => item.id).sort();
+const archivedPackageIds = new Set(existsSync(caseRunsRoot)
+  ? readdirSync(caseRunsRoot, { withFileTypes: true })
+    .filter((entry) => entry.isDirectory())
+    .map((entry) => entry.name)
+  : previousHistory.filter((item) => item.archivedPackage).map((item) => item.id));
 const catalogCaseIds = new Set(caseCatalog.cases.map((item) => item.id));
-
-function readJson(path) {
-  try { return JSON.parse(readFileSync(path, 'utf8')); } catch { return null; }
-}
 
 const generatedHistory = generatedRunIds.map((id) => {
   const root = join(generatedRunsRoot, id);
+  if (!existsSync(root) && previousHistoryById.has(id)) return previousHistoryById.get(id);
   const report = readJson(join(root, 'build-report.json'));
   const selectedId = report?.refinement?.selectedId;
   const brief = report?.request?.brief || '';
