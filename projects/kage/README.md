@@ -9,7 +9,8 @@
 | 上游仓库 | https://github.com/MengTo/kage |
 | 固定版本 | `4399487d2fb42bce39c7b032fbbb50d230bf4f0b` |
 | 开始日期 | 2026-08-24 |
-| 当前状态 | V1 已归档并独立部署；V2 参考驱动生成研究已建立独立入口 |
+| 当前状态 | V1/V2 阶段研究已完整归档并独立部署 |
+| 完整研究归档 | [查看 58 个案例、研究历史、文档与验收证据](https://yydshly.github.io/0823_githubcode_study/projects/kage/archive/) |
 | 原版本地入口 | `http://127.0.0.1:8143/upstream/` |
 | 公开工作台入口 | [打开工作台](https://yydshly.github.io/0823_githubcode_study/projects/kage/workbench.html)（本地确定性生成；模型专属构建需本机服务） |
 | V1 Pages 入口 | [查看 V1 案例](https://yydshly.github.io/0823_githubcode_study/projects/kage/v1/) |
@@ -17,6 +18,7 @@
 
 ## 当前交付
 
+- [完整研究归档](https://yydshly.github.io/0823_githubcode_study/projects/kage/archive/) 汇总 58 个可运行案例（35 个 V2、20 个 V1、3 个能力基准）、98 条生成历史、151 份研究文档和 33 组验收证据；每个案例均提供独立封面、运行入口和源码入口。
 - V1 已证明“想法 → 素材 → Codex 专属网页 → Three.js 运行 → 视觉精修 → 最佳案例归档”的完整链路。
 - 公开工作台可直接完成“描述 → 本地生成 → Three.js 预览”，并明确区分静态演示与需要本机服务的 Codex/MiniMax 能力。
 - V1 公开演示只保留六个最终案例，失败版本和中间版本不进入公共案例库。
@@ -26,6 +28,7 @@
 
 ## 版本入口
 
+- [完整研究归档与全部可运行案例](https://yydshly.github.io/0823_githubcode_study/projects/kage/archive/)
 - [V1 归档定义](lab/docs/releases/V1-IDEA-TO-EXPERIENCE-BASELINE.md)
 - [V1 耗时、问题与 V2 约束](lab/docs/releases/V1-PERFORMANCE-AND-GAPS.md)
 - [V2 参考驱动创意合同](lab/docs/V2-REFERENCE-GUIDED-CREATIVE-CONTRACT.md)
