@@ -229,6 +229,7 @@ article > header small { color: var(--muted); font-size: 9px; }
 .verified-examples-head > p { max-width: 520px; margin: 0; color: var(--muted); font-size: 14px; line-height: 1.75; }
 .verified-example-grid { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
 .verified-example-card { min-width: 0; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); background: rgba(246,248,242,.48); transition: background .22s ease, color .22s ease; }
+.verified-example-card[hidden] { display: none; }
 .verified-example-card--delivery { grid-column: span 3; display: grid; grid-template-columns: 1.08fr .92fr; }
 .verified-example-card:not(.verified-example-card--delivery) { grid-column: span 2; }
 .verified-example-card:hover,

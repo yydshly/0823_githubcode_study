@@ -16,6 +16,8 @@
     "test:r171": "vitest run tests/v2-r171-stage-closure.test.ts tests/v2-creative-quality-guidance.test.ts tests/v2-creative-capability-registry.test.ts tests/v2-direct-creative-orchestrator.test.ts tests/v2-r169-kage-feeling-lens.test.ts tests/v2-r170-creative-shape-regression.test.ts",
     "test:browser:r171": "playwright test e2e/v2-r171-stage-closure.spec.ts",
     "verify:r171": "npm run test:r171 && npx tsc --noEmit && npm run build:pages && npm run test:browser:r171",
+    "test:browser:r171a": "playwright test e2e/v2-r171a-thumbnail-visibility.spec.ts",
+    "verify:r171a": "npx tsc --noEmit && npm run build:pages && npm run test:browser:r171a",
     "test:browser": "playwright test",
     "test:r137": "vitest run tests/v2-r137-fox-gait-contract.test.ts tests/v2-r137-fox-gait-evidence.test.ts",
     "test:browser:r137": "playwright test e2e/v2-r137-fox-gait-observatory-delivery.spec.ts",

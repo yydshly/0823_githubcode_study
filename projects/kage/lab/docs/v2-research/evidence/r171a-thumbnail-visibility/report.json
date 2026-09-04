@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "stage": "r171a-thumbnail-visibility",
+  "browser": "local Chrome via Playwright",
+  "freshEvidence": true,
+  "steps": [
+    {
+      "id": "desktop-bounded-archive",
+      "health": "healthy",
+      "capture": "01-desktop-archive.png"
+    },
+    {
+      "id": "mobile-bounded-archive",
+      "health": "healthy",
+      "capture": "02-mobile-archive.png"
+    }
+  ],
+  "assertions": {
+    "retiredCardsAreHidden": true,
+    "visibleArchiveCount": 12,
+    "visibleImagesDecoded": true,
+    "horizontalOverflow": false
+  },
+  "issues": {
+    "pageErrors": [],
+    "consoleErrors": [],
+    "requestFailures": []
+  },
+  "complete": true
+}
