@@ -96,6 +96,28 @@ await open('v2/', async (url) => {
   }
 })
 
+await open('archive/', async (url) => {
+  await page.waitForSelector('#case-catalog .case-row', { timeout: 10_000 })
+  if (!(await page.getByRole('heading', { name: /归档/ }).count())) {
+    failures.push('missing Kage research archive heading: ' + url)
+  }
+  if ((await page.locator('#case-catalog .case-row').count()) !== 35) {
+    failures.push('Kage research archive does not expose 35 delivery cases: ' + url)
+  }
+  if ((await page.locator('#document-list .document-row').count()) !== 151) {
+    failures.push('Kage research archive does not expose 151 research documents: ' + url)
+  }
+  await page.locator('#featured-cases').scrollIntoViewIfNeeded()
+  await page.waitForFunction(() => {
+    const image = document.querySelector('#featured-cases img')
+    return image instanceof HTMLImageElement && image.complete && image.naturalWidth > 0
+  })
+  const firstPreviewLoaded = await page.locator('#featured-cases img').first().evaluate((image) => (
+    image instanceof HTMLImageElement && image.complete && image.naturalWidth > 0
+  ))
+  if (!firstPreviewLoaded) failures.push('Kage research archive primary preview did not load: ' + url)
+})
+
 for (const experience of ['resonance-flagship', 'tidal-archive', 'chromatic-tide']) {
   await open('v1/showcase/?experience=' + experience + '&quality=high&motion=full', async (url) => {
     const activeExperience = await page.locator('body').getAttribute('data-experience')
@@ -129,6 +151,15 @@ await open('workbench.html', async (url) => {
   if (overflow) failures.push('mobile workbench has horizontal overflow: ' + url)
   if (!(await page.locator('#generate').isVisible()) || !(await page.locator('#public-workbench-note').isVisible())) {
     failures.push('mobile workbench is missing its primary action or public boundary: ' + url)
+  }
+})
+
+await open('archive/', async (url) => {
+  await page.waitForSelector('#case-catalog .case-row', { timeout: 10_000 })
+  const overflow = await page.evaluate(() => document.documentElement.scrollWidth > document.documentElement.clientWidth)
+  if (overflow) failures.push('mobile Kage research archive has horizontal overflow: ' + url)
+  if ((await page.locator('#featured-cases .featured-card').count()) < 6) {
+    failures.push('mobile Kage research archive is missing featured evidence: ' + url)
   }
 })
 
