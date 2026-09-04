@@ -58,6 +58,9 @@ function renderCases() {
   $('#case-catalog').innerHTML = cases.length ? cases.map((item, index) => `
     <article class="case-row">
       <span>${String(index + 1).padStart(2, '0')}</span>
+      <a class="case-thumb" data-case-view href="${esc(item.viewUrl)}" aria-label="查看 ${esc(item.title)}">
+        <img src="./assets/${encodeURI(item.thumbnail)}" alt="${esc(item.title)} 案例封面" loading="lazy" />
+      </a>
       <div><h3>${esc(item.title)}</h3><p>${esc(item.tierLabel)} · ${esc(item.medium)}<br />${esc(item.promise)}</p></div>
       <div class="case-actions"><a data-case-view href="${esc(item.viewUrl)}">查看案例 ↗</a><a href="${esc(item.sourceUrl)}" target="_blank" rel="noreferrer">源码</a></div>
     </article>`).join('') : '<p class="empty">没有匹配的案例。</p>';

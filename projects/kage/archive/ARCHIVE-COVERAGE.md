@@ -29,3 +29,19 @@
 | 归档双入口 | 案例与源码入口分离 | 桌面 / 移动 | 58 个 `data-case-view` 与独立源码链接 | Stage 3/4 | pass | 已更新归档 UI |
 | 浏览器验收 | 桌面和 390px 可用 | 归档、V1、V2、能力基准 | Playwright 2/2；代表 V1/V2/能力页运行 | Stage 7 | pass | 已完成真实浏览器验证 |
 | 独立部署 | 不覆盖旧 V1/V2 | GitHub Pages | Actions run `33868191438` 全部通过；归档、58 个查看入口及代表 V1/V2/能力页在线验收 | Stage 9 | pass | 已完成独立发布 |
+
+## R175：封面与外层 README 补全
+
+- Entry mode: Revision-led / archive presentation completion
+- Request revision: R175 visual covers and repository entry
+- Primary journey: 从仓库 README 了解 KAGE 已归档状态 → 进入独立归档 → 通过封面识别案例 → 打开案例
+- Visual constraints: 保留现有归档视觉语言；封面来自对应可运行案例，不使用无关占位图
+- Environment constraints: 继续发布到独立 `/projects/kage/archive/`；不覆盖 V1、V2 或工作台
+- Autonomy authorization: 用户已要求直接增加并关联外层 README
+- Observable completion criteria: 58 个案例均有对应封面；桌面和 390px 目录无溢出；根 README 准确描述归档结论、规模和入口；远端 Pages 可查看
+
+| 用户阶段 | 要求 | 表面 / 状态 | 证据 | 阶段 | 状态 | 下一动作 |
+| --- | --- | --- | --- | --- | --- | --- |
+| 第一 | 增加案例封面 | 58 个案例目录项 | 58/58 对应运行页截图；图片请求与 DOM 数量通过；浏览器视觉检查通过 | Stage 2/3/7 | pass | 已完成 |
+| 第二 | 外部 README 描述与关联 | 仓库根 README | 项目索引、项目说明、归档链接 | Stage 9 | continue | 在干净主分支工作区更新 |
+| 验收 | 不影响旧部署且远端可查看 | 桌面、390px、V1/V2/工作台 | Playwright、构建、Actions | Stage 7/9 | continue | 发布后执行远端验收 |

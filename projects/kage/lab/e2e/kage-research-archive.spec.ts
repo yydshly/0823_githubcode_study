@@ -3,6 +3,8 @@ import { expect, test } from '@playwright/test';
 const archiveUrl = process.env.KAGE_ARCHIVE_URL
   ?? 'http://127.0.0.1:8148/projects/kage/archive/';
 
+test.setTimeout(120_000);
+
 test('KAGE independent research archive is complete, viewable, and usable', async ({ page, context }) => {
   const failures: string[] = [];
   page.on('pageerror', (error) => failures.push(`pageerror: ${error.message}`));
@@ -22,7 +24,9 @@ test('KAGE independent research archive is complete, viewable, and usable', asyn
   await expect(page.locator('[data-stat="historyRuns"]').first()).toHaveText('98');
   await expect(page.locator('[data-stat="evidenceRuns"]').first()).toHaveText('33');
   await expect(page.locator('#case-catalog .case-row')).toHaveCount(58);
-  await expect(page.locator('#case-catalog [data-case-view]')).toHaveCount(58);
+  await expect(page.locator('#case-catalog .case-actions [data-case-view]')).toHaveCount(58);
+  await expect(page.locator('#case-catalog .case-thumb')).toHaveCount(58);
+  await expect(page.locator('#case-catalog .case-thumb img')).toHaveCount(58);
   await expect(page.locator('#history-list .history-row')).toHaveCount(98);
   await expect(page.locator('#document-list .document-row')).toHaveCount(151);
   await expect(page.locator('#featured-cases .featured-card')).toHaveCount(9);
@@ -46,11 +50,17 @@ test('KAGE independent research archive is complete, viewable, and usable', asyn
 
   await page.locator('#case-filter').selectOption('all');
   await page.locator('#case-search').fill('');
-  const viewLinks = await page.locator('#case-catalog [data-case-view]').evaluateAll((links) => links.map((link) => (
+  const viewLinks = await page.locator('#case-catalog .case-actions [data-case-view]').evaluateAll((links) => links.map((link) => (
     link instanceof HTMLAnchorElement ? link.href : ''
   )));
   const responses = await Promise.all(viewLinks.map((url) => page.request.get(url)));
   expect(responses.filter((response) => !response.ok()).map((response) => `${response.status()} ${response.url()}`)).toEqual([]);
+
+  const thumbnailLinks = await page.locator('#case-catalog .case-thumb img').evaluateAll((images) => images.map((image) => (
+    image instanceof HTMLImageElement ? image.src : ''
+  )));
+  const thumbnailResponses = await Promise.all(thumbnailLinks.map((url) => page.request.get(url)));
+  expect(thumbnailResponses.filter((response) => !response.ok()).map((response) => `${response.status()} ${response.url()}`)).toEqual([]);
 
   const preview = await context.newPage();
   await preview.goto(new URL('./snapshot/pages/v2/deliveries/kage-opening-rehearsal/', archiveUrl).href, { waitUntil: 'domcontentloaded' });

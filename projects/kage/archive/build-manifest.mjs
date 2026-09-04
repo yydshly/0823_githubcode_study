@@ -116,6 +116,7 @@ const cases = deliveryIds.map((id) => {
     tierLabel,
     medium: mediumById[id] ?? '混合媒介',
     image: imageById[id] ?? null,
+    thumbnail: `cases/${id}.jpg`,
     caseKind: 'v2-delivery',
     viewUrl: `./snapshot/pages/v2/deliveries/${id}/`,
     sourceUrl: `${treeBase}/pages/v2/deliveries/${id}`
@@ -131,6 +132,7 @@ const legacyCases = caseCatalog.cases.map((item) => ({
   tierLabel: item.stage === 'featured' ? 'V1 精选案例' : 'V1 研究案例',
   medium: (item.tags || []).slice(0, 4).join(' / ') || 'V1 混合媒介',
   image: null,
+  thumbnail: `cases/${item.id}.jpg`,
   caseKind: 'v1-archive',
   viewUrl: `./snapshot/pages/v1/case.html?id=${encodeURIComponent(item.id)}&quality=high&motion=full`,
   sourceUrl: `${treeBase}/cases/runs/${item.id}`
@@ -141,6 +143,7 @@ const capabilityEntries = capabilityCases.map((item) => ({
   tier: 'baseline',
   tierLabel: '能力基准',
   image: null,
+  thumbnail: `cases/${item.id}.jpg`,
   caseKind: 'capability-demo',
   sourceUrl: `${sourceBase}/src/cases-main.ts`
 }));

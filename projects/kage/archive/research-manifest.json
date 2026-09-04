@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "archiveDate": "2026-09-04",
   "sourceBranch": "codex/kage-v2-baseline-r165",
-  "sourceCommit": "b17aca4cb8b9e402adf24b6a1c0864031e72a01c",
+  "sourceCommit": "a57f9fc9cc1c5f9f805fa02ecf6a4c9c40a232b6",
   "stats": {
     "researchDocs": 151,
     "runnableCases": 58,
@@ -148,6 +148,7 @@
       "tierLabel": "阶段研究案例",
       "medium": "图像 / 气味档案",
       "image": null,
+      "thumbnail": "cases/after-rain-archive.jpg",
       "caseKind": "v2-delivery",
       "viewUrl": "./snapshot/pages/v2/deliveries/after-rain-archive/",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/after-rain-archive"
@@ -160,6 +161,7 @@
       "tierLabel": "阶段研究案例",
       "medium": "图像 / 声音",
       "image": null,
+      "thumbnail": "cases/aurora-radio-postcard.jpg",
       "caseKind": "v2-delivery",
       "viewUrl": "./snapshot/pages/v2/deliveries/aurora-radio-postcard/",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/aurora-radio-postcard"
@@ -172,6 +174,7 @@
       "tierLabel": "阶段研究案例",
       "medium": "DOM / 分支互动",
       "image": null,
+      "thumbnail": "cases/color-relay-branching.jpg",
       "caseKind": "v2-delivery",
       "viewUrl": "./snapshot/pages/v2/deliveries/color-relay-branching/",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/color-relay-branching"
@@ -184,6 +187,7 @@
       "tierLabel": "阶段研究案例",
       "medium": "生成图像 / 滚动",
       "image": "dream-record.jpg",
+      "thumbnail": "cases/dream-record.jpg",
       "caseKind": "v2-delivery",
       "viewUrl": "./snapshot/pages/v2/deliveries/dream-record/",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/dream-record"
@@ -196,6 +200,7 @@
       "tierLabel": "协议验证交付",
       "medium": "生成图像 / 状态",
       "image": null,
+      "thumbnail": "cases/eclipse-post-office.jpg",
       "caseKind": "v2-delivery",
       "viewUrl": "./snapshot/pages/v2/deliveries/eclipse-post-office/",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/eclipse-post-office"
@@ -208,6 +213,7 @@
       "tierLabel": "协议验证交付",
       "medium": "SVG / 路径判断",
       "image": null,
+      "thumbnail": "cases/film-camera-repair-paths.jpg",
       "caseKind": "v2-delivery",
       "viewUrl": "./snapshot/pages/v2/deliveries/film-camera-repair-paths/",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/film-camera-repair-paths"
@@ -220,6 +226,7 @@
       "tierLabel": "体验能力参考",
       "medium": "生成图像 / 连续状态",
       "image": "folded-light-studio.png",
+      "thumbnail": "cases/folded-light-studio.jpg",
       "caseKind": "v2-delivery",
       "viewUrl": "./snapshot/pages/v2/deliveries/folded-light-studio/",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/folded-light-studio"
@@ -232,6 +239,7 @@
       "tierLabel": "体验能力参考",
       "medium": "图像 / 空间声音",
       "image": "forest-sound-route.png",
+      "thumbnail": "cases/forest-sound-route.jpg",
       "caseKind": "v2-delivery",
       "viewUrl": "./snapshot/pages/v2/deliveries/forest-sound-route/",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/forest-sound-route"
@@ -244,6 +252,7 @@
       "tierLabel": "协议验证交付",
       "medium": "Three.js / 3D",
       "image": "fox-gait-observatory.png",
+      "thumbnail": "cases/fox-gait-observatory.jpg",
       "caseKind": "v2-delivery",
       "viewUrl": "./snapshot/pages/v2/deliveries/fox-gait-observatory/",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/fox-gait-observatory"
@@ -256,6 +265,7 @@
       "tierLabel": "协议验证交付",
       "medium": "DOM / 工具",
       "image": null,
+      "thumbnail": "cases/fridge-tonight.jpg",
       "caseKind": "v2-delivery",
       "viewUrl": "./snapshot/pages/v2/deliveries/fridge-tonight/",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/fridge-tonight"
@@ -268,6 +278,7 @@
       "tierLabel": "体验能力参考",
       "medium": "生成图像 / 滚动叙事",
       "image": null,
+      "thumbnail": "cases/ice-core-letters.jpg",
       "caseKind": "v2-delivery",
       "viewUrl": "./snapshot/pages/v2/deliveries/ice-core-letters/",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/ice-core-letters"
@@ -280,6 +291,7 @@
       "tierLabel": "正式产品回执",
       "medium": "正式素材 / 产品流程",
       "image": null,
+      "thumbnail": "cases/kage-creative-director.jpg",
       "caseKind": "v2-delivery",
       "viewUrl": "./snapshot/pages/v2/deliveries/kage-creative-director/",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/kage-creative-director"
@@ -292,6 +304,7 @@
       "tierLabel": "正式产品回执",
       "medium": "正式素材 / 情绪交互",
       "image": null,
+      "thumbnail": "cases/kage-feeling-lens.jpg",
       "caseKind": "v2-delivery",
       "viewUrl": "./snapshot/pages/v2/deliveries/kage-feeling-lens/",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/kage-feeling-lens"
@@ -304,6 +317,7 @@
       "tierLabel": "正式产品回执",
       "medium": "正式素材 / 声音 / 连续场景",
       "image": "kage-opening-rehearsal.png",
+      "thumbnail": "cases/kage-opening-rehearsal.jpg",
       "caseKind": "v2-delivery",
       "viewUrl": "./snapshot/pages/v2/deliveries/kage-opening-rehearsal/",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/kage-opening-rehearsal"
@@ -316,6 +330,7 @@
       "tierLabel": "阶段研究案例",
       "medium": "Canvas / 动作",
       "image": null,
+      "thumbnail": "cases/kinetic-score.jpg",
       "caseKind": "v2-delivery",
       "viewUrl": "./snapshot/pages/v2/deliveries/kinetic-score/",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/kinetic-score"
@@ -328,6 +343,7 @@
       "tierLabel": "体验能力参考",
       "medium": "SVG 蒙版 / Canvas",
       "image": null,
+      "thumbnail": "cases/lighthouse-chart-reveal.jpg",
       "caseKind": "v2-delivery",
       "viewUrl": "./snapshot/pages/v2/deliveries/lighthouse-chart-reveal/",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/lighthouse-chart-reveal"
@@ -340,6 +356,7 @@
       "tierLabel": "协议验证交付",
       "medium": "Three.js / 声音",
       "image": null,
+      "thumbnail": "cases/modular-room-sound.jpg",
       "caseKind": "v2-delivery",
       "viewUrl": "./snapshot/pages/v2/deliveries/modular-room-sound/",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/modular-room-sound"
@@ -352,6 +369,7 @@
       "tierLabel": "体验能力参考",
       "medium": "宽幅图像 / 横向导航",
       "image": null,
+      "thumbnail": "cases/moonlit-tidepool-panorama.jpg",
       "caseKind": "v2-delivery",
       "viewUrl": "./snapshot/pages/v2/deliveries/moonlit-tidepool-panorama/",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/moonlit-tidepool-panorama"
@@ -364,6 +382,7 @@
       "tierLabel": "阶段研究案例",
       "medium": "图像 / 比较工具",
       "image": "night-reflective-catalog.png",
+      "thumbnail": "cases/night-reflective-catalog.jpg",
       "caseKind": "v2-delivery",
       "viewUrl": "./snapshot/pages/v2/deliveries/night-reflective-catalog/",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/night-reflective-catalog"
@@ -376,6 +395,7 @@
       "tierLabel": "阶段研究案例",
       "medium": "图像 / 趣味空间",
       "image": "paper-butterfly-garden.jpg",
+      "thumbnail": "cases/paper-butterfly-garden.jpg",
       "caseKind": "v2-delivery",
       "viewUrl": "./snapshot/pages/v2/deliveries/paper-butterfly-garden/",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/paper-butterfly-garden"
@@ -388,6 +408,7 @@
       "tierLabel": "体验能力参考",
       "medium": "生成图像 / WebGL",
       "image": null,
+      "thumbnail": "cases/prism-seed-theatre.jpg",
       "caseKind": "v2-delivery",
       "viewUrl": "./snapshot/pages/v2/deliveries/prism-seed-theatre/",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/prism-seed-theatre"
@@ -400,6 +421,7 @@
       "tierLabel": "正式产品回执",
       "medium": "正式素材 / 路径记录",
       "image": null,
+      "thumbnail": "cases/rainlight-walk-recorder.jpg",
       "caseKind": "v2-delivery",
       "viewUrl": "./snapshot/pages/v2/deliveries/rainlight-walk-recorder/",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/rainlight-walk-recorder"
@@ -412,6 +434,7 @@
       "tierLabel": "阶段研究案例",
       "medium": "SVG / 数据路线",
       "image": null,
+      "thumbnail": "cases/roof-water-route.jpg",
       "caseKind": "v2-delivery",
       "viewUrl": "./snapshot/pages/v2/deliveries/roof-water-route/",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/roof-water-route"
@@ -424,6 +447,7 @@
       "tierLabel": "协议验证交付",
       "medium": "生成图像 / 共同状态",
       "image": null,
+      "thumbnail": "cases/same-table-tonight.jpg",
       "caseKind": "v2-delivery",
       "viewUrl": "./snapshot/pages/v2/deliveries/same-table-tonight/",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/same-table-tonight"
@@ -436,6 +460,7 @@
       "tierLabel": "体验能力参考",
       "medium": "Three.js / 声音 / 数据",
       "image": null,
+      "thumbnail": "cases/sea-fiber-scope.jpg",
       "caseKind": "v2-delivery",
       "viewUrl": "./snapshot/pages/v2/deliveries/sea-fiber-scope/",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/sea-fiber-scope"
@@ -448,6 +473,7 @@
       "tierLabel": "阶段研究案例",
       "medium": "编辑排版 / 手势",
       "image": null,
+      "thumbnail": "cases/sign-language-season.jpg",
       "caseKind": "v2-delivery",
       "viewUrl": "./snapshot/pages/v2/deliveries/sign-language-season/",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/sign-language-season"
@@ -460,6 +486,7 @@
       "tierLabel": "体验能力参考",
       "medium": "WebGL / 音频频谱",
       "image": null,
+      "thumbnail": "cases/sonic-pressing-room.jpg",
       "caseKind": "v2-delivery",
       "viewUrl": "./snapshot/pages/v2/deliveries/sonic-pressing-room/",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/sonic-pressing-room"
@@ -472,6 +499,7 @@
       "tierLabel": "体验能力参考",
       "medium": "Shader / 分支状态",
       "image": "stormglass-archive.png",
+      "thumbnail": "cases/stormglass-archive.jpg",
       "caseKind": "v2-delivery",
       "viewUrl": "./snapshot/pages/v2/deliveries/stormglass-archive/",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/stormglass-archive"
@@ -484,6 +512,7 @@
       "tierLabel": "协议验证交付",
       "medium": "Web Audio / 工具",
       "image": "ten-second-callsign-decode.png",
+      "thumbnail": "cases/ten-second-callsign-decode.jpg",
       "caseKind": "v2-delivery",
       "viewUrl": "./snapshot/pages/v2/deliveries/ten-second-callsign-decode/",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/ten-second-callsign-decode"
@@ -496,6 +525,7 @@
       "tierLabel": "阶段研究案例",
       "medium": "Three.js / 材质",
       "image": null,
+      "thumbnail": "cases/thin-film-lab.jpg",
       "caseKind": "v2-delivery",
       "viewUrl": "./snapshot/pages/v2/deliveries/thin-film-lab/",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/thin-film-lab"
@@ -508,6 +538,7 @@
       "tierLabel": "体验能力参考",
       "medium": "图像 / 编辑 / 声音",
       "image": null,
+      "thumbnail": "cases/thunderhead-score.jpg",
       "caseKind": "v2-delivery",
       "viewUrl": "./snapshot/pages/v2/deliveries/thunderhead-score/",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/thunderhead-score"
@@ -520,6 +551,7 @@
       "tierLabel": "体验能力参考",
       "medium": "Three.js / 结构生成",
       "image": null,
+      "thumbnail": "cases/weave-light-field.jpg",
       "caseKind": "v2-delivery",
       "viewUrl": "./snapshot/pages/v2/deliveries/weave-light-field/",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/weave-light-field"
@@ -532,6 +564,7 @@
       "tierLabel": "协议验证交付",
       "medium": "真实地点 / 横向全景",
       "image": null,
+      "thumbnail": "cases/west-bund-meeting-points.jpg",
       "caseKind": "v2-delivery",
       "viewUrl": "./snapshot/pages/v2/deliveries/west-bund-meeting-points/",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/west-bund-meeting-points"
@@ -544,6 +577,7 @@
       "tierLabel": "阶段研究案例",
       "medium": "Canvas / 风场工具",
       "image": null,
+      "thumbnail": "cases/wind-kite-lab.jpg",
       "caseKind": "v2-delivery",
       "viewUrl": "./snapshot/pages/v2/deliveries/wind-kite-lab/",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/wind-kite-lab"
@@ -556,6 +590,7 @@
       "tierLabel": "体验能力参考",
       "medium": "生成图像 / 运行时旅程",
       "image": null,
+      "thumbnail": "cases/windborne-letter-valley.jpg",
       "caseKind": "v2-delivery",
       "viewUrl": "./snapshot/pages/v2/deliveries/windborne-letter-valley/",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/windborne-letter-valley"
@@ -568,6 +603,7 @@
       "tierLabel": "V1 精选案例",
       "medium": "model-generated / fashion / alpha-cutout / borderless-field",
       "image": null,
+      "thumbnail": "cases/dedicated-ba4e9d10caaa-depth-field.jpg",
       "caseKind": "v1-archive",
       "viewUrl": "./snapshot/pages/v1/case.html?id=dedicated-ba4e9d10caaa-depth-field&quality=high&motion=full",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/cases/runs/dedicated-ba4e9d10caaa-depth-field"
@@ -580,6 +616,7 @@
       "tierLabel": "V1 精选案例",
       "medium": "Three.js / 模型生成素材 / 资产叙事 / 滚动转化",
       "image": null,
+      "thumbnail": "cases/dedicated-r36-delivery-final.jpg",
       "caseKind": "v1-archive",
       "viewUrl": "./snapshot/pages/v1/case.html?id=dedicated-r36-delivery-final&quality=high&motion=full",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/cases/runs/dedicated-r36-delivery-final"
@@ -592,6 +629,7 @@
       "tierLabel": "V1 精选案例",
       "medium": "智能声音 / ChatGPT素材 / Codex 5.6-sol / Three.js",
       "image": null,
+      "thumbnail": "cases/dedicated-1edb98865f4c.jpg",
       "caseKind": "v1-archive",
       "viewUrl": "./snapshot/pages/v1/case.html?id=dedicated-1edb98865f4c&quality=high&motion=full",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/cases/runs/dedicated-1edb98865f4c"
@@ -604,6 +642,7 @@
       "tierLabel": "V1 研究案例",
       "medium": "梦境记录 / 连续空间 / Three.js / 滚动叙事",
       "image": null,
+      "thumbnail": "cases/dedicated-8574ee46ab16.jpg",
       "caseKind": "v1-archive",
       "viewUrl": "./snapshot/pages/v1/case.html?id=dedicated-8574ee46ab16&quality=high&motion=full",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/cases/runs/dedicated-8574ee46ab16"
@@ -616,6 +655,7 @@
       "tierLabel": "V1 精选案例",
       "medium": "v2 / paper-restoration / continuity / scroll-narrative",
       "image": null,
+      "thumbnail": "cases/dedicated-7c944e0c386f.jpg",
       "caseKind": "v1-archive",
       "viewUrl": "./snapshot/pages/v1/case.html?id=dedicated-7c944e0c386f&quality=high&motion=full",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/cases/runs/dedicated-7c944e0c386f"
@@ -628,6 +668,7 @@
       "tierLabel": "V1 研究案例",
       "medium": "V2 / 受约束生成 / 语义交互 / 滚动叙事",
       "image": null,
+      "thumbnail": "cases/dedicated-ef118f0f4962.jpg",
       "caseKind": "v1-archive",
       "viewUrl": "./snapshot/pages/v1/case.html?id=dedicated-ef118f0f4962&quality=high&motion=full",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/cases/runs/dedicated-ef118f0f4962"
@@ -640,6 +681,7 @@
       "tierLabel": "V1 研究案例",
       "medium": "asset-driven / rain-window / product-story / threejs",
       "image": null,
+      "thumbnail": "cases/dedicated-1b9f0b05107b.jpg",
       "caseKind": "v1-archive",
       "viewUrl": "./snapshot/pages/v1/case.html?id=dedicated-1b9f0b05107b&quality=high&motion=full",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/cases/runs/dedicated-1b9f0b05107b"
@@ -652,6 +694,7 @@
       "tierLabel": "V1 精选案例",
       "medium": "V2 / 夜风 / 物理响应 / 窗边装置",
       "image": null,
+      "thumbnail": "cases/dedicated-191bc3ce2125.jpg",
       "caseKind": "v1-archive",
       "viewUrl": "./snapshot/pages/v1/case.html?id=dedicated-191bc3ce2125&quality=high&motion=full",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/cases/runs/dedicated-191bc3ce2125"
@@ -664,6 +707,7 @@
       "tierLabel": "V1 研究案例",
       "medium": "V2 / 真实地域证据 / OpenStreetMap / Three.js",
       "image": null,
+      "thumbnail": "cases/dedicated-c0514ddead80.jpg",
       "caseKind": "v1-archive",
       "viewUrl": "./snapshot/pages/v1/case.html?id=dedicated-c0514ddead80&quality=high&motion=full",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/cases/runs/dedicated-c0514ddead80"
@@ -676,6 +720,7 @@
       "tierLabel": "V1 研究案例",
       "medium": "天文观测站 / 云海 / 透明穹顶 / 星图",
       "image": null,
+      "thumbnail": "cases/dedicated-896cfb7e6657.jpg",
       "caseKind": "v1-archive",
       "viewUrl": "./snapshot/pages/v1/case.html?id=dedicated-896cfb7e6657&quality=high&motion=full",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/cases/runs/dedicated-896cfb7e6657"
@@ -688,6 +733,7 @@
       "tierLabel": "V1 研究案例",
       "medium": "榫卯 / 状态素材 / 同一主体 / 滚动装配",
       "image": null,
+      "thumbnail": "cases/dedicated-mortise-final-r65.jpg",
       "caseKind": "v1-archive",
       "viewUrl": "./snapshot/pages/v1/case.html?id=dedicated-mortise-final-r65&quality=high&motion=full",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/cases/runs/dedicated-mortise-final-r65"
@@ -700,6 +746,7 @@
       "tierLabel": "V1 研究案例",
       "medium": "产品叙事 / 四状态素材 / 明亮编辑 / 滚动展开",
       "image": null,
+      "thumbnail": "cases/dedicated-lantern-final-r65.jpg",
       "caseKind": "v1-archive",
       "viewUrl": "./snapshot/pages/v1/case.html?id=dedicated-lantern-final-r65&quality=high&motion=full",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/cases/runs/dedicated-lantern-final-r65"
@@ -712,6 +759,7 @@
       "tierLabel": "V1 研究案例",
       "medium": "城市档案 / 年代选择 / 同一地点 / 连续素材",
       "image": null,
+      "thumbnail": "cases/dedicated-76102bb2158c.jpg",
       "caseKind": "v1-archive",
       "viewUrl": "./snapshot/pages/v1/case.html?id=dedicated-76102bb2158c&quality=high&motion=full",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/cases/runs/dedicated-76102bb2158c"
@@ -724,6 +772,7 @@
       "tierLabel": "V1 研究案例",
       "medium": "明亮工具页 / 程序化装配 / 故障诊断 / 语义交互",
       "image": null,
+      "thumbnail": "cases/dedicated-5694e0a3a022.jpg",
       "caseKind": "v1-archive",
       "viewUrl": "./snapshot/pages/v1/case.html?id=dedicated-5694e0a3a022&quality=high&motion=full",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/cases/runs/dedicated-5694e0a3a022"
@@ -736,6 +785,7 @@
       "tierLabel": "V1 研究案例",
       "medium": "木版套印 / 同一主体 / 五状态 / 自适应结构",
       "image": null,
+      "thumbnail": "cases/dedicated-woodblock-adaptive-r46.jpg",
       "caseKind": "v1-archive",
       "viewUrl": "./snapshot/pages/v1/case.html?id=dedicated-woodblock-adaptive-r46&quality=high&motion=full",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/cases/runs/dedicated-woodblock-adaptive-r46"
@@ -748,6 +798,7 @@
       "tierLabel": "V1 研究案例",
       "medium": "明亮界面 / 滚动推演 / 状态映射 / 素材驱动",
       "image": null,
+      "thumbnail": "cases/dedicated-53ab257bae4f.jpg",
       "caseKind": "v1-archive",
       "viewUrl": "./snapshot/pages/v1/case.html?id=dedicated-53ab257bae4f&quality=high&motion=full",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/cases/runs/dedicated-53ab257bae4f"
@@ -760,6 +811,7 @@
       "tierLabel": "V1 研究案例",
       "medium": "真实环境素材 / Three.js / 滚轮联动 / 直接控件",
       "image": null,
+      "thumbnail": "cases/dedicated-tree-canopy-final-r82.jpg",
       "caseKind": "v1-archive",
       "viewUrl": "./snapshot/pages/v1/case.html?id=dedicated-tree-canopy-final-r82&quality=high&motion=full",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/cases/runs/dedicated-tree-canopy-final-r82"
@@ -772,6 +824,7 @@
       "tierLabel": "V1 研究案例",
       "medium": "layered-2d / parallax / humidity-state / responsive",
       "image": null,
+      "thumbnail": "cases/dedicated-beed36a85788.jpg",
       "caseKind": "v1-archive",
       "viewUrl": "./snapshot/pages/v1/case.html?id=dedicated-beed36a85788&quality=high&motion=full",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/cases/runs/dedicated-beed36a85788"
@@ -784,6 +837,7 @@
       "tierLabel": "V1 精选案例",
       "medium": "真实生成素材 / 同一主体 / 滚轮联动 / 滑杆接管",
       "image": null,
+      "thumbnail": "cases/dedicated-b4d381a24320.jpg",
       "caseKind": "v1-archive",
       "viewUrl": "./snapshot/pages/v1/case.html?id=dedicated-b4d381a24320&quality=high&motion=full",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/cases/runs/dedicated-b4d381a24320"
@@ -796,6 +850,7 @@
       "tierLabel": "V1 精选案例",
       "medium": "V2 / Beta主链路 / 盲文教学 / 同一主体",
       "image": null,
+      "thumbnail": "cases/dedicated-braille-r121-repair.jpg",
       "caseKind": "v1-archive",
       "viewUrl": "./snapshot/pages/v1/case.html?id=dedicated-braille-r121-repair&quality=high&motion=full",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/cases/runs/dedicated-braille-r121-repair"
@@ -809,6 +864,7 @@
       "tier": "baseline",
       "tierLabel": "能力基准",
       "image": null,
+      "thumbnail": "cases/capability-resonance-flagship.jpg",
       "caseKind": "capability-demo",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/src/cases-main.ts"
     },
@@ -821,6 +877,7 @@
       "tier": "baseline",
       "tierLabel": "能力基准",
       "image": null,
+      "thumbnail": "cases/capability-tidal-archive.jpg",
       "caseKind": "capability-demo",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/src/cases-main.ts"
     },
@@ -833,6 +890,7 @@
       "tier": "baseline",
       "tierLabel": "能力基准",
       "image": null,
+      "thumbnail": "cases/capability-coastline-evidence.jpg",
       "caseKind": "capability-demo",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/src/cases-main.ts"
     }
