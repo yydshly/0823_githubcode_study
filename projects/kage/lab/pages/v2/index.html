@@ -12,13 +12,13 @@
     <header class="site-nav">
       <a class="brand" href="./"><span></span>KAGE / V2</a>
       <p>EFFECT-FIRST / RESEARCH-GROUNDED EXPERIENCE</p>
-      <nav aria-label="项目导航"><a href="#composer-title">直接创作</a><a href="#formal-products">正式产品</a><a href="#verified-examples">12 项能力研究</a><a href="./research/">研究与依据</a><a href="../../workbench.html">兼容实验工作台</a><a href="../v1/">V1 归档</a></nav>
+      <nav aria-label="项目导航"><a href="#composer-title">直接创作</a><a href="#formal-products">正式产品</a><a href="#effect-review-receipts">效果回执</a><a href="#verified-examples">12 项能力研究</a><a href="./research/">研究与依据</a><a href="../../workbench.html">兼容实验工作台</a><a href="../v1/">V1 归档</a></nav>
     </header>
 
     <main>
       <section class="intro">
         <div>
-          <p class="eyebrow">V2.6 MAINLINE · R171 BASELINE / R172 PRODUCT PROOF</p>
+          <p class="eyebrow">V2.6 MAINLINE · R171 BASELINE / R172 PRODUCT PROOF / R173 REVIEW RECEIPT</p>
           <h1>让创意有方向，<br /><em>仍然保持自由。</em></h1>
         </div>
         <div class="intro-copy">
@@ -666,25 +666,77 @@
         <div class="formal-product-grid" aria-live="polite"></div>
       </section>
 
+      <section class="effect-review-receipts" id="effect-review-receipts" aria-labelledby="effect-review-title">
+        <header class="review-receipt-head">
+          <div>
+            <p class="eyebrow">R173 · FINAL EXPERIENCE / ARTIFACT LOOKUP</p>
+            <h2 id="effect-review-title">看最终效果，<br />不看生成承诺。</h2>
+          </div>
+          <p>每份回执同时展示终稿画面、体验判断、浏览器事实和最终身份。代码一旦改变，<code>runId + bundleHash</code> 不再匹配，旧结论就不能继续代表新版本。</p>
+        </header>
+
+        <div class="review-receipt-workspace" data-review-state="ready">
+          <aside class="review-receipt-index" aria-label="正式产品回执">
+            <label for="review-receipt-query">按名称、runId 或 bundleHash 查找</label>
+            <input id="review-receipt-query" type="search" autocomplete="off" placeholder="例如：开场排练室 / direct-r172" />
+            <div class="review-receipt-list" role="listbox" aria-label="效果评审回执列表"></div>
+            <p class="review-receipt-empty" role="status" hidden>没有找到对应产物。清空关键词即可回到全部正式产品。</p>
+          </aside>
+
+          <article class="review-receipt-detail" aria-live="polite">
+            <figure class="review-receipt-visual">
+              <img id="review-receipt-image" src="" alt="" width="1440" height="900" />
+              <figcaption><span id="review-receipt-status">CURRENT · PASS</span><strong id="review-receipt-score"></strong></figcaption>
+            </figure>
+            <div class="review-receipt-copy">
+              <div class="review-receipt-identity"><span>FINAL EFFECT RECEIPT</span><code id="review-receipt-run"></code></div>
+              <h3 id="review-receipt-name"></h3>
+              <p id="review-receipt-summary"></p>
+              <dl class="review-receipt-facts">
+                <div><dt>浏览器验收</dt><dd id="review-receipt-tests"></dd></div>
+                <div><dt>运行错误</dt><dd id="review-receipt-errors"></dd></div>
+                <div><dt>390px 旅程</dt><dd id="review-receipt-mobile"></dd></div>
+                <div><dt>最终截图</dt><dd id="review-receipt-captures"></dd></div>
+              </dl>
+              <div class="review-receipt-metrics" aria-label="最终体验质量观察"></div>
+              <div class="review-receipt-proof">
+                <span>为什么通过</span>
+                <ul id="review-receipt-proofs"></ul>
+              </div>
+              <div class="review-receipt-boundary">
+                <span>结论边界</span>
+                <p id="review-receipt-boundary"></p>
+                <small>这是构建后的项目证据回执，不冒充独立人类审美结论。</small>
+              </div>
+              <div class="review-receipt-actions">
+                <a id="review-receipt-open" href="">打开该最终产品 <span>↗</span></a>
+                <code id="review-receipt-hash"></code>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
       <section class="next-stage" id="project-status">
         <div>
-          <p class="eyebrow">V2.6 CREATIVE GUIDANCE / R171 FROZEN · R172 PROVEN</p>
-          <h2>第一目标已锁定：<br />并完成一次冻结指导的正式产品验证。</h2>
-          <p class="stage-summary">R171 把感受承诺、正向参考、七项质量观察、八项开放能力、有界执行和最终身份冻结为 V2.6 指导基线；R172 没有再加规则或案例，直接用这份基线完成了“开场排练室”的正式素材、连续互动、声音、结果保存与浏览器归档。</p>
-          <a class="delivery-link" href="./deliveries/kage-opening-rehearsal/">打开 R172 正式产品验证 <span>↗</span></a>
+          <p class="eyebrow">V2.6 CREATIVE GUIDANCE / R171 FROZEN · R172 PROVEN · R173 TRACEABLE</p>
+          <h2>第一目标已锁定：<br />正式结果现在可以被查找和复核。</h2>
+          <p class="stage-summary">R171 冻结正向指导，R172 完成一次有界正式产品验证；R173 不再生成案例，而是把终稿画面、体验判断、浏览器事实和最终身份组成可检查的效果回执，避免“说通过了但不知道凭什么”。</p>
+          <a class="delivery-link" href="#effect-review-receipts">查看 R173 最终效果回执 <span>↓</span></a>
         </div>
         <ol>
           <li><span>已固化</span>目标与感受回放 / 正向参考 / 开放能力选择 / 有界 Codex 直创 / 自适应浏览器证据 / 最终身份</li>
           <li><span>不设禁区</span>图片、真实素材、3D、声音、视频、Shader、Canvas、蒙版、排版和目录外方法都可按效果采用</li>
           <li><span>只设边界</span>用户要求与通用质量门为硬约束；一个方向 / 一批素材 / 一次构建 / 两次确定修复 / 一次视觉精修</li>
           <li><span>已有证明</span>R169 证明能力可组成产品；R170 证明结构保持开放；R172 证明冻结指导能在有界预算内产出新的 KAGE 正式产品</li>
-          <li><span>尚未完成</span>后台自动 Codex / 统一 Artifact Registry / 通用独立审美判断 / 统一首稿时限 / 远端多人安全</li>
+          <li><span>本轮收口</span>R173 为四个正式产品建立可检索回执；最终身份、终稿画面、浏览器事实、质量观察和真实性边界在同一处可读</li>
+          <li><span>尚未完成</span>后台自动 Codex / 通用独立审美判断 / 统一首稿时限 / 远端多人安全；这些不由回执伪装完成</li>
           <li><span>下一验证（已完成）</span>R172 以一个未出现过的 KAGE 创作者产品想法通过 11/11 定向测试、Pages 构建与 5/5 Chrome 验收；没有触发无限精修</li>
         </ol>
       </section>
     </main>
 
-    <footer><p>Kage V2.6 指导基线已在 R171 冻结并由 R172 正式产品验证：现有能力服务“想法到优秀产品网页”，技术与页面形态保持开放；V1、既有案例和兼容工作台不被改写，工作台仍不会自动触发后台创作。</p></footer>
+    <footer><p>Kage V2.6 指导基线已在 R171 冻结、由 R172 正式产品验证，并在 R173 形成可查找的最终效果回执；技术与页面形态保持开放，V1、既有案例和兼容工作台不被改写，工作台仍不会自动触发后台创作。</p></footer>
     <script type="module" src="./v2.ts"></script>
   </body>
 </html>

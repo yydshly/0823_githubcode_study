@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "stage": "r173-final-effect-review-receipt",
+  "route": "/pages/v2/?revision=r173-browser-proof#effect-review-receipts",
+  "browser": "local Chrome via Playwright",
+  "checks": [
+    "four-current-identities",
+    "title-run-hash-lookup",
+    "empty-recovery",
+    "desktop-receipt",
+    "mobile-390-receipt"
+  ],
+  "issues": {
+    "pageErrors": [],
+    "consoleErrors": [],
+    "requestFailures": []
+  },
+  "complete": true
+}

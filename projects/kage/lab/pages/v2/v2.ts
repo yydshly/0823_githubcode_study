@@ -20,6 +20,11 @@ import {
   V2_FORMAL_PRODUCT_ARCHIVE,
   type FormalProductArchiveEntry
 } from '../../src/v2/formal-product-archive.ts';
+import {
+  findFinalEffectReviewReceipts,
+  V2_FINAL_EFFECT_REVIEW_RECEIPTS,
+  type FinalEffectReviewReceipt
+} from '../../src/v2/final-effect-review-receipt.ts';
 
 declare global {
   interface Window {
@@ -63,6 +68,9 @@ declare global {
         techniqueCountScored: false;
         effectSelectionRunState: 'pending' | 'selected' | 'stopped';
         effectSelectionResourcePermission: boolean;
+        effectReviewReceiptCount: number;
+        selectedEffectReviewReceiptId: string;
+        effectReviewState: 'ready' | 'empty';
         stale: boolean;
       };
     };
@@ -771,6 +779,98 @@ function renderFormalProductArchive() {
   document.documentElement.dataset.formalProductArchiveCount = String(V2_FORMAL_PRODUCT_ARCHIVE.length);
 }
 
+const reviewMetricLabels: ReadonlyArray<[
+  keyof FinalEffectReviewReceipt['experience']['dimensions'],
+  string
+]> = [
+  ['goalClarity', '目标表达'],
+  ['creativeDistinctiveness', '创意记忆'],
+  ['craftCohesion', '视觉统一'],
+  ['assetIntegration', '素材融合'],
+  ['interactionValue', '互动价值'],
+  ['mobileReadiness', '移动适配']
+];
+
+const reviewWorkspace = requiredElement<HTMLElement>('.review-receipt-workspace');
+const reviewQuery = requiredElement<HTMLInputElement>('#review-receipt-query');
+const reviewList = requiredElement<HTMLElement>('.review-receipt-list');
+const reviewEmpty = requiredElement<HTMLElement>('.review-receipt-empty');
+const reviewDetail = requiredElement<HTMLElement>('.review-receipt-detail');
+let selectedEffectReviewReceiptId = V2_FINAL_EFFECT_REVIEW_RECEIPTS[0]?.id ?? '';
+
+function renderEffectReviewDetail(receipt: FinalEffectReviewReceipt) {
+  const image = requiredElement<HTMLImageElement>('#review-receipt-image');
+  image.src = receipt.artifact.previewUrl;
+  image.alt = `${receipt.title}最终效果评审画面`;
+  requiredElement<HTMLElement>('#review-receipt-status').textContent = 'CURRENT · PASS';
+  requiredElement<HTMLElement>('#review-receipt-score').textContent = `${receipt.experience.score} / 100`;
+  requiredElement<HTMLElement>('#review-receipt-run').textContent = receipt.artifact.runId;
+  requiredElement<HTMLElement>('#review-receipt-name').textContent = receipt.title;
+  requiredElement<HTMLElement>('#review-receipt-summary').textContent = receipt.experience.summary;
+  requiredElement<HTMLElement>('#review-receipt-tests').textContent = `${receipt.executableEvidence.testsPassed} / ${receipt.executableEvidence.testsTotal} 通过`;
+  requiredElement<HTMLElement>('#review-receipt-errors').textContent = `${receipt.executableEvidence.runtimeErrors + receipt.executableEvidence.consoleErrors} 项`;
+  requiredElement<HTMLElement>('#review-receipt-mobile').textContent = receipt.executableEvidence.mobile390JourneyPassed ? '通过' : '未通过';
+  requiredElement<HTMLElement>('#review-receipt-captures').textContent = `${receipt.executableEvidence.captureCount} 个状态`;
+
+  const metrics = requiredElement<HTMLElement>('.review-receipt-metrics');
+  metrics.replaceChildren(...reviewMetricLabels.map(([key, label]) => {
+    const row = document.createElement('div');
+    row.className = 'review-receipt-metric';
+    const bar = document.createElement('i');
+    bar.style.setProperty('--score', String(receipt.experience.dimensions[key]));
+    row.append(
+      textElement('span', '', label),
+      bar,
+      textElement('strong', '', String(receipt.experience.dimensions[key]))
+    );
+    return row;
+  }));
+
+  requiredElement<HTMLElement>('#review-receipt-proofs').replaceChildren(
+    ...receipt.experience.strongestProofs.map((proof) => textElement('li', '', proof))
+  );
+  requiredElement<HTMLElement>('#review-receipt-boundary').textContent = receipt.reviewBoundary.truthBoundary;
+  const open = requiredElement<HTMLAnchorElement>('#review-receipt-open');
+  open.href = receipt.artifact.route;
+  open.dataset.reviewReceiptId = receipt.id;
+  open.dataset.runId = receipt.artifact.runId;
+  open.dataset.bundleHash = receipt.artifact.bundleHash;
+  requiredElement<HTMLElement>('#review-receipt-hash').textContent = `bundleHash · ${receipt.artifact.bundleHash}`;
+  document.documentElement.dataset.selectedEffectReviewReceiptId = receipt.id;
+}
+
+function renderEffectReviewReceipts() {
+  const matches = findFinalEffectReviewReceipts(reviewQuery.value);
+  if (!matches.some((receipt) => receipt.id === selectedEffectReviewReceiptId)) {
+    selectedEffectReviewReceiptId = matches[0]?.id ?? '';
+  }
+  reviewList.replaceChildren(...matches.map((receipt) => {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'review-receipt-option';
+    button.setAttribute('role', 'option');
+    button.setAttribute('aria-selected', String(receipt.id === selectedEffectReviewReceiptId));
+    button.dataset.reviewReceiptOption = receipt.id;
+    button.append(
+      textElement('strong', '', receipt.title),
+      textElement('span', '', 'CURRENT'),
+      textElement('code', '', receipt.artifact.runId)
+    );
+    button.addEventListener('click', () => {
+      selectedEffectReviewReceiptId = receipt.id;
+      renderEffectReviewReceipts();
+    });
+    return button;
+  }));
+
+  const selected = matches.find((receipt) => receipt.id === selectedEffectReviewReceiptId);
+  reviewWorkspace.dataset.reviewState = selected ? 'ready' : 'empty';
+  reviewEmpty.hidden = Boolean(selected);
+  reviewDetail.hidden = !selected;
+  if (selected) renderEffectReviewDetail(selected);
+  document.documentElement.dataset.effectReviewState = selected ? 'ready' : 'empty';
+}
+
 function createAndRender() {
   try {
     render(createV2CreativeContract(ui.brief.value));
@@ -882,6 +982,9 @@ window.__kageV2 = {
         : 'pending',
     effectSelectionResourcePermission: Boolean(currentPackage.runSeed.effectSelectionReceipt)
       && !currentPackage.runSeed.stopReason,
+    effectReviewReceiptCount: V2_FINAL_EFFECT_REVIEW_RECEIPTS.length,
+    selectedEffectReviewReceiptId,
+    effectReviewState: reviewWorkspace.dataset.reviewState === 'empty' ? 'empty' : 'ready',
     stale: contractStale
   })
 };
@@ -892,8 +995,12 @@ validateV25ArchiveCards();
 validateV3ArchiveCards();
 renderBoundedExperienceArchive();
 renderFormalProductArchive();
+reviewQuery.addEventListener('input', renderEffectReviewReceipts);
+renderEffectReviewReceipts();
 document.documentElement.dataset.v2Ready = 'true';
 document.documentElement.dataset.v25ArchiveReady = 'true';
 document.documentElement.dataset.v3ArchiveReady = 'true';
+document.documentElement.dataset.effectReviewReceiptReady = 'true';
+document.documentElement.dataset.effectReviewReceiptCount = String(V2_FINAL_EFFECT_REVIEW_RECEIPTS.length);
 
 export {};

@@ -9,7 +9,7 @@
 | 上游仓库 | https://github.com/MengTo/kage |
 | 固定版本 | `4399487d2fb42bce39c7b032fbbb50d230bf4f0b` |
 | 开始日期 | 2026-08-24 |
-| 当前状态 | V1 已归档并独立部署；V2.6 正向创作指导基线已在 R171 冻结；当前 Codex 直创可用，但后台自动执行、统一归档和通用审美判断尚未完成；下一阶段只做一个全新 brief 正式产品验证 |
+| 当前状态 | V1 已归档并独立部署；V2.6 正向指导已在 R171 冻结，R172 已完成全新正式产品验证，R173 正把四个正式产品收束为可检索、可核对最终身份的效果回执；当前 Codex 直创可用，但后台自动执行和通用独立审美判断尚未完成 |
 | 原版本地入口 | `http://127.0.0.1:8143/upstream/` |
 | 公开工作台入口 | [打开工作台](https://yydshly.github.io/0823_githubcode_study/projects/kage/workbench.html)（本地确定性生成；模型专属构建需本机服务） |
 | V1 Pages 入口 | [查看 V1 案例](https://yydshly.github.io/0823_githubcode_study/projects/kage/v1/) |
