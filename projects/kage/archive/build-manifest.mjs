@@ -1,5 +1,5 @@
 import { execFileSync } from 'node:child_process';
-import { readdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 
 const archiveRoot = resolve(import.meta.dirname);
@@ -8,6 +8,9 @@ const labRoot = join(repoRoot, 'projects/kage/lab');
 const deliveryRoot = join(labRoot, 'pages/v2/deliveries');
 const researchRoot = join(labRoot, 'docs/v2-research');
 const evidenceRoot = join(researchRoot, 'evidence');
+const caseCatalogPath = join(labRoot, 'cases/catalog.json');
+const caseRunsRoot = join(labRoot, 'cases/runs');
+const generatedRunsRoot = join(labRoot, 'generated/runs');
 const branch = 'codex/kage-v2-baseline-r165';
 const sourceBase = `https://github.com/yydshly/0823_githubcode_study/blob/${branch}/projects/kage/lab`;
 const treeBase = `https://github.com/yydshly/0823_githubcode_study/tree/${branch}/projects/kage/lab`;
@@ -15,6 +18,29 @@ const treeBase = `https://github.com/yydshly/0823_githubcode_study/tree/${branch
 const formalIds = new Set(['kage-opening-rehearsal', 'kage-creative-director', 'rainlight-walk-recorder', 'kage-feeling-lens']);
 const experienceIds = new Set(['weave-light-field', 'ice-core-letters', 'forest-sound-route', 'moonlit-tidepool-panorama', 'stormglass-archive', 'prism-seed-theatre', 'sonic-pressing-room', 'lighthouse-chart-reveal', 'folded-light-studio', 'windborne-letter-valley', 'sea-fiber-scope', 'thunderhead-score']);
 const v3Ids = new Set(['film-camera-repair-paths', 'west-bund-meeting-points', 'fox-gait-observatory', 'ten-second-callsign-decode', 'same-table-tonight', 'modular-room-sound', 'fridge-tonight', 'eclipse-post-office']);
+const capabilityCases = [
+  {
+    id: 'capability-resonance-flagship',
+    title: '资产驱动产品电影',
+    promise: '真实主视觉、深度图、滚动镜头与克制辉光组成的能力基准。',
+    medium: '图像 / Three.js / 滚动',
+    viewUrl: './snapshot/?experience=resonance-flagship&quality=high&motion=full'
+  },
+  {
+    id: 'capability-tidal-archive',
+    title: '潮汐记忆叙事空间',
+    promise: '环境、档案关系、空间路径与水体微光组成的叙事空间基准。',
+    medium: 'Three.js / 空间叙事',
+    viewUrl: './snapshot/?experience=tidal-archive&quality=high&motion=full'
+  },
+  {
+    id: 'capability-coastline-evidence',
+    title: '潮线证词 · 1984—2026 海岸证据',
+    promise: '同一时间参数联动海岸形态、年份与证据的语义互动原型。',
+    medium: 'Canvas / 数据 / 互动',
+    viewUrl: './snapshot/pages/v2/prototypes/semantic-interaction/?demo=1'
+  }
+];
 
 const imageById = {
   'kage-opening-rehearsal': 'kage-opening-rehearsal.png',
@@ -86,7 +112,64 @@ const cases = deliveryIds.map((id) => {
     tierLabel,
     medium: mediumById[id] ?? '混合媒介',
     image: imageById[id] ?? null,
+    caseKind: 'v2-delivery',
+    viewUrl: `./snapshot/pages/v2/deliveries/${id}/`,
     sourceUrl: `${treeBase}/pages/v2/deliveries/${id}`
+  };
+});
+
+const caseCatalog = JSON.parse(readFileSync(caseCatalogPath, 'utf8'));
+const legacyCases = caseCatalog.cases.map((item) => ({
+  id: item.id,
+  title: item.title,
+  promise: item.brief,
+  tier: item.stage === 'featured' ? 'legacy-featured' : 'legacy-refined',
+  tierLabel: item.stage === 'featured' ? 'V1 精选案例' : 'V1 研究案例',
+  medium: (item.tags || []).slice(0, 4).join(' / ') || 'V1 混合媒介',
+  image: null,
+  caseKind: 'v1-archive',
+  viewUrl: `./snapshot/pages/v1/case.html?id=${encodeURIComponent(item.id)}&quality=high&motion=full`,
+  sourceUrl: `${treeBase}/cases/runs/${item.id}`
+}));
+
+const capabilityEntries = capabilityCases.map((item) => ({
+  ...item,
+  tier: 'baseline',
+  tierLabel: '能力基准',
+  image: null,
+  caseKind: 'capability-demo',
+  sourceUrl: `${sourceBase}/src/cases-main.ts`
+}));
+
+const allCases = [...cases, ...legacyCases, ...capabilityEntries];
+
+const generatedRunIds = readdirSync(generatedRunsRoot, { withFileTypes: true })
+  .filter((entry) => entry.isDirectory())
+  .map((entry) => entry.name)
+  .sort();
+const archivedPackageIds = new Set(readdirSync(caseRunsRoot, { withFileTypes: true })
+  .filter((entry) => entry.isDirectory())
+  .map((entry) => entry.name));
+const catalogCaseIds = new Set(caseCatalog.cases.map((item) => item.id));
+
+function readJson(path) {
+  try { return JSON.parse(readFileSync(path, 'utf8')); } catch { return null; }
+}
+
+const generatedHistory = generatedRunIds.map((id) => {
+  const root = join(generatedRunsRoot, id);
+  const report = readJson(join(root, 'build-report.json'));
+  const selectedId = report?.refinement?.selectedId;
+  const brief = report?.request?.brief || '';
+  return {
+    id,
+    title: report?.request?.reference?.title || brief.slice(0, 72) || '未完成的生成记录',
+    state: catalogCaseIds.has(id) ? 'catalogued' : typeof selectedId === 'string' && selectedId !== id ? 'superseded' : 'history',
+    stateLabel: catalogCaseIds.has(id) ? '已进入 V1 案例' : typeof selectedId === 'string' && selectedId !== id ? '已被后续版本替代' : '历史生成记录',
+    archivedPackage: archivedPackageIds.has(id),
+    hasBundle: existsSync(join(root, 'bundle.json')),
+    hasReview: existsSync(join(root, 'visual-review.json')),
+    sourceUrl: `${treeBase}/generated/runs/${id}`
   };
 });
 
@@ -100,11 +183,22 @@ const evidenceRuns = evidenceFiles.filter((path) => /(direct-creative-run|final)
 const sourceCommit = execFileSync('git', ['rev-parse', 'HEAD'], { cwd: repoRoot, encoding: 'utf8' }).trim();
 
 const manifest = {
-  schemaVersion: 1,
+  schemaVersion: 2,
   archiveDate: '2026-09-04',
   sourceBranch: branch,
   sourceCommit,
-  stats: { researchDocs: researchDocuments.length, deliveries: cases.length, evidenceRuns: evidenceRuns.length, capabilities: 8, formalProducts: formalIds.size },
+  stats: {
+    researchDocs: researchDocuments.length,
+    runnableCases: allCases.length,
+    deliveries: cases.length,
+    archivedCases: legacyCases.length,
+    capabilityDemos: capabilityEntries.length,
+    historyRuns: generatedHistory.length,
+    archivedPackages: archivedPackageIds.size,
+    evidenceRuns: evidenceRuns.length,
+    capabilities: 8,
+    formalProducts: formalIds.size
+  },
   phases: [
     { range: 'R01–R13', title: '参考与原理', summary: '研究 MotionSites、本地 52 个 HTML、Threejs-3D-Webpage 与早期案例，将视觉外壳拆成滚动、空间、排版、素材和互动原理。' },
     { range: 'R17–R70', title: '生成与防护', summary: '扩展生成、素材路由、Three.js 运行时、真实性、移动端、超时、修复和证据绑定；同时开始出现规则膨胀。' },
@@ -129,9 +223,10 @@ const manifest = {
     { title: '外部产品', finding: '整理 6 个产品体验家族与 14 个一手来源，全部保持 research-only，不伪装成已复用能力。' },
     { title: '开源实现', finding: '研究 Threejs-3D-Webpage、ThreeUI 与 6 个固定 revision 机制；许可和运行证据与视觉质量分开记录。' }
   ],
-  cases,
+  cases: allCases,
+  generatedHistory,
   researchDocuments
 };
 
 writeFileSync(join(archiveRoot, 'research-manifest.json'), `${JSON.stringify(manifest, null, 2)}\n`);
-console.log(`wrote ${manifest.stats.researchDocs} docs, ${manifest.stats.deliveries} cases, ${manifest.stats.evidenceRuns} evidence runs`);
+console.log(`wrote ${manifest.stats.researchDocs} docs, ${manifest.stats.runnableCases} runnable cases, ${manifest.stats.historyRuns} history runs, ${manifest.stats.evidenceRuns} evidence runs`);

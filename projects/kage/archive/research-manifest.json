@@ -1,11 +1,16 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "archiveDate": "2026-09-04",
   "sourceBranch": "codex/kage-v2-baseline-r165",
-  "sourceCommit": "7dbe6af1acc58e4d355c4ec9a0c8fd59b794b467",
+  "sourceCommit": "26876e65790d86c337f9099a8c6fa4d52ca5303b",
   "stats": {
     "researchDocs": 151,
+    "runnableCases": 58,
     "deliveries": 35,
+    "archivedCases": 20,
+    "capabilityDemos": 3,
+    "historyRuns": 98,
+    "archivedPackages": 25,
     "evidenceRuns": 33,
     "capabilities": 8,
     "formalProducts": 4
@@ -143,6 +148,8 @@
       "tierLabel": "阶段研究案例",
       "medium": "图像 / 气味档案",
       "image": null,
+      "caseKind": "v2-delivery",
+      "viewUrl": "./snapshot/pages/v2/deliveries/after-rain-archive/",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/after-rain-archive"
     },
     {
@@ -153,6 +160,8 @@
       "tierLabel": "阶段研究案例",
       "medium": "图像 / 声音",
       "image": null,
+      "caseKind": "v2-delivery",
+      "viewUrl": "./snapshot/pages/v2/deliveries/aurora-radio-postcard/",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/aurora-radio-postcard"
     },
     {
@@ -163,6 +172,8 @@
       "tierLabel": "阶段研究案例",
       "medium": "DOM / 分支互动",
       "image": null,
+      "caseKind": "v2-delivery",
+      "viewUrl": "./snapshot/pages/v2/deliveries/color-relay-branching/",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/color-relay-branching"
     },
     {
@@ -173,6 +184,8 @@
       "tierLabel": "阶段研究案例",
       "medium": "生成图像 / 滚动",
       "image": "dream-record.jpg",
+      "caseKind": "v2-delivery",
+      "viewUrl": "./snapshot/pages/v2/deliveries/dream-record/",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/dream-record"
     },
     {
@@ -183,6 +196,8 @@
       "tierLabel": "协议验证交付",
       "medium": "生成图像 / 状态",
       "image": null,
+      "caseKind": "v2-delivery",
+      "viewUrl": "./snapshot/pages/v2/deliveries/eclipse-post-office/",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/eclipse-post-office"
     },
     {
@@ -193,6 +208,8 @@
       "tierLabel": "协议验证交付",
       "medium": "SVG / 路径判断",
       "image": null,
+      "caseKind": "v2-delivery",
+      "viewUrl": "./snapshot/pages/v2/deliveries/film-camera-repair-paths/",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/film-camera-repair-paths"
     },
     {
@@ -203,6 +220,8 @@
       "tierLabel": "体验能力参考",
       "medium": "生成图像 / 连续状态",
       "image": "folded-light-studio.png",
+      "caseKind": "v2-delivery",
+      "viewUrl": "./snapshot/pages/v2/deliveries/folded-light-studio/",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/folded-light-studio"
     },
     {
@@ -213,6 +232,8 @@
       "tierLabel": "体验能力参考",
       "medium": "图像 / 空间声音",
       "image": "forest-sound-route.png",
+      "caseKind": "v2-delivery",
+      "viewUrl": "./snapshot/pages/v2/deliveries/forest-sound-route/",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/forest-sound-route"
     },
     {
@@ -223,6 +244,8 @@
       "tierLabel": "协议验证交付",
       "medium": "Three.js / 3D",
       "image": "fox-gait-observatory.png",
+      "caseKind": "v2-delivery",
+      "viewUrl": "./snapshot/pages/v2/deliveries/fox-gait-observatory/",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/fox-gait-observatory"
     },
     {
@@ -233,6 +256,8 @@
       "tierLabel": "协议验证交付",
       "medium": "DOM / 工具",
       "image": null,
+      "caseKind": "v2-delivery",
+      "viewUrl": "./snapshot/pages/v2/deliveries/fridge-tonight/",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/fridge-tonight"
     },
     {
@@ -243,6 +268,8 @@
       "tierLabel": "体验能力参考",
       "medium": "生成图像 / 滚动叙事",
       "image": null,
+      "caseKind": "v2-delivery",
+      "viewUrl": "./snapshot/pages/v2/deliveries/ice-core-letters/",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/ice-core-letters"
     },
     {
@@ -253,6 +280,8 @@
       "tierLabel": "正式产品回执",
       "medium": "正式素材 / 产品流程",
       "image": null,
+      "caseKind": "v2-delivery",
+      "viewUrl": "./snapshot/pages/v2/deliveries/kage-creative-director/",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/kage-creative-director"
     },
     {
@@ -263,6 +292,8 @@
       "tierLabel": "正式产品回执",
       "medium": "正式素材 / 情绪交互",
       "image": null,
+      "caseKind": "v2-delivery",
+      "viewUrl": "./snapshot/pages/v2/deliveries/kage-feeling-lens/",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/kage-feeling-lens"
     },
     {
@@ -273,6 +304,8 @@
       "tierLabel": "正式产品回执",
       "medium": "正式素材 / 声音 / 连续场景",
       "image": "kage-opening-rehearsal.png",
+      "caseKind": "v2-delivery",
+      "viewUrl": "./snapshot/pages/v2/deliveries/kage-opening-rehearsal/",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/kage-opening-rehearsal"
     },
     {
@@ -283,6 +316,8 @@
       "tierLabel": "阶段研究案例",
       "medium": "Canvas / 动作",
       "image": null,
+      "caseKind": "v2-delivery",
+      "viewUrl": "./snapshot/pages/v2/deliveries/kinetic-score/",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/kinetic-score"
     },
     {
@@ -293,6 +328,8 @@
       "tierLabel": "体验能力参考",
       "medium": "SVG 蒙版 / Canvas",
       "image": null,
+      "caseKind": "v2-delivery",
+      "viewUrl": "./snapshot/pages/v2/deliveries/lighthouse-chart-reveal/",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/lighthouse-chart-reveal"
     },
     {
@@ -303,6 +340,8 @@
       "tierLabel": "协议验证交付",
       "medium": "Three.js / 声音",
       "image": null,
+      "caseKind": "v2-delivery",
+      "viewUrl": "./snapshot/pages/v2/deliveries/modular-room-sound/",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/modular-room-sound"
     },
     {
@@ -313,6 +352,8 @@
       "tierLabel": "体验能力参考",
       "medium": "宽幅图像 / 横向导航",
       "image": null,
+      "caseKind": "v2-delivery",
+      "viewUrl": "./snapshot/pages/v2/deliveries/moonlit-tidepool-panorama/",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/moonlit-tidepool-panorama"
     },
     {
@@ -323,6 +364,8 @@
       "tierLabel": "阶段研究案例",
       "medium": "图像 / 比较工具",
       "image": "night-reflective-catalog.png",
+      "caseKind": "v2-delivery",
+      "viewUrl": "./snapshot/pages/v2/deliveries/night-reflective-catalog/",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/night-reflective-catalog"
     },
     {
@@ -333,6 +376,8 @@
       "tierLabel": "阶段研究案例",
       "medium": "图像 / 趣味空间",
       "image": "paper-butterfly-garden.jpg",
+      "caseKind": "v2-delivery",
+      "viewUrl": "./snapshot/pages/v2/deliveries/paper-butterfly-garden/",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/paper-butterfly-garden"
     },
     {
@@ -343,6 +388,8 @@
       "tierLabel": "体验能力参考",
       "medium": "生成图像 / WebGL",
       "image": null,
+      "caseKind": "v2-delivery",
+      "viewUrl": "./snapshot/pages/v2/deliveries/prism-seed-theatre/",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/prism-seed-theatre"
     },
     {
@@ -353,6 +400,8 @@
       "tierLabel": "正式产品回执",
       "medium": "正式素材 / 路径记录",
       "image": null,
+      "caseKind": "v2-delivery",
+      "viewUrl": "./snapshot/pages/v2/deliveries/rainlight-walk-recorder/",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/rainlight-walk-recorder"
     },
     {
@@ -363,6 +412,8 @@
       "tierLabel": "阶段研究案例",
       "medium": "SVG / 数据路线",
       "image": null,
+      "caseKind": "v2-delivery",
+      "viewUrl": "./snapshot/pages/v2/deliveries/roof-water-route/",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/roof-water-route"
     },
     {
@@ -373,6 +424,8 @@
       "tierLabel": "协议验证交付",
       "medium": "生成图像 / 共同状态",
       "image": null,
+      "caseKind": "v2-delivery",
+      "viewUrl": "./snapshot/pages/v2/deliveries/same-table-tonight/",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/same-table-tonight"
     },
     {
@@ -383,6 +436,8 @@
       "tierLabel": "体验能力参考",
       "medium": "Three.js / 声音 / 数据",
       "image": null,
+      "caseKind": "v2-delivery",
+      "viewUrl": "./snapshot/pages/v2/deliveries/sea-fiber-scope/",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/sea-fiber-scope"
     },
     {
@@ -393,6 +448,8 @@
       "tierLabel": "阶段研究案例",
       "medium": "编辑排版 / 手势",
       "image": null,
+      "caseKind": "v2-delivery",
+      "viewUrl": "./snapshot/pages/v2/deliveries/sign-language-season/",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/sign-language-season"
     },
     {
@@ -403,6 +460,8 @@
       "tierLabel": "体验能力参考",
       "medium": "WebGL / 音频频谱",
       "image": null,
+      "caseKind": "v2-delivery",
+      "viewUrl": "./snapshot/pages/v2/deliveries/sonic-pressing-room/",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/sonic-pressing-room"
     },
     {
@@ -413,6 +472,8 @@
       "tierLabel": "体验能力参考",
       "medium": "Shader / 分支状态",
       "image": "stormglass-archive.png",
+      "caseKind": "v2-delivery",
+      "viewUrl": "./snapshot/pages/v2/deliveries/stormglass-archive/",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/stormglass-archive"
     },
     {
@@ -423,6 +484,8 @@
       "tierLabel": "协议验证交付",
       "medium": "Web Audio / 工具",
       "image": "ten-second-callsign-decode.png",
+      "caseKind": "v2-delivery",
+      "viewUrl": "./snapshot/pages/v2/deliveries/ten-second-callsign-decode/",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/ten-second-callsign-decode"
     },
     {
@@ -433,6 +496,8 @@
       "tierLabel": "阶段研究案例",
       "medium": "Three.js / 材质",
       "image": null,
+      "caseKind": "v2-delivery",
+      "viewUrl": "./snapshot/pages/v2/deliveries/thin-film-lab/",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/thin-film-lab"
     },
     {
@@ -443,6 +508,8 @@
       "tierLabel": "体验能力参考",
       "medium": "图像 / 编辑 / 声音",
       "image": null,
+      "caseKind": "v2-delivery",
+      "viewUrl": "./snapshot/pages/v2/deliveries/thunderhead-score/",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/thunderhead-score"
     },
     {
@@ -453,6 +520,8 @@
       "tierLabel": "体验能力参考",
       "medium": "Three.js / 结构生成",
       "image": null,
+      "caseKind": "v2-delivery",
+      "viewUrl": "./snapshot/pages/v2/deliveries/weave-light-field/",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/weave-light-field"
     },
     {
@@ -463,6 +532,8 @@
       "tierLabel": "协议验证交付",
       "medium": "真实地点 / 横向全景",
       "image": null,
+      "caseKind": "v2-delivery",
+      "viewUrl": "./snapshot/pages/v2/deliveries/west-bund-meeting-points/",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/west-bund-meeting-points"
     },
     {
@@ -473,6 +544,8 @@
       "tierLabel": "阶段研究案例",
       "medium": "Canvas / 风场工具",
       "image": null,
+      "caseKind": "v2-delivery",
+      "viewUrl": "./snapshot/pages/v2/deliveries/wind-kite-lab/",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/wind-kite-lab"
     },
     {
@@ -483,7 +556,1267 @@
       "tierLabel": "体验能力参考",
       "medium": "生成图像 / 运行时旅程",
       "image": null,
+      "caseKind": "v2-delivery",
+      "viewUrl": "./snapshot/pages/v2/deliveries/windborne-letter-valley/",
       "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/windborne-letter-valley"
+    },
+    {
+      "id": "dedicated-ba4e9d10caaa-depth-field",
+      "title": "先锋时装 · 模型精修完整作品",
+      "promise": "为一个先锋时装品牌设计梦幻流体光幕、柔和但有张力的编辑感沉浸式网页，面向年轻创意人群。",
+      "tier": "legacy-featured",
+      "tierLabel": "V1 精选案例",
+      "medium": "model-generated / fashion / alpha-cutout / borderless-field",
+      "image": null,
+      "caseKind": "v1-archive",
+      "viewUrl": "./snapshot/pages/v1/case.html?id=dedicated-ba4e9d10caaa-depth-field&quality=high&motion=full",
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/cases/runs/dedicated-ba4e9d10caaa-depth-field"
+    },
+    {
+      "id": "dedicated-r36-delivery-final",
+      "title": "夜生表皮温室 · 完整资产叙事最终版",
+      "promise": "为一座只在夜间开放的生物材料温室设计沉浸式发布网页，面向建筑师和材料研究者。首屏是一枚悬浮的半透明种子，滚动时内部纤维逐步聚合成可呼吸的建筑表皮，最终形成宁静、可信且可预约参观的完整空间。不要紫色科技风，不要中央海报式图片。",
+      "tier": "legacy-featured",
+      "tierLabel": "V1 精选案例",
+      "medium": "Three.js / 模型生成素材 / 资产叙事 / 滚动转化",
+      "image": null,
+      "caseKind": "v1-archive",
+      "viewUrl": "./snapshot/pages/v1/case.html?id=dedicated-r36-delivery-final&quality=high&motion=full",
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/cases/runs/dedicated-r36-delivery-final"
+    },
+    {
+      "id": "dedicated-1edb98865f4c",
+      "title": "智能声音产品 · Codex 5.6-sol 最终精修版",
+      "promise": "为一款面向独立创作者的智能声音产品，设计清冷、克制但有未来感的发布网页；先建立情绪，再解释核心能力，最后留下明确行动。",
+      "tier": "legacy-featured",
+      "tierLabel": "V1 精选案例",
+      "medium": "智能声音 / ChatGPT素材 / Codex 5.6-sol / Three.js",
+      "image": null,
+      "caseKind": "v1-archive",
+      "viewUrl": "./snapshot/pages/v1/case.html?id=dedicated-1edb98865f4c&quality=high&motion=full",
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/cases/runs/dedicated-1edb98865f4c"
+    },
+    {
+      "id": "dedicated-8574ee46ab16",
+      "title": "梦境记录 · 醒来后的房间",
+      "promise": "为一款帮助人记录梦境的产品设计网页。开场像刚刚醒来的模糊房间，滚动时记忆碎片逐渐形成可探索空间，最后收束为“记录今晚的梦”。安静、真实，不要常见科技风。",
+      "tier": "legacy-refined",
+      "tierLabel": "V1 研究案例",
+      "medium": "梦境记录 / 连续空间 / Three.js / 滚动叙事",
+      "image": null,
+      "caseKind": "v1-archive",
+      "viewUrl": "./snapshot/pages/v1/case.html?id=dedicated-8574ee46ab16&quality=high&motion=full",
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/cases/runs/dedicated-8574ee46ab16"
+    },
+    {
+      "id": "dedicated-7c944e0c386f",
+      "title": "纸张修复工坊 · 同一页文献的修复旅程",
+      "promise": "为一间纸本文献修复工坊设计沉浸式网页。开场是一张受潮、撕裂且墨迹模糊的旧纸页；滚动时沿同一张纸的纤维断面进入修复过程，依次看到纤维对齐、手工补纸和墨迹重新可读，最后纸页在安静的工作台光线中恢复完整，并收束为“提交一页待修复文献”。面向个人收藏者和小型档案机构；质感真实、克制、温暖，不要紫色科技风、随机粒子或玻璃仪表盘。",
+      "tier": "legacy-featured",
+      "tierLabel": "V1 精选案例",
+      "medium": "v2 / paper-restoration / continuity / scroll-narrative",
+      "image": null,
+      "caseKind": "v1-archive",
+      "viewUrl": "./snapshot/pages/v1/case.html?id=dedicated-7c944e0c386f&quality=high&motion=full",
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/cases/runs/dedicated-7c944e0c386f"
+    },
+    {
+      "id": "dedicated-ef118f0f4962",
+      "title": "气味标本室 · 先于语言回来的记忆",
+      "promise": "为一款帮助人保存气味记忆的产品设计沉浸式网页。开场是一只雾气凝结的玻璃记忆瓶；滚动时气味被分解为雨后泥土、旧书纸张和晒过的棉布三层空间，指针或触摸改变混合比例并同步更新记忆文字；最后三层重新汇成一只可保存的气味标本，行动为“封存这段记忆”。画面温暖、克制、真实，像自然历史博物馆与香水实验室的结合；不要霓虹科技风，不要用无意义粒子充当主体。",
+      "tier": "legacy-refined",
+      "tierLabel": "V1 研究案例",
+      "medium": "V2 / 受约束生成 / 语义交互 / 滚动叙事",
+      "image": null,
+      "caseKind": "v1-archive",
+      "viewUrl": "./snapshot/pages/v1/case.html?id=dedicated-ef118f0f4962&quality=high&motion=full",
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/cases/runs/dedicated-ef118f0f4962"
+    },
+    {
+      "id": "dedicated-1b9f0b05107b",
+      "title": "让清晨的雨，被轻轻听见",
+      "promise": "为一台放在窗边、记录清晨雨声的桌面产品设计沉浸式网页。始终展示同一台雨声记录器：开场让雨滴落在透明声学膜上；滚动中段通过膜片振动、同心声波和内部暖光表现雨声正在进入共振腔；结尾所有运动安静下来，记录灯亮起，并明确收束为“保存这一刻的声音”。页面自然、真实、克制，不要科技霓虹，不要拆成不相关零件，不要更换主体。",
+      "tier": "legacy-refined",
+      "tierLabel": "V1 研究案例",
+      "medium": "asset-driven / rain-window / product-story / threejs",
+      "image": null,
+      "caseKind": "v1-archive",
+      "viewUrl": "./snapshot/pages/v1/case.html?id=dedicated-1b9f0b05107b&quality=high&motion=full",
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/cases/runs/dedicated-1b9f0b05107b"
+    },
+    {
+      "id": "dedicated-191bc3ce2125",
+      "title": "读取今夜的风 · 窗边风谱仪",
+      "promise": "为一款帮助城市居民读懂夜间风的窗边气象装置设计沉浸式网页。开场是一枚月白陶瓷与氧化铜制成的无叶风谱仪，细纤维带在安静房间里几乎静止；滚动时视角穿过窗缝，纤维随不同风速弯曲，温湿度与风向证据沿真实气流轨迹出现，最终回到窗边，收束为“读取今夜的风”。面向关注居住环境与自然节律的人；画面安静、物理真实、偏月白、铜褐和雾灰，不要蓝紫科技风、玻璃仪表盘、随机粒子或章节海报切换。",
+      "tier": "legacy-featured",
+      "tierLabel": "V1 精选案例",
+      "medium": "V2 / 夜风 / 物理响应 / 窗边装置",
+      "image": null,
+      "caseKind": "v1-archive",
+      "viewUrl": "./snapshot/pages/v1/case.html?id=dedicated-191bc3ce2125&quality=high&motion=full",
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/cases/runs/dedicated-191bc3ce2125"
+    },
+    {
+      "id": "dedicated-c0514ddead80",
+      "title": "徐汇滨江饮水图册 · 真实地域证据",
+      "promise": "为城市公共饮水点设计一张明亮的交互导览网页。页面像日光下的市政图册与折叠地图，横向浏览不同街区，选择站点时同步更新水质证据、步行距离和开放状态，最终行动为“找到最近的饮水点”。不要暗色全屏、中央产品、巨型标题、随机粒子或电影式长滚动。",
+      "tier": "legacy-refined",
+      "tierLabel": "V1 研究案例",
+      "medium": "V2 / 真实地域证据 / OpenStreetMap / Three.js",
+      "image": null,
+      "caseKind": "v1-archive",
+      "viewUrl": "./snapshot/pages/v1/case.html?id=dedicated-c0514ddead80&quality=high&motion=full",
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/cases/runs/dedicated-c0514ddead80"
+    },
+    {
+      "id": "dedicated-896cfb7e6657",
+      "title": "云上观测站｜连续空间叙事",
+      "promise": "为一座漂浮在云层中的未来天文观测站设计沉浸式网页。滚动时从云海接近观测站，穿过引桥进入透明穹顶，最终看到由望远镜锚定的星图数据在空间中展开。画面安静、真实、具有电影感；不用常见紫色科技风，不把素材做成矩形海报。三张连续素材分别是开场外景、中段穹顶内部、结尾空间星图，必须全屏融合并由 Three.js 光场、景深、粒子和镜头运动把它们连接为一次连续体验。",
+      "tier": "legacy-refined",
+      "tierLabel": "V1 研究案例",
+      "medium": "天文观测站 / 云海 / 透明穹顶 / 星图",
+      "image": null,
+      "caseKind": "v1-archive",
+      "viewUrl": "./snapshot/pages/v1/case.html?id=dedicated-896cfb7e6657&quality=high&motion=full",
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/cases/runs/dedicated-896cfb7e6657"
+    },
+    {
+      "id": "dedicated-mortise-final-r65",
+      "title": "榫卯结构拆解 · 几何校正最终版",
+      "promise": "为一款帮助普通人理解古建筑榫卯结构的互动学习产品设计网页。开场让访客看见一组真实、有岁月痕迹的木构件；探索时两个构件逐步对齐并咬合，随后展示受力路径与修复档案，最终行动是“预约一次线上拆解课”。画面使用温暖自然光、真实木材质感与克制的博物馆编辑感，避免暗色科技风，让结构原理和产品用途一眼可懂。",
+      "tier": "legacy-refined",
+      "tierLabel": "V1 研究案例",
+      "medium": "榫卯 / 状态素材 / 同一主体 / 滚动装配",
+      "image": null,
+      "caseKind": "v1-archive",
+      "viewUrl": "./snapshot/pages/v1/case.html?id=dedicated-mortise-final-r65&quality=high&motion=full",
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/cases/runs/dedicated-mortise-final-r65"
+    },
+    {
+      "id": "dedicated-lantern-final-r65",
+      "title": "可折叠日光露营灯 · 状态叙事最终版",
+      "promise": "为一款可折叠日光露营灯设计明亮、可信的产品网页。始终展示同一盏灯，滚动时从扁平收纳、半展开、完全展开到温暖点亮；每一步都解释收纳体积、折叠结构和真实使用状态，最后行动是“为下一次露营点亮它”。页面像自然日光下的户外装备目录与产品实验记录，不要暗色科技风、紫色、随机粒子、巨大标题或固定三屏。素材、DOM、Canvas 和 Three.js 按最终效果选择。",
+      "tier": "legacy-refined",
+      "tierLabel": "V1 研究案例",
+      "medium": "产品叙事 / 四状态素材 / 明亮编辑 / 滚动展开",
+      "image": null,
+      "caseKind": "v1-archive",
+      "viewUrl": "./snapshot/pages/v1/case.html?id=dedicated-lantern-final-r65&quality=high&motion=full",
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/cases/runs/dedicated-lantern-final-r65"
+    },
+    {
+      "id": "dedicated-76102bb2158c",
+      "title": "城市放映记忆 · 同一街区年代档案",
+      "promise": "为一座城市逐渐消失的老电影院制作数字档案网页。开场是当代街景中仍亮着的最后一块老招牌；滚动时，不同时期的票根、立面与放映声沿同一街区的真实位置逐渐重叠，访客可以选择年代查看同一地点的变化，最后收束为“保存一段城市放映记忆”。画面像白天的城市档案与旧胶片册，温暖、克制、可阅读。不要标准地图界面、暗色电影海报、巨型标题、随机粒子或章节模板。",
+      "tier": "legacy-refined",
+      "tierLabel": "V1 研究案例",
+      "medium": "城市档案 / 年代选择 / 同一地点 / 连续素材",
+      "image": null,
+      "caseKind": "v1-archive",
+      "viewUrl": "./snapshot/pages/v1/case.html?id=dedicated-76102bb2158c&quality=high&motion=full",
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/cases/runs/dedicated-76102bb2158c"
+    },
+    {
+      "id": "dedicated-5694e0a3a022",
+      "title": "社区风扇诊断台 · 明亮工具型界面",
+      "promise": "为社区维修工作坊设计一张明亮、实用的老式台式电风扇诊断网页。页面主体是一幅程序化剖面与彩色装配示意，不对应任何商业型号，也不需要真实商品图。访客选择“不转、异响、风力变弱”后，同步更新故障部件、检查顺序、安全提示和预计难度；横向查看诊断、拆解、测试三个工作阶段，最后行动为“预约一张维修桌”。画面像工业说明书、彩色装配图与社区公告，清晰、亲切、可操作。不要暗色全屏、中央产品海报、巨型标题、电影式长滚动、随机粒子或玻璃科技界面。",
+      "tier": "legacy-refined",
+      "tierLabel": "V1 研究案例",
+      "medium": "明亮工具页 / 程序化装配 / 故障诊断 / 语义交互",
+      "image": null,
+      "caseKind": "v1-archive",
+      "viewUrl": "./snapshot/pages/v1/case.html?id=dedicated-5694e0a3a022&quality=high&motion=full",
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/cases/runs/dedicated-5694e0a3a022"
+    },
+    {
+      "id": "dedicated-woodblock-adaptive-r46",
+      "title": "和纸木版套印 · 五状态自适应叙事",
+      "promise": "为一家小型手工木版画工作室设计一页预约体验网页。访客从一张悬浮在木桌上、尚未落墨的和纸开始，滚动时依次看见木纹压痕、靛蓝首印、朱红套色和最终完整作品，并理解每一步如何形成同一张版画。页面安静、真实、日光充足，像当代工艺出版物；最终行动是“预约一次亲手套印”。结构由工序决定，不固定成三屏。",
+      "tier": "legacy-refined",
+      "tierLabel": "V1 研究案例",
+      "medium": "木版套印 / 同一主体 / 五状态 / 自适应结构",
+      "image": null,
+      "caseKind": "v1-archive",
+      "viewUrl": "./snapshot/pages/v1/case.html?id=dedicated-woodblock-adaptive-r46&quality=high&motion=full",
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/cases/runs/dedicated-woodblock-adaptive-r46"
+    },
+    {
+      "id": "dedicated-53ab257bae4f",
+      "title": "发酵观察工作台 · 滚动推演版",
+      "promise": "为社区烘焙学习者设计一个明亮的发酵观察工作台。持续展示同一只透明发酵罐，用户调整室温、面团含水率和发酵时间时，罐内面团体积、气泡密度、表面张力与颜色同步变化，并用清楚文字解释当前状态；所有结果明确标注为教学估算，最终行动是“保存这份烘焙计划”。使用自然日光、麦粉白、亚麻、浅木与发酵琥珀色，不要暗色科技风、紫色霓虹、巨大标题、随机粒子或电影式长滚动。页面结构按这个产品需要决定，不固定三屏或四屏。",
+      "tier": "legacy-refined",
+      "tierLabel": "V1 研究案例",
+      "medium": "明亮界面 / 滚动推演 / 状态映射 / 素材驱动",
+      "image": null,
+      "caseKind": "v1-archive",
+      "viewUrl": "./snapshot/pages/v1/case.html?id=dedicated-53ab257bae4f&quality=high&motion=full",
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/cases/runs/dedicated-53ab257bae4f"
+    },
+    {
+      "id": "dedicated-tree-canopy-final-r82",
+      "title": "树冠降温观察站 · 真实环境联动最终版",
+      "promise": "为城市居民设计一座“树冠降温观察站”的明亮互动网页。持续展示同一段真实感街道树冠与路面剖面；自动演示从清晨到正午再到浇灌后的温度变化，鼠标滚轮驱动同一时间线，树冠密度和浇水量控件可随时接管并停止演示。界面同步显示树荫范围、路面温度和蒸腾说明，最后行动为“保存这次降温方案”。使用自然日光、植物绿、浅石灰和市政图册式排版，业务先于特效，不要暗色科技风、巨大标题、随机粒子或固定三屏。",
+      "tier": "legacy-refined",
+      "tierLabel": "V1 研究案例",
+      "medium": "真实环境素材 / Three.js / 滚轮联动 / 直接控件",
+      "image": null,
+      "caseKind": "v1-archive",
+      "viewUrl": "./snapshot/pages/v1/case.html?id=dedicated-tree-canopy-final-r82&quality=high&motion=full",
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/cases/runs/dedicated-tree-canopy-final-r82"
+    },
+    {
+      "id": "dedicated-beed36a85788",
+      "title": "晨露屋顶温室",
+      "promise": "为一座城市屋顶温室设计清晨观察网页。滚动时视角从结露玻璃外穿入温室，前景水滴、中景番茄藤和后景城市天际线产生真实视差；拖动湿度后，叶片凝露覆盖范围同步变化，最后保存今日温室记录。明亮自然，不要科技风。",
+      "tier": "legacy-refined",
+      "tierLabel": "V1 研究案例",
+      "medium": "layered-2d / parallax / humidity-state / responsive",
+      "image": null,
+      "caseKind": "v1-archive",
+      "viewUrl": "./snapshot/pages/v1/case.html?id=dedicated-beed36a85788&quality=high&motion=full",
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/cases/runs/dedicated-beed36a85788"
+    },
+    {
+      "id": "dedicated-b4d381a24320",
+      "title": "云杉音板调校台 · 视觉与声学因果联动",
+      "promise": "为手工制琴师设计一张暖白工坊天光下的音板调校网页。左右对比基准厚度与当前厚度，工作区持续展示同一块云杉音板；拖动厚度滑杆时，音板弯曲模态、节点纹路与局部挠度必须在同一主体上同步变化，频率数据与风险解释随之更新，最后行动是“保存本次调校方案”。所有结果明确标为教学模拟。界面像制琴师的测量记录与木工台，不要暗色科技风、巨大标题、随机粒子、发光声波、中央悬浮产品或固定三屏。",
+      "tier": "legacy-featured",
+      "tierLabel": "V1 精选案例",
+      "medium": "真实生成素材 / 同一主体 / 滚轮联动 / 滑杆接管",
+      "image": null,
+      "caseKind": "v1-archive",
+      "viewUrl": "./snapshot/pages/v1/case.html?id=dedicated-b4d381a24320&quality=high&motion=full",
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/cases/runs/dedicated-b4d381a24320"
+    },
+    {
+      "id": "dedicated-braille-r121-repair",
+      "title": "六点光穹 · 盲文触觉星座练习场",
+      "promise": "为盲文初学者设计一座明亮的“六点光穹”触觉星座练习网页。首屏持续展示同一组六个具有实体高度和柔和投影的圆顶触点；选择 A、L、T 三个练习字母时，正确点位在同一阵列中升起或落下，连接光带、点位编号和简短说明同步变化。点击与键盘方向键都能切换同一状态，最后行动是“保存今日点阵练习”。明确说明这是视觉教学演示，不能替代真实触读训练。使用暖白、钴蓝、珊瑚红和柔和实体阴影；用程序化 DOM、Canvas 或 Three.js 构建主体，不需要外部照片。不要暗色科技界面、随机粒子、数据仪表盘、长滚动章节或只改文字不改主体。",
+      "tier": "legacy-featured",
+      "tierLabel": "V1 精选案例",
+      "medium": "V2 / Beta主链路 / 盲文教学 / 同一主体",
+      "image": null,
+      "caseKind": "v1-archive",
+      "viewUrl": "./snapshot/pages/v1/case.html?id=dedicated-braille-r121-repair&quality=high&motion=full",
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/cases/runs/dedicated-braille-r121-repair"
+    },
+    {
+      "id": "capability-resonance-flagship",
+      "title": "资产驱动产品电影",
+      "promise": "真实主视觉、深度图、滚动镜头与克制辉光组成的能力基准。",
+      "medium": "图像 / Three.js / 滚动",
+      "viewUrl": "./snapshot/?experience=resonance-flagship&quality=high&motion=full",
+      "tier": "baseline",
+      "tierLabel": "能力基准",
+      "image": null,
+      "caseKind": "capability-demo",
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/src/cases-main.ts"
+    },
+    {
+      "id": "capability-tidal-archive",
+      "title": "潮汐记忆叙事空间",
+      "promise": "环境、档案关系、空间路径与水体微光组成的叙事空间基准。",
+      "medium": "Three.js / 空间叙事",
+      "viewUrl": "./snapshot/?experience=tidal-archive&quality=high&motion=full",
+      "tier": "baseline",
+      "tierLabel": "能力基准",
+      "image": null,
+      "caseKind": "capability-demo",
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/src/cases-main.ts"
+    },
+    {
+      "id": "capability-coastline-evidence",
+      "title": "潮线证词 · 1984—2026 海岸证据",
+      "promise": "同一时间参数联动海岸形态、年份与证据的语义互动原型。",
+      "medium": "Canvas / 数据 / 互动",
+      "viewUrl": "./snapshot/pages/v2/prototypes/semantic-interaction/?demo=1",
+      "tier": "baseline",
+      "tierLabel": "能力基准",
+      "image": null,
+      "caseKind": "capability-demo",
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/src/cases-main.ts"
+    }
+  ],
+  "generatedHistory": [
+    {
+      "id": "dedicated-05d270882d96",
+      "title": "潮汐机械罗盘｜今晚潮汐窗口",
+      "state": "history",
+      "stateLabel": "历史生成记录",
+      "archivedPackage": false,
+      "hasBundle": true,
+      "hasReview": true,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-05d270882d96"
+    },
+    {
+      "id": "dedicated-05f49eadb2c6",
+      "title": "为一间独立书店设计一张日光下的选书桌网页 用… · 分阶段铺陈",
+      "state": "history",
+      "stateLabel": "历史生成记录",
+      "archivedPackage": false,
+      "hasBundle": true,
+      "hasReview": true,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-05f49eadb2c6"
+    },
+    {
+      "id": "dedicated-06e83ee8e210",
+      "title": "醒来的记忆房间",
+      "state": "superseded",
+      "stateLabel": "已被后续版本替代",
+      "archivedPackage": false,
+      "hasBundle": true,
+      "hasReview": true,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-06e83ee8e210"
+    },
+    {
+      "id": "dedicated-0dd7811db58b",
+      "title": "第一幕｜黑盒排练灯光台",
+      "state": "history",
+      "stateLabel": "历史生成记录",
+      "archivedPackage": false,
+      "hasBundle": true,
+      "hasReview": true,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-0dd7811db58b"
+    },
+    {
+      "id": "dedicated-0f538c770255",
+      "title": "云上观测站",
+      "state": "history",
+      "stateLabel": "历史生成记录",
+      "archivedPackage": false,
+      "hasBundle": true,
+      "hasReview": false,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-0f538c770255"
+    },
+    {
+      "id": "dedicated-1317159fcbac",
+      "title": "榫卯的时间切面",
+      "state": "history",
+      "stateLabel": "历史生成记录",
+      "archivedPackage": false,
+      "hasBundle": true,
+      "hasReview": true,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-1317159fcbac"
+    },
+    {
+      "id": "dedicated-13c527949126",
+      "title": "釉色因果实验台",
+      "state": "history",
+      "stateLabel": "历史生成记录",
+      "archivedPackage": false,
+      "hasBundle": true,
+      "hasReview": false,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-13c527949126"
+    },
+    {
+      "id": "dedicated-143f5fee4d04",
+      "title": "夜生表皮｜温室发布页",
+      "state": "superseded",
+      "stateLabel": "已被后续版本替代",
+      "archivedPackage": false,
+      "hasBundle": true,
+      "hasReview": true,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-143f5fee4d04"
+    },
+    {
+      "id": "dedicated-191bc3ce2125",
+      "title": "读取今夜的风",
+      "state": "catalogued",
+      "stateLabel": "已进入 V1 案例",
+      "archivedPackage": true,
+      "hasBundle": true,
+      "hasReview": true,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-191bc3ce2125"
+    },
+    {
+      "id": "dedicated-1b9f0b05107b",
+      "title": "保存这一刻的声音",
+      "state": "catalogued",
+      "stateLabel": "已进入 V1 案例",
+      "archivedPackage": true,
+      "hasBundle": true,
+      "hasReview": true,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-1b9f0b05107b"
+    },
+    {
+      "id": "dedicated-1edb98865f4c",
+      "title": "声场星图发布体验",
+      "state": "catalogued",
+      "stateLabel": "已进入 V1 案例",
+      "archivedPackage": true,
+      "hasBundle": true,
+      "hasReview": true,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-1edb98865f4c"
+    },
+    {
+      "id": "dedicated-2a81dd15a16c",
+      "title": "为海洋记忆数字展陈设计网页 面向学生和普通访… · 分阶段铺陈",
+      "state": "history",
+      "stateLabel": "历史生成记录",
+      "archivedPackage": false,
+      "hasBundle": true,
+      "hasReview": false,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-2a81dd15a16c"
+    },
+    {
+      "id": "dedicated-2cfc2c25efd7",
+      "title": "未完成的生成记录",
+      "state": "history",
+      "stateLabel": "历史生成记录",
+      "archivedPackage": false,
+      "hasBundle": false,
+      "hasReview": false,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-2cfc2c25efd7"
+    },
+    {
+      "id": "dedicated-2ecde7808a38",
+      "title": "为一座只在夜间开放的生物材料温室设计沉浸式发… · 单镜凝视",
+      "state": "superseded",
+      "stateLabel": "已被后续版本替代",
+      "archivedPackage": false,
+      "hasBundle": true,
+      "hasReview": true,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-2ecde7808a38"
+    },
+    {
+      "id": "dedicated-301d5e856e85",
+      "title": "日光饮水图册",
+      "state": "history",
+      "stateLabel": "历史生成记录",
+      "archivedPackage": false,
+      "hasBundle": true,
+      "hasReview": false,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-301d5e856e85"
+    },
+    {
+      "id": "dedicated-328c292e3645",
+      "title": "夜生表皮｜温室发布页",
+      "state": "history",
+      "stateLabel": "历史生成记录",
+      "archivedPackage": false,
+      "hasBundle": true,
+      "hasReview": true,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-328c292e3645"
+    },
+    {
+      "id": "dedicated-35f0e7233965",
+      "title": "云上观测站",
+      "state": "history",
+      "stateLabel": "历史生成记录",
+      "archivedPackage": false,
+      "hasBundle": true,
+      "hasReview": true,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-35f0e7233965"
+    },
+    {
+      "id": "dedicated-3844347fdd4f",
+      "title": "夜生表皮｜温室发布页",
+      "state": "history",
+      "stateLabel": "历史生成记录",
+      "archivedPackage": false,
+      "hasBundle": true,
+      "hasReview": true,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-3844347fdd4f"
+    },
+    {
+      "id": "dedicated-3aeb34a5aacf",
+      "title": "日光饮水图册",
+      "state": "history",
+      "stateLabel": "历史生成记录",
+      "archivedPackage": false,
+      "hasBundle": true,
+      "hasReview": false,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-3aeb34a5aacf"
+    },
+    {
+      "id": "dedicated-3c73e294dce9",
+      "title": "醒来的记忆房间",
+      "state": "history",
+      "stateLabel": "历史生成记录",
+      "archivedPackage": false,
+      "hasBundle": true,
+      "hasReview": true,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-3c73e294dce9"
+    },
+    {
+      "id": "dedicated-444c8d29798c",
+      "title": "夜生表皮｜温室发布页",
+      "state": "history",
+      "stateLabel": "历史生成记录",
+      "archivedPackage": false,
+      "hasBundle": true,
+      "hasReview": false,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-444c8d29798c"
+    },
+    {
+      "id": "dedicated-449d2fa13a90",
+      "title": "为一座只在夜间开放的生物材料温室设计沉浸式发… · 单镜凝视",
+      "state": "history",
+      "stateLabel": "历史生成记录",
+      "archivedPackage": false,
+      "hasBundle": true,
+      "hasReview": true,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-449d2fa13a90"
+    },
+    {
+      "id": "dedicated-44fecefcb981",
+      "title": "声场星图发布体验",
+      "state": "superseded",
+      "stateLabel": "已被后续版本替代",
+      "archivedPackage": false,
+      "hasBundle": true,
+      "hasReview": true,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-44fecefcb981"
+    },
+    {
+      "id": "dedicated-47a48128bce1",
+      "title": "夜生表皮｜温室发布页",
+      "state": "superseded",
+      "stateLabel": "已被后续版本替代",
+      "archivedPackage": false,
+      "hasBundle": true,
+      "hasReview": true,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-47a48128bce1"
+    },
+    {
+      "id": "dedicated-4aa266604001",
+      "title": "为一间独立书店设计一张日光下的选书桌网页 用… · 分阶段铺陈",
+      "state": "history",
+      "stateLabel": "历史生成记录",
+      "archivedPackage": false,
+      "hasBundle": true,
+      "hasReview": true,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-4aa266604001"
+    },
+    {
+      "id": "dedicated-53ab257bae4f",
+      "title": "发酵观察工作台",
+      "state": "catalogued",
+      "stateLabel": "已进入 V1 案例",
+      "archivedPackage": true,
+      "hasBundle": true,
+      "hasReview": true,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-53ab257bae4f"
+    },
+    {
+      "id": "dedicated-5663911ca333",
+      "title": "为社区菜市场设计一张明亮的“本周当季食材编排… · 单镜凝视",
+      "state": "history",
+      "stateLabel": "历史生成记录",
+      "archivedPackage": false,
+      "hasBundle": true,
+      "hasReview": false,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-5663911ca333"
+    },
+    {
+      "id": "dedicated-5694e0a3a022",
+      "title": "风扇诊断台",
+      "state": "catalogued",
+      "stateLabel": "已进入 V1 案例",
+      "archivedPackage": true,
+      "hasBundle": true,
+      "hasReview": true,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-5694e0a3a022"
+    },
+    {
+      "id": "dedicated-5a3c68c1117f",
+      "title": "日光折叠实验记录",
+      "state": "history",
+      "stateLabel": "历史生成记录",
+      "archivedPackage": false,
+      "hasBundle": true,
+      "hasReview": true,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-5a3c68c1117f"
+    },
+    {
+      "id": "dedicated-5d0e5dd33398",
+      "title": "潮汐机械罗盘｜今晚潮汐窗口",
+      "state": "history",
+      "stateLabel": "历史生成记录",
+      "archivedPackage": false,
+      "hasBundle": true,
+      "hasReview": false,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-5d0e5dd33398"
+    },
+    {
+      "id": "dedicated-5dfdc4d0650e",
+      "title": "为一款面向独立创作者的智能声音产品 设计清冷… · 单镜凝视",
+      "state": "history",
+      "stateLabel": "历史生成记录",
+      "archivedPackage": true,
+      "hasBundle": true,
+      "hasReview": true,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-5dfdc4d0650e"
+    },
+    {
+      "id": "dedicated-62215947bbff",
+      "title": "为盲文初学者设计一座明亮的“六点光穹”触觉星… · 分阶段铺陈",
+      "state": "history",
+      "stateLabel": "历史生成记录",
+      "archivedPackage": false,
+      "hasBundle": true,
+      "hasReview": true,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-62215947bbff"
+    },
+    {
+      "id": "dedicated-639b6558bc63",
+      "title": "第一幕｜黑盒排练台",
+      "state": "history",
+      "stateLabel": "历史生成记录",
+      "archivedPackage": false,
+      "hasBundle": true,
+      "hasReview": true,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-639b6558bc63"
+    },
+    {
+      "id": "dedicated-67618f3d695c",
+      "title": "釉色因果实验台",
+      "state": "history",
+      "stateLabel": "历史生成记录",
+      "archivedPackage": false,
+      "hasBundle": true,
+      "hasReview": false,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-67618f3d695c"
+    },
+    {
+      "id": "dedicated-6e5c99b42c65",
+      "title": "日光釉色工作台",
+      "state": "history",
+      "stateLabel": "历史生成记录",
+      "archivedPackage": false,
+      "hasBundle": true,
+      "hasReview": true,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-6e5c99b42c65"
+    },
+    {
+      "id": "dedicated-7018bc0dd76d",
+      "title": "为一座城市公共钟表修复档案设计交互网页 开场… · 单镜凝视",
+      "state": "history",
+      "stateLabel": "历史生成记录",
+      "archivedPackage": false,
+      "hasBundle": true,
+      "hasReview": true,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-7018bc0dd76d"
+    },
+    {
+      "id": "dedicated-715b072fe2d4",
+      "title": "晨雨留声",
+      "state": "history",
+      "stateLabel": "历史生成记录",
+      "archivedPackage": false,
+      "hasBundle": true,
+      "hasReview": true,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-715b072fe2d4"
+    },
+    {
+      "id": "dedicated-76102bb2158c",
+      "title": "最后亮着的招牌",
+      "state": "catalogued",
+      "stateLabel": "已进入 V1 案例",
+      "archivedPackage": true,
+      "hasBundle": true,
+      "hasReview": false,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-76102bb2158c"
+    },
+    {
+      "id": "dedicated-7b4cae3ee35e",
+      "title": "日光套印预约页",
+      "state": "history",
+      "stateLabel": "历史生成记录",
+      "archivedPackage": false,
+      "hasBundle": true,
+      "hasReview": false,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-7b4cae3ee35e"
+    },
+    {
+      "id": "dedicated-7c944e0c386f",
+      "title": "一页纸的修复旅程",
+      "state": "catalogued",
+      "stateLabel": "已进入 V1 案例",
+      "archivedPackage": true,
+      "hasBundle": true,
+      "hasReview": true,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-7c944e0c386f"
+    },
+    {
+      "id": "dedicated-7d00f0096507",
+      "title": "安静座位观察台",
+      "state": "history",
+      "stateLabel": "历史生成记录",
+      "archivedPackage": true,
+      "hasBundle": true,
+      "hasReview": true,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-7d00f0096507"
+    },
+    {
+      "id": "dedicated-828aa3f751d9",
+      "title": "为社区菜市场设计一张明亮的“本周当季食材编排… · 单镜凝视",
+      "state": "history",
+      "stateLabel": "历史生成记录",
+      "archivedPackage": false,
+      "hasBundle": true,
+      "hasReview": true,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-828aa3f751d9"
+    },
+    {
+      "id": "dedicated-8574ee46ab16",
+      "title": "醒来的记忆房间",
+      "state": "catalogued",
+      "stateLabel": "已进入 V1 案例",
+      "archivedPackage": true,
+      "hasBundle": true,
+      "hasReview": false,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-8574ee46ab16"
+    },
+    {
+      "id": "dedicated-85ea283ec843",
+      "title": "为社区菜市场设计一张明亮的“本周当季食材编排… · 单镜凝视",
+      "state": "history",
+      "stateLabel": "历史生成记录",
+      "archivedPackage": false,
+      "hasBundle": true,
+      "hasReview": false,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-85ea283ec843"
+    },
+    {
+      "id": "dedicated-8607ba931ee4",
+      "title": "日光套印预约页",
+      "state": "history",
+      "stateLabel": "历史生成记录",
+      "archivedPackage": false,
+      "hasBundle": true,
+      "hasReview": true,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-8607ba931ee4"
+    },
+    {
+      "id": "dedicated-87a0fb6b5f9c",
+      "title": "醒来的记忆房间",
+      "state": "history",
+      "stateLabel": "历史生成记录",
+      "archivedPackage": false,
+      "hasBundle": true,
+      "hasReview": false,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-87a0fb6b5f9c"
+    },
+    {
+      "id": "dedicated-890e64c30974",
+      "title": "日光饮水图册",
+      "state": "history",
+      "stateLabel": "历史生成记录",
+      "archivedPackage": false,
+      "hasBundle": true,
+      "hasReview": true,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-890e64c30974"
+    },
+    {
+      "id": "dedicated-896cfb7e6657",
+      "title": "云上观测站",
+      "state": "catalogued",
+      "stateLabel": "已进入 V1 案例",
+      "archivedPackage": true,
+      "hasBundle": true,
+      "hasReview": false,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-896cfb7e6657"
+    },
+    {
+      "id": "dedicated-89f0afba0ba8",
+      "title": "云上观测站",
+      "state": "superseded",
+      "stateLabel": "已被后续版本替代",
+      "archivedPackage": false,
+      "hasBundle": true,
+      "hasReview": true,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-89f0afba0ba8"
+    },
+    {
+      "id": "dedicated-8beef4d9ee2b",
+      "title": "日光饮水图册",
+      "state": "history",
+      "stateLabel": "历史生成记录",
+      "archivedPackage": false,
+      "hasBundle": true,
+      "hasReview": true,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-8beef4d9ee2b"
+    },
+    {
+      "id": "dedicated-9121e282a034",
+      "title": "未完成的生成记录",
+      "state": "history",
+      "stateLabel": "历史生成记录",
+      "archivedPackage": false,
+      "hasBundle": false,
+      "hasReview": false,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-9121e282a034"
+    },
+    {
+      "id": "dedicated-9535f6c5e73a",
+      "title": "釉方小茶杯实验台",
+      "state": "history",
+      "stateLabel": "历史生成记录",
+      "archivedPackage": false,
+      "hasBundle": true,
+      "hasReview": true,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-9535f6c5e73a"
+    },
+    {
+      "id": "dedicated-9850596d220a",
+      "title": "发酵观察工作台",
+      "state": "history",
+      "stateLabel": "历史生成记录",
+      "archivedPackage": false,
+      "hasBundle": true,
+      "hasReview": true,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-9850596d220a"
+    },
+    {
+      "id": "dedicated-aa926f0c00b0",
+      "title": "夜生表皮｜温室发布页",
+      "state": "history",
+      "stateLabel": "历史生成记录",
+      "archivedPackage": false,
+      "hasBundle": true,
+      "hasReview": true,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-aa926f0c00b0"
+    },
+    {
+      "id": "dedicated-ac182411e506",
+      "title": "夜生表皮｜温室发布页",
+      "state": "history",
+      "stateLabel": "历史生成记录",
+      "archivedPackage": true,
+      "hasBundle": true,
+      "hasReview": true,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-ac182411e506"
+    },
+    {
+      "id": "dedicated-ad7707be2b14",
+      "title": "醒来的记忆房间",
+      "state": "history",
+      "stateLabel": "历史生成记录",
+      "archivedPackage": false,
+      "hasBundle": true,
+      "hasReview": true,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-ad7707be2b14"
+    },
+    {
+      "id": "dedicated-aeff55d35009",
+      "title": "醒来的记忆房间",
+      "state": "superseded",
+      "stateLabel": "已被后续版本替代",
+      "archivedPackage": false,
+      "hasBundle": true,
+      "hasReview": true,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-aeff55d35009"
+    },
+    {
+      "id": "dedicated-af8bb4f05b56",
+      "title": "为儿童自然教育设计一张明亮、有触感的植物观察… · 单镜凝视",
+      "state": "history",
+      "stateLabel": "历史生成记录",
+      "archivedPackage": false,
+      "hasBundle": true,
+      "hasReview": true,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-af8bb4f05b56"
+    },
+    {
+      "id": "dedicated-afdb8c23b1a5",
+      "title": "和声排练台：从听见问题到保存配置",
+      "state": "history",
+      "stateLabel": "历史生成记录",
+      "archivedPackage": false,
+      "hasBundle": true,
+      "hasReview": true,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-afdb8c23b1a5"
+    },
+    {
+      "id": "dedicated-b07ad074f29d",
+      "title": "读取今夜的风",
+      "state": "history",
+      "stateLabel": "历史生成记录",
+      "archivedPackage": false,
+      "hasBundle": true,
+      "hasReview": true,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-b07ad074f29d"
+    },
+    {
+      "id": "dedicated-b4d381a24320",
+      "title": "为手工制琴师设计一张暖白工坊天光下的音板调校… · 单镜凝视",
+      "state": "catalogued",
+      "stateLabel": "已进入 V1 案例",
+      "archivedPackage": true,
+      "hasBundle": true,
+      "hasReview": true,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-b4d381a24320"
+    },
+    {
+      "id": "dedicated-ba4e9d10caaa-depth-field",
+      "title": "为一个先锋时装品牌设计梦幻流体光幕、柔和但有… · 单镜凝视",
+      "state": "catalogued",
+      "stateLabel": "已进入 V1 案例",
+      "archivedPackage": true,
+      "hasBundle": true,
+      "hasReview": true,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-ba4e9d10caaa-depth-field"
+    },
+    {
+      "id": "dedicated-bb83119e2c21",
+      "title": "夜生表皮｜温室发布页",
+      "state": "history",
+      "stateLabel": "历史生成记录",
+      "archivedPackage": false,
+      "hasBundle": true,
+      "hasReview": true,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-bb83119e2c21"
+    },
+    {
+      "id": "dedicated-bc4f5f92737f",
+      "title": "纸翼候鸟风洞观察",
+      "state": "history",
+      "stateLabel": "历史生成记录",
+      "archivedPackage": false,
+      "hasBundle": true,
+      "hasReview": true,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-bc4f5f92737f"
+    },
+    {
+      "id": "dedicated-be0504d3a43b",
+      "title": "木构咬合档案",
+      "state": "history",
+      "stateLabel": "历史生成记录",
+      "archivedPackage": false,
+      "hasBundle": true,
+      "hasReview": true,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-be0504d3a43b"
+    },
+    {
+      "id": "dedicated-beb72d571da1",
+      "title": "未完成的生成记录",
+      "state": "history",
+      "stateLabel": "历史生成记录",
+      "archivedPackage": false,
+      "hasBundle": false,
+      "hasReview": false,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-beb72d571da1"
+    },
+    {
+      "id": "dedicated-beed36a85788",
+      "title": "屋顶温室·晨间观察",
+      "state": "catalogued",
+      "stateLabel": "已进入 V1 案例",
+      "archivedPackage": true,
+      "hasBundle": true,
+      "hasReview": false,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-beed36a85788"
+    },
+    {
+      "id": "dedicated-braille-r121-repair",
+      "title": "为盲文初学者设计一座明亮的“六点光穹”触觉星… · 分阶段铺陈",
+      "state": "catalogued",
+      "stateLabel": "已进入 V1 案例",
+      "archivedPackage": true,
+      "hasBundle": true,
+      "hasReview": true,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-braille-r121-repair"
+    },
+    {
+      "id": "dedicated-c0514ddead80",
+      "title": "日光饮水图册",
+      "state": "catalogued",
+      "stateLabel": "已进入 V1 案例",
+      "archivedPackage": true,
+      "hasBundle": true,
+      "hasReview": false,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-c0514ddead80"
+    },
+    {
+      "id": "dedicated-c45530463bb6",
+      "title": "为一座城市公共钟表修复档案设计交互网页 开场… · 单镜凝视",
+      "state": "history",
+      "stateLabel": "历史生成记录",
+      "archivedPackage": false,
+      "hasBundle": true,
+      "hasReview": true,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-c45530463bb6"
+    },
+    {
+      "id": "dedicated-c7c3e40652dd",
+      "title": "为一间独立书店设计一张日光下的选书桌网页 用… · 分阶段铺陈",
+      "state": "history",
+      "stateLabel": "历史生成记录",
+      "archivedPackage": false,
+      "hasBundle": true,
+      "hasReview": true,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-c7c3e40652dd"
+    },
+    {
+      "id": "dedicated-c9866b6df5cc",
+      "title": "日光饮水图册",
+      "state": "history",
+      "stateLabel": "历史生成记录",
+      "archivedPackage": false,
+      "hasBundle": true,
+      "hasReview": false,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-c9866b6df5cc"
+    },
+    {
+      "id": "dedicated-cfbc188f1ce7",
+      "title": "气味标本室",
+      "state": "history",
+      "stateLabel": "历史生成记录",
+      "archivedPackage": false,
+      "hasBundle": true,
+      "hasReview": false,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-cfbc188f1ce7"
+    },
+    {
+      "id": "dedicated-d436653c3b9a",
+      "title": "树冠降温观察站",
+      "state": "history",
+      "stateLabel": "历史生成记录",
+      "archivedPackage": false,
+      "hasBundle": true,
+      "hasReview": true,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-d436653c3b9a"
+    },
+    {
+      "id": "dedicated-d454489c2b4f",
+      "title": "夜生表皮｜温室发布页",
+      "state": "superseded",
+      "stateLabel": "已被后续版本替代",
+      "archivedPackage": false,
+      "hasBundle": true,
+      "hasReview": true,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-d454489c2b4f"
+    },
+    {
+      "id": "dedicated-d475d1dd53f9",
+      "title": "夜生表皮｜温室发布页",
+      "state": "superseded",
+      "stateLabel": "已被后续版本替代",
+      "archivedPackage": false,
+      "hasBundle": true,
+      "hasReview": true,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-d475d1dd53f9"
+    },
+    {
+      "id": "dedicated-e1cae148f471",
+      "title": "R88 时序探针",
+      "state": "history",
+      "stateLabel": "历史生成记录",
+      "archivedPackage": false,
+      "hasBundle": true,
+      "hasReview": true,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-e1cae148f471"
+    },
+    {
+      "id": "dedicated-e5568892beb9",
+      "title": "夜生表皮｜温室发布页",
+      "state": "history",
+      "stateLabel": "历史生成记录",
+      "archivedPackage": false,
+      "hasBundle": true,
+      "hasReview": true,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-e5568892beb9"
+    },
+    {
+      "id": "dedicated-e7ec54b5872e",
+      "title": "夜生表皮｜温室发布页",
+      "state": "history",
+      "stateLabel": "历史生成记录",
+      "archivedPackage": false,
+      "hasBundle": true,
+      "hasReview": false,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-e7ec54b5872e"
+    },
+    {
+      "id": "dedicated-ed4b7348709a",
+      "title": "声场星图发布体验",
+      "state": "superseded",
+      "stateLabel": "已被后续版本替代",
+      "archivedPackage": false,
+      "hasBundle": true,
+      "hasReview": true,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-ed4b7348709a"
+    },
+    {
+      "id": "dedicated-eebc518fb52f",
+      "title": "醒来的记忆房间",
+      "state": "superseded",
+      "stateLabel": "已被后续版本替代",
+      "archivedPackage": false,
+      "hasBundle": true,
+      "hasReview": true,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-eebc518fb52f"
+    },
+    {
+      "id": "dedicated-ef118f0f4962",
+      "title": "气味标本室",
+      "state": "catalogued",
+      "stateLabel": "已进入 V1 案例",
+      "archivedPackage": true,
+      "hasBundle": true,
+      "hasReview": false,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-ef118f0f4962"
+    },
+    {
+      "id": "dedicated-f3225181033e",
+      "title": "日光风洞：候鸟飞行观察",
+      "state": "history",
+      "stateLabel": "历史生成记录",
+      "archivedPackage": false,
+      "hasBundle": true,
+      "hasReview": true,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-f3225181033e"
+    },
+    {
+      "id": "dedicated-f47e9a4e13ca",
+      "title": "气味标本室",
+      "state": "history",
+      "stateLabel": "历史生成记录",
+      "archivedPackage": false,
+      "hasBundle": true,
+      "hasReview": true,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-f47e9a4e13ca"
+    },
+    {
+      "id": "dedicated-f9ed58e5b7ea",
+      "title": "为一部没有画面的午夜电台短篇小说设计可聆听的… · 单镜凝视",
+      "state": "history",
+      "stateLabel": "历史生成记录",
+      "archivedPackage": true,
+      "hasBundle": true,
+      "hasReview": true,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-f9ed58e5b7ea"
+    },
+    {
+      "id": "dedicated-fb2fcdd22b9f",
+      "title": "醒来的记忆房间",
+      "state": "history",
+      "stateLabel": "历史生成记录",
+      "archivedPackage": false,
+      "hasBundle": true,
+      "hasReview": false,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-fb2fcdd22b9f"
+    },
+    {
+      "id": "dedicated-ff076d4a2347",
+      "title": "为社区菜市场设计一张明亮的“本周当季食材编排… · 单镜凝视",
+      "state": "history",
+      "stateLabel": "历史生成记录",
+      "archivedPackage": false,
+      "hasBundle": true,
+      "hasReview": false,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-ff076d4a2347"
+    },
+    {
+      "id": "dedicated-lantern-final-r65",
+      "title": "日光折叠实验记录",
+      "state": "catalogued",
+      "stateLabel": "已进入 V1 案例",
+      "archivedPackage": true,
+      "hasBundle": true,
+      "hasReview": false,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-lantern-final-r65"
+    },
+    {
+      "id": "dedicated-mortise-final-r65",
+      "title": "榫卯的时间切面",
+      "state": "catalogued",
+      "stateLabel": "已进入 V1 案例",
+      "archivedPackage": true,
+      "hasBundle": true,
+      "hasReview": false,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-mortise-final-r65"
+    },
+    {
+      "id": "dedicated-mortise-state-r62",
+      "title": "榫卯的时间切面",
+      "state": "history",
+      "stateLabel": "历史生成记录",
+      "archivedPackage": false,
+      "hasBundle": true,
+      "hasReview": true,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-mortise-state-r62"
+    },
+    {
+      "id": "dedicated-r36-delivery-final",
+      "title": "夜生表皮｜温室发布页",
+      "state": "catalogued",
+      "stateLabel": "已进入 V1 案例",
+      "archivedPackage": true,
+      "hasBundle": true,
+      "hasReview": true,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-r36-delivery-final"
+    },
+    {
+      "id": "dedicated-r36-four-stage-final",
+      "title": "夜生表皮｜温室发布页",
+      "state": "history",
+      "stateLabel": "历史生成记录",
+      "archivedPackage": false,
+      "hasBundle": true,
+      "hasReview": true,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-r36-four-stage-final"
+    },
+    {
+      "id": "dedicated-r36-single-focus",
+      "title": "夜生表皮｜温室发布页",
+      "state": "history",
+      "stateLabel": "历史生成记录",
+      "archivedPackage": false,
+      "hasBundle": true,
+      "hasReview": true,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-r36-single-focus"
+    },
+    {
+      "id": "dedicated-r36-three-stage-final",
+      "title": "夜生表皮｜温室发布页",
+      "state": "history",
+      "stateLabel": "历史生成记录",
+      "archivedPackage": false,
+      "hasBundle": true,
+      "hasReview": true,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-r36-three-stage-final"
+    },
+    {
+      "id": "dedicated-seed-pod-r36-base",
+      "title": "夜生表皮｜温室发布页",
+      "state": "history",
+      "stateLabel": "历史生成记录",
+      "archivedPackage": false,
+      "hasBundle": true,
+      "hasReview": false,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-seed-pod-r36-base"
+    },
+    {
+      "id": "dedicated-tree-canopy-final-r82",
+      "title": "树冠降温观察站",
+      "state": "catalogued",
+      "stateLabel": "已进入 V1 案例",
+      "archivedPackage": true,
+      "hasBundle": true,
+      "hasReview": true,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-tree-canopy-final-r82"
+    },
+    {
+      "id": "dedicated-woodblock-adaptive-r46",
+      "title": "日光套印预约页",
+      "state": "catalogued",
+      "stateLabel": "已进入 V1 案例",
+      "archivedPackage": true,
+      "hasBundle": true,
+      "hasReview": false,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-woodblock-adaptive-r46"
+    },
+    {
+      "id": "dedicated-woodblock-asset-r32",
+      "title": "日光套印预约页",
+      "state": "history",
+      "stateLabel": "历史生成记录",
+      "archivedPackage": true,
+      "hasBundle": true,
+      "hasReview": false,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/generated/runs/dedicated-woodblock-asset-r32"
     }
   ],
   "researchDocuments": [

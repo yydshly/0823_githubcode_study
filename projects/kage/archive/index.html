@@ -14,6 +14,7 @@
         <a href="#conclusion">结论</a>
         <a href="#map">研究路线</a>
         <a href="#cases">案例</a>
+        <a href="#history">生成历史</a>
         <a href="#documents">文档</a>
       </nav>
       <span class="archive-state">ARCHIVED · R173</span>
@@ -28,11 +29,13 @@
           <p class="boundary">本页是独立、只读、可追溯的研究归档。它不会替换 V1、V2 或已有案例部署。</p>
         </div>
         <div class="hero-index" aria-label="归档规模">
+          <div><strong data-stat="runnableCases">—</strong><span>可运行案例</span></div>
+          <div><strong data-stat="deliveries">—</strong><span>V2 交付</span></div>
+          <div><strong data-stat="archivedCases">—</strong><span>V1 案例</span></div>
+          <div><strong data-stat="capabilityDemos">—</strong><span>能力基准</span></div>
+          <div><strong data-stat="historyRuns">—</strong><span>历史生成记录</span></div>
           <div><strong data-stat="researchDocs">—</strong><span>研究文档</span></div>
-          <div><strong data-stat="deliveries">—</strong><span>交付案例</span></div>
           <div><strong data-stat="evidenceRuns">—</strong><span>运行证据</span></div>
-          <div><strong data-stat="capabilities">—</strong><span>能力族</span></div>
-          <div><strong data-stat="formalProducts">—</strong><span>正式产品回执</span></div>
         </div>
       </section>
 
@@ -94,8 +97,8 @@
 
       <section id="cases" class="section cases-section">
         <header class="section-title split">
-          <div><p>04 / CASE ARCHIVE</p><h2>35 个交付，<br />不再伪装成 35 个成功。</h2></div>
-          <p>案例被保留为证据：有些证明媒介能力，有些证明产品闭环，有些只记录失败边界。归档不再把“能运行”直接等同于“优秀”。</p>
+          <div><p>04 / RUNNABLE CASE ARCHIVE</p><h2><span data-stat="runnableCases">—</span> 个案例，<br />现在都能直接查看。</h2></div>
+          <p>这里完整包含 35 个 V2 交付、20 个 V1 精选/精修案例和 3 个能力基准。每项同时保留可运行快照与冻结源码；分类表达研究结论，不把“能运行”直接等同于“优秀”。</p>
         </header>
         <div id="featured-cases" class="featured-cases"></div>
         <div class="catalog-tools">
@@ -106,8 +109,20 @@
         <div id="case-catalog" class="case-catalog"></div>
       </section>
 
+      <section id="history" class="section history-section">
+        <header class="section-title split">
+          <div><p>05 / GENERATION LEDGER</p><h2><span data-stat="historyRuns">—</span> 次生成，<br />一条也不抹掉。</h2></div>
+          <p>这些是完整生成账本，包含首稿、失败稿、被替代稿和最终稿。它们不是额外的精选案例，因此只提供冻结源码与状态证据；真正进入案例库的结果已在上方提供可运行入口。</p>
+        </header>
+        <div class="catalog-tools history-tools">
+          <label><span>检索生成记录</span><input id="history-search" type="search" placeholder="输入 run id、标题或状态" /></label>
+          <p id="history-count">—</p>
+        </div>
+        <div id="history-list" class="history-list"></div>
+      </section>
+
       <section class="section learning-section">
-        <header class="section-title"><p>05 / WHAT WE LEARNED</p><h2>真正有效的结论。</h2></header>
+        <header class="section-title"><p>06 / WHAT WE LEARNED</p><h2>真正有效的结论。</h2></header>
         <div class="learning-grid">
           <article><span>01</span><h3>效果先于技术</h3><p>先定义用户要感受到的变化，再选择图像、3D、声音、视频、蒙版或其他方法。技术数量不等于质量。</p></article>
           <article><span>02</span><h3>关键素材不能凑合</h3><p>当主体、地点或材质承载产品身份时，应使用真实、授权、生成或高质量 3D 素材；程序图形不能冒充正式内容。</p></article>
@@ -124,7 +139,7 @@
 
       <section id="documents" class="section documents-section">
         <header class="section-title split">
-          <div><p>06 / SOURCE LEDGER</p><h2>完整研究索引，<br />而不是只选好看的结果。</h2></div>
+          <div><p>07 / SOURCE LEDGER</p><h2>完整研究索引，<br />而不是只选好看的结果。</h2></div>
           <p>全部研究文件保留在冻结分支。此处提供可搜索索引和源码链接，包含 MotionSites、本地案例、外部优秀产品、Three.js、ThreeUI、生成协议、质量门、失败与恢复记录。</p>
         </header>
         <div class="source-family-list" id="source-family-list"></div>
@@ -136,7 +151,7 @@
       </section>
 
       <section class="section architecture-section">
-        <header class="section-title"><p>07 / PRESERVED ARCHITECTURE</p><h2>冻结的项目结构。</h2></header>
+        <header class="section-title"><p>08 / PRESERVED ARCHITECTURE</p><h2>冻结的项目结构。</h2></header>
         <div class="architecture-flow" aria-label="冻结架构流程">
           <span>用户想法</span><i>→</i><span>感受与产品目标</span><i>→</i><span>相关案例原理</span><i>→</i><span>媒介与素材职责</span><i>→</i><span>有界构建</span><i>→</i><span>浏览器证据</span><i>→</i><span>人工/独立判断</span>
         </div>

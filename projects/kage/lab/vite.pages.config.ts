@@ -1,8 +1,15 @@
 import { resolve } from 'node:path'
 import { defineConfig, type Plugin } from 'vite'
 
-const pagesAssetRoot = '/0823_githubcode_study/projects/kage/creative-assets/'
-const pagesPublicAssetRoot = '/0823_githubcode_study/projects/kage/assets/'
+const defaultPagesBase = '/0823_githubcode_study/projects/kage/'
+const pagesBase = normalizeBase(process.env.KAGE_PAGES_BASE || defaultPagesBase)
+const pagesAssetRoot = `${pagesBase}creative-assets/`
+const pagesPublicAssetRoot = `${pagesBase}assets/`
+
+function normalizeBase(value: string): string {
+  const withLeadingSlash = value.startsWith('/') ? value : `/${value}`
+  return withLeadingSlash.endsWith('/') ? withLeadingSlash : `${withLeadingSlash}/`
+}
 
 function rewriteProjectAssetPaths(): Plugin {
   return {
@@ -23,7 +30,7 @@ function rewriteProjectAssetPaths(): Plugin {
 }
 
 export default defineConfig({
-  base: '/0823_githubcode_study/projects/kage/',
+  base: pagesBase,
   plugins: [rewriteProjectAssetPaths()],
   resolve: {
     alias: {
@@ -32,10 +39,12 @@ export default defineConfig({
   },
   build: {
     target: 'es2022',
-    outDir: '.pages-dist',
+    outDir: process.env.KAGE_PAGES_OUT_DIR || '.pages-dist',
     emptyOutDir: true,
     rollupOptions: {
       input: {
+        'index': resolve(import.meta.dirname, 'index.html'),
+        'cases': resolve(import.meta.dirname, 'cases.html'),
         'workbench': resolve(import.meta.dirname, 'workbench.html'),
         'pages/v1/index': resolve(import.meta.dirname, 'pages/v1/index.html'),
         'pages/v1/case': resolve(import.meta.dirname, 'pages/v1/case.html'),

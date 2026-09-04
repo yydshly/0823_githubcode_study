@@ -5,36 +5,21 @@ const caseId = params.get('id') ?? ''
 const selected = catalog.cases.find((item) => item.id === caseId)
 const app = document.querySelector<HTMLElement>('#app')
 
-const cases: Record<string, { style: () => Promise<unknown>; experience: () => Promise<unknown> }> = {
-  'dedicated-ba4e9d10caaa-depth-field': {
-    style: () => import('../../cases/runs/dedicated-ba4e9d10caaa-depth-field/src/page.css'),
-    experience: () => import('../../cases/runs/dedicated-ba4e9d10caaa-depth-field/src/experience.ts'),
-  },
-  'dedicated-r36-delivery-final': {
-    style: () => import('../../cases/runs/dedicated-r36-delivery-final/src/page.css'),
-    experience: () => import('../../cases/runs/dedicated-r36-delivery-final/src/experience.ts'),
-  },
-  'dedicated-896cfb7e6657': {
-    style: () => import('../../cases/runs/dedicated-896cfb7e6657/src/page.css'),
-    experience: () => import('../../cases/runs/dedicated-896cfb7e6657/src/experience.ts'),
-  },
-  'dedicated-1edb98865f4c': {
-    style: () => import('../../cases/runs/dedicated-1edb98865f4c/src/page.css'),
-    experience: () => import('../../cases/runs/dedicated-1edb98865f4c/src/experience.ts'),
-  },
-  'dedicated-8574ee46ab16': {
-    style: () => import('../../cases/runs/dedicated-8574ee46ab16/src/page.css'),
-    experience: () => import('../../cases/runs/dedicated-8574ee46ab16/src/experience.ts'),
-  },
-  'dedicated-1b9f0b05107b': {
-    style: () => import('../../cases/runs/dedicated-1b9f0b05107b/src/page.css'),
-    experience: () => import('../../cases/runs/dedicated-1b9f0b05107b/src/experience.ts'),
-  },
+// Keep the frozen catalog and the runnable package inventory in sync. Vite
+// resolves these imports at build time, so the GitHub Pages archive remains a
+// static site while every catalogued V1 case can still start its own module.
+const styleModules = import.meta.glob('../../cases/runs/*/src/page.css')
+const experienceModules = import.meta.glob('../../cases/runs/*/src/experience.ts')
+
+function loaderFor(id: string, file: 'page.css' | 'experience.ts'): (() => Promise<unknown>) | undefined {
+  const key = `../../cases/runs/${id}/src/${file}`
+  return file === 'page.css' ? styleModules[key] : experienceModules[key]
 }
 
 async function start() {
-  const loaders = cases[caseId]
-  if (!app || !selected || !loaders) {
+  const style = loaderFor(caseId, 'page.css')
+  const experience = loaderFor(caseId, 'experience.ts')
+  if (!app || !selected || !style || !experience) {
     if (app) {
       app.innerHTML = '<section class="case-error"><h1>案例未找到</h1><p>这个地址没有对应的 V1 归档结果，请返回案例目录重新选择。</p><a href="./">返回 V1 案例目录</a></section>'
     }
@@ -42,8 +27,8 @@ async function start() {
   }
 
   document.title = `${selected.title} · Kage V1`
-  await loaders.style()
-  await loaders.experience()
+  await style()
+  await experience()
 }
 
 void start().catch((error: unknown) => {
