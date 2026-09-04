@@ -231,11 +231,11 @@ article > header small { color: var(--muted); font-size: 9px; }
 .verified-example-card { min-width: 0; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); background: rgba(246,248,242,.48); transition: background .22s ease, color .22s ease; }
 .verified-example-card--delivery { grid-column: span 3; display: grid; grid-template-columns: 1.08fr .92fr; }
 .verified-example-card:not(.verified-example-card--delivery) { grid-column: span 2; }
-.verified-example-card--delivery figure { aspect-ratio: auto; min-height: 430px; }
 .verified-example-card:hover,
 .verified-example-card:focus-visible { color: #eff6f0; background: var(--night); }
 .verified-example-card:focus-visible { outline: 2px solid #39745c; outline-offset: 4px; }
-.verified-example-card figure { position: relative; aspect-ratio: 16 / 10; margin: 0; overflow: hidden; background: #14231e; }
+.verified-example-card figure { position: relative; min-width: 0; aspect-ratio: 16 / 10; margin: 0; overflow: hidden; background: #14231e; }
+.verified-example-card--delivery figure { aspect-ratio: auto; min-height: 430px; }
 .verified-example-card img { display: block; width: 100%; height: 100%; object-fit: cover; filter: saturate(.82) contrast(.96); transition: transform .45s cubic-bezier(.2,.7,.2,1), filter .25s ease; }
 .verified-example-card:hover img,
 .verified-example-card:focus-visible img { transform: scale(1.025); filter: saturate(1) contrast(1.02); }
@@ -279,6 +279,11 @@ article > header small { color: var(--muted); font-size: 9px; }
 .next-stage li { display: grid; grid-template-columns: 58px 1fr; padding: 18px 0; border-top: 1px solid var(--line); font-size: 13px; }
 .next-stage li span { color: #39745c; font: 700 9px ui-monospace, monospace; }
 body > footer { padding: 28px max(24px, calc((100vw - 1540px)/2)); border-top: 1px solid var(--line); color: var(--muted); font-size: 10px; }
+
+@media (max-width: 1350px) {
+  .site-nav { grid-template-columns: 1fr auto; }
+  .site-nav > p { display: none; }
+}
 
 @media (max-width: 1050px) {
   .composer { grid-template-columns: 320px minmax(0,1fr); }

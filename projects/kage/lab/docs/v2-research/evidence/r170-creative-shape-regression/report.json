@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 1,
+  "stage": "r170-creative-shape-regression",
+  "capturedAt": "2026-09-04T02:54:34.705Z",
+  "purpose": "验证开放能力指导不会把不同产品压成统一页面模板。",
+  "browser": "local Chrome via Playwright",
+  "freshEvidence": true,
+  "identityBinding": "runId+bundleHash",
+  "identities": [
+    {
+      "deliveryId": "kage-feeling-lens",
+      "runId": "direct-r169-kage-feeling-lens",
+      "bundleHash": "08472f8b9d36229381e9a71af98f636a9236f56b541f7af3753f03886e9b7550"
+    },
+    {
+      "deliveryId": "night-reflective-catalog",
+      "runId": "direct-r128-night-reflective-catalog",
+      "bundleHash": "ef0ae71482af63a997095d6398b03f806833a418593d1ac46b8d0e709faca379"
+    }
+  ],
+  "comparison": {
+    "sameTemplate": false,
+    "distinctAxes": [
+      "macro-architecture",
+      "information-density",
+      "visual-language",
+      "interaction-model",
+      "completion-shape"
+    ],
+    "observedDifference": "连续明亮的情绪成形场景，与暗色高密度的材料目录和比较模态，在结构、视觉与操作上均不同。",
+    "nonBlockingRisk": "KAGE 感受取景器约 39% 的中段滚动位置存在一屏信息密度偏低；不影响主路径与本次结构多样性结论。",
+    "verdict": "pass-with-note"
+  },
+  "complete": true,
+  "captures": [
+    "01-feeling-lens-opening.png",
+    "02-feeling-lens-formed.png",
+    "03-reflective-catalog-opening.png",
+    "04-reflective-catalog-compare.png"
+  ],
+  "observations": [
+    {
+      "deliveryId": "kage-feeling-lens",
+      "route": "/pages/v2/deliveries/kage-feeling-lens/?quality=high&motion=full&revision=r170-regression",
+      "architecture": "continuous-scene / idea → feeling → formed → continuation",
+      "visualLanguage": "warm paper, generated spatial image, editorial typography, reveal mask",
+      "interactionModel": "emotion choice + scroll/pointer/keyboard formation",
+      "captures": [
+        "01-feeling-lens-opening.png",
+        "02-feeling-lens-formed.png"
+      ],
+      "issues": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "requestFailures": [],
+        "responseErrors": []
+      },
+      "states": {
+        "opening": {
+          "phase": "idea",
+          "emotion": "near",
+          "progress": 0,
+          "idea": "为独立创作者设计一个网页，让一闪而过的想法逐渐形成可以进入的视觉世界。",
+          "asset": "ready",
+          "horizontalOverflow": false,
+          "reducedMotion": false
+        },
+        "formed": {
+          "phase": "formed",
+          "emotion": "awake",
+          "progress": 0.836,
+          "idea": "为独立创作者设计一个网页，让一闪而过的想法逐渐形成可以进入的视觉世界。",
+          "asset": "ready",
+          "horizontalOverflow": false,
+          "reducedMotion": false
+        }
+      }
+    },
+    {
+      "deliveryId": "night-reflective-catalog",
+      "route": "/pages/v2/deliveries/night-reflective-catalog/?quality=high&motion=full&revision=r170-regression",
+      "architecture": "catalog-grid / filter → inspect → select → compare",
+      "visualLanguage": "black material index, acid highlight, eight live procedural swatches",
+      "interactionModel": "shared pointer beam + sample selection + comparison dialog",
+      "captures": [
+        "03-reflective-catalog-opening.png",
+        "04-reflective-catalog-compare.png"
+      ],
+      "issues": {
+        "pageErrors": [],
+        "consoleErrors": [],
+        "requestFailures": [],
+        "responseErrors": []
+      },
+      "states": {
+        "opening": {
+          "ready": true,
+          "filter": "all",
+          "visibleCount": 8,
+          "selected": [],
+          "selectedCount": 0,
+          "beamX": 0.52,
+          "beamY": 0.42,
+          "activeSample": null,
+          "driveMode": "demo",
+          "dialogOpen": false,
+          "saved": false,
+          "fallback": false,
+          "reducedMotion": false,
+          "frames": 0,
+          "canvasCount": 8,
+          "canvasVisualHash": "catalog-2b68abb0",
+          "horizontalOverflow": false,
+          "revision": "r170-regression"
+        },
+        "compared": {
+          "ready": true,
+          "filter": "all",
+          "visibleCount": 8,
+          "selected": [
+            "glass-bead",
+            "micro-prism"
+          ],
+          "selectedCount": 2,
+          "beamX": 0.8433,
+          "beamY": 0.0293,
+          "activeSample": "micro-prism",
+          "driveMode": "manual",
+          "dialogOpen": true,
+          "saved": false,
+          "fallback": false,
+          "reducedMotion": false,
+          "frames": 8,
+          "canvasCount": 8,
+          "canvasVisualHash": "catalog-ea72b4e4",
+          "horizontalOverflow": false,
+          "revision": "r170-regression"
+        }
+      }
+    }
+  ]
+}
