@@ -35,7 +35,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: yydshly/0823_githubcode_study
-          ref: b17aca4cb8b9e402adf24b6a1c0864031e72a01c
+          ref: ed18cec303f54948512f55c88690ee73a6377849
           path: _kage_archive_source
       - name: Checkout pinned Kindergrimm upstream
         uses: actions/checkout@v4
