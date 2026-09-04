@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "assetId": "kage-opening-rehearsal-v1",
+  "projectPath": "pages/v2/deliveries/kage-opening-rehearsal/assets/kage-opening-rehearsal-v1.png",
+  "source": {
+    "type": "openai-imagegen",
+    "mode": "built-in",
+    "batch": 1,
+    "generatedFile": "exec-7c9c2208-d6cd-4da4-9667-c2563c02b6e7.png"
+  },
+  "role": "The persistent physical projection-rehearsal environment that makes KAGE's opening-direction product theme legible before explanatory copy; runtime masks, light and sound reveal this same scene rather than replacing it.",
+  "constraints": [
+    "no embedded text, logo or interface",
+    "single coherent photographic scene",
+    "one asset batch only",
+    "image fallback preserves the product journey"
+  ]
+}

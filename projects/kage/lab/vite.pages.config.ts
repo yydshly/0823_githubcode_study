@@ -194,6 +194,10 @@ export default defineConfig({
           import.meta.dirname,
           'pages/v2/deliveries/kage-feeling-lens/index.html',
         ),
+        'pages/v2/deliveries/kage-opening-rehearsal/index': resolve(
+          import.meta.dirname,
+          'pages/v2/deliveries/kage-opening-rehearsal/index.html',
+        ),
       },
     },
   },

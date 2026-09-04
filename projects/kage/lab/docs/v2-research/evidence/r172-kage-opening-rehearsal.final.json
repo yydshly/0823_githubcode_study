@@ -1,0 +1,138 @@
+{
+  "schemaVersion": 1,
+  "creativeProtocolVersion": 5,
+  "deliveryId": "kage-opening-rehearsal",
+  "route": "./deliveries/kage-opening-rehearsal/",
+  "identity": {
+    "runId": "direct-r172-kage-opening-rehearsal",
+    "bundleHash": "d5d93376479ef04505e20537cf2262315bac7f93bc0f3d1029b6b310211a9969",
+    "bundleFiles": [
+      "index.html",
+      "style.css",
+      "main.ts",
+      "asset-manifest.json",
+      "assets/kage-opening-rehearsal-v1.png"
+    ]
+  },
+  "goalReplay": {
+    "subject": "KAGE 开场排练室",
+    "audience": "有产品想法、但需要先找到网页第一幕情绪和记忆动作的独立创作者",
+    "feeling": "像进入真实的投影排练现场，让一个尚未完成的想法从纸幕和晨光中逐渐显影",
+    "primaryAction": "写下想法、选择开场节奏并用滚轮排练，最后保存一段可以继续创作的开场提案",
+    "hardConstraints": [
+      "以符合用户情绪价值的最终产品效果为第一目标",
+      "不把图片、3D、声音或任何媒介当成数量指标",
+      "一个方向、一次素材批次、一次完整构建和有限修复",
+      "不接工作台后台、不新增供应商、不修改 V1 或冻结交付"
+    ]
+  },
+  "direction": {
+    "selected": "把网页开场变成一场真实的纸幕投影排练：滚动不是翻页，而是让同一个想法获得聚光、显影和落点。",
+    "referenceIds": [
+      "spatial-scroll-world",
+      "editorial-art-direction",
+      "sound-as-causal-interface"
+    ],
+    "borrowPrinciples": [
+      "滚轮进度持续改变同一个场景",
+      "不对称编辑排版先解释产品再展示效果",
+      "用户触发且与所选节奏一致的声音反馈"
+    ],
+    "capabilityIds": [
+      "asset-led-environment",
+      "continuous-state-story",
+      "editorial-composition",
+      "semantic-interaction",
+      "sound-media"
+    ],
+    "assetBatchCount": 1
+  },
+  "productDeliveryPlan": {
+    "schemaVersion": 1,
+    "productName": "KAGE 开场排练室",
+    "targetUser": "需要在完整开发前验证网页开场感受与动作的独立创作者",
+    "userProblem": "一句想法直接生成网页时容易落入模板，也缺少一个能看、能听、能操作并能继续使用的开场判断结果。",
+    "valuePromise": "用一个持续的真实场景把模糊想法排练成有情绪、有记忆动作、有媒介职责的网页第一幕。",
+    "primaryAction": "选择节奏并滚动排练第一幕",
+    "completionResult": "保存包含开场情绪、记忆动作和创作媒介的方向卡。",
+    "continuation": "携带用户想法、开场节奏和来源进入 KAGE 现有创作入口。",
+    "journey": [
+      { "id": "enter-rehearsal", "phase": "entry", "userGoal": "理解 KAGE 开场排练的用途", "visibleOutcome": "真实场景、价值说明和第一动作同时出现" },
+      { "id": "rehearse-opening", "phase": "use", "userGoal": "选择节奏并亲自推进开场", "visibleOutcome": "滚轮、拖动、键盘和时间轴共同改变同一场景，声音回应节奏" },
+      { "id": "save-direction", "phase": "result", "userGoal": "得到可理解的开场提案", "visibleOutcome": "同一场景上出现开场情绪、记忆动作、媒介和保存结果" },
+      { "id": "continue-building", "phase": "continuation", "userGoal": "带着方向继续创作", "visibleOutcome": "主要行动携带 brief、opening 和 source 参数进入现有入口" }
+    ],
+    "visualAssetPolicy": "hybrid",
+    "visualAssetRationale": "1.94MB 正式生成的纸幕投影环境承担主题、空间、材质和构图身份；Canvas、蒙版、声音和 DOM 只负责把用户选择变成连续可见的产品动作。"
+  },
+  "productDeliveryEvidence": {
+    "schemaVersion": 1,
+    "runId": "direct-r172-kage-opening-rehearsal",
+    "bundleHash": "d5d93376479ef04505e20537cf2262315bac7f93bc0f3d1029b6b310211a9969",
+    "checks": {
+      "productIdentityClear": true,
+      "audienceAndValueClear": true,
+      "entryStateComplete": true,
+      "coreUseStateComplete": true,
+      "resultStateComplete": true,
+      "continuationStateComplete": true,
+      "primaryActionProducesMeaningfulResult": true,
+      "visualAssetsAreFormalOrRuntimeNativeIsJustified": true,
+      "interactionServesProduct": true,
+      "mobileJourneyComplete": true,
+      "truthfulClaims": true
+    },
+    "summary": "本机 Chrome 证据确认正式场景、节奏选择、连续显影、用户触发声音、保存结果和继续创作形成同一产品路径；390px、键盘、减少动态与素材回退均保持可用。",
+    "evidenceNotes": [
+      "正式生成主视觉 naturalWidth 大于 1400，进入项目并纳入最终 bundleHash",
+      "慢慢靠近、突然看见、向远处展开会改变显影曲线、画面色彩、光路、声音节奏和结果文案",
+      "真实滚动、拖动、键盘与范围输入共享一个排练进度",
+      "声音必须由用户触发，浏览器不支持时不会阻断视觉排练与保存",
+      "结果卡明确保存的是开场方向，不伪造完整网站已经生成",
+      "390px 完成结果和继续操作且无横向溢出",
+      "减少动态仍能用键盘完成，正式素材阻断时语义产品路径仍可用",
+      "浏览器没有阻断错误、控制台错误或调试残留"
+    ]
+  },
+  "executionBudget": {
+    "directionsBuilt": 1,
+    "assetBatches": 1,
+    "fullBuilds": 1,
+    "deterministicFixes": 2,
+    "visualRefinements": 0
+  },
+  "browserEvidence": {
+    "browser": "local Chrome via Playwright",
+    "desktopEntry": "docs/v2-research/evidence/r172-kage-opening-rehearsal/01-desktop-opening.png",
+    "desktopUse": "docs/v2-research/evidence/r172-kage-opening-rehearsal/02-desktop-rehearsal.png",
+    "desktopResult": "docs/v2-research/evidence/r172-kage-opening-rehearsal/03-desktop-saved.png",
+    "mobileResult": "docs/v2-research/evidence/r172-kage-opening-rehearsal/04-mobile-saved.png",
+    "testsPassed": 5,
+    "testsTotal": 5,
+    "runtimeErrors": 0,
+    "consoleErrors": 0,
+    "formalAssetLoaded": true,
+    "scrollProgressLinked": true,
+    "pointerProgressLinked": true,
+    "keyboardProgressLinked": true,
+    "soundRhythmLinked": true,
+    "mobile390JourneyPassed": true,
+    "reducedMotionPassed": true,
+    "assetFallbackPassed": true,
+    "horizontalOverflow": 0
+  },
+  "qualityAssessment": {
+    "verdict": "pass",
+    "goalClarity": 94,
+    "creativeDistinctiveness": 93,
+    "craftCohesion": 94,
+    "assetIntegration": 96,
+    "interactionValue": 92,
+    "mobileReadiness": 90,
+    "summary": "真实纸幕排练空间、非对称中文排版、连续显影和节奏声音形成统一语言；素材没有被当作背景贴图，互动也没有脱离‘把第一幕排练清楚’的产品价值。"
+  },
+  "truthBoundary": "本页提供网页开场方向排练与保存体验，不声称已实时调用模型完成网站；继续行动只携带当前想法和开场节奏进入现有创作入口。",
+  "verdict": "pass",
+  "archiveDisposition": "fourth-formal-product-r171-frozen-guidance-validation",
+  "stopReason": "一个方向、一次素材批次、一次完整构建、两次确定性修复（Pages 构建入口与正式产品封面定位）、零视觉精修后，定向单测、TypeScript、Pages 构建与 5/5 本机 Chrome 验收通过并绑定最终 bundle；达到 R172 停止条件，不再增加规则、案例或精修循环。"
+}

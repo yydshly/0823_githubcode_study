@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="zh-CN" data-phase="waiting" data-rhythm="breathe" data-asset="loading" data-saved="false">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="KAGE 开场排练室：让一句产品想法先成为可感受、可试听、可保存的网页开场方向。" />
+    <meta name="theme-color" content="#ddd8cd" />
+    <title>KAGE 开场排练室 · 让想法先有第一幕</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#rehearsal-controls">跳到排练控制</a>
+
+    <header class="masthead">
+      <a class="brand" href="../../" aria-label="返回 KAGE V2"><b>KAGE</b><span>OPENING REHEARSAL</span></a>
+      <p>DIRECT PRODUCT / R172</p>
+      <a href="#rehearsal-controls">排练第一幕 <span aria-hidden="true">↘</span></a>
+    </header>
+
+    <main class="timeline" id="timeline">
+      <section class="stage" aria-labelledby="opening-title" data-signal-visual-anchor>
+        <div class="scene" id="scene" aria-hidden="true">
+          <img class="scene-image scene-image--memory" src="./assets/kage-opening-rehearsal-v1.png" alt="" data-hero-asset />
+          <img class="scene-image scene-image--reveal" src="./assets/kage-opening-rehearsal-v1.png" alt="" />
+          <canvas id="light-score"></canvas>
+          <div class="scene-veil"></div>
+          <div class="paper-scrim paper-scrim--one"></div>
+          <div class="paper-scrim paper-scrim--two"></div>
+          <div class="scene-grain"></div>
+        </div>
+
+        <div class="opening-copy" data-signal-primary-result>
+          <p class="eyebrow">A FIRST SCENE FOR AN UNFINISHED IDEA</p>
+          <h1 id="opening-title">让一句想法，<br /><em>先排练第一幕。</em></h1>
+          <p class="opening-lede">KAGE 不急着把想法塞进模板。先让光、节奏和文字在同一个真实空间里对齐，找到值得继续创作的开场。</p>
+        </div>
+
+        <aside class="stage-caption" aria-live="polite">
+          <span id="phase-index">00 / 100</span>
+          <strong id="phase-title">房间还在等一句话</strong>
+          <p id="phase-copy">写下想法，选择第一秒的节奏，再用滚轮让它从模糊走向清晰。</p>
+        </aside>
+
+        <ol class="score-rail" aria-label="开场排练阶段">
+          <li data-score-step="0"><i></i><span>候场</span></li>
+          <li data-score-step="1"><i></i><span>聚光</span></li>
+          <li data-score-step="2"><i></i><span>显影</span></li>
+          <li data-score-step="3"><i></i><span>落点</span></li>
+        </ol>
+
+        <form class="control-deck" id="rehearsal-controls" data-signal-primary-control>
+          <div class="idea-control">
+            <label for="idea-input">这一幕要承接什么想法？</label>
+            <textarea id="idea-input" rows="2">为独立创作者设计一个产品，让零散想法逐渐形成值得继续开发的网页体验。</textarea>
+          </div>
+
+          <fieldset>
+            <legend>第一秒的节奏</legend>
+            <div class="rhythm-options">
+              <button type="button" class="rhythm is-active" data-rhythm-value="breathe" aria-pressed="true"><span>01</span>慢慢靠近</button>
+              <button type="button" class="rhythm" data-rhythm-value="strike" aria-pressed="false"><span>02</span>突然看见</button>
+              <button type="button" class="rhythm" data-rhythm-value="drift" aria-pressed="false"><span>03</span>向远处展开</button>
+            </div>
+          </fieldset>
+
+          <div class="scrub-control">
+            <label for="progress-input"><span>拖动或滚动排练</span><b id="progress-label">00%</b></label>
+            <input id="progress-input" type="range" min="0" max="100" value="0" />
+          </div>
+
+          <div class="deck-actions">
+            <button class="listen-button" id="listen-button" type="button"><span class="speaker" aria-hidden="true"></span><b>试听开场脉冲</b></button>
+            <button class="save-button" id="save-button" type="submit"><span>保存这段开场</span><b aria-hidden="true">→</b></button>
+          </div>
+          <p class="deck-status" id="deck-status" role="status">素材已就位。滚动会改变同一幕的显影、光路与文字落点。</p>
+        </form>
+
+        <section class="result-card" id="result-card" aria-labelledby="result-title" aria-live="polite">
+          <p class="result-kicker">OPENING DIRECTION / SAVED</p>
+          <h2 id="result-title" tabindex="-1">第一幕已经<br />找到落点。</h2>
+          <blockquote id="result-idea">“为独立创作者设计一个产品，让零散想法逐渐形成值得继续开发的网页体验。”</blockquote>
+          <dl>
+            <div><dt>开场情绪</dt><dd id="result-feeling">像在晨光中慢慢靠近一张尚未干透的纸</dd></div>
+            <div><dt>记忆动作</dt><dd id="result-action">滚动让投影从雾中逐层显影</dd></div>
+            <div><dt>创作媒介</dt><dd>正式场景素材 × 连续蒙版 × Canvas 光谱 × 声音脉冲</dd></div>
+          </dl>
+          <a id="continue-action" class="continue-action" href="../../../../workbench.html">带着开场提案继续创作 <span aria-hidden="true">↗</span></a>
+          <button id="reset-button" class="reset-button" type="button">重新排练</button>
+          <p class="truth-note">保存的是可交给 Codex 的开场方向，不伪装成已经生成完整网站。</p>
+        </section>
+
+        <p class="gesture-hint"><span aria-hidden="true">↕</span> 滚轮 / 方向键 / 拖动时间轴</p>
+      </section>
+    </main>
+
+    <noscript><p class="noscript">JavaScript 未启用；你仍可以阅读产品说明，但无法排练和保存动态开场。</p></noscript>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>

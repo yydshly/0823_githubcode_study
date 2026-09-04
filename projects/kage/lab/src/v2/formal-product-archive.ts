@@ -22,6 +22,18 @@ export type FormalProductArchiveEntry = z.infer<typeof formalProductArchiveEntry
 
 export const V2_FORMAL_PRODUCT_ARCHIVE: readonly FormalProductArchiveEntry[] = [
   formalProductArchiveEntrySchema.parse({
+    id: 'kage-opening-rehearsal',
+    title: 'KAGE 开场排练室',
+    summary: '让一句产品想法在同一座真实排练空间里获得开场节奏、连续显影、声音脉冲和可以继续创作的明确落点。',
+    route: '/pages/v2/deliveries/kage-opening-rehearsal/',
+    previewUrl: '/creative-assets/v2-formal-products/kage-opening-rehearsal.png',
+    runId: 'direct-r172-kage-opening-rehearsal',
+    bundleHash: 'd5d93376479ef04505e20537cf2262315bac7f93bc0f3d1029b6b310211a9969',
+    productValue: '证明冻结的 R171 正向指导可以在不增加规则或参考的前提下，把一个新的 KAGE 产品想法收敛为正式素材、连续场景、声音和保存结果组成的完整产品。',
+    journey: ['entry', 'use', 'result', 'continuation'],
+    status: 'formal-product'
+  }),
+  formalProductArchiveEntrySchema.parse({
     id: 'kage-creative-director',
     title: 'KAGE 创意导演',
     summary: '把一句产品想法发展成有依据的视觉方向，并连接真实案例结果与后续创作入口。',
