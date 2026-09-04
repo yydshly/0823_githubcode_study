@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "stage": "r171-stage-closure",
+  "browser": "local Chrome via Playwright",
+  "freshEvidence": true,
+  "steps": [
+    {
+      "id": "project-status",
+      "health": "healthy",
+      "capture": "01-project-status.png"
+    },
+    {
+      "id": "formal-product-handoff",
+      "health": "healthy",
+      "capture": "02-formal-product-opening.png"
+    }
+  ],
+  "accessibilityLimits": "本轮确认语义标题、真实链接、键盘可聚焦控件和 1280px 重排；不声明完整 WCAG 合规。",
+  "issues": {
+    "pageErrors": [],
+    "consoleErrors": [],
+    "requestFailures": []
+  },
+  "complete": true
+}

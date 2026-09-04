@@ -9,7 +9,7 @@
 | 上游仓库 | https://github.com/MengTo/kage |
 | 固定版本 | `4399487d2fb42bce39c7b032fbbb50d230bf4f0b` |
 | 开始日期 | 2026-08-24 |
-| 当前状态 | V1 已归档并独立部署；V2.5 直接创作基线已冻结；V3 五类媒介、直接创作入口与静态生产恢复基线均已验证，下一阶段只做一个全新 brief 产品回归 |
+| 当前状态 | V1 已归档并独立部署；V2.6 正向创作指导基线已在 R171 冻结；当前 Codex 直创可用，但后台自动执行、统一归档和通用审美判断尚未完成；下一阶段只做一个全新 brief 正式产品验证 |
 | 原版本地入口 | `http://127.0.0.1:8143/upstream/` |
 | 公开工作台入口 | [打开工作台](https://yydshly.github.io/0823_githubcode_study/projects/kage/workbench.html)（本地确定性生成；模型专属构建需本机服务） |
 | V1 Pages 入口 | [查看 V1 案例](https://yydshly.github.io/0823_githubcode_study/projects/kage/v1/) |
@@ -29,12 +29,14 @@
 - V2.5 的公共主动作会导出 protocol v3 有界包，由当前 Codex 直接创作；当前阶段不会从页面静默启动后台模型任务。
 - V2.5 新精选必须绑定同一最终 `runId + bundleHash`，并通过内容结构依据、最终质量门与适用的 WowGate；R125“冰芯来信”是冻结锚点。
 - V3 的程序化 WebGL、生成主视觉、代码原生 SVG、真实媒体与真实动画 GLB 五条计划路线均已闭环；R138 又完成 protocol v3 入口真实性和静态生产恢复验收。`5/5` 不是产品完成率，下一步只用一个未出现过的 brief 检验从想法到成品的产品回归。
+- V2.6 已把感受承诺、正向参考、质量观察、八项开放能力、有界执行、浏览器证据和最终身份冻结为一份机器可读指导基线；它不会限制页面形态或技术来源，也不会把当前人工 Codex 直创误称为后台一键生成。
 
 ## 版本入口
 
 - [V1 归档定义](lab/docs/releases/V1-IDEA-TO-EXPERIENCE-BASELINE.md)
 - [V1 耗时、问题与 V2 约束](lab/docs/releases/V1-PERFORMANCE-AND-GAPS.md)
 - [V2.5 直接创作冻结基线](lab/docs/releases/V2.5-DIRECT-CREATIVE-BASELINE.md)
+- [V2.6 正向创作指导冻结基线](lab/docs/releases/V2.6-CREATIVE-GUIDANCE-BASELINE.md)
 - [V2.0–V2.2 历史参考驱动合同](lab/docs/V2-REFERENCE-GUIDED-CREATIVE-CONTRACT.md)
 - [MotionSites 首批研究沉淀与创意组合](lab/docs/v2-research/MOTIONSITES-R05-FIRST-BATCH-SYNTHESIS.md)
 - [本地优秀案例研究与七类视觉机制](lab/docs/v2-research/LOCAL-EXEMPLARS-R06.md)

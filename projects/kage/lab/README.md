@@ -9,6 +9,7 @@
 
 ## 版本状态
 
+- **V2.6 正向创作指导基线已冻结**：R171 把感受承诺、正向参考、七项质量观察、八项开放能力、有界 Codex 直创、真实浏览器证据和最终身份收束为机器可读基线；同时明确后台自动 Codex、统一 Artifact Registry、通用审美判断、统一首稿时限与远端多人安全仍未完成。它没有新增全局风格禁令，也没有把技术目录变成白名单。见 [V2.6 creative guidance baseline](docs/releases/V2.6-CREATIVE-GUIDANCE-BASELINE.md) 与 [R171 stage closure](docs/v2-research/V2-R171-STAGE-CLOSURE.md)。
 - **R164 已把“创意不能被规则压掉”固化为项目能力**：硬边界只保留用户要求、真实性、可用性、证据身份与有界预算；案例和推断可放弃，媒介字段允许未登记的新技术。最终质量改为核对本次创意承诺，静态表达不因缺少动态扣分，只有承诺动态却没有真实变化才会失败。见 [R164 creative freedom and promise gate](docs/v2-research/V2-R164-CREATIVE-FREEDOM-PROMISE-GATE.md)。
 - **R161 已把“能力演示”和“正式产品”分开**：V5 新增产品身份与价值、进入、核心使用、有效结果、后续路径以及正式素材/运行时原生媒介依据。R160 的蒙版、输入与移动端研究通过，但没有完整产品旅程，因此只保留为研究参考，不再标记为正式产品案例。见 [R161 product delivery reset](docs/v2-research/V2-R161-PRODUCT-DELIVERY-RESET.md) 与 [R160 capability record](docs/v2-deliveries/R160-LIGHTHOUSE-CHART-REVEAL-CONTRACT.md)。
 - **R159 已完成一次“生成素材不是静态背景”的直接创作证明**：全新“风把信送过山谷”只生成一张雨后山谷环境，并让 DOM/CSS/Canvas 信纸、风向、雾带、景深、距离和投递行动共享滚动状态；桌面开场/中段/完成、390px、reduced-motion 与素材失败回退均通过，最终身份绑定后替换精选库中较弱案例，总量仍为 12。见 [R159 windborne letter contract](docs/v2-deliveries/R159-WINDBORNE-LETTER-VALLEY-CONTRACT.md)。
