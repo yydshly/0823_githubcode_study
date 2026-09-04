@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="KAGE 阶段研究归档：完整整理想法到创意网页的案例、能力、证据、结论与未解决问题。" />
+    <title>KAGE · 阶段研究归档</title>
+    <link rel="stylesheet" href="./archive.css" />
+  </head>
+  <body>
+    <header class="masthead">
+      <a class="brand" href="#top" aria-label="回到归档顶部"><span>K</span>KAGE RESEARCH ARCHIVE</a>
+      <nav aria-label="归档导航">
+        <a href="#conclusion">结论</a>
+        <a href="#map">研究路线</a>
+        <a href="#cases">案例</a>
+        <a href="#documents">文档</a>
+      </nav>
+      <span class="archive-state">ARCHIVED · R173</span>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <p class="kicker">2026.08—09 / IDEA → EXCELLENT WEB EXPERIENCE</p>
+        <h1>归档，<br /><em>不是否定。</em></h1>
+        <div class="hero-copy">
+          <p class="lead">KAGE 对“如何让大模型更稳定地产出优秀、有感受的创意网页”进行了一次完整探索。技术链已经成立，但产品判断层尚未证明优于大模型自由创作，因此在 R173 停止扩张并保留全部可复用成果。</p>
+          <p class="boundary">本页是独立、只读、可追溯的研究归档。它不会替换 V1、V2 或已有案例部署。</p>
+        </div>
+        <div class="hero-index" aria-label="归档规模">
+          <div><strong data-stat="researchDocs">—</strong><span>研究文档</span></div>
+          <div><strong data-stat="deliveries">—</strong><span>交付案例</span></div>
+          <div><strong data-stat="evidenceRuns">—</strong><span>运行证据</span></div>
+          <div><strong data-stat="capabilities">—</strong><span>能力族</span></div>
+          <div><strong data-stat="formalProducts">—</strong><span>正式产品回执</span></div>
+        </div>
+      </section>
+
+      <section id="conclusion" class="section conclusion-section">
+        <header class="section-title">
+          <p>01 / FINAL JUDGMENT</p>
+          <h2>项目有研究价值，<br />但尚不是成熟产品。</h2>
+        </header>
+        <div class="verdict-grid">
+          <article class="verdict proven">
+            <span>已证明</span>
+            <h3>实现能力成立</h3>
+            <ul>
+              <li>能从想法形成方向、素材、互动与页面。</li>
+              <li>图像、3D、Shader、Canvas、声音、地图与编辑排版均有真实案例。</li>
+              <li>能进行移动端、互动、素材、运行与版本绑定验收。</li>
+            </ul>
+          </article>
+          <article class="verdict unresolved">
+            <span>未证明</span>
+            <h3>判断层没有形成优势</h3>
+            <ul>
+              <li>项目的“什么是优秀”仍大量依赖同一个模型自评。</li>
+              <li>研究与规则变多后，首稿创意反而趋同、变普通。</li>
+              <li>工作台主链没有完整执行 V2 的研究与创意决策。</li>
+            </ul>
+          </article>
+          <article class="verdict stop">
+            <span>停止原因</span>
+            <h3>继续堆叠会放大成本</h3>
+            <ul>
+              <li>更多协议、案例和修复已不能稳定改善用户感受。</li>
+              <li>反复精修与自证造成长等待，却没有独立质量增量。</li>
+              <li>因此停止产品化扩张，转为可复用研究资产。</li>
+            </ul>
+          </article>
+        </div>
+        <blockquote>
+          <p>准确定位</p>
+          <strong>KAGE 不是替大模型设计网页；它留下的是优秀案例记忆、开放媒介能力和最低质量保障，供未来创作系统按需复用。</strong>
+        </blockquote>
+      </section>
+
+      <section id="map" class="section map-section">
+        <header class="section-title split">
+          <div><p>02 / RESEARCH MAP</p><h2>研究如何演进，<br />又在哪里失衡。</h2></div>
+          <p>路线从“让模型直接生成”出发，经历案例研究、能力抽象、执行防护和正式产品验证。真正的结论不是再加一层协议，而是把创意自由与最低质量保障重新分开。</p>
+        </header>
+        <ol id="phase-list" class="phase-list"></ol>
+      </section>
+
+      <section class="section capability-section">
+        <header class="section-title split">
+          <div><p>03 / REUSABLE CAPABILITIES</p><h2>应该保留的，<br />是能力而非模板。</h2></div>
+          <p>这些能力只提供正向启发。它们不是白名单，也不能自动变成暗色、三屏、中央主体或固定互动形式。</p>
+        </header>
+        <div id="capability-list" class="capability-list"></div>
+      </section>
+
+      <section id="cases" class="section cases-section">
+        <header class="section-title split">
+          <div><p>04 / CASE ARCHIVE</p><h2>35 个交付，<br />不再伪装成 35 个成功。</h2></div>
+          <p>案例被保留为证据：有些证明媒介能力，有些证明产品闭环，有些只记录失败边界。归档不再把“能运行”直接等同于“优秀”。</p>
+        </header>
+        <div id="featured-cases" class="featured-cases"></div>
+        <div class="catalog-tools">
+          <label><span>检索全部案例</span><input id="case-search" type="search" placeholder="输入标题、主题、媒介或状态" /></label>
+          <label><span>类型</span><select id="case-filter"><option value="all">全部类型</option></select></label>
+          <p id="case-count">—</p>
+        </div>
+        <div id="case-catalog" class="case-catalog"></div>
+      </section>
+
+      <section class="section learning-section">
+        <header class="section-title"><p>05 / WHAT WE LEARNED</p><h2>真正有效的结论。</h2></header>
+        <div class="learning-grid">
+          <article><span>01</span><h3>效果先于技术</h3><p>先定义用户要感受到的变化，再选择图像、3D、声音、视频、蒙版或其他方法。技术数量不等于质量。</p></article>
+          <article><span>02</span><h3>关键素材不能凑合</h3><p>当主体、地点或材质承载产品身份时，应使用真实、授权、生成或高质量 3D 素材；程序图形不能冒充正式内容。</p></article>
+          <article><span>03</span><h3>互动必须有因果</h3><p>滚动、拖动、点击和声音要改变同一产品状态，并让用户理解改变的意义；装饰动效不构成产品能力。</p></article>
+          <article><span>04</span><h3>案例提供原理</h3><p>MotionSites、本地页面、Threejs-3D-Webpage、ThreeUI 与外部产品研究用于解释为何有效，而不是复制外观或生成禁令。</p></article>
+          <article><span>05</span><h3>质量门应当最小</h3><p>保留运行、真实性、移动端、承诺互动和证据身份；风格、媒介、长度与构图继续开放。</p></article>
+          <article><span>06</span><h3>执行必须有界</h3><p>一个方向、一次素材批次、一次构建、有限修复；未达到优秀时诚实停止，不能静默重试与无限精修。</p></article>
+        </div>
+        <div class="anti-patterns">
+          <div><p>应继续复用</p><ul><li>正向案例证据与能力原理</li><li>素材职责和互动因果描述</li><li>浏览器证据与版本绑定</li><li>有限执行与诚实停止</li></ul></div>
+          <div><p>不应继续复用</p><ul><li>全局风格禁令</li><li>固定三屏或固定媒介</li><li>为了差异而自动旋转风格</li><li>模型自评分数冒充独立审美</li></ul></div>
+        </div>
+      </section>
+
+      <section id="documents" class="section documents-section">
+        <header class="section-title split">
+          <div><p>06 / SOURCE LEDGER</p><h2>完整研究索引，<br />而不是只选好看的结果。</h2></div>
+          <p>全部研究文件保留在冻结分支。此处提供可搜索索引和源码链接，包含 MotionSites、本地案例、外部优秀产品、Three.js、ThreeUI、生成协议、质量门、失败与恢复记录。</p>
+        </header>
+        <div class="source-family-list" id="source-family-list"></div>
+        <div class="catalog-tools document-tools">
+          <label><span>检索研究文档</span><input id="doc-search" type="search" placeholder="例如 MOTIONSITES、AUDIO、R165" /></label>
+          <p id="doc-count">—</p>
+        </div>
+        <div id="document-list" class="document-list"></div>
+      </section>
+
+      <section class="section architecture-section">
+        <header class="section-title"><p>07 / PRESERVED ARCHITECTURE</p><h2>冻结的项目结构。</h2></header>
+        <div class="architecture-flow" aria-label="冻结架构流程">
+          <span>用户想法</span><i>→</i><span>感受与产品目标</span><i>→</i><span>相关案例原理</span><i>→</i><span>媒介与素材职责</span><i>→</i><span>有界构建</span><i>→</i><span>浏览器证据</span><i>→</i><span>人工/独立判断</span>
+        </div>
+        <p class="architecture-note">前六环已经有代码或案例证据；最后一环“可靠、独立的优秀判断”仍是未解决核心。没有它，系统只能帮助模型组织创作，不能保证比模型自由发挥更好。</p>
+      </section>
+
+      <section class="section handoff-section">
+        <p>ARCHIVE HANDOFF / READ-ONLY</p>
+        <h2>研究在这里停止，<br />成果从这里继续被使用。</h2>
+        <div class="handoff-links">
+          <a href="../v1/">查看原 V1 部署 <span>↗</span></a>
+          <a href="../v2/">查看原 V2 部署 <span>↗</span></a>
+          <a id="source-branch-link" href="https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab" target="_blank" rel="noreferrer">查看冻结研究源码 <span>↗</span></a>
+        </div>
+        <p class="handoff-boundary">如未来重启，应从一个真实产品 brief 和独立质量判断开始，而不是继续增加协议、规则或案例数量。</p>
+      </section>
+    </main>
+
+    <footer>
+      <p>KAGE V2 RESEARCH ARCHIVE · FROZEN AFTER R173</p>
+      <p id="archive-provenance">正在读取归档来源…</p>
+    </footer>
+
+    <script src="./archive.js" defer></script>
+  </body>
+</html>

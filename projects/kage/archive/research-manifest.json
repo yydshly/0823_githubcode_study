@@ -1,0 +1,1246 @@
+{
+  "schemaVersion": 1,
+  "archiveDate": "2026-09-04",
+  "sourceBranch": "codex/kage-v2-baseline-r165",
+  "sourceCommit": "7dbe6af1acc58e4d355c4ec9a0c8fd59b794b467",
+  "stats": {
+    "researchDocs": 151,
+    "deliveries": 35,
+    "evidenceRuns": 33,
+    "capabilities": 8,
+    "formalProducts": 4
+  },
+  "phases": [
+    {
+      "range": "R01–R13",
+      "title": "参考与原理",
+      "summary": "研究 MotionSites、本地 52 个 HTML、Threejs-3D-Webpage 与早期案例，将视觉外壳拆成滚动、空间、排版、素材和互动原理。"
+    },
+    {
+      "range": "R17–R70",
+      "title": "生成与防护",
+      "summary": "扩展生成、素材路由、Three.js 运行时、真实性、移动端、超时、修复和证据绑定；同时开始出现规则膨胀。"
+    },
+    {
+      "range": "R72–R143",
+      "title": "大量场景验证",
+      "summary": "跨声音、地图、产品、3D、档案、儿童互动和情绪叙事形成案例；证明媒介广度，也暴露模板惯性与自评偏差。"
+    },
+    {
+      "range": "R144–R166",
+      "title": "效果优先与外部研究",
+      "summary": "重新开放图像、3D、视频、声音、Shader 与外部库；研究优秀产品和 ThreeUI，强调手段服从感受。"
+    },
+    {
+      "range": "R167–R173",
+      "title": "能力指导与正式产品",
+      "summary": "形成 8 类开放能力、4 个正式产品回执与最终效果复核；确认实现闭环存在，但独立优秀判断仍未成立。"
+    },
+    {
+      "range": "ARCHIVE",
+      "title": "停止扩张",
+      "summary": "冻结当前源码、文档、证据和案例；不再以更多规则和样例掩盖核心判断问题。"
+    }
+  ],
+  "capabilities": [
+    {
+      "title": "素材主导的环境与身份",
+      "lesson": "高质量图像、视频或真实素材建立地点、主体和第一情绪，代码负责增强而不是替代。",
+      "media": [
+        "图像",
+        "视频",
+        "真实素材"
+      ]
+    },
+    {
+      "title": "编辑构图与蒙版叙事",
+      "lesson": "排版、留白、窗口、裁切和显影服务阅读与揭示，不固定成巨型标题或工作台。",
+      "media": [
+        "排版",
+        "蒙版",
+        "SVG"
+      ]
+    },
+    {
+      "title": "连续状态与旅程",
+      "lesson": "滚动或输入推进同一主体的可理解变化，页面长度和阶段数量由内容决定。",
+      "media": [
+        "滚动",
+        "状态",
+        "叙事"
+      ]
+    },
+    {
+      "title": "可检查的 Three.js 空间",
+      "lesson": "3D 用于解释结构、距离、材质和动作，不作为与产品无关的昂贵背景。",
+      "media": [
+        "Three.js",
+        "3D",
+        "镜头"
+      ]
+    },
+    {
+      "title": "程序化 WebGL 现象",
+      "lesson": "Shader、光场与形变只在实时变化本身承载主题时使用，并提供诚实回退。",
+      "media": [
+        "WebGL",
+        "Shader",
+        "Canvas"
+      ]
+    },
+    {
+      "title": "语义因果互动",
+      "lesson": "输入必须改变主题主体、业务状态和结果理解，而不仅是高亮、数字或装饰。",
+      "media": [
+        "触控",
+        "键盘",
+        "指针"
+      ]
+    },
+    {
+      "title": "声音与视觉共享因果",
+      "lesson": "声音要真实可辨并与画面和状态同步，不能让多个选项播放相同循环。",
+      "media": [
+        "Web Audio",
+        "频谱",
+        "声场"
+      ]
+    },
+    {
+      "title": "真实地点、数据与来源",
+      "lesson": "地图、路线和数据必须先有可追溯事实基础；模拟内容需明确标记。",
+      "media": [
+        "地图",
+        "数据",
+        "来源"
+      ]
+    }
+  ],
+  "sourceFamilies": [
+    {
+      "title": "MotionSites",
+      "finding": "公开目录 462 条；完成首批抽样与机制拆解，但没有逐条深挖，也没有复制付费提示词或素材。"
+    },
+    {
+      "title": "本地优秀页面",
+      "finding": "扫描 Downloads 中 52 个 HTML；重点研究视频环境、标本构图、品牌蒙版、聚光揭示与 sticky 档案。"
+    },
+    {
+      "title": "外部产品",
+      "finding": "整理 6 个产品体验家族与 14 个一手来源，全部保持 research-only，不伪装成已复用能力。"
+    },
+    {
+      "title": "开源实现",
+      "finding": "研究 Threejs-3D-Webpage、ThreeUI 与 6 个固定 revision 机制；许可和运行证据与视觉质量分开记录。"
+    }
+  ],
+  "cases": [
+    {
+      "id": "after-rain-archive",
+      "title": "雨后气味档案",
+      "promise": "雨后 气味档案",
+      "tier": "study",
+      "tierLabel": "阶段研究案例",
+      "medium": "图像 / 气味档案",
+      "image": null,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/after-rain-archive"
+    },
+    {
+      "id": "aurora-radio-postcard",
+      "title": "极光无线电明信片",
+      "promise": "把极光 调进一张 明信片。",
+      "tier": "study",
+      "tierLabel": "阶段研究案例",
+      "medium": "图像 / 声音",
+      "image": null,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/aurora-radio-postcard"
+    },
+    {
+      "id": "color-relay-branching",
+      "title": "高彩城市接力演练",
+      "promise": "交棒， 让路径作答。",
+      "tier": "study",
+      "tierLabel": "阶段研究案例",
+      "medium": "DOM / 分支互动",
+      "image": null,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/color-relay-branching"
+    },
+    {
+      "id": "dream-record",
+      "title": "还记得昨夜吗",
+      "promise": "醒来以后， 先别急着起身。",
+      "tier": "study",
+      "tierLabel": "阶段研究案例",
+      "medium": "生成图像 / 滚动",
+      "image": "dream-record.jpg",
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/dream-record"
+    },
+    {
+      "id": "eclipse-post-office",
+      "title": "日食邮局",
+      "promise": "把一句话， 寄到光消失的时刻。",
+      "tier": "protocol",
+      "tierLabel": "协议验证交付",
+      "medium": "生成图像 / 状态",
+      "image": null,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/eclipse-post-office"
+    },
+    {
+      "id": "film-camera-repair-paths",
+      "title": "旧胶片相机维修判断",
+      "promise": "先听它怎么回应， 再决定下一步。",
+      "tier": "protocol",
+      "tierLabel": "协议验证交付",
+      "medium": "SVG / 路径判断",
+      "image": null,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/film-camera-repair-paths"
+    },
+    {
+      "id": "folded-light-studio",
+      "title": "折光成形",
+      "promise": "把一束光 折进纸里。",
+      "tier": "experience",
+      "tierLabel": "体验能力参考",
+      "medium": "生成图像 / 连续状态",
+      "image": "folded-light-studio.png",
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/folded-light-studio"
+    },
+    {
+      "id": "forest-sound-route",
+      "title": "声音藏在哪里？",
+      "promise": "声音， 藏在哪里？",
+      "tier": "experience",
+      "tierLabel": "体验能力参考",
+      "medium": "图像 / 空间声音",
+      "image": "forest-sound-route.png",
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/forest-sound-route"
+    },
+    {
+      "id": "fox-gait-observatory",
+      "title": "狐步三拍",
+      "promise": "狐步 三拍",
+      "tier": "protocol",
+      "tierLabel": "协议验证交付",
+      "medium": "Three.js / 3D",
+      "image": "fox-gait-observatory.png",
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/fox-gait-observatory"
+    },
+    {
+      "id": "fridge-tonight",
+      "title": "冰箱今晚",
+      "promise": "快过期， 正好 今晚。",
+      "tier": "protocol",
+      "tierLabel": "协议验证交付",
+      "medium": "DOM / 工具",
+      "image": null,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/fridge-tonight"
+    },
+    {
+      "id": "ice-core-letters",
+      "title": "冰芯来信",
+      "promise": "冰芯 来信",
+      "tier": "experience",
+      "tierLabel": "体验能力参考",
+      "medium": "生成图像 / 滚动叙事",
+      "image": null,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/ice-core-letters"
+    },
+    {
+      "id": "kage-creative-director",
+      "title": "KAGE",
+      "promise": "让一句想法， 成为一个世界。",
+      "tier": "formal",
+      "tierLabel": "正式产品回执",
+      "medium": "正式素材 / 产品流程",
+      "image": null,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/kage-creative-director"
+    },
+    {
+      "id": "kage-feeling-lens",
+      "title": "KAGE 感受取景器",
+      "promise": "先别选模板。 先看见它的感受。",
+      "tier": "formal",
+      "tierLabel": "正式产品回执",
+      "medium": "正式素材 / 情绪交互",
+      "image": null,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/kage-feeling-lens"
+    },
+    {
+      "id": "kage-opening-rehearsal",
+      "title": "KAGE 开场排练室",
+      "promise": "让一句想法， 先排练第一幕。",
+      "tier": "formal",
+      "tierLabel": "正式产品回执",
+      "medium": "正式素材 / 声音 / 连续场景",
+      "image": "kage-opening-rehearsal.png",
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/kage-opening-rehearsal"
+    },
+    {
+      "id": "kinetic-score",
+      "title": "KINETIC SCORE",
+      "promise": "动作 记谱台",
+      "tier": "study",
+      "tierLabel": "阶段研究案例",
+      "medium": "Canvas / 动作",
+      "image": null,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/kinetic-score"
+    },
+    {
+      "id": "lighthouse-chart-reveal",
+      "title": "失踪灯塔海图显影",
+      "promise": "让失踪的灯塔 重新发光。",
+      "tier": "experience",
+      "tierLabel": "体验能力参考",
+      "medium": "SVG 蒙版 / Canvas",
+      "image": null,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/lighthouse-chart-reveal"
+    },
+    {
+      "id": "modular-room-sound",
+      "title": "ROOM / 02",
+      "promise": "声音， 顺着房间展开。",
+      "tier": "protocol",
+      "tierLabel": "协议验证交付",
+      "medium": "Three.js / 声音",
+      "image": null,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/modular-room-sound"
+    },
+    {
+      "id": "moonlit-tidepool-panorama",
+      "title": "月光潮池夜巡图卷",
+      "promise": "沿月光， 横穿一片潮池。",
+      "tier": "experience",
+      "tierLabel": "体验能力参考",
+      "medium": "宽幅图像 / 横向导航",
+      "image": null,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/moonlit-tidepool-panorama"
+    },
+    {
+      "id": "night-reflective-catalog",
+      "title": "夜行反光材料样本馆",
+      "promise": "夜行反光 材料样本馆",
+      "tier": "study",
+      "tierLabel": "阶段研究案例",
+      "medium": "图像 / 比较工具",
+      "image": "night-reflective-catalog.png",
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/night-reflective-catalog"
+    },
+    {
+      "id": "paper-butterfly-garden",
+      "title": "纸蝶日光空间游园",
+      "promise": "纸蝶 日光游园",
+      "tier": "study",
+      "tierLabel": "阶段研究案例",
+      "medium": "图像 / 趣味空间",
+      "image": "paper-butterfly-garden.jpg",
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/paper-butterfly-garden"
+    },
+    {
+      "id": "prism-seed-theatre",
+      "title": "棱镜种子剧场",
+      "promise": "让一枚种子 把日光展开。",
+      "tier": "experience",
+      "tierLabel": "体验能力参考",
+      "medium": "生成图像 / WebGL",
+      "image": null,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/prism-seed-theatre"
+    },
+    {
+      "id": "rainlight-walk-recorder",
+      "title": "雨光夜行记录器",
+      "promise": "把雨夜， 走成一封光的信。",
+      "tier": "formal",
+      "tierLabel": "正式产品回执",
+      "medium": "正式素材 / 路径记录",
+      "image": null,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/rainlight-walk-recorder"
+    },
+    {
+      "id": "roof-water-route",
+      "title": "一滴水的屋顶路线",
+      "promise": "雨落屋檐， 然后去哪里？",
+      "tier": "study",
+      "tierLabel": "阶段研究案例",
+      "medium": "SVG / 数据路线",
+      "image": null,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/roof-water-route"
+    },
+    {
+      "id": "same-table-tonight",
+      "title": "同桌时刻",
+      "promise": "远方，也能 同时开席。",
+      "tier": "protocol",
+      "tierLabel": "协议验证交付",
+      "medium": "生成图像 / 共同状态",
+      "image": null,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/same-table-tonight"
+    },
+    {
+      "id": "sea-fiber-scope",
+      "title": "海底光缆听诊台",
+      "promise": "听见一条 沉默的线路。",
+      "tier": "experience",
+      "tierLabel": "体验能力参考",
+      "medium": "Three.js / 声音 / 数据",
+      "image": null,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/sea-fiber-scope"
+    },
+    {
+      "id": "sign-language-season",
+      "title": "手势之间",
+      "promise": "手势之间",
+      "tier": "study",
+      "tierLabel": "阶段研究案例",
+      "medium": "编辑排版 / 手势",
+      "image": null,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/sign-language-season"
+    },
+    {
+      "id": "sonic-pressing-room",
+      "title": "声纹压片室",
+      "promise": "把声音 压进光里。",
+      "tier": "experience",
+      "tierLabel": "体验能力参考",
+      "medium": "WebGL / 音频频谱",
+      "image": null,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/sonic-pressing-room"
+    },
+    {
+      "id": "stormglass-archive",
+      "title": "雷雨余光档案馆",
+      "promise": "雷声走远后， 玻璃还记得光。",
+      "tier": "experience",
+      "tierLabel": "体验能力参考",
+      "medium": "Shader / 分支状态",
+      "image": "stormglass-archive.png",
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/stormglass-archive"
+    },
+    {
+      "id": "ten-second-callsign-decode",
+      "title": "十秒呼号解码",
+      "promise": "先听见间隔， 再听见 字母。",
+      "tier": "protocol",
+      "tierLabel": "协议验证交付",
+      "medium": "Web Audio / 工具",
+      "image": "ten-second-callsign-decode.png",
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/ten-second-callsign-decode"
+    },
+    {
+      "id": "thin-film-lab",
+      "title": "AURORA FILM",
+      "promise": "薄膜 正在形成",
+      "tier": "study",
+      "tierLabel": "阶段研究案例",
+      "medium": "Three.js / 材质",
+      "image": null,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/thin-film-lab"
+    },
+    {
+      "id": "thunderhead-score",
+      "title": "雷暴合唱谱",
+      "promise": "雷暴不是 突然发生。 它先学会呼吸。",
+      "tier": "experience",
+      "tierLabel": "体验能力参考",
+      "medium": "图像 / 编辑 / 声音",
+      "image": null,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/thunderhead-score"
+    },
+    {
+      "id": "weave-light-field",
+      "title": "经纬光场",
+      "promise": "经纬光场",
+      "tier": "experience",
+      "tierLabel": "体验能力参考",
+      "medium": "Three.js / 结构生成",
+      "image": null,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/weave-light-field"
+    },
+    {
+      "id": "west-bund-meeting-points",
+      "title": "西岸集合点图卷",
+      "promise": "和朋友， 在西岸碰头。",
+      "tier": "protocol",
+      "tierLabel": "协议验证交付",
+      "medium": "真实地点 / 横向全景",
+      "image": null,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/west-bund-meeting-points"
+    },
+    {
+      "id": "wind-kite-lab",
+      "title": "风筝风场校准台",
+      "promise": "风筝 风场校准台",
+      "tier": "study",
+      "tierLabel": "阶段研究案例",
+      "medium": "Canvas / 风场工具",
+      "image": null,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/wind-kite-lab"
+    },
+    {
+      "id": "windborne-letter-valley",
+      "title": "风把信送过山谷",
+      "promise": "风把信 送过山谷。",
+      "tier": "experience",
+      "tierLabel": "体验能力参考",
+      "medium": "生成图像 / 运行时旅程",
+      "image": null,
+      "sourceUrl": "https://github.com/yydshly/0823_githubcode_study/tree/codex/kage-v2-baseline-r165/projects/kage/lab/pages/v2/deliveries/windborne-letter-valley"
+    }
+  ],
+  "researchDocuments": [
+    {
+      "name": "LOCAL-EXEMPLARS-R06-3D-ADDENDUM.md",
+      "family": "本地案例",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/LOCAL-EXEMPLARS-R06-3D-ADDENDUM.md"
+    },
+    {
+      "name": "LOCAL-EXEMPLARS-R06-RESEARCH-CONTRACT.md",
+      "family": "本地案例",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/LOCAL-EXEMPLARS-R06-RESEARCH-CONTRACT.md"
+    },
+    {
+      "name": "LOCAL-EXEMPLARS-R06.md",
+      "family": "本地案例",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/LOCAL-EXEMPLARS-R06.md"
+    },
+    {
+      "name": "MOTIONSITES-R01-CASE-MAP-AND-DEEP-DIVE.md",
+      "family": "MotionSites",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/MOTIONSITES-R01-CASE-MAP-AND-DEEP-DIVE.md"
+    },
+    {
+      "name": "MOTIONSITES-R02-SCROLL-SCRUB-PROTOTYPE.md",
+      "family": "MotionSites",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/MOTIONSITES-R02-SCROLL-SCRUB-PROTOTYPE.md"
+    },
+    {
+      "name": "MOTIONSITES-R03-CAPABILITY-CONTRACT.md",
+      "family": "MotionSites",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/MOTIONSITES-R03-CAPABILITY-CONTRACT.md"
+    },
+    {
+      "name": "MOTIONSITES-R04-RESEARCH-CONTRACT.md",
+      "family": "MotionSites",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/MOTIONSITES-R04-RESEARCH-CONTRACT.md"
+    },
+    {
+      "name": "MOTIONSITES-R05-FIRST-BATCH-SYNTHESIS.md",
+      "family": "MotionSites",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/MOTIONSITES-R05-FIRST-BATCH-SYNTHESIS.md"
+    },
+    {
+      "name": "R08-B-SEMANTIC-INTERACTION-CONTRACT.md",
+      "family": "互动因果",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/R08-B-SEMANTIC-INTERACTION-CONTRACT.md"
+    },
+    {
+      "name": "R08-C-GENERATOR-INTEGRATION-CONTRACT.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/R08-C-GENERATOR-INTEGRATION-CONTRACT.md"
+    },
+    {
+      "name": "R10-IDENTITY-EVIDENCE-CONTRACT.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/R10-IDENTITY-EVIDENCE-CONTRACT.md"
+    },
+    {
+      "name": "R11-WORKBENCH-MAIN-LOOP-CONTRACT.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/R11-WORKBENCH-MAIN-LOOP-CONTRACT.md"
+    },
+    {
+      "name": "STYLE-DIVERSITY-R13.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/STYLE-DIVERSITY-R13.md"
+    },
+    {
+      "name": "THREEJS-3D-WEBPAGE-R11.md",
+      "family": "3D / 外部库",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/THREEJS-3D-WEBPAGE-R11.md"
+    },
+    {
+      "name": "V2-ADAPTIVE-EXPERIENCE-R46.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-ADAPTIVE-EXPERIENCE-R46.md"
+    },
+    {
+      "name": "V2-ADAPTIVE-VISUAL-REVIEW-R17.md",
+      "family": "质量判断",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-ADAPTIVE-VISUAL-REVIEW-R17.md"
+    },
+    {
+      "name": "V2-BETA-CLOSURE-R66.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-BETA-CLOSURE-R66.md"
+    },
+    {
+      "name": "V2-BETA-TRIAL-R67.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-BETA-TRIAL-R67.md"
+    },
+    {
+      "name": "V2-BOUNDED-LIVE-GENERATION-R20.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-BOUNDED-LIVE-GENERATION-R20.md"
+    },
+    {
+      "name": "V2-BOUNDED-RECOVERY-R53.md",
+      "family": "状态与恢复",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-BOUNDED-RECOVERY-R53.md"
+    },
+    {
+      "name": "V2-BRIGHT-UTILITY-VALIDATION-R25.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-BRIGHT-UTILITY-VALIDATION-R25.md"
+    },
+    {
+      "name": "V2-BUSINESS-LEGIBILITY-GATE-R51.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-BUSINESS-LEGIBILITY-GATE-R51.md"
+    },
+    {
+      "name": "V2-CASE-ARCHIVE-R23.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-CASE-ARCHIVE-R23.md"
+    },
+    {
+      "name": "V2-CONDITIONAL-CAPABILITY-REVIEW-R18.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-CONDITIONAL-CAPABILITY-REVIEW-R18.md"
+    },
+    {
+      "name": "V2-CURRENT-STATE-R66.md",
+      "family": "状态与恢复",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-CURRENT-STATE-R66.md"
+    },
+    {
+      "name": "V2-CURRENT-STATE-R71.md",
+      "family": "状态与恢复",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-CURRENT-STATE-R71.md"
+    },
+    {
+      "name": "V2-DECISION-LAYER-R07-CONTRACT.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-DECISION-LAYER-R07-CONTRACT.md"
+    },
+    {
+      "name": "V2-DECISION-LAYER-R07.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-DECISION-LAYER-R07.md"
+    },
+    {
+      "name": "V2-DELIVERY-QUALITY-R32.md",
+      "family": "质量判断",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-DELIVERY-QUALITY-R32.md"
+    },
+    {
+      "name": "V2-END-TO-END-VALIDATION-R27.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-END-TO-END-VALIDATION-R27.md"
+    },
+    {
+      "name": "V2-END-TO-END-VALIDATION-R28.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-END-TO-END-VALIDATION-R28.md"
+    },
+    {
+      "name": "V2-END-TO-END-VALIDATION-R31.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-END-TO-END-VALIDATION-R31.md"
+    },
+    {
+      "name": "V2-END-TO-END-VALIDATION-R54.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-END-TO-END-VALIDATION-R54.md"
+    },
+    {
+      "name": "V2-FAST-QUALITY-PREFLIGHT-R55.md",
+      "family": "质量判断",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-FAST-QUALITY-PREFLIGHT-R55.md"
+    },
+    {
+      "name": "V2-FINAL-VISUAL-REPAIR-R65.md",
+      "family": "质量判断",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-FINAL-VISUAL-REPAIR-R65.md"
+    },
+    {
+      "name": "V2-GOAL-DRIVEN-DELIVERY-PLAN.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-GOAL-DRIVEN-DELIVERY-PLAN.md"
+    },
+    {
+      "name": "V2-INTENT-PROVENANCE-R59.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-INTENT-PROVENANCE-R59.md"
+    },
+    {
+      "name": "V2-LANTERN-BOUNDED-VALIDATION-R64.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-LANTERN-BOUNDED-VALIDATION-R64.md"
+    },
+    {
+      "name": "V2-MATERIAL-TRANSITION-VALIDATION-R68.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-MATERIAL-TRANSITION-VALIDATION-R68.md"
+    },
+    {
+      "name": "V2-MEDIA-DOMINANCE-REVALIDATION-R61.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-MEDIA-DOMINANCE-REVALIDATION-R61.md"
+    },
+    {
+      "name": "V2-MEDIA-DOMINANCE-VALIDATION-R60.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-MEDIA-DOMINANCE-VALIDATION-R60.md"
+    },
+    {
+      "name": "V2-PLACE-NARRATIVE-VALIDATION-R24.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-PLACE-NARRATIVE-VALIDATION-R24.md"
+    },
+    {
+      "name": "V2-PRODUCT-QUALITY-GATE-R47.md",
+      "family": "质量判断",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-PRODUCT-QUALITY-GATE-R47.md"
+    },
+    {
+      "name": "V2-PRODUCTION-GUARDRAILS-R26.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-PRODUCTION-GUARDRAILS-R26.md"
+    },
+    {
+      "name": "V2-PROGRAM-STATUS-R135.md",
+      "family": "状态与恢复",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-PROGRAM-STATUS-R135.md"
+    },
+    {
+      "name": "V2-PROGRAM-STATUS-R136A.md",
+      "family": "状态与恢复",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-PROGRAM-STATUS-R136A.md"
+    },
+    {
+      "name": "V2-PROGRAM-STATUS-R136B.md",
+      "family": "状态与恢复",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-PROGRAM-STATUS-R136B.md"
+    },
+    {
+      "name": "V2-PROGRAM-STATUS-R137.md",
+      "family": "状态与恢复",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-PROGRAM-STATUS-R137.md"
+    },
+    {
+      "name": "V2-PROGRAM-STATUS-R138.md",
+      "family": "状态与恢复",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-PROGRAM-STATUS-R138.md"
+    },
+    {
+      "name": "V2-PROGRAM-STATUS-R139.md",
+      "family": "状态与恢复",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-PROGRAM-STATUS-R139.md"
+    },
+    {
+      "name": "V2-PROGRAM-STATUS-R140.md",
+      "family": "状态与恢复",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-PROGRAM-STATUS-R140.md"
+    },
+    {
+      "name": "V2-PROGRAM-STATUS-R141.md",
+      "family": "状态与恢复",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-PROGRAM-STATUS-R141.md"
+    },
+    {
+      "name": "V2-PROGRAM-STATUS-R142.md",
+      "family": "状态与恢复",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-PROGRAM-STATUS-R142.md"
+    },
+    {
+      "name": "V2-PROGRAM-STATUS-R143.md",
+      "family": "状态与恢复",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-PROGRAM-STATUS-R143.md"
+    },
+    {
+      "name": "V2-PROJECTOR-PLACEMENT-VALIDATION-R52.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-PROJECTOR-PLACEMENT-VALIDATION-R52.md"
+    },
+    {
+      "name": "V2-QUALITY-FIRST-SUBJECT-ROUTING-R58.md",
+      "family": "质量判断",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-QUALITY-FIRST-SUBJECT-ROUTING-R58.md"
+    },
+    {
+      "name": "V2-R100-SONIC-EDITORIAL-DELIVERY.md",
+      "family": "声音与媒体",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R100-SONIC-EDITORIAL-DELIVERY.md"
+    },
+    {
+      "name": "V2-R101-THEME-SPECIFIC-ANCHOR-VALIDATION.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R101-THEME-SPECIFIC-ANCHOR-VALIDATION.md"
+    },
+    {
+      "name": "V2-R102-BOTANICAL-LIVE-VALIDATION.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R102-BOTANICAL-LIVE-VALIDATION.md"
+    },
+    {
+      "name": "V2-R103-CREATIVE-QUALITY-RECOVERY.md",
+      "family": "质量判断",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R103-CREATIVE-QUALITY-RECOVERY.md"
+    },
+    {
+      "name": "V2-R103-SEMANTIC-CONTINUITY-GATE.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R103-SEMANTIC-CONTINUITY-GATE.md"
+    },
+    {
+      "name": "V2-R104-PACKING-WORKSPACE-VALIDATION.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R104-PACKING-WORKSPACE-VALIDATION.md"
+    },
+    {
+      "name": "V2-R106-BALCONY-DRYING-VALIDATION.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R106-BALCONY-DRYING-VALIDATION.md"
+    },
+    {
+      "name": "V2-R108-BOUNDED-MARKET-WORKBENCH.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R108-BOUNDED-MARKET-WORKBENCH.md"
+    },
+    {
+      "name": "V2-R111-COMPACT-AUTHORING-PROOF.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R111-COMPACT-AUTHORING-PROOF.md"
+    },
+    {
+      "name": "V2-R112-DIRECT-CREATIVE-PRODUCTIZATION.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R112-DIRECT-CREATIVE-PRODUCTIZATION.md"
+    },
+    {
+      "name": "V2-R113-SIGN-LANGUAGE-SEASON-VALIDATION.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R113-SIGN-LANGUAGE-SEASON-VALIDATION.md"
+    },
+    {
+      "name": "V2-R114-VISUAL-AMBITION-FLAGSHIP-CONTRACT.md",
+      "family": "质量判断",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R114-VISUAL-AMBITION-FLAGSHIP-CONTRACT.md"
+    },
+    {
+      "name": "V2-R115-THIN-FILM-FLAGSHIP-VALIDATION.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R115-THIN-FILM-FLAGSHIP-VALIDATION.md"
+    },
+    {
+      "name": "V2-R116-VISUAL-AMBITION-CLOSURE.md",
+      "family": "质量判断",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R116-VISUAL-AMBITION-CLOSURE.md"
+    },
+    {
+      "name": "V2-R117-DIRECT-AUTHOR-PACKAGE.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R117-DIRECT-AUTHOR-PACKAGE.md"
+    },
+    {
+      "name": "V2-R118-WIND-KITE-DIRECT-RUN.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R118-WIND-KITE-DIRECT-RUN.md"
+    },
+    {
+      "name": "V2-R119-FORM-DIVERSITY-PROOF.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R119-FORM-DIVERSITY-PROOF.md"
+    },
+    {
+      "name": "V2-R120-PLAYFUL-SPATIAL-PROOF.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R120-PLAYFUL-SPATIAL-PROOF.md"
+    },
+    {
+      "name": "V2-R121-BETA-MAIN-PATH-ACCEPTANCE.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R121-BETA-MAIN-PATH-ACCEPTANCE.md"
+    },
+    {
+      "name": "V2-R122-CROSS-THEME-STABILITY-CLOSURE.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R122-CROSS-THEME-STABILITY-CLOSURE.md"
+    },
+    {
+      "name": "V2-R123-WEAVE-LIGHT-FIELD.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R123-WEAVE-LIGHT-FIELD.md"
+    },
+    {
+      "name": "V2-R124-CONTENT-GROUNDED-STRUCTURE.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R124-CONTENT-GROUNDED-STRUCTURE.md"
+    },
+    {
+      "name": "V2-R125-ICE-CORE-LETTERS.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R125-ICE-CORE-LETTERS.md"
+    },
+    {
+      "name": "V2-R127-ROOF-WATER-ROUTE.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R127-ROOF-WATER-ROUTE.md"
+    },
+    {
+      "name": "V2-R128-NIGHT-REFLECTIVE-CATALOG.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R128-NIGHT-REFLECTIVE-CATALOG.md"
+    },
+    {
+      "name": "V2-R129-COLOR-RELAY-BRANCHING.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R129-COLOR-RELAY-BRANCHING.md"
+    },
+    {
+      "name": "V2-R130-UNSEEN-BRIEF-DECISION-PROOF.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R130-UNSEEN-BRIEF-DECISION-PROOF.md"
+    },
+    {
+      "name": "V2-R131-FOREST-SOUND-ROUTE.md",
+      "family": "声音与媒体",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R131-FOREST-SOUND-ROUTE.md"
+    },
+    {
+      "name": "V2-R132-MOONLIT-TIDEPOOL-PANORAMA.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R132-MOONLIT-TIDEPOOL-PANORAMA.md"
+    },
+    {
+      "name": "V2-R133-CREATIVE-MEDIUM-DECISION.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R133-CREATIVE-MEDIUM-DECISION.md"
+    },
+    {
+      "name": "V2-R134-STORMGLASS-ARCHIVE.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R134-STORMGLASS-ARCHIVE.md"
+    },
+    {
+      "name": "V2-R135-PRISM-SEED-THEATRE.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R135-PRISM-SEED-THEATRE.md"
+    },
+    {
+      "name": "V2-R136A-FILM-CAMERA-REPAIR-PATHS.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R136A-FILM-CAMERA-REPAIR-PATHS.md"
+    },
+    {
+      "name": "V2-R136B-WEST-BUND-MEETING-PANORAMA.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R136B-WEST-BUND-MEETING-PANORAMA.md"
+    },
+    {
+      "name": "V2-R139-CALLSIGN-DECODER.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R139-CALLSIGN-DECODER.md"
+    },
+    {
+      "name": "V2-R144-MULTIMODAL-CREATIVE-ORCHESTRATION.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R144-MULTIMODAL-CREATIVE-ORCHESTRATION.md"
+    },
+    {
+      "name": "V2-R145-AURORA-RADIO-POSTCARD.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R145-AURORA-RADIO-POSTCARD.md"
+    },
+    {
+      "name": "V2-R146-EFFECT-FIRST-OPEN-EXPRESSION.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R146-EFFECT-FIRST-OPEN-EXPRESSION.md"
+    },
+    {
+      "name": "V2-R147-EXTERNAL-EXCELLENCE-CANON.md",
+      "family": "外部参考",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R147-EXTERNAL-EXCELLENCE-CANON.md"
+    },
+    {
+      "name": "V2-R148-EFFECT-LED-RESOURCE-ORCHESTRATION.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R148-EFFECT-LED-RESOURCE-ORCHESTRATION.md"
+    },
+    {
+      "name": "V2-R150-EFFECT-QUALITY-SELECTION-GATE.md",
+      "family": "质量判断",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R150-EFFECT-QUALITY-SELECTION-GATE.md"
+    },
+    {
+      "name": "V2-R151-SELECTION-RECEIPT-RUN-GUARD.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R151-SELECTION-RECEIPT-RUN-GUARD.md"
+    },
+    {
+      "name": "V2-R154-EFFECT-OVER-TEMPLATE-POLICY.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R154-EFFECT-OVER-TEMPLATE-POLICY.md"
+    },
+    {
+      "name": "V2-R156-EXTERNAL-REFERENCE-PROMOTION.md",
+      "family": "外部参考",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R156-EXTERNAL-REFERENCE-PROMOTION.md"
+    },
+    {
+      "name": "V2-R158-CREATIVE-SELECTION-STABILITY.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R158-CREATIVE-SELECTION-STABILITY.md"
+    },
+    {
+      "name": "V2-R161-PRODUCT-DELIVERY-RESET.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R161-PRODUCT-DELIVERY-RESET.md"
+    },
+    {
+      "name": "V2-R164-CREATIVE-FREEDOM-PROMISE-GATE.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R164-CREATIVE-FREEDOM-PROMISE-GATE.md"
+    },
+    {
+      "name": "V2-R165-FULL-SYSTEM-AUDIT.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R165-FULL-SYSTEM-AUDIT.md"
+    },
+    {
+      "name": "V2-R166-THREEUI-CAPABILITY-VALUE.md",
+      "family": "3D / 外部库",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R166-THREEUI-CAPABILITY-VALUE.md"
+    },
+    {
+      "name": "V2-R166-THREEUI-LIQUID-FORM-PILOT.md",
+      "family": "3D / 外部库",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R166-THREEUI-LIQUID-FORM-PILOT.md"
+    },
+    {
+      "name": "V2-R167-CREATIVE-QUALITY-GUIDANCE.md",
+      "family": "质量判断",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R167-CREATIVE-QUALITY-GUIDANCE.md"
+    },
+    {
+      "name": "V2-R168-CREATIVE-CAPABILITY-REGISTRY.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R168-CREATIVE-CAPABILITY-REGISTRY.md"
+    },
+    {
+      "name": "V2-R170-CREATIVE-SHAPE-REGRESSION.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R170-CREATIVE-SHAPE-REGRESSION.md"
+    },
+    {
+      "name": "V2-R171-STAGE-CLOSURE.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R171-STAGE-CLOSURE.md"
+    },
+    {
+      "name": "V2-R171A-THUMBNAIL-VISIBILITY-REPAIR.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R171A-THUMBNAIL-VISIBILITY-REPAIR.md"
+    },
+    {
+      "name": "V2-R172-KAGE-OPENING-REHEARSAL.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R172-KAGE-OPENING-REHEARSAL.md"
+    },
+    {
+      "name": "V2-R173-FINAL-EFFECT-REVIEW-RECEIPT.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R173-FINAL-EFFECT-REVIEW-RECEIPT.md"
+    },
+    {
+      "name": "V2-R29-SUBJECT-AND-AUTHORING-BOUNDARY.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R29-SUBJECT-AND-AUTHORING-BOUNDARY.md"
+    },
+    {
+      "name": "V2-R30-GENERATED-THREE-RUNTIME.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R30-GENERATED-THREE-RUNTIME.md"
+    },
+    {
+      "name": "V2-R69-DIRECT-RECOVERY-AND-CONSISTENCY.md",
+      "family": "状态与恢复",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R69-DIRECT-RECOVERY-AND-CONSISTENCY.md"
+    },
+    {
+      "name": "V2-R70-BOUNDED-GENERATION-RUNTIME.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R70-BOUNDED-GENERATION-RUNTIME.md"
+    },
+    {
+      "name": "V2-R72-SINGLE-BRIEF-BOUNDED-VALIDATION.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R72-SINGLE-BRIEF-BOUNDED-VALIDATION.md"
+    },
+    {
+      "name": "V2-R74-INTERACTION-AND-MOBILE-CONTRACT.md",
+      "family": "互动因果",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R74-INTERACTION-AND-MOBILE-CONTRACT.md"
+    },
+    {
+      "name": "V2-R75-SUNDIAL-BOUNDED-VALIDATION.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R75-SUNDIAL-BOUNDED-VALIDATION.md"
+    },
+    {
+      "name": "V2-R76-WIND-TUNNEL-BOUNDED-VALIDATION.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R76-WIND-TUNNEL-BOUNDED-VALIDATION.md"
+    },
+    {
+      "name": "V2-R77-WIND-TUNNEL-REPLACEMENT.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R77-WIND-TUNNEL-REPLACEMENT.md"
+    },
+    {
+      "name": "V2-R78-WIND-TUNNEL-INTERACTION.md",
+      "family": "互动因果",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R78-WIND-TUNNEL-INTERACTION.md"
+    },
+    {
+      "name": "V2-R79-SHARED-STATE-DRIVER.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R79-SHARED-STATE-DRIVER.md"
+    },
+    {
+      "name": "V2-R80-BOUNDED-CLOSED-LOOP-PROBE.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R80-BOUNDED-CLOSED-LOOP-PROBE.md"
+    },
+    {
+      "name": "V2-R81-MODEL-ROLE-SPLIT.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R81-MODEL-ROLE-SPLIT.md"
+    },
+    {
+      "name": "V2-R83-SCENE-COMPOSITION-ROUTER.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R83-SCENE-COMPOSITION-ROUTER.md"
+    },
+    {
+      "name": "V2-R84-ROOFTOP-GREENHOUSE-LAYERED-DELIVERY.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R84-ROOFTOP-GREENHOUSE-LAYERED-DELIVERY.md"
+    },
+    {
+      "name": "V2-R85-FIRST-PREVIEW-LATENCY-GOVERNANCE.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R85-FIRST-PREVIEW-LATENCY-GOVERNANCE.md"
+    },
+    {
+      "name": "V2-R86-ASSET-QUALITY-PREFLIGHT.md",
+      "family": "质量判断",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R86-ASSET-QUALITY-PREFLIGHT.md"
+    },
+    {
+      "name": "V2-R87-PIXEL-ASSET-PREFLIGHT.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R87-PIXEL-ASSET-PREFLIGHT.md"
+    },
+    {
+      "name": "V2-R88-BOUNDED-CODEX-ASSET-COMPLETION.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R88-BOUNDED-CODEX-ASSET-COMPLETION.md"
+    },
+    {
+      "name": "V2-R89-DETERMINISTIC-PLANNING-AND-SUBJECT-ASSETS.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R89-DETERMINISTIC-PLANNING-AND-SUBJECT-ASSETS.md"
+    },
+    {
+      "name": "V2-R90-CAUSAL-AUTHORING-CONTRACT.md",
+      "family": "互动因果",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R90-CAUSAL-AUTHORING-CONTRACT.md"
+    },
+    {
+      "name": "V2-R91-PRIMARY-JOURNEY-PROBE.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R91-PRIMARY-JOURNEY-PROBE.md"
+    },
+    {
+      "name": "V2-R92-BOUNDED-END-TO-END-PROOF.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R92-BOUNDED-END-TO-END-PROOF.md"
+    },
+    {
+      "name": "V2-R93-FAST-CONTRACT-GATES.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R93-FAST-CONTRACT-GATES.md"
+    },
+    {
+      "name": "V2-R94-SOUNDBOARD-FINAL-REFINEMENT.md",
+      "family": "声音与媒体",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R94-SOUNDBOARD-FINAL-REFINEMENT.md"
+    },
+    {
+      "name": "V2-R97-CREATIVE-STRUCTURE-PROPAGATION.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R97-CREATIVE-STRUCTURE-PROPAGATION.md"
+    },
+    {
+      "name": "V2-R98-DIRECT-BOUNDED-BUILD.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R98-DIRECT-BOUNDED-BUILD.md"
+    },
+    {
+      "name": "V2-R99-SONIC-EDITORIAL-VALIDATION.md",
+      "family": "声音与媒体",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-R99-SONIC-EDITORIAL-VALIDATION.md"
+    },
+    {
+      "name": "V2-RECOVERED-PROJECT-STATE.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-RECOVERED-PROJECT-STATE.md"
+    },
+    {
+      "name": "V2-RECOVERY-HANDOFF.md",
+      "family": "状态与恢复",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-RECOVERY-HANDOFF.md"
+    },
+    {
+      "name": "V2-STATE-ASSET-ROUTING-R62.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-STATE-ASSET-ROUTING-R62.md"
+    },
+    {
+      "name": "V2-SUBJECT-DELTA-GATE-R63.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-SUBJECT-DELTA-GATE-R63.md"
+    },
+    {
+      "name": "V2-UNSEEN-BRIEF-R48.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-UNSEEN-BRIEF-R48.md"
+    },
+    {
+      "name": "V2-UNSEEN-BRIEF-R50.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-UNSEEN-BRIEF-R50.md"
+    },
+    {
+      "name": "V2-WOODBLOCK-ASSET-R33.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-WOODBLOCK-ASSET-R33.md"
+    },
+    {
+      "name": "V2-WORKBENCH-EMBEDDED-PREVIEW-R57.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-WORKBENCH-EMBEDDED-PREVIEW-R57.md"
+    },
+    {
+      "name": "V2-WORKBENCH-QUALITY-STATUS-R56.md",
+      "family": "质量判断",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-WORKBENCH-QUALITY-STATUS-R56.md"
+    },
+    {
+      "name": "V2-WORKBENCH-TRANSPARENCY-CONTRACT-R19.md",
+      "family": "协议与交付",
+      "url": "https://github.com/yydshly/0823_githubcode_study/blob/codex/kage-v2-baseline-r165/projects/kage/lab/docs/v2-research/V2-WORKBENCH-TRANSPARENCY-CONTRACT-R19.md"
+    }
+  ]
+}
