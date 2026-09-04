@@ -28,4 +28,4 @@
 | 补可运行快照 | 每个登记案例可直接查看 | 58 个案例入口 | Vite 静态构建，58/58 URL 返回 200 | Stage 1/5 | pass | 已构建独立 snapshot |
 | 归档双入口 | 案例与源码入口分离 | 桌面 / 移动 | 58 个 `data-case-view` 与独立源码链接 | Stage 3/4 | pass | 已更新归档 UI |
 | 浏览器验收 | 桌面和 390px 可用 | 归档、V1、V2、能力基准 | Playwright 2/2；代表 V1/V2/能力页运行 | Stage 7 | pass | 已完成真实浏览器验证 |
-| 独立部署 | 不覆盖旧 V1/V2 | GitHub Pages | 远端 URL 与 workflow | Stage 9 | continue | 发布并验收 |
+| 独立部署 | 不覆盖旧 V1/V2 | GitHub Pages | Actions run `33868191438` 全部通过；归档、58 个查看入口及代表 V1/V2/能力页在线验收 | Stage 9 | pass | 已完成独立发布 |
